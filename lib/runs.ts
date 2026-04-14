@@ -17,6 +17,30 @@ interface BranchFile {
   state?: { story_day?: number }
 }
 
+interface ArtifactFile {
+  snapshot_id: string
+  content?: {
+    title?: string
+    narrative?: string
+    state_note?: string
+    summary?: string
+    tone?: string
+  }
+}
+
+interface SnapshotFile {
+  story_day: number
+}
+
+export interface PendingDay {
+  storyDay: number
+  title: string
+  narrative: string
+  stateNote: string
+  summary: string
+  tone: string
+}
+
 export interface BranchSummary {
   id: string          // URL-facing id: "main", "alt1-time-slip"
   publishedDays: number
@@ -128,4 +152,64 @@ export function getVsParams(): { runDate: string; comparison: string[] }[] {
   }
 
   return params
+}
+
+/**
+ * Returns the next unpublished day's artifact content for a branch, if one exists.
+ * Used to power the ?preview easter egg — content is embedded at build time and
+ * revealed client-side only when the param is present.
+ */
+export function getPendingDay(runDate: string, branch: string): PendingDay | null {
+  const runsDir = join(process.cwd(), 'runs')
+  if (!existsSync(runsDir)) return null
+
+  for (const rootId of readdirSync(runsDir)) {
+    const branchFile = join(runsDir, rootId, 'branches', `branch_${rootId}_${branch}.json`)
+    if (!existsSync(branchFile)) continue
+
+    let branchData: BranchFile
+    try {
+      branchData = JSON.parse(readFileSync(branchFile, 'utf-8'))
+    } catch {
+      continue
+    }
+
+    if (branchData.created_at.slice(0, 10) !== runDate) continue
+
+    const publishedDays = branchData.state?.story_day ?? 0
+    const artifactsDir = join(runsDir, rootId, 'artifacts')
+    const snapshotsDir = join(runsDir, rootId, 'snapshots')
+    if (!existsSync(artifactsDir) || !existsSync(snapshotsDir)) return null
+
+    const branchTag = `branch_${rootId}_${branch}`
+    const artifactFiles = readdirSync(artifactsDir).filter(
+      (f) => f.includes(branchTag) && f.endsWith('.json'),
+    )
+
+    for (const file of artifactFiles) {
+      try {
+        const artifact: ArtifactFile = JSON.parse(
+          readFileSync(join(artifactsDir, file), 'utf-8'),
+        )
+        const snapshotFile = join(snapshotsDir, `${artifact.snapshot_id}.json`)
+        if (!existsSync(snapshotFile)) continue
+        const snapshot: SnapshotFile = JSON.parse(readFileSync(snapshotFile, 'utf-8'))
+        if (snapshot.story_day > publishedDays) {
+          const c = artifact.content ?? {}
+          return {
+            storyDay: snapshot.story_day,
+            title: c.title ?? '',
+            narrative: c.narrative ?? '',
+            stateNote: c.state_note ?? '',
+            summary: c.summary ?? '',
+            tone: c.tone ?? '',
+          }
+        }
+      } catch {
+        // malformed — skip
+      }
+    }
+  }
+
+  return null
 }

@@ -12,7 +12,8 @@ import {
   formatRunDate,
 } from '@/lib/nav'
 import { schemaBreadcrumbList, schemaArticle } from '@/lib/jsonld'
-import { getDayParams, getStaticRuns } from '@/lib/runs'
+import { getDayParams, getStaticRuns, getPendingDay } from '@/lib/runs'
+import { PreviewReveal } from '@/components/PreviewReveal'
 
 export const dynamicParams = false
 export function generateStaticParams(): { runDate: string; branch: string; day: string }[] {
@@ -82,6 +83,7 @@ export default async function DayArtifactPage({
       { label: 'YY', href: '/yy' as const },
       { label: formatRunDate(runDate) },
     ]
+    const pending = getPendingDay(runDate, branch)
     return (
       <>
         <JsonLd schema={schemaBreadcrumbList(breadcrumbs)} />
@@ -90,6 +92,7 @@ export default async function DayArtifactPage({
           <p className="text-sm text-zinc-400">{formatRunDate(runDate)} run</p>
           <p className="text-xs text-zinc-600">Day 1 available tomorrow.</p>
         </div>
+        {pending && <PreviewReveal pending={pending} />}
       </>
     )
   }
