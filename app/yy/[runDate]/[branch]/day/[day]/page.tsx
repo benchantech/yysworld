@@ -12,11 +12,19 @@ import {
   formatRunDate,
 } from '@/lib/nav'
 import { schemaBreadcrumbList, schemaArticle } from '@/lib/jsonld'
-import { getDayParams } from '@/lib/runs'
+import { getDayParams, getStaticRuns } from '@/lib/runs'
 
 export const dynamicParams = false
 export function generateStaticParams(): { runDate: string; branch: string; day: string }[] {
-  return getDayParams()
+  const params = getDayParams()
+  if (params.length > 0) return params
+  // No published days yet. Return a stub per run so the static export can
+  // process this route. day/0 renders an "available tomorrow" state.
+  return getStaticRuns().map((run) => ({
+    runDate: run.runDate,
+    branch: 'main',
+    day: '0',
+  }))
 }
 
 interface Params {
@@ -66,6 +74,26 @@ export default async function DayArtifactPage({
   params: Promise<Params>
 }) {
   const { runDate, branch, day } = await params
+
+  // day === '0' is a build stub — no content published yet.
+  if (day === '0') {
+    const breadcrumbs = [
+      { label: 'yysworld', href: '/' as const },
+      { label: 'YY', href: '/yy' as const },
+      { label: formatRunDate(runDate) },
+    ]
+    return (
+      <>
+        <JsonLd schema={schemaBreadcrumbList(breadcrumbs)} />
+        <Breadcrumbs items={breadcrumbs} />
+        <div className="mt-8 space-y-2">
+          <p className="text-sm text-zinc-400">{formatRunDate(runDate)} run</p>
+          <p className="text-xs text-zinc-600">Day 1 available tomorrow.</p>
+        </div>
+      </>
+    )
+  }
+
   const dayNum = parseInt(day, 10)
   const totalDays = 30 // read from manifest in production
   const pageUrl = dayUrl('yy', runDate, branch, day)

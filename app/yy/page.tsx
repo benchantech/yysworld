@@ -4,6 +4,7 @@ import { Breadcrumbs } from '@/components/nav/Breadcrumbs'
 import { JsonLd } from '@/components/JsonLd'
 import { charBreadcrumbs, dayUrl, formatRunDate, formatBranch } from '@/lib/nav'
 import { schemaBreadcrumbList, schemaCharacterPerson } from '@/lib/jsonld'
+import { getStaticRuns, type RunSummary } from '@/lib/runs'
 
 export const metadata: Metadata = {
   title: 'YY',
@@ -15,33 +16,8 @@ export const metadata: Metadata = {
   },
 }
 
-// Placeholder — populated by the nightly pipeline once the data layer is wired in.
-const PLACEHOLDER_RUNS: RunSummary[] = [
-  {
-    runDate: '2026-04-01',
-    currentDay: 14,
-    totalDays: 30,
-    branches: [{ id: 'main', label: 'main', isMain: true }],
-    latestShift:
-      'missed routine produced expressive reaction with no resolution; burden carried into the day',
-  },
-]
-
-interface BranchMeta {
-  id: string
-  label: string
-  isMain: boolean
-}
-
-interface RunSummary {
-  runDate: string
-  currentDay: number
-  totalDays: number
-  branches: BranchMeta[]
-  latestShift: string
-}
-
 export default function YYPage() {
+  const runs = getStaticRuns()
   const breadcrumbs = charBreadcrumbs('yy')
 
   return (
@@ -78,13 +54,17 @@ export default function YYPage() {
           <h2 className="text-xs font-medium text-zinc-500 uppercase tracking-wider mb-3">
             Runs
           </h2>
-          <ul className="space-y-3">
-            {PLACEHOLDER_RUNS.map((run) => (
-              <li key={run.runDate}>
-                <RunCard run={run} />
-              </li>
-            ))}
-          </ul>
+          {runs.length === 0 ? (
+            <p className="text-xs text-zinc-600">No runs yet.</p>
+          ) : (
+            <ul className="space-y-3">
+              {runs.map((run) => (
+                <li key={run.runDate}>
+                  <RunCard run={run} />
+                </li>
+              ))}
+            </ul>
+          )}
         </section>
       </div>
     </>
@@ -92,30 +72,35 @@ export default function YYPage() {
 }
 
 function RunCard({ run }: { run: RunSummary }) {
-  const mainBranch = run.branches.find((b) => b.isMain) ?? run.branches[0]
-  const altBranches = run.branches.filter((b) => !b.isMain)
+  const mainBranch = run.branches.find((b) => b.id === 'main') ?? run.branches[0]
+  const altBranches = run.branches.filter((b) => b.id !== 'main')
+  const publishedDays = mainBranch?.publishedDays ?? 0
 
   return (
     <div className="rounded-lg border border-zinc-800 bg-zinc-900/50 px-4 py-3 space-y-3">
       <div className="flex items-center justify-between">
-        <Link
-          href={dayUrl('yy', run.runDate, mainBranch.id, run.currentDay)}
-          className="text-sm font-medium text-zinc-50 hover:text-zinc-300 transition-colors"
-        >
-          {formatRunDate(run.runDate)}
-        </Link>
+        {publishedDays > 0 ? (
+          <Link
+            href={dayUrl('yy', run.runDate, mainBranch.id, publishedDays)}
+            className="text-sm font-medium text-zinc-50 hover:text-zinc-300 transition-colors"
+          >
+            {formatRunDate(run.runDate)}
+          </Link>
+        ) : (
+          <span className="text-sm font-medium text-zinc-500">
+            {formatRunDate(run.runDate)}
+          </span>
+        )}
         <span className="text-xs text-zinc-600 tabular-nums">
-          day {run.currentDay} / {run.totalDays}
+          {publishedDays > 0 ? `day ${publishedDays}` : 'starting tomorrow'}
         </span>
       </div>
 
-      {run.latestShift && (
-        <p className="text-xs text-zinc-500 leading-relaxed line-clamp-2">
-          {run.latestShift}
-        </p>
+      {publishedDays === 0 && (
+        <p className="text-xs text-zinc-600">Day 1 available tomorrow.</p>
       )}
 
-      {altBranches.length > 0 && (
+      {altBranches.length > 0 && publishedDays > 0 && (
         <div className="flex items-center gap-2 flex-wrap pt-1">
           <span className="text-xs text-zinc-600">branches:</span>
           {altBranches.map((b) => (
@@ -124,7 +109,7 @@ function RunCard({ run }: { run: RunSummary }) {
               href={dayUrl('yy', run.runDate, b.id, 1)}
               className="text-xs text-zinc-500 hover:text-zinc-300 transition-colors"
             >
-              {formatBranch(b.label)}
+              {formatBranch(b.id)}
             </Link>
           ))}
         </div>
