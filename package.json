@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "pipeline:init": "tsx pipeline/index.ts init",
-    "pipeline:run": "tsx pipeline/index.ts run"
+    "pipeline:run": "tsx pipeline/index.ts run",
+    "pipeline:go": "tsx pipeline/index.ts go"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.39.0",

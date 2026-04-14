@@ -15,6 +15,7 @@
 
 import { initCommand } from './commands/init'
 import { runCommand } from './commands/run'
+import { goCommand } from './commands/go'
 
 const [, , command, ...args] = process.argv
 
@@ -25,7 +26,10 @@ switch (command) {
   case 'run':
     await runCommand(args)
     break
+  case 'go':
+    await goCommand(args)
+    break
   default:
-    console.error(`Usage: pipeline <init|run> [date]`)
+    console.error(`Usage: pipeline <init|run|go> [date]`)
     process.exit(1)
 }
