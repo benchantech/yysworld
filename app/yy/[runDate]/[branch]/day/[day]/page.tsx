@@ -16,8 +16,17 @@ import { schemaBreadcrumbList, schemaArticle } from '@/lib/jsonld'
 // Static export: dynamicParams = false + empty generateStaticParams → no pages built yet.
 // Nightly pipeline populates this from published manifests.
 export const dynamicParams = false
-export function generateStaticParams() {
-  return []
+export function generateStaticParams(): { runDate: string; branch: string; day: string }[] {
+  // Seeded with the current run (2026-04-01, main, days 1–14).
+  // The nightly pipeline regenerates this list from published manifests.
+  // Days beyond the current count exist as placeholder pages until real snapshots land.
+  const CURRENT_RUN = '2026-04-01'
+  const PUBLISHED_DAYS = 14
+  return Array.from({ length: PUBLISHED_DAYS }, (_, i) => ({
+    runDate: CURRENT_RUN,
+    branch: 'main',
+    day: String(i + 1),
+  }))
 }
 
 interface Params {

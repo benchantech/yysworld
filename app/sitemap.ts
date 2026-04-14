@@ -1,6 +1,8 @@
 import type { MetadataRoute } from 'next'
 import { BASE_URL } from '@/lib/nav'
 
+export const dynamic = 'force-static'
+
 // Static pages always in the sitemap.
 // Dynamic pages (snapshots, comparisons) are appended by the nightly pipeline,
 // which regenerates this file from published manifests (ADR-021, ADR-009).
