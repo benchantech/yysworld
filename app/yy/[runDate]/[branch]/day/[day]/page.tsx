@@ -19,11 +19,24 @@ export const dynamicParams = false
 
 export function generateStaticParams(): { runDate: string; branch: string; day: string }[] {
   const params = getDayParams()
-  if (params.length > 0) return params
-  // No artifacts yet — return a day/1 stub per run so the static export doesn't fail.
-  return getStaticRuns().flatMap((run) =>
-    run.branches.map((b) => ({ runDate: run.runDate, branch: b.id, day: '1' })),
-  )
+
+  // Add a day/1 stub for any branch that has no artifact yet so every active
+  // branch always has at least one routable page (renders "content coming soon").
+  const covered = new Set(params.map((p) => `${p.runDate}/${p.branch}`))
+  for (const run of getStaticRuns()) {
+    for (const b of run.branches) {
+      if (!covered.has(`${run.runDate}/${b.id}`)) {
+        params.push({ runDate: run.runDate, branch: b.id, day: '1' })
+      }
+    }
+  }
+
+  // Last-resort fallback: no runs at all yet
+  if (params.length === 0) {
+    return [{ runDate: '0000-00-00', branch: 'main', day: '1' }]
+  }
+
+  return params
 }
 
 interface Params {
