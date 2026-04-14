@@ -10,19 +10,20 @@
   "signaled_at": "2026-04-14T20:40:00Z",
   "decision_type": "create_branch",
   "reason": {
-    "core_statement": "It changed me a little in a way I didn’t expect.",
-    "change_observed": "YY felt less delighted by found objects than usual and more guarded.",
-    "why_unexpected": "He usually sees scattered trash as treasure first, not as a threat.",
-    "branching_focus": "resource_disturbance_changes_treasure_perception"
+    "core_statement": "Main is the true Day 1 — the slip happened. The branch asks what the same day looks like without it.",
+    "change_observed": "The time slip changed the texture of the whole morning: hunger, muted attention, guardedness around found objects.",
+    "why_branch": "Not to correct main, but to hold the counterfactual. One variable (woke up on time, had breakfast) — what does the same world feel like from that starting point?",
+    "branching_focus": "counterfactual_day1_on_time_wake_up"
   },
   "proposed_mutation": {
     "mutation_id": "mut_2026-04-14_001",
-    "mutation_type": "interpretation_shift",
-    "summary": "Increase guardedness around found-resource events.",
-    "expected_tradeoff": {
-      "gain": "situational_caution",
-      "loss": "playful_openness"
+    "mutation_type": "counterfactual_origin",
+    "branch_id": "branch_root_2026_04_14_alt1-on-time",
+    "summary": "alt1-on-time starts from the same Day 1 but with no time slip: YY woke on time, had breakfast, enters the morning fed and alert.",
+    "expected_contrast": {
+      "main": "hungry, attention low, found objects read as potential threats",
+      "alt1-on-time": "fed, alert, found objects read with their usual delight"
     }
   },
-  "decision_status": "approved_for_nightly_run"
+  "decision_status": "executed"
 }

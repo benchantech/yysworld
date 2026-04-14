@@ -1,0 +1,31 @@
+{
+  "schema_version": "0.1",
+  "branch_id": "branch_root_2026_04_14_alt1-on-time",
+  "root_id": "root_2026_04_14",
+  "parent_branch_id": "branch_root_2026_04_14_main",
+  "character_id": "yy",
+  "created_at": "2026-04-14T20:40:00Z",
+  "status": "active",
+  "state": {
+    "story_day": 0,
+    "condition": {
+      "health": 0.9,
+      "hunger": 0.3,
+      "attention": 0.65
+    },
+    "inventory": [],
+    "active_burdens": [],
+    "goals": {
+      "primary": "get_through_the_morning",
+      "secondary": "find_something_interesting"
+    },
+    "reaction_overrides": {},
+    "trait_deviations": {},
+    "identity_notes": [
+      "counterfactual branch — same Day 1, woke up on time",
+      "baseline state: fed, alert, no accumulated weight from the morning"
+    ]
+  },
+  "drift_flags": [],
+  "last_updated_at": "2026-04-14T20:40:00Z"
+}
