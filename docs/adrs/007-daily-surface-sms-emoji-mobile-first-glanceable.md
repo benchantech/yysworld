@@ -6,6 +6,7 @@
 - **Scope:** YY Branching World / YY's World evolution
 - **Depends on:** YYBW-001, YYBW-002, YYBW-005
 - **Supersedes / clarifies:** Clarifies the low-cost interaction layer
+- **Museum lineage:** [PM-003](./museum/pre-manifest/PM-003-playground-for-imagination.md), [SK-012](./museum/starter-kit-v0.1/012_output_rendering_layer.md)
 
 ## Context
 

@@ -6,6 +6,7 @@
 - **Scope:** YY Branching World / YY's World evolution
 - **Depends on:** YYBW-003, YYBW-007, YYBW-008, YYBW-009
 - **Supersedes / clarifies:** Clarifies go-to-market and notification strategy
+- **Museum lineage:** [PM-004](./museum/pre-manifest/PM-004-optional-income-never-required.md), [PM-006](./museum/pre-manifest/PM-006-organic-growth-only.md), [PM-007](./museum/pre-manifest/PM-007-book-will-emerge-later.md), [PM-008](./museum/pre-manifest/PM-008-stories-for-grandchildren.md)
 
 ## Context
 

@@ -6,6 +6,7 @@
 - **Scope:** YY Branching World / YY's World evolution
 - **Depends on:** YYBW-001, YYBW-002
 - **Supersedes / clarifies:** Clarifies the move away from endless roots
+- **Museum lineage:** [PM-018](./museum/pre-manifest/PM-018-time-is-a-feature.md), [SK-008](./museum/starter-kit-v0.1/008_finite_roots_and_time_segmentation.md)
 
 ## Context
 

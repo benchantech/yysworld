@@ -6,6 +6,7 @@
 - **Scope:** YY Branching World / YY's World evolution
 - **Depends on:** YYBW-004, YYBW-005
 - **Supersedes / clarifies:** Clarifies the resolution of the branch-crossing conflict
+- **Museum lineage:** [PM-005](./museum/pre-manifest/PM-005-rnd-lab-for-llms.md)
 
 ## Context
 

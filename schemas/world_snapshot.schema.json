@@ -1,0 +1,333 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://yysworld/schema/world_snapshot.schema.json",
+  "title": "WorldSnapshot",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "snapshot_id",
+    "root_id",
+    "branch_id",
+    "story_day",
+    "snapshot_date",
+    "time_policy",
+    "package_ref",
+    "model_refs",
+    "event_refs",
+    "decision_refs",
+    "state_before",
+    "state_after",
+    "change_summary",
+    "created_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1"
+    },
+    "snapshot_id": {
+      "type": "string"
+    },
+    "root_id": {
+      "type": "string"
+    },
+    "branch_id": {
+      "type": "string"
+    },
+    "story_day": {
+      "type": "integer"
+    },
+    "snapshot_date": {
+      "type": "string"
+    },
+    "time_policy": {
+      "type": "string"
+    },
+    "package_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "package_id",
+        "package_created_at",
+        "package_hash"
+      ],
+      "properties": {
+        "package_id": {
+          "type": "string"
+        },
+        "package_created_at": {
+          "type": "string"
+        },
+        "package_hash": {
+          "type": "string"
+        }
+      }
+    },
+    "model_refs": {
+      "type": "array",
+      "items": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "$id": "https://yysworld/schema/model_profile.schema.json",
+        "title": "ModelProfile",
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "provider",
+          "model_id",
+          "model_version",
+          "role",
+          "runtime_class",
+          "parameters"
+        ],
+        "properties": {
+          "provider": {
+            "type": "string"
+          },
+          "model_id": {
+            "type": "string"
+          },
+          "model_version": {
+            "type": "string"
+          },
+          "role": {
+            "type": "string",
+            "enum": [
+              "generator",
+              "evaluator",
+              "summarizer"
+            ]
+          },
+          "runtime_class": {
+            "type": "string",
+            "enum": [
+              "cloud",
+              "local"
+            ]
+          },
+          "parameters": {
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+              "temperature": {
+                "type": "number"
+              },
+              "top_p": {
+                "type": "number"
+              },
+              "max_tokens": {
+                "type": "integer"
+              },
+              "seed": {
+                "type": [
+                  "integer",
+                  "null"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "event_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "decision_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "state_before": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "story_day",
+        "condition",
+        "inventory",
+        "active_burdens",
+        "goals",
+        "reaction_overrides",
+        "trait_deviations",
+        "identity_notes"
+      ],
+      "properties": {
+        "story_day": {
+          "type": "integer"
+        },
+        "condition": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "health",
+            "hunger",
+            "attention"
+          ],
+          "properties": {
+            "health": {
+              "type": "number"
+            },
+            "hunger": {
+              "type": "number"
+            },
+            "attention": {
+              "type": "number"
+            }
+          }
+        },
+        "inventory": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "active_burdens": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "goals": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "primary",
+            "secondary"
+          ],
+          "properties": {
+            "primary": {
+              "type": "string"
+            },
+            "secondary": {
+              "type": "string"
+            }
+          }
+        },
+        "reaction_overrides": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "trait_deviations": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "number"
+          }
+        },
+        "identity_notes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "state_after": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "story_day",
+        "condition",
+        "inventory",
+        "active_burdens",
+        "goals",
+        "reaction_overrides",
+        "trait_deviations",
+        "identity_notes"
+      ],
+      "properties": {
+        "story_day": {
+          "type": "integer"
+        },
+        "condition": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "health",
+            "hunger",
+            "attention"
+          ],
+          "properties": {
+            "health": {
+              "type": "number"
+            },
+            "hunger": {
+              "type": "number"
+            },
+            "attention": {
+              "type": "number"
+            }
+          }
+        },
+        "inventory": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "active_burdens": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "goals": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "primary",
+            "secondary"
+          ],
+          "properties": {
+            "primary": {
+              "type": "string"
+            },
+            "secondary": {
+              "type": "string"
+            }
+          }
+        },
+        "reaction_overrides": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "trait_deviations": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "number"
+          }
+        },
+        "identity_notes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "change_summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "notable_shift",
+        "branch_created"
+      ],
+      "properties": {
+        "notable_shift": {
+          "type": "string"
+        },
+        "branch_created": {
+          "type": "boolean"
+        }
+      }
+    },
+    "created_at": {
+      "type": "string"
+    }
+  }
+}

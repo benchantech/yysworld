@@ -6,6 +6,7 @@
 - **Scope:** YY Branching World / YY's World evolution
 - **Depends on:** YYBW-009, YYBW-011
 - **Supersedes / clarifies:** Clarifies source-of-truth architecture
+- **Museum lineage:** [PM-013](./museum/pre-manifest/PM-013-provenance-matters-as-much-as-output.md), [SK-002](./museum/starter-kit-v0.1/002_yysworld_package_as_reasoning_control_plane.md), [SK-003](./museum/starter-kit-v0.1/003_artifact_provenance_contract.md), [SK-014](./museum/starter-kit-v0.1/014_package_authoring_and_evolution_workflow.md)
 
 ## Context
 

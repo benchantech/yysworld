@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://yysworld/schema/model_profile.schema.json",
+  "title": "ModelProfile",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "provider",
+    "model_id",
+    "model_version",
+    "role",
+    "runtime_class",
+    "parameters"
+  ],
+  "properties": {
+    "provider": {
+      "type": "string"
+    },
+    "model_id": {
+      "type": "string"
+    },
+    "model_version": {
+      "type": "string"
+    },
+    "role": {
+      "type": "string",
+      "enum": [
+        "generator",
+        "evaluator",
+        "summarizer"
+      ]
+    },
+    "runtime_class": {
+      "type": "string",
+      "enum": [
+        "cloud",
+        "local"
+      ]
+    },
+    "parameters": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "temperature": {
+          "type": "number"
+        },
+        "top_p": {
+          "type": "number"
+        },
+        "max_tokens": {
+          "type": "integer"
+        },
+        "seed": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        }
+      }
+    }
+  }
+}

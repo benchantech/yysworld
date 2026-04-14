@@ -1,0 +1,48 @@
+{
+  "package_id": "yysworld-package-v0.1",
+  "schema_version": "0.1",
+  "package_created_at": "2026-04-14T00:10:00Z",
+  "package_hash": "sha256:26ba0b28ca3051eb06a5f09101a037d195cab275f660774908456b69d7ef698f",
+  "manifest_version": "0.1",
+  "comparison_contract_version": "0.1",
+  "reasoning_rules": {
+    "authority_rule": "human_first_ai_second",
+    "lineage_commentary_rule": "commentary_observes_lineage_only",
+    "identity_rule": "baseline_plus_controlled_deviation",
+    "branch_rule": "branch_when_human_signals_unexpected_internal_shift",
+    "time_rule": "nightly_auto_advance"
+  },
+  "mutation_policy": {
+    "allowed_types": [
+      "timing_shift",
+      "interpretation_shift",
+      "relationship_shift",
+      "missed_vs_taken_action",
+      "emotional_carryover"
+    ],
+    "conservation_rule": "gains_require_corresponding_losses"
+  },
+  "input_rules": {
+    "allowed_inputs": [
+      "canonical_world_events",
+      "branch_state",
+      "branch_decisions",
+      "character_baseline"
+    ],
+    "forbidden_inputs": [
+      "substack_posts",
+      "private_field_notes",
+      "unpublished_commentary"
+    ]
+  },
+  "output_contract": {
+    "required_artifact_fields": [
+      "snapshot_id",
+      "package_ref",
+      "model_refs",
+      "comparison_contract_version",
+      "content",
+      "created_at"
+    ]
+  }
+}

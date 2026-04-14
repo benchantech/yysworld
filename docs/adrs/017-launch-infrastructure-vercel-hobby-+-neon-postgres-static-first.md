@@ -6,6 +6,7 @@
 - **Scope:** YY Branching World / YY's World evolution
 - **Depends on:** YYBW-009, YYBW-012, YYBW-013, YYBW-014
 - **Supersedes / clarifies:** Clarifies stack, hobby constraints, and expansion logic
+- **Museum lineage:** [PM-010](./museum/pre-manifest/PM-010-start-with-very-little.md), [PM-012](./museum/pre-manifest/PM-012-starting-is-more-important-than-perfection.md), [C2-012](./museum/case-002/C2-012-technical-stack.md), [C2-023](./museum/case-002/C2-023-stack-pending.md)
 
 ## Context
 

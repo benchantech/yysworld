@@ -1,0 +1,62 @@
+# yysworld
+
+> Same being, different path.
+
+yysworld is a branching life observatory centered on YY — a fictional character who lives through the same shared events as the real world, but whose responses, burdens, and identity drift across controlled branches over time. The same being takes different paths. The gap between paths is the product.
+
+Built by a human (Ben) for his kids, so they can see what he was thinking.
+
+## What this is
+
+- A provenance-preserving, versioned, branching fictional world
+- Each month is a bounded root arc with a shared event stream
+- Branches emerge from explicit causes (mutations), not random drift
+- Human authority is absolute — AI assists, generates, and proposes
+- The public layer is a complete, honest record of the reasoning
+
+## Data model
+
+- [Character baseline](/yy/baseline.json) — YY's calibrated trait state
+- [Root manifest (2026-04)](/root/2026-04/manifest.json) — April arc, all branches
+- [Ledger (2026-04)](/root/2026-04/ledger.jsonl) — append-only event record, immutable
+- [Sitemap](/sitemap.xml) — all published snapshot and compare pages
+
+## Reasoning
+
+- [ADR index](/docs/adrs/README.md) — 21 active ADRs, each with museum lineage links
+- [ADR 001 — Product thesis](/docs/adrs/001-product-thesis-from-world-builder-to-branching-life-observatory.md)
+- [ADR 019 — Supersession record](/docs/adrs/019-yysworld-supersedes-yys-world-case-002-entirely.md)
+- [ADR 020 — Public/private key architecture](/docs/adrs/020-public-private-key-two-layer-architecture.md)
+- [ADR 021 — URL structure and discoverability](/docs/adrs/021-url-structure-and-discoverability-seo-aeo-geo.md)
+- [Manifest v0.1](/docs/manifest/Manifest_v0.1.md) — highest authority document
+
+## Museum (lineage)
+
+Full prior reasoning chain, preserved in chronological order:
+- [Museum README](/docs/adrs/museum/README.md)
+- [Case-002: YY's World (24 ADRs)](/docs/adrs/museum/case-002/) — predecessor, March 30 2026, superseded April 13
+- [Pre-manifest thinking (19 ADRs)](/docs/adrs/museum/pre-manifest/) — before v0.1 schema
+- [Starter Kit v0.1 (14 ADRs)](/docs/adrs/museum/starter-kit-v0.1/) — schema-era decisions, April 14 2026
+
+## Schemas
+
+- [schemas/](/schemas/) — JSON schemas for all v0.1 data types
+- [packages/](/packages/) — yysworld-package-v0.1.json (reasoning control plane)
+
+## Content structure
+
+Snapshot pages: `/root/{YYYY-MM}/{branch}/day/{N}`
+Compare pages:  `/root/{YYYY-MM}/compare/{branch-a}/{branch-b}/day/{N}`
+Character:      `/yy`
+Root overview:  `/root/{YYYY-MM}`
+
+## What this is not
+
+- Not a game. YY is observed, not played.
+- Not a prediction system. Branches show divergence, not forecasts.
+- Not child-directed. Family-shareable, adult-facing.
+- Not a simulation of the real world. Events are real-world anchored but abstracted.
+
+## Authority
+
+The human defines canon. AI may assist, generate, and propose — but may not define meaning, override intent, or silently shape outcomes. All influence passes through: ADR → package → system.

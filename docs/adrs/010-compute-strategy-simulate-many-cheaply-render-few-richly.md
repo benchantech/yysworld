@@ -6,6 +6,7 @@
 - **Scope:** YY Branching World / YY's World evolution
 - **Depends on:** YYBW-007, YYBW-009
 - **Supersedes / clarifies:** Clarifies use of local models, premium models, and media cost control
+- **Museum lineage:** [SK-006](./museum/starter-kit-v0.1/006_model_provenance_and_role_separation.md)
 
 ## Context
 

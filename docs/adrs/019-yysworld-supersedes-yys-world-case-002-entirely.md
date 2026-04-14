@@ -6,6 +6,7 @@
 - **Scope:** YY Branching World / YY's World evolution
 - **Depends on:** YYBW-001, YYBW-002, YYBW-015
 - **Supersedes:** Case-002 YY's World — kids-primary audience, COPPA-by-elimination, dandelion model (C2-002, C2-003, C2-004, C2-018, C2-019)
+- **Museum lineage:** [C2-024](./museum/case-002/C2-024-supersession-yysworld-replaces-yys-world.md) ← terminal scar record from Case-002 side
 
 ## Context
 

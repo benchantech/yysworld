@@ -6,6 +6,7 @@
 - **Scope:** YY Branching World / YY's World evolution
 - **Depends on:** YYBW-002, YYBW-003
 - **Supersedes / clarifies:** Clarifies branch origin and rejects instant hard divergence
+- **Museum lineage:** [SK-007](./museum/starter-kit-v0.1/007_controlled_mutation_policy.md)
 
 ## Context
 

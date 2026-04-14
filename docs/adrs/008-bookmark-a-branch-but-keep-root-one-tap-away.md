@@ -6,6 +6,7 @@
 - **Scope:** YY Branching World / YY's World evolution
 - **Depends on:** YYBW-003, YYBW-004, YYBW-007
 - **Supersedes / clarifies:** Clarifies the user navigation model
+- **Museum lineage:** [SK-005](./museum/starter-kit-v0.1/005_stable_comparison_contract_cross_version_relatability.md)
 
 ## Context
 

@@ -6,6 +6,7 @@
 - **Scope:** YY Branching World / YY's World evolution
 - **Depends on:** YYBW-002
 - **Supersedes / clarifies:** Clarifies character refinement without retroactive confusion
+- **Museum lineage:** [SK-011](./museum/starter-kit-v0.1/011_schema_evolution_and_compatibility_rules.md), [SK-014](./museum/starter-kit-v0.1/014_package_authoring_and_evolution_workflow.md)
 
 ## Context
 

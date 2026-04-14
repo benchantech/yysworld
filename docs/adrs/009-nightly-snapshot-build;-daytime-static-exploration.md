@@ -6,6 +6,7 @@
 - **Scope:** YY Branching World / YY's World evolution
 - **Depends on:** YYBW-003, YYBW-005, YYBW-007, YYBW-008
 - **Supersedes / clarifies:** Clarifies the compute and publishing cadence
+- **Museum lineage:** [PM-010](./museum/pre-manifest/PM-010-start-with-very-little.md), [PM-009](./museum/pre-manifest/PM-009-build-story-generator-not-just-stories.md), [SK-010](./museum/starter-kit-v0.1/010_replay_system_and_rerun_semantics.md)
 
 ## Context
 

@@ -1,0 +1,120 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://yysworld/schema/branch_decision.schema.json",
+  "title": "BranchDecision",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "decision_id",
+    "root_id",
+    "source_event_id",
+    "signaled_by",
+    "signaled_at",
+    "decision_type",
+    "reason",
+    "proposed_mutation",
+    "decision_status"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1"
+    },
+    "decision_id": {
+      "type": "string"
+    },
+    "root_id": {
+      "type": "string"
+    },
+    "source_event_id": {
+      "type": "string"
+    },
+    "signaled_by": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "actor_id",
+        "actor_role"
+      ],
+      "properties": {
+        "actor_id": {
+          "type": "string"
+        },
+        "actor_role": {
+          "type": "string"
+        }
+      }
+    },
+    "signaled_at": {
+      "type": "string"
+    },
+    "decision_type": {
+      "type": "string",
+      "const": "create_branch"
+    },
+    "reason": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "core_statement",
+        "change_observed",
+        "why_unexpected",
+        "branching_focus"
+      ],
+      "properties": {
+        "core_statement": {
+          "type": "string"
+        },
+        "change_observed": {
+          "type": "string"
+        },
+        "why_unexpected": {
+          "type": "string"
+        },
+        "branching_focus": {
+          "type": "string"
+        }
+      }
+    },
+    "proposed_mutation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "mutation_id",
+        "mutation_type",
+        "summary",
+        "expected_tradeoff"
+      ],
+      "properties": {
+        "mutation_id": {
+          "type": "string"
+        },
+        "mutation_type": {
+          "type": "string"
+        },
+        "summary": {
+          "type": "string"
+        },
+        "expected_tradeoff": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "gain",
+            "loss"
+          ],
+          "properties": {
+            "gain": {
+              "type": "string"
+            },
+            "loss": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "decision_status": {
+      "type": "string"
+    }
+  }
+}

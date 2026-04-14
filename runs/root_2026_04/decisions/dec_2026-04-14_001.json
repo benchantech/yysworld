@@ -1,0 +1,28 @@
+{
+  "schema_version": "0.1",
+  "decision_id": "dec_2026-04-14_001",
+  "root_id": "root_2026_04",
+  "source_event_id": "evt_2026-04-14_001",
+  "signaled_by": {
+    "actor_id": "ben",
+    "actor_role": "author"
+  },
+  "signaled_at": "2026-04-14T20:40:00Z",
+  "decision_type": "create_branch",
+  "reason": {
+    "core_statement": "It changed me a little in a way I didn’t expect.",
+    "change_observed": "YY felt less delighted by found objects than usual and more guarded.",
+    "why_unexpected": "He usually sees scattered trash as treasure first, not as a threat.",
+    "branching_focus": "resource_disturbance_changes_treasure_perception"
+  },
+  "proposed_mutation": {
+    "mutation_id": "mut_2026-04-14_001",
+    "mutation_type": "interpretation_shift",
+    "summary": "Increase guardedness around found-resource events.",
+    "expected_tradeoff": {
+      "gain": "situational_caution",
+      "loss": "playful_openness"
+    }
+  },
+  "decision_status": "approved_for_nightly_run"
+}

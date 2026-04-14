@@ -1,0 +1,101 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://yysworld/schema/yysworld_package.schema.json",
+  "title": "YysworldPackage",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "package_id",
+    "schema_version",
+    "package_created_at",
+    "package_hash",
+    "manifest_version",
+    "comparison_contract_version",
+    "reasoning_rules",
+    "mutation_policy",
+    "input_rules",
+    "output_contract"
+  ],
+  "properties": {
+    "package_id": {
+      "type": "string"
+    },
+    "schema_version": {
+      "const": "0.1"
+    },
+    "package_created_at": {
+      "type": "string"
+    },
+    "package_hash": {
+      "type": "string"
+    },
+    "manifest_version": {
+      "type": "string"
+    },
+    "comparison_contract_version": {
+      "type": "string"
+    },
+    "reasoning_rules": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "mutation_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "allowed_types",
+        "conservation_rule"
+      ],
+      "properties": {
+        "allowed_types": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "conservation_rule": {
+          "type": "string"
+        }
+      }
+    },
+    "input_rules": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "allowed_inputs",
+        "forbidden_inputs"
+      ],
+      "properties": {
+        "allowed_inputs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "forbidden_inputs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "output_contract": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "required_artifact_fields"
+      ],
+      "properties": {
+        "required_artifact_fields": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

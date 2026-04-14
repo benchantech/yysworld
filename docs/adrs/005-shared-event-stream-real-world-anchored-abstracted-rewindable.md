@@ -6,6 +6,7 @@
 - **Scope:** YY Branching World / YY's World evolution
 - **Depends on:** YYBW-003, YYBW-004
 - **Supersedes / clarifies:** Clarifies use of real dates and historical replay
+- **Museum lineage:** [SK-009](./museum/starter-kit-v0.1/009_shared_event_stream.md)
 
 ## Context
 

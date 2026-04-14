@@ -1,0 +1,144 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://yysworld/schema/branch_state.schema.json",
+  "title": "BranchState",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "branch_id",
+    "root_id",
+    "parent_branch_id",
+    "character_id",
+    "created_at",
+    "status",
+    "state",
+    "drift_flags",
+    "last_updated_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1"
+    },
+    "branch_id": {
+      "type": "string"
+    },
+    "root_id": {
+      "type": "string"
+    },
+    "parent_branch_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "character_id": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "archived",
+        "superseded"
+      ]
+    },
+    "state": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "story_day",
+        "condition",
+        "inventory",
+        "active_burdens",
+        "goals",
+        "reaction_overrides",
+        "trait_deviations",
+        "identity_notes"
+      ],
+      "properties": {
+        "story_day": {
+          "type": "integer"
+        },
+        "condition": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "health",
+            "hunger",
+            "attention"
+          ],
+          "properties": {
+            "health": {
+              "type": "number"
+            },
+            "hunger": {
+              "type": "number"
+            },
+            "attention": {
+              "type": "number"
+            }
+          }
+        },
+        "inventory": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "active_burdens": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "goals": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "primary",
+            "secondary"
+          ],
+          "properties": {
+            "primary": {
+              "type": "string"
+            },
+            "secondary": {
+              "type": "string"
+            }
+          }
+        },
+        "reaction_overrides": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "trait_deviations": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "number"
+          }
+        },
+        "identity_notes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "drift_flags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "last_updated_at": {
+      "type": "string"
+    }
+  }
+}

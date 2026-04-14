@@ -6,6 +6,7 @@
 - **Scope:** YY Branching World / YY's World evolution
 - **Depends on:** YYBW-011, YYBW-012, YYBW-013
 - **Supersedes / clarifies:** Clarifies diff computation strategy
+- **Museum lineage:** [SK-005](./museum/starter-kit-v0.1/005_stable_comparison_contract_cross_version_relatability.md), [SK-010](./museum/starter-kit-v0.1/010_replay_system_and_rerun_semantics.md)
 
 ## Context
 

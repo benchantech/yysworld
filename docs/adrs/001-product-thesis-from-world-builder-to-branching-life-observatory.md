@@ -6,6 +6,7 @@
 - **Scope:** YY Branching World / YY's World evolution
 - **Depends on:** None
 - **Supersedes / clarifies:** Clarifies the initial 'Spore-style permutation' framing
+- **Museum lineage:** [PM-001](./museum/pre-manifest/PM-001-this-is-for-my-kids-first.md), [PM-016](./museum/pre-manifest/PM-016-branching-life-exploration.md), [PM-017](./museum/pre-manifest/PM-017-personal-and-technical.md), [SK-001](./museum/starter-kit-v0.1/001_manifest_as_highest_authority.md)
 
 ## Context
 

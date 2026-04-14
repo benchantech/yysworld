@@ -6,6 +6,7 @@
 - **Scope:** YY Branching World / YY's World evolution
 - **Depends on:** YYBW-001
 - **Supersedes / clarifies:** Connects the new product to yyand.me and Case 002
+- **Museum lineage:** [PM-002](./museum/pre-manifest/PM-002-yy-should-become-independent.md), [C2-001](./museum/case-002/C2-001-domain-and-identity.md), [C2-006](./museum/case-002/C2-006-yy-role.md), [C2-015](./museum/case-002/C2-015-yy-liberated.md)
 
 ## Context
 

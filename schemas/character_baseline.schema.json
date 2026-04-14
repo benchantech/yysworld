@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://yysworld/schema/character_baseline.schema.json",
+  "title": "CharacterBaseline",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "character_id",
+    "name",
+    "baseline_created_at",
+    "core_traits",
+    "values",
+    "default_reactions",
+    "failure_boundaries",
+    "identity_rules"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1"
+    },
+    "character_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "baseline_created_at": {
+      "type": "string"
+    },
+    "core_traits": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {
+        "type": "number"
+      }
+    },
+    "values": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "default_reactions": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "failure_boundaries": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "identity_rules": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "conservation_rule",
+        "out_of_character_rule"
+      ],
+      "properties": {
+        "conservation_rule": {
+          "type": "string"
+        },
+        "out_of_character_rule": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

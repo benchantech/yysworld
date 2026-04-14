@@ -6,6 +6,7 @@
 - **Scope:** YY Branching World / YY's World evolution
 - **Depends on:** YYBW-002, YYBW-007, YYBW-009
 - **Supersedes / clarifies:** Clarifies relationship to Case 002 and COPPA concerns
+- **Museum lineage:** [C2-002](./museum/case-002/C2-002-primary-audience.md), [C2-004](./museum/case-002/C2-004-coppa-compliance-architecture.md), [C2-014](./museum/case-002/C2-014-calvin-and-hobbes-audience.md), [C2-018](./museum/case-002/C2-018-coppa-by-elimination.md), [C2-024](./museum/case-002/C2-024-supersession-yysworld-replaces-yys-world.md)
 
 ## Context
 

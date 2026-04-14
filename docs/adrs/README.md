@@ -1,5 +1,9 @@
 # ADR Index
 
+## Active ADRs
+
+Each active ADR includes a **Museum lineage** field linking back to the prior thinking it supersedes or extends.
+
 - [YYBW-001 — Product Thesis: From World Builder to Branching Life Observatory](./001-product-thesis-from-world-builder-to-branching-life-observatory.md)
 - [YYBW-002 — YY as Canonical Anchor and Narrative Thread](./002-yy-as-canonical-anchor-and-narrative-thread.md)
 - [YYBW-003 — Roots Are Finite Story Arcs, Usually Monthly](./003-roots-are-finite-story-arcs-usually-monthly.md)
@@ -19,3 +23,19 @@
 - [YYBW-017 — Launch Infrastructure: Vercel Hobby + Neon Postgres, Static-First](./017-launch-infrastructure-vercel-hobby-+-neon-postgres-static-first.md)
 - [YYBW-018 — Future Hooks: Attestation, Hashing, and Optional Stronger Verification](./018-future-hooks-attestation-hashing-and-optional-stronger-verification.md)
 - [YYBW-019 — yysworld Supersedes YY's World (Case-002) Entirely](./019-yysworld-supersedes-yys-world-case-002-entirely.md)
+- [YYBW-020 — Public/Private Key Two-Layer Architecture](./020-public-private-key-two-layer-architecture.md)
+- [YYBW-021 — URL Structure and Discoverability: SEO, AEO, GEO Priority Order](./021-url-structure-and-discoverability-seo-aeo-geo.md)
+
+---
+
+## Museum
+
+The museum preserves the full lineage of thinking in chronological order.
+
+**[→ Museum README](./museum/README.md)**
+
+| Layer | Era | Count |
+|---|---|---|
+| [Case-002: YY's World](./museum/case-002/) | March 30, 2026 — superseded April 13 | 24 ADRs |
+| [Pre-manifest](./museum/pre-manifest/) | Before v0.1 schema | 19 ADRs |
+| [Starter Kit v0.1](./museum/starter-kit-v0.1/) | April 14, 2026 | 14 ADRs |

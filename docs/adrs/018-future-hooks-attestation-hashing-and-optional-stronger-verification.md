@@ -6,6 +6,7 @@
 - **Scope:** YY Branching World / YY's World evolution
 - **Depends on:** YYBW-012, YYBW-013, YYBW-017
 - **Supersedes / clarifies:** Clarifies blockchain-adjacent future-proofing
+- **Museum lineage:** [PM-013](./museum/pre-manifest/PM-013-provenance-matters-as-much-as-output.md), [SK-003](./museum/starter-kit-v0.1/003_artifact_provenance_contract.md)
 
 ## Context
 

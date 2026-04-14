@@ -6,6 +6,7 @@
 - **Scope:** YY Branching World / YY's World evolution
 - **Depends on:** YYBW-012
 - **Supersedes / clarifies:** Clarifies what manifests are for
+- **Museum lineage:** [PM-019](./museum/pre-manifest/PM-019-dual-layer-lineage-vs-commentary.md), [SK-004](./museum/starter-kit-v0.1/004_dual_layer_architecture_lineage_vs_commentary.md), [SK-012](./museum/starter-kit-v0.1/012_output_rendering_layer.md), [SK-013](./museum/starter-kit-v0.1/013_human_annotation_system.md)
 
 ## Context
 
