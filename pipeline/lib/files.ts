@@ -1,4 +1,4 @@
-import { writeFileSync, readdirSync, existsSync, mkdirSync } from 'fs'
+import { writeFileSync, readFileSync, readdirSync, existsSync, mkdirSync } from 'fs'
 import { join } from 'path'
 import { createHash } from 'crypto'
 import type {

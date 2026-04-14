@@ -18,6 +18,9 @@ interface BranchFile {
 }
 
 interface ArtifactFile {
+  artifact_id: string
+  branch_id: string
+  root_id: string
   snapshot_id: string
   content?: {
     title?: string
@@ -30,15 +33,18 @@ interface ArtifactFile {
 
 interface SnapshotFile {
   story_day: number
+  snapshot_date: string
 }
 
-export interface PendingDay {
+export interface DayArtifact {
   storyDay: number
+  snapshotDate: string  // "2026-04-14"
+  releaseAt: string     // ISO — midnight EST of snapshot_date + 1 day
   title: string
+  tone: string
   narrative: string
   stateNote: string
   summary: string
-  tone: string
 }
 
 export interface BranchSummary {
@@ -50,6 +56,13 @@ export interface RunSummary {
   runDate: string     // "2026-04-01"
   character: string   // "yy"
   branches: BranchSummary[]
+}
+
+// midnight EST (UTC-5) of the day after snapshot_date
+function releaseAtFromSnapshotDate(snapshotDate: string): string {
+  const [year, month, day] = snapshotDate.split('-').map(Number)
+  // next calendar day at 05:00 UTC = midnight US/Eastern (EST, UTC-5)
+  return new Date(Date.UTC(year, month - 1, day + 1, 5, 0, 0)).toISOString()
 }
 
 export function getStaticRuns(): RunSummary[] {
@@ -75,15 +88,11 @@ export function getStaticRuns(): RunSummary[] {
           readFileSync(join(branchesDir, file), 'utf-8'),
         )
 
-        // Run start date from branch created_at
         if (!runDate && data.created_at) {
           runDate = data.created_at.slice(0, 10)
         }
         if (data.character_id) character = data.character_id
 
-        // Strip "branch_{root_id}_" prefix to get the URL-facing branch id.
-        // "branch_root_2026_04_main" → "main"
-        // "branch_root_2026_04_alt1-time-slip" → "alt1-time-slip"
         const branchId = data.branch_id.replace(`branch_${data.root_id}_`, '')
 
         branches.push({
@@ -91,7 +100,7 @@ export function getStaticRuns(): RunSummary[] {
           publishedDays: data.state?.story_day ?? 0,
         })
       } catch {
-        // Malformed file — skip
+        // malformed — skip
       }
     }
 
@@ -100,23 +109,71 @@ export function getStaticRuns(): RunSummary[] {
     }
   }
 
-  // Newest first
   return runs.sort((a, b) => b.runDate.localeCompare(a.runDate))
 }
 
 /**
- * All published day artifact params.
+ * Returns all branch urlIds for a given runDate.
+ * Used by the day page to build the branch switcher from real data.
+ */
+export function getRunBranches(runDate: string): string[] {
+  const run = getStaticRuns().find((r) => r.runDate === runDate)
+  return run?.branches.map((b) => b.id) ?? ['main']
+}
+
+/**
+ * All day artifact params — derived from artifact files, not story_day.
+ * Any artifact that exists in runs/ gets a static day page built for it,
+ * including content that hasn't crossed the midnight gate yet (?preview shows it).
+ *
  * Used by: app/yy/[runDate]/[branch]/day/[day]/page.tsx
  */
 export function getDayParams(): { runDate: string; branch: string; day: string }[] {
+  const runsDir = join(process.cwd(), 'runs')
+  if (!existsSync(runsDir)) return []
+
   const params: { runDate: string; branch: string; day: string }[] = []
-  for (const run of getStaticRuns()) {
-    for (const branch of run.branches) {
-      for (let d = 1; d <= branch.publishedDays; d++) {
-        params.push({ runDate: run.runDate, branch: branch.id, day: String(d) })
+  const seen = new Set<string>()
+
+  for (const rootId of readdirSync(runsDir)) {
+    const artifactsDir = join(runsDir, rootId, 'artifacts')
+    const snapshotsDir = join(runsDir, rootId, 'snapshots')
+    if (!existsSync(artifactsDir) || !existsSync(snapshotsDir)) continue
+
+    // Derive runDate from the first branch file
+    let runDate: string | null = null
+    const branchesDir = join(runsDir, rootId, 'branches')
+    if (existsSync(branchesDir)) {
+      const first = readdirSync(branchesDir).filter((f) => f.endsWith('.json'))[0]
+      if (first) {
+        try {
+          const b: BranchFile = JSON.parse(readFileSync(join(branchesDir, first), 'utf-8'))
+          runDate = b.created_at.slice(0, 10)
+        } catch { /* skip */ }
       }
     }
+    if (!runDate) continue
+
+    for (const file of readdirSync(artifactsDir).filter((f) => f.endsWith('.json'))) {
+      try {
+        const artifact: ArtifactFile = JSON.parse(
+          readFileSync(join(artifactsDir, file), 'utf-8'),
+        )
+        const snapshotPath = join(snapshotsDir, `${artifact.snapshot_id}.json`)
+        if (!existsSync(snapshotPath)) continue
+
+        const snapshot: SnapshotFile = JSON.parse(readFileSync(snapshotPath, 'utf-8'))
+        const urlBranch = artifact.branch_id.replace(`branch_${rootId}_`, '')
+        const key = `${runDate}/${urlBranch}/${snapshot.story_day}`
+
+        if (!seen.has(key)) {
+          seen.add(key)
+          params.push({ runDate, branch: urlBranch, day: String(snapshot.story_day) })
+        }
+      } catch { /* malformed — skip */ }
+    }
   }
+
   return params
 }
 
@@ -130,20 +187,16 @@ export function getVsParams(): { runDate: string; comparison: string[] }[] {
 
   for (const run of getStaticRuns()) {
     const branches = run.branches
-    // Generate all unique branch pairs
     for (let i = 0; i < branches.length; i++) {
       for (let j = i + 1; j < branches.length; j++) {
-        // main always comes first in the URL
         const [a, b] =
           branches[i].id === 'main'
             ? [branches[i].id, branches[j].id]
             : [branches[j].id, branches[i].id]
         const maxDays = Math.max(branches[i].publishedDays, branches[j].publishedDays)
 
-        // Run-level: /vs/main/alt1-time-slip
         params.push({ runDate: run.runDate, comparison: [a, b] })
 
-        // Day-level: /vs/main/alt1-time-slip/day/N
         for (let d = 1; d <= maxDays; d++) {
           params.push({ runDate: run.runDate, comparison: [a, b, 'day', String(d)] })
         }
@@ -155,59 +208,61 @@ export function getVsParams(): { runDate: string; comparison: string[] }[] {
 }
 
 /**
- * Returns the next unpublished day's artifact content for a branch, if one exists.
- * Used to power the ?preview easter egg — content is embedded at build time and
- * revealed client-side only when the param is present.
+ * Returns the artifact content for a specific day, or null if none exists.
+ * Includes releaseAt — the midnight EST timestamp after which the gate opens
+ * for regular visitors. ?preview bypasses this entirely client-side.
  */
-export function getPendingDay(runDate: string, branch: string): PendingDay | null {
+export function getDayArtifact(
+  runDate: string,
+  branch: string,
+  day: string,
+): DayArtifact | null {
   const runsDir = join(process.cwd(), 'runs')
   if (!existsSync(runsDir)) return null
 
+  const targetDay = parseInt(day, 10)
+
   for (const rootId of readdirSync(runsDir)) {
-    const branchFile = join(runsDir, rootId, 'branches', `branch_${rootId}_${branch}.json`)
+    const branchesDir = join(runsDir, rootId, 'branches')
+    const branchFile = join(branchesDir, `branch_${rootId}_${branch}.json`)
     if (!existsSync(branchFile)) continue
 
-    let branchData: BranchFile
+    // Verify this rootId matches the requested runDate
     try {
-      branchData = JSON.parse(readFileSync(branchFile, 'utf-8'))
-    } catch {
-      continue
-    }
+      const b: BranchFile = JSON.parse(readFileSync(branchFile, 'utf-8'))
+      if (b.created_at.slice(0, 10) !== runDate) continue
+    } catch { continue }
 
-    if (branchData.created_at.slice(0, 10) !== runDate) continue
-
-    const publishedDays = branchData.state?.story_day ?? 0
     const artifactsDir = join(runsDir, rootId, 'artifacts')
     const snapshotsDir = join(runsDir, rootId, 'snapshots')
     if (!existsSync(artifactsDir) || !existsSync(snapshotsDir)) return null
 
     const branchTag = `branch_${rootId}_${branch}`
-    const artifactFiles = readdirSync(artifactsDir).filter(
+    for (const file of readdirSync(artifactsDir).filter(
       (f) => f.includes(branchTag) && f.endsWith('.json'),
-    )
-
-    for (const file of artifactFiles) {
+    )) {
       try {
         const artifact: ArtifactFile = JSON.parse(
           readFileSync(join(artifactsDir, file), 'utf-8'),
         )
-        const snapshotFile = join(snapshotsDir, `${artifact.snapshot_id}.json`)
-        if (!existsSync(snapshotFile)) continue
-        const snapshot: SnapshotFile = JSON.parse(readFileSync(snapshotFile, 'utf-8'))
-        if (snapshot.story_day > publishedDays) {
-          const c = artifact.content ?? {}
-          return {
-            storyDay: snapshot.story_day,
-            title: c.title ?? '',
-            narrative: c.narrative ?? '',
-            stateNote: c.state_note ?? '',
-            summary: c.summary ?? '',
-            tone: c.tone ?? '',
-          }
+        const snapshotPath = join(snapshotsDir, `${artifact.snapshot_id}.json`)
+        if (!existsSync(snapshotPath)) continue
+
+        const snapshot: SnapshotFile = JSON.parse(readFileSync(snapshotPath, 'utf-8'))
+        if (snapshot.story_day !== targetDay) continue
+
+        const c = artifact.content ?? {}
+        return {
+          storyDay: snapshot.story_day,
+          snapshotDate: snapshot.snapshot_date,
+          releaseAt: releaseAtFromSnapshotDate(snapshot.snapshot_date),
+          title: c.title ?? '',
+          tone: c.tone ?? '',
+          narrative: c.narrative ?? '',
+          stateNote: c.state_note ?? '',
+          summary: c.summary ?? '',
         }
-      } catch {
-        // malformed — skip
-      }
+      } catch { /* malformed — skip */ }
     }
   }
 

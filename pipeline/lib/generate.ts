@@ -430,7 +430,12 @@ Keep all suggestions short — they're prompts for the author to accept or overr
 
   const toolUse = response.content.find(b => b.type === 'tool_use')
   if (!toolUse || toolUse.type !== 'tool_use') throw new Error('No tool use in init suggestions response')
-  const result = toolUse.input as InitSuggestions & { branch_decision_suggestion: string }
-  if (result.branch_decision_suggestion === 'none') result.branch_decision_suggestion = null as unknown as 'approve'
-  return result as InitSuggestions
+  type RawSuggestions = Omit<InitSuggestions, 'branch_decision_suggestion'> & { branch_decision_suggestion: string }
+  const raw = toolUse.input as RawSuggestions
+  return {
+    ...raw,
+    branch_decision_suggestion: raw.branch_decision_suggestion === 'none'
+      ? null
+      : raw.branch_decision_suggestion as 'approve' | 'deny' | 'suggest',
+  }
 }

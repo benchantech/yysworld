@@ -3,6 +3,7 @@ import { Breadcrumbs } from '@/components/nav/Breadcrumbs'
 import { BranchSwitcher, type BranchOption } from '@/components/nav/BranchSwitcher'
 import { DayNavigator } from '@/components/nav/DayNavigator'
 import { JsonLd } from '@/components/JsonLd'
+import { GatedArticle } from '@/components/GatedArticle'
 import {
   dayBreadcrumbs,
   dayUrl,
@@ -12,20 +13,17 @@ import {
   formatRunDate,
 } from '@/lib/nav'
 import { schemaBreadcrumbList, schemaArticle } from '@/lib/jsonld'
-import { getDayParams, getStaticRuns, getPendingDay } from '@/lib/runs'
-import { PreviewReveal } from '@/components/PreviewReveal'
+import { getDayParams, getDayArtifact, getRunBranches, getStaticRuns } from '@/lib/runs'
 
 export const dynamicParams = false
+
 export function generateStaticParams(): { runDate: string; branch: string; day: string }[] {
   const params = getDayParams()
   if (params.length > 0) return params
-  // No published days yet. Return a stub per run so the static export can
-  // process this route. day/0 renders an "available tomorrow" state.
-  return getStaticRuns().map((run) => ({
-    runDate: run.runDate,
-    branch: 'main',
-    day: '0',
-  }))
+  // No artifacts yet — return a day/1 stub per run so the static export doesn't fail.
+  return getStaticRuns().flatMap((run) =>
+    run.branches.map((b) => ({ runDate: run.runDate, branch: b.id, day: '1' })),
+  )
 }
 
 interface Params {
@@ -40,33 +38,24 @@ export async function generateMetadata({
   params: Promise<Params>
 }): Promise<Metadata> {
   const { runDate, branch, day } = await params
-  const title = `${formatRunDate(runDate)} · ${formatBranch(branch)} · day ${day}`
+  const artifact = getDayArtifact(runDate, branch, day)
+  const title = artifact?.title
+    ? `${artifact.title} — ${formatBranch(branch)} day ${day}`
+    : `${formatRunDate(runDate)} · ${formatBranch(branch)} · day ${day}`
   const pageUrl = dayUrl('yy', runDate, branch, day)
   return {
     title,
-    // link rel="alternate" type="application/json" → machine data layer (ADR-022)
     alternates: {
       types: { 'application/json': dataUrl(runDate, branch, day) },
     },
     openGraph: {
       title: `${title} — yysworld`,
-      // In production: first sentence of the narrative from snapshot
-      description: `Day ${day} on the ${formatBranch(branch)} path — ${formatRunDate(runDate)} run.`,
+      description: artifact?.summary
+        ?? `Day ${day} on the ${formatBranch(branch)} path — ${formatRunDate(runDate)} run.`,
       type: 'article',
       url: pageUrl,
     },
   }
-}
-
-// Placeholder branch set — in production read from the run manifest.
-function buildBranchOptions(runDate: string, currentBranch: string, day: string): BranchOption[] {
-  const allBranches = ['main'] // expand as branches are added to the run
-  return allBranches.map((b) => ({
-    id: b,
-    label: formatBranch(b),
-    href: dayUrl('yy', runDate, b, day),
-    isCurrent: b === currentBranch,
-  }))
 }
 
 export default async function DayArtifactPage({
@@ -75,45 +64,34 @@ export default async function DayArtifactPage({
   params: Promise<Params>
 }) {
   const { runDate, branch, day } = await params
-
-  // day === '0' is a build stub — no content published yet.
-  if (day === '0') {
-    const breadcrumbs = [
-      { label: 'yysworld', href: '/' as const },
-      { label: 'YY', href: '/yy' as const },
-      { label: formatRunDate(runDate) },
-    ]
-    const pending = getPendingDay(runDate, branch)
-    return (
-      <>
-        <JsonLd schema={schemaBreadcrumbList(breadcrumbs)} />
-        <Breadcrumbs items={breadcrumbs} />
-        <div className="mt-8 space-y-2">
-          <p className="text-sm text-zinc-400">{formatRunDate(runDate)} run</p>
-          <p className="text-xs text-zinc-600">Day 1 available tomorrow.</p>
-        </div>
-        {pending && <PreviewReveal pending={pending} />}
-      </>
-    )
-  }
-
+  const artifact = getDayArtifact(runDate, branch, day)
   const dayNum = parseInt(day, 10)
-  const totalDays = 30 // read from manifest in production
   const pageUrl = dayUrl('yy', runDate, branch, day)
   const breadcrumbs = dayBreadcrumbs('yy', runDate, branch, day)
-  const branches = buildBranchOptions(runDate, branch, day)
-  const altBranches = branches.filter((b) => !b.isCurrent)
 
-  // In production: headline from snapshot.change_summary.notable_shift
-  const headline = `Day ${day} — ${formatBranch(branch)} path, ${formatRunDate(runDate)} run`
+  // Build branch switcher from real run data
+  const allBranches = getRunBranches(runDate)
+  const branchOptions: BranchOption[] = allBranches.map((b) => ({
+    id: b,
+    label: formatBranch(b),
+    href: dayUrl('yy', runDate, b, day),
+    isCurrent: b === branch,
+  }))
+  const altBranches = branchOptions.filter((b) => !b.isCurrent)
+
+  // totalDays: max published across all branches in this run
+  const run = getStaticRuns().find((r) => r.runDate === runDate)
+  const totalDays = run
+    ? Math.max(...run.branches.map((b) => b.publishedDays), dayNum)
+    : dayNum
 
   return (
     <>
       <JsonLd
         schema={[
           schemaArticle({
-            headline,
-            datePublished: runDate,
+            headline: artifact?.title ?? `Day ${day} — ${formatBranch(branch)}`,
+            datePublished: artifact?.snapshotDate ?? runDate,
             pageUrl,
             aboutName: 'YY',
             aboutUrl: '/yy',
@@ -125,7 +103,7 @@ export default async function DayArtifactPage({
 
       <div className="mt-4 space-y-5">
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-          <BranchSwitcher branches={branches} label="switch branch" />
+          <BranchSwitcher branches={branchOptions} label="switch branch" />
           <DayNavigator
             currentDay={dayNum}
             totalDays={totalDays}
@@ -134,20 +112,22 @@ export default async function DayArtifactPage({
           />
         </div>
 
-        <article className="space-y-4">
-          <header className="space-y-1">
-            <h1 className="text-sm font-medium text-zinc-200">
-              {formatRunDate(runDate)} · {formatBranch(branch)} · day {day}
-            </h1>
-          </header>
-
-          {/* Snapshot content — populated by the nightly pipeline */}
+        {artifact ? (
+          <GatedArticle
+            releaseAt={artifact.releaseAt}
+            title={artifact.title}
+            tone={artifact.tone}
+            narrative={artifact.narrative}
+            stateNote={artifact.stateNote}
+            summary={artifact.summary}
+          />
+        ) : (
           <div className="rounded-lg border border-zinc-800 bg-zinc-900/50 px-4 py-4">
             <p className="text-xs text-zinc-600 italic">
-              Day {day} snapshot — populated by the nightly pipeline.
+              Day {day} — content coming soon.
             </p>
           </div>
-        </article>
+        )}
 
         {altBranches.length > 0 && (
           <nav
