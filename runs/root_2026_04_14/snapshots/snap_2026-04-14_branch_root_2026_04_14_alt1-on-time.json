@@ -1,0 +1,72 @@
+{
+  "schema_version": "0.1",
+  "snapshot_id": "snap_2026-04-14_branch_root_2026_04_14_alt1-on-time",
+  "root_id": "root_2026_04_14",
+  "branch_id": "branch_root_2026_04_14_alt1-on-time",
+  "story_day": 1,
+  "snapshot_date": "2026-04-14",
+  "time_policy": "nightly_auto_advance",
+  "package_ref": {
+    "package_id": "yysworld-package-v0.1",
+    "package_created_at": "2026-04-14T23:00:00Z",
+    "package_hash": "sha256:alt1-on-time-seed"
+  },
+  "model_refs": [
+    {
+      "provider": "anthropic",
+      "model_id": "claude-sonnet-4-6",
+      "model_version": "2026-04-14",
+      "role": "generator",
+      "runtime_class": "cloud"
+    }
+  ],
+  "event_refs": [
+    "evt_2026-04-14_001"
+  ],
+  "decision_refs": [],
+  "state_before": {
+    "story_day": 0,
+    "condition": {
+      "health": 0.9,
+      "hunger": 0.3,
+      "attention": 0.65
+    },
+    "inventory": [],
+    "active_burdens": [],
+    "goals": {
+      "primary": "get_through_the_morning",
+      "secondary": "find_something_interesting"
+    },
+    "reaction_overrides": {},
+    "trait_deviations": {},
+    "identity_notes": [
+      "counterfactual branch — same Day 1, woke up on time",
+      "baseline state: fed, alert, no accumulated weight from the morning"
+    ]
+  },
+  "state_after": {
+    "condition": {
+      "health": 0.9,
+      "hunger": 0.15,
+      "attention": 0.75
+    },
+    "inventory": [],
+    "active_burdens": [],
+    "goals": {
+      "primary": "get_through_the_morning",
+      "secondary": "find_something_interesting"
+    },
+    "reaction_overrides": {},
+    "trait_deviations": {},
+    "identity_notes": [
+      "counterfactual branch — same Day 1, woke up on time",
+      "baseline state: fed, alert, no accumulated weight from the morning",
+      "day started without cost — noted as interesting precisely because unremarkable"
+    ]
+  },
+  "change_summary": {
+    "notable_shift": "routine completed without incident; attention slightly elevated by the absence of disruption; quantum day theme registered and filed away",
+    "branch_created": false
+  },
+  "created_at": "2026-04-14T23:00:00Z"
+}

@@ -1,0 +1,37 @@
+{
+  "schema_version": "0.1",
+  "artifact_id": "art_2026-04-14_branch_root_2026_04_14_alt1-on-time_summary",
+  "artifact_type": "daily_summary",
+  "snapshot_id": "snap_2026-04-14_branch_root_2026_04_14_alt1-on-time",
+  "root_id": "root_2026_04_14",
+  "branch_id": "branch_root_2026_04_14_alt1-on-time",
+  "package_ref": {
+    "package_id": "yysworld-package-v0.1",
+    "package_created_at": "2026-04-14T23:00:00Z",
+    "package_hash": "sha256:alt1-on-time-seed"
+  },
+  "model_refs": [
+    {
+      "provider": "anthropic",
+      "model_id": "claude-sonnet-4-6",
+      "model_version": "2026-04-14",
+      "role": "summarizer",
+      "runtime_class": "cloud"
+    }
+  ],
+  "comparison_contract_version": "0.1",
+  "content": {
+    "title": "Nothing to Announce",
+    "tone": "quietly_unremarkable",
+    "narrative": "The light was doing exactly what it was supposed to do.\n\nYY woke up and the sounds were all right. The quiet was morning-quiet, not too-late-quiet. Something registered — the absence of wrongness — before there was enough consciousness to name it.\n\nBreakfast happened.\n\nThis was not remarkable. That was the whole thing about it.\n\nWorld Quantum Day, apparently. YY read this somewhere between the cereal and the first coffee and thought about it for a moment. Time as a thing you could observe and change by observing. The morning had been observed. Nothing had collapsed into something unexpected.\n\nFiled away as interesting. Moved on.",
+    "state_note": "Attention running above baseline. Fed. No weight from the morning. The day starts without cost — a kind of luck that doesn't announce itself, so YY doesn't either.",
+    "summary": "Woke on time, ate, read about quantum time, found the unremarkableness of it faintly interesting.",
+    "state_delta": {
+      "hunger": "0.3 → 0.15",
+      "attention": "0.65 → 0.75",
+      "health": "0.9 → 0.9"
+    },
+    "branch_created": false
+  },
+  "created_at": "2026-04-14T23:00:00Z"
+}
