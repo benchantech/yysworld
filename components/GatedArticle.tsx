@@ -38,12 +38,18 @@ export function GatedArticle({ releaseAt, title, tone, narrative, stateNote, sum
     )
   }
 
-  const paragraphs = narrative.split('\n\n').filter(Boolean)
+  // Strip the first paragraph if it echoes the title (LLMs sometimes repeat it)
+  const normalize = (s: string) => s.replace(/[.\s]+$/, '').toLowerCase()
+  const allParagraphs = narrative.split('\n\n').filter(Boolean)
+  const paragraphs =
+    allParagraphs.length > 0 && normalize(allParagraphs[0]) === normalize(title)
+      ? allParagraphs.slice(1)
+      : allParagraphs
 
   return (
     <article className="space-y-4">
       <header className="space-y-1">
-        <h2 className="text-sm font-medium text-zinc-200">{title}</h2>
+        <h1 className="text-sm font-medium text-zinc-200">{title}</h1>
         {tone && (
           <p className="text-xs text-zinc-600">{tone.replace(/_/g, ' ')}</p>
         )}
