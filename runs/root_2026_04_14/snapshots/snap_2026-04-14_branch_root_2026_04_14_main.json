@@ -1,8 +1,8 @@
 {
   "schema_version": "0.1",
-  "snapshot_id": "snap_2026-04-14_branch_root_2026_04_main",
-  "root_id": "root_2026_04",
-  "branch_id": "branch_root_2026_04_main",
+  "snapshot_id": "snap_2026-04-14_branch_root_2026_04_14_main",
+  "root_id": "root_2026_04_14",
+  "branch_id": "branch_root_2026_04_14_main",
   "story_day": 1,
   "snapshot_date": "2026-04-14",
   "time_policy": "nightly_auto_advance",

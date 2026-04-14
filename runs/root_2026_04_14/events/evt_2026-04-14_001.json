@@ -1,7 +1,7 @@
 {
   "schema_version": "0.1",
   "event_id": "evt_2026-04-14_001",
-  "root_id": "root_2026_04",
+  "root_id": "root_2026_04_14",
   "story_day": 1,
   "occurred_at": "2026-04-14T09:30:00Z",
   "event_type": "missed_routine",

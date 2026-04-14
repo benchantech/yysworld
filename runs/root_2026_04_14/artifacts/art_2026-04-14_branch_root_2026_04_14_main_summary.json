@@ -1,10 +1,10 @@
 {
   "schema_version": "0.1",
-  "artifact_id": "art_2026-04-14_branch_root_2026_04_main_summary",
+  "artifact_id": "art_2026-04-14_branch_root_2026_04_14_main_summary",
   "artifact_type": "daily_summary",
-  "snapshot_id": "snap_2026-04-14_branch_root_2026_04_main",
-  "root_id": "root_2026_04",
-  "branch_id": "branch_root_2026_04_main",
+  "snapshot_id": "snap_2026-04-14_branch_root_2026_04_14_main",
+  "root_id": "root_2026_04_14",
+  "branch_id": "branch_root_2026_04_14_main",
   "package_ref": {
     "package_id": "yysworld-package-v0.1",
     "package_created_at": "2026-04-14T00:10:00Z",

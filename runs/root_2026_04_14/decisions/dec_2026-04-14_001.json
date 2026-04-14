@@ -1,7 +1,7 @@
 {
   "schema_version": "0.1",
   "decision_id": "dec_2026-04-14_001",
-  "root_id": "root_2026_04",
+  "root_id": "root_2026_04_14",
   "source_event_id": "evt_2026-04-14_001",
   "signaled_by": {
     "actor_id": "ben",
