@@ -25,6 +25,7 @@ Each active ADR includes a **Museum lineage** field linking back to the prior th
 - [YYBW-019 — yysworld Supersedes YY's World (Case-002) Entirely](./019-yysworld-supersedes-yys-world-case-002-entirely.md)
 - [YYBW-020 — Public/Private Key Two-Layer Architecture](./020-public-private-key-two-layer-architecture.md)
 - [YYBW-021 — URL Structure and Discoverability: SEO, AEO, GEO Priority Order](./021-url-structure-and-discoverability-seo-aeo-geo.md)
+- [YYBW-022 — URL Design: Human and Machine Layers](./022-url-design-human-and-machine-layers.md)
 
 ---
 

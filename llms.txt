@@ -17,17 +17,18 @@ Built by a human (Ben) for his kids, so they can see what he was thinking.
 ## Data model
 
 - [Character baseline](/yy/baseline.json) — YY's calibrated trait state
-- [Root manifest (2026-04)](/root/2026-04/manifest.json) — April arc, all branches
-- [Ledger (2026-04)](/root/2026-04/ledger.jsonl) — append-only event record, immutable
+- [Run manifest (2026-04)](/yy/data/2026-04/manifest.json) — April arc, all branches
+- [Ledger (2026-04)](/yy/data/2026-04/ledger.jsonl) — append-only event record, immutable
 - [Sitemap](/sitemap.xml) — all published snapshot and compare pages
 
 ## Reasoning
 
-- [ADR index](/docs/adrs/README.md) — 21 active ADRs, each with museum lineage links
-- [ADR 001 — Product thesis](/docs/adrs/001-product-thesis-from-world-builder-to-branching-life-observatory.md)
-- [ADR 019 — Supersession record](/docs/adrs/019-yysworld-supersedes-yys-world-case-002-entirely.md)
-- [ADR 020 — Public/private key architecture](/docs/adrs/020-public-private-key-two-layer-architecture.md)
-- [ADR 021 — URL structure and discoverability](/docs/adrs/021-url-structure-and-discoverability-seo-aeo-geo.md)
+- [ADR index](/adrs/README.md) — 22 active ADRs, each with museum lineage links
+- [ADR 001 — Product thesis](/adrs/001-product-thesis-from-world-builder-to-branching-life-observatory.md)
+- [ADR 019 — Supersession record](/adrs/019-yysworld-supersedes-yys-world-case-002-entirely.md)
+- [ADR 020 — Public/private key architecture](/adrs/020-public-private-key-two-layer-architecture.md)
+- [ADR 021 — URL discoverability priority order](/adrs/021-url-structure-and-discoverability-seo-aeo-geo.md)
+- [ADR 022 — URL design: human and machine layers](/adrs/022-url-design-human-and-machine-layers.md)
 - [Manifest v0.1](/docs/manifest/Manifest_v0.1.md) — highest authority document
 
 ## Museum (lineage)
@@ -45,10 +46,14 @@ Full prior reasoning chain, preserved in chronological order:
 
 ## Content structure
 
-Snapshot pages: `/root/{YYYY-MM}/{branch}/day/{N}`
-Compare pages:  `/root/{YYYY-MM}/compare/{branch-a}/{branch-b}/day/{N}`
-Character:      `/yy`
-Root overview:  `/root/{YYYY-MM}`
+Landing:         `/`
+Character:       `/yy`
+Character about: `/yy/about`
+Snapshot:        `/yy/{YYYY-MM-DD}/{branch}/day/{N}`
+Branch snapshot: `/yy/{YYYY-MM-DD}/alt{n}-{descriptor}/day/{N}`
+Comparison:      `/yy/{YYYY-MM-DD}/vs/{branch-a}/{branch-b}/day/{N}`
+Machine data:    `/yy/data/{YYYY-MM}/{branch}/day/{N}.json`
+Machine ledger:  `/yy/data/{YYYY-MM}/ledger.jsonl`
 
 ## What this is not
 
