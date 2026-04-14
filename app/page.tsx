@@ -25,8 +25,7 @@ export default function HomePage() {
 
       <div className="mt-6 space-y-10">
         <section>
-          <h1 className="text-base font-medium text-zinc-50">yysworld</h1>
-          <p className="mt-2 text-sm text-zinc-400 leading-relaxed max-w-prose">
+          <p className="text-sm text-zinc-400 leading-relaxed max-w-prose">
             Same being. Different paths. Watch how a single character responds to the same
             world under different circumstances — branching, diverging, drifting over time.
           </p>

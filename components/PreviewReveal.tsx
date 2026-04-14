@@ -26,8 +26,6 @@ export function PreviewReveal({ pending }: { pending: PendingDay }) {
       </p>
 
       <article className="space-y-4">
-        <h1 className="text-sm font-medium text-zinc-200">{pending.title}</h1>
-
         <div className="space-y-3">
           {paragraphs.map((p, i) => (
             <p key={i} className="text-sm text-zinc-300 leading-relaxed">
