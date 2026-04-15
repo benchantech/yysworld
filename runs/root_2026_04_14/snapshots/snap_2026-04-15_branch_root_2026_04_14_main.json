@@ -1,0 +1,90 @@
+{
+  "schema_version": "0.1",
+  "snapshot_id": "snap_2026-04-15_branch_root_2026_04_14_main",
+  "root_id": "root_2026_04_14",
+  "branch_id": "branch_root_2026_04_14_main",
+  "story_day": 2,
+  "snapshot_date": "2026-04-15",
+  "time_policy": "nightly_auto_advance",
+  "package_ref": {
+    "package_id": "yysworld-package-v0.1",
+    "package_created_at": "2026-04-15T00:10:00Z",
+    "package_hash": "sha256:9f3a1c8e2b47d06f5e91a2c4b7d3f8e1a5c92b0d4e7f1a3c6b9e2d5f8a1c4b7"
+  },
+  "model_refs": [
+    {
+      "provider": "anthropic",
+      "model_id": "claude-sonnet-4-6",
+      "model_version": "2026-04-15",
+      "role": "generator",
+      "runtime_class": "cloud",
+      "parameters": {
+        "temperature": 0.2,
+        "top_p": 0.95,
+        "max_tokens": 4000,
+        "seed": null
+      }
+    }
+  ],
+  "event_refs": [
+    "evt_2026-04-15_001"
+  ],
+  "decision_refs": [],
+  "state_before": {
+    "story_day": 1,
+    "condition": {
+      "health": 0.9,
+      "food": 0.45,
+      "attention": 0.5
+    },
+    "inventory": [],
+    "active_burdens": [
+      "missed_breakfast"
+    ],
+    "goals": {
+      "primary": "get_through_the_morning",
+      "secondary": "find_something_interesting"
+    },
+    "reaction_overrides": {},
+    "trait_deviations": {
+      "expressive": 0.05,
+      "pragmatic": -0.08
+    },
+    "identity_notes": [
+      "woke up sour",
+      "announced the injustice to no one in particular",
+      "carried the hunger forward without resolving it"
+    ]
+  },
+  "state_after": {
+    "story_day": 2,
+    "condition": {
+      "health": 0.9,
+      "food": 0.58,
+      "attention": 0.4
+    },
+    "inventory": [],
+    "active_burdens": [
+      "cache_deficit"
+    ],
+    "goals": {
+      "primary": "get_through_the_morning",
+      "secondary": "find_something_interesting"
+    },
+    "reaction_overrides": {},
+    "trait_deviations": {
+      "expressive": 0.04,
+      "pragmatic": -0.03
+    },
+    "identity_notes": [
+      "audit confirmed what the body already knew",
+      "ate something in the afternoon — below average, but it counted",
+      "missed_breakfast resolved but promoted to cache_deficit — structural now, not episodic"
+    ]
+  },
+  "change_summary": {
+    "notable_shift": "same obligation landed on a depleted system; audit produced confirmation not revelation; partial food recovery but attention further reduced by depleted-math; missed_breakfast burden resolved into cache_deficit — subtler and harder to shake",
+    "branch_created": false
+  },
+  "created_at": "2026-04-15T23:00:00Z"
+}

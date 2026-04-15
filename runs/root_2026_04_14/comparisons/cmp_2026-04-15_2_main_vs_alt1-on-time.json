@@ -1,0 +1,44 @@
+{
+  "schema_version": "0.1",
+  "comparison_id": "cmp_2026-04-15_2_main_vs_alt1-on-time",
+  "artifact_type": "daily_comparison",
+  "root_id": "root_2026_04_14",
+  "branch_a": "branch_root_2026_04_14_main",
+  "branch_b": "branch_root_2026_04_14_alt1-on-time",
+  "story_day": 2,
+  "snapshot_date": "2026-04-15",
+  "snapshot_ids": [
+    "snap_2026-04-15_branch_root_2026_04_14_main",
+    "snap_2026-04-15_branch_root_2026_04_14_alt1-on-time"
+  ],
+  "package_ref": {
+    "package_id": "yysworld-package-v0.1",
+    "package_created_at": "2026-04-15T00:10:00Z",
+    "package_hash": "sha256:9f3a1c8e2b47d06f5e91a2c4b7d3f8e1a5c92b0d4e7f1a3c6b9e2d5f8a1c4b7"
+  },
+  "model_refs": [
+    {
+      "provider": "anthropic",
+      "model_id": "claude-sonnet-4-6",
+      "model_version": "2026-04-15",
+      "role": "comparator",
+      "runtime_class": "cloud"
+    }
+  ],
+  "content": {
+    "divergence_summary": "The same audit. The same obligation landing at the same time on both branches. Main reads it as confirmation of a problem already in progress. Alt reads it as a successful collapse of uncertainty. The audit didn't create the difference — the difference was already there from Day 1. The accounting just made it measurable.",
+    "branch_a_path": "YY confirmed what the body already knew: behind on the cache, and now officially so. Found something to eat in the afternoon — below average, but it counted. The missed_breakfast burden resolved but promoted itself to cache_deficit on the way out. Subtler. Harder to shake.",
+    "branch_b_path": "YY ran the numbers from adequate starting inventory, found them fine, and accidentally turned the whole thing into a quantum observation metaphor. Slightly too pleased with this. World Art Day filed as a deferred interesting idea.",
+    "key_differences": [
+      "Starting food: main enters Day 2 at 0.45 (depleted, carrying Day 1 debt); alt enters at 0.85 (adequate, no debt). The audit is identical; what it means depends entirely on this single number.",
+      "Attention: main ends Day 2 at 0.40 — doing math while depleted costs extra; alt ends at 0.82 — math from abundance is nearly pleasant when the numbers cooperate.",
+      "Burden trajectory: main exits with cache_deficit (the missed meal pattern became structural, Day 1 episodic burden promoted to Day 2 systemic burden); alt exits clean, nothing accumulated."
+    ],
+    "shared_elements": [
+      "Same audit arrived at the same time — the obligation doesn't check your starting position before landing",
+      "Both versions of YY are self-aware about their reaction to the numbers in their characteristic way",
+      "World Art Day (secondary event) registered in both branches as a deferred interesting idea — not something either YY acted on today"
+    ]
+  },
+  "created_at": "2026-04-15T23:00:00Z"
+}

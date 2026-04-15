@@ -1,0 +1,36 @@
+{
+  "schema_version": "0.1",
+  "event_id": "evt_2026-04-15_001",
+  "root_id": "root_2026_04_14",
+  "story_day": 2,
+  "occurred_at": "2026-04-15T11:00:00Z",
+  "event_type": "obligation_surface",
+  "canonical_truth": {
+    "summary": "The cache audit arrived. Tax Day — the annual reckoning with what you have, what you owe, and whether past-you left present-you in a decent position.",
+    "entities": [
+      "yy",
+      "cache",
+      "ledger",
+      "obligation"
+    ],
+    "location": "home_workspace",
+    "concrete_outcome": "inventory_confirmed_against_obligation"
+  },
+  "perception_prompt": {
+    "noticeable_surface": "The accounting arrived. You knew it was coming — it always comes on the 15th. The question is never whether it will land, only what it will say when it does.",
+    "ambiguity_level": 0.1
+  },
+  "tags": [
+    "obligation",
+    "accounting",
+    "cache_audit",
+    "annual_reckoning",
+    "low_ambiguity"
+  ],
+  "created_at": "2026-04-15T23:00:00Z",
+  "authorial_note": {
+    "real_world_inspiration": "Tax Day (US, April 15 2026) + World Art Day (Leonardo da Vinci's birthday, April 15)",
+    "translation_logic": "Tax Day translates directly to the cache audit — the annual obligation to measure what you have against what you owe. For a squirrel, inventory of stash is not metaphorical. Universally: the day you find out if your accumulation strategy worked. World Art Day (secondary): the tension between accounting for what you already have versus making something new — registers as a deferred interesting idea in both branches.",
+    "restraint_reason": "Day 2 — the event is medium-weight. The audit is not a crisis; it is a measurement. The interesting thing is not what the audit says, but what it means given the wildly different starting positions of the two branches. The event's job is to provide the same input to both and let the divergence do the work."
+  }
+}
