@@ -30,6 +30,7 @@ Each active ADR includes a **Museum lineage** field linking back to the prior th
 - [YYBW-024 — Time-Gated Publication Replaces Deploy-Gated story_day](./024-time-gated-publication-replaces-deploy-gated-story-day.md)
 - [YYBW-025 — ?preview as Permanent Two-Layer Access Pattern](./025-preview-as-permanent-two-layer-access-pattern.md)
 - [YYBW-026 — species and Stat Names as Required Baseline Fields](./026-species-and-stat-names-as-required-baseline-fields.md)
+- [YYBW-027 — Authorship and Authority Emerge from Public, Append-Only Systems](./027-authorship-and-authority-emerge-from-public-append-only-systems.md)
 
 ---
 
