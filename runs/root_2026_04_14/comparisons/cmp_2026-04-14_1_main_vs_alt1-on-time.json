@@ -26,18 +26,18 @@
     }
   ],
   "content": {
-    "divergence_summary": "The fork is a single missed meal — which sounds small until you see what it costs. In the main branch, YY woke into a morning already behind, announced the injustice to no one, and carried the hunger forward unresolved. In the alt branch, YY woke on time, ate, read about quantum time on World Quantum Day, and found the day's unremarkableness faintly interesting. Same world event, same character, same April morning. One version has a burden that didn't need to be there.",
-    "branch_a_path": "YY overslept, missed breakfast, felt the wrongness acutely, said so out loud, and moved on carrying the weight.",
-    "branch_b_path": "YY woke on time, ate, encountered the same time-themed day without disruption, and filed it away as interesting.",
+    "divergence_summary": "The whole fork is one missed meal — which sounds like nothing until you see the day it produces. Main: YY woke behind, announced it to the universe (which did not respond), and carried the hunger into the day like a low-grade complaint. Alt: YY woke on time, hit the cache, got ambushed by World Quantum Day mid-acorn, and found the whole thing genuinely interesting. Same squirrel. Same morning. Same world event. One version has a burden that absolutely did not have to be there.",
+    "branch_a_path": "YY overslept, missed the morning cache, told the universe about it, and moved on carrying the hunger and the grumpiness.",
+    "branch_b_path": "YY woke on time, found the acorns, read about quantum time while eating, and spent the rest of the morning suspicious about how fine everything was.",
     "key_differences": [
-      "Hunger: main carries missed_breakfast as an active burden; alt resolved it before the day started",
-      "Attention: main ends at 0.50 (dampened by low-grade dissatisfaction); alt ends at 0.75 (no drag)",
-      "Emotional register: main is expressive and slightly aggrieved; alt is observant and neutral"
+      "Food: main starts the day without the morning cache and carries it as an active burden; alt is fed before the interesting stuff starts",
+      "Attention: main ends at 0.50 — dulled by background hunger; alt ends at 0.75 — sharp enough to actually sit with World Quantum Day",
+      "Emotional register: main is loudly aggrieved and self-aware about it; alt is cautiously okay with everything and slightly suspicious of that"
     ],
     "shared_elements": [
-      "Same world anchor — World Quantum Day, time as the underlying theme",
-      "Same core restlessness and curiosity; neither branch produces a day of consequence",
-      "Both versions of YY notice the morning rather than just passing through it"
+      "Same anchor: World Quantum Day, time as the underlying theme — both versions of YY clock it",
+      "Same core YY — curious, expressive, restless; neither day is consequential but both feel like YY",
+      "Both versions notice the morning instead of just passing through it — that's just who YY is"
     ]
   },
   "created_at": "2026-04-14T23:00:00Z"
