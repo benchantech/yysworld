@@ -44,6 +44,7 @@ interface StateData {
 interface SnapshotFile {
   story_day: number
   snapshot_date: string
+  branch_id?: string
   state_before?: StateData
   state_after?: StateData
 }
@@ -96,8 +97,9 @@ export interface DayArtifact {
 }
 
 export interface BranchSummary {
-  id: string          // URL-facing id: "main", "alt1-time-slip"
+  id: string            // URL-facing id: "main", "alt1-time-slip"
   publishedDays: number
+  dayReleaseAts: string[] // releaseAt ISO string per day (index 0 = day 1, etc.)
 }
 
 export interface RunSummary {
@@ -126,6 +128,21 @@ export function getStaticRuns(): RunSummary[] {
     const branchFiles = readdirSync(branchesDir).filter((f) => f.endsWith('.json'))
     if (branchFiles.length === 0) continue
 
+    // Build day→releaseAt map per branch from snapshot files
+    const snapshotsDir = join(runsDir, rootId, 'snapshots')
+    const releaseByBranch = new Map<string, Map<number, string>>()
+    if (existsSync(snapshotsDir)) {
+      for (const file of readdirSync(snapshotsDir).filter((f) => f.endsWith('.json'))) {
+        try {
+          const snap: SnapshotFile = JSON.parse(readFileSync(join(snapshotsDir, file), 'utf-8'))
+          if (!snap.branch_id || !snap.story_day || !snap.snapshot_date) continue
+          const urlId = snap.branch_id.replace(`branch_${rootId}_`, '')
+          if (!releaseByBranch.has(urlId)) releaseByBranch.set(urlId, new Map())
+          releaseByBranch.get(urlId)!.set(snap.story_day, releaseAtFromSnapshotDate(snap.snapshot_date))
+        } catch { /* skip */ }
+      }
+    }
+
     let runDate: string | null = null
     let character = 'yy'
     const branches: BranchSummary[] = []
@@ -142,11 +159,14 @@ export function getStaticRuns(): RunSummary[] {
         if (data.character_id) character = data.character_id
 
         const branchId = data.branch_id.replace(`branch_${data.root_id}_`, '')
+        const publishedDays = data.state?.story_day ?? 0
+        const dayMap = releaseByBranch.get(branchId) ?? new Map<number, string>()
+        const dayReleaseAts: string[] = []
+        for (let day = 1; day <= publishedDays; day++) {
+          dayReleaseAts.push(dayMap.get(day) ?? '')
+        }
 
-        branches.push({
-          id: branchId,
-          publishedDays: data.state?.story_day ?? 0,
-        })
+        branches.push({ id: branchId, publishedDays, dayReleaseAts })
       } catch {
         // malformed — skip
       }
