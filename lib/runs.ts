@@ -33,7 +33,7 @@ interface ArtifactFile {
 
 interface ConditionData {
   health?: number
-  hunger?: number
+  food?: number
   attention?: number
 }
 
@@ -78,7 +78,7 @@ export interface ComparisonArtifact {
 
 export interface Condition {
   health: number
-  hunger: number
+  food: number
   attention: number
 }
 
@@ -389,7 +389,7 @@ export function getDayArtifact(
         if (snapshot.story_day !== targetDay) continue
 
         const c = artifact.content ?? {}
-        const zeroCondition: Condition = { health: 0, hunger: 0, attention: 0 }
+        const zeroCondition: Condition = { health: 0, food: 0, attention: 0 }
         const sb = snapshot.state_before?.condition ?? {}
         const sa = snapshot.state_after?.condition ?? {}
         return {
@@ -403,12 +403,12 @@ export function getDayArtifact(
           summary: c.summary ?? '',
           statsBefore: {
             health: sb.health ?? zeroCondition.health,
-            hunger: sb.hunger ?? zeroCondition.hunger,
+            food: sb.food ?? zeroCondition.food,
             attention: sb.attention ?? zeroCondition.attention,
           },
           statsAfter: {
             health: sa.health ?? zeroCondition.health,
-            hunger: sa.hunger ?? zeroCondition.hunger,
+            food: sa.food ?? zeroCondition.food,
             attention: sa.attention ?? zeroCondition.attention,
           },
         }

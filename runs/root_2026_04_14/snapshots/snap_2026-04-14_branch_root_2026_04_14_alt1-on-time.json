@@ -28,7 +28,7 @@
     "story_day": 0,
     "condition": {
       "health": 0.9,
-      "hunger": 0.3,
+      "food": 0.7,
       "attention": 0.65
     },
     "inventory": [],
@@ -47,7 +47,7 @@
   "state_after": {
     "condition": {
       "health": 0.9,
-      "hunger": 0.15,
+      "food": 0.85,
       "attention": 0.75
     },
     "inventory": [],

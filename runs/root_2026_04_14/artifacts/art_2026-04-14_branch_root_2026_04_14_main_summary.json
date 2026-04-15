@@ -29,11 +29,11 @@
   "content": {
     "title": "YY woke up wrong",
     "tone": "mildly_sour_but_moving",
-    "narrative": "YY woke up wrong.\n\nNot sick-wrong. Not danger-wrong. Just — the light was already doing something it shouldn't be doing yet, and the sounds outside were all in the wrong place for morning.\n\nIt took a moment to land.\n\nBreakfast.\n\n\"Oh MAN.\"\n\nNobody heard this. It was said anyway.\n\nYY lay there for another few seconds, not because there was anything to figure out, but because the situation deserved at least that much acknowledgment. Then got up. The hunger was already there, patient and unhelpful, settling in like it planned to stay.\n\nThe day started. Breakfast did not.",
-    "state_note": "Attention running low. Not from anything big — just from the particular flatness of a morning that started without food. The kind of mood that doesn't stop you from doing things. It just makes everything slightly less interesting than it could have been.",
-    "summary": "Missed the morning. Felt it. Said so. Moved on — but not cleanly.",
+    "narrative": "YY woke up wrong.\n\nNot sick-wrong. Not danger-wrong. Just — the light was already doing something it shouldn't be doing yet, and the sounds outside were all in the wrong place for morning.\n\nIt took a moment to land.\n\nAcorns.\n\n\"Oh MAN.\"\n\nNobody heard this. It was said anyway.\n\nYY lay there for another few seconds, not because there was anything to figure out, but because the situation deserved at least that much acknowledgment. Then got up. The hunger was already there, patient and unhelpful, settling in like it planned to stay.\n\nThe day started. The acorns did not.",
+    "state_note": "Attention running low. Not from anything big — just from the particular flatness of a morning that started without acorns. The kind of mood that doesn't stop you from doing things. It just makes everything slightly less interesting than it could have been.",
+    "summary": "Missed the morning cache. Felt it. Said so. Moved on — but not cleanly.",
     "state_delta": {
-      "hunger": "0.3 → 0.55",
+      "food": "0.7 → 0.45",
       "attention": "0.65 → 0.50",
       "burden_carried": "missed_breakfast",
       "branch_created": false

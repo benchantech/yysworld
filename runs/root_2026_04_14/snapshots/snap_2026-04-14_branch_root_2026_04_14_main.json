@@ -34,7 +34,7 @@
     "story_day": 1,
     "condition": {
       "health": 0.9,
-      "hunger": 0.3,
+      "food": 0.7,
       "attention": 0.65
     },
     "inventory": [],
@@ -54,7 +54,7 @@
     "story_day": 1,
     "condition": {
       "health": 0.9,
-      "hunger": 0.55,
+      "food": 0.45,
       "attention": 0.5
     },
     "inventory": [],

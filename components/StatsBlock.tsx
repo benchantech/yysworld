@@ -52,8 +52,8 @@ export function StatsBlock({ statsAfter, statsBefore, storyDay }: Props) {
     <div className="flex flex-col gap-1 shrink-0">
       <StatRow
         emoji="🍗"
-        value={statsAfter.hunger}
-        delta={statsAfter.hunger - statsBefore.hunger}
+        value={statsAfter.food}
+        delta={statsAfter.food - statsBefore.food}
         showDelta={showDelta}
       />
       <StatRow

@@ -23,11 +23,11 @@
   "content": {
     "title": "Nothing to Announce",
     "tone": "quietly_unremarkable",
-    "narrative": "The light was doing exactly what it was supposed to do.\n\nYY woke up and the sounds were all right. The quiet was morning-quiet, not too-late-quiet. Something registered — the absence of wrongness — before there was enough consciousness to name it.\n\nBreakfast happened.\n\nThis was not remarkable. That was the whole thing about it.\n\nWorld Quantum Day, apparently. YY read this somewhere between the cereal and the first coffee and thought about it for a moment. Time as a thing you could observe and change by observing. The morning had been observed. Nothing had collapsed into something unexpected.\n\nFiled away as interesting. Moved on.",
+    "narrative": "The light was doing exactly what it was supposed to do.\n\nYY woke up and the sounds were all right. The quiet was morning-quiet, not too-late-quiet. Something registered — the absence of wrongness — before there was enough consciousness to name it.\n\nAcorns happened.\n\nThis was not remarkable. That was the whole thing about it.\n\nWorld Quantum Day, apparently. YY read this somewhere between the first acorn and the second, balanced on a branch that had no opinion about quantum mechanics. Time as a thing you could observe and change by observing. The morning had been observed. Nothing had collapsed into something unexpected.\n\nFiled away as interesting. Moved on.",
     "state_note": "Attention running above baseline. Fed. No weight from the morning. The day starts without cost — a kind of luck that doesn't announce itself, so YY doesn't either.",
-    "summary": "Woke on time, ate, read about quantum time, found the unremarkableness of it faintly interesting.",
+    "summary": "Woke on time, found the morning cache, read about quantum time, found the unremarkableness of it faintly interesting.",
     "state_delta": {
-      "hunger": "0.3 → 0.15",
+      "food": "0.7 → 0.85",
       "attention": "0.65 → 0.75",
       "health": "0.9 → 0.9"
     },

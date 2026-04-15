@@ -2,6 +2,7 @@
   "schema_version": "0.1",
   "character_id": "yy",
   "name": "YY",
+  "species": "squirrel",
   "baseline_created_at": "2026-04-14T00:00:00Z",
   "baseline_calibrated_at": "2026-04-14T00:00:00Z",
   "calibration_method": "22_scenario_interview",
