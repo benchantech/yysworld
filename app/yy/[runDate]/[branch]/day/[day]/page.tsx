@@ -133,6 +133,9 @@ export default async function DayArtifactPage({
             narrative={artifact.narrative}
             stateNote={artifact.stateNote}
             summary={artifact.summary}
+            storyDay={artifact.storyDay}
+            statsBefore={artifact.statsBefore}
+            statsAfter={artifact.statsAfter}
           />
         ) : (
           <div className="rounded-lg border border-zinc-800 bg-zinc-900/50 px-4 py-4">

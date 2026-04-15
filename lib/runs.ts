@@ -31,9 +31,21 @@ interface ArtifactFile {
   }
 }
 
+interface ConditionData {
+  health?: number
+  hunger?: number
+  attention?: number
+}
+
+interface StateData {
+  condition?: ConditionData
+}
+
 interface SnapshotFile {
   story_day: number
   snapshot_date: string
+  state_before?: StateData
+  state_after?: StateData
 }
 
 interface ComparisonFile {
@@ -64,6 +76,12 @@ export interface ComparisonArtifact {
   sharedElements: string[]
 }
 
+export interface Condition {
+  health: number
+  hunger: number
+  attention: number
+}
+
 export interface DayArtifact {
   storyDay: number
   snapshotDate: string  // "2026-04-14"
@@ -73,6 +91,8 @@ export interface DayArtifact {
   narrative: string
   stateNote: string
   summary: string
+  statsBefore: Condition
+  statsAfter: Condition
 }
 
 export interface BranchSummary {
@@ -369,6 +389,9 @@ export function getDayArtifact(
         if (snapshot.story_day !== targetDay) continue
 
         const c = artifact.content ?? {}
+        const zeroCondition: Condition = { health: 0, hunger: 0, attention: 0 }
+        const sb = snapshot.state_before?.condition ?? {}
+        const sa = snapshot.state_after?.condition ?? {}
         return {
           storyDay: snapshot.story_day,
           snapshotDate: snapshot.snapshot_date,
@@ -378,6 +401,16 @@ export function getDayArtifact(
           narrative: c.narrative ?? '',
           stateNote: c.state_note ?? '',
           summary: c.summary ?? '',
+          statsBefore: {
+            health: sb.health ?? zeroCondition.health,
+            hunger: sb.hunger ?? zeroCondition.hunger,
+            attention: sb.attention ?? zeroCondition.attention,
+          },
+          statsAfter: {
+            health: sa.health ?? zeroCondition.health,
+            hunger: sa.hunger ?? zeroCondition.hunger,
+            attention: sa.attention ?? zeroCondition.attention,
+          },
         }
       } catch { /* malformed — skip */ }
     }

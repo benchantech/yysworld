@@ -1,6 +1,8 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import { StatsBlock } from '@/components/StatsBlock'
+import type { Condition } from '@/lib/runs'
 
 interface Props {
   releaseAt: string   // ISO string — gate opens at this time unless ?preview
@@ -9,6 +11,9 @@ interface Props {
   narrative: string
   stateNote: string
   summary: string
+  storyDay: number
+  statsBefore: Condition
+  statsAfter: Condition
 }
 
 /**
@@ -21,7 +26,7 @@ interface Props {
  *
  * The gate will be replaced with proper auth when moving to Vercel.
  */
-export function GatedArticle({ releaseAt, title, tone, narrative, stateNote, summary }: Props) {
+export function GatedArticle({ releaseAt, title, tone, narrative, stateNote, summary, storyDay, statsBefore, statsAfter }: Props) {
   const [visible, setVisible] = useState(false)
 
   useEffect(() => {
@@ -48,11 +53,14 @@ export function GatedArticle({ releaseAt, title, tone, narrative, stateNote, sum
 
   return (
     <article className="space-y-4">
-      <header className="space-y-1">
-        <h1 className="text-sm font-medium text-zinc-200">{title}</h1>
-        {tone && (
-          <p className="text-xs text-zinc-600">{tone.replace(/_/g, ' ')}</p>
-        )}
+      <header className="flex items-start justify-between gap-3">
+        <div className="space-y-1 min-w-0">
+          <h1 className="text-sm font-medium text-zinc-200">{title}</h1>
+          {tone && (
+            <p className="text-xs text-zinc-600">{tone.replace(/_/g, ' ')}</p>
+          )}
+        </div>
+        <StatsBlock statsAfter={statsAfter} statsBefore={statsBefore} storyDay={storyDay} />
       </header>
 
       <div className="space-y-3">
