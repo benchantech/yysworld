@@ -103,7 +103,7 @@ export default async function DayOgImage({ params }: Props) {
             marginBottom: '28px',
           }}
         >
-          Day {day}
+          {`Day ${day}`}
         </div>
 
         {/* Artifact title if available */}
