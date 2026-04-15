@@ -7,7 +7,7 @@ import { GatedArticle } from '@/components/GatedArticle'
 import {
   dayBreadcrumbs,
   dayUrl,
-  vsUrl,
+  vsDayUrl,
   dataUrl,
   formatBranch,
   formatRunDate,
@@ -153,7 +153,13 @@ export default async function DayArtifactPage({
             {altBranches.map((alt) => (
               <a
                 key={alt.id}
-                href={vsUrl('yy', runDate, branch, alt.id)}
+                href={vsDayUrl(
+                  'yy',
+                  runDate,
+                  branch === 'main' ? branch : alt.id,
+                  branch === 'main' ? alt.id : branch,
+                  day,
+                )}
                 className="text-xs text-zinc-500 hover:text-zinc-300 transition-colors"
               >
                 compare {formatBranch(branch)} vs {alt.label} →
