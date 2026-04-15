@@ -27,15 +27,18 @@ function StatRow({
   delta: number
   showDelta: boolean
 }) {
-  const filled = Math.round(value * BAR_LEN)
-  const bar = '█'.repeat(filled) + '░'.repeat(BAR_LEN - filled)
+  const clamped = Math.max(0, Math.min(1, isNaN(value) ? 0 : value))
+  const filled = Math.round(clamped * BAR_LEN)
   const sign = delta >= 0 ? '+' : '−'
   const abs = Math.abs(Math.round(delta * 100))
 
   return (
     <div className="flex items-center gap-1">
       <span className="w-5 text-center text-sm leading-none">{emoji}</span>
-      <span className={`font-mono text-xs leading-none ${barColor(value)}`}>{bar}</span>
+      <span className="font-mono text-xs leading-none">
+        <span className={barColor(clamped)}>{'█'.repeat(filled)}</span>
+        <span className="text-zinc-700">{'░'.repeat(BAR_LEN - filled)}</span>
+      </span>
       {showDelta && (
         <span className="font-mono text-xs text-zinc-500 w-7 text-right leading-none">
           {sign}{abs}
