@@ -26,6 +26,10 @@ Each active ADR includes a **Museum lineage** field linking back to the prior th
 - [YYBW-020 — Public/Private Key Two-Layer Architecture](./020-public-private-key-two-layer-architecture.md)
 - [YYBW-021 — URL Structure and Discoverability: SEO, AEO, GEO Priority Order](./021-url-structure-and-discoverability-seo-aeo-geo.md)
 - [YYBW-022 — URL Design: Human and Machine Layers](./022-url-design-human-and-machine-layers.md)
+- [YYBW-023 — Temporal Accuracy: Pipeline Timing, Run ID Scheme, and the Day-Zero Exception](./023-temporal-accuracy-pipeline-timing-and-run-id-scheme.md)
+- [YYBW-024 — Time-Gated Publication Replaces Deploy-Gated story_day](./024-time-gated-publication-replaces-deploy-gated-story-day.md)
+- [YYBW-025 — ?preview as Permanent Two-Layer Access Pattern](./025-preview-as-permanent-two-layer-access-pattern.md)
+- [YYBW-026 — species and Stat Names as Required Baseline Fields](./026-species-and-stat-names-as-required-baseline-fields.md)
 
 ---
 
