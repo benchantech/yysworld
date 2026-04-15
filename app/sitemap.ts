@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next'
 import { BASE_URL } from '@/lib/nav'
-import { getStaticRuns } from '@/lib/runs'
+import { getStaticRuns, getVsParams } from '@/lib/runs'
 import { getAdrSlugs } from '@/lib/adrs'
 
 export const dynamic = 'force-static'
@@ -71,5 +71,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }
   }
 
-  return [...staticPages, ...adrPages, ...snapshotPages]
+  // ── Branch comparison pages ──────────────────────────────────────────────
+  const vsPages: MetadataRoute.Sitemap = getVsParams().map(({ runDate, comparison }) => {
+    const [a, b, , day] = comparison
+    const url = day
+      ? `${BASE_URL}/yy/${runDate}/vs/${a}/${b}/day/${day}/`
+      : `${BASE_URL}/yy/${runDate}/vs/${a}/${b}/`
+    return {
+      url,
+      lastModified: now,
+      changeFrequency: 'weekly' as const,
+      priority: 0.75,
+    }
+  })
+
+  return [...staticPages, ...adrPages, ...snapshotPages, ...vsPages]
 }

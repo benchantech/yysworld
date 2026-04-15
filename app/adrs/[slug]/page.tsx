@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation'
 import { Breadcrumbs } from '@/components/nav/Breadcrumbs'
 import { JsonLd } from '@/components/JsonLd'
 import { BASE_URL } from '@/lib/nav'
-import { getAdrBySlug, getAdrSlugs } from '@/lib/adrs'
+import { getAdrBySlug, getAdrSlugs, getActiveAdrs } from '@/lib/adrs'
 import { schemaBreadcrumbList } from '@/lib/jsonld'
 import { renderAdrMarkdown } from '@/lib/mdrender'
 
@@ -56,6 +56,11 @@ export default async function AdrPage({ params }: { params: Promise<Params> }) {
     { label: meta.id },
   ]
 
+  // Build id→slug map so dependsOn citations resolve to specific ADR URLs
+  const adrSlugMap: Record<string, string> = Object.fromEntries(
+    getActiveAdrs().map(a => [a.id, a.slug]),
+  )
+
   const techArticleSchema = {
     '@context': 'https://schema.org',
     '@type': 'TechArticle',
@@ -75,7 +80,9 @@ export default async function AdrPage({ params }: { params: Promise<Params> }) {
       citation: meta.dependsOn.map(dep => ({
         '@type': 'TechArticle',
         identifier: dep,
-        url: `${BASE_URL}/adrs/`,
+        url: adrSlugMap[dep]
+          ? `${BASE_URL}/adrs/${adrSlugMap[dep]}/`
+          : `${BASE_URL}/adrs/`,
       })),
     }),
   }

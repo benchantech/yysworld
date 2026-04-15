@@ -40,9 +40,13 @@ export const metadata: Metadata = {
     follow: true,
     googleBot: { index: true, follow: true },
   },
+  twitter: {
+    card: 'summary_large_image',
+  },
   alternates: {
     types: {
       'text/plain': 'https://yysworld.com/llms.txt',
+      'application/rss+xml': 'https://yysworld.com/feed.xml',
     },
   },
 }
