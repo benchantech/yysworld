@@ -114,7 +114,7 @@ export interface DatasetSchemaInput {
   pageUrl: string // relative URL
 }
 
-const BRANCH_VARIABLES = ['hunger', 'attention', 'active_burdens']
+const BRANCH_VARIABLES = ['food', 'health', 'attention', 'active_burdens']
 
 export function schemaDataset(input: DatasetSchemaInput): object {
   return {

@@ -1,14 +1,16 @@
 import type { MetadataRoute } from 'next'
 import { BASE_URL } from '@/lib/nav'
+import { getStaticRuns } from '@/lib/runs'
+import { getAdrSlugs } from '@/lib/adrs'
 
 export const dynamic = 'force-static'
 
-// Static pages always in the sitemap.
 // Dynamic pages (snapshots, comparisons) are appended by the nightly pipeline,
 // which regenerates this file from published manifests (ADR-021, ADR-009).
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date()
 
+  // ── Static shell pages ───────────────────────────────────────────────────
   const staticPages: MetadataRoute.Sitemap = [
     {
       url: `${BASE_URL}/`,
@@ -17,41 +19,57 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1.0,
     },
     {
-      url: `${BASE_URL}/yy`,
+      url: `${BASE_URL}/yy/`,
       lastModified: now,
       changeFrequency: 'daily',
       priority: 0.9,
     },
     {
-      url: `${BASE_URL}/yy/about`,
+      url: `${BASE_URL}/yy/about/`,
       lastModified: now,
       changeFrequency: 'monthly',
       priority: 0.6,
     },
-    // ADRs — the GEO crown jewels (ADR-021). Served statically from /adrs/.
+    // ADRs — GEO crown jewels (ADR-021)
     {
       url: `${BASE_URL}/adrs/`,
       lastModified: now,
       changeFrequency: 'weekly',
-      priority: 0.7,
+      priority: 0.8,
+    },
+    {
+      url: `${BASE_URL}/adrs/museum/`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.5,
     },
   ]
 
-  // Placeholder: April 2026 run, main branch, day 1–14 (current).
-  // In production: generated from the nightly manifest — all published snapshots.
-  const currentRunDate = '2026-04-01'
-  const currentBranch = 'main'
-  const publishedDays = 14
+  // ── Individual ADR pages ─────────────────────────────────────────────────
+  const adrPages: MetadataRoute.Sitemap = getAdrSlugs().map(slug => ({
+    url: `${BASE_URL}/adrs/${slug}/`,
+    lastModified: now,
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }))
 
-  const snapshotPages: MetadataRoute.Sitemap = Array.from(
-    { length: publishedDays },
-    (_, i) => ({
-      url: `${BASE_URL}/yy/${currentRunDate}/${currentBranch}/day/${i + 1}`,
-      lastModified: now,
-      changeFrequency: 'weekly' as const,
-      priority: 0.8,
-    }),
-  )
+  // ── Published day artifact pages (from real run data) ────────────────────
+  const runs = getStaticRuns()
+  const snapshotPages: MetadataRoute.Sitemap = []
 
-  return [...staticPages, ...snapshotPages]
+  for (const run of runs) {
+    for (const branch of run.branches) {
+      if (branch.publishedDays === 0) continue
+      for (let day = 1; day <= branch.publishedDays; day++) {
+        snapshotPages.push({
+          url: `${BASE_URL}/yy/${run.runDate}/${branch.id}/day/${day}/`,
+          lastModified: now,
+          changeFrequency: 'weekly' as const,
+          priority: 0.8,
+        })
+      }
+    }
+  }
+
+  return [...staticPages, ...adrPages, ...snapshotPages]
 }

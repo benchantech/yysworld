@@ -7,11 +7,14 @@ import { schemaBreadcrumbList, schemaWebSite } from '@/lib/jsonld'
 
 export const metadata: Metadata = {
   title: 'yysworld',
+  description:
+    'Same being, different paths. Watch how YY (a squirrel) responds to the same world under different circumstances — branching, diverging, drifting over time.',
   openGraph: {
-    title: 'yysworld',
-    description: 'Same being, different paths.',
+    title: 'yysworld — branching life observatory',
+    description:
+      'Same being, different paths. Watch how one squirrel responds to the same world under different circumstances. Every branch, every drift, every divergence — traceable.',
     type: 'website',
-    url: '/',
+    url: 'https://yysworld.com/',
   },
 }
 

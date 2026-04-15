@@ -18,12 +18,32 @@ export const metadata: Metadata = {
     default: 'yysworld',
     template: '%s — yysworld',
   },
-  description: 'Same being, different paths. Watch how YY responds to the same world under different circumstances.',
+  description:
+    'Same being, different paths. Watch how YY (a squirrel) responds to the same world under different circumstances — branching, diverging, drifting over time.',
   metadataBase: new URL('https://yysworld.com'),
+  keywords: [
+    'branching narrative',
+    'character simulation',
+    'life observatory',
+    'YY',
+    'branching world',
+    'daily story',
+    'alternate paths',
+  ],
   openGraph: {
     siteName: 'yysworld',
     locale: 'en_US',
     type: 'website',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true },
+  },
+  alternates: {
+    types: {
+      'text/plain': 'https://yysworld.com/llms.txt',
+    },
   },
 }
 
