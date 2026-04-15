@@ -6,6 +6,7 @@ import type {
   GeneratedEvent,
   GeneratedSnapshot,
   GeneratedArtifact,
+  GeneratedComparison,
   BranchEvaluation,
   InitSuggestions,
 } from './types'
@@ -438,4 +439,68 @@ Keep all suggestions short — they're prompts for the author to accept or overr
       ? null
       : raw.branch_decision_suggestion as 'approve' | 'deny' | 'suggest',
   }
+}
+
+// ─── Tool: generate branch comparison ────────────────────────────────────────
+
+const comparisonTool: Anthropic.Tool = {
+  name: 'write_comparison',
+  description: 'Write a comparison of two branch paths for the same story day.',
+  input_schema: {
+    type: 'object' as const,
+    required: ['divergence_summary', 'branch_a_path', 'branch_b_path', 'key_differences', 'shared_elements'],
+    properties: {
+      divergence_summary: { type: 'string' as const, description: 'One paragraph: what the fork was and why it matters for YY.' },
+      branch_a_path: { type: 'string' as const, description: 'One sentence: what happened in branch A.' },
+      branch_b_path: { type: 'string' as const, description: 'One sentence: what happened in branch B.' },
+      key_differences: { type: 'array' as const, items: { type: 'string' as const }, description: '2–3 concrete differences.' },
+      shared_elements: { type: 'array' as const, items: { type: 'string' as const }, description: 'What both branches still share.' },
+    },
+  },
+}
+
+export async function generateComparison(
+  branchAMeta: BranchMeta,
+  branchBMeta: BranchMeta,
+  artifactA: GeneratedArtifact,
+  artifactB: GeneratedArtifact,
+  snapshotA: GeneratedSnapshot,
+  snapshotB: GeneratedSnapshot,
+  ctx: RunContext,
+): Promise<GeneratedComparison> {
+  const storyDay = branchAMeta.publishedDays + 1
+
+  const messages: Anthropic.MessageParam[] = [{
+    role: 'user',
+    content: `Compare the two branch paths for Day ${storyDay}.
+
+BRANCH A (${branchAMeta.urlId}):
+  Title: ${artifactA.title}
+  Summary: ${artifactA.summary}
+  Notable shift: ${snapshotA.change_summary.notable_shift}
+  State: hunger ${snapshotA.state_after.condition.hunger}, attention ${snapshotA.state_after.condition.attention}
+  Burdens: ${snapshotA.state_after.active_burdens.join(', ') || 'none'}
+
+BRANCH B (${branchBMeta.urlId}):
+  Title: ${artifactB.title}
+  Summary: ${artifactB.summary}
+  Notable shift: ${snapshotB.change_summary.notable_shift}
+  State: hunger ${snapshotB.state_after.condition.hunger}, attention ${snapshotB.state_after.condition.attention}
+  Burdens: ${snapshotB.state_after.active_burdens.join(', ') || 'none'}
+
+Write a concise comparison. Focus on what the fork reveals about YY — not just what happened differently, but what it says about who YY is in each path. Restraint applies: don't over-explain.`,
+  }]
+
+  const response = await client.messages.create({
+    model: MODEL,
+    max_tokens: 800,
+    system: systemPrompt(ctx),
+    tools: [comparisonTool],
+    tool_choice: { type: 'any' },
+    messages,
+  })
+
+  const toolUse = response.content.find(b => b.type === 'tool_use')
+  if (!toolUse || toolUse.type !== 'tool_use') throw new Error('No tool use in comparison response')
+  return toolUse.input as GeneratedComparison
 }

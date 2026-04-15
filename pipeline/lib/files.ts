@@ -7,6 +7,7 @@ import type {
   GeneratedEvent,
   GeneratedSnapshot,
   GeneratedArtifact,
+  GeneratedComparison,
   BranchEvaluation,
 } from './types'
 
@@ -256,4 +257,47 @@ export function createBranchFile(
   })
 
   return newBranchId
+}
+
+// ─── Write comparison artifact ────────────────────────────────────────────────
+
+export function writeComparisonArtifact(
+  ctx: RunContext,
+  date: string,
+  storyDay: number,
+  branchA: BranchMeta,
+  branchB: BranchMeta,
+  comparison: GeneratedComparison,
+  snapshotIds: [string, string],
+): string {
+  const comparisonsDir = join(ctx.rootDir, 'comparisons')
+  ensureDir(comparisonsDir)
+
+  const urlA = branchA.urlId
+  const urlB = branchB.urlId
+  const comparisonId = `cmp_${date}_${storyDay}_${urlA}_vs_${urlB}`
+
+  writeJson(join(comparisonsDir, `${comparisonId}.json`), {
+    schema_version: SCHEMA_VERSION,
+    comparison_id: comparisonId,
+    artifact_type: 'daily_comparison',
+    root_id: ctx.rootId,
+    branch_a: branchA.branchId,
+    branch_b: branchB.branchId,
+    story_day: storyDay,
+    snapshot_date: date,
+    snapshot_ids: snapshotIds,
+    package_ref: packageRef(date),
+    model_refs: [modelRef('comparator')],
+    content: {
+      divergence_summary: comparison.divergence_summary,
+      branch_a_path: comparison.branch_a_path,
+      branch_b_path: comparison.branch_b_path,
+      key_differences: comparison.key_differences,
+      shared_elements: comparison.shared_elements,
+    },
+    created_at: new Date().toISOString(),
+  })
+
+  return comparisonId
 }

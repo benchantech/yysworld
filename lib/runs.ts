@@ -36,6 +36,34 @@ interface SnapshotFile {
   snapshot_date: string
 }
 
+interface ComparisonFile {
+  comparison_id: string
+  branch_a: string
+  branch_b: string
+  story_day: number
+  snapshot_date: string
+  content?: {
+    divergence_summary?: string
+    branch_a_path?: string
+    branch_b_path?: string
+    key_differences?: string[]
+    shared_elements?: string[]
+  }
+}
+
+export interface ComparisonArtifact {
+  storyDay: number
+  snapshotDate: string
+  releaseAt: string
+  branchAUrlId: string
+  branchBUrlId: string
+  divergenceSummary: string
+  branchAPath: string
+  branchBPath: string
+  keyDifferences: string[]
+  sharedElements: string[]
+}
+
 export interface DayArtifact {
   storyDay: number
   snapshotDate: string  // "2026-04-14"
@@ -178,33 +206,122 @@ export function getDayParams(): { runDate: string; branch: string; day: string }
 }
 
 /**
- * All published comparison params (run-level and day-level).
+ * All comparison params (run-level and day-level).
+ * Run-level pages exist for any run with 2+ branches.
+ * Day-level pages are derived from comparison artifact files (parallel to getDayParams).
  * Used by: app/yy/[runDate]/vs/[...comparison]/page.tsx
- * Returns [] until a second branch is added to a run.
  */
 export function getVsParams(): { runDate: string; comparison: string[] }[] {
+  const runsDir = join(process.cwd(), 'runs')
+  if (!existsSync(runsDir)) return []
+
   const params: { runDate: string; comparison: string[] }[] = []
+  const seenRunLevel = new Set<string>()
 
-  for (const run of getStaticRuns()) {
-    const branches = run.branches
-    for (let i = 0; i < branches.length; i++) {
-      for (let j = i + 1; j < branches.length; j++) {
-        const [a, b] =
-          branches[i].id === 'main'
-            ? [branches[i].id, branches[j].id]
-            : [branches[j].id, branches[i].id]
-        const maxDays = Math.max(branches[i].publishedDays, branches[j].publishedDays)
+  for (const rootId of readdirSync(runsDir)) {
+    // Derive runDate from branches
+    let runDate: string | null = null
+    const branchesDir = join(runsDir, rootId, 'branches')
+    if (!existsSync(branchesDir)) continue
+    const branchFiles = readdirSync(branchesDir).filter((f) => f.endsWith('.json'))
+    if (branchFiles.length < 2) continue  // need at least 2 branches for vs
 
-        params.push({ runDate: run.runDate, comparison: [a, b] })
+    // Collect branch urlIds
+    const urlIds: string[] = []
+    for (const file of branchFiles) {
+      try {
+        const b: BranchFile = JSON.parse(readFileSync(join(branchesDir, file), 'utf-8'))
+        if (!runDate && b.created_at) runDate = b.created_at.slice(0, 10)
+        urlIds.push(b.branch_id.replace(`branch_${rootId}_`, ''))
+      } catch { /* skip */ }
+    }
+    if (!runDate) continue
 
-        for (let d = 1; d <= maxDays; d++) {
-          params.push({ runDate: run.runDate, comparison: [a, b, 'day', String(d)] })
-        }
+    // Run-level: one page per branch pair (always exists once 2 branches exist)
+    const main = urlIds.find((id) => id === 'main')
+    const alts = urlIds.filter((id) => id !== 'main')
+    for (const alt of alts) {
+      const key = `${runDate}/main/${alt}`
+      if (!seenRunLevel.has(key)) {
+        seenRunLevel.add(key)
+        params.push({ runDate, comparison: [main ?? urlIds[0], alt] })
       }
+    }
+
+    // Day-level: derived from comparison artifact files
+    const comparisonsDir = join(runsDir, rootId, 'comparisons')
+    if (!existsSync(comparisonsDir)) continue
+
+    for (const file of readdirSync(comparisonsDir).filter((f) => f.endsWith('.json'))) {
+      try {
+        const cmp: ComparisonFile = JSON.parse(readFileSync(join(comparisonsDir, file), 'utf-8'))
+        const urlA = cmp.branch_a.replace(`branch_${rootId}_`, '')
+        const urlB = cmp.branch_b.replace(`branch_${rootId}_`, '')
+        const [a, b] = urlA === 'main' ? [urlA, urlB] : [urlB, urlA]
+        params.push({ runDate, comparison: [a, b, 'day', String(cmp.story_day)] })
+      } catch { /* skip */ }
     }
   }
 
   return params
+}
+
+/**
+ * Returns comparison artifact content for a branch pair + day, or null if none exists.
+ */
+export function getComparisonArtifact(
+  runDate: string,
+  branchA: string,
+  branchB: string,
+  day: string,
+): ComparisonArtifact | null {
+  const runsDir = join(process.cwd(), 'runs')
+  if (!existsSync(runsDir)) return null
+
+  const targetDay = parseInt(day, 10)
+
+  for (const rootId of readdirSync(runsDir)) {
+    // Verify runDate matches
+    const branchesDir = join(runsDir, rootId, 'branches')
+    if (!existsSync(branchesDir)) continue
+    const firstBranch = readdirSync(branchesDir).filter((f) => f.endsWith('.json'))[0]
+    if (!firstBranch) continue
+    try {
+      const b: BranchFile = JSON.parse(readFileSync(join(branchesDir, firstBranch), 'utf-8'))
+      if (b.created_at.slice(0, 10) !== runDate) continue
+    } catch { continue }
+
+    const comparisonsDir = join(runsDir, rootId, 'comparisons')
+    if (!existsSync(comparisonsDir)) return null
+
+    for (const file of readdirSync(comparisonsDir).filter((f) => f.endsWith('.json'))) {
+      try {
+        const cmp: ComparisonFile = JSON.parse(readFileSync(join(comparisonsDir, file), 'utf-8'))
+        if (cmp.story_day !== targetDay) continue
+
+        const urlA = cmp.branch_a.replace(`branch_${rootId}_`, '')
+        const urlB = cmp.branch_b.replace(`branch_${rootId}_`, '')
+        // Match regardless of argument order
+        if (!((urlA === branchA && urlB === branchB) || (urlA === branchB && urlB === branchA))) continue
+
+        const c = cmp.content ?? {}
+        return {
+          storyDay: cmp.story_day,
+          snapshotDate: cmp.snapshot_date,
+          releaseAt: releaseAtFromSnapshotDate(cmp.snapshot_date),
+          branchAUrlId: urlA,
+          branchBUrlId: urlB,
+          divergenceSummary: c.divergence_summary ?? '',
+          branchAPath: c.branch_a_path ?? '',
+          branchBPath: c.branch_b_path ?? '',
+          keyDifferences: c.key_differences ?? [],
+          sharedElements: c.shared_elements ?? [],
+        }
+      } catch { /* skip */ }
+    }
+  }
+
+  return null
 }
 
 /**

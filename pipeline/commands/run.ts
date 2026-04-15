@@ -3,18 +3,20 @@ import { readInbox, findQueueEntry } from '../lib/inbox'
 import {
   generateSnapshot,
   generateArtifact,
+  generateComparison,
   evaluateBranch,
 } from '../lib/generate'
 import {
   writeEvent,
   writeSnapshot,
   writeArtifact,
+  writeComparisonArtifact,
   writeDecision,
   updateBranchFile,
   createBranchFile,
 } from '../lib/files'
 import { stageRuns, commit, push, hasChanges } from '../lib/git'
-import type { GeneratedSnapshot, GeneratedEvent } from '../lib/types'
+import type { GeneratedSnapshot, GeneratedEvent, GeneratedArtifact, BranchMeta } from '../lib/types'
 
 const REPO_ROOT = new URL('../../', import.meta.url).pathname.replace(/\/$/, '')
 
@@ -50,8 +52,15 @@ export async function runCommand(args: string[]): Promise<void> {
   if (effectiveIntent) log(`author intent: "${effectiveIntent}"`)
   if (inbox.event_hint) log(`event hint: "${inbox.event_hint}"`)
 
-  // Track output per branch for commit message
+  // Track output per branch for commit message and comparison generation
   const daySummaries: string[] = []
+  const branchResults = new Map<string, {
+    branch: BranchMeta
+    storyDay: number
+    snapshot: GeneratedSnapshot
+    artifact: GeneratedArtifact
+    snapshotId: string
+  }>()
 
   // main branch must go first so alts can contrast against it
   let mainEvent: GeneratedEvent | null = null
@@ -99,8 +108,31 @@ export async function runCommand(args: string[]): Promise<void> {
     // Update branch file
     updateBranchFile(ctx, branch, snapshot, storyDay)
 
+    branchResults.set(branch.urlId, { branch, storyDay, snapshot, artifact, snapshotId })
     daySummaries.push(`${branch.urlId} day ${storyDay}: ${artifact.summary}`)
     log(`done: ${branch.urlId} — "${artifact.title}"`)
+  }
+
+  // Generate comparison artifacts for each branch pair (main vs each alt)
+  const mainResult = branchResults.get('main')
+  if (mainResult) {
+    for (const [urlId, altResult] of branchResults) {
+      if (urlId === 'main') continue
+      log(`generating comparison: main vs ${urlId}`)
+      const comparison = await generateComparison(
+        mainResult.branch, altResult.branch,
+        mainResult.artifact, altResult.artifact,
+        mainResult.snapshot, altResult.snapshot,
+        ctx,
+      )
+      writeComparisonArtifact(
+        ctx, targetDate, mainResult.storyDay,
+        mainResult.branch, altResult.branch,
+        comparison,
+        [mainResult.snapshotId, altResult.snapshotId],
+      )
+      log(`comparison written: main vs ${urlId}`)
+    }
   }
 
   // Commit and push

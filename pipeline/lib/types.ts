@@ -120,6 +120,14 @@ export interface BranchEvaluation {
   branching_focus: string
 }
 
+export interface GeneratedComparison {
+  divergence_summary: string   // one paragraph: what the fork point was and why it matters
+  branch_a_path: string        // one sentence: what branch A's day looked like
+  branch_b_path: string        // one sentence: what branch B's day looked like
+  key_differences: string[]    // 2–3 concrete differences
+  shared_elements: string[]    // what both branches still have in common
+}
+
 export interface InitSuggestions {
   event_hint: string
   notes: string
