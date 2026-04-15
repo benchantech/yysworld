@@ -1,11 +1,13 @@
 # /pipeline-go
 
-You are the nightly pipeline for YY's branching world. Run this command when the user opens their laptop in the morning. It has two phases:
+You are the nightly pipeline for YY's branching world. Run this when the user opens their laptop in the morning.
 
-1. **PUBLISH** — generate and commit yesterday's story content
+Two phases:
+
+1. **PUBLISH** — propose, confirm, generate, commit yesterday's story content
 2. **QUEUE** — interactively collect today's inbox entry so tomorrow is ready
 
-No API key needed. You are the model.
+No external API key needed. You are the model.
 
 ---
 
@@ -13,63 +15,127 @@ No API key needed. You are the model.
 
 ### Step 1 — Determine dates
 
-- Yesterday: one day before today's date (`currentDate` in system context)
+- Yesterday: one day before `currentDate` in system context
 - Today: today's date
+- Story day for this run: `publishedDays + 1` per branch
 
 ### Step 2 — Load context
 
-Read these files to build your working context:
+Read these files:
 
 ```
-runs/
-  {rootId}/
-    baseline/yy_baseline.json          ← character baseline
-    branches/{branchId}.json           ← one per branch (all active)
-    snapshots/*.json                   ← recent snapshots for continuity
-    artifacts/*.json                   ← recent artifacts for style reference
-    inbox/{yesterday}.json             ← author's queued entry (may not exist)
-    inbox/queue/*.json                 ← fallback queue entries
+runs/{rootId}/baseline/yy_baseline.json
+runs/{rootId}/branches/{branchId}.json       ← one per branch (all active)
+runs/{rootId}/snapshots/*.json               ← recent snapshots for continuity
+runs/{rootId}/artifacts/*.json               ← recent artifacts for style reference
+runs/{rootId}/inbox/{yesterday}.json         ← author's queued entry (may not exist)
+runs/{rootId}/inbox/queue/*.json             ← fallback queue entries
 ```
 
 To find rootId: list `runs/` directory. Use the most recent `root_YYYY_MM_DD` directory with active branches.
 
-Branches must be processed **main first**, then alts in alphabetical order. For each branch file, the `urlId` is the branch_id with `branch_{rootId}_` prefix stripped (e.g. `branch_root_2026_04_14_main` → `main`).
+Branches: main first, then alts alphabetically. Strip `branch_{rootId}_` prefix for urlId.
 
 `publishedDays` = `state.story_day` from the branch file.
 
-The inbox entry for yesterday may be at `runs/{rootId}/inbox/{yesterday}.json` or in `runs/{rootId}/inbox/queue/{yesterday}.json`. If neither exists, proceed with no hints.
+### Step 3 — Orient
 
-Recent author_intent: scan inbox files older than yesterday, take the most recent non-empty `author_intent`.
+After loading, show:
 
-### Step 3 — Check: already run?
+```
+── ORIENT ──────────────────────────────────────
+run: {rootId}   started: {runDate}
+branches:
+  main           day {N}  food {f} · health {h} · attention {a}{  ·  burden: X, Y}
+  alt1-on-time   day {N}  food {f} · health {h} · attention {a}
+inbox: {found / not found}
+generating: day {N+1} for {yesterday}
+────────────────────────────────────────────────
+```
 
-If a snapshot file already exists at `runs/{rootId}/snapshots/snap_{yesterday}_{branchId}.json` for the main branch, log "already published for {yesterday}" and skip to Phase 2.
+### Step 4 — Check: already run?
 
-### Step 4 — Generate event + snapshot (per branch)
+If a snapshot file already exists at `runs/{rootId}/snapshots/snap_{yesterday}_{branchId}.json` for the main branch, tell the user and ask if they want to skip to Phase 2.
 
-For each branch (main first), generate the canonical event and state delta for `storyDay = publishedDays + 1`.
+### Step 5 — PROPOSE event
 
-**YY character rules** (from baseline):
+Pre-think the event before asking anything. Reason about:
+- What likely happened in the real world on {yesterday} (seasonal, calendar, cultural)
+- How it translates to YY's abstracted world
+- What the perception surface is for YY
 
-Core traits: curious 1.0, expressive 0.9, easily_surprised 0.85, distractible 0.85, stubborn 0.75, prosocial 0.75, pragmatic 0.7, restless 0.7, randomly_eloquent 0.65, stream_of_consciousness 0.45, disciplined 0.2
+Then show the proposal and pause:
 
-Values: friendship, food, music, language, technology, bedtime_stories, fair_trade
+```
+── EVENT PROPOSAL ───────────────────────────────
+hook:   {real_world_inspiration}
+type:   {event_type}
+YY sees: "{perception_prompt.noticeable_surface}"
+tags:   {tag1}, {tag2}, ...
+why:    {translation_logic — one sentence}
 
-Failure boundaries (never cross): cynical, negative, detached, corrupt, violent, lying, cheating, vulgar, arrogant
+[enter to accept · or describe the day instead]
+```
 
-Default reactions: scarcity→trade_or_assess, anger→cower, surprise→be_surprised, monotony→get_restless, challenge→energize, mystery→get_curious, hardship→endure, beauty→compress
+Wait for user response before proceeding. If they type something, use it as the event_hint override.
 
-Identity rules:
-- gains_require_corresponding_losses
-- opposites_of_core_traits_are_possible_but_noteworthy
+### Step 6 — PROPOSE per-branch plans
 
-**Generation rules:**
-- Use `event_hint` from inbox if present; otherwise use seasonal/contextual reasoning for the date
-- For alt branches: contrast against main branch outcome (alt should feel meaningfully different — same world, different inner state)
-- State values (health, hunger, attention) are 0–1 floats; drift naturally from prior state
-- `identity_notes` array accumulates — keep prior notes, add new ones only for genuine shifts
+Using the confirmed event, pre-think the state trajectory and narrative direction for each branch (main first). Then show one proposal per branch and pause after each:
 
-**Event schema** (write to `runs/{rootId}/events/evt_{yesterday}_{NNN}.json`):
+```
+── {urlId} · day {N+1} ──────────────────────────
+state in: food {f} · health {h} · attention {a}{  ·  burden: X}
+
+proposed:
+  title:  "{proposed title}"
+  tone:   {tone}
+  shift:  food {f}→{f2} · attention {a}→{a2}{  ·  +burden: Y / -burden: X}
+  moment: {one sentence — what actually happens and how it resolves}
+  why different from {other branch}: {one clause, if alt branch}
+
+[enter to accept · or describe what should change]
+```
+
+Wait for user response after each branch. If they type something, use it as branch-specific guidance.
+
+### Step 7 — PROPOSE branch evaluation
+
+After main branch plan is confirmed, show the branch evaluation and pause:
+
+```
+── BRANCH EVALUATION ────────────────────────────
+signal:     {should branch: yes/no}  (confidence: {0.X})
+reason:     {reason — one sentence}
+focus:      {what the branch would track, or "—"}
+
+[enter to accept · approve / deny to override]
+```
+
+### Step 8 — FINAL CONFIRM
+
+Show a summary of everything confirmed and wait for final go-ahead:
+
+```
+── READY TO COMMIT ──────────────────────────────
+{yesterday} → day {N+1}
+
+  main:            "{title}"  [{tone}]
+  alt1-on-time:    "{title}"  [{tone}]
+  comparison:      main vs on-time
+
+  branch created:  {yes: alt{N}-{name} / no}
+
+[enter to generate, write, and commit]
+```
+
+### Step 9 — Generate event file
+
+Using the confirmed event (and any user overrides), generate the event object and write to `runs/{rootId}/events/evt_{yesterday}_{NNN}.json`.
+
+NNN = count of existing files in `events/` + 1, zero-padded to 3 digits. All branches share one event file per day.
+
+**Event schema:**
 
 ```json
 {
@@ -99,9 +165,21 @@ Identity rules:
 }
 ```
 
-NNN = count of existing files in `events/` + 1, zero-padded to 3 digits (e.g. `001`). All branches share the same event file for a given day (one event per day per run, not per branch).
+### Step 10 — Generate snapshot + artifact per branch
 
-**Snapshot schema** (write to `runs/{rootId}/snapshots/snap_{yesterday}_{branchId}.json`):
+For each branch (main first), generate snapshot and narrative artifact using confirmed plans and user overrides.
+
+**YY character rules:**
+
+Core traits: curious 1.0, expressive 0.9, easily_surprised 0.85, distractible 0.85, stubborn 0.75, prosocial 0.75, pragmatic 0.7, restless 0.7, randomly_eloquent 0.65, stream_of_consciousness 0.45, disciplined 0.2
+
+Values: friendship, food, music, language, technology, bedtime_stories, fair_trade
+
+Failure boundaries (never cross): cynical, negative, detached, corrupt, violent, lying, cheating, vulgar, arrogant
+
+State stats are `food`, `health`, `attention` (0–1 floats). Field name is `food`, not `hunger`.
+
+**Snapshot schema:**
 
 ```json
 {
@@ -120,9 +198,9 @@ NNN = count of existing files in `events/` + 1, zero-padded to 3 digits (e.g. `0
   "model_refs": [{"provider": "anthropic", "model_id": "claude-code-subscription", "role": "generator", "runtime_class": "interactive"}],
   "event_refs": ["{eventId}"],
   "decision_refs": [],
-  "state_before": { ...branch current state... },
+  "state_before": { ...branch current state (use food, not hunger)... },
   "state_after": {
-    "condition": {"health": 0.0, "hunger": 0.0, "attention": 0.0},
+    "condition": {"health": 0.0, "food": 0.0, "attention": 0.0},
     "inventory": [],
     "active_burdens": [],
     "goals": {"primary": "...", "secondary": "..."},
@@ -138,20 +216,15 @@ NNN = count of existing files in `events/` + 1, zero-padded to 3 digits (e.g. `0
 }
 ```
 
-### Step 5 — Generate narrative artifact (per branch)
-
-For each branch, write a narrative artifact.
-
 **Narrative style:**
 - Third person — "YY", not "I"
-- Short paragraphs. Direct sentences.
-- Concrete sensory details: what YY sees, hears, feels, notices
+- Short paragraphs, direct sentences
+- Concrete sensory details
 - Emotional honesty without melodrama
-- When YY speaks, keep it brief and in character
 - Restraint is a feature. Don't over-explain.
-- The title should be evocative. It must NOT be repeated as the first line of the narrative — open in scene instead.
+- Title must NOT be repeated as the first line of the narrative — open in scene
 
-**Artifact schema** (write to `runs/{rootId}/artifacts/art_{yesterday}_{branchId}_summary.json`):
+**Artifact schema:**
 
 ```json
 {
@@ -171,7 +244,7 @@ For each branch, write a narrative artifact.
     "state_note": "...",
     "summary": "One sentence. Past tense.",
     "state_delta": {
-      "hunger": "0.X → 0.Y",
+      "food": "0.X → 0.Y",
       "attention": "0.X → 0.Y",
       "health": "0.X → 0.Y"
     },
@@ -181,93 +254,51 @@ For each branch, write a narrative artifact.
 }
 ```
 
-### Step 6 — Evaluate branching (main branch only)
+### Step 11 — Write comparison artifact
 
-Check inbox for `branch_decision`:
-- `"deny"` → no branch, skip
-- `"approve"` → branch, choose name and reason
-- `"suggest"` or absent → evaluate based on notable_shift and trait_deviations
+After both branches are written, generate and write the comparison.
 
-A branch is warranted when something genuinely unexpected happened — a shift that diverges meaningfully from what YY would normally do. Small perturbations are not enough.
-
-If branching:
-- New urlId format: `alt{N}-{descriptor}` where N = current alt count + 1
-- New branchId: `branch_{rootId}_alt{N}-{descriptor}`
-
-**Decision schema** (always write, even if no branch):
-
-Write to `runs/{rootId}/decisions/dec_{yesterday}_{NNN}.json`:
+**Comparison schema** (`runs/{rootId}/comparisons/cmp_{yesterday}_{storyDay}_main_vs_{altUrlId}.json`):
 
 ```json
 {
   "schema_version": "0.1",
-  "decision_id": "dec_{yesterday}_{NNN}",
+  "comparison_id": "cmp_{yesterday}_{storyDay}_main_vs_{altUrlId}",
+  "artifact_type": "daily_comparison",
   "root_id": "{rootId}",
-  "source_event_id": "{eventId}",
-  "signaled_by": {"actor_id": "pipeline", "actor_role": "evaluator"},
-  "signaled_at": "{now ISO}",
-  "decision_type": "create_branch",
-  "reason": {
-    "core_statement": "...",
-    "branching_focus": "...",
-    "confidence": 0.0
+  "branch_a": "{mainBranchId}",
+  "branch_b": "{altBranchId}",
+  "story_day": {storyDay},
+  "snapshot_date": "{yesterday}",
+  "snapshot_ids": ["{mainSnapshotId}", "{altSnapshotId}"],
+  "package_ref": { ...same... },
+  "model_refs": [{"provider": "anthropic", "model_id": "claude-code-subscription", "role": "comparator", "runtime_class": "interactive"}],
+  "content": {
+    "divergence_summary": "...",
+    "branch_a_path": "...",
+    "branch_b_path": "...",
+    "key_differences": ["..."],
+    "shared_elements": ["..."]
   },
-  "proposed_mutation": {
-    "mutation_id": "mut_{yesterday}_{NNN}",
-    "mutation_type": "branch_divergence",
-    "branch_id": "...",
-    "summary": "..."
-  },
-  "decision_status": "evaluated_no_branch",
   "created_at": "{now ISO}"
 }
 ```
 
-`decision_status`: `"executed"` if branch created, `"evaluated_no_branch"` if not.
+### Step 12 — Write decision file (always, even if no branch)
 
-If branching, also create `runs/{rootId}/branches/{newBranchId}.json`:
+Write to `runs/{rootId}/decisions/dec_{yesterday}_{NNN}.json`. Set `decision_status` to `"executed"` if branched, `"evaluated_no_branch"` otherwise.
 
-```json
-{
-  "schema_version": "0.1",
-  "branch_id": "{newBranchId}",
-  "root_id": "{rootId}",
-  "parent_branch_id": "{mainBranchId}",
-  "character_id": "yy",
-  "created_at": "{now ISO}",
-  "status": "active",
-  "state": {
-    ...state_after from main snapshot...,
-    "story_day": {storyDay},
-    "identity_notes": [...state_after.identity_notes, "branched from main on day {storyDay}: {branching_focus}"]
-  },
-  "drift_flags": [],
-  "last_updated_at": "{now ISO}"
-}
-```
+If branching, also create `runs/{rootId}/branches/{newBranchId}.json` using `state_after` from the main snapshot.
 
-### Step 7 — Update branch files
+### Step 13 — Update branch files
 
-For each branch, update `runs/{rootId}/branches/{branchId}.json`:
+For each branch, update `runs/{rootId}/branches/{branchId}.json`. Read existing file first, merge — preserve all fields not being updated. Update `state` to match `state_after` from the snapshot (use `food`, not `hunger`). Set `story_day` to the new value. Set `last_updated_at` to now.
 
-```json
-{
-  ...existing content...,
-  "state": {
-    ...state_after from snapshot...,
-    "story_day": {storyDay}
-  },
-  "last_updated_at": "{now ISO}"
-}
-```
+### Step 14 — Git commit and push
 
-Read existing file first, merge (preserve all fields not being updated).
+Stage: `runs/` only.
 
-### Step 8 — Git commit and push
-
-Stage: `runs/` directory only.
-
-Commit message format:
+Commit message:
 ```
 nightly: {yesterday} — day {storyDay}
 
@@ -277,7 +308,24 @@ nightly: {yesterday} — day {storyDay}
 Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>
 ```
 
-Then push.
+Push.
+
+### Step 15 — Preview URLs
+
+After pushing, show preview URLs so the user can verify content immediately (before the midnight gate opens):
+
+```
+── PREVIEW ──────────────────────────────────────
+Content published. Active with ?preview now:
+
+  https://yysworld.com/yy/{runDate}/main/day/{storyDay}/?preview
+  https://yysworld.com/yy/{runDate}/{altUrlId}/day/{storyDay}/?preview
+  https://yysworld.com/yy/{runDate}/vs/main/{altUrlId}/day/{storyDay}/?preview
+
+Publishes publicly at midnight EST ({yesterday+1}T05:00:00Z).
+GitHub Actions deploy: https://github.com/benchantech/yysworld/actions
+─────────────────────────────────────────────────
+```
 
 ---
 
@@ -287,19 +335,19 @@ After the commit, immediately run an interactive session to queue tomorrow's con
 
 Tell the user: "Published {yesterday} (day {storyDay}). Now let's queue {today}."
 
-Pre-think your suggestions for all fields before asking the user anything. Suggest:
-1. `event_hint` — what likely happened in the real world on {today} (use seasonal/calendar reasoning)
+Pre-think suggestions for all fields before asking anything. Suggest:
+1. `event_hint` — what likely happened in the real world on {today}
 2. `notes` — day-level tone suggestion
 3. Per-branch narrative seed for each active branch
 4. Branch decision signal (approve / deny / suggest / none) and why
 
-Then ask one question at a time, in this order:
+Then ask one question at a time:
 
 1. **event hint** — show suggestion in brackets. Enter = accept, type to override.
 2. **notes** — show suggestion. Enter = accept.
 3. **author intent** — show current carrying value if any. Enter = keep, type to change, `clear` to drop.
 4. **{urlId}** (one per branch) — show branch seed suggestion. Enter = accept.
-5. **branch signal** — show `{suggestion} — {reason}` or `none — {reason}`. Enter = none, or type `approve` / `deny` / `suggest`.
+5. **branch signal** — show `{suggestion} — {reason}`. Enter = none, type `approve` / `deny` / `suggest`.
 
 After collecting all answers, write `runs/{rootId}/inbox/{today}.json`:
 
@@ -318,7 +366,7 @@ After collecting all answers, write `runs/{rootId}/inbox/{today}.json`:
 }
 ```
 
-Omit fields that are blank/null. Only include `author_intent` if explicitly set or cleared this session.
+Omit fields that are blank/null.
 
 Confirm: "Queued {today} → runs/{rootId}/inbox/{today}.json"
 
@@ -326,6 +374,7 @@ Confirm: "Queued {today} → runs/{rootId}/inbox/{today}.json"
 
 ## Error handling
 
-- If no active run found: "No active run found in runs/. Has the run been initialized?"
-- If Phase 1 already complete for yesterday: skip to Phase 2 without re-generating
-- If push fails: report the error, leave files committed locally
+- No active run: "No active run found in runs/."
+- Phase 1 already complete: skip to Phase 2 (tell the user)
+- Push fails: report the error, leave committed locally
+- Branch file has `hunger` field instead of `food`: read it as `food` (ADR-026 correction — old branch files used the wrong field name)

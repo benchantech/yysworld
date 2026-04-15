@@ -24,7 +24,7 @@ export interface Baseline {
 
 export interface BranchState {
   story_day: number
-  condition: { health: number; hunger: number; attention: number }
+  condition: { health: number; food: number; attention: number }
   inventory: string[]
   active_burdens: string[]
   goals: { primary: string; secondary: string }
@@ -85,7 +85,7 @@ export interface GeneratedEvent {
 }
 
 export interface GeneratedStateAfter {
-  condition: { health: number; hunger: number; attention: number }
+  condition: { health: number; food: number; attention: number }
   inventory: string[]
   active_burdens: string[]
   goals: { primary: string; secondary: string }

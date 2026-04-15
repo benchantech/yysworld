@@ -65,7 +65,7 @@ function recentHistoryBlock(ctx: RunContext): string {
 function branchStateBlock(branch: BranchMeta): string {
   const s = branch.currentState
   return JSON.stringify({
-    hunger: s.condition.hunger,
+    food: s.condition.food ?? (s.condition as unknown as Record<string, number>)['hunger'],
     attention: s.condition.attention,
     health: s.condition.health,
     active_burdens: s.active_burdens,
@@ -126,7 +126,7 @@ const snapshotTool: Anthropic.Tool = {
             type: 'object' as const,
             properties: {
               health: { type: 'number' as const },
-              hunger: { type: 'number' as const },
+              food: { type: 'number' as const },
               attention: { type: 'number' as const },
             },
           },
@@ -262,7 +262,7 @@ ${JSON.stringify(event.canonical_truth, null, 2)}
 PERCEPTION PROMPT: ${event.perception_prompt.noticeable_surface}
 
 STATE CHANGE:
-  hunger: ${snapshot.state_before.condition.hunger} → ${snapshot.state_after.condition.hunger}
+  food: ${snapshot.state_before.condition.food} → ${snapshot.state_after.condition.food}
   attention: ${snapshot.state_before.condition.attention} → ${snapshot.state_after.condition.attention}
   new burdens: ${snapshot.state_after.active_burdens.join(', ') || 'none'}
   identity: ${snapshot.state_after.identity_notes.join('; ')}
@@ -294,7 +294,7 @@ The narrative should open in scene, not with the title.`,
   const before = snapshot.state_before.condition
   const after = snapshot.state_after.condition
   result.state_delta = {
-    hunger: `${before.hunger} → ${after.hunger}`,
+    food: `${before.food} → ${after.food}`,
     attention: `${before.attention} → ${after.attention}`,
     health: `${before.health} → ${after.health}`,
   }
@@ -478,14 +478,14 @@ BRANCH A (${branchAMeta.urlId}):
   Title: ${artifactA.title}
   Summary: ${artifactA.summary}
   Notable shift: ${snapshotA.change_summary.notable_shift}
-  State: hunger ${snapshotA.state_after.condition.hunger}, attention ${snapshotA.state_after.condition.attention}
+  State: food ${snapshotA.state_after.condition.food}, attention ${snapshotA.state_after.condition.attention}
   Burdens: ${snapshotA.state_after.active_burdens.join(', ') || 'none'}
 
 BRANCH B (${branchBMeta.urlId}):
   Title: ${artifactB.title}
   Summary: ${artifactB.summary}
   Notable shift: ${snapshotB.change_summary.notable_shift}
-  State: hunger ${snapshotB.state_after.condition.hunger}, attention ${snapshotB.state_after.condition.attention}
+  State: food ${snapshotB.state_after.condition.food}, attention ${snapshotB.state_after.condition.attention}
   Burdens: ${snapshotB.state_after.active_burdens.join(', ') || 'none'}
 
 Write a concise comparison. Focus on what the fork reveals about YY — not just what happened differently, but what it says about who YY is in each path. Restraint applies: don't over-explain.`,
