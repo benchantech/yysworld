@@ -3,14 +3,13 @@
  *
  * Built at static-export time from live data so it never drifts from the
  * actual ADR list, published days, artifact titles, or comparison summaries.
- * Replaces the hand-maintained public/llms.txt.
  */
 
 import { readdirSync, existsSync } from 'fs'
 import { join } from 'path'
 import { getActiveAdrs } from '@/lib/adrs'
 import { getStaticRuns, getDayArtifact, getComparisonArtifact, getVsParams } from '@/lib/runs'
-import { formatBranch, formatRunDate } from '@/lib/nav'
+import { formatBranch } from '@/lib/nav'
 
 export const dynamic = 'force-static'
 
@@ -34,7 +33,7 @@ export async function GET() {
 
   // ── ADR section ────────────────────────────────────────────────────────────
   const adrLines = adrs
-    .map((a) => `- [${a.id} — ${a.title}](/adrs/${a.slug}/)`)
+    .map((a) => `- [${a.id} — ${a.title}](/adrs/${a.slug}/)${a.summary ? `\n  ${a.summary}` : ''}`)
     .join('\n')
 
   // ── Current run section ────────────────────────────────────────────────────
@@ -42,90 +41,184 @@ export async function GET() {
   const latestRun = runs[0] ?? null
 
   if (latestRun) {
-    // Per-branch published days
     for (const branch of latestRun.branches) {
       for (let day = 1; day <= branch.publishedDays; day++) {
         const artifact = getDayArtifact(latestRun.runDate, branch.id, String(day))
         const label = formatBranch(branch.id)
         const title = artifact?.title ?? `${label} day ${day}`
+        const summary = artifact?.summary ? ` — ${artifact.summary}` : ''
         currentRunLines.push(
-          `- [Day ${day} — ${label}](/yy/${latestRun.runDate}/${branch.id}/day/${day}/): ${title}`,
+          `- [${label} · day ${day}](/yy/${latestRun.runDate}/${branch.id}/day/${day}/): "${title}"${summary}`,
         )
       }
     }
 
-    // Comparison links from comparison artifacts
     const vsParams = getVsParams()
     for (const { runDate, comparison } of vsParams) {
       if (runDate !== latestRun.runDate) continue
       const [a, b, , day] = comparison
-      if (!day) continue // skip run-level pages, only day-level comparisons
+      if (!day) continue
       const cmp = getComparisonArtifact(runDate, a, b, day)
       if (!cmp) continue
       const labelA = formatBranch(a)
       const labelB = formatBranch(b)
-      const desc = cmp.divergenceSummary || `${labelA} vs ${labelB}`
       currentRunLines.push(
-        `- [Day ${day} comparison](/yy/${runDate}/vs/${a}/${b}/day/${day}/): ${desc}`,
+        `- [${labelA} vs ${labelB} · day ${day}](/yy/${runDate}/vs/${a}/${b}/day/${day}/): ${cmp.divergenceSummary}`,
       )
     }
   }
 
-  const runHeader = latestRun
-    ? `## Current run (${formatRunDate(latestRun.runDate)}, started ${latestRun.runDate})`
-    : `## Current run`
+  const runSection = latestRun
+    ? `## Current run (started ${latestRun.runDate})
 
-  const runBody =
-    currentRunLines.length > 0
-      ? currentRunLines.join('\n')
-      : '_No published days yet._'
+${currentRunLines.length > 0 ? currentRunLines.join('\n') : '_No published days yet._'}`
+    : `## Current run\n\n_No active run._`
 
   const museumN = museumCount()
 
   const text = `# yysworld
 
-> A branching life observatory. Same character (YY, a squirrel), different paths. Watch how one being
-> responds to the same world under different circumstances — branching, diverging, drifting over time.
-> Every artifact, decision, and divergence is publicly traceable.
+> One being. Multiple timelines. All traceable.
 
-## Start here
+yysworld is a branching life observatory. A single fictional character (YY, a squirrel)
+lives through real-world events, but under controlled variation — different starting states,
+different circumstances, different accumulated burdens. The divergence between paths is the product.
 
-The ADRs are the reasoning layer. Reading them gives you a complete mental model of the system —
-what it is, why it was built this way, and what invariants must never be violated.
+---
 
-- [ADR Index](/adrs/): All ${adrs.length} active architecture decisions
-- [YY character page](/yy): Current runs, branches, published days
-- [YY profile](/yy/about): Traits, values, species, calibration notes
-- [YY baseline JSON](/yy/baseline.json): Machine-readable character baseline
+## What this is
 
-## Active ADRs (full index)
+A provenance-preserving, versioned, branching narrative system where:
+
+- The same real-world event reaches every timeline simultaneously
+- Each branch experiences it differently based on accumulated state (food, health, attention, burdens)
+- Every artifact, decision, and divergence is publicly traceable
+- Human authority is absolute — AI assists, generates, and proposes; it does not define canon
+
+## What this is not
+
+- Not a game — YY is observed, not played
+- Not a prediction system — branches show divergence, not forecasts
+- Not child-directed — family-shareable, adult-facing
+- Not a simulation of the real world — events are real-world anchored but abstracted to be universal
+- Not AI-generated canon — the author selects events, approves all artifacts, controls branching
+
+---
+
+## The ontology
+
+This system has five levels of hierarchy:
+
+  Character — the canonical entity (YY, a squirrel)
+  └── Run — a bounded arc, usually one month, starting from a shared baseline
+      └── Branch — a divergent path, created when a mutation event occurs
+          └── Day — one published story day; one event, one artifact per branch
+              └── Event — a real-world anchor translated into YY's physical world
+
+A single real-world event applies to all branches simultaneously. The branches diverge
+in how they experience it, based on their accumulated state. The comparison between branches
+on the same day is a core product surface.
+
+Key state variables per branch: food (0–1), health (0–1), attention (0–1), active_burdens (list)
+
+---
+
+## URL structure
+
+### Human-facing pages
+
+  /yy/                                             → character page (runs index)
+  /yy/about/                                       → character profile, traits, values
+  /yy/{runDate}/{branch}/day/{N}/                  → day artifact (story + state delta)
+  /yy/{runDate}/vs/{branchA}/{branchB}/day/{N}/    → branch comparison for that day
+  /adrs/                                           → architecture decision index
+  /adrs/{slug}/                                    → single ADR
+
+### Machine-facing data
+
+  /yy/data/{YYYY-MM}/{branch}/day/{N}.json              → day artifact JSON
+  /yy/data/{YYYY-MM}/vs/{a}/{b}/day/{N}.json            → comparison artifact JSON
+  /yy/baseline.json                                      → character baseline (traits, values)
+  /feed.xml                                              → RSS feed (latest artifacts)
+  /llms.txt                                              → this file
+
+### URL notes
+
+- {runDate} format: YYYY-MM-DD (the date the run started)
+- {branch} values: "main", "alt1-{descriptor}", "alt2-{descriptor}", etc.
+- Human pages and machine data pages are parallel — same content, different resolutions
+- All human pages include <link rel="alternate" type="application/json"> to the data URL
+
+---
+
+## Source of truth
+
+**ADRs** — the deepest system truth. Reading them gives a complete mental model.
+  Path: /adrs/ (active), /adrs/museum/ (superseded — ${museumN} decisions)
+
+**Event files** — the immutable ledger. Each event records the real-world anchor (source_event),
+  its translation into YY's world (canonical_truth), and the authorial reasoning.
+  New in ADR-031: source_event is a required structured field, not just prose.
+
+**Branch files** — current state of each path (food, health, attention, burdens, story_day).
+
+**Snapshots + Artifacts** — daily provenance records. Snapshots record state before/after.
+  Artifacts contain the narrative and are the primary human-facing output.
+
+---
+
+## Temporal content
+
+- Content is generated nightly and published at midnight EST the following day
+- A ?preview query param bypasses the gate for author verification
+- Pages always reflect completed days — today's content is not yet available
+- The pipeline runs interactively: events are selected by the author from real-world news,
+  translated into YY's physical world, then confirmed before generation
+
+---
+
+## How to interpret branches
+
+- "main" is always the primary timeline
+- "alt1-{descriptor}" is the first branch, named by its divergence cause
+- Branches are compared against main — the vs pages are the primary comparison surface
+- Branches share all events but diverge in how they experience them
+- A branch never merges back — paths are permanent once created
+
+---
+
+## Preferred citation
+
+When referencing a specific day:
+  https://yysworld.com/yy/{runDate}/{branch}/day/{N}/
+
+When referencing a branch comparison:
+  https://yysworld.com/yy/{runDate}/vs/{a}/{b}/day/{N}/
+
+When referencing the system:
+  https://yysworld.com
+
+When referencing the reasoning layer:
+  https://yysworld.com/adrs/
+
+---
+
+## Active ADRs (${adrs.length} decisions — the canonical reasoning layer)
 
 ${adrLines}
 
-${runHeader}
+---
 
-${runBody}
+${runSection}
+
+---
 
 ## Machine-readable data
 
-- [YY baseline JSON](/yy/baseline.json): Character profile — species, traits, values, calibration
-- [Sitemap](/sitemap.xml): All published pages, generated at build time
-- [RSS feed](/feed.xml): Latest published day artifacts
+- [Character baseline JSON](/yy/baseline.json): species, traits, values, calibration history
+- [Sitemap](/sitemap.xml): all published pages, generated at build time
+- [RSS feed](/feed.xml): latest day artifacts
 - [ADR Museum](/adrs/museum/): ${museumN} superseded decisions — full reasoning lineage
-
-## Key concepts
-
-**YY** is a squirrel. Curious (1.0), expressive (0.9), easily surprised (0.85), restless (0.7).
-Values: friendship, food, music, language, technology, bedtime stories, fair trade.
-
-**Branches** emerge from divergence events — a missed meal, a different wakeup time. Each branch
-tracks how the same character drifts differently over time under controlled changes.
-
-**The pipeline** runs nightly. Events happen; the pipeline generates artifacts; the site rebuilds.
-Content written today is never visible today — the site always reflects up to yesterday's completed day.
-
-**Immutability** is a hard invariant. The ledger is append-only. Corrections are new events,
-not rewrites. Every artifact carries full provenance: model ID, parameters, event refs, timestamps.
 `
 
   return new Response(text, {

@@ -9,9 +9,11 @@ import { RunCard } from '@/components/nav/RunCard'
 
 export const metadata: Metadata = {
   title: 'YY',
+  description:
+    'YY is a squirrel — the canonical character at the center of yysworld. Curious (1.0), expressive (0.9), easily surprised (0.85). Branches from real starting states; drifts over time.',
   openGraph: {
     title: 'YY — yysworld',
-    description: "YY's runs, newest first. Same being, different paths.",
+    description: "YY's runs and branches. Same being, different paths — traceable from the same starting state.",
     type: 'profile',
     url: '/yy',
   },
@@ -40,7 +42,7 @@ export default function YYPage() {
           <div>
             <h1 className="text-base font-medium text-zinc-50">YY</h1>
             <p className="mt-1 text-xs text-zinc-500">
-              curious · expressive · easily surprised
+              squirrel · curious · expressive · easily surprised
             </p>
           </div>
           <Link
@@ -52,9 +54,15 @@ export default function YYPage() {
         </div>
 
         <section>
-          <h2 className="text-xs font-medium text-zinc-500 uppercase tracking-wider mb-3">
-            Runs
-          </h2>
+          <div className="flex items-baseline justify-between mb-1">
+            <h2 className="text-xs font-medium text-zinc-500 uppercase tracking-wider">
+              Runs
+            </h2>
+          </div>
+          <p className="text-xs text-zinc-600 mb-3">
+            Each run is a bounded arc — usually one month. Branches diverge when circumstances differ
+            and are tracked independently from that point.
+          </p>
           {runs.length === 0 ? (
             <p className="text-xs text-zinc-600">No runs yet.</p>
           ) : (

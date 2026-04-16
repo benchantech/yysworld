@@ -56,9 +56,14 @@ export default async function AdrPage({ params }: { params: Promise<Params> }) {
     { label: meta.id },
   ]
 
-  // Build id→slug map so dependsOn citations resolve to specific ADR URLs
+  const allAdrs = getActiveAdrs()
+  const currentIndex = allAdrs.findIndex(a => a.slug === slug)
+  const prevAdr = currentIndex > 0 ? allAdrs[currentIndex - 1] : null
+  const nextAdr = currentIndex < allAdrs.length - 1 ? allAdrs[currentIndex + 1] : null
+
+  // Build id→slug map so dependsOn citations resolve to specific ADR pages
   const adrSlugMap: Record<string, string> = Object.fromEntries(
-    getActiveAdrs().map(a => [a.id, a.slug]),
+    allAdrs.map(a => [a.id, a.slug]),
   )
 
   const techArticleSchema = {
@@ -110,7 +115,7 @@ export default async function AdrPage({ params }: { params: Promise<Params> }) {
                 <span key={dep}>
                   {i > 0 && ', '}
                   <a
-                    href={`/adrs/`}
+                    href={adrSlugMap[dep] ? `/adrs/${adrSlugMap[dep]}/` : '/adrs/'}
                     className="text-zinc-500 hover:text-zinc-300 transition-colors"
                   >
                     {dep}
@@ -131,17 +136,28 @@ export default async function AdrPage({ params }: { params: Promise<Params> }) {
           aria-label="ADR navigation"
           className="mt-8 pt-4 border-t border-zinc-800 flex justify-between text-xs text-zinc-600"
         >
-          <a href="/adrs/" className="hover:text-zinc-300 transition-colors">
-            ← all decisions
-          </a>
-          {meta.num > 1 && (
-            <a
-              href={`/adrs/`}
-              className="hover:text-zinc-300 transition-colors"
-            >
-              index →
-            </a>
-          )}
+          <div>
+            {prevAdr ? (
+              <a href={`/adrs/${prevAdr.slug}/`} className="hover:text-zinc-300 transition-colors">
+                ← {prevAdr.id}
+              </a>
+            ) : (
+              <a href="/adrs/" className="hover:text-zinc-300 transition-colors">
+                ← all decisions
+              </a>
+            )}
+          </div>
+          <div>
+            {nextAdr ? (
+              <a href={`/adrs/${nextAdr.slug}/`} className="hover:text-zinc-300 transition-colors">
+                {nextAdr.id} →
+              </a>
+            ) : (
+              <a href="/adrs/" className="hover:text-zinc-300 transition-colors">
+                index →
+              </a>
+            )}
+          </div>
         </nav>
       </div>
     </>

@@ -17,6 +17,12 @@ export function SiteHeader() {
           >
             YY
           </Link>
+          <Link
+            href="/adrs/"
+            className="text-xs text-zinc-500 hover:text-zinc-200 transition-colors"
+          >
+            ADRs
+          </Link>
         </nav>
       </div>
     </header>

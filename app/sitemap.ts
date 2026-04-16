@@ -1,12 +1,10 @@
 import type { MetadataRoute } from 'next'
 import { BASE_URL } from '@/lib/nav'
 import { getStaticRuns, getVsParams } from '@/lib/runs'
-import { getAdrSlugs } from '@/lib/adrs'
+import { getActiveAdrs } from '@/lib/adrs'
 
 export const dynamic = 'force-static'
 
-// Dynamic pages (snapshots, comparisons) are appended by the nightly pipeline,
-// which regenerates this file from published manifests (ADR-021, ADR-009).
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date()
 
@@ -30,7 +28,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.6,
     },
-    // ADRs — GEO crown jewels (ADR-021)
     {
       url: `${BASE_URL}/adrs/`,
       lastModified: now,
@@ -45,15 +42,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ]
 
-  // ── Individual ADR pages ─────────────────────────────────────────────────
-  const adrPages: MetadataRoute.Sitemap = getAdrSlugs().map(slug => ({
-    url: `${BASE_URL}/adrs/${slug}/`,
-    lastModified: now,
+  // ── Individual ADR pages — lastmod from actual ADR date ──────────────────
+  const adrPages: MetadataRoute.Sitemap = getActiveAdrs().map(adr => ({
+    url: `${BASE_URL}/adrs/${adr.slug}/`,
+    lastModified: adr.date ? new Date(adr.date) : now,
     changeFrequency: 'monthly' as const,
     priority: 0.7,
   }))
 
-  // ── Published day artifact pages (from real run data) ────────────────────
+  // ── Published day artifact pages ─────────────────────────────────────────
   const runs = getStaticRuns()
   const snapshotPages: MetadataRoute.Sitemap = []
 
@@ -61,11 +58,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     for (const branch of run.branches) {
       if (branch.publishedDays === 0) continue
       for (let day = 1; day <= branch.publishedDays; day++) {
+        // lastmod: the releaseAt for this day (when it became public)
+        const releaseAt = branch.dayReleaseAts[day - 1]
         snapshotPages.push({
           url: `${BASE_URL}/yy/${run.runDate}/${branch.id}/day/${day}/`,
-          lastModified: now,
+          lastModified: releaseAt ? new Date(releaseAt) : now,
           changeFrequency: 'weekly' as const,
-          priority: 0.8,
+          priority: branch.id === 'main' ? 0.85 : 0.8,
         })
       }
     }

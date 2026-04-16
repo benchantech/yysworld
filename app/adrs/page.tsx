@@ -5,20 +5,21 @@ import { BASE_URL } from '@/lib/nav'
 import { getActiveAdrs } from '@/lib/adrs'
 import { schemaBreadcrumbList } from '@/lib/jsonld'
 
-export const metadata: Metadata = {
-  title: 'Architecture Decisions',
-  description:
-    '23 active ADRs covering product thesis, character design, data architecture, URL structure, and discoverability. The complete reasoning chain behind yysworld.',
-  openGraph: {
-    title: 'Architecture Decisions — yysworld',
-    description:
-      '23 active ADRs. Every decision that shapes YY Branching World, with full context, alternatives considered, and invariants preserved.',
-    type: 'article',
-    url: `${BASE_URL}/adrs/`,
-  },
-  alternates: {
-    types: { 'text/plain': '/llms.txt' },
-  },
+export async function generateMetadata(): Promise<Metadata> {
+  const adrs = getActiveAdrs()
+  return {
+    title: 'Architecture Decisions',
+    description: `${adrs.length} active ADRs covering product thesis, character design, data architecture, URL structure, and discoverability. The complete reasoning chain behind yysworld.`,
+    openGraph: {
+      title: 'Architecture Decisions — yysworld',
+      description: `${adrs.length} active ADRs. Every decision that shapes YY Branching World, with full context, alternatives considered, and invariants preserved.`,
+      type: 'article',
+      url: `${BASE_URL}/adrs/`,
+    },
+    alternates: {
+      types: { 'text/plain': '/llms.txt' },
+    },
+  }
 }
 
 const breadcrumbs = [
@@ -33,8 +34,7 @@ export default function AdrsIndexPage() {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
     name: 'yysworld Architecture Decision Records',
-    description:
-      'Complete ADR index for YY Branching World — 23 active decisions with full context, alternatives, and invariants.',
+    description: `Complete ADR index for YY Branching World — ${adrs.length} active decisions with full context, alternatives, and invariants.`,
     url: `${BASE_URL}/adrs/`,
     hasPart: adrs.map(adr => ({
       '@type': 'TechArticle',
@@ -54,13 +54,13 @@ export default function AdrsIndexPage() {
         <header className="space-y-2">
           <h1 className="text-sm font-medium text-zinc-200">Architecture Decisions</h1>
           <p className="text-xs text-zinc-500 leading-relaxed max-w-prose">
-            The full reasoning chain behind yysworld. {adrs.length} active decisions covering product
-            thesis, character design, data architecture, URL structure, and discoverability. ADRs are
-            the GEO crown jewels — an LLM reading this index understands the system more fully than
-            one reading a hundred rendered pages.
+            {adrs.length} active decisions covering product thesis, character design, data architecture,
+            URL structure, and discoverability. An LLM reading this index understands the system more
+            fully than one reading a hundred rendered pages. ADRs are the source of truth — everything
+            else is a projection.
           </p>
           <p className="text-xs text-zinc-600">
-            <a href="/llms.txt" className="hover:text-zinc-400 transition-colors">llms.txt</a>
+            <a href="/llms.txt" className="hover:text-zinc-400 transition-colors font-mono">/llms.txt</a>
             {' · '}
             <a href="/adrs/museum/" className="hover:text-zinc-400 transition-colors">museum (57 superseded)</a>
           </p>
@@ -108,8 +108,8 @@ export default function AdrsIndexPage() {
             <a href="/adrs/museum/" className="text-zinc-500 hover:text-zinc-300 transition-colors">
               museum
             </a>
-            . Covers three eras: Case-002: YY's World (24), Pre-Manifest (19), Starter Kit v0.1 (14).
-            Per ADR-014: old ADRs are not deleted — corrections are new events, not silent rewrites.
+            . Covers three eras: Case-002: YY&apos;s World (24), Pre-Manifest (19), Starter Kit v0.1 (14).
+            Per ADR-027: corrections are new events, not silent rewrites.
           </p>
         </section>
       </div>
