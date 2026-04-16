@@ -1,0 +1,18 @@
+{
+  "schema_version": "0.1",
+  "decision_id": "dec_2026-04-15_001",
+  "root_id": "root_2026_04_14",
+  "story_day": 3,
+  "decision_date": "2026-04-15",
+  "decision_status": "evaluated_no_branch",
+  "signal": "no",
+  "confidence": 0.2,
+  "reason": "both branches diverge in texture not trajectory — urgency vs. curiosity over the same territory; no fork event, no identity split worth tracking separately",
+  "focus": null,
+  "event_refs": ["evt_2026-04-15_003"],
+  "snapshot_refs": [
+    "snap_2026-04-16_branch_root_2026_04_14_main",
+    "snap_2026-04-16_branch_root_2026_04_14_alt1-on-time"
+  ],
+  "created_at": "2026-04-16T09:00:00Z"
+}

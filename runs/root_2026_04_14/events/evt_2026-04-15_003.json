@@ -1,0 +1,25 @@
+{
+  "schema_version": "0.1",
+  "event_id": "evt_2026-04-15_003",
+  "root_id": "root_2026_04_14",
+  "story_day": 3,
+  "occurred_at": "2026-04-15T12:00:00Z",
+  "event_type": "sensory_confusion / foraging_impulse",
+  "canonical_truth": {
+    "summary": "An unusual, specific hunger arrived mid-morning — sharper and more directed than typical. The squirrel brain registered something in the ambient signal and misrouted it as appetite. The east cache was avoided. Foraging went west into unfamiliar territory.",
+    "entities": ["YY", "hunger_signal", "west_territory", "food_source_unknown"],
+    "location": "west of established range",
+    "concrete_outcome": "YY foraged west, found a new food source, ate partially"
+  },
+  "perception_prompt": {
+    "noticeable_surface": "The hunger arrived with unusual specificity. Not the usual slow graying-out — a signal. Something about the word Hungary had been in the noise. The squirrel brain doesn't always sort these carefully.",
+    "ambiguity_level": 0.6
+  },
+  "tags": ["hunger", "wordplay", "foraging", "cache_avoidance", "territory_expansion"],
+  "created_at": "2026-04-16T09:00:00Z",
+  "authorial_note": {
+    "real_world_inspiration": "Hungary votes out Orbán — the word 'Hungary' arrives in ambient signal and is misrouted as appetite",
+    "translation_logic": "The word 'Hungary' arrives in the world's signal and gets misrouted — YY doesn't know why they're suddenly 25% more hungry, only that they are; cache avoidance from Day 2 sends the foraging outward into new territory",
+    "restraint_reason": "The wordplay causation stays entirely implicit — YY never knows why the hunger was specific, only that it was"
+  }
+}

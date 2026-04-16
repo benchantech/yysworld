@@ -1,0 +1,70 @@
+{
+  "schema_version": "0.1",
+  "snapshot_id": "snap_2026-04-16_branch_root_2026_04_14_main",
+  "root_id": "root_2026_04_14",
+  "branch_id": "branch_root_2026_04_14_main",
+  "story_day": 3,
+  "snapshot_date": "2026-04-16",
+  "time_policy": "nightly_auto_advance",
+  "package_ref": {
+    "package_id": "yysworld-pipeline-v0.1",
+    "package_created_at": "2026-04-16T09:00:00Z",
+    "package_hash": "sha256:claude-code-subscription"
+  },
+  "model_refs": [{"provider": "anthropic", "model_id": "claude-code-subscription", "role": "generator", "runtime_class": "interactive"}],
+  "event_refs": ["evt_2026-04-15_003"],
+  "decision_refs": [],
+  "state_before": {
+    "story_day": 2,
+    "condition": {
+      "health": 0.9,
+      "food": 0.58,
+      "attention": 0.4
+    },
+    "inventory": [],
+    "active_burdens": ["cache_deficit"],
+    "goals": {
+      "primary": "get_through_the_morning",
+      "secondary": "find_something_interesting"
+    },
+    "reaction_overrides": {},
+    "trait_deviations": {
+      "expressive": 0.04,
+      "pragmatic": -0.03
+    },
+    "identity_notes": [
+      "held the east cache site against another squirrel — from a position that felt thinner than it should have",
+      "the territorial math was correct but slow; slow is its own signal",
+      "missed_breakfast resolved but promoted to cache_deficit — the site held, probably"
+    ]
+  },
+  "state_after": {
+    "story_day": 3,
+    "condition": {
+      "health": 0.9,
+      "food": 0.47,
+      "attention": 0.47
+    },
+    "inventory": [],
+    "active_burdens": ["cache_deficit"],
+    "goals": {
+      "primary": "find_reliable_supply",
+      "secondary": "map_west_territory"
+    },
+    "reaction_overrides": {},
+    "trait_deviations": {
+      "curious": 0.05,
+      "pragmatic": 0.05
+    },
+    "identity_notes": [
+      "hunger arrived specific and sharp — not the usual kind",
+      "avoided east cache; went west instead",
+      "found something genuinely tasty in unfamiliar territory; ate; uncertain if the spot is repeatable"
+    ]
+  },
+  "change_summary": {
+    "notable_shift": "unusual hunger signal drove foraging west into unmapped territory; found food but not security; east cache still contested-feeling; attention barely recovered — the same novelty that costs in depletion gave a slight uptick through curiosity",
+    "branch_created": false
+  },
+  "created_at": "2026-04-16T09:00:00Z"
+}

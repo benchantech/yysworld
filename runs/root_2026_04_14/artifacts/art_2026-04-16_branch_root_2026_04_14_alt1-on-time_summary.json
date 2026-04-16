@@ -1,0 +1,29 @@
+{
+  "schema_version": "0.1",
+  "artifact_id": "art_2026-04-16_branch_root_2026_04_14_alt1-on-time_summary",
+  "artifact_type": "daily_summary",
+  "snapshot_id": "snap_2026-04-16_branch_root_2026_04_14_alt1-on-time",
+  "root_id": "root_2026_04_14",
+  "branch_id": "branch_root_2026_04_14_alt1-on-time",
+  "package_ref": {
+    "package_id": "yysworld-pipeline-v0.1",
+    "package_created_at": "2026-04-16T09:00:00Z",
+    "package_hash": "sha256:claude-code-subscription"
+  },
+  "model_refs": [{"provider": "anthropic", "model_id": "claude-code-subscription", "role": "summarizer", "runtime_class": "interactive"}],
+  "comparison_contract_version": "0.1",
+  "content": {
+    "title": "Directed west",
+    "tone": "curious_and_well_fed",
+    "narrative": "The hunger arrived specific. Not the usual kind.\n\nYY noticed this — not with alarm but with the particular attention that goes toward things that are slightly off-category. The hunger had a character. It arrived with more precision than hunger usually arrives with, and the squirrel brain, which is not always careful about where signals come from, filed this under interesting rather than urgent.\n\nThe east cache was off the list for the same reason it had been off the list for two days. Not because anything was confirmed wrong with it, but because the math of returning felt premature. West, then. YY went west with attention to spare, which is a different way to move through unfamiliar territory.\n\nThe spacing between trees was different. The quality of light through the canopy was different. Everything was the same category of thing in different proportions, and reading those proportions was the kind of problem that becomes absorbing when you're not operating under pressure. YY moved through it carefully, which here meant slowly enough to actually see.\n\nThe food was good. Actually good — the kind that makes you understand why you came. YY ate without urgency, and eating without urgency is a different experience even when the food is identical to food eaten under urgency.\n\nComing back, YY held the location. The fence post from two days ago still had marks on it — something made in a specific place that was still there. Whether the western spot would still be good in a week was the same question in a different shape: does a lucky find stay what it was, or does it become something else once you're counting on it?\n\nThe spot was filed anyway. Worth finding out.",
+    "state_note": "Food at 0.72 — minimal decrease; the hunger was real but started from adequacy, and the find was genuinely good. Attention at 0.78 — slight dip from the effort of reading new territory, but still high. No new burdens. The running question from Day 2 found a new surface and is still running.",
+    "summary": "A specific, unusual hunger sent YY west into unfamiliar territory; found an actually good food source, ate well, and filed the spot for later.",
+    "state_delta": {
+      "food": "0.75 → 0.72",
+      "attention": "0.82 → 0.78",
+      "health": "0.90 → 0.90"
+    },
+    "branch_created": false
+  },
+  "created_at": "2026-04-16T09:00:00Z"
+}

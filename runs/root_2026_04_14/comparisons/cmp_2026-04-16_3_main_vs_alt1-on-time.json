@@ -1,0 +1,38 @@
+{
+  "schema_version": "0.1",
+  "comparison_id": "cmp_2026-04-16_3_main_vs_alt1-on-time",
+  "artifact_type": "daily_comparison",
+  "root_id": "root_2026_04_14",
+  "branch_a": "branch_root_2026_04_14_main",
+  "branch_b": "branch_root_2026_04_14_alt1-on-time",
+  "story_day": 3,
+  "snapshot_date": "2026-04-16",
+  "snapshot_ids": [
+    "snap_2026-04-16_branch_root_2026_04_14_main",
+    "snap_2026-04-16_branch_root_2026_04_14_alt1-on-time"
+  ],
+  "package_ref": {
+    "package_id": "yysworld-pipeline-v0.1",
+    "package_created_at": "2026-04-16T09:00:00Z",
+    "package_hash": "sha256:claude-code-subscription"
+  },
+  "model_refs": [{"provider": "anthropic", "model_id": "claude-code-subscription", "role": "comparator", "runtime_class": "interactive"}],
+  "content": {
+    "divergence_summary": "Same hunger signal, same cache avoidance, same western territory — different experience of all three. Urgency vs. curiosity over identical ground.",
+    "branch_a_path": "Urgency drove the search; the western find was partial relief rather than discovery; the spot is real but unvalidated; cache_deficit burden continues alongside new uncertainty about western supply",
+    "branch_b_path": "Curiosity drove the search; the same find was experienced as genuine discovery; the spot was actively filed; the running question from Day 2 transferred cleanly to a new surface",
+    "key_differences": [
+      "main's attention barely recovered (0.40→0.47); alt1's attention remained high (0.82→0.78) — same territory, different cognitive load",
+      "main ate enough to take the edge off; alt1 ate without urgency — texture of the same meal diverged entirely by entering state",
+      "main: the spot is uncertain and unvalidated; alt1: the spot is filed as worth revisiting — both found the same location, left with different confidence",
+      "main carries cache_deficit forward with no resolution path visible; alt1 carries no burdens and now has a mapped western option"
+    ],
+    "shared_elements": [
+      "both avoided the east cache for the same reason (Day 2 still present in the math)",
+      "both experienced the same specific, unusual hunger signal",
+      "both moved west into unfamiliar territory and found the same category of food source",
+      "neither knows why the hunger was so particular — the signal's origin stays implicit in both"
+    ]
+  },
+  "created_at": "2026-04-16T09:00:00Z"
+}

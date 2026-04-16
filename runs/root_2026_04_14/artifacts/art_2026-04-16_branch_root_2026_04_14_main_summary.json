@@ -1,0 +1,29 @@
+{
+  "schema_version": "0.1",
+  "artifact_id": "art_2026-04-16_branch_root_2026_04_14_main_summary",
+  "artifact_type": "daily_summary",
+  "snapshot_id": "snap_2026-04-16_branch_root_2026_04_14_main",
+  "root_id": "root_2026_04_14",
+  "branch_id": "branch_root_2026_04_14_main",
+  "package_ref": {
+    "package_id": "yysworld-pipeline-v0.1",
+    "package_created_at": "2026-04-16T09:00:00Z",
+    "package_hash": "sha256:claude-code-subscription"
+  },
+  "model_refs": [{"provider": "anthropic", "model_id": "claude-code-subscription", "role": "summarizer", "runtime_class": "interactive"}],
+  "comparison_contract_version": "0.1",
+  "content": {
+    "title": "Something west of the usual route",
+    "tone": "urgent_and_provisionally_satisfied",
+    "narrative": "The hunger had a character to it.\n\nNot the slow, reliable kind — not the one that announces itself the same way every morning and gets handled the same way every morning. This one was specific. Sharp at the edges. YY registered it mid-morning and did not immediately know what to do with it.\n\nThe east cache was present in the mental map. The east cache stayed there. Two days of contested math on that site had left it in a state that wasn't quite wrong but wasn't quite right either, and returning felt like making an argument YY wasn't ready to make. West was where the map ran out.\n\nThe territory was the same category of things in the wrong proportions. Trees with different spacing. Ground that read differently underfoot. The signals were all present but they arrived a half-second slower than usual, which costs something when you're already running short.\n\nThe food was under a tree YY hadn't catalogued. Not a cache — just there, the way things are sometimes just there. Genuinely good. The specific kind of good that arrives when you weren't expecting the category. YY ate.\n\nThe sharp edge of the hunger went quiet. Whatever was underneath it — the source, the signal, whatever had made this particular hunger feel so particular — that was still running. But the immediate thing resolved.\n\nOn the way back, YY passed through the usual range without stopping at the east cache. The spot existed. The spot stayed existing.",
+    "state_note": "Food at 0.47 — found enough in unfamiliar territory to take the edge off but not enough to feel secure about supply. The new spot is real but not validated. Attention at 0.47 — slight uptick from novelty and the engagement of reading unmapped ground, but still running well below baseline. cache_deficit burden continues: the east cache remains contested-feeling and the western find hasn't been confirmed as repeatable.",
+    "summary": "An unexpectedly specific hunger drove YY west into unfamiliar territory, where something genuinely tasty was found and eaten — but the source isn't yet reliable.",
+    "state_delta": {
+      "food": "0.58 → 0.47",
+      "attention": "0.40 → 0.47",
+      "health": "0.90 → 0.90"
+    },
+    "branch_created": false
+  },
+  "created_at": "2026-04-16T09:00:00Z"
+}
