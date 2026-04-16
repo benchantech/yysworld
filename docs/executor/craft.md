@@ -44,6 +44,82 @@ A user-facing artifact is ready when:
 
 ---
 
+## Narrative antipatterns (ADR-028)
+
+These patterns caused the Day 2 artifacts to fail and were identified by reviewing the actual output. Check every narrative against this list before committing.
+
+### 1. Event without physical landing
+
+Translating a world event to a *concept* rather than a *sensory encounter*.
+
+**Fail:** "The cache audit arrived." / "The obligation surfaced."
+**Pass:** Another squirrel appeared at the cache site.
+
+The event must be something YY could encounter with their body. Abstractions belong in YY's *response* to the event, not in the event itself.
+
+### 2. Meta-commentary
+
+Writing *about* a feeling from outside instead of rendering it from inside.
+
+**Fail:** "the kind of fine that doesn't fix anything but technically counts"
+**Fail:** "which is the main thing that's wrong with accounting"
+**Pass:** The day adjusted slightly. Not recovered — adjusted. (Shows the shape; doesn't explain it.)
+
+If the sentence could begin with "In other words," it's commentary. Cut it or replace it with something that shows.
+
+### 3. Mechanical world event drops
+
+Inserting real-world context as a standalone fact with no narrative connection.
+
+**Fail:** "Someone mentioned World Art Day. Something about making things."
+**Pass:** During that time there was a fence post nearby with marks scratched into it. (The event arrives through what YY encounters, not through an announcement.)
+
+World events must enter through something YY sees, hears, or finds — not through a sentence that begins "Someone mentioned."
+
+### 4. Recycled style closers
+
+Reusing a structural trick from a previous day's ending.
+
+**Fail:** Day 1 closes with "Suspicious. But fine." → Day 2 closes with "Suspicious. But good."
+
+A device that worked before becomes visible as a device the second time. Earn each close independently.
+
+### 5. Unexplained interiority
+
+Italicized thoughts that appear without grounding or a clear referent.
+
+**Fail:** `*Less than I thought.*` (Less than what? Established by nothing.)
+
+If you use italicized interior thought, the referent must be active in the scene at that moment.
+
+### 6. Telling the accounting
+
+Describing the internal calculus rather than showing its effects.
+
+**Fail:** "food below what it should be, attention below what it should be, everything working at a slight margin rather than normal capacity" — this is a status report, not experience.
+**Pass:** The math is usually quick, but yesterday was still in the system — and what usually takes a second took three or four.
+
+Show the speed or texture of the thinking, not the inputs to it.
+
+### 7. Formula endings
+
+Any closing that follows the pattern: "[statement]. [Short inversion or qualifier]." two days in a row.
+
+"Classic." / "The day started anyway. The acorns did not." — these work in Day 1 because they're fresh. They stop working the moment they become the expected shape. Vary the structure of endings across days.
+
+---
+
+## Event translation checklist
+
+Before writing a narrative, verify:
+
+- [ ] The event can be described as something YY *sees, hears, smells, or encounters physically*
+- [ ] The world-event anchor enters through an action or observation, not a sentence beginning "Something happened" or "Someone mentioned"
+- [ ] The event produces genuinely different experiences in the two branches given their different starting states
+- [ ] No closing devices from the previous day are reused verbatim or near-verbatim
+
+---
+
 ## Future-proofing hooks
 
 Leave room for: payload hashes, signatures, attestation backends, collaborator authorship, richer media artifact types, replay/export pipelines.

@@ -25,19 +25,21 @@
       "runtime_class": "cloud"
     }
   ],
+  "supersedes_content_from": "2026-04-15T23:00:00Z",
+  "content_rewritten_at": "2026-04-15T23:59:00Z",
   "content": {
-    "divergence_summary": "The same audit. The same obligation landing at the same time on both branches. Main reads it as confirmation of a problem already in progress. Alt reads it as a successful collapse of uncertainty. The audit didn't create the difference — the difference was already there from Day 1. The accounting just made it measurable.",
-    "branch_a_path": "YY confirmed what the body already knew: behind on the cache, and now officially so. Found something to eat in the afternoon — below average, but it counted. The missed_breakfast burden resolved but promoted itself to cache_deficit on the way out. Subtler. Harder to shake.",
-    "branch_b_path": "YY ran the numbers from adequate starting inventory, found them fine, and accidentally turned the whole thing into a quantum observation metaphor. Slightly too pleased with this. World Art Day filed as a deferred interesting idea.",
+    "divergence_summary": "The same squirrel showed up at the same location in both branches. The physical outcome was nearly identical — standoff, departure, cache approximately intact. What the encounter cost was not. Main ran the territorial accounting from a thinned position: food below baseline, attention doing the same, what usually takes a second took three or four. Alt ran the same calculation from adequacy; the other squirrel assessed in four seconds and left cleanly. One version of this story ends with 'the cache held, probably.' The other ends with a question about fence post marks that's still running. Same morning. Different inventory. Different residue.",
+    "branch_a_path": "YY held the east cache from a position that felt thinner than it should have. The other squirrel left on its own terms. The site appears intact, but 'probably' is now doing more work than it was doing yesterday.",
+    "branch_b_path": "YY walked over, the other squirrel ran its four-second assessment and departed. Cache fine. YY stayed longer than necessary, looking at marks on a fence post, asking a question about what you make and whether it lasts.",
     "key_differences": [
-      "Starting food: main enters Day 2 at 0.45 (depleted, carrying Day 1 debt); alt enters at 0.85 (adequate, no debt). The audit is identical; what it means depends entirely on this single number.",
-      "Attention: main ends Day 2 at 0.40 — doing math while depleted costs extra; alt ends at 0.82 — math from abundance is nearly pleasant when the numbers cooperate.",
-      "Burden trajectory: main exits with cache_deficit (the missed meal pattern became structural, Day 1 episodic burden promoted to Day 2 systemic burden); alt exits clean, nothing accumulated."
+      "Main ran the territorial accounting from a deficit — food and attention both below baseline. The calculation was correct but took longer, which is its own signal. Alt ran it from adequacy; the assessment was fast and the other animal read it correctly in four seconds.",
+      "Main exits with territorial uncertainty layered on top of the existing cache_deficit burden — not resolved, just deferred. Alt exits clean, carrying a question that follows from the two-day arc of observation and making.",
+      "The marks on the fence post registered briefly in main and substantially in alt. This is entirely a function of available attention — the difference between noticing something and sitting with it."
     ],
     "shared_elements": [
-      "Same audit arrived at the same time — the obligation doesn't check your starting position before landing",
-      "Both versions of YY are self-aware about their reaction to the numbers in their characteristic way",
-      "World Art Day (secondary event) registered in both branches as a deferred interesting idea — not something either YY acted on today"
+      "Same encounter, same location, same approximate physical outcome — cache present, other squirrel departed under its own power",
+      "Both versions notice the fence post marks. The noticing happens in both branches; only the duration and what it produces differ.",
+      "The encounter establishes that the cache sites are now known to at least one other animal — a new background condition in both branches going forward"
     ]
   },
   "created_at": "2026-04-15T23:00:00Z"

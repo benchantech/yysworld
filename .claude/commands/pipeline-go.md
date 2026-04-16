@@ -219,10 +219,14 @@ State stats are `food`, `health`, `attention` (0–1 floats). Field name is `foo
 **Narrative style:**
 - Third person — "YY", not "I"
 - Short paragraphs, direct sentences
-- Concrete sensory details
+- Concrete sensory details — open in scene, not in concept
 - Emotional honesty without melodrama
 - Restraint is a feature. Don't over-explain.
 - Title must NOT be repeated as the first line of the narrative — open in scene
+- World events enter through what YY encounters, never as "Someone mentioned X"
+- No meta-commentary — don't describe feelings from outside, render them from inside
+- No recycled closing devices from the previous day
+- Check `docs/executor/craft.md` § Narrative antipatterns before committing
 
 **Artifact schema:**
 

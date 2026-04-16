@@ -1,0 +1,38 @@
+{
+  "schema_version": "0.1",
+  "event_id": "evt_2026-04-15_002",
+  "root_id": "root_2026_04_14",
+  "story_day": 2,
+  "occurred_at": "2026-04-15T11:00:00Z",
+  "event_type": "territorial_encounter",
+  "canonical_truth": {
+    "summary": "Another squirrel appeared at the east cache site. A territorial standoff. The other animal departed; the site held, approximately.",
+    "entities": [
+      "yy",
+      "unknown_squirrel",
+      "east_cache"
+    ],
+    "location": "east_cache_site",
+    "concrete_outcome": "site_held_intruder_departed"
+  },
+  "perception_prompt": {
+    "noticeable_surface": "Something at the cache. Not alone. The particular alert stillness of an animal that has decided to belong somewhere it isn't certain it belongs.",
+    "ambiguity_level": 0.35
+  },
+  "tags": [
+    "territorial",
+    "encounter",
+    "cache",
+    "resource_check",
+    "spring",
+    "ambiguous_outcome"
+  ],
+  "created_at": "2026-04-15T23:59:00Z",
+  "supersedes": "evt_2026-04-15_001",
+  "correction_reason": "Original event abstraction (obligation_surface / cache_audit) had no physical presence in YY's world. A bureaucratic concept arrived without sensory grounding, producing prose that circled abstraction rather than rendered experience. Replaced with a territorial encounter, which translates the same Tax Day theme — the day the world checks whether your accumulated position is really yours — through a physical, squirrel-appropriate event with sensory texture and genuine divergence between depleted-YY and adequate-YY. See ADR-028.",
+  "authorial_note": {
+    "real_world_inspiration": "Tax Day (US, April 15 2026) + World Art Day (Leonardo da Vinci's birthday, April 15)",
+    "translation_logic": "Tax Day as territorial encounter: the day someone else's claim on your resources gets tested. For a squirrel, cache sites are genuinely contested — animals lose significant portions of stored food to theft and intrusion. The encounter is the audit. The outcome depends on whether you look like you have something worth taking. World Art Day appears as marks scratched into a fence post — something made in a specific place, still there, which prompts a different question in each branch depending on available attention.",
+    "restraint_reason": "Day 2 — medium stakes. The interesting thing is not the outcome (standoff, departure, cache approximately intact in both branches) but what it costs to hold the site given wildly different starting positions. The ambiguity of 'held, probably' vs 'held' is the entire divergence point."
+  }
+}
