@@ -1,8 +1,10 @@
 {
-  "_template": "world-seed v0.1 — fill this in before initializing a new root. See ADR-029.",
+  "_template": "world-seed v1.1 — fill this in before initializing a new root. See ADR-029.",
   "_usage": "Copy to runs/{rootId}/world-seed.json when creating a new root. Remove all _guide and _template fields before committing the live version.",
+  "_supersedes": "world v1.0 (runs/root_2026_04_14/world-seed.json) — v1.0 was declared retroactively after the April 2026 root ran without a formal seed. v1.1 is the first version authored before a root begins.",
 
   "schema_version": "0.1",
+  "world_version": "1.1",
   "seed_id": "world_{YYYY}_{MM}",
   "root_id": null,
   "period": "YYYY-MM",

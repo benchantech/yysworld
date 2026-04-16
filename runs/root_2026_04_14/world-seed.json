@@ -1,0 +1,110 @@
+{
+  "schema_version": "0.1",
+  "world_version": "1.0",
+  "seed_id": "world_2026_04",
+  "root_id": "root_2026_04_14",
+  "period": "2026-04",
+  "authored_at": "2026-04-15T23:59:00Z",
+
+  "_provenance": "Retroactive declaration. This root was initialized without a formal world seed. The geography, seasonal physics, and social conditions documented here are reconstructed from the first two days of artifacts — specifically from event locations, snapshot state_before values, and the narrative rewrites. V1.0 describes what the world revealed itself to be, not what was intended before generation. V1.1 (see docs/templates/world-seed.json) is the first version authored before a root begins.",
+
+  "geography": {
+    "home_base": {
+      "id": "home_sleeping_area",
+      "label": "home",
+      "description": "Where YY sleeps and starts each day. The morning departure point. High familiarity, low contest.",
+      "source": "evt_2026-04-14_001 — location field"
+    },
+    "named_places": [
+      {
+        "id": "east_cache",
+        "label": "east cache",
+        "type": "cache_site",
+        "description": "Primary food storage site. Known to at least one other animal. Held on Day 2 but contested — 'probably' doing more work than it was doing before.",
+        "status": "contested",
+        "source": "evt_2026-04-15_002; Day 2 narrative rewrite"
+      },
+      {
+        "id": "fence_post_boundary",
+        "label": "fence post",
+        "type": "boundary",
+        "description": "A fence post somewhere between east_cache and home. Marks scratched into it — intentional, still there. Neither YY's territory nor clearly another's. A place where things made persist.",
+        "status": "neutral",
+        "source": "Day 2 main and alt1 narrative rewrites"
+      },
+      {
+        "id": "home_workspace",
+        "label": "home workspace",
+        "type": "shelter",
+        "description": "A location near or at home where YY receives information and processes the day. Indoor-adjacent. Emerged from the original Day 2 event before the rewrite.",
+        "status": "secure",
+        "source": "evt_2026-04-15_001 (superseded) — location field"
+      }
+    ],
+    "territory_notes": "YY's range is not yet fully mapped. The east cache is the farthest confirmed point. The fence post is an intermediate landmark. The main path between home and east_cache is implied but unnamed. World geography accumulates as the root continues."
+  },
+
+  "seasonal_physics": {
+    "month_character": "late spring post-winter recovery",
+    "food_pressure": {
+      "level": 0.55,
+      "notes": "Starting food was 0.7 (clean root baseline) but the day's trajectory shows high sensitivity to the morning cache window — main branch dropped to 0.45 after one missed morning. April is recovering-not-recovered. The cache sites matter more than they will in summer. The morning window is the critical foraging period; missing it compounds."
+    },
+    "territorial_pressure": "moderate and active — spring means animals re-establishing ranges after winter. Other squirrels are moving through and testing. The east cache was visited on Day 2. Expect more visits as the month continues.",
+    "daylight": "Growing. April 14-15 in northern hemisphere: approximately 13.5 hours. The morning window is real but has a hard close.",
+    "conditions": "Early spring variability. Not cold enough to slow things down, not warm enough for peak activity. The world is waking up but nothing is settled.",
+    "morning_cache_window": "The primary food acquisition opportunity. High value, time-bounded. Missing it (Day 1 main) sets a deficit that persists for days. On-time access (Day 1 alt) produces a meaningful surplus. Everything after the morning window is recovery or maintenance."
+  },
+
+  "social_field": {
+    "density": "medium — spring movement means more animals through the range than winter, fewer than summer peak",
+    "known_presences": [
+      {
+        "id": "squirrel_east",
+        "description": "Grey-brown squirrel. Very specific ears — alert without twitchy, genuine curiosity rather than defensive. Appeared at the east cache on Day 2. Assessed, departed in four seconds from alt1 (adequate YY) but lingered longer against main (depleted YY). Has not been seen before; may return.",
+        "territory_relationship": "adjacent or overlapping",
+        "disposition": "competitive_neutral",
+        "notes": "Does not appear to be a fixed threat — more of a seasonal tester. The east cache is now known to this animal. Whether it returns depends on what it assessed on Day 2."
+      }
+    ],
+    "active_tensions": [
+      "east_cache contested — squirrel_east has visited and will likely return",
+      "territorial_uncertainty is now an active burden on the main branch — the cache held 'probably', which is not the same as held cleanly"
+    ]
+  },
+
+  "starting_conditions": {
+    "_note": "These are the confirmed Day 1 state_before values from both branch snapshots. They represent the clean root baseline.",
+    "food": 0.7,
+    "health": 0.9,
+    "attention": 0.65,
+    "active_burdens": [],
+    "identity_notes": [
+      "first day of the root — baseline state, no accumulated history",
+      "no prior burdens carried in from a previous root (this is the first root)"
+    ]
+  },
+
+  "atmosphere": {
+    "one_line": "post-winter recovery — the world is waking up but nothing is settled yet",
+    "recurring_elements": [
+      "the morning cache window as the day's pivot point",
+      "other animals moving through and assessing",
+      "marks left by things on surfaces — the fence post, the territorial signals",
+      "the gap between 'held' and 'held, probably'"
+    ],
+    "what_this_month_costs": "Missed mornings compound. The territorial math is always running. Cache sites that go unvisited don't stay uncontested.",
+    "what_this_month_offers": "Longer days than winter. Increasing food availability as spring advances. Something interesting every other day if you're paying attention."
+  },
+
+  "authorial_intent": {
+    "_note": "Not formally set before this root — reconstructed from what the first two days revealed.",
+    "arc_direction": "Tracking what one missed morning costs across 30 days — the compounding effect of Day 1's divergence.",
+    "questions_to_track": [
+      "Does the cache_deficit on the main branch resolve or compound?",
+      "Does the fence post question (does what you make last?) develop into something?",
+      "What does squirrel_east want, and does it return?"
+    ],
+    "branch_hypothesis": "One branch starts behind (missed morning → cache_deficit) and one starts adequate. The hypothesis: the gap either closes as the month progresses or it becomes structural. The divergence event was small; the question is whether small divergences stay small."
+  }
+}
