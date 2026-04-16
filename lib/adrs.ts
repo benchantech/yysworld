@@ -36,12 +36,21 @@ function extractSummary(content: string): string {
   const match = content.match(/## Context\r?\n+([\s\S]+?)(?:\r?\n## |\r?\n---\r?\n|$)/)
   if (!match) return ''
   const firstPara = match[1].trim().split(/\r?\n\r?\n/)[0]
-  return firstPara
+  const cleaned = firstPara
     .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1') // strip links → keep text
     .replace(/\*\*/g, '')                      // strip bold
     .replace(/\r?\n/g, ' ')
     .trim()
-    .slice(0, 240)
+
+  if (cleaned.length <= 240) return cleaned
+
+  // Prefer truncating at the last sentence boundary before 240 chars
+  const cut = cleaned.slice(0, 240)
+  const lastPeriod = cut.lastIndexOf('. ')
+  if (lastPeriod > 60) return cut.slice(0, lastPeriod + 1)
+
+  // Fall back to last word boundary + ellipsis
+  return cut.replace(/\s\S+$/, '') + '…'
 }
 
 export function parseAdrMeta(content: string, slug: string, filename: string): AdrMeta {

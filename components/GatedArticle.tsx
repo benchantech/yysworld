@@ -16,16 +16,6 @@ interface Props {
   statsAfter: Condition
 }
 
-/**
- * Renders artifact content behind a midnight gate.
- *
- * Gate logic (client-side only — content is embedded in the static build):
- *   - ?preview present → always visible
- *   - Date.now() >= releaseAt → visible (the day has passed)
- *   - Otherwise → "available after midnight" placeholder
- *
- * The gate will be replaced with proper auth when moving to Vercel.
- */
 export function GatedArticle({ releaseAt, title, tone, narrative, stateNote, summary, storyDay, statsBefore, statsAfter }: Props) {
   const [visible, setVisible] = useState(false)
 
@@ -37,7 +27,8 @@ export function GatedArticle({ releaseAt, title, tone, narrative, stateNote, sum
 
   if (!visible) {
     return (
-      <div className="rounded-lg border border-zinc-800 bg-zinc-900/50 px-4 py-6">
+      <div className="rounded-lg border border-zinc-800 bg-zinc-900/50 px-4 py-6 space-y-1">
+        {title && <p className="text-xs text-zinc-700 font-medium">{title}</p>}
         <p className="text-xs text-zinc-600 italic">Available after midnight.</p>
       </div>
     )
@@ -55,9 +46,9 @@ export function GatedArticle({ releaseAt, title, tone, narrative, stateNote, sum
     <article className="space-y-4">
       <header className="flex items-start justify-between gap-3">
         <div className="space-y-1 min-w-0">
-          <h1 className="text-sm font-medium text-zinc-200">{title}</h1>
+          <h1 className="text-base font-medium text-zinc-100">{title}</h1>
           {tone && (
-            <p className="text-xs text-zinc-600">{tone.replace(/_/g, ' ')}</p>
+            <p className="text-xs text-zinc-500 tracking-wide">{tone.replace(/_/g, ' ')}</p>
           )}
         </div>
         <StatsBlock statsAfter={statsAfter} statsBefore={statsBefore} storyDay={storyDay} />
@@ -65,20 +56,20 @@ export function GatedArticle({ releaseAt, title, tone, narrative, stateNote, sum
 
       <div className="space-y-3">
         {paragraphs.map((p, i) => (
-          <p key={i} className="text-sm text-zinc-300 leading-relaxed">
+          <p key={i} className="text-base text-zinc-300 leading-7">
             {p}
           </p>
         ))}
       </div>
 
       {stateNote && (
-        <p className="text-xs text-zinc-500 leading-relaxed border-t border-zinc-800 pt-3">
+        <p className="font-mono text-xs text-zinc-500 leading-relaxed border-t border-zinc-800/60 pt-3">
           {stateNote}
         </p>
       )}
 
       {summary && (
-        <p className="text-xs text-zinc-600 italic">{summary}</p>
+        <p className="text-xs text-zinc-500 pt-1">{summary}</p>
       )}
     </article>
   )

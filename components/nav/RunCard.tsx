@@ -69,7 +69,7 @@ export function RunCard({ run }: { run: RunSummary }) {
 
       {altBranches.length > 0 && mainDay > 0 && (
         <div className="flex items-center gap-2 flex-wrap pt-1">
-          <span className="text-xs text-zinc-600">branches:</span>
+          <span className="text-xs text-zinc-600">other timelines:</span>
           {altBranches.map((b) => {
             const day = visibleDay[b.id] ?? 0
             return day > 0 ? (

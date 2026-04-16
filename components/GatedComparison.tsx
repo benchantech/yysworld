@@ -13,10 +13,6 @@ interface Props {
   sharedElements: string[]
 }
 
-/**
- * Renders branch comparison content behind the same midnight gate as GatedArticle.
- * ?preview bypasses the gate; otherwise content appears after releaseAt.
- */
 export function GatedComparison({
   releaseAt,
   branchALabel,
@@ -45,11 +41,12 @@ export function GatedComparison({
 
   return (
     <div className="space-y-5">
-      <p className="text-sm text-zinc-300 leading-relaxed">{divergenceSummary}</p>
+      <p className="text-base text-zinc-300 leading-7">{divergenceSummary}</p>
 
+      {/* Branch path cards — A (main/reference) gets a brighter border and label */}
       <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-        <div className="rounded-lg border border-zinc-800 bg-zinc-900/50 px-4 py-3 space-y-1">
-          <p className="text-xs text-zinc-500 uppercase tracking-wider">{branchALabel}</p>
+        <div className="rounded-lg border border-zinc-700 bg-zinc-900/50 px-4 py-3 space-y-1">
+          <p className="text-xs text-zinc-300 uppercase tracking-wider">{branchALabel}</p>
           <p className="text-sm text-zinc-300 leading-relaxed">{branchAPath}</p>
         </div>
         <div className="rounded-lg border border-zinc-800 bg-zinc-900/50 px-4 py-3 space-y-1">
@@ -61,9 +58,9 @@ export function GatedComparison({
       {keyDifferences.length > 0 && (
         <div className="space-y-2">
           <p className="text-xs text-zinc-500 uppercase tracking-wider">key differences</p>
-          <ul className="space-y-1">
+          <ul className="space-y-1.5">
             {keyDifferences.map((d, i) => (
-              <li key={i} className="text-sm text-zinc-400 leading-relaxed before:content-['—'] before:mr-2 before:text-zinc-600">
+              <li key={i} className="text-sm text-zinc-300 leading-relaxed before:content-['—'] before:mr-2 before:text-zinc-600">
                 {d}
               </li>
             ))}
