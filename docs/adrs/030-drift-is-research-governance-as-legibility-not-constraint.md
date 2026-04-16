@@ -3,9 +3,10 @@
 - **ID:** YYBW-030
 - **Status:** Decided
 - **Date:** 2026-04-15
+- **Amended:** 2026-04-15 — §5 added: May experimental design
 - **Scope:** YY Branching World
-- **Depends on:** YYBW-029, YYBW-003, YYBW-011
-- **Supersedes / clarifies:** Clarifies the purpose of world seeds and voice registers introduced in YYBW-029 — they are legibility tools, not control mechanisms
+- **Depends on:** YYBW-029, YYBW-003, YYBW-011, YYBW-012
+- **Supersedes / clarifies:** Clarifies the purpose of world seeds and voice registers introduced in YYBW-029 — they are legibility tools, not control mechanisms. §5 establishes the May 2026 experimental design for validating the voice register specifically.
 
 ---
 
@@ -15,7 +16,7 @@ After designing the world seed and voice register (YYBW-029), the April 2026 run
 
 The reframe: the April run drifting is not a failure to be managed. It is research data being collected. The drift will produce things that a pre-authored world seed would have prevented. Some of those things will be bad. Some will be genuinely interesting — hypotheses the author couldn't have written in advance. The east cache, the fence post marks, and "the question kept running" all emerged from freeform generation without any authorial intent behind them.
 
-This ADR records two decisions that followed from that reframe, and the reasoning behind them.
+This ADR records the decisions that followed from that reframe, and the reasoning behind them.
 
 ---
 
@@ -31,7 +32,7 @@ The April run will eventually answer: what does this system produce when left to
 
 ### 2. First-generation governance should be tighter than comfortable
 
-When the world seed and voice register are introduced at the next root, they should be tighter than the author expects to keep them long-term. This is intentional.
+When the world seed and voice register are introduced, they should be tighter than the author expects to keep them long-term. This is intentional.
 
 **The asymmetry of failure modes:**
 
@@ -67,35 +68,94 @@ The system has two legitimate operating modes:
 
 Both modes are valid. The freeform mode is not a lesser version of the governed mode — it is a different instrument for a different purpose. A freeform run is how you discover what needs to be governed. A governed run is how you make that governance worth having.
 
+### 5. May 2026: the voice register experiment
+
+The May 2026 run introduces a new structure: two simultaneous roots for the same month, differing in exactly one variable. This is the first controlled experiment in the system's governance design.
+
+**The design:**
+
+| | Root A (`2026-05-01`) | Root B (`2026-05-01-1`) |
+|---|---|---|
+| World seed | None | None |
+| YY baseline | v1.0 | v1.0 |
+| Voice register | Not active | Active (v1.1) |
+| Starting conditions | Same | Same |
+| Real-world event anchors | Same | Same |
+| Alt branch structure | Mirrored | Mirrored |
+
+The single independent variable is the voice register. Everything else is held constant.
+
+No world seed is introduced in May. The decision to defer the world seed is deliberate: testing two variables simultaneously (voice and world) would make it impossible to attribute differences to either one. Voice governance is the higher priority — if the voice register doesn't improve the writing, designing a world seed is premature. Voice first.
+
+**Why two simultaneous roots rather than sequential:**
+
+Sequential comparison (April freeform → May governed) is asymmetric: different months, different seasons, different real-world anchors, different author familiarity. Any improvement in May could be attributed to those factors rather than to governance.
+
+Two simultaneous roots in the same month, on the same events, with the same character, isolate governance as the variable. The comparison is live and symmetric rather than retrospective and confounded.
+
+**The roles of each root:**
+
+Root A (no voice register) produces the *logic* — what happened, the state transitions, the mechanical truth of the day. This is the control.
+
+Root B (voice register active) tells the same story in a *more controlled voice*. Same canonical truth; different projection. This is the hypothesis.
+
+The hypothesis: the voice register produces narratives that are more alive and more human while covering the same ground. If Root B is measurably better, the register is validated. If they are roughly equivalent, the register is overhead.
+
+**On mirroring the alt branches:**
+
+The alt branches in both roots must follow the same divergence events at the same story days. If Root A's alt1 branches on Day 7 from a particular event, Root B's alt1 branches on Day 7 from the same event. If the branches diverge independently, differences between roots could be attributed to story trajectory rather than voice governance.
+
+Mirroring is the constraint that makes the experiment legible. It requires the author to run Root A first on a given day, then use the same event and approximate state transitions as input for Root B.
+
+**On the truth/projection separation:**
+
+ADR-012 established that the canonical truth layer (snapshots, state transitions) and the projection layer (narrative artifacts) are distinct. The May experiment is possible precisely because of this separation. Both roots can share the same truth (same event, same state values) while differing only in the artifact — the prose generated from that truth.
+
+The purest version of the experiment: identical snapshot data in both roots, different artifacts. Root A's artifact is generated without the voice register; Root B's artifact is generated with it. The canonical truth is the control. The artifact is the variable.
+
+**What the May experiment does not test:**
+
+- World seed value — deliberately deferred to a future run
+- Character version differences — both roots use YY v1.0
+- Seasonal or temporal variation — same month, same events
+
+These become available as variables in subsequent experiments once voice governance is validated or refuted.
+
 ---
 
 ## Why
 
 Governance structures that prevent drift are cages. Governance structures that make drift legible are instruments. The difference is whether the author can look at an unexpected element in the output and say: "this came from the seed" or "this came from somewhere outside the seed, and here's what that means."
 
-The April run already produced both kinds of things: moments that clearly followed from the calibration (the voice compression, the territorial accounting) and moments that appeared from nowhere (the fence post marks, the thread about whether made things last). The second category is the one worth designing for. The world seed's value is that it makes the second category *visible* — you know it wasn't in the seed, so you know it's genuine emergence.
+The April run already produced both kinds of things: moments that clearly followed from the calibration (the voice compression, the territorial accounting) and moments that appeared from nowhere (the fence post marks, the thread about whether made things last). The second category is the one worth designing for.
 
-The first-generation governance being tight is not about control. It is about having something firm enough that the loosening teaches you something. You cannot learn which constraints are load-bearing by never having had constraints.
+The May experiment is the first opportunity to find out whether the governance adds to the first category or diminishes the second. That is worth knowing precisely.
 
 ---
 
 ## Reversals / scars preserved
 
-This ADR was written because the project initially framed the April run's lack of governance as a gap rather than as a baseline. The reframe happened in conversation on 2026-04-15, after the world seed and voice register were designed. The earlier framing is preserved in the commit history and in YYBW-029.
+This ADR was written because the project initially framed the April run's lack of governance as a gap rather than as a baseline. The reframe happened in conversation on 2026-04-15.
 
-The fence post marks and "the question kept running" in the Day 2 alt rewrite — both of which emerged without any authorial world seed — are the evidence cited here that freeform mode produces things worth preserving. If those elements disappear under tight governance in May, that is a data point, not a success.
+The fence post marks and "the question kept running" in the Day 2 alt rewrite — both of which emerged without any authorial governance — are the evidence cited here that freeform mode produces things worth preserving. If those elements disappear under voice governance in May's Root B, that is a data point, not a success.
+
+The May experimental design was also refined through deliberate pushback: an earlier proposal to run two roots with *different world seeds* was set aside in favor of two roots with *no world seed but different voice governance*. The world seed introduces a second variable; the clean experiment requires exactly one.
 
 ---
 
 ## Consequences
 
-- The April run is the control condition. Its output — including any drift — is reference data for evaluating future governed runs.
-- First-generation world seeds and voice registers should be written tight. The loosening signals in §3 are the criteria for revision.
-- The question "is this governed run more *alive* than the April one, or just more *consistent*?" is now a standing evaluation criterion for every future root.
-- Freeform runs remain available as a mode — for research, for starting new characters, for deliberate exploration without authorial commitment.
+- The April run is the control condition. Its output — including drift — is reference data for evaluating future governed runs.
+- May 2026 runs two simultaneous roots: `2026-05-01` (no voice register) and `2026-05-01-1` (voice register active). No world seed in either.
+- Alt branches in both May roots are mirrored at the same divergence events on the same story days.
+- Root A sets the canonical truth; Root B regenerates the artifact through the voice register.
+- The question "is this governed run more *alive* than the control, or just more *consistent*?" is the standing evaluation criterion.
+- If the voice register validates: world seed becomes the next variable in a future run.
+- If the voice register does not validate: the register is revised before the world seed is introduced.
+- Freeform runs remain available as a mode for research and new character exploration.
 
 ---
 
 ## Freshness boundary
 
-Revisit after the first fully governed run completes (May 2026 or later). At that point there will be empirical data on whether the governance produced improvement or just consistency, and whether any of the loosening signals in §3 have fired.
+Revisit after May 2026 completes. At that point there will be empirical data on whether voice governance produced improvement or consistency, and whether any loosening signals in §3 fired. The world seed experiment design follows from whatever May teaches.
