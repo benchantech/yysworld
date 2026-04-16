@@ -26,6 +26,16 @@
     "low_ambiguity"
   ],
   "created_at": "2026-04-14T23:00:00Z",
+  "source_event": {
+    "headline": "World Quantum Day",
+    "date": "2026-04-14",
+    "category": "science"
+  },
+  "schema_patch": {
+    "added_at": "2026-04-16T09:30:00Z",
+    "added_by": "ADR-031",
+    "reason": "source_event field did not exist at time of original creation"
+  },
   "authorial_note": {
     "real_world_inspiration": "World Quantum Day — Google Doodle, April 14 2026",
     "translation_logic": "Quantum Day suggested time as a theme. Oversleeping is a small, personal time slip — time moved without YY. Chosen as a minimal perturbation appropriate for Day 1.",

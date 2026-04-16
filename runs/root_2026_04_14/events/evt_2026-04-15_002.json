@@ -28,6 +28,17 @@
     "ambiguous_outcome"
   ],
   "created_at": "2026-04-15T23:59:00Z",
+  "source_event": {
+    "headline": "Tax Day (US)",
+    "date": "2026-04-15",
+    "category": "civic",
+    "secondary": "World Art Day (Leonardo da Vinci's birthday)"
+  },
+  "schema_patch": {
+    "added_at": "2026-04-16T09:30:00Z",
+    "added_by": "ADR-031",
+    "reason": "source_event field did not exist at time of original creation"
+  },
   "supersedes": "evt_2026-04-15_001",
   "correction_reason": "Original event abstraction (obligation_surface / cache_audit) had no physical presence in YY's world. A bureaucratic concept arrived without sensory grounding, producing prose that circled abstraction rather than rendered experience. Replaced with a territorial encounter, which translates the same Tax Day theme — the day the world checks whether your accumulated position is really yours — through a physical, squirrel-appropriate event with sensory texture and genuine divergence between depleted-YY and adequate-YY. See ADR-028.",
   "authorial_note": {

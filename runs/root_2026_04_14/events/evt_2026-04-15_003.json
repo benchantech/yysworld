@@ -17,6 +17,16 @@
   },
   "tags": ["hunger", "wordplay", "foraging", "cache_avoidance", "territory_expansion"],
   "created_at": "2026-04-16T09:00:00Z",
+  "source_event": {
+    "headline": "Hungary votes out Orbán",
+    "date": "2026-04-15",
+    "category": "politics"
+  },
+  "schema_patch": {
+    "added_at": "2026-04-16T09:30:00Z",
+    "added_by": "ADR-031",
+    "reason": "source_event field did not exist at time of original creation"
+  },
   "authorial_note": {
     "real_world_inspiration": "Hungary votes out Orbán — the word 'Hungary' arrives in ambient signal and is misrouted as appetite",
     "translation_logic": "The word 'Hungary' arrives in the world's signal and gets misrouted — YY doesn't know why they're suddenly 25% more hungry, only that they are; cache avoidance from Day 2 sends the foraging outward into new territory",
