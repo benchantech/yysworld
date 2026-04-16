@@ -1,0 +1,92 @@
+{
+  "_template": "world-seed v0.1 — fill this in before initializing a new root. See ADR-029.",
+  "_usage": "Copy to runs/{rootId}/world-seed.json when creating a new root. Remove all _guide and _template fields before committing the live version.",
+
+  "schema_version": "0.1",
+  "seed_id": "world_{YYYY}_{MM}",
+  "root_id": null,
+  "period": "YYYY-MM",
+  "authored_at": null,
+
+  "geography": {
+    "_guide": "Name the places that will persist across all days of this root. Be specific but small — 4-6 named places is enough. Places that appear unnamed in stories become harder to reference consistently. Each place accumulates meaning over the month; start only with what you know will actually appear.",
+    "home_base": {
+      "id": "home",
+      "label": "",
+      "description": "",
+      "_guide": "Where YY starts and ends each day. The sleep location, the morning departure point."
+    },
+    "named_places": [
+      {
+        "_guide": "One entry per named place. Copy this object for each additional place.",
+        "id": "",
+        "label": "",
+        "type": "_guide: cache_site | path | boundary | social_node | shelter | unknown",
+        "description": "",
+        "status": "_guide: secure | contested | unknown | lost",
+        "notes": ""
+      }
+    ],
+    "territory_notes": "_guide: Rough description of YY's range this month. What's familiar, what's at the edge, what's outside."
+  },
+
+  "seasonal_physics": {
+    "_guide": "What does this month mean physically for a squirrel? These aren't plot elements — they're the background physics that every day operates against. The pipeline reads these to understand what 'normal' looks like before any event occurs.",
+    "month_character": "_guide: One phrase. E.g. 'late spring recovery', 'peak summer heat', 'pre-winter cache-building'.",
+    "food_pressure": {
+      "level": null,
+      "_guide": "Float 0-1. 0 = scarcity/crisis, 0.5 = neutral, 1 = abundance. This is the ambient food availability before YY does anything. Spring post-winter is typically 0.4-0.6 (recovering). Fall pre-winter is 0.7-0.9 (building).",
+      "notes": ""
+    },
+    "territorial_pressure": "_guide: How contested is space this month? Spring has more transient animals moving through. Summer has established territories. Describe the social density.",
+    "daylight": "_guide: What's the light like? Length of day, quality. Long spring days vs. short winter ones change YY's available window.",
+    "conditions": "_guide: Weather texture for the month — not specific forecasts, the general physical feel. Warmth, rain patterns, wind.",
+    "morning_cache_window": "_guide: When is it open, how reliable is it, what affects it this month? This is the highest-stakes recurring event in a squirrel's day."
+  },
+
+  "social_field": {
+    "_guide": "Who or what is in the territory? Named presences don't need backstory — they need enough description to recur consistently. 'The grey squirrel from the east boundary' is enough to be recognizable when it shows up again. Keep it small: 2-3 named presences maximum at root start. They can acquire more identity over the month.",
+    "density": "_guide: Low | medium | high. How many other animals are actively present in YY's range right now?",
+    "known_presences": [
+      {
+        "_guide": "Copy for each recurring presence. These are not characters — they are consistent environmental elements with agency.",
+        "id": "",
+        "description": "",
+        "territory_relationship": "_guide: adjacent | overlapping | passing_through | unknown",
+        "disposition": "_guide: competitive | neutral | avoidant | curious",
+        "notes": ""
+      }
+    ],
+    "active_tensions": [
+      "_guide: Anything already in play at root start. A contested cache site. A boundary dispute. An unknown animal that appeared last month. These carry into the first days automatically."
+    ]
+  },
+
+  "starting_conditions": {
+    "_guide": "YY's physical state at the beginning of this root. These become state_before for Day 1's snapshot. They should reflect seasonal_physics honestly — a squirrel starting a root in March post-winter has lower food than one starting in October.",
+    "food": null,
+    "health": null,
+    "attention": null,
+    "active_burdens": [],
+    "identity_notes": [
+      "_guide: 1-2 notes about where YY is psychologically at root start. What's carried forward from the previous root, if anything. What the clean-slate version of YY looks like."
+    ]
+  },
+
+  "atmosphere": {
+    "_guide": "The texture of this month as a narrative resource. Not what will happen — what's available. What recurring elements will show up. What this month costs and what it offers. The pipeline uses this to find appropriate event translations — a month with 'heat and slowing down' translates world events differently than one with 'urgency and preparation'.",
+    "one_line": "_guide: A single phrase that captures the feel of this month in YY's world. E.g. 'the long work before abundance', 'the quiet that comes after', 'everything moving too fast'.",
+    "recurring_elements": [
+      "_guide: Environmental things that will keep showing up. Sounds, light qualities, seasonal activity patterns. E.g. 'longer evenings', 'other animals competing for the same routes', 'rain that arrives without warning'."
+    ],
+    "what_this_month_costs": "_guide: What pressure does YY operate under? What does the month take?",
+    "what_this_month_offers": "_guide: What's available that other months don't have? What can YY find or experience that's specific to this period?"
+  },
+
+  "authorial_intent": {
+    "_guide": "What do you, the author, want to track across this month? Not plot — direction. E.g. 'I want to see what happens when the cache_deficit resolves or compounds over 30 days.' Or: 'I want to explore what curiosity looks like under sustained resource pressure.' Optional but useful for multi-week arcs.",
+    "arc_direction": "",
+    "questions_to_track": [],
+    "branch_hypothesis": "_guide: If you already know what divergence you want to explore, name it here. E.g. 'what happens if one branch encounters a cooperative presence vs. a competitive one.'"
+  }
+}

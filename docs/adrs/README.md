@@ -31,6 +31,8 @@ Each active ADR includes a **Museum lineage** field linking back to the prior th
 - [YYBW-025 — ?preview as Permanent Two-Layer Access Pattern](./025-preview-as-permanent-two-layer-access-pattern.md)
 - [YYBW-026 — species and Stat Names as Required Baseline Fields](./026-species-and-stat-names-as-required-baseline-fields.md)
 - [YYBW-027 — Authorship and Authority Emerge from Public, Append-Only Systems](./027-authorship-and-authority-emerge-from-public-append-only-systems.md)
+- [YYBW-028 — Narrative Artifacts Are Projections; Event Translation Requires Physical Presence](./028-artifact-rewrite-and-event-translation-quality.md)
+- [YYBW-029 — World Seed and YY Voice Register: Designed Now, Introduced at Next Root](./029-world-seed-and-yy-voice-register-templates.md)
 
 ---
 
