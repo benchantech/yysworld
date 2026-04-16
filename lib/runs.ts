@@ -371,6 +371,42 @@ export function getComparisonArtifact(
 }
 
 /**
+ * Finds the runDate for a given month prefix (e.g. "2026-04" → "2026-04-14").
+ * Assumes at most one active run per calendar month.
+ */
+export function getRunDateByMonth(month: string): string | null {
+  const run = getStaticRuns(true).find((r) => r.runDate.startsWith(month + '-'))
+  return run?.runDate ?? null
+}
+
+/**
+ * Like getDayArtifact but resolves runDate from a month string.
+ * Used by the /yy/data/ JSON API routes.
+ */
+export function getDayArtifactByMonth(
+  month: string,
+  branch: string,
+  day: string,
+): DayArtifact | null {
+  const runDate = getRunDateByMonth(month)
+  return runDate ? getDayArtifact(runDate, branch, day) : null
+}
+
+/**
+ * Like getComparisonArtifact but resolves runDate from a month string.
+ * Used by the /yy/data/ JSON API routes.
+ */
+export function getComparisonArtifactByMonth(
+  month: string,
+  branchA: string,
+  branchB: string,
+  day: string,
+): ComparisonArtifact | null {
+  const runDate = getRunDateByMonth(month)
+  return runDate ? getComparisonArtifact(runDate, branchA, branchB, day) : null
+}
+
+/**
  * Returns the artifact content for a specific day, or null if none exists.
  * Includes releaseAt — the midnight EST timestamp after which the gate opens
  * for regular visitors. ?preview bypasses this entirely client-side.
