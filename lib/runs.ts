@@ -14,6 +14,7 @@ interface BranchFile {
   character_id?: string
   created_at: string
   status: string
+  sandbox?: boolean
   state?: { story_day?: number }
 }
 
@@ -106,6 +107,7 @@ export interface RunSummary {
   runDate: string     // "2026-04-01"
   character: string   // "yy"
   branches: BranchSummary[]
+  sandbox: boolean    // true = discoverable by URL but never surfaced in nav/sitemap/feeds
 }
 
 // midnight EST (UTC-5) of the day after snapshot_date
@@ -115,7 +117,7 @@ function releaseAtFromSnapshotDate(snapshotDate: string): string {
   return new Date(Date.UTC(year, month - 1, day + 1, 5, 0, 0)).toISOString()
 }
 
-export function getStaticRuns(): RunSummary[] {
+export function getStaticRuns(includeSandbox = false): RunSummary[] {
   const runsDir = join(process.cwd(), 'runs')
   if (!existsSync(runsDir)) return []
 
@@ -145,6 +147,7 @@ export function getStaticRuns(): RunSummary[] {
 
     let runDate: string | null = null
     let character = 'yy'
+    let isSandbox = false
     const branches: BranchSummary[] = []
 
     for (const file of branchFiles) {
@@ -157,6 +160,7 @@ export function getStaticRuns(): RunSummary[] {
           runDate = data.created_at.slice(0, 10)
         }
         if (data.character_id) character = data.character_id
+        if (data.sandbox) isSandbox = true
 
         const branchId = data.branch_id.replace(`branch_${data.root_id}_`, '')
         const publishedDays = data.state?.story_day ?? 0
@@ -173,7 +177,9 @@ export function getStaticRuns(): RunSummary[] {
     }
 
     if (runDate && branches.length > 0) {
-      runs.push({ runDate, character, branches })
+      if (!isSandbox || includeSandbox) {
+        runs.push({ runDate, character, branches, sandbox: isSandbox })
+      }
     }
   }
 
@@ -185,7 +191,7 @@ export function getStaticRuns(): RunSummary[] {
  * Used by the day page to build the branch switcher from real data.
  */
 export function getRunBranches(runDate: string): string[] {
-  const run = getStaticRuns().find((r) => r.runDate === runDate)
+  const run = getStaticRuns(true).find((r) => r.runDate === runDate)
   return run?.branches.map((b) => b.id) ?? ['main']
 }
 

@@ -10,7 +10,7 @@ export const contentType = 'image/png'
 export function generateStaticParams(): { runDate: string; branch: string; day: string }[] {
   const params = getDayParams()
   const covered = new Set(params.map((p) => `${p.runDate}/${p.branch}`))
-  for (const run of getStaticRuns()) {
+  for (const run of getStaticRuns(true)) {
     for (const b of run.branches) {
       if (!covered.has(`${run.runDate}/${b.id}`)) {
         params.push({ runDate: run.runDate, branch: b.id, day: '1' })

@@ -102,7 +102,7 @@ export default async function VsPage({
   const cmp = day ? getComparisonArtifact(runDate, branchA, branchB, day) : null
 
   // Total days with comparison artifacts for this pair
-  const run = getStaticRuns().find((r) => r.runDate === runDate)
+  const run = getStaticRuns(true).find((r) => r.runDate === runDate)
   const maxDays = run
     ? Math.max(...run.branches.map((b) => b.publishedDays), dayNum ?? 0)
     : dayNum ?? 1

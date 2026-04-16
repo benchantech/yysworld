@@ -23,7 +23,7 @@ export function generateStaticParams(): { runDate: string; branch: string; day: 
   // Add a day/1 stub for any branch that has no artifact yet so every active
   // branch always has at least one routable page (renders "content coming soon").
   const covered = new Set(params.map((p) => `${p.runDate}/${p.branch}`))
-  for (const run of getStaticRuns()) {
+  for (const run of getStaticRuns(true)) {
     for (const b of run.branches) {
       if (!covered.has(`${run.runDate}/${b.id}`)) {
         params.push({ runDate: run.runDate, branch: b.id, day: '1' })
@@ -92,8 +92,8 @@ export default async function DayArtifactPage({
   }))
   const altBranches = branchOptions.filter((b) => !b.isCurrent)
 
-  // totalDays: max published across all branches in this run
-  const run = getStaticRuns().find((r) => r.runDate === runDate)
+  // totalDays: max published across all branches in this run (include sandbox so nav works on test pages)
+  const run = getStaticRuns(true).find((r) => r.runDate === runDate)
   const totalDays = run
     ? Math.max(...run.branches.map((b) => b.publishedDays), dayNum)
     : dayNum
