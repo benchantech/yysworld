@@ -57,27 +57,58 @@ generating: day {N+1} for {yesterday}
 
 If a snapshot file already exists at `runs/{rootId}/snapshots/snap_{yesterday}_{branchId}.json` for the main branch, tell the user and ask if they want to skip to Phase 2.
 
-### Step 5 — PROPOSE event
+### Step 5 — LIVE EVENT SEARCH and selection
 
-Pre-think the event before asking anything. Reason about:
-- What likely happened in the real world on {yesterday} (seasonal, calendar, cultural)
-- How it translates to YY's abstracted world
-- What the perception surface is for YY
+**This step requires a live web search. Do NOT use training data for event selection.**
 
-Then show the proposal and pause:
+Run a web search for today's real-world news and events. Search for:
+- "{today} news"
+- "{today} events"
+- Current top headlines
+
+Find at least 5 distinct real events happening or reported today. Include a mix: news, sports, science, culture, local/global. Avoid events that are purely local to one city unless they have universal resonance.
+
+Show the list and pause:
 
 ```
-── EVENT PROPOSAL ───────────────────────────────
-hook:   {real_world_inspiration}
-type:   {event_type}
-YY sees: "{perception_prompt.noticeable_surface}"
-tags:   {tag1}, {tag2}, ...
-why:    {translation_logic — one sentence}
+── TODAY'S EVENTS ───────────────────────────────
+What's happening in the world today ({today}):
+
+  1. {headline / event} — {one-line description}
+  2. {headline / event} — {one-line description}
+  3. {headline / event} — {one-line description}
+  4. {headline / event} — {one-line description}
+  5. {headline / event} — {one-line description}
+  [+ more if found]
+
+Which of these should influence today? (pick one or more, or describe your own)
+─────────────────────────────────────────────────
+```
+
+Wait for the user to select. They may pick by number, describe something else entirely, or combine events. Their selection becomes the `event_hint`.
+
+### Step 5b — PROPOSE event translation
+
+Using the selected real-world event(s), translate to YY's physical world per ADR-028 rules:
+- The event must produce a sensory encounter YY can physically experience
+- Not a concept that arrives — something YY sees, hears, smells, or encounters
+- The translation should work for both branches given their different states
+
+Show the translation and pause:
+
+```
+── EVENT TRANSLATION ────────────────────────────
+selected:  {user's chosen event(s)}
+hook:      {real_world_inspiration — one line}
+type:      {event_type}
+YY sees:   "{perception_prompt.noticeable_surface}"
+tags:      {tag1}, {tag2}, ...
+why:       {translation_logic — one sentence}
 
 [enter to accept · or describe the day instead]
 ```
 
-Wait for user response before proceeding. If they type something, use it as the event_hint override.
+Wait for user response. If they type something, use it as an override or refinement.
 
 ### Step 6 — PROPOSE per-branch plans
 
