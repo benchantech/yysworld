@@ -39,11 +39,9 @@ function StatRow({
         <span className={barColor(clamped)}>{'█'.repeat(filled)}</span>
         <span className="text-zinc-800">{'█'.repeat(BAR_LEN - filled)}</span>
       </span>
-      {showDelta && (
-        <span className="font-mono text-xs text-zinc-500 w-7 text-right leading-none">
-          {sign}{abs}
-        </span>
-      )}
+      <span className={`font-mono text-xs text-zinc-500 w-7 text-right leading-none ${showDelta ? '' : 'invisible'}`}>
+        {sign}{abs}
+      </span>
     </div>
   )
 }
