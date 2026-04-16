@@ -14,7 +14,9 @@
     "canonical_truth",
     "perception_prompt",
     "tags",
-    "created_at"
+    "created_at",
+    "source_event",
+    "authorial_note"
   ],
   "properties": {
     "schema_version": {
@@ -30,7 +32,8 @@
       "type": "integer"
     },
     "occurred_at": {
-      "type": "string"
+      "type": "string",
+      "format": "date-time"
     },
     "event_type": {
       "type": "string"
@@ -38,54 +41,87 @@
     "canonical_truth": {
       "type": "object",
       "additionalProperties": false,
-      "required": [
-        "summary",
-        "entities",
-        "location",
-        "concrete_outcome"
-      ],
+      "required": ["summary", "entities", "location", "concrete_outcome"],
       "properties": {
-        "summary": {
-          "type": "string"
-        },
+        "summary": { "type": "string" },
         "entities": {
           "type": "array",
-          "items": {
-            "type": "string"
-          }
+          "items": { "type": "string" }
         },
-        "location": {
-          "type": "string"
-        },
-        "concrete_outcome": {
-          "type": "string"
-        }
+        "location": { "type": "string" },
+        "concrete_outcome": { "type": "string" }
       }
     },
     "perception_prompt": {
       "type": "object",
       "additionalProperties": false,
-      "required": [
-        "noticeable_surface",
-        "ambiguity_level"
-      ],
+      "required": ["noticeable_surface", "ambiguity_level"],
       "properties": {
-        "noticeable_surface": {
-          "type": "string"
-        },
-        "ambiguity_level": {
-          "type": "number"
-        }
+        "noticeable_surface": { "type": "string" },
+        "ambiguity_level": { "type": "number", "minimum": 0, "maximum": 1 }
       }
     },
     "tags": {
       "type": "array",
-      "items": {
-        "type": "string"
-      }
+      "items": { "type": "string" }
     },
     "created_at": {
-      "type": "string"
+      "type": "string",
+      "format": "date-time"
+    },
+    "source_event": {
+      "description": "The real-world event selected by the author. Structured for queryability. See ADR-031.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["headline", "date", "category"],
+      "properties": {
+        "headline": {
+          "type": "string",
+          "description": "Short human-readable event name as selected by the author"
+        },
+        "date": {
+          "type": "string",
+          "format": "date",
+          "description": "Real-world date the event occurred or was reported (YYYY-MM-DD)"
+        },
+        "category": {
+          "type": "string",
+          "enum": ["politics", "civic", "science", "culture", "sports", "other"]
+        },
+        "secondary": {
+          "type": "string",
+          "description": "Optional secondary event when two real-world events co-influenced the day"
+        }
+      }
+    },
+    "authorial_note": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["real_world_inspiration", "translation_logic", "restraint_reason"],
+      "properties": {
+        "real_world_inspiration": { "type": "string" },
+        "translation_logic": { "type": "string" },
+        "restraint_reason": { "type": "string" }
+      }
+    },
+    "schema_patch": {
+      "description": "Present only on files retroactively amended to add a new field. See referenced ADR.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["added_at", "added_by", "reason"],
+      "properties": {
+        "added_at": { "type": "string", "format": "date-time" },
+        "added_by": { "type": "string" },
+        "reason": { "type": "string" }
+      }
+    },
+    "supersedes": {
+      "type": "string",
+      "description": "event_id of the event this file replaces"
+    },
+    "correction_reason": {
+      "type": "string",
+      "description": "Explanation of why the superseded event was replaced"
     }
   }
 }
