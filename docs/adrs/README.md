@@ -33,6 +33,7 @@ Each active ADR includes a **Museum lineage** field linking back to the prior th
 - [YYBW-027 — Authorship and Authority Emerge from Public, Append-Only Systems](./027-authorship-and-authority-emerge-from-public-append-only-systems.md)
 - [YYBW-028 — Narrative Artifacts Are Projections; Event Translation Requires Physical Presence](./028-artifact-rewrite-and-event-translation-quality.md)
 - [YYBW-029 — World Seed and YY Voice Register: Designed Now, Introduced at Next Root](./029-world-seed-and-yy-voice-register-templates.md)
+- [YYBW-030 — Drift Is Research: Governance Makes Drift Legible, Not Absent](./030-drift-is-research-governance-as-legibility-not-constraint.md)
 
 ---
 
