@@ -37,7 +37,7 @@ function StatRow({
       <span className="w-5 text-center text-sm leading-none">{emoji}</span>
       <span className="font-mono text-xs leading-none">
         <span className={barColor(clamped)}>{'█'.repeat(filled)}</span>
-        <span className="text-zinc-700">{'░'.repeat(BAR_LEN - filled)}</span>
+        <span className="text-zinc-800">{'█'.repeat(BAR_LEN - filled)}</span>
       </span>
       {showDelta && (
         <span className="font-mono text-xs text-zinc-500 w-7 text-right leading-none">
