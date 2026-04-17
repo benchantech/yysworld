@@ -51,20 +51,15 @@ export default function SystemMapPage() {
       <Breadcrumbs items={breadcrumbs} />
 
       <div className="mt-4">
-        <header className="space-y-1 mb-6">
-          <div className="flex items-center gap-2">
-            <span className="font-mono text-xs text-zinc-600">v1.0</span>
-            <span className="text-xs text-zinc-700">·</span>
-            <span className="text-xs text-zinc-600">2026-04-16</span>
-            <span className="text-xs text-zinc-700">·</span>
-            <span className="text-xs text-zinc-600">current</span>
-          </div>
+        <header className="mb-6 space-y-2">
           <h1 className="text-base font-medium text-zinc-100">System Map</h1>
+          <p className="font-mono text-xs text-zinc-600">v1.0 · 2026-04-16 · current</p>
           <p className="text-xs text-zinc-500 max-w-prose leading-relaxed">
-            A true diagram of this system as currently constituted. Every unlabelled box exists.
-            Every <span className="font-mono text-zinc-600">[planned]</span> label is honest.
-            Versioned — when the structure changes materially, v1.1 is written; v1.0 is not deleted.
+            Every unlabelled box exists in this repo.
+            Every <span className="font-mono text-zinc-600">[planned]</span> label is honest about what does not.
+            When the structure changes materially, v1.1 is written — v1.0 is not deleted.
           </p>
+          <p className="text-xs text-zinc-700">Scroll the diagram horizontally on narrow screens.</p>
         </header>
 
         <article className="space-y-0">
