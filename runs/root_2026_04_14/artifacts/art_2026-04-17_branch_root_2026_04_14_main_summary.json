@@ -1,0 +1,31 @@
+{
+  "schema_version": "0.1",
+  "artifact_id": "art_2026-04-17_branch_root_2026_04_14_main_summary",
+  "artifact_type": "daily_summary",
+  "snapshot_id": "snap_2026-04-17_branch_root_2026_04_14_main",
+  "root_id": "root_2026_04_14",
+  "branch_id": "branch_root_2026_04_14_main",
+  "package_ref": {
+    "package_id": "yysworld-pipeline-v0.1",
+    "package_created_at": "2026-04-17T09:00:00Z",
+    "package_hash": "sha256:claude-code-subscription"
+  },
+  "model_refs": [{"provider": "anthropic", "model_id": "claude-code-subscription", "role": "summarizer", "runtime_class": "interactive"}],
+  "comparison_contract_version": "0.1",
+  "content": {
+    "title": "The line",
+    "tone": "strained_and_clarified",
+    "narrative": "The grey-brown squirrel was back.\n\nNot at the cache — at the edge of it, which was different. On Day 2 the presence had been ambiguous: an animal that might have been passing, might have been assessing. This was not that. This was a position.\n\nYY was thin. Not critically — the math still worked — but the margin was smaller than it had been on Day 2, and the body knows the difference between holding something from surplus and holding it from deficit. The territorial accounting ran the same numbers it always runs. It came back with the same answer: hold.\n\nThe confrontation had the shape all these confrontations have. Alarm calls. The particular aggressive stillness that isn't stillness so much as compressed motion. A charge that wasn't quite a charge — more a clarification of intent, sharp enough to be understood and short enough to be stopped. The other squirrel held for a moment, then withdrew. Not far. Far enough.\n\nYY didn't chase. Chasing would have been wrong in a way that was difficult to articulate but obvious. The point wasn't to win. The point was the line.\n\nFor a while they occupied separate positions and regarded each other across the distance between them. The east cache site was between them. It stayed between them.\n\nThe other squirrel left at its own pace. The cache remained.\n\nWhat was different from Day 2 was the quality of the remaining. On Day 2 the site had held, probably. The probably had been doing a lot of work since then — carrying the uncertainty of an outcome that hadn't fully resolved. Today the probably was gone. The site had held to here. The line was known. That was a different kind of thing to carry than not knowing.",
+    "state_note": "food 0.43 — used energy on the confrontation without foraging; the west spot remains unvisited today. attention 0.55 — the confrontation demanded sharpness; the resolution of uncertainty provided a small recovery. cache_deficit resolves: not because the material situation improved but because the uncertainty did. The line is known now.",
+    "summary": "The grey-brown squirrel returned at the east cache edge; a direct confrontation resolved in mutual withdrawal, and the uncertain 'probably held' became a known line.",
+    "state_delta": {
+      "food": "0.47 → 0.43",
+      "attention": "0.47 → 0.55",
+      "health": "0.90 → 0.90",
+      "burden_resolved": "cache_deficit",
+      "burden_acquired": null
+    },
+    "branch_created": false
+  },
+  "created_at": "2026-04-17T09:00:00Z"
+}

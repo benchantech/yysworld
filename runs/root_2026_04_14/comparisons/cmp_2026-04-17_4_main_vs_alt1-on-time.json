@@ -1,0 +1,37 @@
+{
+  "schema_version": "0.1",
+  "comparison_id": "cmp_2026-04-17_4_main_vs_alt1-on-time",
+  "artifact_type": "daily_comparison",
+  "root_id": "root_2026_04_14",
+  "branch_a": "branch_root_2026_04_14_main",
+  "branch_b": "branch_root_2026_04_14_alt1-on-time",
+  "story_day": 4,
+  "snapshot_date": "2026-04-17",
+  "snapshot_ids": [
+    "snap_2026-04-17_branch_root_2026_04_14_main",
+    "snap_2026-04-17_branch_root_2026_04_14_alt1-on-time"
+  ],
+  "package_ref": {
+    "package_id": "yysworld-pipeline-v0.1",
+    "package_created_at": "2026-04-17T09:00:00Z",
+    "package_hash": "sha256:claude-code-subscription"
+  },
+  "model_refs": [{"provider": "anthropic", "model_id": "claude-code-subscription", "role": "comparator", "runtime_class": "interactive"}],
+  "content": {
+    "divergence_summary": "Same squirrel, same edge, same confrontation — but main held a line under pressure while alt1 drew one from strength. The outcome looks similar; the experience of arriving at it is entirely different.",
+    "branch_a_path": "Thin reserves, no foraging today — the confrontation cost food but bought clarity. cache_deficit resolves not through material improvement but through the 'probably' finally dropping out. Held from deficit; the line is known.",
+    "branch_b_path": "Well-fed, present, advancing rather than holding — the line landed where alt1 chose it. The territory is becoming legible: east established, west filed. The running question about deliberate holding found a new surface.",
+    "key_differences": [
+      "main held position defensively (from thin); alt1 advanced deliberately (from adequacy) — same physical outcome, fundamentally different experience",
+      "main: cache_deficit resolves through clarity, not supply — attention recovers slightly, food drops further (0.47→0.43); alt1: attention rises (0.78→0.82), food barely moves (0.72→0.68)",
+      "main leaves with the relief of uncertainty resolved; alt1 leaves with the satisfaction of terms set — both carry a known line, but one was imposed by necessity and one was chosen"
+    ],
+    "shared_elements": [
+      "same grey-brown squirrel from Day 2 — same four-second assessment, same dignified withdrawal",
+      "same east cache site; same mutual withdrawal outcome",
+      "same absence of chasing — neither branch pursues; the line is the point, not the win",
+      "both now carry a known territorial boundary rather than a contested uncertainty"
+    ]
+  },
+  "created_at": "2026-04-17T09:00:00Z"
+}

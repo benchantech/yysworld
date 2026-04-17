@@ -1,0 +1,30 @@
+{
+  "schema_version": "0.1",
+  "event_id": "evt_2026-04-16_001",
+  "root_id": "root_2026_04_14",
+  "story_day": 4,
+  "occurred_at": "2026-04-16T12:00:00Z",
+  "event_type": "territorial_confrontation / ceasefire",
+  "canonical_truth": {
+    "summary": "The grey-brown squirrel from Day 2 returns at the edge of the east cache zone — closer and more deliberate than before. A territorial confrontation plays out: alarm calls, posturing, charges that stop short. Neither animal wins outright. Both withdraw to their own side of a line. The cache remains; the uncertainty about who holds it resolves into an acknowledged boundary.",
+    "entities": ["YY", "grey_brown_squirrel", "east_cache"],
+    "location": "east_cache_boundary",
+    "concrete_outcome": "mutual_withdrawal_line_established"
+  },
+  "perception_prompt": {
+    "noticeable_surface": "The grey-brown squirrel from Day 2 is back — closer this time, at the edge of the east cache zone rather than inside it. The challenge is more direct. The resolution is not a win. It is a line.",
+    "ambiguity_level": 0.2
+  },
+  "tags": ["territory", "confrontation", "boundary_setting", "ceasefire", "east_cache", "mutual_withdrawal", "grey_brown_squirrel"],
+  "created_at": "2026-04-17T09:00:00Z",
+  "source_event": {
+    "headline": "Israel-Lebanon ceasefire begins",
+    "date": "2026-04-16",
+    "category": "politics"
+  },
+  "authorial_note": {
+    "real_world_inspiration": "Israel-Lebanon 10-day ceasefire brokered after sustained territorial strikes — mutual withdrawal rather than decisive outcome",
+    "translation_logic": "The same squirrel from Day 2 returns with a clearer claim; both animals assert and neither wins outright; the day ends with each holding their ground and the other's boundary tacitly acknowledged",
+    "restraint_reason": "The ceasefire is a line drawn, not a victory — the physical outcome is the same in both branches but the experience of arriving at that line differs entirely by entering state"
+  }
+}

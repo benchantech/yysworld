@@ -1,0 +1,72 @@
+{
+  "schema_version": "0.1",
+  "snapshot_id": "snap_2026-04-17_branch_root_2026_04_14_alt1-on-time",
+  "root_id": "root_2026_04_14",
+  "branch_id": "branch_root_2026_04_14_alt1-on-time",
+  "story_day": 4,
+  "snapshot_date": "2026-04-17",
+  "time_policy": "nightly_auto_advance",
+  "package_ref": {
+    "package_id": "yysworld-pipeline-v0.1",
+    "package_created_at": "2026-04-17T09:00:00Z",
+    "package_hash": "sha256:claude-code-subscription"
+  },
+  "model_refs": [{"provider": "anthropic", "model_id": "claude-code-subscription", "role": "generator", "runtime_class": "interactive"}],
+  "event_refs": ["evt_2026-04-16_001"],
+  "decision_refs": [],
+  "state_before": {
+    "story_day": 3,
+    "condition": {
+      "health": 0.9,
+      "food": 0.72,
+      "attention": 0.78
+    },
+    "inventory": [],
+    "active_burdens": [],
+    "goals": {
+      "primary": "get_through_the_morning",
+      "secondary": "map_west_territory"
+    },
+    "reaction_overrides": {},
+    "trait_deviations": {
+      "curious": 0.05,
+      "restless": -0.05
+    },
+    "identity_notes": [
+      "hunger arrived specific — not the usual kind; this was noted as interesting",
+      "east cache avoided; went west with attention to spare",
+      "found a good spot; ate well; mentally filed it as worth revisiting",
+      "the fence-post question (does a lucky thing stay what it was?) found a new surface: is a lucky food source a reliable one?"
+    ]
+  },
+  "state_after": {
+    "story_day": 4,
+    "condition": {
+      "health": 0.9,
+      "food": 0.68,
+      "attention": 0.82
+    },
+    "inventory": [],
+    "active_burdens": [],
+    "goals": {
+      "primary": "get_through_the_morning",
+      "secondary": "map_west_territory"
+    },
+    "reaction_overrides": {},
+    "trait_deviations": {
+      "curious": 0.05,
+      "restless": -0.05
+    },
+    "identity_notes": [
+      "the grey-brown squirrel returned; alt1 advanced rather than held",
+      "the line landed where alt1 chose — territory established on favorable terms",
+      "east: established. west: filed. the range is becoming legible.",
+      "the fence-post question found another surface: does holding something deliberately change what it means?"
+    ]
+  },
+  "change_summary": {
+    "notable_shift": "entered the confrontation from adequacy and drew the line from strength rather than holding it under pressure; the boundary landed on favorable terms; the running question about persistence and deliberate holding found a new surface in territorial ownership",
+    "branch_created": false
+  },
+  "created_at": "2026-04-17T09:00:00Z"
+}

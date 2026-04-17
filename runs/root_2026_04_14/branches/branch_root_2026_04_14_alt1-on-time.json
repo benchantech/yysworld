@@ -7,11 +7,11 @@
   "created_at": "2026-04-14T20:40:00Z",
   "status": "active",
   "state": {
-    "story_day": 3,
+    "story_day": 4,
     "condition": {
       "health": 0.9,
-      "food": 0.72,
-      "attention": 0.78
+      "food": 0.68,
+      "attention": 0.82
     },
     "inventory": [],
     "active_burdens": [],
@@ -25,12 +25,12 @@
       "restless": -0.05
     },
     "identity_notes": [
-      "hunger arrived specific — not the usual kind; this was noted as interesting",
-      "east cache avoided; went west with attention to spare",
-      "found a good spot; ate well; mentally filed it as worth revisiting",
-      "the fence-post question (does a lucky thing stay what it was?) found a new surface: is a lucky food source a reliable one?"
+      "the grey-brown squirrel returned; alt1 advanced rather than held",
+      "the line landed where alt1 chose — territory established on favorable terms",
+      "east: established. west: filed. the range is becoming legible.",
+      "the fence-post question found another surface: does holding something deliberately change what it means?"
     ]
   },
   "drift_flags": [],
-  "last_updated_at": "2026-04-16T09:00:00Z"
+  "last_updated_at": "2026-04-17T09:00:00Z"
 }
