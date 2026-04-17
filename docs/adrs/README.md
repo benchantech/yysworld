@@ -1,5 +1,8 @@
 # ADR Index
 
+> The ADRs are the deepest layer of system truth.
+> For a map of how all layers fit together, see [`docs/system-map-v1.0.md`](../system-map-v1.0.md) — also at [yysworld.com/system-map/](https://yysworld.com/system-map/).
+
 ## Active ADRs
 
 Each active ADR includes a **Museum lineage** field linking back to the prior thinking it supersedes or extends.

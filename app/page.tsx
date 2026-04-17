@@ -98,6 +98,11 @@ export default function HomePage() {
             <Link href="/adrs/" className="text-zinc-500 hover:text-zinc-300 transition-colors">
               architecture decisions (ADRs)
             </Link>
+            .{' '}
+            The full system architecture —  what exists, what is planned, how each layer connects — is in the{' '}
+            <Link href="/system-map/" className="text-zinc-500 hover:text-zinc-300 transition-colors">
+              system map
+            </Link>
             .
           </p>
           <p className="text-xs text-zinc-600">

@@ -3,6 +3,7 @@
 This file tells AI executors how to work on the YY Branching World project without breaking canon, provenance, or hobby-stage discipline. The project is a provenance-preserving, versioned, branching YY artifact — not just a site.
 
 **Reference docs** (read when task-relevant):
+- `docs/system-map-v1.0.md` — system architecture: every layer, what exists vs. what is planned
 - `docs/executor/procedures.md` — change taxonomy, diff policy, nightly pipeline, naming conventions
 - `docs/executor/craft.md` — YY Method lens, antipatterns, quality bar, future hooks, discoverability
 

@@ -29,6 +29,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.6,
     },
     {
+      url: `${BASE_URL}/system-map/`,
+      lastModified: new Date('2026-04-16'),
+      changeFrequency: 'monthly' as const,
+      priority: 0.8,
+    },
+    {
       url: `${BASE_URL}/adrs/`,
       lastModified: now,
       changeFrequency: 'weekly',

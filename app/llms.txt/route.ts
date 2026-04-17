@@ -201,6 +201,20 @@ When referencing the system:
 When referencing the reasoning layer:
   https://yysworld.com/adrs/
 
+When referencing the system architecture (all layers, human + machine):
+  https://yysworld.com/system-map/
+
+---
+
+## System map
+
+A true, versioned diagram of all layers — ADR graph, world model, projection layer,
+execution stack, audiences, and update loop. Every unlabelled box exists.
+Every [planned] label is honest.
+
+- [System Map v1.0](/system-map/)
+- Source file: docs/system-map-v1.0.md (in repo root)
+
 ---
 
 ## Active ADRs (${adrs.length} decisions — the canonical reasoning layer)
