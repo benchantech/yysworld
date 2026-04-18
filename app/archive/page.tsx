@@ -9,13 +9,22 @@ export const metadata: Metadata = {
   description: 'A readable record of runs, days, and branch density.',
 }
 
-function CalendarGrid({ runDate, publishedDays, totalDays = 30 }: { runDate: string; publishedDays: number; totalDays?: number }) {
+function CalendarGrid({
+  runDate,
+  branchId,
+  publishedDays,
+  totalDays = 30,
+}: {
+  runDate: string
+  branchId: string
+  publishedDays: number
+  totalDays?: number
+}) {
   const startDate = new Date(runDate)
-  const startDow = startDate.getDay() // 0=Sun
+  const startDow = startDate.getDay()
 
   const cells: { day: number | null; published: boolean; today: boolean; future: boolean }[] = []
 
-  // leading empty cells
   for (let i = 0; i < startDow; i++) cells.push({ day: null, published: false, today: false, future: false })
 
   const todayStr = new Date().toISOString().slice(0, 10)
@@ -34,22 +43,29 @@ function CalendarGrid({ runDate, publishedDays, totalDays = 30 }: { runDate: str
 
   return (
     <div className="yy-calendar">
-      {cells.map((cell, i) =>
-        cell.day === null ? (
-          <div key={`empty-${i}`} className="is-empty" />
-        ) : (
-          <div
-            key={cell.day}
-            className={[
-              cell.today ? 'is-today' : '',
-              cell.published ? 'is-published' : '',
-              cell.future ? 'is-future' : '',
-            ].filter(Boolean).join(' ') || undefined}
-          >
-            {cell.day}
-          </div>
-        )
-      )}
+      {cells.map((cell, i) => {
+        if (cell.day === null) return <div key={`empty-${i}`} className="is-empty" />
+
+        const cls = [
+          cell.today ? 'is-today' : '',
+          cell.published ? 'is-published' : '',
+          cell.future ? 'is-future' : '',
+        ].filter(Boolean).join(' ') || undefined
+
+        if (cell.published) {
+          return (
+            <Link
+              key={cell.day}
+              href={`/yy/${runDate}/${branchId}/day/${cell.day}`}
+              className={cls}
+            >
+              {cell.day}
+            </Link>
+          )
+        }
+
+        return <div key={cell.day} className={cls}>{cell.day}</div>
+      })}
     </div>
   )
 }
@@ -84,7 +100,7 @@ export default function ArchivePage() {
               <div className="yy-archiveGrid" style={{ marginTop: '1rem' }}>
                 <NotebookCard>
                   <MonoLabel>calendar</MonoLabel>
-                  <CalendarGrid runDate={run.runDate} publishedDays={mainBranch.publishedDays} />
+                  <CalendarGrid runDate={run.runDate} branchId={mainBranch.id} publishedDays={mainBranch.publishedDays} />
                   <div style={{ marginTop: '1rem', display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
                     {run.branches.map((branch) => (
                       <Link
