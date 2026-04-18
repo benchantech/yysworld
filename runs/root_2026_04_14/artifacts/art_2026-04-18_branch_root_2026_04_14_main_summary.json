@@ -1,0 +1,29 @@
+{
+  "schema_version": "0.1",
+  "artifact_id": "art_2026-04-18_branch_root_2026_04_14_main_summary",
+  "artifact_type": "daily_summary",
+  "snapshot_id": "snap_2026-04-18_branch_root_2026_04_14_main",
+  "root_id": "root_2026_04_14",
+  "branch_id": "branch_root_2026_04_14_main",
+  "package_ref": {
+    "package_id": "yysworld-pipeline-v0.1",
+    "package_created_at": "2026-04-18T09:00:00Z",
+    "package_hash": "sha256:claude-sonnet-4-6"
+  },
+  "model_refs": [{"provider": "anthropic", "model_id": "claude-sonnet-4-6", "role": "summarizer", "runtime_class": "interactive"}],
+  "comparison_contract_version": "0.1",
+  "content": {
+    "title": "The offer, not taken",
+    "tone": "adjacent_to_something",
+    "narrative": "The grey-brown squirrel came back at the east boundary, but the posture was different.\n\nNot the aggressive stillness from yesterday — something else. It was carrying something, angled slightly toward the cache, not toward YY directly. Waiting.\n\nYY registered the change. The category was legible: an offer. The grey squirrel had come back with different intentions and the body language made this clear enough.\n\nThe calculation that followed was the problem. This morning food was low and attention was what gets used when food is low — diverted into background management, slow to commit. The math started: what would exchange require, what was surplus, what was the grey squirrel angling for. The math ran slow and didn't complete.\n\nThe grey squirrel waited approximately forty seconds, then turned and went back the way it came. Not hostile. Just done.\n\nYY went west after, which was already the plan. The west spot produced again — not the same quality as the day before, but enough. Came back with more food than the morning started with.\n\nThe east cache was intact. The line held. The grey squirrel had come and gone without incident.\n\nYY ate at the edge of the east site and looked out at the boundary. The afternoon light was in the trees.",
+    "state_note": "food 0.40 — west foraging recovered some of the morning deficit; the encounter itself cost nothing material. attention 0.50 — low coming in, lower going out; the incomplete calculation used what was there. No burdens acquired or resolved. The east line held. No inventory change.",
+    "summary": "The grey-brown squirrel returned to the east boundary with an open posture and something to trade; YY registered the offer but couldn't complete the read in time, and the grey squirrel left without exchange.",
+    "state_delta": {
+      "food": "0.43 → 0.40",
+      "attention": "0.55 → 0.50",
+      "health": "0.90 → 0.90"
+    },
+    "branch_created": false
+  },
+  "created_at": "2026-04-18T09:00:00Z"
+}

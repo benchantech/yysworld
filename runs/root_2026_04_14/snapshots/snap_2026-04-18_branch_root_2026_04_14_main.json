@@ -1,0 +1,71 @@
+{
+  "schema_version": "0.1",
+  "snapshot_id": "snap_2026-04-18_branch_root_2026_04_14_main",
+  "root_id": "root_2026_04_14",
+  "branch_id": "branch_root_2026_04_14_main",
+  "story_day": 5,
+  "snapshot_date": "2026-04-18",
+  "time_policy": "nightly_auto_advance",
+  "package_ref": {
+    "package_id": "yysworld-pipeline-v0.1",
+    "package_created_at": "2026-04-18T09:00:00Z",
+    "package_hash": "sha256:claude-sonnet-4-6"
+  },
+  "model_refs": [{"provider": "anthropic", "model_id": "claude-sonnet-4-6", "role": "generator", "runtime_class": "interactive"}],
+  "event_refs": ["evt_2026-04-18_006"],
+  "decision_refs": [],
+  "state_before": {
+    "story_day": 4,
+    "condition": {
+      "health": 0.9,
+      "food": 0.43,
+      "attention": 0.55
+    },
+    "inventory": [],
+    "active_burdens": [],
+    "goals": {
+      "primary": "find_reliable_supply",
+      "secondary": "map_west_territory"
+    },
+    "reaction_overrides": {},
+    "trait_deviations": {
+      "curious": 0.05,
+      "pragmatic": 0.08
+    },
+    "identity_notes": [
+      "the grey-brown squirrel returned — the confrontation was more direct than Day 2",
+      "held the line despite being thin; the posturing cost something but not everything",
+      "the line is known now — 'probably held' became 'held to here'"
+    ]
+  },
+  "state_after": {
+    "story_day": 5,
+    "condition": {
+      "health": 0.9,
+      "food": 0.40,
+      "attention": 0.50
+    },
+    "inventory": [],
+    "active_burdens": [],
+    "goals": {
+      "primary": "find_reliable_supply",
+      "secondary": "map_west_territory"
+    },
+    "reaction_overrides": {},
+    "trait_deviations": {
+      "curious": 0.05,
+      "pragmatic": 0.08
+    },
+    "identity_notes": [
+      "the grey-brown squirrel returned with different posture — carrying something, not confrontational",
+      "the read started and didn't complete; attention too low to commit to exchange",
+      "the offer closed without trade; the east boundary sits differently for it",
+      "west spot produced again; the line held; no inventory gained"
+    ]
+  },
+  "change_summary": {
+    "notable_shift": "trade opportunity missed — the grey squirrel's posture was legible as an offer but attention was too thin to complete the calculation before the window closed",
+    "branch_created": false
+  },
+  "created_at": "2026-04-18T09:00:00Z"
+}

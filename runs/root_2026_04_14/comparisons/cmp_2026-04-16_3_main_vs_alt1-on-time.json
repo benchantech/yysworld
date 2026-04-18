@@ -14,9 +14,9 @@
   "package_ref": {
     "package_id": "yysworld-pipeline-v0.1",
     "package_created_at": "2026-04-16T09:00:00Z",
-    "package_hash": "sha256:claude-code-subscription"
+    "package_hash": "sha256:claude-sonnet-4-6"
   },
-  "model_refs": [{"provider": "anthropic", "model_id": "claude-code-subscription", "role": "comparator", "runtime_class": "interactive"}],
+  "model_refs": [{"provider": "anthropic", "model_id": "claude-sonnet-4-6", "role": "comparator", "runtime_class": "interactive"}],
   "content": {
     "divergence_summary": "Same hunger signal, same cache avoidance, same western territory — different experience of all three. Urgency vs. curiosity over identical ground.",
     "branch_a_path": "Urgency drove the search; the western find was partial relief rather than discovery; the spot is real but unvalidated; cache_deficit burden continues alongside new uncertainty about western supply",

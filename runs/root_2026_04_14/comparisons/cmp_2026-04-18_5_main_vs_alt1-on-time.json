@@ -1,0 +1,38 @@
+{
+  "schema_version": "0.1",
+  "comparison_id": "cmp_2026-04-18_5_main_vs_alt1-on-time",
+  "artifact_type": "daily_comparison",
+  "root_id": "root_2026_04_14",
+  "branch_a": "branch_root_2026_04_14_main",
+  "branch_b": "branch_root_2026_04_14_alt1-on-time",
+  "story_day": 5,
+  "snapshot_date": "2026-04-18",
+  "snapshot_ids": [
+    "snap_2026-04-18_branch_root_2026_04_14_main",
+    "snap_2026-04-18_branch_root_2026_04_14_alt1-on-time"
+  ],
+  "package_ref": {
+    "package_id": "yysworld-pipeline-v0.1",
+    "package_created_at": "2026-04-18T09:00:00Z",
+    "package_hash": "sha256:claude-sonnet-4-6"
+  },
+  "model_refs": [{"provider": "anthropic", "model_id": "claude-sonnet-4-6", "role": "comparator", "runtime_class": "interactive"}],
+  "content": {
+    "divergence_summary": "The same grey-brown squirrel appeared at the east boundary with the same hazelnut and the same open posture on both paths. The encounter lasted under a minute either way. What differed was whether the offer could be read in time — main was operating thin on attention and the calculation didn't complete before the grey squirrel left; alt1-on-time was resourced and sharp and the trade executed cleanly. One path ends the day with an untouched boundary and a small gnaw of something unresolved. The other ends with a hazelnut in the cache that came from somewhere west — the first object in the territory that arrived through exchange rather than foraging.",
+    "branch_a_path": "The offer registered but didn't convert. YY saw the changed posture, understood the category, started the math — and ran out of attention before the math finished. The grey squirrel waited forty seconds and left. The east line held; nothing material was lost. The west spot produced again in the afternoon. The day closed intact, with the boundary slightly more complicated than it was in the morning.",
+    "branch_b_path": "The offer converted on first read. YY pulled a surplus pine nut from the east cache, brought it to the boundary, and the exchange happened in under a minute. The hazelnut's shell texture implied western stores YY hasn't mapped. The boundary is now also a channel. The cache has its first received item.",
+    "key_differences": [
+      "main: no trade, no inventory; alt1-on-time: first inventory item acquired (hazelnut, grey squirrel's west stores)",
+      "main: attention 0.55→0.50 (incomplete calculation); alt1-on-time: attention 0.82→0.80 (clean read and execution)",
+      "main: east boundary unchanged in function; alt1-on-time: east boundary is now both a territorial line and a trade channel",
+      "alt1-on-time: goal updated to prioritize west territory based on hazelnut intelligence; main: goal unchanged"
+    ],
+    "shared_elements": [
+      "same grey-brown squirrel, same hazelnut, same open posture at the same east boundary",
+      "neither path involved aggression or territorial loss",
+      "west foraging productive in main; the west as a direction is relevant on both paths",
+      "health stable at 0.90 on both"
+    ]
+  },
+  "created_at": "2026-04-18T09:00:00Z"
+}

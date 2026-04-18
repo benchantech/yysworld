@@ -1,0 +1,17 @@
+{
+  "schema_version": "0.1",
+  "decision_id": "dec_2026-04-18_004",
+  "root_id": "root_2026_04_14",
+  "story_day": 5,
+  "snapshot_date": "2026-04-18",
+  "decision_status": "evaluated_no_branch",
+  "signal_strength": 0.15,
+  "evaluation": {
+    "should_branch": false,
+    "confidence": 0.85,
+    "reason": "the alt1-on-time branch already tracks the resourced path; today's trade is its natural continuation, not a new fork — the divergence between branches is already capturing the attention variable",
+    "focus": null
+  },
+  "event_refs": ["evt_2026-04-18_006"],
+  "created_at": "2026-04-18T09:00:00Z"
+}
