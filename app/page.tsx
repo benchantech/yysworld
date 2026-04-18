@@ -4,7 +4,7 @@ import { JsonLd } from '@/components/JsonLd'
 import { homeBreadcrumbs } from '@/lib/nav'
 import { schemaBreadcrumbList, schemaWebSite } from '@/lib/jsonld'
 import { getStaticRuns, getDayArtifact } from '@/lib/runs'
-import { PageHeader, EventAnchor, SplitPanel, PathStateRow, BranchTree } from '@/components/canon/Layout'
+import { PageHeader, EventAnchor, SplitPanel, PathStateRow, BranchTree, PageShell } from '@/components/canon/Layout'
 import { MonoLabel, Pill, SectionRule, LinkButton } from '@/components/canon/Primitives'
 
 export const metadata: Metadata = {
@@ -37,7 +37,7 @@ export default function HomePage() {
     : null
 
   return (
-    <>
+    <PageShell wide>
       <JsonLd schema={[schemaWebSite(), schemaBreadcrumbList(breadcrumbs)]} />
 
       <PageHeader
@@ -152,6 +152,6 @@ export default function HomePage() {
           </a>
         </p>
       </section>
-    </>
+    </PageShell>
   )
 }
