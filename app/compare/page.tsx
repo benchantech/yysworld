@@ -108,6 +108,30 @@ export default function ComparePage() {
         </section>
       )}
 
+      {latestMain && latestAlt && (() => {
+        const healthGap = Math.round((latestMain.statsAfter.health - latestAlt.statsAfter.health) * 100)
+        const foodGap = Math.round((latestMain.statsAfter.food - latestAlt.statsAfter.food) * 100)
+        const attGap = Math.round((latestMain.statsAfter.attention - latestAlt.statsAfter.attention) * 100)
+        const items = [
+          { label: 'health gap', val: Math.abs(healthGap), delta: healthGap, favor: healthGap > 0 ? 'main' : healthGap < 0 ? altBranch.id : 'tied' },
+          { label: 'food gap', val: Math.abs(foodGap), delta: foodGap, favor: foodGap > 0 ? 'main' : foodGap < 0 ? altBranch.id : 'tied' },
+          { label: 'attention gap', val: Math.abs(attGap), delta: attGap, favor: attGap > 0 ? 'main' : attGap < 0 ? altBranch.id : 'tied' },
+        ]
+        return (
+          <section className="yy-gapSummary">
+            {items.map(({ label, val, favor }) => (
+              <div key={label}>
+                <MonoLabel>{label}</MonoLabel>
+                <div className="yy-gapSummary__val">{val} pts</div>
+                <div className={`yy-gapSummary__delta ${favor === 'main' ? 'is-up' : favor === altBranch.id ? 'is-down' : ''}`}>
+                  {favor === 'tied' ? 'tied' : `→ ${favor} leads`}
+                </div>
+              </div>
+            ))}
+          </section>
+        )
+      })()}
+
       <SectionRule />
 
       {latestMain && latestAlt && (

@@ -68,9 +68,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         className={`${spectral.variable} ${ibmPlexMono.variable} ${caveat.variable} font-sans antialiased bg-paper text-ink min-h-svh`}
       >
         <SiteHeader />
-        <main className="mx-auto max-w-3xl px-6 py-8">
-          {children}
-        </main>
+        {children}
         <SiteFooter />
       </body>
     </html>
@@ -84,10 +82,11 @@ function SiteFooter() {
         <div className="space-y-1">
           <p className="font-mono text-xs text-ink-3 uppercase tracking-widest">yysworld</p>
           <nav className="flex flex-wrap gap-x-4 gap-y-1 font-mono text-xs text-ink-3 mt-2">
-            <Link href="/" className="hover:text-ink transition-colors border-b-0">today</Link>
-            <Link href="/yy/" className="hover:text-ink transition-colors border-b-0">yy</Link>
+            <Link href="/today" className="hover:text-ink transition-colors border-b-0">today</Link>
+            <Link href="/compare" className="hover:text-ink transition-colors border-b-0">compare</Link>
             <Link href="/yy/about/" className="hover:text-ink transition-colors border-b-0">meet yy</Link>
-            <Link href="/adrs/" className="hover:text-ink transition-colors border-b-0">lab →</Link>
+            <Link href="/archive" className="hover:text-ink transition-colors border-b-0">archive</Link>
+            <Link href="/lab" className="hover:text-ink transition-colors border-b-0">lab</Link>
           </nav>
         </div>
         <div className="space-y-1 text-right">

@@ -24,10 +24,10 @@ export function SiteHeader() {
       className="sticky top-0 z-40 border-b border-rule backdrop-blur-sm"
       style={{ background: 'color-mix(in oklch, var(--color-paper) 92%, transparent)' }}
     >
-      <div className="mx-auto max-w-3xl px-6 py-3.5 flex items-center gap-6">
+      <div className="mx-auto max-w-[1080px] px-6 py-3.5 flex items-center gap-4 min-w-0">
         <Link
           href="/"
-          className="font-mono text-sm font-medium text-ink tracking-tight flex items-center gap-2 border-b-0"
+          className="font-mono text-sm font-medium text-ink tracking-tight flex items-center gap-2 border-b-0 shrink-0"
         >
           <span
             className="inline-block w-2 h-2 rounded-full shrink-0"
@@ -37,7 +37,7 @@ export function SiteHeader() {
           yysworld
         </Link>
 
-        <nav aria-label="site" className="flex items-center gap-5 ml-auto">
+        <nav aria-label="site" className="flex items-center gap-3 sm:gap-5 ml-auto overflow-x-auto scrollbar-none min-w-0 flex-nowrap">
           {NAV.map(({ href, label, exact }) => {
             const active = isActive(href, exact)
             return (
@@ -45,7 +45,7 @@ export function SiteHeader() {
                 key={href}
                 href={href}
                 className={[
-                  'font-mono text-xs tracking-wide whitespace-nowrap pb-0.5 border-b transition-colors',
+                  'font-mono text-[11px] sm:text-xs tracking-wide whitespace-nowrap pb-0.5 border-b transition-colors shrink-0',
                   active
                     ? 'text-ink border-ink'
                     : 'text-ink-2 border-transparent hover:text-ink hover:border-ink-4',
