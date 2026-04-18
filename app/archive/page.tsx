@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { getStaticRuns } from '@/lib/runs'
+import { buildCalendarCells, cellIsLink } from '@/lib/calendar'
 import { PageHeader, BranchTree, PageShell } from '@/components/canon/Layout'
 import { MonoLabel, NotebookCard, SectionRule } from '@/components/canon/Primitives'
 
@@ -20,39 +21,20 @@ function CalendarGrid({
   publishedDays: number
   totalDays?: number
 }) {
-  const startDate = new Date(runDate)
-  const startDow = startDate.getDay()
-
-  const cells: { day: number | null; published: boolean; today: boolean; future: boolean }[] = []
-
-  for (let i = 0; i < startDow; i++) cells.push({ day: null, published: false, today: false, future: false })
-
   const todayStr = new Date().toISOString().slice(0, 10)
-
-  for (let d = 1; d <= totalDays; d++) {
-    const cellDate = new Date(startDate)
-    cellDate.setDate(cellDate.getDate() + d - 1)
-    const dateStr = cellDate.toISOString().slice(0, 10)
-    cells.push({
-      day: d,
-      published: d <= publishedDays,
-      today: dateStr === todayStr,
-      future: dateStr > todayStr,
-    })
-  }
+  const cells = buildCalendarCells(runDate, publishedDays, todayStr, totalDays)
 
   return (
     <div className="yy-calendar">
       {cells.map((cell, i) => {
-        if (cell.day === null) return <div key={`empty-${i}`} className="is-empty" />
+        if (cell.kind === 'empty') return <div key={`empty-${i}`} className="is-empty" />
 
         const cls = [
           cell.today ? 'is-today' : '',
-          cell.published ? 'is-published' : '',
           cell.future ? 'is-future' : '',
         ].filter(Boolean).join(' ') || undefined
 
-        if (cell.published) {
+        if (cellIsLink(cell)) {
           return (
             <Link
               key={cell.day}
