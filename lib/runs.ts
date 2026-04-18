@@ -110,6 +110,19 @@ export interface RunSummary {
   sandbox: boolean    // true = discoverable by URL but never surfaced in nav/sitemap/feeds
 }
 
+/**
+ * Returns the latest story day whose releaseAt has already passed.
+ * Prevents gated future days from surfacing on summary pages.
+ * Falls back to 1 if no days are released yet.
+ */
+export function getActiveDay(branch: BranchSummary, now = Date.now()): number {
+  for (let i = branch.publishedDays - 1; i >= 0; i--) {
+    const ra = branch.dayReleaseAts[i]
+    if (!ra || new Date(ra).getTime() <= now) return i + 1
+  }
+  return 1
+}
+
 // midnight EST (UTC-5) of the day after snapshot_date
 function releaseAtFromSnapshotDate(snapshotDate: string): string {
   const [year, month, day] = snapshotDate.split('-').map(Number)

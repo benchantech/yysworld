@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { JsonLd } from '@/components/JsonLd'
 import { homeBreadcrumbs } from '@/lib/nav'
 import { schemaBreadcrumbList, schemaWebSite } from '@/lib/jsonld'
-import { getStaticRuns, getDayArtifact } from '@/lib/runs'
+import { getStaticRuns, getDayArtifact, getActiveDay } from '@/lib/runs'
 import { PageHeader, EventAnchor, SplitPanel, PathStateRow, BranchTree, PageShell } from '@/components/canon/Layout'
 import { MonoLabel, Pill, SectionRule, LinkButton } from '@/components/canon/Primitives'
 
@@ -27,13 +27,14 @@ export default function HomePage() {
 
   const mainBranch = latestRun?.branches.find((b) => b.id === 'main') ?? latestRun?.branches[0]
   const altBranch = latestRun?.branches.find((b) => b.id !== 'main') ?? latestRun?.branches[1]
-  const latestDay = mainBranch ? String(mainBranch.publishedDays) : null
+  const activeDay = mainBranch ? getActiveDay(mainBranch) : null
+  const activeDayStr = activeDay ? String(activeDay) : null
 
-  const mainArtifact = latestRun && mainBranch && latestDay
-    ? getDayArtifact(latestRun.runDate, mainBranch.id, latestDay)
+  const mainArtifact = latestRun && mainBranch && activeDayStr
+    ? getDayArtifact(latestRun.runDate, mainBranch.id, activeDayStr)
     : null
-  const altArtifact = latestRun && altBranch && latestDay
-    ? getDayArtifact(latestRun.runDate, altBranch.id, latestDay)
+  const altArtifact = latestRun && altBranch && activeDayStr
+    ? getDayArtifact(latestRun.runDate, altBranch.id, activeDayStr)
     : null
 
   return (

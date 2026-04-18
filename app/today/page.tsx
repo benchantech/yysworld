@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { getStaticRuns, getDayArtifact, type DayArtifact } from '@/lib/runs'
+import { getStaticRuns, getDayArtifact, getActiveDay, type DayArtifact } from '@/lib/runs'
 import { PageShell } from '@/components/canon/Layout'
 import { MonoLabel, Pill, SectionRule } from '@/components/canon/Primitives'
 import { DayStrip } from '@/components/nav/DayStrip'
@@ -75,16 +75,7 @@ export default function TodayPage() {
   const mainBranch = latestRun.branches.find((b) => b.id === 'main') ?? latestRun.branches[0]
   const altBranch = latestRun.branches.find((b) => b.id !== 'main')
 
-  // Find the last RELEASED day (releaseAt <= now). Day 5 may be gated.
-  const now = Date.now()
-  let activeDay = mainBranch.publishedDays
-  for (let i = mainBranch.publishedDays - 1; i >= 0; i--) {
-    const ra = mainBranch.dayReleaseAts[i]
-    if (!ra || new Date(ra).getTime() <= now) {
-      activeDay = i + 1
-      break
-    }
-  }
+  const activeDay = getActiveDay(mainBranch)
 
   const nextDay = mainBranch.publishedDays > activeDay ? activeDay + 1 : null
   const nextDayReleaseAt = nextDay ? mainBranch.dayReleaseAts[nextDay - 1] : null

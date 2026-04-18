@@ -1,15 +1,16 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { getStaticRuns, getDayArtifact, type DayArtifact } from '@/lib/runs'
-import { PageHeader, SplitPanel, PathStateRow, PageShell, BranchTree } from '@/components/canon/Layout'
+import { getStaticRuns, getDayArtifact, getActiveDay, type DayArtifact } from '@/lib/runs'
+import { PageHeader, EventAnchor, SplitPanel, PathStateRow, PageShell, BranchTree } from '@/components/canon/Layout'
 import { MonoLabel, Pill, SectionRule } from '@/components/canon/Primitives'
+import { dayUrl } from '@/lib/nav'
 
 export const metadata: Metadata = {
   title: 'Compare — yysworld',
   description: 'Same day. Different sequence. Different cost. Compare paths across time.',
 }
 
-function StoryPanel({ artifact, branchId }: { artifact: DayArtifact; branchId: string }) {
+function StoryPanel({ artifact, branchId, runDate }: { artifact: DayArtifact; branchId: string; runDate: string }) {
   const isAlt = branchId !== 'main'
   const stateItems = [
     { label: 'health', value: Math.round(artifact.statsAfter.health * 100), tone: artifact.statsAfter.health >= 0.6 ? 'up' as const : 'down' as const },
@@ -20,16 +21,25 @@ function StoryPanel({ artifact, branchId }: { artifact: DayArtifact; branchId: s
   return (
     <article className="yy-storyPanel">
       <div className="yy-storyPanel__head">
-        <MonoLabel>path</MonoLabel>
+        <MonoLabel>path · {isAlt ? 'on-time' : 'main'}</MonoLabel>
         <Pill>{isAlt ? 'alt path' : 'main path'}</Pill>
       </div>
-      <h3>Day {artifact.storyDay} · {isAlt ? 'on-time' : 'main'}</h3>
+      <h3>{artifact.title}</h3>
       <div className="yy-storyCopy">
         {artifact.narrative.split('\n\n').filter(Boolean).slice(0, 2).map((para, i) => (
           <p key={i}>{para}</p>
         ))}
       </div>
       <PathStateRow items={stateItems} />
+      <div style={{ marginTop: '1rem' }}>
+        <Link
+          href={dayUrl('yy', runDate, branchId, String(artifact.storyDay))}
+          className="yy-button yy-button--primary"
+          style={{ fontSize: '11px' }}
+        >
+          read full story →
+        </Link>
+      </div>
     </article>
   )
 }
@@ -51,12 +61,15 @@ export default function ComparePage() {
 
   const mainBranch = latestRun.branches.find((b) => b.id === 'main') ?? latestRun.branches[0]
   const altBranch = latestRun.branches.find((b) => b.id !== 'main') ?? latestRun.branches[1]
-  const latestDay = String(mainBranch.publishedDays)
 
-  // Build series for all published days
+  // Use the gate-checked active day so gated days never surface here
+  const activeDay = getActiveDay(mainBranch)
+  const activeDayStr = String(activeDay)
+
+  // Build series only up to activeDay (don't chart gated days)
   type SeriesPoint = { label: string; main: DayArtifact | null; alt: DayArtifact | null }
   const series: SeriesPoint[] = []
-  for (let d = 1; d <= mainBranch.publishedDays; d++) {
+  for (let d = 1; d <= activeDay; d++) {
     series.push({
       label: `Day ${d}`,
       main: getDayArtifact(latestRun.runDate, mainBranch.id, String(d)),
@@ -64,8 +77,8 @@ export default function ComparePage() {
     })
   }
 
-  const latestMain = series[series.length - 1]?.main
-  const latestAlt = series[series.length - 1]?.alt
+  const activeMain = getDayArtifact(latestRun.runDate, mainBranch.id, activeDayStr)
+  const activeAlt = getDayArtifact(latestRun.runDate, altBranch.id, activeDayStr)
 
   const branches = latestRun.branches.map((b) => ({
     label: b.id === 'main' ? 'Main' : `Alt · ${b.id}`,
@@ -76,11 +89,20 @@ export default function ComparePage() {
   return (
     <PageShell wide>
       <PageHeader
-        eyebrow="compare"
+        eyebrow={`compare · day ${activeDay}`}
         title="Same day. Different sequence. Different cost."
         lede="Comparison should feel more natural than drilling into archives."
       />
 
+      {activeMain && (
+        <EventAnchor
+          date={activeMain.snapshotDate}
+          title={activeMain.title}
+          description={activeMain.summary}
+        />
+      )}
+
+      {/* Bar chart — food over time across both branches */}
       {series.length > 0 && (
         <section className="yy-compareSeries">
           <div className="yy-compareSeries__head">
@@ -108,14 +130,25 @@ export default function ComparePage() {
         </section>
       )}
 
-      {latestMain && latestAlt && (() => {
-        const healthGap = Math.round((latestMain.statsAfter.health - latestAlt.statsAfter.health) * 100)
-        const foodGap = Math.round((latestMain.statsAfter.food - latestAlt.statsAfter.food) * 100)
-        const attGap = Math.round((latestMain.statsAfter.attention - latestAlt.statsAfter.attention) * 100)
+      <SectionRule />
+
+      {/* Side-by-side stories for active day */}
+      {activeMain && activeAlt && (
+        <SplitPanel
+          left={<StoryPanel artifact={activeMain} branchId={mainBranch.id} runDate={latestRun.runDate} />}
+          right={<StoryPanel artifact={activeAlt} branchId={altBranch.id} runDate={latestRun.runDate} />}
+        />
+      )}
+
+      {/* Gap summary */}
+      {activeMain && activeAlt && (() => {
+        const healthGap = Math.round((activeMain.statsAfter.health - activeAlt.statsAfter.health) * 100)
+        const foodGap = Math.round((activeMain.statsAfter.food - activeAlt.statsAfter.food) * 100)
+        const attGap = Math.round((activeMain.statsAfter.attention - activeAlt.statsAfter.attention) * 100)
         const items = [
-          { label: 'health gap', val: Math.abs(healthGap), delta: healthGap, favor: healthGap > 0 ? 'main' : healthGap < 0 ? altBranch.id : 'tied' },
-          { label: 'food gap', val: Math.abs(foodGap), delta: foodGap, favor: foodGap > 0 ? 'main' : foodGap < 0 ? altBranch.id : 'tied' },
-          { label: 'attention gap', val: Math.abs(attGap), delta: attGap, favor: attGap > 0 ? 'main' : attGap < 0 ? altBranch.id : 'tied' },
+          { label: 'health gap', val: Math.abs(healthGap), favor: healthGap > 0 ? 'main' : healthGap < 0 ? altBranch.id : 'tied' },
+          { label: 'food gap', val: Math.abs(foodGap), favor: foodGap > 0 ? 'main' : foodGap < 0 ? altBranch.id : 'tied' },
+          { label: 'attention gap', val: Math.abs(attGap), favor: attGap > 0 ? 'main' : attGap < 0 ? altBranch.id : 'tied' },
         ]
         return (
           <section className="yy-gapSummary">
@@ -132,30 +165,24 @@ export default function ComparePage() {
         )
       })()}
 
-      <SectionRule />
-
-      {latestMain && latestAlt && (
-        <SplitPanel
-          left={<StoryPanel artifact={latestMain} branchId={mainBranch.id} />}
-          right={<StoryPanel artifact={latestAlt} branchId={altBranch.id} />}
-        />
-      )}
-
       <BranchTree
         root={`Run ${latestRun.runDate}`}
         branches={branches}
       />
 
-      <div className="yy-actionsRow" style={{ justifyContent: 'flex-start' }}>
+      <SectionRule />
+
+      <div className="yy-actionsRow">
         <Link
-          className="yy-button yy-button--secondary"
-          href={`/yy/${latestRun.runDate}/${mainBranch.id}/day/${latestDay}`}
+          className="yy-button yy-button--primary"
+          href={dayUrl('yy', latestRun.runDate, mainBranch.id, activeDayStr)}
         >
-          read full day →
+          read today →
         </Link>
-        <Link className="yy-button yy-button--ghost" href="/archive">
-          archive
+        <Link className="yy-button yy-button--secondary" href="/archive">
+          all days
         </Link>
+        <span className="yy-provenance">human-guided · ai-assisted · archived nightly</span>
       </div>
     </PageShell>
   )
