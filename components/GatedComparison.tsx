@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 
 interface Props {
   releaseAt: string
+  initialVisible: boolean  // computed at build time: true when releaseAt is already past
   branchALabel: string
   branchBLabel: string
   divergenceSummary: string
@@ -15,6 +16,7 @@ interface Props {
 
 export function GatedComparison({
   releaseAt,
+  initialVisible,
   branchALabel,
   branchBLabel,
   divergenceSummary,
@@ -23,13 +25,14 @@ export function GatedComparison({
   keyDifferences,
   sharedElements,
 }: Props) {
-  const [visible, setVisible] = useState(false)
+  const [visible, setVisible] = useState(initialVisible)
 
   useEffect(() => {
+    if (visible) return
     const preview = new URLSearchParams(window.location.search).has('preview')
     const released = Date.now() >= new Date(releaseAt).getTime()
-    setVisible(preview || released)
-  }, [releaseAt])
+    if (preview || released) setVisible(true)
+  }, [releaseAt, visible])
 
   if (!visible) {
     return (

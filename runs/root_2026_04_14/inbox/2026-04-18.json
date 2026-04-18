@@ -1,0 +1,11 @@
+{
+  "schema_version": "0.1",
+  "date": "2026-04-18",
+  "event_hint": "Iran's Strait of Hormuz declared open — a contested passage becomes a commerce channel",
+  "notes": "consolidation day; both paths processing yesterday's encounter differently — main sitting with the missed read, alt1-on-time with new intelligence about the west",
+  "author_intent": "forcing main and alt1-on-time to actually diverge in their stories — AI has been wishy-washy on branch decisions; concrete narrative divergence required on day 6, not hedged convergence",
+  "branch_context": {
+    "main": "YY stays thin and in maintenance mode; west spot again out of necessity, no encounter; the east boundary present but untested; the missed read yesterday sits as a small unresolved weight",
+    "alt1-on-time": "YY ranges west with the hazelnut as a reason — not to find the grey squirrel's cache, but to see what's actually out there when you have intelligence pointing that direction"
+  }
+}

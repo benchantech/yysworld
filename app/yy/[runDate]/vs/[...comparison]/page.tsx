@@ -137,6 +137,7 @@ export default async function VsPage({
         {day && cmp ? (
           <GatedComparison
             releaseAt={cmp.releaseAt}
+            initialVisible={Date.now() >= new Date(cmp.releaseAt).getTime()}
             branchALabel={labelA}
             branchBLabel={labelB}
             divergenceSummary={cmp.divergenceSummary}

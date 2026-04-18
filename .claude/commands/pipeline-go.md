@@ -112,6 +112,8 @@ Wait for user response. If they type something, use it as an override or refinem
 
 ### Step 6 — PROPOSE per-branch plans
 
+**Character name anchor:** The active character's name is `baseline.name` from `runs/{rootId}/baseline/yy_baseline.json` — read it from the file, do not assume it. Branch identifiers (urlId, branchId) are path labels for the timeline fork, not the character. Never substitute a branch label (e.g. "alt1", "alt1-on-time") for the character name in proposals, prose, or identity_notes. Every branch follows the same character through divergent circumstances. The character's name does not change per branch.
+
 Using the confirmed event, pre-think the state trajectory and narrative direction for each branch (main first). Then show one proposal per branch and pause after each:
 
 ```
@@ -199,6 +201,8 @@ NNN = count of existing files in `events/` + 1, zero-padded to 3 digits. All bra
 ### Step 10 — Generate snapshot + artifact per branch
 
 For each branch (main first), generate snapshot and narrative artifact using confirmed plans and user overrides.
+
+**Character name — hard constraint:** The character's name in all narrative prose, summaries, state_notes, and identity_notes must match `baseline.name` from `yy_baseline.json`. The current branch being generated (e.g. "alt1-on-time") is a path identifier, not a character label. If you notice yourself writing a branch label (e.g. "alt1", "Alt1") as a substitute for the character's name, stop and replace it with the value from `baseline.name`.
 
 **YY character rules:**
 

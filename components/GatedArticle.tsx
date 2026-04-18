@@ -6,6 +6,7 @@ import type { Condition } from '@/lib/runs'
 
 interface Props {
   releaseAt: string   // ISO string — gate opens at this time unless ?preview
+  initialVisible: boolean  // computed at build time: true when releaseAt is already past
   title: string
   tone: string
   narrative: string
@@ -16,14 +17,15 @@ interface Props {
   statsAfter: Condition
 }
 
-export function GatedArticle({ releaseAt, title, tone, narrative, stateNote, summary, storyDay, statsBefore, statsAfter }: Props) {
-  const [visible, setVisible] = useState(false)
+export function GatedArticle({ releaseAt, initialVisible, title, tone, narrative, stateNote, summary, storyDay, statsBefore, statsAfter }: Props) {
+  const [visible, setVisible] = useState(initialVisible)
 
   useEffect(() => {
+    if (visible) return
     const preview = new URLSearchParams(window.location.search).has('preview')
     const released = Date.now() >= new Date(releaseAt).getTime()
-    setVisible(preview || released)
-  }, [releaseAt])
+    if (preview || released) setVisible(true)
+  }, [releaseAt, visible])
 
   if (!visible) {
     return (

@@ -128,6 +128,7 @@ export default async function DayArtifactPage({
         {artifact ? (
           <GatedArticle
             releaseAt={artifact.releaseAt}
+            initialVisible={Date.now() >= new Date(artifact.releaseAt).getTime()}
             title={artifact.title}
             tone={artifact.tone}
             narrative={artifact.narrative}
