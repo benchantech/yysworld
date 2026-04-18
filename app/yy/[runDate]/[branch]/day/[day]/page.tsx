@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { Breadcrumbs } from '@/components/nav/Breadcrumbs'
 import { BranchSwitcher, type BranchOption } from '@/components/nav/BranchSwitcher'
 import { DayNavigator } from '@/components/nav/DayNavigator'
+import { DayStrip } from '@/components/nav/DayStrip'
 import { JsonLd } from '@/components/JsonLd'
 import { GatedArticle } from '@/components/GatedArticle'
 import {
@@ -112,15 +113,51 @@ export default async function DayArtifactPage({
 
       <div className="mt-6 space-y-6">
 
-        {/* Branch + Day nav */}
-        <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-          <BranchSwitcher branches={branchOptions} label="switch branch" />
+        {/* Day strip — all days for this branch */}
+        {run && (() => {
+          const thisBranch = run.branches.find((b) => b.id === branch) ?? run.branches[0]
+          return (
+            <DayStrip
+              totalDays={thisBranch.publishedDays}
+              currentDay={dayNum}
+              releaseAts={thisBranch.dayReleaseAts}
+              makeDayHref={(d) => dayUrl('yy', runDate, branch, String(d))}
+            />
+          )
+        })()}
+
+        {/* Branch switcher — prominent */}
+        {branchOptions.length > 1 && (
+          <div className="yy-branchNav">
+            <div className="yy-branchNav__options">
+              {branchOptions.map((b) => (
+                b.isCurrent ? (
+                  <span key={b.id} className="yy-branchNav__item is-current">
+                    <span className="yy-branchNav__label">{b.label}</span>
+                    <span className="yy-branchNav__sub">reading now</span>
+                  </span>
+                ) : (
+                  <Link key={b.id} href={b.href} className="yy-branchNav__item">
+                    <span className="yy-branchNav__label">{b.label}</span>
+                    <span className="yy-branchNav__sub">switch path</span>
+                  </Link>
+                )
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* Prev / next day nav */}
+        <div className="flex items-center justify-between">
           <DayNavigator
             currentDay={dayNum}
             totalDays={totalDays}
             prevHref={dayNum > 1 ? dayUrl('yy', runDate, branch, dayNum - 1) : undefined}
             nextHref={dayNum < totalDays ? dayUrl('yy', runDate, branch, dayNum + 1) : undefined}
           />
+          <Link href="/today" className="font-mono text-xs text-ink-3 hover:text-ink transition-colors border-b-0">
+            today →
+          </Link>
         </div>
 
         {/* Event anchor */}
