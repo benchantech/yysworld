@@ -5,8 +5,8 @@ import { StatsBlock } from '@/components/StatsBlock'
 import type { Condition } from '@/lib/runs'
 
 interface Props {
-  releaseAt: string   // ISO string — gate opens at this time unless ?preview
-  initialVisible: boolean  // computed at build time: true when releaseAt is already past
+  releaseAt: string
+  initialVisible: boolean
   title: string
   tone: string
   narrative: string
@@ -17,7 +17,18 @@ interface Props {
   statsAfter: Condition
 }
 
-export function GatedArticle({ releaseAt, initialVisible, title, tone, narrative, stateNote, summary, storyDay, statsBefore, statsAfter }: Props) {
+export function GatedArticle({
+  releaseAt,
+  initialVisible,
+  title,
+  tone,
+  narrative,
+  stateNote,
+  summary,
+  storyDay,
+  statsBefore,
+  statsAfter,
+}: Props) {
   const [visible, setVisible] = useState(initialVisible)
 
   useEffect(() => {
@@ -29,14 +40,16 @@ export function GatedArticle({ releaseAt, initialVisible, title, tone, narrative
 
   if (!visible) {
     return (
-      <div className="rounded-lg border border-zinc-800 bg-zinc-900/50 px-4 py-6 space-y-1">
-        {title && <p className="text-xs text-zinc-700 font-medium">{title}</p>}
-        <p className="text-xs text-zinc-600 italic">Available after midnight.</p>
+      <div className="border border-rule bg-paper-2 px-5 py-6 space-y-1">
+        {title && (
+          <p className="font-sans text-sm font-medium text-ink-3">{title}</p>
+        )}
+        <p className="font-mono text-xs text-ink-4 italic">Available after midnight.</p>
       </div>
     )
   }
 
-  // Strip the first paragraph if it echoes the title (LLMs sometimes repeat it)
+  // Strip first paragraph if it echoes the title
   const normalize = (s: string) => s.replace(/[.\s]+$/, '').toLowerCase()
   const allParagraphs = narrative.split('\n\n').filter(Boolean)
   const paragraphs =
@@ -45,33 +58,34 @@ export function GatedArticle({ releaseAt, initialVisible, title, tone, narrative
       : allParagraphs
 
   return (
-    <article className="space-y-4">
-      <header className="flex items-start justify-between gap-3">
-        <div className="space-y-1 min-w-0">
-          <h1 className="text-base font-medium text-zinc-100">{title}</h1>
-          {tone && (
-            <p className="text-xs text-zinc-500 tracking-wide">{tone.replace(/_/g, ' ')}</p>
-          )}
-        </div>
-        <StatsBlock statsAfter={statsAfter} statsBefore={statsBefore} storyDay={storyDay} />
+    <article className="space-y-5">
+      <header className="space-y-1 pb-4 border-b border-rule">
+        <h1 className="font-sans text-2xl font-medium text-ink leading-tight tracking-tight">
+          {title}
+        </h1>
+        {tone && (
+          <p className="font-mono text-xs text-ink-3 tracking-wide">
+            {tone.replace(/_/g, ' ')}
+          </p>
+        )}
       </header>
 
-      <div className="space-y-3">
+      <div className="story-prose">
         {paragraphs.map((p, i) => (
-          <p key={i} className="text-base text-zinc-300 leading-7">
-            {p}
-          </p>
+          <p key={i}>{p}</p>
         ))}
       </div>
 
       {stateNote && (
-        <p className="font-mono text-xs text-zinc-500 leading-relaxed border-t border-zinc-800/60 pt-3">
+        <p className="font-mono text-xs text-ink-3 leading-relaxed border-t border-rule pt-3">
           {stateNote}
         </p>
       )}
 
+      <StatsBlock statsAfter={statsAfter} statsBefore={statsBefore} storyDay={storyDay} />
+
       {summary && (
-        <p className="text-xs text-zinc-500 pt-1">{summary}</p>
+        <p className="font-sans text-sm text-ink-3 italic leading-relaxed pt-1">{summary}</p>
       )}
     </article>
   )

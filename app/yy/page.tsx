@@ -37,34 +37,36 @@ export default function YYPage() {
       />
       <Breadcrumbs items={breadcrumbs} />
 
-      <div className="mt-6 space-y-8">
+      <div className="mt-6 space-y-10">
+
         <div className="flex items-end justify-between">
-          <div>
-            <h1 className="text-base font-medium text-zinc-50">YY</h1>
-            <p className="mt-1 text-xs text-zinc-500">
-              squirrel · curious · expressive · easily surprised
+          <div className="space-y-1">
+            <p className="font-mono text-xs text-ink-3 uppercase tracking-widest">the character</p>
+            <h1 className="font-sans text-3xl font-medium text-ink tracking-tight">YY.</h1>
+            <p className="font-sans text-base text-ink-2">
+              A squirrel. Curious. Expressive. Easily surprised.
             </p>
           </div>
           <Link
-            href="/yy/about"
-            className="text-xs text-zinc-500 hover:text-zinc-300 transition-colors"
+            href="/yy/about/"
+            className="font-mono text-xs text-ink-2 hover:text-ink transition-colors border-b border-rule hover:border-ink pb-0.5"
           >
-            profile →
+            full profile →
           </Link>
         </div>
 
-        <section>
-          <div className="flex items-baseline justify-between mb-1">
-            <h2 className="text-xs font-medium text-zinc-500 uppercase tracking-wider">
+        <section className="space-y-3">
+          <div className="flex items-baseline justify-between">
+            <h2 className="font-mono text-xs text-ink-3 uppercase tracking-widest">
               Runs
             </h2>
           </div>
-          <p className="text-xs text-zinc-600 mb-3">
+          <p className="font-sans text-sm text-ink-3 leading-relaxed max-w-prose">
             Each run is a bounded arc — usually one month. Branches diverge when circumstances differ
             and are tracked independently from that point.
           </p>
           {runs.length === 0 ? (
-            <p className="text-xs text-zinc-600">No runs yet.</p>
+            <p className="font-mono text-xs text-ink-4">No runs yet.</p>
           ) : (
             <ul className="space-y-3">
               {runs.map((run) => (
@@ -75,6 +77,7 @@ export default function YYPage() {
             </ul>
           )}
         </section>
+
       </div>
     </>
   )

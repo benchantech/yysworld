@@ -1,15 +1,15 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { Breadcrumbs } from '@/components/nav/Breadcrumbs'
 import { JsonLd } from '@/components/JsonLd'
 import { homeBreadcrumbs } from '@/lib/nav'
 import { schemaBreadcrumbList, schemaWebSite } from '@/lib/jsonld'
 import { getStaticRuns } from '@/lib/runs'
+import { RunCard } from '@/components/nav/RunCard'
 
 export const metadata: Metadata = {
   title: 'yysworld',
   description:
-    'One character. Multiple timelines. YY (a squirrel) lives through the same real-world events across branching paths — diverging based on circumstance, burden, and accumulated state. Every branch is traceable.',
+    'One character. Multiple timelines. YY (a squirrel) lives through the same real-world events across branching paths — diverging based on circumstance, burden, and accumulated state.',
   openGraph: {
     title: 'yysworld — branching life observatory',
     description:
@@ -26,126 +26,122 @@ export default function HomePage() {
   return (
     <>
       <JsonLd schema={[schemaWebSite(), schemaBreadcrumbList(breadcrumbs)]} />
-      <Breadcrumbs items={breadcrumbs} />
 
-      <div className="mt-6 space-y-10">
+      <div className="space-y-14">
 
         {/* Hero */}
         <section className="space-y-4">
-          <h1 className="text-sm font-medium text-zinc-50">
-            One being. Multiple timelines. All traceable.
-          </h1>
-          <p className="text-sm text-zinc-400 leading-relaxed max-w-prose">
-            YY is a squirrel. Every day, the same real-world event reaches every timeline —
-            but lands differently depending on what YY has accumulated: food, health, attention,
-            burdens. The divergence between paths is the point.
+          <p className="font-mono text-xs text-ink-3 uppercase tracking-widest">
+            a slow daily story
           </p>
-          <Link
-            href="/yy/"
-            className="inline-block text-xs text-zinc-400 border border-zinc-700 rounded px-3 py-1.5 hover:border-zinc-500 hover:text-zinc-200 transition-colors"
+          <h1
+            className="font-sans text-4xl sm:text-5xl font-medium leading-tight tracking-tight"
+            style={{ maxWidth: '14ch', letterSpacing: '-0.02em' }}
           >
-            Read the latest →
-          </Link>
+            Today, a squirrel named <em className="italic text-ink-2">YY</em> lived the same day twice.
+          </h1>
+          <p
+            className="font-hand text-xl"
+            style={{ color: 'var(--color-accent)' }}
+          >
+            — a slow daily story, for my kids and anyone else.
+          </p>
+          <p className="font-sans text-base text-ink-2 leading-relaxed max-w-prose">
+            Real-world events reach every timeline — but land differently depending on what YY has
+            accumulated. The gap between paths is the point.
+          </p>
+          <div className="flex items-center gap-3 flex-wrap pt-1">
+            {runs.length > 0 && (
+              <Link
+                href="/yy/"
+                className="inline-flex items-center gap-2 font-mono text-xs px-4 py-2 border border-ink text-ink bg-paper hover:bg-ink hover:text-paper transition-colors border-b border-b-ink"
+              >
+                read the latest →
+              </Link>
+            )}
+            <Link
+              href="/yy/about/"
+              className="inline-flex items-center gap-2 font-mono text-xs px-4 py-2 border border-rule text-ink-2 hover:border-ink-2 hover:text-ink transition-colors border-b border-b-rule"
+            >
+              meet YY
+            </Link>
+          </div>
         </section>
 
-        {/* Structure */}
-        <section className="space-y-3">
-          <h2 className="text-xs font-medium text-zinc-500 uppercase tracking-wider">
-            How it works
-          </h2>
-          <dl className="space-y-2 text-xs">
-            <div className="flex gap-3">
-              <dt className="w-20 shrink-0 text-zinc-300 font-medium">Character</dt>
-              <dd className="text-zinc-500">A single being with calibrated traits, values, and a starting state.</dd>
-            </div>
-            <div className="flex gap-3">
-              <dt className="w-20 shrink-0 text-zinc-300 font-medium pl-2">↳ Run</dt>
-              <dd className="text-zinc-500">A bounded arc — usually one month — starting from a shared baseline.</dd>
-            </div>
-            <div className="flex gap-3">
-              <dt className="w-20 shrink-0 text-zinc-300 font-medium pl-4">↳ Branch</dt>
-              <dd className="text-zinc-500">A divergent path. Created when circumstances differ. Tracked independently from that point forward.</dd>
-            </div>
-            <div className="flex gap-3">
-              <dt className="w-20 shrink-0 text-zinc-300 font-medium pl-6">↳ Day</dt>
-              <dd className="text-zinc-500">One story day. The same real-world event; a different experience per branch.</dd>
-            </div>
-          </dl>
-        </section>
-
-        {/* Characters */}
+        {/* How it works */}
         <section>
-          <h2 className="text-xs font-medium text-zinc-500 uppercase tracking-wider mb-3">
-            Characters
+          <h2 className="font-mono text-xs text-ink-3 uppercase tracking-widest mb-5">
+            How this works.
           </h2>
-          <ul className="space-y-2">
-            <li>
-              <CharacterCard
-                id="yy"
-                name="YY"
-                species="squirrel"
-                traitSummary="curious · expressive · easily surprised"
-                activeRuns={runs.length}
-              />
-            </li>
-          </ul>
+          <div className="grid grid-cols-2 sm:grid-cols-4 border-t border-rule">
+            {[
+              { n: '01', title: 'a character', body: 'YY is a squirrel. Curious, expressive, easily surprised. Calibrated through 22 scenarios before day one.' },
+              { n: '02', title: 'a run', body: 'One month. A shared starting state. The same real-world events cross every path.' },
+              { n: '03', title: 'a branch', body: 'When circumstances diverge, a new path starts. Tracked independently from that day forward.' },
+              { n: '04', title: 'a day', body: 'You land here. You read both. The gap between them is the point.' },
+            ].map(({ n, title, body }) => (
+              <div
+                key={n}
+                className="px-4 py-5 border-r border-rule last:border-r-0 border-b border-b-rule sm:border-b-0"
+              >
+                <p
+                  className="font-mono text-xs uppercase tracking-widest mb-2"
+                  style={{ color: 'var(--color-accent)' }}
+                >
+                  {n}
+                </p>
+                <h3 className="font-sans text-base font-medium text-ink mb-2">{title}</h3>
+                <p className="font-sans text-sm text-ink-3 leading-relaxed">{body}</p>
+              </div>
+            ))}
+          </div>
         </section>
 
-        {/* Footer layer */}
-        <section className="pt-4 border-t border-zinc-800 space-y-1.5">
-          <p className="text-xs text-zinc-600">
+        {/* Runs */}
+        {runs.length > 0 && (
+          <section className="space-y-4">
+            <div className="flex items-baseline justify-between">
+              <h2 className="font-mono text-xs text-ink-3 uppercase tracking-widest">
+                Published runs
+              </h2>
+              <Link
+                href="/yy/"
+                className="font-mono text-xs text-ink-3 hover:text-ink transition-colors border-b border-transparent hover:border-ink-4"
+              >
+                all →
+              </Link>
+            </div>
+            <ul className="space-y-3">
+              {runs.slice(0, 2).map((run) => (
+                <li key={run.runDate}>
+                  <RunCard run={run} />
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
+
+        {/* Builder layer */}
+        <section className="pt-4 border-t border-rule space-y-1.5">
+          <p className="font-mono text-xs text-ink-4">
             The reasoning behind every decision lives in the{' '}
-            <Link href="/adrs/" className="text-zinc-500 hover:text-zinc-300 transition-colors">
+            <Link
+              href="/adrs/"
+              className="text-ink-3 hover:text-ink transition-colors border-b border-ink-4 hover:border-ink"
+            >
               architecture decisions (ADRs)
             </Link>
-            .{' '}
-            The full system architecture —  what exists, what is planned, how each layer connects — is in the{' '}
-            <Link href="/system-map/" className="text-zinc-500 hover:text-zinc-300 transition-colors">
-              system map
-            </Link>
-            .
-          </p>
-          <p className="text-xs text-zinc-600">
-            Machine-readable entry point:{' '}
-            <a href="/llms.txt" className="text-zinc-500 hover:text-zinc-300 transition-colors font-mono">
+            {' · '}
+            <a
+              href="/llms.txt"
+              className="text-ink-3 hover:text-ink transition-colors font-mono border-b border-ink-4 hover:border-ink"
+            >
               /llms.txt
             </a>
-            . Data API:{' '}
-            <span className="text-zinc-700 font-mono">/yy/data/{'{month}/{branch}/day/{N}.json'}</span>
           </p>
         </section>
 
       </div>
     </>
-  )
-}
-
-function CharacterCard({
-  id,
-  name,
-  species,
-  traitSummary,
-  activeRuns,
-}: {
-  id: string
-  name: string
-  species: string
-  traitSummary: string
-  activeRuns: number
-}) {
-  return (
-    <Link
-      href={`/${id}`}
-      className="flex items-center justify-between rounded-lg border border-zinc-800 bg-zinc-900/50 px-4 py-3 hover:border-zinc-600 hover:bg-zinc-900 transition-colors"
-    >
-      <div className="min-w-0">
-        <span className="text-sm font-medium text-zinc-50">{name}</span>
-        <span className="ml-2 text-xs text-zinc-600">{species}</span>
-        <span className="ml-3 text-xs text-zinc-500">{traitSummary}</span>
-      </div>
-      <span className="ml-4 shrink-0 text-xs text-zinc-600 tabular-nums">
-        {activeRuns} run{activeRuns !== 1 ? 's' : ''}
-      </span>
-    </Link>
   )
 }

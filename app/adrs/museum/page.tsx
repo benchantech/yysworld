@@ -46,23 +46,24 @@ export default function MuseumPage() {
       <JsonLd schema={[schema, schemaBreadcrumbList(breadcrumbs)]} />
       <Breadcrumbs items={breadcrumbs} />
 
-      <div className="mt-4">
-        <header className="space-y-1 mb-4">
-          <h1 className="text-sm font-medium text-zinc-200">ADR Museum</h1>
-          <p className="text-xs text-zinc-500 leading-relaxed max-w-prose">
-            57 superseded ADRs preserved as scar records. Per ADR-014: old decisions are not deleted —
+      <div className="mt-6">
+        <header className="space-y-2 mb-6 pb-4 border-b border-rule">
+          <p className="font-mono text-xs text-ink-3 uppercase tracking-widest">museum</p>
+          <h1 className="font-sans text-2xl font-medium text-ink tracking-tight">ADR Museum</h1>
+          <p className="font-sans text-sm text-ink-2 leading-relaxed max-w-prose">
+            57 superseded ADRs preserved as scar records. Old decisions are not deleted —
             they are inspectable history. Read them in order to understand how the system evolved.
           </p>
         </header>
 
         <article className="space-y-0">
           {readme ? renderAdrMarkdown(readme) : (
-            <p className="text-xs text-zinc-600">Museum README not found.</p>
+            <p className="font-mono text-xs text-ink-4">Museum README not found.</p>
           )}
         </article>
 
-        <nav className="mt-8 pt-4 border-t border-zinc-800 text-xs text-zinc-600">
-          <a href="/adrs/" className="hover:text-zinc-300 transition-colors">
+        <nav className="mt-8 pt-4 border-t border-rule font-mono text-xs text-ink-3">
+          <a href="/adrs/" className="hover:text-ink transition-colors border-b border-transparent hover:border-ink-4">
             ← active decisions
           </a>
         </nav>

@@ -13,34 +13,34 @@ export function DayNavigator({ currentDay, totalDays, prevHref, nextHref }: DayN
       {prevHref ? (
         <Link
           href={prevHref}
-          className="text-xs text-zinc-400 hover:text-zinc-200 transition-colors"
+          className="font-mono text-xs text-ink-2 hover:text-ink transition-colors border-b-0"
           aria-label="previous day"
         >
           ← prev
         </Link>
       ) : (
-        <span className="text-xs text-zinc-700 select-none" aria-hidden="true">
+        <span className="font-mono text-xs text-ink-4 select-none" aria-hidden="true">
           ← prev
         </span>
       )}
 
-      <span className="text-xs text-zinc-300 tabular-nums">
+      <span className="font-mono text-xs text-ink-2 tabular-nums">
         day {currentDay}
         {totalDays !== undefined && (
-          <span className="text-zinc-600"> / {totalDays}</span>
+          <span className="text-ink-4"> / {totalDays}</span>
         )}
       </span>
 
       {nextHref ? (
         <Link
           href={nextHref}
-          className="text-xs text-zinc-400 hover:text-zinc-200 transition-colors"
+          className="font-mono text-xs text-ink-2 hover:text-ink transition-colors border-b-0"
           aria-label="next day"
         >
           next →
         </Link>
       ) : (
-        <span className="text-xs text-zinc-700 select-none" aria-hidden="true">
+        <span className="font-mono text-xs text-ink-4 select-none" aria-hidden="true">
           next →
         </span>
       )}

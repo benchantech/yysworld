@@ -22,7 +22,7 @@ export function BranchSwitcher({ branches, label = 'branch' }: BranchSwitcherPro
           branch.isCurrent ? (
             <li key={branch.id}>
               <span
-                className="inline-flex px-3 py-1 rounded-full text-xs font-medium bg-zinc-800 text-white border border-zinc-600"
+                className="inline-flex px-3 py-1 font-mono text-xs border border-ink text-ink bg-paper-2"
                 aria-current="page"
               >
                 {branch.label}
@@ -32,7 +32,7 @@ export function BranchSwitcher({ branches, label = 'branch' }: BranchSwitcherPro
             <li key={branch.id}>
               <Link
                 href={branch.href}
-                className="inline-flex px-3 py-1 rounded-full text-xs font-medium text-zinc-400 border border-zinc-800 hover:border-zinc-600 hover:text-zinc-200 transition-colors"
+                className="inline-flex px-3 py-1 font-mono text-xs text-ink-2 border border-rule hover:border-ink-2 hover:text-ink transition-colors border-b border-b-rule"
               >
                 {branch.label}
               </Link>

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { Breadcrumbs } from '@/components/nav/Breadcrumbs'
 import { BranchSwitcher, type BranchOption } from '@/components/nav/BranchSwitcher'
 import { DayNavigator } from '@/components/nav/DayNavigator'
@@ -20,8 +21,6 @@ export const dynamicParams = false
 export function generateStaticParams(): { runDate: string; branch: string; day: string }[] {
   const params = getDayParams()
 
-  // Add a day/1 stub for any branch that has no artifact yet so every active
-  // branch always has at least one routable page (renders "content coming soon").
   const covered = new Set(params.map((p) => `${p.runDate}/${p.branch}`))
   for (const run of getStaticRuns(true)) {
     for (const b of run.branches) {
@@ -31,7 +30,6 @@ export function generateStaticParams(): { runDate: string; branch: string; day: 
     }
   }
 
-  // Last-resort fallback: no runs at all yet
   if (params.length === 0) {
     return [{ runDate: '0000-00-00', branch: 'main', day: '1' }]
   }
@@ -82,7 +80,6 @@ export default async function DayArtifactPage({
   const pageUrl = dayUrl('yy', runDate, branch, day)
   const breadcrumbs = dayBreadcrumbs('yy', runDate, branch, day)
 
-  // Build branch switcher from real run data
   const allBranches = getRunBranches(runDate)
   const branchOptions: BranchOption[] = allBranches.map((b) => ({
     id: b,
@@ -92,7 +89,6 @@ export default async function DayArtifactPage({
   }))
   const altBranches = branchOptions.filter((b) => !b.isCurrent)
 
-  // totalDays: max published across all branches in this run (include sandbox so nav works on test pages)
   const run = getStaticRuns(true).find((r) => r.runDate === runDate)
   const totalDays = run
     ? Math.max(...run.branches.map((b) => b.publishedDays), dayNum)
@@ -114,7 +110,9 @@ export default async function DayArtifactPage({
       />
       <Breadcrumbs items={breadcrumbs} />
 
-      <div className="mt-4 space-y-5">
+      <div className="mt-6 space-y-6">
+
+        {/* Branch + Day nav */}
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
           <BranchSwitcher branches={branchOptions} label="switch branch" />
           <DayNavigator
@@ -125,6 +123,24 @@ export default async function DayArtifactPage({
           />
         </div>
 
+        {/* Event anchor */}
+        {artifact && (
+          <div className="border-t border-ink border-b border-b-rule py-3 flex items-baseline gap-3 flex-wrap font-mono text-xs">
+            <span className="text-ink-3 uppercase tracking-widest">run</span>
+            <span className="text-ink-2">{formatRunDate(runDate)}</span>
+            <span className="text-ink-4">·</span>
+            <span
+              className="uppercase tracking-widest"
+              style={{ color: 'var(--color-accent)' }}
+            >
+              {formatBranch(branch)}
+            </span>
+            <span className="text-ink-4">·</span>
+            <span className="text-ink-2">day {day}</span>
+          </div>
+        )}
+
+        {/* Article */}
         {artifact ? (
           <GatedArticle
             releaseAt={artifact.releaseAt}
@@ -139,20 +155,22 @@ export default async function DayArtifactPage({
             statsAfter={artifact.statsAfter}
           />
         ) : (
-          <div className="rounded-lg border border-zinc-800 bg-zinc-900/50 px-4 py-4">
-            <p className="text-xs text-zinc-600 italic">
+          <div className="border border-rule bg-paper-2 px-5 py-5">
+            <p className="font-mono text-xs text-ink-4 italic">
               Day {day} — content coming soon.
             </p>
           </div>
         )}
 
+        {/* Compare across branches */}
         {altBranches.length > 0 && (
           <nav
             aria-label="compare branches"
-            className="pt-2 border-t border-zinc-800 flex flex-wrap gap-3"
+            className="pt-4 border-t border-rule flex flex-wrap gap-4"
           >
+            <span className="font-mono text-xs text-ink-4 self-center">compare:</span>
             {altBranches.map((alt) => (
-              <a
+              <Link
                 key={alt.id}
                 href={vsDayUrl(
                   'yy',
@@ -161,13 +179,14 @@ export default async function DayArtifactPage({
                   branch === 'main' ? alt.id : branch,
                   day,
                 )}
-                className="text-xs text-zinc-500 hover:text-zinc-300 transition-colors"
+                className="font-mono text-xs text-ink-2 hover:text-ink transition-colors border-b border-rule hover:border-ink-2 pb-0.5"
               >
-                compare {formatBranch(branch)} vs {alt.label} →
-              </a>
+                {formatBranch(branch)} vs {alt.label} →
+              </Link>
             ))}
           </nav>
         )}
+
       </div>
     </>
   )

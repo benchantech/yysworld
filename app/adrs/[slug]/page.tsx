@@ -97,26 +97,26 @@ export default async function AdrPage({ params }: { params: Promise<Params> }) {
       <JsonLd schema={[techArticleSchema, schemaBreadcrumbList(breadcrumbs)]} />
       <Breadcrumbs items={breadcrumbs} />
 
-      <div className="mt-4">
+      <div className="mt-6">
         {/* Header */}
-        <header className="space-y-1 mb-4">
-          <div className="flex items-center gap-2">
-            <span className="font-mono text-xs text-zinc-600">{meta.id}</span>
-            <span className="text-xs text-zinc-700">·</span>
-            <span className="text-xs text-zinc-600">{meta.status}</span>
-            <span className="text-xs text-zinc-700">·</span>
-            <span className="text-xs text-zinc-600">{meta.date}</span>
+        <header className="space-y-2 mb-6 pb-4 border-b border-rule">
+          <div className="flex items-center gap-2 font-mono text-xs text-ink-3">
+            <span>{meta.id}</span>
+            <span className="text-ink-4">·</span>
+            <span>{meta.status}</span>
+            <span className="text-ink-4">·</span>
+            <span>{meta.date}</span>
           </div>
-          <h1 className="text-sm font-medium text-zinc-200">{meta.title}</h1>
+          <h1 className="font-sans text-xl font-medium text-ink tracking-tight">{meta.title}</h1>
           {meta.dependsOn.length > 0 && (
-            <p className="text-xs text-zinc-600">
+            <p className="font-mono text-xs text-ink-3">
               depends on{' '}
               {meta.dependsOn.map((dep, i) => (
                 <span key={dep}>
                   {i > 0 && ', '}
                   <a
                     href={adrSlugMap[dep] ? `/adrs/${adrSlugMap[dep]}/` : '/adrs/'}
-                    className="text-zinc-500 hover:text-zinc-300 transition-colors"
+                    className="text-ink-2 hover:text-ink transition-colors border-b border-rule hover:border-ink"
                   >
                     {dep}
                   </a>
@@ -134,26 +134,26 @@ export default async function AdrPage({ params }: { params: Promise<Params> }) {
         {/* Footer nav */}
         <nav
           aria-label="ADR navigation"
-          className="mt-8 pt-4 border-t border-zinc-800 flex justify-between text-xs text-zinc-600"
+          className="mt-8 pt-4 border-t border-rule flex justify-between font-mono text-xs text-ink-3"
         >
           <div>
             {prevAdr ? (
-              <a href={`/adrs/${prevAdr.slug}/`} className="hover:text-zinc-300 transition-colors">
+              <a href={`/adrs/${prevAdr.slug}/`} className="hover:text-ink transition-colors border-b border-transparent hover:border-ink-4">
                 ← {prevAdr.id}
               </a>
             ) : (
-              <a href="/adrs/" className="hover:text-zinc-300 transition-colors">
+              <a href="/adrs/" className="hover:text-ink transition-colors border-b border-transparent hover:border-ink-4">
                 ← all decisions
               </a>
             )}
           </div>
           <div>
             {nextAdr ? (
-              <a href={`/adrs/${nextAdr.slug}/`} className="hover:text-zinc-300 transition-colors">
+              <a href={`/adrs/${nextAdr.slug}/`} className="hover:text-ink transition-colors border-b border-transparent hover:border-ink-4">
                 {nextAdr.id} →
               </a>
             ) : (
-              <a href="/adrs/" className="hover:text-zinc-300 transition-colors">
+              <a href="/adrs/" className="hover:text-ink transition-colors border-b border-transparent hover:border-ink-4">
                 index →
               </a>
             )}

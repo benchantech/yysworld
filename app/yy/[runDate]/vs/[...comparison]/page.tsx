@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { Breadcrumbs } from '@/components/nav/Breadcrumbs'
 import { DayNavigator } from '@/components/nav/DayNavigator'
 import { JsonLd } from '@/components/JsonLd'
@@ -98,10 +99,8 @@ export default async function VsPage({
     ? `YY branch comparison for day ${day}: ${labelA} path vs ${labelB} path, ${runLabel} run.`
     : `YY branch comparison: ${labelA} path vs ${labelB} path across all published days, ${runLabel} run.`
 
-  // Load comparison content for day-level pages
   const cmp = day ? getComparisonArtifact(runDate, branchA, branchB, day) : null
 
-  // Total days with comparison artifacts for this pair
   const run = getStaticRuns(true).find((r) => r.runDate === runDate)
   const maxDays = run
     ? Math.max(...run.branches.map((b) => b.publishedDays), dayNum ?? 0)
@@ -117,14 +116,19 @@ export default async function VsPage({
       />
       <Breadcrumbs items={breadcrumbs} />
 
-      <div className="mt-4 space-y-5">
-        <header className="space-y-1">
-          <h1 className="text-sm font-medium text-zinc-200">
-            {runLabel} · {labelA} vs {labelB}
-            {day && <span> · day {day}</span>}
+      <div className="mt-6 space-y-6">
+
+        {/* Header */}
+        <header className="space-y-1 pb-4 border-b border-rule">
+          <p className="font-mono text-xs text-ink-3 uppercase tracking-widest">compare</p>
+          <h1 className="font-sans text-2xl font-medium text-ink tracking-tight">
+            {labelA} <span className="text-ink-3">vs</span> {labelB}
+            {day && <span className="text-ink-3"> · day {day}</span>}
           </h1>
+          <p className="font-mono text-xs text-ink-3">{runLabel}</p>
         </header>
 
+        {/* Day nav */}
         {dayNum !== null && (
           <DayNavigator
             currentDay={dayNum}
@@ -134,6 +138,7 @@ export default async function VsPage({
           />
         )}
 
+        {/* Comparison content */}
         {day && cmp ? (
           <GatedComparison
             releaseAt={cmp.releaseAt}
@@ -147,33 +152,34 @@ export default async function VsPage({
             sharedElements={cmp.sharedElements}
           />
         ) : day ? (
-          <div className="rounded-lg border border-zinc-800 bg-zinc-900/50 px-4 py-4">
-            <p className="text-xs text-zinc-600 italic">Day {day} comparison — coming soon.</p>
+          <div className="border border-rule bg-paper-2 px-5 py-5">
+            <p className="font-mono text-xs text-ink-4 italic">Day {day} comparison — coming soon.</p>
           </div>
         ) : null}
 
-        {/* Run-level: link to day-by-day comparisons */}
+        {/* Run-level: day links */}
         {!day && (
           <nav
             aria-label="day-level comparisons"
-            className="pt-2 border-t border-zinc-800 flex flex-wrap gap-3"
+            className="pt-3 border-t border-rule flex flex-wrap gap-3"
           >
+            <span className="font-mono text-xs text-ink-4 self-center">by day:</span>
             {Array.from({ length: maxDays }, (_, i) => i + 1).map((d) => (
-              <a
+              <Link
                 key={d}
                 href={vsDayUrl('yy', runDate, branchA, branchB, d)}
-                className="text-xs text-zinc-500 hover:text-zinc-300 transition-colors"
+                className="font-mono text-xs text-ink-2 hover:text-ink transition-colors border-b border-rule hover:border-ink-2 pb-0.5"
               >
                 day {d} →
-              </a>
+              </Link>
             ))}
             {maxDays === 0 && (
-              <a
+              <Link
                 href={vsDayUrl('yy', runDate, branchA, branchB, 1)}
-                className="text-xs text-zinc-500 hover:text-zinc-300 transition-colors"
+                className="font-mono text-xs text-ink-2 hover:text-ink transition-colors border-b border-rule"
               >
                 compare day by day →
-              </a>
+              </Link>
             )}
           </nav>
         )}
@@ -182,22 +188,23 @@ export default async function VsPage({
         {day && (
           <nav
             aria-label="individual branch days"
-            className="pt-2 border-t border-zinc-800 flex flex-wrap gap-3"
+            className="pt-3 border-t border-rule flex flex-wrap gap-4"
           >
-            <a
+            <Link
               href={dayUrl('yy', runDate, branchA, day)}
-              className="text-xs text-zinc-500 hover:text-zinc-300 transition-colors"
+              className="font-mono text-xs text-ink-2 hover:text-ink transition-colors border-b border-rule hover:border-ink-2 pb-0.5"
             >
               {labelA} day {day} →
-            </a>
-            <a
+            </Link>
+            <Link
               href={dayUrl('yy', runDate, branchB, day)}
-              className="text-xs text-zinc-500 hover:text-zinc-300 transition-colors"
+              className="font-mono text-xs text-ink-2 hover:text-ink transition-colors border-b border-rule hover:border-ink-2 pb-0.5"
             >
               {labelB} day {day} →
-            </a>
+            </Link>
           </nav>
         )}
+
       </div>
     </>
   )

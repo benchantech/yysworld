@@ -50,49 +50,53 @@ export default function AdrsIndexPage() {
       <JsonLd schema={[collectionSchema, schemaBreadcrumbList(breadcrumbs)]} />
       <Breadcrumbs items={breadcrumbs} />
 
-      <div className="mt-4 space-y-6">
+      <div className="mt-6 space-y-8">
         <header className="space-y-2">
-          <h1 className="text-sm font-medium text-zinc-200">Architecture Decisions</h1>
-          <p className="text-xs text-zinc-500 leading-relaxed max-w-prose">
-            {adrs.length} active decisions covering product thesis, character design, data architecture,
-            URL structure, and discoverability. An LLM reading this index understands the system more
-            fully than one reading a hundred rendered pages. ADRs are the source of truth — everything
-            else is a projection.
+          <p className="font-mono text-xs text-ink-3 uppercase tracking-widest">for builders</p>
+          <h1 className="font-sans text-2xl font-medium text-ink tracking-tight">The Lab.</h1>
+          <p className="font-sans text-base text-ink-2 leading-relaxed max-w-prose">
+            {adrs.length} active decisions covering product thesis, character design, data
+            architecture, URL structure, and discoverability. Everything on the human surface
+            exists because of what lives here.
           </p>
-          <p className="text-xs text-zinc-600">
-            <a href="/llms.txt" className="hover:text-zinc-400 transition-colors font-mono">/llms.txt</a>
+          <p className="font-mono text-xs text-ink-3">
+            <a href="/llms.txt" className="hover:text-ink transition-colors border-b border-rule hover:border-ink">
+              /llms.txt
+            </a>
             {' · '}
-            <a href="/adrs/museum/" className="hover:text-zinc-400 transition-colors">museum (57 superseded)</a>
+            <a href="/adrs/museum/" className="hover:text-ink transition-colors border-b border-rule hover:border-ink">
+              museum (57 superseded)
+            </a>
           </p>
         </header>
 
         <section aria-label="active decisions">
-          <table className="w-full text-xs">
+          <table className="w-full font-mono text-xs">
             <thead>
-              <tr className="text-left border-b border-zinc-800">
-                <th className="pb-2 pr-4 font-medium text-zinc-600 w-24 whitespace-nowrap">ID</th>
-                <th className="pb-2 pr-4 font-medium text-zinc-600">Decision</th>
-                <th className="pb-2 font-medium text-zinc-600 w-24 text-right hidden sm:table-cell">Date</th>
+              <tr className="text-left border-b border-rule">
+                <th className="pb-2 pr-4 font-medium text-ink-3 w-24 whitespace-nowrap uppercase tracking-widest">ID</th>
+                <th className="pb-2 pr-4 font-medium text-ink-3 uppercase tracking-widest">Decision</th>
+                <th className="pb-2 font-medium text-ink-3 w-24 text-right hidden sm:table-cell uppercase tracking-widest">Date</th>
               </tr>
             </thead>
             <tbody>
               {adrs.map(adr => (
-                <tr key={adr.slug} className="border-b border-zinc-900/50 align-top">
-                  <td className="py-2 pr-4 text-zinc-600 font-mono whitespace-nowrap pt-2.5">
+                <tr key={adr.slug} className="border-b border-rule-2 align-top">
+                  <td className="py-3 pr-4 text-ink-3 whitespace-nowrap">
                     {adr.id}
                   </td>
-                  <td className="py-2 pr-4">
+                  <td className="py-3 pr-4">
                     <a
                       href={`/adrs/${adr.slug}/`}
-                      className="text-zinc-300 hover:text-zinc-100 transition-colors"
+                      className="text-ink hover:text-ink-2 transition-colors border-b border-rule hover:border-ink"
                     >
                       {adr.title}
                     </a>
                     {adr.summary && (
-                      <p className="mt-0.5 text-zinc-600 leading-relaxed">{adr.summary}</p>
+                      <p className="mt-1 text-ink-3 leading-relaxed font-sans text-xs">{adr.summary}</p>
                     )}
                   </td>
-                  <td className="py-2 text-zinc-600 text-right whitespace-nowrap hidden sm:table-cell pt-2.5">
+                  <td className="py-3 text-ink-4 text-right whitespace-nowrap hidden sm:table-cell">
                     {adr.date}
                   </td>
                 </tr>
@@ -101,15 +105,15 @@ export default function AdrsIndexPage() {
           </table>
         </section>
 
-        <section aria-label="museum lineage" className="pt-2 border-t border-zinc-800">
-          <h2 className="text-xs font-medium text-zinc-600 uppercase tracking-wider mb-2">Museum</h2>
-          <p className="text-xs text-zinc-600 leading-relaxed">
+        <section className="pt-2 border-t border-rule space-y-2">
+          <h2 className="font-mono text-xs text-ink-3 uppercase tracking-widest">Museum</h2>
+          <p className="font-sans text-sm text-ink-3 leading-relaxed">
             57 superseded ADRs preserved as scar records in the{' '}
-            <a href="/adrs/museum/" className="text-zinc-500 hover:text-zinc-300 transition-colors">
+            <a href="/adrs/museum/" className="text-ink-2 hover:text-ink transition-colors border-b border-rule hover:border-ink">
               museum
             </a>
             . Covers three eras: Case-002: YY&apos;s World (24), Pre-Manifest (19), Starter Kit v0.1 (14).
-            Per ADR-027: corrections are new events, not silent rewrites.
+            Corrections are new events, not silent rewrites.
           </p>
         </section>
       </div>

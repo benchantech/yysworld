@@ -50,27 +50,27 @@ export default function SystemMapPage() {
       <JsonLd schema={[techArticleSchema, schemaBreadcrumbList(breadcrumbs)]} />
       <Breadcrumbs items={breadcrumbs} />
 
-      <div className="mt-4">
-        <header className="mb-6 space-y-2">
-          <h1 className="text-base font-medium text-zinc-100">System Map</h1>
-          <p className="font-mono text-xs text-zinc-600">v1.0 · 2026-04-16 · current</p>
-          <p className="text-xs text-zinc-500 max-w-prose leading-relaxed">
+      <div className="mt-6">
+        <header className="mb-6 space-y-2 pb-4 border-b border-rule">
+          <p className="font-mono text-xs text-ink-3 uppercase tracking-widest">for builders</p>
+          <h1 className="font-sans text-2xl font-medium text-ink tracking-tight">System Map</h1>
+          <p className="font-mono text-xs text-ink-3">v1.0 · 2026-04-16 · current</p>
+          <p className="font-sans text-sm text-ink-2 max-w-prose leading-relaxed">
             Every unlabelled box exists in this repo.
-            Every <span className="font-mono text-zinc-600">[planned]</span> label is honest about what does not.
+            Every <span className="font-mono text-xs text-ink-3">[planned]</span> label is honest about what does not.
             When the structure changes materially, v1.1 is written — v1.0 is not deleted.
           </p>
-          <p className="text-xs text-zinc-700">Scroll the diagram horizontally on narrow screens.</p>
         </header>
 
         <article className="space-y-0">
           {content ? renderAdrMarkdown(content) : (
-            <p className="text-xs text-zinc-600">System map not found.</p>
+            <p className="font-mono text-xs text-ink-4">System map not found.</p>
           )}
         </article>
 
-        <nav className="mt-8 pt-4 border-t border-zinc-800 flex justify-between text-xs text-zinc-600">
-          <a href="/" className="hover:text-zinc-300 transition-colors">← home</a>
-          <a href="/adrs/" className="hover:text-zinc-300 transition-colors">architecture decisions →</a>
+        <nav className="mt-8 pt-4 border-t border-rule flex justify-between font-mono text-xs text-ink-3">
+          <a href="/" className="hover:text-ink transition-colors border-b border-transparent hover:border-ink-4">← home</a>
+          <a href="/adrs/" className="hover:text-ink transition-colors border-b border-transparent hover:border-ink-4">architecture decisions →</a>
         </nav>
       </div>
     </>

@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 
 interface Props {
   releaseAt: string
-  initialVisible: boolean  // computed at build time: true when releaseAt is already past
+  initialVisible: boolean
   branchALabel: string
   branchBLabel: string
   divergenceSummary: string
@@ -36,35 +36,46 @@ export function GatedComparison({
 
   if (!visible) {
     return (
-      <div className="rounded-lg border border-zinc-800 bg-zinc-900/50 px-4 py-6">
-        <p className="text-xs text-zinc-600 italic">Available after midnight.</p>
+      <div className="border border-rule bg-paper-2 px-5 py-6">
+        <p className="font-mono text-xs text-ink-4 italic">Available after midnight.</p>
       </div>
     )
   }
 
   return (
-    <div className="space-y-5">
-      <p className="text-base text-zinc-300 leading-7">{divergenceSummary}</p>
+    <div className="space-y-6">
+      <p className="font-sans text-base text-ink leading-relaxed">{divergenceSummary}</p>
 
-      {/* Branch path cards — A (main/reference) gets a brighter border and label */}
-      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-        <div className="rounded-lg border border-zinc-700 bg-zinc-900/50 px-4 py-3 space-y-1">
-          <p className="text-xs text-zinc-300 uppercase tracking-wider">{branchALabel}</p>
-          <p className="text-sm text-zinc-300 leading-relaxed">{branchAPath}</p>
+      {/* Side-by-side paths */}
+      <div className="grid grid-cols-1 gap-0 sm:grid-cols-2 border border-rule">
+        <div className="px-5 py-4 space-y-2">
+          <p
+            className="font-mono text-xs uppercase tracking-widest"
+            style={{ color: 'var(--color-ink)' }}
+          >
+            {branchALabel}
+          </p>
+          <p className="font-sans text-sm text-ink leading-relaxed">{branchAPath}</p>
         </div>
-        <div className="rounded-lg border border-zinc-800 bg-zinc-900/50 px-4 py-3 space-y-1">
-          <p className="text-xs text-zinc-500 uppercase tracking-wider">{branchBLabel}</p>
-          <p className="text-sm text-zinc-300 leading-relaxed">{branchBPath}</p>
+        <div className="px-5 py-4 space-y-2 border-t border-rule sm:border-t-0 sm:border-l bg-paper-2">
+          <p
+            className="font-mono text-xs uppercase tracking-widest"
+            style={{ color: 'var(--color-accent)' }}
+          >
+            {branchBLabel}
+          </p>
+          <p className="font-sans text-sm text-ink leading-relaxed">{branchBPath}</p>
         </div>
       </div>
 
       {keyDifferences.length > 0 && (
         <div className="space-y-2">
-          <p className="text-xs text-zinc-500 uppercase tracking-wider">key differences</p>
-          <ul className="space-y-1.5">
+          <p className="font-mono text-xs text-ink-3 uppercase tracking-widest">key differences</p>
+          <ul className="space-y-2">
             {keyDifferences.map((d, i) => (
-              <li key={i} className="text-sm text-zinc-300 leading-relaxed before:content-['—'] before:mr-2 before:text-zinc-600">
-                {d}
+              <li key={i} className="font-sans text-sm text-ink leading-relaxed flex gap-2">
+                <span className="text-ink-4 shrink-0">—</span>
+                <span>{d}</span>
               </li>
             ))}
           </ul>
@@ -73,11 +84,12 @@ export function GatedComparison({
 
       {sharedElements.length > 0 && (
         <div className="space-y-2">
-          <p className="text-xs text-zinc-500 uppercase tracking-wider">still shared</p>
-          <ul className="space-y-1">
+          <p className="font-mono text-xs text-ink-3 uppercase tracking-widest">still shared</p>
+          <ul className="space-y-1.5">
             {sharedElements.map((s, i) => (
-              <li key={i} className="text-sm text-zinc-600 leading-relaxed before:content-['·'] before:mr-2">
-                {s}
+              <li key={i} className="font-sans text-sm text-ink-3 leading-relaxed flex gap-2">
+                <span className="text-ink-4 shrink-0">·</span>
+                <span>{s}</span>
               </li>
             ))}
           </ul>

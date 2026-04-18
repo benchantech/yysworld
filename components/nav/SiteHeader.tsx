@@ -1,28 +1,60 @@
+'use client'
+
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
+
+const NAV = [
+  { href: '/', label: 'today', exact: true },
+  { href: '/yy/', label: 'yy', exact: false },
+  { href: '/yy/about/', label: 'meet yy', exact: false },
+  { href: '/adrs/', label: 'lab', exact: false },
+]
 
 export function SiteHeader() {
+  const pathname = usePathname()
+
+  function isActive(href: string, exact: boolean) {
+    if (exact) return pathname === href || pathname === href.replace(/\/$/, '')
+    return pathname.startsWith(href)
+  }
+
   return (
-    <header className="border-b border-zinc-800 bg-zinc-950">
-      <div className="mx-auto max-w-3xl px-4 py-3 flex items-center justify-between">
+    <header
+      className="sticky top-0 z-40 border-b border-rule backdrop-blur-sm"
+      style={{ background: 'color-mix(in oklch, var(--color-paper) 92%, transparent)' }}
+    >
+      <div className="mx-auto max-w-3xl px-6 py-3.5 flex items-center gap-6">
         <Link
           href="/"
-          className="text-sm font-medium text-zinc-50 tracking-tight hover:text-zinc-300 transition-colors"
+          className="font-mono text-sm font-medium text-ink tracking-tight flex items-center gap-2 border-b-0"
         >
+          <span
+            className="inline-block w-2 h-2 rounded-full shrink-0"
+            style={{ background: 'var(--color-accent)' }}
+            aria-hidden="true"
+          />
           yysworld
         </Link>
-        <nav aria-label="site" className="flex items-center gap-5">
-          <Link
-            href="/yy"
-            className="text-xs text-zinc-500 hover:text-zinc-200 transition-colors"
-          >
-            YY
-          </Link>
-          <Link
-            href="/adrs/"
-            className="text-xs text-zinc-500 hover:text-zinc-200 transition-colors"
-          >
-            ADRs
-          </Link>
+
+        <nav aria-label="site" className="flex items-center gap-5 ml-auto">
+          {NAV.map(({ href, label, exact }) => {
+            const active = isActive(href, exact)
+            return (
+              <Link
+                key={href}
+                href={href}
+                className={[
+                  'font-mono text-xs tracking-wide whitespace-nowrap pb-0.5 border-b transition-colors',
+                  active
+                    ? 'text-ink border-ink'
+                    : 'text-ink-2 border-transparent hover:text-ink hover:border-ink-4',
+                ].join(' ')}
+                aria-current={active ? 'page' : undefined}
+              >
+                {label}
+              </Link>
+            )
+          })}
         </nav>
       </div>
     </header>
