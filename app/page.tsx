@@ -3,8 +3,9 @@ import Link from 'next/link'
 import { JsonLd } from '@/components/JsonLd'
 import { homeBreadcrumbs } from '@/lib/nav'
 import { schemaBreadcrumbList, schemaWebSite } from '@/lib/jsonld'
-import { getStaticRuns } from '@/lib/runs'
-import { RunCard } from '@/components/nav/RunCard'
+import { getStaticRuns, getDayArtifact } from '@/lib/runs'
+import { PageHeader, EventAnchor, SplitPanel, PathStateRow, BranchTree } from '@/components/canon/Layout'
+import { MonoLabel, Pill, SectionRule, LinkButton } from '@/components/canon/Primitives'
 
 export const metadata: Metadata = {
   title: 'yysworld',
@@ -22,126 +23,135 @@ export const metadata: Metadata = {
 export default function HomePage() {
   const breadcrumbs = homeBreadcrumbs()
   const runs = getStaticRuns()
+  const latestRun = runs[0] ?? null
+
+  const mainBranch = latestRun?.branches.find((b) => b.id === 'main') ?? latestRun?.branches[0]
+  const altBranch = latestRun?.branches.find((b) => b.id !== 'main') ?? latestRun?.branches[1]
+  const latestDay = mainBranch ? String(mainBranch.publishedDays) : null
+
+  const mainArtifact = latestRun && mainBranch && latestDay
+    ? getDayArtifact(latestRun.runDate, mainBranch.id, latestDay)
+    : null
+  const altArtifact = latestRun && altBranch && latestDay
+    ? getDayArtifact(latestRun.runDate, altBranch.id, latestDay)
+    : null
 
   return (
     <>
       <JsonLd schema={[schemaWebSite(), schemaBreadcrumbList(breadcrumbs)]} />
 
-      <div className="space-y-14">
+      <PageHeader
+        eyebrow="one being, multiple paths"
+        title="The same world reaches YY every day. It never lands the same way twice."
+        lede="YY's World is a branching life observatory: one squirrel, one shared world, many lived outcomes."
+        note="story first, method intact"
+      />
 
-        {/* Hero */}
-        <section className="space-y-4">
-          <p className="font-mono text-xs text-ink-3 uppercase tracking-widest">
-            a slow daily story
-          </p>
-          <h1
-            className="font-sans text-4xl sm:text-5xl font-medium leading-tight tracking-tight"
-            style={{ maxWidth: '14ch', letterSpacing: '-0.02em' }}
-          >
-            Today, a squirrel named <em className="italic text-ink-2">YY</em> lived the same day twice.
-          </h1>
-          <p
-            className="font-hand text-xl"
-            style={{ color: 'var(--color-accent)' }}
-          >
-            — a slow daily story, for my kids and anyone else.
-          </p>
-          <p className="font-sans text-base text-ink-2 leading-relaxed max-w-prose">
-            Real-world events reach every timeline — but land differently depending on what YY has
-            accumulated. The gap between paths is the point.
-          </p>
-          <div className="flex items-center gap-3 flex-wrap pt-1">
-            {runs.length > 0 && (
-              <Link
-                href="/yy/"
-                className="inline-flex items-center gap-2 font-mono text-xs px-4 py-2 border border-ink text-ink bg-paper hover:bg-ink hover:text-paper transition-colors border-b border-b-ink"
-              >
-                read the latest →
-              </Link>
-            )}
-            <Link
-              href="/yy/about/"
-              className="inline-flex items-center gap-2 font-mono text-xs px-4 py-2 border border-rule text-ink-2 hover:border-ink-2 hover:text-ink transition-colors border-b border-b-rule"
-            >
-              meet YY
-            </Link>
-          </div>
-        </section>
+      {mainArtifact && (
+        <EventAnchor
+          date={mainArtifact.snapshotDate}
+          title={mainArtifact.title}
+          description={mainArtifact.summary}
+        />
+      )}
 
-        {/* How it works */}
-        <section>
-          <h2 className="font-mono text-xs text-ink-3 uppercase tracking-widest mb-5">
-            How this works.
-          </h2>
-          <div className="grid grid-cols-2 sm:grid-cols-4 border-t border-rule">
-            {[
-              { n: '01', title: 'a character', body: 'YY is a squirrel. Curious, expressive, easily surprised. Calibrated through 22 scenarios before day one.' },
-              { n: '02', title: 'a run', body: 'One month. A shared starting state. The same real-world events cross every path.' },
-              { n: '03', title: 'a branch', body: 'When circumstances diverge, a new path starts. Tracked independently from that day forward.' },
-              { n: '04', title: 'a day', body: 'You land here. You read both. The gap between them is the point.' },
-            ].map(({ n, title, body }) => (
-              <div
-                key={n}
-                className="px-4 py-5 border-r border-rule last:border-r-0 border-b border-b-rule sm:border-b-0"
-              >
-                <p
-                  className="font-mono text-xs uppercase tracking-widest mb-2"
-                  style={{ color: 'var(--color-accent)' }}
-                >
-                  {n}
-                </p>
-                <h3 className="font-sans text-base font-medium text-ink mb-2">{title}</h3>
-                <p className="font-sans text-sm text-ink-3 leading-relaxed">{body}</p>
+      {mainArtifact && altArtifact && (
+        <SplitPanel
+          left={
+            <article className="yy-storyPanel">
+              <div className="yy-storyPanel__head">
+                <MonoLabel>path</MonoLabel>
+                <Pill>main path</Pill>
               </div>
-            ))}
-          </div>
-        </section>
+              <h3>Main</h3>
+              <div className="yy-storyCopy">
+                {mainArtifact.narrative.split('\n\n').filter(Boolean).slice(0, 2).map((p, i) => (
+                  <p key={i}>{p}</p>
+                ))}
+              </div>
+              <PathStateRow items={[
+                { label: 'health', value: Math.round(mainArtifact.statsAfter.health * 100), tone: mainArtifact.statsAfter.health >= 0.6 ? 'up' : 'down' },
+                { label: 'food', value: Math.round(mainArtifact.statsAfter.food * 100), tone: mainArtifact.statsAfter.food >= 0.6 ? 'up' : 'down' },
+                { label: 'attention', value: Math.round(mainArtifact.statsAfter.attention * 100), tone: mainArtifact.statsAfter.attention >= 0.6 ? 'down' : 'neutral' },
+              ]} />
+            </article>
+          }
+          right={
+            <article className="yy-storyPanel">
+              <div className="yy-storyPanel__head">
+                <MonoLabel>path</MonoLabel>
+                <Pill>alt path</Pill>
+              </div>
+              <h3>Alt · {altBranch!.id}</h3>
+              <div className="yy-storyCopy">
+                {altArtifact.narrative.split('\n\n').filter(Boolean).slice(0, 2).map((p, i) => (
+                  <p key={i}>{p}</p>
+                ))}
+              </div>
+              <PathStateRow items={[
+                { label: 'health', value: Math.round(altArtifact.statsAfter.health * 100), tone: altArtifact.statsAfter.health >= 0.6 ? 'up' : 'down' },
+                { label: 'food', value: Math.round(altArtifact.statsAfter.food * 100), tone: altArtifact.statsAfter.food >= 0.6 ? 'up' : 'down' },
+                { label: 'attention', value: Math.round(altArtifact.statsAfter.attention * 100), tone: altArtifact.statsAfter.attention >= 0.6 ? 'down' : 'neutral' },
+              ]} />
+            </article>
+          }
+        />
+      )}
 
-        {/* Runs */}
-        {runs.length > 0 && (
-          <section className="space-y-4">
-            <div className="flex items-baseline justify-between">
-              <h2 className="font-mono text-xs text-ink-3 uppercase tracking-widest">
-                Published runs
-              </h2>
-              <Link
-                href="/yy/"
-                className="font-mono text-xs text-ink-3 hover:text-ink transition-colors border-b border-transparent hover:border-ink-4"
-              >
-                all →
-              </Link>
-            </div>
-            <ul className="space-y-3">
-              {runs.slice(0, 2).map((run) => (
-                <li key={run.runDate}>
-                  <RunCard run={run} />
-                </li>
-              ))}
-            </ul>
-          </section>
-        )}
-
-        {/* Builder layer */}
-        <section className="pt-4 border-t border-rule space-y-1.5">
-          <p className="font-mono text-xs text-ink-4">
-            The reasoning behind every decision lives in the{' '}
-            <Link
-              href="/adrs/"
-              className="text-ink-3 hover:text-ink transition-colors border-b border-ink-4 hover:border-ink"
-            >
-              architecture decisions (ADRs)
-            </Link>
-            {' · '}
-            <a
-              href="/llms.txt"
-              className="text-ink-3 hover:text-ink transition-colors font-mono border-b border-ink-4 hover:border-ink"
-            >
-              /llms.txt
-            </a>
-          </p>
-        </section>
-
+      <div className="yy-actionsRow">
+        <LinkButton href="/today" variant="primary">read today</LinkButton>
+        <LinkButton href="/compare">compare paths</LinkButton>
+        <LinkButton href="/yy/about/">meet yy</LinkButton>
       </div>
+
+      <SectionRule />
+
+      <section className="yy-stepsGrid">
+        {[
+          ['1', 'One world event', 'A real-world condition arrives and becomes the shared seed of the day.'],
+          ['2', 'Multiple paths', 'YY meets the same day with different reserves, timing, and burdens.'],
+          ['3', 'Visible divergence', 'You read the gap between paths as the story, not just the output.'],
+          ['4', 'Method below the surface', 'The builder layer still exists, but it no longer blocks entry.'],
+        ].map(([n, title, copy]) => (
+          <div key={n}>
+            <MonoLabel>{n}</MonoLabel>
+            <h3>{title}</h3>
+            <p>{copy}</p>
+          </div>
+        ))}
+      </section>
+
+      <SectionRule />
+
+      {latestRun && (
+        <BranchTree
+          root={`Run ${latestRun.runDate}`}
+          branches={latestRun.branches.map((b, i) => ({
+            label: b.id === 'main' ? 'Main' : `Alt · ${b.id}`,
+            note: `${b.publishedDays} day${b.publishedDays !== 1 ? 's' : ''} published`,
+            active: i === 0,
+          }))}
+        />
+      )}
+
+      <section className="pt-4 border-t border-rule" style={{ marginTop: '3rem' }}>
+        <p className="font-mono text-xs text-ink-4">
+          The reasoning behind every decision lives in the{' '}
+          <Link
+            href="/adrs/"
+            className="text-ink-3 hover:text-ink transition-colors border-b border-ink-4 hover:border-ink"
+          >
+            architecture decisions (ADRs)
+          </Link>
+          {' · '}
+          <a
+            href="/llms.txt"
+            className="text-ink-3 hover:text-ink transition-colors font-mono border-b border-ink-4 hover:border-ink"
+          >
+            /llms.txt
+          </a>
+        </p>
+      </section>
     </>
   )
 }

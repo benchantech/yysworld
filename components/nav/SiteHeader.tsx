@@ -4,10 +4,11 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
 const NAV = [
-  { href: '/', label: 'today', exact: true },
-  { href: '/yy/', label: 'yy', exact: false },
+  { href: '/today', label: 'today', exact: false },
+  { href: '/compare', label: 'compare', exact: false },
   { href: '/yy/about/', label: 'meet yy', exact: false },
-  { href: '/adrs/', label: 'lab', exact: false },
+  { href: '/archive', label: 'archive', exact: false },
+  { href: '/lab', label: 'lab', exact: false },
 ]
 
 export function SiteHeader() {
