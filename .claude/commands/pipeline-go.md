@@ -13,10 +13,16 @@ No external API key needed. You are the model.
 
 ## PHASE 1: PUBLISH yesterday
 
-### Step 1 — Determine dates
+### Step 1 — Confirm dates
 
-- Yesterday: one day before `currentDate` in system context
-- Today: today's date
+**Do not trust the system context date blindly.** Ask the user to confirm:
+
+```
+Today is {currentDate from system context}. Is that right? (enter to confirm or type the correct date)
+```
+
+Wait for confirmation before proceeding. Use the confirmed date as `today`. Yesterday = today − 1 day.
+
 - Story day for this run: `publishedDays + 1` per branch
 
 ### Step 2 — Load context
@@ -55,7 +61,7 @@ generating: day {N+1} for {yesterday}
 
 ### Step 4 — Check: already run?
 
-If a snapshot file already exists at `runs/{rootId}/snapshots/snap_{yesterday}_{branchId}.json` for the main branch, tell the user and ask if they want to skip to Phase 2.
+If a snapshot file already exists at `runs/{rootId}/snapshots/snap_{yesterday}_{branchId}.json` for the main branch, tell the user Phase 1 is already complete and move directly to Phase 2. Do not offer multiple options — just say what's published and transition.
 
 ### Step 5 — LIVE EVENT SEARCH and selection
 
@@ -123,12 +129,14 @@ state in: food {f} · health {h} · attention {a}{  ·  burden: X}
 proposed:
   title:  "{proposed title}"
   tone:   {tone}
-  shift:  food {f}→{f2} · attention {a}→{a2}{  ·  +burden: Y / -burden: X}
+  shift:  food {f}→{f2} · health {h}→{h2} · attention {a}→{a2}{  ·  +burden: Y / -burden: X}
   moment: {one sentence — what actually happens and how it resolves}
   why different from {other branch}: {one clause, if alt branch}
 
 [enter to accept · or describe what should change]
 ```
+
+**All three stats (food, health, attention) must appear in every shift line.** Health is not optional — environmental pressure, exertion, and stress all affect it. Never omit a stat because the day feels uneventful; even a quiet day has a small drift.
 
 Wait for user response after each branch. If they type something, use it as branch-specific guidance.
 
@@ -145,24 +153,7 @@ focus:      {what the branch would track, or "—"}
 [enter to accept · approve / deny to override]
 ```
 
-### Step 8 — FINAL CONFIRM
-
-Show a summary of everything confirmed and wait for final go-ahead:
-
-```
-── READY TO COMMIT ──────────────────────────────
-{yesterday} → day {N+1}
-
-  main:            "{title}"  [{tone}]
-  alt1-on-time:    "{title}"  [{tone}]
-  comparison:      main vs on-time
-
-  branch created:  {yes: alt{N}-{name} / no}
-
-[enter to generate, write, and commit]
-```
-
-### Step 9 — Generate event file
+### Step 8 — Generate event file
 
 Using the confirmed event (and any user overrides), generate the event object and write to `runs/{rootId}/events/evt_{yesterday}_{NNN}.json`.
 
@@ -333,9 +324,22 @@ If branching, also create `runs/{rootId}/branches/{newBranchId}.json` using `sta
 
 For each branch, update `runs/{rootId}/branches/{branchId}.json`. Read existing file first, merge — preserve all fields not being updated. Update `state` to match `state_after` from the snapshot (use `food`, not `hunger`). Set `story_day` to the new value. Set `last_updated_at` to now.
 
+### Step 13b — Run unit tests and fix drift
+
+Run `npm test` (vitest). Do not skip this step.
+
+If tests pass: proceed to Step 14.
+
+If tests fail:
+1. Read the failing test output carefully.
+2. Identify which generated files contain the drift (wrong field names, ID format violations, schema mismatches, character name substitutions).
+3. Fix the affected files directly — do not patch the tests.
+4. Re-run `npm test`. Repeat until all tests pass.
+5. Note what was fixed; include it in the commit message.
+
 ### Step 14 — Git commit and push
 
-Stage: `runs/` only.
+Stage: `runs/` only. Do not ask for confirmation — commit and push automatically.
 
 Commit message:
 ```
@@ -343,11 +347,12 @@ nightly: {yesterday} — day {storyDay}
 
 {branchUrlId} day {storyDay}: {artifact.summary}
 [...one line per branch...]
+{if drift fixed: "fix: corrected {what} to pass unit tests"}
 
 Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>
 ```
 
-Push.
+Push immediately after commit.
 
 ### Step 15 — Preview URLs
 
@@ -374,19 +379,14 @@ After the commit, immediately run an interactive session to queue tomorrow's con
 
 Tell the user: "Published {yesterday} (day {storyDay}). Now let's queue {today}."
 
-Pre-think suggestions for all fields before asking anything. Suggest:
-1. `event_hint` — what likely happened in the real world on {today}
-2. `notes` — day-level tone suggestion
-3. Per-branch narrative seed for each active branch
-4. Branch decision signal (approve / deny / suggest / none) and why
+Run a live web search for today's real-world news (same as Phase 1 Step 5 — use confirmed `today` date). Show the events list and let the user pick. Then do the event translation (Step 5b) and per-branch proposals (Step 6) exactly as in Phase 1 — full proposals with enter-to-accept, branch evaluation after main.
 
-Then ask one question at a time:
+After all proposals are confirmed, collect:
 
-1. **event hint** — show suggestion in brackets. Enter = accept, type to override.
-2. **notes** — show suggestion. Enter = accept.
-3. **author intent** — show current carrying value if any. Enter = keep, type to change, `clear` to drop.
-4. **{urlId}** (one per branch) — show branch seed suggestion. Enter = accept.
-5. **branch signal** — show `{suggestion} — {reason}`. Enter = none, type `approve` / `deny` / `suggest`.
+1. **notes** — show day-level tone suggestion derived from the confirmed plans. Enter = accept.
+2. **author intent** — show current carrying value if any. Enter = keep, type to change, `clear` to drop.
+
+Do NOT pre-guess event_hint from training data. Always do a live search.
 
 After collecting all answers, write `runs/{rootId}/inbox/{today}.json`:
 
