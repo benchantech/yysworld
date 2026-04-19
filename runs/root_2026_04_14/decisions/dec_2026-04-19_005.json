@@ -1,0 +1,13 @@
+{
+  "schema_version": "0.1",
+  "decision_id": "dec_2026-04-19_005",
+  "root_id": "root_2026_04_14",
+  "story_day": 6,
+  "snapshot_date": "2026-04-19",
+  "decision_status": "evaluated_no_branch",
+  "signal": "no",
+  "confidence": 0.8,
+  "reason": "divergence is structural now — main is thinning under pressure with an unresolved social weight; alt1-on-time has terrain intelligence and a different relationship to the west; a third branch would dilute that contrast before it resolves",
+  "focus": null,
+  "created_at": "2026-04-19T09:00:00Z"
+}

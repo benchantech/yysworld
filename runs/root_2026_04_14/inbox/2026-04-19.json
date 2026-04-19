@@ -1,0 +1,12 @@
+{
+  "schema_version": "0.1",
+  "date": "2026-04-19",
+  "event_hint": "hottest March on record for the Lower 48 — YY's forest is experiencing an oppressive heat wave; the canopy isn't blocking anything, bark is warm before noon, the usual foraging line feels twice as long",
+  "notes": "heat as equalizer — both paths pay a physical cost, but the gap between them widens because preparation and territory knowledge aren't equal",
+  "author_intent": "forcing main and alt1-on-time to actually diverge in their stories — concrete narrative divergence required on day 7, not hedged convergence",
+  "branch_context": {
+    "main": "YY runs the west line in the worst of the midday heat, comes back with less than usual; sitting in nearest shade the east boundary is visible; the grey squirrel's offer not taken two days ago sits differently when thin and the air won't move — no decision yet, but the weight has a shape now",
+    "alt1-on-time": "YY doesn't run the west spot — uses west terrain knowledge from the ranging to find shade corridors that weren't on any mental map before; eats a little, moves carefully, loses less than expected; the hazelnut stays in inventory; the west is now a place YY knows how to be in"
+  },
+  "branch_decision": null
+}

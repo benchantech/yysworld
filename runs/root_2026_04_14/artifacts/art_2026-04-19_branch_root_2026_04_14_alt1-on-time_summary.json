@@ -1,0 +1,29 @@
+{
+  "schema_version": "0.1",
+  "artifact_id": "art_2026-04-19_branch_root_2026_04_14_alt1-on-time_summary",
+  "artifact_type": "daily_summary",
+  "snapshot_id": "snap_2026-04-19_branch_root_2026_04_14_alt1-on-time",
+  "root_id": "root_2026_04_14",
+  "branch_id": "branch_root_2026_04_14_alt1-on-time",
+  "package_ref": {
+    "package_id": "yysworld-pipeline-v0.1",
+    "package_created_at": "2026-04-19T09:00:00Z",
+    "package_hash": "sha256:claude-code-subscription"
+  },
+  "model_refs": [{"provider": "anthropic", "model_id": "claude-code-subscription", "role": "summarizer", "runtime_class": "interactive"}],
+  "comparison_contract_version": "0.1",
+  "content": {
+    "title": "The trees were different there",
+    "tone": "deliberate, heat-aware",
+    "narrative": "The first sign was the bark.\n\nYY touched a familiar tree at the north end of the east site — the one used as a counting mark — and the surface was already warm, and it was still early. The light was coming through at the wrong angle, the canopy not blocking anything the way it usually did.\n\nYY did not run the west spot.\n\nInstead: the memory of what the west territory looked like when YY had ranged through it the day before. The tree density out there had been different — older, taller, canopy thicker. The ground between the root systems had been cool when the surface wasn't. YY had noticed without filing it. It filed now.\n\nThe shade route took longer than the direct line, added time to the morning. It passed through two spots YY had never stopped at before. At the second one, a cache opportunity — stored, small, but enough for midday.\n\nYY ate there. Did not rush back.\n\nThe hazelnut was still in the east cache, where it had been since the trade. The grey squirrel's stores were somewhere west of where YY had ranged, further than the territory as understood. What YY understood now was the canopy out there and the ground temperature and a route that existed because the west had been walked once and looked at properly.\n\nThat was what the ranging had produced. Not just the hazelnut — the map underneath it.",
+    "state_note": "food 0.60 after a careful day; health 0.85 — heat hit but absorbed better; attention 0.75 (used but not depleted)",
+    "summary": "Using west territory knowledge from the previous day's ranging, YY found a shade route and a new cache spot, losing less to the heat than a direct run would have cost.",
+    "state_delta": {
+      "food": "0.65 → 0.60",
+      "health": "0.90 → 0.85",
+      "attention": "0.80 → 0.75"
+    },
+    "branch_created": false
+  },
+  "created_at": "2026-04-19T09:00:00Z"
+}

@@ -1,0 +1,25 @@
+{
+  "schema_version": "0.1",
+  "event_id": "evt_2026-04-19_007",
+  "root_id": "root_2026_04_14",
+  "story_day": 6,
+  "occurred_at": "2026-04-19T12:00:00Z",
+  "event_type": "environmental_pressure",
+  "canonical_truth": {
+    "summary": "A sustained heat wave makes foraging costly — the canopy fails to block, bark is warm before noon, and movement carries a physical price",
+    "entities": ["YY", "west_spot", "east_boundary"],
+    "location": "forest_territory",
+    "concrete_outcome": "West spot yield reduced; both branches pay a heat penalty in food and health; alt1-on-time uses west terrain knowledge to route around the worst of it"
+  },
+  "perception_prompt": {
+    "noticeable_surface": "the canopy isn't blocking anything today — the light comes through wrong, the bark is warm to the touch before noon, and the usual foraging line feels twice as long",
+    "ambiguity_level": 0.05
+  },
+  "tags": ["heat", "territory", "resource_pressure", "body", "environmental"],
+  "created_at": "2026-04-19T09:00:00Z",
+  "authorial_note": {
+    "real_world_inspiration": "hottest March on record for the Lower 48 states, widest margin ever recorded for any month — federal data released April 19 2026",
+    "translation_logic": "extreme heat reshapes the cost-benefit of every movement; which branch has resources and range intelligence matters more when stillness and motion both carry a price",
+    "restraint_reason": "heat enters through bark temperature and canopy failure, not through announcement — YY's body is the instrument"
+  }
+}
