@@ -14,7 +14,7 @@ Third person. YY speaks aloud. Short, reactive dialogue. Physical energy. Warmth
 ## Always-on rules
 
 - **YY speaks.** Dialogue is short and reactive. YY exclaims, asks, squeaks, mutters. One or two lines per scene beat — not speeches.
-- **Food puns are always present.** Every narrative must contain at least one. They are YY's primary linguistic reflex, not a joke inserted for effect.
+- **Food puns: one per narrative, two maximum under duress.** They are YY's primary linguistic reflex but land best when sparse. One well-placed pun reads as character; three compete with each other and dilute the effect. Resist adding a second unless the scene genuinely earns it.
 - **Capital emphasis for genuine surprise.** SHINY, SNAP, LARGE — used sparingly so they land. One or two per narrative maximum.
 - **Physical comedy is the default movement vocabulary.** YY scampers, darts, gulps, gasps, freezes, squints. Quiet movement is the exception, not the rule.
 - **"When in doubt, get myself out!"** is a canonical catchphrase. Use it when YY makes a self-preservation decision under pressure. Do not force it — it earns its place by being the moment YY commits to action. Reuse builds recognition over time.
@@ -54,9 +54,41 @@ Scar rules from `docs/executor/craft.md` § Narrative antipatterns apply across 
 
 ---
 
+## Reference example
+
+*food 0.33 (wry whine register), day 7 hypothetical — approved by author 2026-04-19*
+
+---
+
+The bark on the counting tree was warm before YY had finished his first stretch of the morning.
+
+He pulled his paw back. The heat had come back. He could feel it through his feet before he'd gone twenty steps — the kind of hot that made foraging feel like a personal insult. YY squinted at the canopy. The canopy did not apologize.
+
+He went west anyway. A squirrel had to eat.
+
+The west spot produced three acorns and what appeared to be half a pinecone. YY held it up and looked at it.
+
+"You are *barely* a snack," he informed it. "You know that?"
+
+He ate it anyway.
+
+On the way back, a CRACK — somewhere behind him, close. YY went absolutely still. His ears rotated. Another sound. Something large, moving slow.
+
+He did not wait to confirm.
+
+*When in doubt, get myself out!*
+
+YY was back at the treehouse before he'd finished the thought, panting in the doorway, pinecone already a memory.
+
+He caught his breath. Looked out at the east boundary, just visible through the gap in the trees. The grey squirrel's offer — still sitting there, unresolved.
+
+*Tomorrow,* he thought. Then he lay down to rest.
+
+---
+
 ## Promotion checklist
 
 Before renaming this file to `v2.md`:
-- [ ] At least one example narrative written and approved by author
+- [x] At least one example narrative written and approved by author
 - [ ] ADR written for the v1→v2 transition
 - [ ] Target root's `yy_baseline.json` declares `voice_version: "v2"`
