@@ -3,7 +3,8 @@ import Link from 'next/link'
 import { getStaticRuns, getDayArtifact, getActiveDay, type DayArtifact } from '@/lib/runs'
 import { PageHeader, EventAnchor, SplitPanel, PathStateRow, PageShell, BranchTree } from '@/components/canon/Layout'
 import { MonoLabel, Pill, SectionRule } from '@/components/canon/Primitives'
-import { dayUrl } from '@/lib/nav'
+import { StatChart } from '@/components/StatChart'
+import { dayUrl, vsDayUrl } from '@/lib/nav'
 
 export const metadata: Metadata = {
   title: 'Compare — yysworld',
@@ -67,13 +68,21 @@ export default function ComparePage() {
   const activeDayStr = String(activeDay)
 
   // Build series only up to activeDay (don't chart gated days)
-  type SeriesPoint = { label: string; main: DayArtifact | null; alt: DayArtifact | null }
+  type SeriesPoint = {
+    label: string
+    dayNum: number
+    main: { food: number; health: number; attention: number } | null
+    alt: { food: number; health: number; attention: number } | null
+  }
   const series: SeriesPoint[] = []
   for (let d = 1; d <= activeDay; d++) {
+    const m = getDayArtifact(latestRun.runDate, mainBranch.id, String(d))
+    const a = getDayArtifact(latestRun.runDate, altBranch.id, String(d))
     series.push({
       label: `Day ${d}`,
-      main: getDayArtifact(latestRun.runDate, mainBranch.id, String(d)),
-      alt: getDayArtifact(latestRun.runDate, altBranch.id, String(d)),
+      dayNum: d,
+      main: m ? { food: m.statsAfter.food, health: m.statsAfter.health, attention: m.statsAfter.attention } : null,
+      alt: a ? { food: a.statsAfter.food, health: a.statsAfter.health, attention: a.statsAfter.attention } : null,
     })
   }
 
@@ -102,32 +111,13 @@ export default function ComparePage() {
         />
       )}
 
-      {/* Bar chart — food over time across both branches */}
+      {/* Bar chart — stat over time across both branches (toggleable) */}
       {series.length > 0 && (
-        <section className="yy-compareSeries">
-          <div className="yy-compareSeries__head">
-            <MonoLabel>food state over time</MonoLabel>
-            <div className="yy-legend">
-              <Pill>main</Pill>
-              <Pill>{altBranch.id}</Pill>
-            </div>
-          </div>
-          <div className="yy-bars">
-            {series.map((point) => {
-              const aVal = point.main ? Math.round(point.main.statsAfter.food * 100) : 0
-              const bVal = point.alt ? Math.round(point.alt.statsAfter.food * 100) : 0
-              return (
-                <div key={point.label} className="yy-bars__row">
-                  <span>{point.label}</span>
-                  <div className="yy-bars__track">
-                    <i style={{ width: `${aVal}%` }} />
-                    <i className="is-second" style={{ width: `${bVal}%` }} />
-                  </div>
-                </div>
-              )
-            })}
-          </div>
-        </section>
+        <StatChart
+          series={series}
+          altBranchId={altBranch.id}
+          vsDayHref={(d) => vsDayUrl('yy', latestRun.runDate, 'main', altBranch.id, d)}
+        />
       )}
 
       <SectionRule />
@@ -142,25 +132,39 @@ export default function ComparePage() {
 
       {/* Gap summary */}
       {activeMain && activeAlt && (() => {
-        const healthGap = Math.round((activeMain.statsAfter.health - activeAlt.statsAfter.health) * 100)
-        const foodGap = Math.round((activeMain.statsAfter.food - activeAlt.statsAfter.food) * 100)
-        const attGap = Math.round((activeMain.statsAfter.attention - activeAlt.statsAfter.attention) * 100)
+        const fmt = (v: number) => (v * 100).toFixed(0)
         const items = [
-          { label: 'health gap', val: Math.abs(healthGap), favor: healthGap > 0 ? 'main' : healthGap < 0 ? altBranch.id : 'tied' },
-          { label: 'food gap', val: Math.abs(foodGap), favor: foodGap > 0 ? 'main' : foodGap < 0 ? altBranch.id : 'tied' },
-          { label: 'attention gap', val: Math.abs(attGap), favor: attGap > 0 ? 'main' : attGap < 0 ? altBranch.id : 'tied' },
+          {
+            label: 'health',
+            mainVal: activeMain.statsAfter.health,
+            altVal: activeAlt.statsAfter.health,
+          },
+          {
+            label: 'food',
+            mainVal: activeMain.statsAfter.food,
+            altVal: activeAlt.statsAfter.food,
+          },
+          {
+            label: 'attention',
+            mainVal: activeMain.statsAfter.attention,
+            altVal: activeAlt.statsAfter.attention,
+          },
         ]
         return (
           <section className="yy-gapSummary">
-            {items.map(({ label, val, favor }) => (
-              <div key={label}>
-                <MonoLabel>{label}</MonoLabel>
-                <div className="yy-gapSummary__val">{val} pts</div>
-                <div className={`yy-gapSummary__delta ${favor === 'main' ? 'is-up' : favor === altBranch.id ? 'is-down' : ''}`}>
-                  {favor === 'tied' ? 'tied' : `→ ${favor} leads`}
+            {items.map(({ label, mainVal, altVal }) => {
+              const diff = mainVal - altVal
+              const favor = diff > 0.01 ? 'main' : diff < -0.01 ? altBranch.id : 'tied'
+              return (
+                <div key={label}>
+                  <MonoLabel>{label}</MonoLabel>
+                  <div className="yy-gapSummary__val">{fmt(mainVal)} · {fmt(altVal)}</div>
+                  <div className={`yy-gapSummary__delta ${favor === 'main' ? 'is-up' : favor === altBranch.id ? 'is-down' : ''}`}>
+                    {favor === 'tied' ? 'tied' : `→ ${favor} leads`}
+                  </div>
                 </div>
-              </div>
-            ))}
+              )
+            })}
           </section>
         )
       })()}

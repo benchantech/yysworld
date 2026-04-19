@@ -121,23 +121,6 @@ export default function TodayPage() {
         </section>
       )}
 
-      {/* Branch strip — choose which path to read */}
-      {altBranch && (
-        <div className="yy-branchNav">
-          <MonoLabel>choose a path</MonoLabel>
-          <div className="yy-branchNav__options">
-            <Link href={dayUrl('yy', latestRun.runDate, mainBranch.id, String(activeDay))} className="yy-branchNav__item">
-              <span className="yy-branchNav__label">main</span>
-              <span className="yy-branchNav__sub">default sequence</span>
-            </Link>
-            <Link href={dayUrl('yy', latestRun.runDate, altBranch.id, String(activeDay))} className="yy-branchNav__item">
-              <span className="yy-branchNav__label">{altBranch.id}</span>
-              <span className="yy-branchNav__sub">alternate path</span>
-            </Link>
-          </div>
-        </div>
-      )}
-
       {/* Side-by-side stories */}
       {mainArtifact && altArtifact ? (
         <section className="yy-splitPanel" style={{ marginTop: '24px' }}>
@@ -152,6 +135,23 @@ export default function TodayPage() {
         <p className="yy-lede" style={{ marginTop: '1.5rem', color: 'var(--ink-3)' }}>
           Day {activeDay} content coming soon.
         </p>
+      )}
+
+      {/* Branch strip — choose which path to read in full */}
+      {altBranch && (
+        <div className="yy-branchNav">
+          <MonoLabel>choose a path</MonoLabel>
+          <div className="yy-branchNav__options">
+            <Link href={dayUrl('yy', latestRun.runDate, mainBranch.id, String(activeDay))} className="yy-branchNav__item">
+              <span className="yy-branchNav__label">main</span>
+              <span className="yy-branchNav__sub">default sequence</span>
+            </Link>
+            <Link href={dayUrl('yy', latestRun.runDate, altBranch.id, String(activeDay))} className="yy-branchNav__item">
+              <span className="yy-branchNav__label">{altBranch.id}</span>
+              <span className="yy-branchNav__sub">alternate path</span>
+            </Link>
+          </div>
+        </div>
       )}
 
       {/* Day navigation strip */}
