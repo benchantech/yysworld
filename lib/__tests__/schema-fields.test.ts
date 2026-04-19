@@ -101,75 +101,9 @@ describe('BranchEvaluation.confidence range (ADR-026 / types.ts)', () => {
   })
 })
 
-// ─── ADR-031: source_event required fields ────────────────────────────────────
-
-const SOURCE_EVENT_CATEGORIES = new Set([
-  'politics', 'civic', 'science', 'culture', 'sports', 'other',
-])
-
-interface SourceEvent {
-  headline: string
-  date: string
-  category: string
-  secondary?: string
-}
-
-function isValidSourceEvent(ev: unknown): ev is SourceEvent {
-  if (typeof ev !== 'object' || ev === null) return false
-  const e = ev as Record<string, unknown>
-  if (typeof e.headline !== 'string' || e.headline.trim() === '') return false
-  if (typeof e.date !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(e.date)) return false
-  if (typeof e.category !== 'string' || !SOURCE_EVENT_CATEGORIES.has(e.category)) return false
-  if ('secondary' in e && e.secondary !== undefined && typeof e.secondary !== 'string') return false
-  return true
-}
-
-describe('source_event schema (ADR-031)', () => {
-  it('accepts a valid source_event', () => {
-    expect(isValidSourceEvent({
-      headline: 'Federal Reserve holds rates steady',
-      date: '2026-04-17',
-      category: 'politics',
-    })).toBe(true)
-  })
-
-  it('accepts source_event with optional secondary', () => {
-    expect(isValidSourceEvent({
-      headline: 'Tax Day filing surge',
-      date: '2026-04-15',
-      category: 'civic',
-      secondary: 'IRS processing delay reported',
-    })).toBe(true)
-  })
-
-  it('rejects missing headline', () => {
-    expect(isValidSourceEvent({ date: '2026-04-17', category: 'politics' })).toBe(false)
-  })
-
-  it('rejects empty headline', () => {
-    expect(isValidSourceEvent({ headline: '  ', date: '2026-04-17', category: 'politics' })).toBe(false)
-  })
-
-  it('rejects missing date', () => {
-    expect(isValidSourceEvent({ headline: 'Test event', category: 'sports' })).toBe(false)
-  })
-
-  it('rejects date in wrong format (non-ISO)', () => {
-    expect(isValidSourceEvent({ headline: 'Test', date: 'April 17', category: 'other' })).toBe(false)
-    expect(isValidSourceEvent({ headline: 'Test', date: '04/17/2026', category: 'other' })).toBe(false)
-  })
-
-  it('rejects invalid category', () => {
-    expect(isValidSourceEvent({ headline: 'Test', date: '2026-04-17', category: 'weather' })).toBe(false)
-    expect(isValidSourceEvent({ headline: 'Test', date: '2026-04-17', category: '' })).toBe(false)
-  })
-
-  it('accepts all controlled category values', () => {
-    for (const cat of SOURCE_EVENT_CATEGORIES) {
-      expect(isValidSourceEvent({ headline: 'x', date: '2026-04-17', category: cat })).toBe(true)
-    }
-  })
-})
+// ─── ADR-031 retired 2026-04-19 ──────────────────────────────────────────────
+// source_event field was planned but never implemented in real event files.
+// Test removed alongside ADR retirement. See ADR-031 retirement note.
 
 // ─── ADR-024: snapshot required fields for publication gate ───────────────────
 

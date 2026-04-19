@@ -1,8 +1,21 @@
 # ADR-031 — `source_event` as Required Event Field
 
-**Status:** accepted  
+**Status:** retired  
 **Date:** 2026-04-16  
-**Scar type:** retroactive schema patch
+**Retired:** 2026-04-19  
+**Scar type:** retroactive schema patch — never fully implemented
+
+---
+
+## Retirement note
+
+The `source_event` field was planned and a unit test was written for the schema shape, but it was never added to actual event files. Event files continued to use `authorial_note.real_world_inspiration` (prose string) as the real-world anchor. The `source_event` test in `schema-fields.test.ts` tested a helper function in isolation — it did not validate the real data files.
+
+On 2026-04-19 the gap was identified: the ADR, the test, and the real event files were all divergent. Rather than retroactively patch six event files with a field that adds overhead without current use, the decision was made to retire the ADR and remove the orphaned test.
+
+If a structured real-world event index becomes necessary for querying or cross-branch drift detection in a future root, revisit with a fresh ADR that reflects actual usage patterns at that time.
+
+---
 
 ---
 
