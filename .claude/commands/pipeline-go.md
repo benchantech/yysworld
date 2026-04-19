@@ -242,7 +242,14 @@ State stats are `food`, `health`, `attention` (0–1 floats). Field name is `foo
 }
 ```
 
-**Narrative style:**
+**Narrative style — voice is root-scoped. Check rootId before writing prose.**
+
+| rootId | Voice | Rule |
+|--------|-------|------|
+| `root_2026_04_14` | v1 literary restraint | Use rules below exactly as written. |
+| `root_2026_05_*` and later | v2 author voice | Rules to be added before May 2026 run. Do not invent v2 rules. |
+
+**If rootId is `root_2026_04_14`, apply these rules and no others:**
 - Third person — "YY", not "I"
 - Short paragraphs, direct sentences
 - Concrete sensory details — open in scene, not in concept

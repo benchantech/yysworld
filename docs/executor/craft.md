@@ -5,6 +5,19 @@ Read CLAUDE.md first. Return here for deeper orientation or task-specific judgme
 
 ---
 
+## Voice versioning — read before generating any narrative
+
+**Voice is root-scoped.** The narrative register used in a root must remain consistent from the root's first day to its last. Do not apply new voice guidance to a root that has already published at least one day.
+
+| Root | Voice version | Notes |
+|------|--------------|-------|
+| `root_2026_04_14` | v1 — literary restraint | Rides out as-is. Do not apply v2 rules. |
+| `root_2026_05_*` and later | v2 — author voice (pending) | Rules to be added before May 1 run. |
+
+**Gate for executor:** If `rootId == root_2026_04_14`, stop here and use the existing narrative antipatterns section below. Do not read or apply any v2 voice rules even if they appear later in this file.
+
+---
+
 ## YY Method lens
 
 When making a new artifact, ask whether it preserves:
