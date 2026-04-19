@@ -2,6 +2,16 @@
  * Tests for required schema fields across artifact, snapshot, and event types.
  *
  * DRIFT THIS PREVENTS:
+ *   ADR-033: health was omitted from state shift proposals and state_delta in
+ *   artifacts. The existing hasOnlyValidConditionKeys test caught invalid keys
+ *   but not missing required ones — {food, attention} passed while health was
+ *   silently absent. Over time this degrades health into a decorative field
+ *   that only moves on dramatic events.
+ *
+ *   ADR-033: state_delta in artifact content must contain all three stats.
+ *   A delta missing health means the published day page shows an incomplete
+ *   change record and the author cannot verify that health was tracked.
+ *
  *   ADR-026: stat name 'hunger' crept in at launch (corrected to 'food').
  *   The valid condition keys are locked: health, food, attention.
  *   Any code that uses 'hunger' (StatsBlock, pipeline generators, test fixtures)
@@ -251,5 +261,145 @@ describe('schema_version field', () => {
   it('rejects a future version string', () => {
     // Any version other than current is unexpected — fail-fast until versioning is explicit
     expect(hasValidSchemaVersion({ schema_version: '0.2' })).toBe(false)
+  })
+})
+
+// ─── ADR-033: condition completeness (all three stats required) ───────────────
+
+/**
+ * The existing hasOnlyValidConditionKeys check prevents invalid keys (e.g. 'hunger').
+ * This check prevents the complementary failure: a condition that omits a required
+ * stat entirely. {food, attention} passing while health is absent was the ADR-033
+ * failure — health was silently skipped because the shift proposal template did not
+ * list it as required.
+ *
+ * All three stats must be present in every condition object that represents a full
+ * state (state_before, state_after). Partial reads during reconstruction are exempt
+ * but should not appear in committed snapshot or artifact files.
+ */
+const REQUIRED_CONDITION_KEYS = ['health', 'food', 'attention'] as const
+
+function hasAllRequiredConditionKeys(condition: Record<string, unknown>): boolean {
+  return REQUIRED_CONDITION_KEYS.every((k) => k in condition)
+}
+
+describe('condition completeness — all three stats required (ADR-033)', () => {
+  it('accepts a complete condition', () => {
+    expect(hasAllRequiredConditionKeys({ health: 0.9, food: 0.4, attention: 0.5 })).toBe(true)
+  })
+
+  it('rejects a condition missing health — the ADR-033 scar', () => {
+    expect(hasAllRequiredConditionKeys({ food: 0.4, attention: 0.5 })).toBe(false)
+  })
+
+  it('rejects a condition missing food', () => {
+    expect(hasAllRequiredConditionKeys({ health: 0.9, attention: 0.5 })).toBe(false)
+  })
+
+  it('rejects a condition missing attention', () => {
+    expect(hasAllRequiredConditionKeys({ health: 0.9, food: 0.4 })).toBe(false)
+  })
+
+  it('rejects an empty condition', () => {
+    expect(hasAllRequiredConditionKeys({})).toBe(false)
+  })
+
+  it('accepts a condition with extra keys as long as required ones are present', () => {
+    // Extra keys are caught by hasOnlyValidConditionKeys — this check is orthogonal
+    expect(hasAllRequiredConditionKeys({ health: 0.9, food: 0.4, attention: 0.5, hunger: 0.3 })).toBe(true)
+  })
+})
+
+// ─── ADR-033: state_delta completeness in artifact content ────────────────────
+
+/**
+ * Artifact content.state_delta must contain all three stat keys, each as a
+ * string in "X.XX → X.XX" format. A missing health delta means the published
+ * day page shows an incomplete change record — the author cannot verify that
+ * health was tracked, and the pipeline silently skipped it.
+ *
+ * Pattern: "0.40 → 0.33" or "0.9 → 0.82" — two decimal numbers separated by →
+ * Allow flexible decimal places; the important thing is both numbers are present.
+ */
+const STAT_DELTA_PATTERN = /^\d+\.\d+\s*→\s*\d+\.\d+$/
+
+function isValidStatDelta(delta: string): boolean {
+  return STAT_DELTA_PATTERN.test(delta.trim())
+}
+
+function isCompleteStateDelta(delta: Record<string, unknown>): boolean {
+  return REQUIRED_CONDITION_KEYS.every(
+    (k) => typeof delta[k] === 'string' && isValidStatDelta(delta[k] as string),
+  )
+}
+
+describe('state_delta format (ADR-033)', () => {
+  it('accepts a well-formed delta string', () => {
+    expect(isValidStatDelta('0.40 → 0.33')).toBe(true)
+    expect(isValidStatDelta('0.9 → 0.82')).toBe(true)
+    expect(isValidStatDelta('0.50 → 0.62')).toBe(true)
+  })
+
+  it('rejects a delta with only one value', () => {
+    expect(isValidStatDelta('0.40')).toBe(false)
+  })
+
+  it('rejects a delta with non-numeric values', () => {
+    expect(isValidStatDelta('high → low')).toBe(false)
+  })
+
+  it('rejects an empty string', () => {
+    expect(isValidStatDelta('')).toBe(false)
+  })
+})
+
+describe('state_delta completeness in artifact content (ADR-033)', () => {
+  it('accepts a complete state_delta with all three stats', () => {
+    expect(isCompleteStateDelta({
+      food: '0.40 → 0.33',
+      health: '0.90 → 0.82',
+      attention: '0.50 → 0.62',
+    })).toBe(true)
+  })
+
+  it('rejects state_delta missing health — the ADR-033 scar', () => {
+    expect(isCompleteStateDelta({
+      food: '0.40 → 0.33',
+      attention: '0.50 → 0.62',
+    })).toBe(false)
+  })
+
+  it('rejects state_delta missing food', () => {
+    expect(isCompleteStateDelta({
+      health: '0.90 → 0.82',
+      attention: '0.50 → 0.62',
+    })).toBe(false)
+  })
+
+  it('rejects state_delta missing attention', () => {
+    expect(isCompleteStateDelta({
+      food: '0.40 → 0.33',
+      health: '0.90 → 0.82',
+    })).toBe(false)
+  })
+
+  it('rejects state_delta where a value is not a string', () => {
+    expect(isCompleteStateDelta({
+      food: '0.40 → 0.33',
+      health: 0.82,
+      attention: '0.50 → 0.62',
+    })).toBe(false)
+  })
+
+  it('rejects state_delta where a value is malformed', () => {
+    expect(isCompleteStateDelta({
+      food: '0.40 → 0.33',
+      health: 'unchanged',
+      attention: '0.50 → 0.62',
+    })).toBe(false)
+  })
+
+  it('rejects an empty state_delta', () => {
+    expect(isCompleteStateDelta({})).toBe(false)
   })
 })
