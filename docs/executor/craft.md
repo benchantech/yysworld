@@ -7,14 +7,21 @@ Read CLAUDE.md first. Return here for deeper orientation or task-specific judgme
 
 ## Voice versioning — read before generating any narrative
 
-**Voice is root-scoped.** The narrative register used in a root must remain consistent from the root's first day to its last. Do not apply new voice guidance to a root that has already published at least one day.
+**Voice is root-scoped.** The narrative register is set at root creation via `voice_version` in `yy_baseline.json` and does not change mid-run.
 
-| Root | Voice version | Notes |
-|------|--------------|-------|
-| `root_2026_04_14` | v1 — literary restraint | Rides out as-is. Do not apply v2 rules. |
-| `root_2026_05_*` and later | v2 — author voice (pending) | Rules to be added before May 1 run. |
+**How to find the correct voice:**
+1. Read `runs/{rootId}/baseline/yy_baseline.json`
+2. Read the `voice_version` field (e.g. `"v1"`)
+3. Load `docs/voice/{voice_version}.md` — that file is the complete style guide for this root
+4. Apply those rules and no others
 
-**Gate for executor:** If `rootId == root_2026_04_14`, stop here and use the existing narrative antipatterns section below. Do not read or apply any v2 voice rules even if they appear later in this file.
+**How new voices are developed:**
+- Draft the new version as `docs/voice/vN-draft.md` while the current root runs
+- Promote to `docs/voice/vN.md` only when the draft's promotion checklist is complete
+- Set `voice_version: "vN"` in the new root's `yy_baseline.json` at root creation
+- Each transition gets an ADR
+
+Do not read draft files when generating prose. Draft files are not active.
 
 ---
 

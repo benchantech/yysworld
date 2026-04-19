@@ -242,24 +242,14 @@ State stats are `food`, `health`, `attention` (0–1 floats). Field name is `foo
 }
 ```
 
-**Narrative style — voice is root-scoped. Check rootId before writing prose.**
+**Narrative style — voice is root-scoped and loaded dynamically.**
 
-| rootId | Voice | Rule |
-|--------|-------|------|
-| `root_2026_04_14` | v1 literary restraint | Use rules below exactly as written. |
-| `root_2026_05_*` and later | v2 author voice | Rules to be added before May 2026 run. Do not invent v2 rules. |
+Before writing any prose:
+1. Read `runs/{rootId}/baseline/yy_baseline.json` → get `voice_version`
+2. Read `docs/voice/{voice_version}.md` — this is the complete style guide for this root
+3. Apply those rules exactly. Do not apply rules from any other voice file, including drafts.
 
-**If rootId is `root_2026_04_14`, apply these rules and no others:**
-- Third person — "YY", not "I"
-- Short paragraphs, direct sentences
-- Concrete sensory details — open in scene, not in concept
-- Emotional honesty without melodrama
-- Restraint is a feature. Don't over-explain.
-- Title must NOT be repeated as the first line of the narrative — open in scene
-- World events enter through what YY encounters, never as "Someone mentioned X"
-- No meta-commentary — don't describe feelings from outside, render them from inside
-- No recycled closing devices from the previous day
-- Check `docs/executor/craft.md` § Narrative antipatterns before committing
+Also check `docs/executor/craft.md` § Narrative antipatterns before committing — those scar rules apply across all voice versions.
 
 **Artifact schema:**
 
