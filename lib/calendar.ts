@@ -39,6 +39,6 @@ export function buildCalendarCells(
 }
 
 /** Returns true if a cell should render as a navigable link. */
-export function cellIsLink(cell: CalendarCell): cell is { kind: 'day'; day: number; published: boolean; today: boolean; future: boolean } {
+export function cellIsLink(cell: CalendarCell): cell is { kind: 'day'; day: number; published: true; today: boolean; future: boolean } {
   return cell.kind === 'day' && cell.published
 }
