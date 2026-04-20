@@ -1,0 +1,25 @@
+{
+  "schema_version": "0.1",
+  "event_id": "evt_2026-04-20_008",
+  "root_id": "root_2026_04_14",
+  "story_day": 7,
+  "occurred_at": "2026-04-20T12:00:00Z",
+  "event_type": "environmental_passage",
+  "canonical_truth": {
+    "summary": "A narrow migration column passes through the canopy above YY's territory — west to east, precise and brief. The sound arrives before the sight. The forest goes quiet after.",
+    "entities": ["migration column", "canopy", "west territory", "east boundary"],
+    "location": "canopy above YY's range, west to east corridor",
+    "concrete_outcome": "The column crosses in under a minute and is gone. Its path aligns with known landmarks — the shade corridor, the east boundary — giving those places a second reading."
+  },
+  "perception_prompt": {
+    "noticeable_surface": "A band of birds moves through the canopy directly overhead — not scattered, not circling. A column, maybe four meters wide, west to east, gone in under a minute. The sound came first. The forest went quiet after.",
+    "ambiguity_level": 0.2
+  },
+  "tags": ["migration", "precision", "canopy", "transient", "overhead", "east-direction"],
+  "created_at": "2026-04-20T09:00:00Z",
+  "authorial_note": {
+    "real_world_inspiration": "Honor humanoid robot completes Beijing E-Town Half Marathon in 50:26 — faster than any human, moving at a pace and precision no living body sustains",
+    "translation_logic": "The robot's defining quality is rhythm without fatigue or deviation; the migration column carries that same quality — something passing through YY's world at a pace and regularity that living things don't normally achieve",
+    "restraint_reason": "The column is purely sensory and passes without interacting — YY watches but cannot follow, cannot question it. The event lands as observation, not encounter."
+  }
+}

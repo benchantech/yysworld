@@ -1,0 +1,38 @@
+{
+  "schema_version": "0.1",
+  "comparison_id": "cmp_2026-04-20_7_main_vs_alt1-on-time",
+  "artifact_type": "daily_comparison",
+  "root_id": "root_2026_04_14",
+  "branch_a": "branch_root_2026_04_14_main",
+  "branch_b": "branch_root_2026_04_14_alt1-on-time",
+  "story_day": 7,
+  "snapshot_date": "2026-04-20",
+  "snapshot_ids": [
+    "snap_2026-04-20_branch_root_2026_04_14_main",
+    "snap_2026-04-20_branch_root_2026_04_14_alt1-on-time"
+  ],
+  "package_ref": {
+    "package_id": "yysworld-pipeline-v0.1",
+    "package_created_at": "2026-04-20T09:00:00Z",
+    "package_hash": "sha256:claude-code-subscription"
+  },
+  "model_refs": [{"provider": "anthropic", "model_id": "claude-code-subscription", "role": "comparator", "runtime_class": "interactive"}],
+  "content": {
+    "divergence_summary": "Both paths watched the same column pass overhead. Main watched it and lost ground — attention pulled east toward the unresolved offer, forage yield low. Alt watched it and gained information — the shade corridor is now a validated migration waypoint, the west map grows more legible.",
+    "branch_a_path": "Main has been grinding west under food pressure; the column's east direction unsettled him, sharpened his attention toward something he hasn't acted on. Food at 0.28 — lowest yet.",
+    "branch_b_path": "Alt1 is building territory knowledge from a position of relative stability; the column confirmed a waypoint rather than raising a question. Food at 0.57, attention at 0.82.",
+    "key_differences": [
+      "Main reads the column as a question about the east; alt1 reads it as a confirmation about the west",
+      "Main's food is now critically low (0.28); alt1 still has margin (0.57) and a hazelnut in inventory",
+      "Main's goal shifted to resolve_east_offer; alt1 is still on map_west_territory",
+      "Alt1's attention is substantially higher despite the same event — context determines what the same signal means"
+    ],
+    "shared_elements": [
+      "Both watched the migration column pass west to east",
+      "Both paused foraging to observe",
+      "Both registered the column's precision as something different from ordinary wildlife movement",
+      "Both experienced a slight health dip from accumulated fatigue"
+    ]
+  },
+  "created_at": "2026-04-20T09:00:00Z"
+}

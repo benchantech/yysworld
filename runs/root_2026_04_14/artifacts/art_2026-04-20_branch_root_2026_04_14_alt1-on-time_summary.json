@@ -1,0 +1,29 @@
+{
+  "schema_version": "0.1",
+  "artifact_id": "art_2026-04-20_branch_root_2026_04_14_alt1-on-time_summary",
+  "artifact_type": "daily_summary",
+  "snapshot_id": "snap_2026-04-20_branch_root_2026_04_14_alt1-on-time",
+  "root_id": "root_2026_04_14",
+  "branch_id": "branch_root_2026_04_14_alt1-on-time",
+  "package_ref": {
+    "package_id": "yysworld-pipeline-v0.1",
+    "package_created_at": "2026-04-20T09:00:00Z",
+    "package_hash": "sha256:claude-code-subscription"
+  },
+  "model_refs": [{"provider": "anthropic", "model_id": "claude-code-subscription", "role": "summarizer", "runtime_class": "interactive"}],
+  "comparison_contract_version": "0.1",
+  "content": {
+    "title": "The route they took",
+    "tone": "deliberate, mapping",
+    "narrative": "YY was resting at the shade corridor — the new waypoint, still unfamiliar enough to feel worth sitting in — when the column came through overhead.\n\nIt was narrow and fast and it did not deviate. He tracked it from the moment the sound arrived: a sustained collective movement, not the scatter of flushed birds but something directional and purposeful. He stayed still and let it pass above him.\n\nIt tracked exactly along the corridor's line. West to east, the same bearing he'd walked when he first found this spot.\n\nHe held the hazelnut in one paw without thinking about it — the habit of carrying it had settled in over two days. The nut's shell was smooth from the grey squirrel's stores, west of the boundary. The column was moving east. Both things pointed in different directions but had the same quality: ground he hadn't mapped yet, being moved through by others with apparent confidence.\n\nThe corridor was a waypoint because it was shaded and defensible. Now it was also something migrations used. That was a different kind of value — one that might mean others stopped here, rested here, left things here without meaning to.\n\nHe didn't move until the quiet returned. Then he made a note of the bearing and started back toward the west, slower than usual, thinking.",
+    "state_note": "attention sharpened by column's confirmation of the shade corridor as migration route; food and health slight dip from a lighter forage day spent observing",
+    "summary": "The migration column tracked directly over the shade corridor, confirming it as a migration waypoint; YY held still and let the information settle into his west territory map.",
+    "state_delta": {
+      "food": "0.60 → 0.57",
+      "health": "0.85 → 0.83",
+      "attention": "0.75 → 0.82"
+    },
+    "branch_created": false
+  },
+  "created_at": "2026-04-20T09:00:00Z"
+}

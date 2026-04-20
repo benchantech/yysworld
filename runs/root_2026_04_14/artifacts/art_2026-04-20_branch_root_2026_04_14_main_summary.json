@@ -1,0 +1,29 @@
+{
+  "schema_version": "0.1",
+  "artifact_id": "art_2026-04-20_branch_root_2026_04_14_main_summary",
+  "artifact_type": "daily_summary",
+  "snapshot_id": "snap_2026-04-20_branch_root_2026_04_14_main",
+  "root_id": "root_2026_04_14",
+  "branch_id": "branch_root_2026_04_14_main",
+  "package_ref": {
+    "package_id": "yysworld-pipeline-v0.1",
+    "package_created_at": "2026-04-20T09:00:00Z",
+    "package_hash": "sha256:claude-code-subscription"
+  },
+  "model_refs": [{"provider": "anthropic", "model_id": "claude-code-subscription", "role": "summarizer", "runtime_class": "interactive"}],
+  "comparison_contract_version": "0.1",
+  "content": {
+    "title": "What the column knew",
+    "tone": "unsettled, watchful",
+    "narrative": "The sound came before anything visible — a low collective rush, displaced air, something moving with intent through the upper canopy.\n\nYY was in the west spot when it passed. He stopped mid-reach and looked up. A column of birds, narrow and exact, moving west to east without deviation or scatter. Four meters wide, maybe less. He watched it cross the gap between trees until the canopy closed again and then a few seconds more, tracking by sound.\n\nThe direction stayed with him. West to east was the same line as the east boundary. The same line as the offer that had closed without an answer.\n\nHe finished the forage run, but the attention was split now and the split had a cost. The yield came in low — lower than yesterday, lower than the heat days. The watching had taken minutes he'd planned to use differently.\n\nOn the way back he moved through the spot where the column had crossed overhead and paused there longer than made sense. The canopy was ordinary. Whatever had passed was gone and wouldn't return the same way.\n\nFood was thinner than it had ever been. The east boundary had a direction now, endorsed by something that moved with the kind of certainty he hadn't seen from the ground.",
+    "state_note": "food down to 0.28 — lowest point yet; attention sharpened by the column's east trajectory; health at 0.80 from accumulated fatigue",
+    "summary": "A migration column passed overhead during the west forage run, moving east with unnerving precision; YY watched too long, came back thinner, and found the unresolved east offer sitting closer in his attention.",
+    "state_delta": {
+      "food": "0.33 → 0.28",
+      "health": "0.82 → 0.80",
+      "attention": "0.62 → 0.72"
+    },
+    "branch_created": false
+  },
+  "created_at": "2026-04-20T09:00:00Z"
+}

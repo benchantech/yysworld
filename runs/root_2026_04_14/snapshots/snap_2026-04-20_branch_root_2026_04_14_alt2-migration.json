@@ -1,0 +1,65 @@
+{
+  "schema_version": "0.1",
+  "snapshot_id": "snap_2026-04-20_branch_root_2026_04_14_alt2-migration",
+  "root_id": "root_2026_04_14",
+  "branch_id": "branch_root_2026_04_14_alt2-migration",
+  "story_day": 7,
+  "snapshot_date": "2026-04-20",
+  "time_policy": "nightly_auto_advance",
+  "package_ref": {
+    "package_id": "yysworld-pipeline-v0.1",
+    "package_created_at": "2026-04-20T09:00:00Z",
+    "package_hash": "sha256:claude-code-subscription"
+  },
+  "model_refs": [{"provider": "anthropic", "model_id": "claude-code-subscription", "role": "generator", "runtime_class": "interactive"}],
+  "event_refs": ["evt_2026-04-20_008"],
+  "decision_refs": ["dec_2026-04-20_006"],
+  "state_before": {
+    "condition": {"health": 0.82, "food": 0.33, "attention": 0.62},
+    "inventory": [],
+    "active_burdens": [],
+    "goals": {"primary": "find_reliable_supply", "secondary": "map_west_territory"},
+    "reaction_overrides": {},
+    "trait_deviations": {"curious": 0.05, "pragmatic": 0.08},
+    "identity_notes": [
+      "the grey-brown squirrel returned with different posture — carrying something, not confrontational",
+      "the read started and didn't complete; attention too low to commit to exchange",
+      "the offer closed without trade; the east boundary sits differently for it",
+      "west spot produced again; the line held; no inventory gained",
+      "heat cut the west run yield; came back thinner than the trip justified",
+      "the offer not taken has a shape now — visible from the shade line looking east"
+    ]
+  },
+  "state_after": {
+    "condition": {"health": 0.74, "food": 0.41, "attention": 0.90},
+    "inventory": [
+      {
+        "id": "honeycomb_fragment_east_clearing",
+        "label": "fragment of wild honeycomb (east sun-trap clearing)",
+        "acquired_day": 7,
+        "tradeable": true,
+        "notes": "found cached on a low branch east of the mapped boundary; implies a bee colony somewhere further east; pale gold at the break, darker at the edges — not recent"
+      }
+    ],
+    "active_burdens": [],
+    "goals": {"primary": "map_east_territory", "secondary": "locate_bee_colony"},
+    "reaction_overrides": {},
+    "trait_deviations": {"curious": 0.15, "pragmatic": 0.05, "restless": 0.10},
+    "identity_notes": [
+      "the grey-brown squirrel returned with different posture — carrying something, not confrontational",
+      "the read started and didn't complete; attention too low to commit to exchange",
+      "the offer closed without trade; the east boundary sits differently for it",
+      "west spot produced again; the line held; no inventory gained",
+      "heat cut the west run yield; came back thinner than the trip justified",
+      "the offer not taken has a shape now — visible from the shade line looking east",
+      "followed the column east at full sprint — crossed the boundary alone, at speed, for the first time",
+      "found a sun-trap clearing east of all known ground; the column had used it as a waypoint",
+      "honeycomb fragment on a low branch — something keeps bees further east; the clearing has been used before"
+    ]
+  },
+  "change_summary": {
+    "notable_shift": "YY followed the column east and found an unmapped clearing with a honeycomb fragment; east territory opened; food partially restored by find",
+    "branch_created": true
+  },
+  "created_at": "2026-04-20T09:00:00Z"
+}

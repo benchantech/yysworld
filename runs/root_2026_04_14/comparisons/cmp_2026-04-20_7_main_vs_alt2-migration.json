@@ -1,0 +1,39 @@
+{
+  "schema_version": "0.1",
+  "comparison_id": "cmp_2026-04-20_7_main_vs_alt2-migration",
+  "artifact_type": "daily_comparison",
+  "root_id": "root_2026_04_14",
+  "branch_a": "branch_root_2026_04_14_main",
+  "branch_b": "branch_root_2026_04_14_alt2-migration",
+  "story_day": 7,
+  "snapshot_date": "2026-04-20",
+  "snapshot_ids": [
+    "snap_2026-04-20_branch_root_2026_04_14_main",
+    "snap_2026-04-20_branch_root_2026_04_14_alt2-migration"
+  ],
+  "package_ref": {
+    "package_id": "yysworld-pipeline-v0.1",
+    "package_created_at": "2026-04-20T09:00:00Z",
+    "package_hash": "sha256:claude-code-subscription"
+  },
+  "model_refs": [{"provider": "anthropic", "model_id": "claude-code-subscription", "role": "comparator", "runtime_class": "interactive"}],
+  "content": {
+    "divergence_summary": "The same column produced two entirely different days. Main watched and lost ground — attention sharpened but food fell to 0.28. Alt2 ran after it and paid in health (0.74) but crossed the boundary, found an unmapped clearing, and came back with honeycomb and a new goal. The fork is the decision to follow or not follow.",
+    "branch_a_path": "Main stayed within mapped territory, completed the forage run short, and spent the walk back thinking about the east. Nothing changed on the ground. The offer is still unresolved. Food at 0.28.",
+    "branch_b_path": "Alt2 broke from the forage and ran east at full speed for the first time. Crossed the boundary alone. Found the clearing, found the honeycomb, ate half. Health at 0.74 from the sprint, but food at 0.41 — above where main started the day. New territory opened.",
+    "key_differences": [
+      "Alt2 crossed the east boundary; main did not",
+      "Alt2 has inventory (honeycomb fragment); main has none",
+      "Alt2 paid a significant health cost for the sprint (0.82→0.74); main's health dipped only slightly (0.82→0.80)",
+      "Alt2's attention is at 0.90 — discovery mode; main's at 0.72 — focused but stalled",
+      "Alt2's primary goal shifted to map_east_territory; main moved toward resolve_east_offer — both turned east, but one moved and one didn't",
+      "Alt2 now has a new landmark (east sun-trap clearing) and a new research thread (bee colony location)"
+    ],
+    "shared_elements": [
+      "Both watched the same migration column pass overhead",
+      "Both had the column direct their attention east",
+      "Both started the day at the same state (food 0.33, health 0.82, attention 0.62)"
+    ]
+  },
+  "created_at": "2026-04-20T09:00:00Z"
+}
