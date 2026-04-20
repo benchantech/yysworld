@@ -116,7 +116,7 @@ export default function ComparePage() {
         <StatChart
           series={series}
           altBranchId={altBranch.id}
-          vsDayHref={(d) => vsDayUrl('yy', latestRun.runDate, 'main', altBranch.id, d)}
+          vsDayHrefs={series.map((p) => vsDayUrl('yy', latestRun.runDate, 'main', altBranch.id, p.dayNum))}
         />
       )}
 

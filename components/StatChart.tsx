@@ -18,7 +18,7 @@ interface StatPoint {
 interface StatChartProps {
   series: StatPoint[]
   altBranchId: string
-  vsDayHref: (day: number) => string
+  vsDayHrefs: string[]
 }
 
 const toggleStyle = (active: boolean): React.CSSProperties => ({
@@ -33,7 +33,7 @@ const toggleStyle = (active: boolean): React.CSSProperties => ({
   textTransform: 'uppercase' as const,
 })
 
-export function StatChart({ series, altBranchId, vsDayHref }: StatChartProps) {
+export function StatChart({ series, altBranchId, vsDayHrefs }: StatChartProps) {
   const [stat, setStat] = useState<Stat>('food')
 
   return (
@@ -55,11 +55,11 @@ export function StatChart({ series, altBranchId, vsDayHref }: StatChartProps) {
         </div>
       </div>
       <div className="yy-bars">
-        {series.map((point) => {
+        {series.map((point, i) => {
           const aVal = point.main ? Math.round(point.main[stat] * 100) : 0
           const bVal = point.alt ? Math.round(point.alt[stat] * 100) : 0
           return (
-            <Link key={point.label} href={vsDayHref(point.dayNum)} className="yy-bars__row" style={{ textDecoration: 'none', color: 'inherit' }}>
+            <Link key={point.label} href={vsDayHrefs[i] ?? '#'} className="yy-bars__row" style={{ textDecoration: 'none', color: 'inherit' }}>
               <span>{point.label}</span>
               <div className="yy-bars__track">
                 <i style={{ width: `${aVal}%` }} />
