@@ -18,6 +18,7 @@ import { schemaBreadcrumbList, schemaArticle } from '@/lib/jsonld'
 import { getDayParams, getDayArtifact, getRunBranches, getStaticRuns } from '@/lib/runs'
 
 export const dynamicParams = false
+export const revalidate = 3600
 
 export function generateStaticParams(): { runDate: string; branch: string; day: string }[] {
   const params = getDayParams()

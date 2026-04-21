@@ -6,6 +6,8 @@ import { MonoLabel, Pill, SectionRule } from '@/components/canon/Primitives'
 import { StatChart } from '@/components/StatChart'
 import { dayUrl, vsDayUrl } from '@/lib/nav'
 
+export const revalidate = 3600
+
 export const metadata: Metadata = {
   title: 'Compare — yysworld',
   description: 'Same day. Different sequence. Different cost. Compare paths across time.',

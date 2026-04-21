@@ -6,6 +6,8 @@ import { MonoLabel, Pill, SectionRule } from '@/components/canon/Primitives'
 import { DayStrip } from '@/components/nav/DayStrip'
 import { dayUrl } from '@/lib/nav'
 
+export const revalidate = 3600
+
 export const metadata: Metadata = {
   title: 'Today — yysworld',
   description: 'One event. Two lived versions of it. The same day, different paths.',

@@ -17,6 +17,7 @@ import { schemaBreadcrumbList, schemaDataset } from '@/lib/jsonld'
 import { getVsParams, getComparisonArtifact, getStaticRuns } from '@/lib/runs'
 
 export const dynamicParams = false
+export const revalidate = 3600
 
 export function generateStaticParams(): { runDate: string; comparison: string[] }[] {
   return getVsParams()
