@@ -205,19 +205,31 @@ export default async function DayArtifactPage({
         {branchOptions.length > 1 && (
           <div className="yy-branchNav">
             <div className="yy-branchNav__options">
-              {branchOptions.map((b) => (
-                b.isCurrent ? (
-                  <span key={b.id} className="yy-branchNav__item is-current">
-                    <span className="yy-branchNav__label">{b.label}</span>
-                    <span className="yy-branchNav__sub">reading now</span>
-                  </span>
-                ) : (
+              {branchOptions.map((b) => {
+                if (b.isCurrent) {
+                  return (
+                    <span key={b.id} className="yy-branchNav__item is-current">
+                      <span className="yy-branchNav__label">{b.label}</span>
+                      <span className="yy-branchNav__sub">reading now</span>
+                    </span>
+                  )
+                }
+                const fd = branchFirstDay(b.id)
+                if (dayNum < fd) {
+                  return (
+                    <span key={b.id} className="yy-branchNav__item is-pre-fork">
+                      <span className="yy-branchNav__label">{b.label}</span>
+                      <span className="yy-branchNav__sub">forks day {fd}</span>
+                    </span>
+                  )
+                }
+                return (
                   <Link key={b.id} href={b.href} className="yy-branchNav__item">
                     <span className="yy-branchNav__label">{b.label}</span>
                     <span className="yy-branchNav__sub">switch path</span>
                   </Link>
                 )
-              ))}
+              })}
             </div>
           </div>
         )}
