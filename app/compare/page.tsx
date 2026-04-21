@@ -78,20 +78,27 @@ export default function ComparePage() {
     alt: { food: number; health: number; attention: number } | null
   }
 
-  const mainArtifactsByDay = Array.from({ length: activeDay }, (_, i) =>
-    getDayArtifact(latestRun.runDate, mainBranch.id, String(i + 1))
-  )
+  const branchFirstDay = (branchId: string): number => {
+    const b = latestRun.branches.find((br) => br.id === branchId)
+    if (!b) return 1
+    const idx = b.dayReleaseAts.findIndex((ra) => ra !== '')
+    return idx >= 0 ? idx + 1 : 1
+  }
 
   const altData = altBranches.map((altBranch) => {
-    const series: SeriesPoint[] = mainArtifactsByDay.map((m, i) => {
-      const a = getDayArtifact(latestRun.runDate, altBranch.id, String(i + 1))
-      return {
-        label: `Day ${i + 1}`,
-        dayNum: i + 1,
+    // Series starts from the day the alt branch forked — no empty bars for pre-fork days
+    const firstDay = branchFirstDay(altBranch.id)
+    const series: SeriesPoint[] = []
+    for (let d = firstDay; d <= activeDay; d++) {
+      const m = getDayArtifact(latestRun.runDate, mainBranch.id, String(d))
+      const a = getDayArtifact(latestRun.runDate, altBranch.id, String(d))
+      series.push({
+        label: `Day ${d}`,
+        dayNum: d,
         main: m ? { food: m.statsAfter.food, health: m.statsAfter.health, attention: m.statsAfter.attention } : null,
         alt: a ? { food: a.statsAfter.food, health: a.statsAfter.health, attention: a.statsAfter.attention } : null,
-      }
-    })
+      })
+    }
     const activeAlt = getDayArtifact(latestRun.runDate, altBranch.id, activeDayStr)
     const vsDayHrefs = series.map((p) => vsDayUrl('yy', latestRun.runDate, 'main', altBranch.id, p.dayNum))
     return { altBranch, series, activeAlt, vsDayHrefs }

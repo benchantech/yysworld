@@ -107,6 +107,15 @@ export default async function VsPage({
     ? Math.max(...run.branches.map((b) => b.publishedDays), dayNum ?? 0)
     : dayNum ?? 1
 
+  const branchFirstDay = (branchId: string): number => {
+    const b = run?.branches.find((br) => br.id === branchId)
+    if (!b) return 1
+    const idx = b.dayReleaseAts.findIndex((ra) => ra !== '')
+    return idx >= 0 ? idx + 1 : 1
+  }
+  // Comparison is only meaningful from the day both branches have content
+  const firstComparisonDay = Math.max(branchFirstDay(branchA), branchFirstDay(branchB))
+
   return (
     <>
       <JsonLd
@@ -134,7 +143,7 @@ export default async function VsPage({
           <DayNavigator
             currentDay={dayNum}
             totalDays={maxDays}
-            prevHref={dayNum > 1 ? vsDayUrl('yy', runDate, branchA, branchB, dayNum - 1) : undefined}
+            prevHref={dayNum > firstComparisonDay ? vsDayUrl('yy', runDate, branchA, branchB, dayNum - 1) : undefined}
             nextHref={dayNum < maxDays ? vsDayUrl('yy', runDate, branchA, branchB, dayNum + 1) : undefined}
           />
         )}
@@ -165,7 +174,7 @@ export default async function VsPage({
             className="pt-3 border-t border-rule flex flex-wrap gap-3"
           >
             <span className="font-mono text-xs text-ink-4 self-center">by day:</span>
-            {Array.from({ length: maxDays }, (_, i) => i + 1).map((d) => (
+            {Array.from({ length: maxDays - firstComparisonDay + 1 }, (_, i) => i + firstComparisonDay).map((d) => (
               <Link
                 key={d}
                 href={vsDayUrl('yy', runDate, branchA, branchB, d)}
