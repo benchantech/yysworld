@@ -130,7 +130,7 @@ export default function ComparePage() {
 
       {/* Per-alt: chart + split panel + gap summary */}
       <AltBranchTabs
-        tabs={altData.map(({ altBranch, series, activeAlt, vsDayHrefs }) => ({
+        tabs={altData.filter(({ series }) => series.length > 0).map(({ altBranch, series, activeAlt, vsDayHrefs }) => ({
           branchId: altBranch.id,
           label: altBranch.id,
           sub: `${altBranch.publishedDays} day${altBranch.publishedDays !== 1 ? 's' : ''}`,

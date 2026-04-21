@@ -98,7 +98,7 @@ export default async function DayArtifactPage({
     href: dayUrl('yy', runDate, b, Math.max(dayNum, branchFirstDay(b))),
     isCurrent: b === branch,
   }))
-  const altBranches = branchOptions.filter((b) => !b.isCurrent)
+  const altBranches = branchOptions.filter((b) => !b.isCurrent && dayNum >= branchFirstDay(b.id))
 
   const totalDays = run
     ? Math.max(...run.branches.map((b) => b.publishedDays), dayNum)
