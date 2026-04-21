@@ -439,10 +439,13 @@ export function getDayArtifact(
     const branchFile = join(branchesDir, `branch_${rootId}_${branch}.json`)
     if (!existsSync(branchFile)) continue
 
-    // Verify this rootId matches the requested runDate
+    // Verify this rootId matches the requested runDate.
+    // Use root_id (not created_at) because alt branches can be created mid-run
+    // and their created_at does not match the run's start date.
     try {
       const b: BranchFile = JSON.parse(readFileSync(branchFile, 'utf-8'))
-      if (b.created_at.slice(0, 10) !== runDate) continue
+      const rootRunDate = b.root_id.replace(/^root_/, '').replace(/_/g, '-')
+      if (rootRunDate !== runDate) continue
     } catch { continue }
 
     const artifactsDir = join(runsDir, rootId, 'artifacts')
