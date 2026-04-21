@@ -7,11 +7,11 @@
   "created_at": "2026-04-20T09:00:00Z",
   "status": "active",
   "state": {
-    "story_day": 7,
+    "story_day": 8,
     "condition": {
-      "health": 0.74,
-      "food": 0.41,
-      "attention": 0.90
+      "health": 0.67,
+      "food": 0.36,
+      "attention": 0.95
     },
     "inventory": [
       {
@@ -24,14 +24,14 @@
     ],
     "active_burdens": [],
     "goals": {
-      "primary": "map_east_territory",
-      "secondary": "locate_bee_colony"
+      "primary": "locate_bee_colony",
+      "secondary": "map_east_territory"
     },
     "reaction_overrides": {},
     "trait_deviations": {
-      "curious": 0.15,
-      "pragmatic": 0.05,
-      "restless": 0.10
+      "curious": 0.18,
+      "pragmatic": 0.03,
+      "restless": 0.12
     },
     "identity_notes": [
       "the grey-brown squirrel returned with different posture — carrying something, not confrontational",
@@ -42,9 +42,10 @@
       "the offer not taken has a shape now — visible from the shade line looking east",
       "followed the column east at full sprint — crossed the boundary alone, at speed, for the first time",
       "found a sun-trap clearing east of all known ground; the column had used it as a waypoint",
-      "honeycomb fragment on a low branch — something keeps bees further east; the clearing has been used before"
+      "honeycomb fragment on a low branch — something keeps bees further east; the clearing has been used before",
+      "rain flooded the east clearing — the low branch now above water; a stream runs along the clearing's east edge, previously hidden; traced it 20 meters upstream before rain drove back; the colony is further east along that stream"
     ]
   },
   "drift_flags": [],
-  "last_updated_at": "2026-04-20T09:00:00Z"
+  "last_updated_at": "2026-04-21T09:00:00Z"
 }

@@ -1,0 +1,29 @@
+{
+  "schema_version": "0.1",
+  "artifact_id": "art_2026-04-21_branch_root_2026_04_14_alt2-migration_summary",
+  "artifact_type": "daily_summary",
+  "snapshot_id": "snap_2026-04-21_branch_root_2026_04_14_alt2-migration",
+  "root_id": "root_2026_04_14",
+  "branch_id": "branch_root_2026_04_14_alt2-migration",
+  "package_ref": {
+    "package_id": "yysworld-pipeline-v0.1",
+    "package_created_at": "2026-04-21T09:00:00Z",
+    "package_hash": "sha256:claude-code-subscription"
+  },
+  "model_refs": [{"provider": "anthropic", "model_id": "claude-code-subscription", "role": "summarizer", "runtime_class": "interactive"}],
+  "comparison_contract_version": "0.1",
+  "content": {
+    "title": "The stream was always there",
+    "tone": "urgent, revelatory",
+    "narrative": "YY went back east.\n\nThe rain was heavy enough that this was not a sensible decision. He went anyway. The honeycomb fragment was dry in his cache spot, wrapped in the bark fold, and the clearing had been on his mind since he'd found it — the geometry of it, the warmth that accumulated there, the low branch where the honeycomb had been sitting as if someone had left it intentionally.\n\nThe clearing was flooded.\n\nNot catastrophically — maybe thirty centimeters at the center — but the sun-trap hollow had become a pool, and the low branch where he'd found the honeycomb was above the waterline, the bark fold and his wrapped piece still intact. He retrieved it. The clearing looked entirely different filled with water. The shape of it was more obvious: a bowl, fed from the eastern edge.\n\nHe followed the eastern edge and found the stream.\n\nIt was running hard — rain-swollen, maybe twice what it normally was, brown at the edges from disturbed sediment. It hadn't been visible before because in dry conditions it probably slowed to a trickle or went underground. Now it was undeniable. It came from somewhere east and higher, moving fast.\n\nHe followed it twenty meters. The rain drove him back before he found what he was looking for. But twenty meters was enough to know the stream was real, the direction was real, and something upstream was keeping bees.",
+    "state_note": "health at 0.67 — real cost from wet sprint east; stream confirmed east of clearing; bee colony goal promoted to primary; honeycomb fragment still in inventory",
+    "summary": "YY returned to the flooded east clearing in heavy rain and found a stream running along its eastern edge, previously hidden in dry conditions; twenty meters upstream before the rain drove him back — the bee colony is east along that stream.",
+    "state_delta": {
+      "food": "0.41 → 0.36",
+      "health": "0.74 → 0.67",
+      "attention": "0.90 → 0.95"
+    },
+    "branch_created": false
+  },
+  "created_at": "2026-04-21T09:00:00Z"
+}

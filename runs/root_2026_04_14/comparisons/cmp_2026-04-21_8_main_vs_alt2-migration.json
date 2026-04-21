@@ -1,0 +1,39 @@
+{
+  "schema_version": "0.1",
+  "comparison_id": "cmp_2026-04-21_8_main_vs_alt2-migration",
+  "artifact_type": "daily_comparison",
+  "root_id": "root_2026_04_14",
+  "branch_a": "branch_root_2026_04_14_main",
+  "branch_b": "branch_root_2026_04_14_alt2-migration",
+  "story_day": 8,
+  "snapshot_date": "2026-04-21",
+  "snapshot_ids": [
+    "snap_2026-04-21_branch_root_2026_04_14_main",
+    "snap_2026-04-21_branch_root_2026_04_14_alt2-migration"
+  ],
+  "package_ref": {
+    "package_id": "yysworld-pipeline-v0.1",
+    "package_created_at": "2026-04-21T09:00:00Z",
+    "package_hash": "sha256:claude-code-subscription"
+  },
+  "model_refs": [{"provider": "anthropic", "model_id": "claude-code-subscription", "role": "comparator", "runtime_class": "interactive"}],
+  "content": {
+    "divergence_summary": "Main sat still as rain closed options. Alt2 ran east into the rain and paid for it — health at 0.67, the lowest of any branch — but found a stream that changes the east territory map entirely. Rain that immobilized main revealed a hidden feature for alt2.",
+    "branch_a_path": "Main under the root cross, waiting. Food at 0.21, east offer now primary goal by elimination. No new ground covered. The calculation has become simple but nothing has moved.",
+    "branch_b_path": "Alt2 went back east in the rain. Found the clearing flooded, found the stream along its east edge, traced it 20m upstream. Health at 0.67 from two hard east runs in wet conditions. The bee colony is real and has a direction now.",
+    "key_differences": [
+      "Alt2 found a stream; main found nothing — the same event produced discovery for one and stasis for the other",
+      "Alt2's health is at 0.67 — lowest of any branch — from paying for two east sprints",
+      "Main's food (0.21) is lower than alt2's (0.36) despite main not moving — alt2's honeycomb provides a floor",
+      "Alt2's primary goal is now locate_bee_colony — a specific target; main's is resolve_east_offer — still abstract",
+      "Alt2 has inventory (honeycomb) and territory knowledge (stream); main has neither"
+    ],
+    "shared_elements": [
+      "Both started from the same state seven days ago",
+      "Both were constrained by rain on day 8",
+      "Both have east as the direction of interest",
+      "Both are running lower on resources than the start of the week"
+    ]
+  },
+  "created_at": "2026-04-21T09:00:00Z"
+}

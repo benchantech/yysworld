@@ -1,0 +1,29 @@
+{
+  "schema_version": "0.1",
+  "artifact_id": "art_2026-04-21_branch_root_2026_04_14_alt1-on-time_summary",
+  "artifact_type": "daily_summary",
+  "snapshot_id": "snap_2026-04-21_branch_root_2026_04_14_alt1-on-time",
+  "root_id": "root_2026_04_14",
+  "branch_id": "branch_root_2026_04_14_alt1-on-time",
+  "package_ref": {
+    "package_id": "yysworld-pipeline-v0.1",
+    "package_created_at": "2026-04-21T09:00:00Z",
+    "package_hash": "sha256:claude-code-subscription"
+  },
+  "model_refs": [{"provider": "anthropic", "model_id": "claude-code-subscription", "role": "summarizer", "runtime_class": "interactive"}],
+  "comparison_contract_version": "0.1",
+  "content": {
+    "title": "Where the water goes",
+    "tone": "observational, unhurried",
+    "narrative": "Rain made foraging slow, so YY didn't forage.\n\nHe went to the shade corridor instead — the waypoint he'd found when the heat came, the line the migration column had tracked over two days ago. He sat at one end of it and watched.\n\nWater moved through it. Not fast — a thin sheet along the lowest part of the ground, following the slight grade he hadn't consciously registered before. It went east. Along the same bearing as the east trade channel. Along the same bearing as the grey squirrel's visits.\n\nHe held the hazelnut in his paw and cracked a small piece from the edge with his teeth. The shell was still smooth, still not local. Whatever tree produced it was further west than he'd been. The grey squirrel ranged wide.\n\nThe territory was more readable wet. The drainage told him where the land sloped, where it didn't, where things accumulated. The corridor he'd found for shade was also a channel. The migration line was also a watershed line. These were not different facts — they were the same fact at different scales.\n\nHe sat until the rain slowed, then made his way back. The hazelnut was mostly intact. He'd spend it on something worth it.",
+    "state_note": "light foraging day by choice — hazelnut provides buffer; attention up from observing drainage patterns; the shade corridor gains a new layer in the territory map",
+    "summary": "Rain gave YY a reading day at the shade corridor; watching the drainage confirmed the corridor as a watershed line aligned with the east trade channel, adding a hydrological layer to his west territory map.",
+    "state_delta": {
+      "food": "0.57 → 0.52",
+      "health": "0.83 → 0.81",
+      "attention": "0.82 → 0.89"
+    },
+    "branch_created": false
+  },
+  "created_at": "2026-04-21T09:00:00Z"
+}

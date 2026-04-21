@@ -1,0 +1,29 @@
+{
+  "schema_version": "0.1",
+  "artifact_id": "art_2026-04-21_branch_root_2026_04_14_main_summary",
+  "artifact_type": "daily_summary",
+  "snapshot_id": "snap_2026-04-21_branch_root_2026_04_14_main",
+  "root_id": "root_2026_04_14",
+  "branch_id": "branch_root_2026_04_14_main",
+  "package_ref": {
+    "package_id": "yysworld-pipeline-v0.1",
+    "package_created_at": "2026-04-21T09:00:00Z",
+    "package_hash": "sha256:claude-code-subscription"
+  },
+  "model_refs": [{"provider": "anthropic", "model_id": "claude-code-subscription", "role": "summarizer", "runtime_class": "interactive"}],
+  "comparison_contract_version": "0.1",
+  "content": {
+    "title": "What rain closes",
+    "tone": "tight, pressured",
+    "narrative": "The west spot was underwater by mid-morning.\n\nNot deep — ankle height, maybe — but enough. The root structures that usually made the ground workable had turned to mud and standing water, and the forage that should have been there was either drowned or had moved. YY scraped what he could from the higher edges and came back with almost nothing.\n\nHe went to the root cross. The same place he'd used during the heat — two heavy roots making a dry triangle just wide enough to sit in. The rain came straight down and the canopy took most of it. He sat and watched the water move.\n\nThe east boundary was invisible in the grey. He knew the direction anyway. Seven days of ranging had made the directions physical — east was a pressure, not a bearing. The grey-brown squirrel had stood there. Had come back. Had offered something. Had left.\n\nThe west was flooded. The east was the offer. Between them: a gap in YY's food that was now serious enough to make the calculation simple.\n\nHe didn't move that day. But something had reordered.",
+    "state_note": "food at 0.21 — critical; rain closed the west route entirely; east offer promoted to primary goal as the only viable unblocked direction",
+    "summary": "Rain flooded the west forage spot and drove YY to shelter; sitting under the root cross with nothing gained, the east offer reorganized from background thought to the only remaining option.",
+    "state_delta": {
+      "food": "0.28 → 0.21",
+      "health": "0.80 → 0.77",
+      "attention": "0.72 → 0.82"
+    },
+    "branch_created": false
+  },
+  "created_at": "2026-04-21T09:00:00Z"
+}

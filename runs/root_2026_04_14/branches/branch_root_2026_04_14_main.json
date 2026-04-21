@@ -7,22 +7,22 @@
   "created_at": "2026-04-14T00:00:00Z",
   "status": "active",
   "state": {
-    "story_day": 7,
+    "story_day": 8,
     "condition": {
-      "health": 0.80,
-      "food": 0.28,
-      "attention": 0.72
+      "health": 0.77,
+      "food": 0.21,
+      "attention": 0.82
     },
     "inventory": [],
     "active_burdens": [],
     "goals": {
-      "primary": "find_reliable_supply",
-      "secondary": "resolve_east_offer"
+      "primary": "resolve_east_offer",
+      "secondary": "find_reliable_supply"
     },
     "reaction_overrides": {},
     "trait_deviations": {
       "curious": 0.05,
-      "pragmatic": 0.08
+      "pragmatic": 0.10
     },
     "identity_notes": [
       "the grey-brown squirrel returned with different posture — carrying something, not confrontational",
@@ -31,9 +31,10 @@
       "west spot produced again; the line held; no inventory gained",
       "heat cut the west run yield; came back thinner than the trip justified",
       "the offer not taken has a shape now — visible from the shade line looking east",
-      "the column moved west to east — the same direction as the unresolved offer; attention followed it longer than the forage could afford"
+      "the column moved west to east — the same direction as the unresolved offer; attention followed it longer than the forage could afford",
+      "rain flooded the west spot — yield near zero; sheltered under the root cross again; east offer is the only route that isn't blocked"
     ]
   },
   "drift_flags": [],
-  "last_updated_at": "2026-04-20T09:00:00Z"
+  "last_updated_at": "2026-04-21T09:00:00Z"
 }

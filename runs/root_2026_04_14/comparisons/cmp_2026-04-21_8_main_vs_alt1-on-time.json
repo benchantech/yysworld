@@ -1,0 +1,39 @@
+{
+  "schema_version": "0.1",
+  "comparison_id": "cmp_2026-04-21_8_main_vs_alt1-on-time",
+  "artifact_type": "daily_comparison",
+  "root_id": "root_2026_04_14",
+  "branch_a": "branch_root_2026_04_14_main",
+  "branch_b": "branch_root_2026_04_14_alt1-on-time",
+  "story_day": 8,
+  "snapshot_date": "2026-04-21",
+  "snapshot_ids": [
+    "snap_2026-04-21_branch_root_2026_04_14_main",
+    "snap_2026-04-21_branch_root_2026_04_14_alt1-on-time"
+  ],
+  "package_ref": {
+    "package_id": "yysworld-pipeline-v0.1",
+    "package_created_at": "2026-04-21T09:00:00Z",
+    "package_hash": "sha256:claude-code-subscription"
+  },
+  "model_refs": [{"provider": "anthropic", "model_id": "claude-code-subscription", "role": "comparator", "runtime_class": "interactive"}],
+  "content": {
+    "divergence_summary": "Same rain, entirely different relationship to it. Main has no buffer — rain closed the only viable west route and pushed the east offer from background to foreground. Alt1 had the hazelnut and the shade corridor map: rain became a reading opportunity, not a crisis.",
+    "branch_a_path": "Main sheltered under the root cross with near-zero yield. Food at 0.21 — critical. The west is gone for now. The east offer reorganized from secondary to primary goal under pressure.",
+    "branch_b_path": "Alt1 chose to observe rather than forage. The shade corridor drained east, confirming it as a watershed line aligned with the trade channel. Food at 0.52 with hazelnut in reserve. No urgency.",
+    "key_differences": [
+      "Main's food is critical (0.21); alt1 has margin (0.52) and still holds the hazelnut",
+      "Main's primary goal is now resolve_east_offer; alt1 is still on map_west_territory",
+      "Rain was a crisis for main, an information source for alt1 — the difference is entirely buffer",
+      "Main is being pushed east by circumstance; alt1 is choosing to stay west to finish the map",
+      "Alt1's territory knowledge now has a hydrological layer; main's knowledge is unchanged"
+    ],
+    "shared_elements": [
+      "Both sheltered rather than forcing a full forage run",
+      "Both had attention increase — crisis focus for main, observational focus for alt1",
+      "Both experienced rain as a significant constraint on movement",
+      "Both have east on their radar, for different reasons"
+    ]
+  },
+  "created_at": "2026-04-21T09:00:00Z"
+}
