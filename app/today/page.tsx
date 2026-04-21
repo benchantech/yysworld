@@ -4,6 +4,7 @@ import { getStaticRuns, getDayArtifact, getActiveDay, type DayArtifact } from '@
 import { PageShell } from '@/components/canon/Layout'
 import { MonoLabel, Pill, SectionRule } from '@/components/canon/Primitives'
 import { DayStrip } from '@/components/nav/DayStrip'
+import { AltBranchTabs } from '@/components/AltBranchTabs'
 import { dayUrl } from '@/lib/nav'
 
 export const revalidate = 3600
@@ -32,7 +33,7 @@ function StoryPanel({
   return (
     <article className="yy-storyPanel">
       <div className="yy-storyPanel__head">
-        <MonoLabel>path · {isAlt ? 'on-time' : 'main'}</MonoLabel>
+        <MonoLabel>path · {branchId}</MonoLabel>
         <Pill>{isAlt ? 'alt path' : 'main path'}</Pill>
       </div>
       <h3>{artifact.title}</h3>
@@ -75,7 +76,7 @@ export default function TodayPage() {
   }
 
   const mainBranch = latestRun.branches.find((b) => b.id === 'main') ?? latestRun.branches[0]
-  const altBranch = latestRun.branches.find((b) => b.id !== 'main')
+  const altBranches = latestRun.branches.filter((b) => b.id !== 'main')
 
   const activeDay = getActiveDay(mainBranch)
 
@@ -83,9 +84,9 @@ export default function TodayPage() {
   const nextDayReleaseAt = nextDay ? mainBranch.dayReleaseAts[nextDay - 1] : null
 
   const mainArtifact = getDayArtifact(latestRun.runDate, mainBranch.id, String(activeDay))
-  const altArtifact = altBranch
-    ? getDayArtifact(latestRun.runDate, altBranch.id, String(activeDay))
-    : null
+  const altArtifacts = Object.fromEntries(
+    altBranches.map((b) => [b.id, getDayArtifact(latestRun.runDate, b.id, String(activeDay))])
+  )
 
   // Format "tomorrow" label for gated next day
   let tomorrowLabel = 'tomorrow'
@@ -124,10 +125,21 @@ export default function TodayPage() {
       )}
 
       {/* Side-by-side stories */}
-      {mainArtifact && altArtifact ? (
+      {mainArtifact && altBranches.length > 0 ? (
         <section className="yy-splitPanel" style={{ marginTop: '24px' }}>
           <div><StoryPanel artifact={mainArtifact} branchId={mainBranch.id} runDate={latestRun.runDate} /></div>
-          <div><StoryPanel artifact={altArtifact} branchId={altBranch!.id} runDate={latestRun.runDate} /></div>
+          <div>
+            <AltBranchTabs
+              tabs={altBranches.map((b) => ({
+                branchId: b.id,
+                label: b.id,
+                sub: 'alt path',
+                children: altArtifacts[b.id]
+                  ? <StoryPanel artifact={altArtifacts[b.id]!} branchId={b.id} runDate={latestRun.runDate} />
+                  : <p style={{ color: 'var(--ink-3)', fontSize: '13px' }}>No content yet.</p>,
+              }))}
+            />
+          </div>
         </section>
       ) : mainArtifact ? (
         <section style={{ marginTop: '24px' }}>
@@ -140,7 +152,7 @@ export default function TodayPage() {
       )}
 
       {/* Branch strip — choose which path to read in full */}
-      {altBranch && (
+      {altBranches.length > 0 && (
         <div className="yy-branchNav">
           <MonoLabel>choose a path</MonoLabel>
           <div className="yy-branchNav__options">
@@ -148,10 +160,12 @@ export default function TodayPage() {
               <span className="yy-branchNav__label">main</span>
               <span className="yy-branchNav__sub">default sequence</span>
             </Link>
-            <Link href={dayUrl('yy', latestRun.runDate, altBranch.id, String(activeDay))} className="yy-branchNav__item">
-              <span className="yy-branchNav__label">{altBranch.id}</span>
-              <span className="yy-branchNav__sub">alternate path</span>
-            </Link>
+            {altBranches.map((b) => (
+              <Link key={b.id} href={dayUrl('yy', latestRun.runDate, b.id, String(activeDay))} className="yy-branchNav__item">
+                <span className="yy-branchNav__label">{b.id}</span>
+                <span className="yy-branchNav__sub">alternate path</span>
+              </Link>
+            ))}
           </div>
         </div>
       )}

@@ -6,6 +6,7 @@ import { schemaBreadcrumbList, schemaWebSite } from '@/lib/jsonld'
 import { getStaticRuns, getDayArtifact, getActiveDay } from '@/lib/runs'
 import { PageHeader, EventAnchor, SplitPanel, PathStateRow, BranchTree, PageShell } from '@/components/canon/Layout'
 import { MonoLabel, Pill, SectionRule, LinkButton } from '@/components/canon/Primitives'
+import { AltBranchTabs } from '@/components/AltBranchTabs'
 
 export const metadata: Metadata = {
   title: 'yysworld',
@@ -26,16 +27,16 @@ export default function HomePage() {
   const latestRun = runs[0] ?? null
 
   const mainBranch = latestRun?.branches.find((b) => b.id === 'main') ?? latestRun?.branches[0]
-  const altBranch = latestRun?.branches.find((b) => b.id !== 'main') ?? latestRun?.branches[1]
+  const altBranches = latestRun?.branches.filter((b) => b.id !== 'main') ?? []
   const activeDay = mainBranch ? getActiveDay(mainBranch) : null
   const activeDayStr = activeDay ? String(activeDay) : null
 
   const mainArtifact = latestRun && mainBranch && activeDayStr
     ? getDayArtifact(latestRun.runDate, mainBranch.id, activeDayStr)
     : null
-  const altArtifact = latestRun && altBranch && activeDayStr
-    ? getDayArtifact(latestRun.runDate, altBranch.id, activeDayStr)
-    : null
+  const altArtifacts = latestRun && activeDayStr
+    ? Object.fromEntries(altBranches.map((b) => [b.id, getDayArtifact(latestRun.runDate, b.id, activeDayStr)]))
+    : {}
 
   return (
     <PageShell wide>
@@ -56,12 +57,12 @@ export default function HomePage() {
         />
       )}
 
-      {mainArtifact && altArtifact && (
+      {mainArtifact && altBranches.length > 0 && (
         <SplitPanel
           left={
             <article className="yy-storyPanel">
               <div className="yy-storyPanel__head">
-                <MonoLabel>path</MonoLabel>
+                <MonoLabel>path · main</MonoLabel>
                 <Pill>main path</Pill>
               </div>
               <h3>Main</h3>
@@ -78,23 +79,35 @@ export default function HomePage() {
             </article>
           }
           right={
-            <article className="yy-storyPanel">
-              <div className="yy-storyPanel__head">
-                <MonoLabel>path</MonoLabel>
-                <Pill>alt path</Pill>
-              </div>
-              <h3>Alt · {altBranch!.id}</h3>
-              <div className="yy-storyCopy">
-                {altArtifact.narrative.split('\n\n').filter(Boolean).slice(0, 2).map((p, i) => (
-                  <p key={i}>{p}</p>
-                ))}
-              </div>
-              <PathStateRow items={[
-                { label: 'health', value: Math.round(altArtifact.statsAfter.health * 100), tone: altArtifact.statsAfter.health >= 0.6 ? 'up' : 'down' },
-                { label: 'food', value: Math.round(altArtifact.statsAfter.food * 100), tone: altArtifact.statsAfter.food >= 0.6 ? 'up' : 'down' },
-                { label: 'attention', value: Math.round(altArtifact.statsAfter.attention * 100), tone: altArtifact.statsAfter.attention >= 0.6 ? 'down' : 'neutral' },
-              ]} />
-            </article>
+            <AltBranchTabs
+              tabs={altBranches.map((b) => {
+                const art = altArtifacts[b.id]
+                return {
+                  branchId: b.id,
+                  label: b.id,
+                  sub: 'alt path',
+                  children: art ? (
+                    <article className="yy-storyPanel">
+                      <div className="yy-storyPanel__head">
+                        <MonoLabel>path · {b.id}</MonoLabel>
+                        <Pill>alt path</Pill>
+                      </div>
+                      <h3>Alt · {b.id}</h3>
+                      <div className="yy-storyCopy">
+                        {art.narrative.split('\n\n').filter(Boolean).slice(0, 2).map((p, i) => (
+                          <p key={i}>{p}</p>
+                        ))}
+                      </div>
+                      <PathStateRow items={[
+                        { label: 'health', value: Math.round(art.statsAfter.health * 100), tone: art.statsAfter.health >= 0.6 ? 'up' : 'down' },
+                        { label: 'food', value: Math.round(art.statsAfter.food * 100), tone: art.statsAfter.food >= 0.6 ? 'up' : 'down' },
+                        { label: 'attention', value: Math.round(art.statsAfter.attention * 100), tone: art.statsAfter.attention >= 0.6 ? 'down' : 'neutral' },
+                      ]} />
+                    </article>
+                  ) : <p style={{ color: 'var(--ink-3)', fontSize: '13px' }}>No content yet.</p>,
+                }
+              })}
+            />
           }
         />
       )}

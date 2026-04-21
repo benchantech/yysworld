@@ -4,6 +4,7 @@ import { getStaticRuns, getDayArtifact, getActiveDay, type DayArtifact } from '@
 import { PageHeader, EventAnchor, SplitPanel, PathStateRow, PageShell, BranchTree } from '@/components/canon/Layout'
 import { MonoLabel, Pill, SectionRule } from '@/components/canon/Primitives'
 import { StatChart } from '@/components/StatChart'
+import { AltBranchTabs } from '@/components/AltBranchTabs'
 import { dayUrl, vsDayUrl } from '@/lib/nav'
 
 export const revalidate = 3600
@@ -24,7 +25,7 @@ function StoryPanel({ artifact, branchId, runDate }: { artifact: DayArtifact; br
   return (
     <article className="yy-storyPanel">
       <div className="yy-storyPanel__head">
-        <MonoLabel>path · {isAlt ? 'on-time' : 'main'}</MonoLabel>
+        <MonoLabel>path · {branchId}</MonoLabel>
         <Pill>{isAlt ? 'alt path' : 'main path'}</Pill>
       </div>
       <h3>{artifact.title}</h3>
@@ -63,33 +64,40 @@ export default function ComparePage() {
   }
 
   const mainBranch = latestRun.branches.find((b) => b.id === 'main') ?? latestRun.branches[0]
-  const altBranch = latestRun.branches.find((b) => b.id !== 'main') ?? latestRun.branches[1]
+  const altBranches = latestRun.branches.filter((b) => b.id !== 'main')
 
   // Use the gate-checked active day so gated days never surface here
   const activeDay = getActiveDay(mainBranch)
   const activeDayStr = String(activeDay)
 
-  // Build series only up to activeDay (don't chart gated days)
+  // Build series per alt branch (only up to activeDay)
   type SeriesPoint = {
     label: string
     dayNum: number
     main: { food: number; health: number; attention: number } | null
     alt: { food: number; health: number; attention: number } | null
   }
-  const series: SeriesPoint[] = []
-  for (let d = 1; d <= activeDay; d++) {
-    const m = getDayArtifact(latestRun.runDate, mainBranch.id, String(d))
-    const a = getDayArtifact(latestRun.runDate, altBranch.id, String(d))
-    series.push({
-      label: `Day ${d}`,
-      dayNum: d,
-      main: m ? { food: m.statsAfter.food, health: m.statsAfter.health, attention: m.statsAfter.attention } : null,
-      alt: a ? { food: a.statsAfter.food, health: a.statsAfter.health, attention: a.statsAfter.attention } : null,
+
+  const mainArtifactsByDay = Array.from({ length: activeDay }, (_, i) =>
+    getDayArtifact(latestRun.runDate, mainBranch.id, String(i + 1))
+  )
+
+  const altData = altBranches.map((altBranch) => {
+    const series: SeriesPoint[] = mainArtifactsByDay.map((m, i) => {
+      const a = getDayArtifact(latestRun.runDate, altBranch.id, String(i + 1))
+      return {
+        label: `Day ${i + 1}`,
+        dayNum: i + 1,
+        main: m ? { food: m.statsAfter.food, health: m.statsAfter.health, attention: m.statsAfter.attention } : null,
+        alt: a ? { food: a.statsAfter.food, health: a.statsAfter.health, attention: a.statsAfter.attention } : null,
+      }
     })
-  }
+    const activeAlt = getDayArtifact(latestRun.runDate, altBranch.id, activeDayStr)
+    const vsDayHrefs = series.map((p) => vsDayUrl('yy', latestRun.runDate, 'main', altBranch.id, p.dayNum))
+    return { altBranch, series, activeAlt, vsDayHrefs }
+  })
 
   const activeMain = getDayArtifact(latestRun.runDate, mainBranch.id, activeDayStr)
-  const activeAlt = getDayArtifact(latestRun.runDate, altBranch.id, activeDayStr)
 
   const branches = latestRun.branches.map((b) => ({
     label: b.id === 'main' ? 'Main' : `Alt · ${b.id}`,
@@ -113,63 +121,53 @@ export default function ComparePage() {
         />
       )}
 
-      {/* Bar chart — stat over time across both branches (toggleable) */}
-      {series.length > 0 && (
-        <StatChart
-          series={series}
-          altBranchId={altBranch.id}
-          vsDayHrefs={series.map((p) => vsDayUrl('yy', latestRun.runDate, 'main', altBranch.id, p.dayNum))}
-        />
-      )}
-
-      <SectionRule />
-
-      {/* Side-by-side stories for active day */}
-      {activeMain && activeAlt && (
-        <SplitPanel
-          left={<StoryPanel artifact={activeMain} branchId={mainBranch.id} runDate={latestRun.runDate} />}
-          right={<StoryPanel artifact={activeAlt} branchId={altBranch.id} runDate={latestRun.runDate} />}
-        />
-      )}
-
-      {/* Gap summary */}
-      {activeMain && activeAlt && (() => {
-        const fmt = (v: number) => (v * 100).toFixed(0)
-        const items = [
-          {
-            label: 'health',
-            mainVal: activeMain.statsAfter.health,
-            altVal: activeAlt.statsAfter.health,
-          },
-          {
-            label: 'food',
-            mainVal: activeMain.statsAfter.food,
-            altVal: activeAlt.statsAfter.food,
-          },
-          {
-            label: 'attention',
-            mainVal: activeMain.statsAfter.attention,
-            altVal: activeAlt.statsAfter.attention,
-          },
-        ]
-        return (
-          <section className="yy-gapSummary">
-            {items.map(({ label, mainVal, altVal }) => {
-              const diff = mainVal - altVal
-              const favor = diff > 0.01 ? 'main' : diff < -0.01 ? altBranch.id : 'tied'
-              return (
-                <div key={label}>
-                  <MonoLabel>{label}</MonoLabel>
-                  <div className="yy-gapSummary__val">{fmt(mainVal)} · {fmt(altVal)}</div>
-                  <div className={`yy-gapSummary__delta ${favor === 'main' ? 'is-up' : favor === altBranch.id ? 'is-down' : ''}`}>
-                    {favor === 'tied' ? 'tied' : `→ ${favor} leads`}
-                  </div>
-                </div>
-              )
-            })}
-          </section>
-        )
-      })()}
+      {/* Per-alt: chart + split panel + gap summary */}
+      <AltBranchTabs
+        tabs={altData.map(({ altBranch, series, activeAlt, vsDayHrefs }) => ({
+          branchId: altBranch.id,
+          label: altBranch.id,
+          sub: `${altBranch.publishedDays} day${altBranch.publishedDays !== 1 ? 's' : ''}`,
+          children: (
+            <>
+              {series.length > 0 && (
+                <StatChart series={series} altBranchId={altBranch.id} vsDayHrefs={vsDayHrefs} />
+              )}
+              <SectionRule />
+              {activeMain && activeAlt && (
+                <SplitPanel
+                  left={<StoryPanel artifact={activeMain} branchId={mainBranch.id} runDate={latestRun.runDate} />}
+                  right={<StoryPanel artifact={activeAlt} branchId={altBranch.id} runDate={latestRun.runDate} />}
+                />
+              )}
+              {activeMain && activeAlt && (() => {
+                const fmt = (v: number) => (v * 100).toFixed(0)
+                const items = [
+                  { label: 'health', mainVal: activeMain.statsAfter.health, altVal: activeAlt.statsAfter.health },
+                  { label: 'food', mainVal: activeMain.statsAfter.food, altVal: activeAlt.statsAfter.food },
+                  { label: 'attention', mainVal: activeMain.statsAfter.attention, altVal: activeAlt.statsAfter.attention },
+                ]
+                return (
+                  <section className="yy-gapSummary">
+                    {items.map(({ label, mainVal, altVal }) => {
+                      const diff = mainVal - altVal
+                      const favor = diff > 0.01 ? 'main' : diff < -0.01 ? altBranch.id : 'tied'
+                      return (
+                        <div key={label}>
+                          <MonoLabel>{label}</MonoLabel>
+                          <div className="yy-gapSummary__val">{fmt(mainVal)} · {fmt(altVal)}</div>
+                          <div className={`yy-gapSummary__delta ${favor === 'main' ? 'is-up' : favor === altBranch.id ? 'is-down' : ''}`}>
+                            {favor === 'tied' ? 'tied' : `→ ${favor} leads`}
+                          </div>
+                        </div>
+                      )
+                    })}
+                  </section>
+                )
+              })()}
+            </>
+          ),
+        }))}
+      />
 
       <BranchTree
         root={`Run ${latestRun.runDate}`}
