@@ -83,18 +83,28 @@ export default async function DayArtifactPage({
   const breadcrumbs = dayBreadcrumbs('yy', runDate, branch, day)
 
   const allBranches = getRunBranches(runDate)
+  const run = getStaticRuns(true).find((r) => r.runDate === runDate)
+
+  const branchFirstDay = (branchId: string): number => {
+    const b = run?.branches.find((br) => br.id === branchId)
+    if (!b) return 1
+    const idx = b.dayReleaseAts.findIndex((ra) => ra !== '')
+    return idx >= 0 ? idx + 1 : 1
+  }
+
   const branchOptions: BranchOption[] = allBranches.map((b) => ({
     id: b,
     label: formatBranch(b),
-    href: dayUrl('yy', runDate, b, day),
+    href: dayUrl('yy', runDate, b, Math.max(dayNum, branchFirstDay(b))),
     isCurrent: b === branch,
   }))
   const altBranches = branchOptions.filter((b) => !b.isCurrent)
 
-  const run = getStaticRuns(true).find((r) => r.runDate === runDate)
   const totalDays = run
     ? Math.max(...run.branches.map((b) => b.publishedDays), dayNum)
     : dayNum
+
+  const firstPublishedDay = branchFirstDay(branch)
 
   return (
     <>
@@ -217,7 +227,7 @@ export default async function DayArtifactPage({
           <DayNavigator
             currentDay={dayNum}
             totalDays={totalDays}
-            prevHref={dayNum > 1 ? dayUrl('yy', runDate, branch, dayNum - 1) : undefined}
+            prevHref={dayNum > firstPublishedDay ? dayUrl('yy', runDate, branch, dayNum - 1) : undefined}
             nextHref={dayNum < totalDays ? dayUrl('yy', runDate, branch, dayNum + 1) : undefined}
           />
           <Link href="/today" className="font-mono text-xs text-ink-3 hover:text-ink transition-colors border-b-0">

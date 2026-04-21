@@ -351,6 +351,9 @@ a.yy-dayStrip__item:hover { border-color: var(--ink-2); color: var(--ink); backg
 .yy-dayStrip__item.is-gated {
   color: var(--ink-4); background: var(--paper-2); border-style: dashed;
 }
+.yy-dayStrip__item.is-empty {
+  color: var(--ink-4); opacity: 0.3; cursor: default; pointer-events: none;
+}
 
 /* ── Branch nav ── */
 .yy-branchNav { margin: 20px 0; }

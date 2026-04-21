@@ -13,9 +13,17 @@ export function DayStrip({ totalDays, currentDay, releaseAts, makeDayHref }: Day
     <nav className="yy-dayStrip scrollbar-none" aria-label="day navigation">
       {Array.from({ length: totalDays }, (_, i) => i + 1).map((d) => {
         const ra = releaseAts[d - 1]
-        const isGated = ra ? new Date(ra).getTime() > now : false
+        const hasContent = ra !== '' && ra !== undefined
+        const isGated = hasContent && new Date(ra).getTime() > now
         const isCurrent = d === currentDay
 
+        if (!hasContent) {
+          return (
+            <span key={d} className="yy-dayStrip__item is-empty" aria-hidden="true">
+              {d}
+            </span>
+          )
+        }
         if (isGated) {
           return (
             <span key={d} className="yy-dayStrip__item is-gated" title="not yet released">
