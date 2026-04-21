@@ -141,53 +141,6 @@ export default async function DayArtifactPage({
           </div>
         )}
 
-        {/* Article */}
-        {artifact ? (
-          <GatedArticle
-            releaseAt={artifact.releaseAt}
-            initialVisible={Date.now() >= new Date(artifact.releaseAt).getTime()}
-            title={artifact.title}
-            tone={artifact.tone}
-            narrative={artifact.narrative}
-            stateNote={artifact.stateNote}
-            summary={artifact.summary}
-            storyDay={artifact.storyDay}
-            statsBefore={artifact.statsBefore}
-            statsAfter={artifact.statsAfter}
-          />
-        ) : (
-          <div className="border border-rule bg-paper-2 px-5 py-5">
-            <p className="font-mono text-xs text-ink-4 italic">
-              Day {day} — content coming soon.
-            </p>
-          </div>
-        )}
-
-        {/* Compare across branches */}
-        {altBranches.length > 0 && (
-          <nav
-            aria-label="compare branches"
-            className="pt-4 border-t border-rule flex flex-wrap gap-4"
-          >
-            <span className="font-mono text-xs text-ink-4 self-center">compare:</span>
-            {altBranches.map((alt) => (
-              <Link
-                key={alt.id}
-                href={vsDayUrl(
-                  'yy',
-                  runDate,
-                  branch === 'main' ? branch : alt.id,
-                  branch === 'main' ? alt.id : branch,
-                  day,
-                )}
-                className="font-mono text-xs text-ink-2 hover:text-ink transition-colors border-b border-rule hover:border-ink-2 pb-0.5"
-              >
-                {formatBranch(branch)} vs {alt.label} →
-              </Link>
-            ))}
-          </nav>
-        )}
-
         {/* Day strip — all days for this branch */}
         {run && (() => {
           const thisBranch = run.branches.find((b) => b.id === branch) ?? run.branches[0]
@@ -246,6 +199,53 @@ export default async function DayArtifactPage({
             today →
           </Link>
         </div>
+
+        {/* Article */}
+        {artifact ? (
+          <GatedArticle
+            releaseAt={artifact.releaseAt}
+            initialVisible={Date.now() >= new Date(artifact.releaseAt).getTime()}
+            title={artifact.title}
+            tone={artifact.tone}
+            narrative={artifact.narrative}
+            stateNote={artifact.stateNote}
+            summary={artifact.summary}
+            storyDay={artifact.storyDay}
+            statsBefore={artifact.statsBefore}
+            statsAfter={artifact.statsAfter}
+          />
+        ) : (
+          <div className="border border-rule bg-paper-2 px-5 py-5">
+            <p className="font-mono text-xs text-ink-4 italic">
+              Day {day} — content coming soon.
+            </p>
+          </div>
+        )}
+
+        {/* Compare across branches */}
+        {altBranches.length > 0 && (
+          <nav
+            aria-label="compare branches"
+            className="pt-4 border-t border-rule flex flex-wrap gap-4"
+          >
+            <span className="font-mono text-xs text-ink-4 self-center">compare:</span>
+            {altBranches.map((alt) => (
+              <Link
+                key={alt.id}
+                href={vsDayUrl(
+                  'yy',
+                  runDate,
+                  branch === 'main' ? branch : alt.id,
+                  branch === 'main' ? alt.id : branch,
+                  day,
+                )}
+                className="font-mono text-xs text-ink-2 hover:text-ink transition-colors border-b border-rule hover:border-ink-2 pb-0.5"
+              >
+                {formatBranch(branch)} vs {alt.label} →
+              </Link>
+            ))}
+          </nav>
+        )}
 
       </div>
     </>
