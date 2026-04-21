@@ -9,6 +9,7 @@ interface DayStripProps {
 
 export function DayStrip({ totalDays, currentDay, releaseAts, makeDayHref }: DayStripProps) {
   const now = Date.now()
+  const firstDay = releaseAts.findIndex((ra) => ra !== '' && ra !== undefined) + 1 || 1
   return (
     <nav className="yy-dayStrip scrollbar-none" aria-label="day navigation">
       {Array.from({ length: totalDays }, (_, i) => i + 1).map((d) => {
@@ -19,8 +20,13 @@ export function DayStrip({ totalDays, currentDay, releaseAts, makeDayHref }: Day
 
         if (!hasContent) {
           return (
-            <span key={d} className="yy-dayStrip__item is-empty" aria-hidden="true">
-              {d}
+            <span
+              key={d}
+              className="yy-dayStrip__item is-pre-fork"
+              aria-hidden="true"
+              title={`branch starts day ${firstDay}`}
+            >
+              —
             </span>
           )
         }
