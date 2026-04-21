@@ -106,12 +106,6 @@ export default function ArchivePage() {
         })
       )}
 
-      <SectionRule />
-
-      <div className="yy-actionsRow" style={{ justifyContent: 'flex-start' }}>
-        <Link className="yy-button yy-button--secondary" href="/compare">compare paths</Link>
-        <Link className="yy-button yy-button--ghost" href="/today">today</Link>
-      </div>
     </PageShell>
   )
 }

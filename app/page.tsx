@@ -112,12 +112,6 @@ export default function HomePage() {
         />
       )}
 
-      <div className="yy-actionsRow">
-        <LinkButton href="/today" variant="primary">read today</LinkButton>
-        <LinkButton href="/compare">compare paths</LinkButton>
-        <LinkButton href="/yy/about/">meet yy</LinkButton>
-      </div>
-
       <SectionRule />
 
       <section className="yy-stepsGrid">

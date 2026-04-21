@@ -151,25 +151,6 @@ export default function TodayPage() {
         </p>
       )}
 
-      {/* Branch strip — choose which path to read in full */}
-      {altBranches.length > 0 && (
-        <div className="yy-branchNav">
-          <MonoLabel>choose a path</MonoLabel>
-          <div className="yy-branchNav__options">
-            <Link href={dayUrl('yy', latestRun.runDate, mainBranch.id, String(activeDay))} className="yy-branchNav__item">
-              <span className="yy-branchNav__label">main</span>
-              <span className="yy-branchNav__sub">default sequence</span>
-            </Link>
-            {altBranches.map((b) => (
-              <Link key={b.id} href={dayUrl('yy', latestRun.runDate, b.id, String(activeDay))} className="yy-branchNav__item">
-                <span className="yy-branchNav__label">{b.id}</span>
-                <span className="yy-branchNav__sub">alternate path</span>
-              </Link>
-            ))}
-          </div>
-        </div>
-      )}
-
       {/* Day navigation strip */}
       <DayStrip
         totalDays={mainBranch.publishedDays}
@@ -186,13 +167,6 @@ export default function TodayPage() {
         </div>
       )}
 
-      <SectionRule />
-
-      <div className="yy-actionsRow">
-        <Link className="yy-button yy-button--secondary" href="/compare">compare paths</Link>
-        <Link className="yy-button yy-button--secondary" href="/archive">all days</Link>
-        <span className="yy-provenance">human-guided · ai-assisted · archived nightly</span>
-      </div>
 
     </PageShell>
   )

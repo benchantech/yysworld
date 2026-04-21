@@ -174,20 +174,6 @@ export default function ComparePage() {
         branches={branches}
       />
 
-      <SectionRule />
-
-      <div className="yy-actionsRow">
-        <Link
-          className="yy-button yy-button--primary"
-          href={dayUrl('yy', latestRun.runDate, mainBranch.id, activeDayStr)}
-        >
-          read today →
-        </Link>
-        <Link className="yy-button yy-button--secondary" href="/archive">
-          all days
-        </Link>
-        <span className="yy-provenance">human-guided · ai-assisted · archived nightly</span>
-      </div>
     </PageShell>
   )
 }

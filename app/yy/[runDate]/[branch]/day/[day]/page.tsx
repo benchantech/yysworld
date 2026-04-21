@@ -187,17 +187,14 @@ export default async function DayArtifactPage({
           </div>
         )}
 
-        {/* Prev / next day nav */}
-        <div className="flex items-center justify-between">
+        {/* Prev / next day nav — mobile only; desktop uses the day strip */}
+        <div className="md:hidden">
           <DayNavigator
             currentDay={dayNum}
             totalDays={totalDays}
             prevHref={dayNum > firstPublishedDay ? dayUrl('yy', runDate, branch, dayNum - 1) : undefined}
             nextHref={dayNum < totalDays ? dayUrl('yy', runDate, branch, dayNum + 1) : undefined}
           />
-          <Link href="/today" className="font-mono text-xs text-ink-3 hover:text-ink transition-colors border-b-0">
-            today →
-          </Link>
         </div>
 
         {/* Article */}
