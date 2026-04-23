@@ -1,0 +1,25 @@
+{
+  "schema_version": "0.1",
+  "event_id": "evt_2026-04-22_010",
+  "root_id": "root_2026_04_14",
+  "story_day": 9,
+  "occurred_at": "2026-04-22T12:00:00Z",
+  "event_type": "environmental_shift",
+  "canonical_truth": {
+    "summary": "Pale seedling shoots emerge from waterlogged soil at the flood-disturbed ground near the west forage site — thin stems, translucent, clustered low where drainage slowed.",
+    "entities": ["seedling_cluster_west_site", "flooded_ground", "rain_aftermath_soil"],
+    "location": "west forage site and flood-adjacent ground",
+    "concrete_outcome": "YY encounters the first visible growth returning to the flooded site — nothing harvestable, but the ground is visibly beginning to recover."
+  },
+  "perception_prompt": {
+    "noticeable_surface": "pale seedling shoots pushing through wet mud where the ground was disturbed by the flood — thin stems, translucent, clustered low",
+    "ambiguity_level": 0.1
+  },
+  "tags": ["renewal", "seeds", "growth", "rain_aftermath", "soil", "earth_day"],
+  "created_at": "2026-04-22T12:00:00Z",
+  "authorial_note": {
+    "real_world_inspiration": "Earth Day 2026 (April 22) — global day of environmental renewal; planting and seedling campaigns in 190+ countries worldwide",
+    "translation_logic": "The flooding from day 8 churned and soaked the soil, creating prime germination conditions; YY's encounter with recovery is physical — stems through mud, not concepts",
+    "restraint_reason": "The event enters through what YY sees at the flooded site; Earth Day itself is never mentioned — the seedlings are the landing"
+  }
+}

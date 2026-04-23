@@ -1,0 +1,29 @@
+{
+  "schema_version": "0.1",
+  "artifact_id": "art_2026-04-22_branch_root_2026_04_14_alt2-migration_summary",
+  "artifact_type": "daily_summary",
+  "snapshot_id": "snap_2026-04-22_branch_root_2026_04_14_alt2-migration",
+  "root_id": "root_2026_04_14",
+  "branch_id": "branch_root_2026_04_14_alt2-migration",
+  "package_ref": {
+    "package_id": "yysworld-pipeline-v0.1",
+    "package_created_at": "2026-04-22T12:00:00Z",
+    "package_hash": "sha256:claude-code-subscription"
+  },
+  "model_refs": [{"provider": "anthropic", "model_id": "claude-code-subscription", "role": "summarizer", "runtime_class": "interactive"}],
+  "comparison_contract_version": "0.1",
+  "content": {
+    "title": "Seedlings and Signal",
+    "tone": "urgent, expansive",
+    "narrative": "The stream was running quieter than the day before — still up from the rain, but no longer brown. YY checked the eastern edge of the clearing first, where the water had receded by maybe ten centimeters. The soil there had cracked slightly as it dried and through the cracks, emerging from the wet underneath: seedlings.\n\nHe crouched close. The stems were the wrong species for food, but the shape of the leaves was familiar — the kind that flattened into a wide disk when mature, that went to flower in early summer and pulled insects from half a territory away. He looked east along the stream.\n\nHe went further than twenty meters this time. He counted: thirty, forty, fifty. At fifty meters the stream curved northeast around a rise, and the ground on the far side was higher and drier, and the vegetation changed — older plants, thicker canopy, the kind of shade that builds up over years. Something had been keeping that ground stable. He stood at the curve and listened.\n\nHe came back moving faster than he'd gone out. The honeycomb fragment was dry in its bark fold, unchanged. Food was getting thin. Past the rise, past the curve — on higher ground he hadn't reached yet. He sat for a moment at the clearing edge before heading west, resting his feet in the mud.",
+    "state_note": "food at 0.32 and health at 0.63 — real cost from repeated east pushes; stream now traced to fifty meters and a northeast curve; colony is on older, higher ground past the rise",
+    "summary": "YY found flowering seedlings at the clearing edge and pushed fifty meters up the stream before turning back; the bee colony is past a northeast curve on higher ground, and the cost of these pushes is now accumulating.",
+    "state_delta": {
+      "food": "0.36 → 0.32",
+      "health": "0.67 → 0.63",
+      "attention": "0.95 → 0.97"
+    },
+    "branch_created": false
+  },
+  "created_at": "2026-04-22T12:00:00Z"
+}

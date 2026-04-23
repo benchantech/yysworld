@@ -1,0 +1,62 @@
+{
+  "schema_version": "0.1",
+  "snapshot_id": "snap_2026-04-22_branch_root_2026_04_14_main",
+  "root_id": "root_2026_04_14",
+  "branch_id": "branch_root_2026_04_14_main",
+  "story_day": 9,
+  "snapshot_date": "2026-04-22",
+  "time_policy": "nightly_auto_advance",
+  "package_ref": {
+    "package_id": "yysworld-pipeline-v0.1",
+    "package_created_at": "2026-04-22T12:00:00Z",
+    "package_hash": "sha256:claude-code-subscription"
+  },
+  "model_refs": [{"provider": "anthropic", "model_id": "claude-code-subscription", "role": "generator", "runtime_class": "interactive"}],
+  "event_refs": ["evt_2026-04-22_010"],
+  "decision_refs": [],
+  "state_before": {
+    "story_day": 8,
+    "condition": {"health": 0.77, "food": 0.21, "attention": 0.82},
+    "inventory": [],
+    "active_burdens": [],
+    "goals": {"primary": "resolve_east_offer", "secondary": "find_reliable_supply"},
+    "reaction_overrides": {},
+    "trait_deviations": {"curious": 0.05, "pragmatic": 0.10},
+    "identity_notes": [
+      "the grey-brown squirrel returned with different posture — carrying something, not confrontational",
+      "the read started and didn't complete; attention too low to commit to exchange",
+      "the offer closed without trade; the east boundary sits differently for it",
+      "west spot produced again; the line held; no inventory gained",
+      "heat cut the west run yield; came back thinner than the trip justified",
+      "the offer not taken has a shape now — visible from the shade line looking east",
+      "the column moved west to east — the same direction as the unresolved offer; attention followed it longer than the forage could afford",
+      "rain flooded the west spot — yield near zero; sheltered under the root cross again; east offer is the only route that isn't blocked"
+    ]
+  },
+  "state_after": {
+    "condition": {"health": 0.80, "food": 0.42, "attention": 0.71},
+    "inventory": [],
+    "active_burdens": [],
+    "goals": {"primary": "find_reliable_supply", "secondary": "map_west_recovery"},
+    "reaction_overrides": {},
+    "trait_deviations": {"curious": 0.05, "pragmatic": 0.08},
+    "identity_notes": [
+      "the grey-brown squirrel returned with different posture — carrying something, not confrontational",
+      "the read started and didn't complete; attention too low to commit to exchange",
+      "the offer closed without trade; the east boundary sits differently for it",
+      "west spot produced again; the line held; no inventory gained",
+      "heat cut the west run yield; came back thinner than the trip justified",
+      "the offer not taken has a shape now — visible from the shade line looking east",
+      "the column moved west to east — the same direction as the unresolved offer; attention followed it longer than the forage could afford",
+      "rain flooded the west spot — yield near zero; sheltered under the root cross again; east offer is the only route that isn't blocked",
+      "seedlings at the flooded west site: translucent, clustered, a week from anything useful — but the ground remembered",
+      "trade executed at the east boundary: pine cone for cache marker; the east channel is now confirmed two-way",
+      "food improved through trade, not forage — a different kind of supply"
+    ]
+  },
+  "change_summary": {
+    "notable_shift": "YY found seedling shoots at the flooded west site and crossed east for the first time; the trade completed — pine cone for cache marker — and he came back fed, the boundary question resolved.",
+    "branch_created": false
+  },
+  "created_at": "2026-04-22T12:00:00Z"
+}

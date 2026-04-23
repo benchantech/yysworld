@@ -7,22 +7,22 @@
   "created_at": "2026-04-14T00:00:00Z",
   "status": "active",
   "state": {
-    "story_day": 8,
+    "story_day": 9,
     "condition": {
-      "health": 0.77,
-      "food": 0.21,
-      "attention": 0.82
+      "health": 0.80,
+      "food": 0.42,
+      "attention": 0.71
     },
     "inventory": [],
     "active_burdens": [],
     "goals": {
-      "primary": "resolve_east_offer",
-      "secondary": "find_reliable_supply"
+      "primary": "find_reliable_supply",
+      "secondary": "map_west_recovery"
     },
     "reaction_overrides": {},
     "trait_deviations": {
       "curious": 0.05,
-      "pragmatic": 0.10
+      "pragmatic": 0.08
     },
     "identity_notes": [
       "the grey-brown squirrel returned with different posture — carrying something, not confrontational",
@@ -32,9 +32,12 @@
       "heat cut the west run yield; came back thinner than the trip justified",
       "the offer not taken has a shape now — visible from the shade line looking east",
       "the column moved west to east — the same direction as the unresolved offer; attention followed it longer than the forage could afford",
-      "rain flooded the west spot — yield near zero; sheltered under the root cross again; east offer is the only route that isn't blocked"
+      "rain flooded the west spot — yield near zero; sheltered under the root cross again; east offer is the only route that isn't blocked",
+      "seedlings at the flooded west site: translucent, clustered, a week from anything useful — but the ground remembered",
+      "trade executed at the east boundary: pine cone for cache marker; the east channel is now confirmed two-way",
+      "food improved through trade, not forage — a different kind of supply"
     ]
   },
   "drift_flags": [],
-  "last_updated_at": "2026-04-21T09:00:00Z"
+  "last_updated_at": "2026-04-22T12:00:00Z"
 }
