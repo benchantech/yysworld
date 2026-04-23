@@ -1,0 +1,19 @@
+{
+  "schema_version": "0.1",
+  "decision_id": "dec_2026-04-23_009",
+  "root_id": "root_2026_04_14",
+  "story_day": 10,
+  "decision_date": "2026-04-23",
+  "decision_status": "evaluated_no_branch",
+  "branch_signal": false,
+  "signal_confidence": 0.1,
+  "reason": "all three branches turn inward today — no new territory crossed, no offer made or refused, no accumulation event; the page is a pause, not a fork",
+  "focus": null,
+  "event_refs": ["evt_2026-04-23_011"],
+  "snapshot_refs": [
+    "snap_2026-04-23_branch_root_2026_04_14_main",
+    "snap_2026-04-23_branch_root_2026_04_14_alt1-on-time",
+    "snap_2026-04-23_branch_root_2026_04_14_alt2-migration"
+  ],
+  "created_at": "2026-04-23T12:00:00Z"
+}

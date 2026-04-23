@@ -1,0 +1,25 @@
+{
+  "schema_version": "0.1",
+  "event_id": "evt_2026-04-23_011",
+  "root_id": "root_2026_04_14",
+  "story_day": 10,
+  "occurred_at": "2026-04-23T12:00:00Z",
+  "event_type": "atmospheric_encounter",
+  "canonical_truth": {
+    "summary": "A large sheet of printed paper, carried by wind, caught in a branch fork above the root cross — dense with black markings, wrinkled at the edges, ink still dark.",
+    "entities": ["printed page", "branch fork"],
+    "location": "root cross area / east boundary territory",
+    "concrete_outcome": "YY stopped and looked at the page; each branch engaged with it differently depending on what they carried"
+  },
+  "perception_prompt": {
+    "noticeable_surface": "a large sheet of printed paper, caught high in a branch fork, stirring in the morning wind — dense with black markings he cannot read; it has been there long enough to wrinkle at the edges but the ink is still dark",
+    "ambiguity_level": 0.3
+  },
+  "tags": ["language", "mystery", "randomly_eloquent", "object_attention", "world_book_day"],
+  "created_at": "2026-04-23T12:00:00Z",
+  "authorial_note": {
+    "real_world_inspiration": "World Book Day / Talk Like Shakespeare Day (April 23) — UNESCO literacy observance; Shakespeare's 462nd birthday",
+    "translation_logic": "The celebration of language and performance enters as a physical object — a page of text YY cannot decode — that triggers his randomly_eloquent trait; each branch addresses its own inventory object as witness, or the page directly",
+    "restraint_reason": "kept the page as a found object, not an announcement; YY's response emerges from looking, not from understanding"
+  }
+}

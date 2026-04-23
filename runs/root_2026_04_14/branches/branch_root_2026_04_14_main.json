@@ -7,17 +7,17 @@
   "created_at": "2026-04-14T00:00:00Z",
   "status": "active",
   "state": {
-    "story_day": 9,
+    "story_day": 10,
     "condition": {
-      "health": 0.80,
-      "food": 0.42,
-      "attention": 0.71
+      "health": 0.81,
+      "food": 0.46,
+      "attention": 0.79
     },
     "inventory": [],
     "active_burdens": [],
     "goals": {
       "primary": "find_reliable_supply",
-      "secondary": "map_west_recovery"
+      "secondary": "tend_east_channel"
     },
     "reaction_overrides": {},
     "trait_deviations": {
@@ -35,9 +35,10 @@
       "rain flooded the west spot — yield near zero; sheltered under the root cross again; east offer is the only route that isn't blocked",
       "seedlings at the flooded west site: translucent, clustered, a week from anything useful — but the ground remembered",
       "trade executed at the east boundary: pine cone for cache marker; the east channel is now confirmed two-way",
-      "food improved through trade, not forage — a different kind of supply"
+      "food improved through trade, not forage — a different kind of supply",
+      "a page of dense markings caught in the branch fork above the root cross; looked at it longer than it required — the markings didn't open, but the looking held something the day needed"
     ]
   },
   "drift_flags": [],
-  "last_updated_at": "2026-04-22T12:00:00Z"
+  "last_updated_at": "2026-04-23T12:00:00Z"
 }

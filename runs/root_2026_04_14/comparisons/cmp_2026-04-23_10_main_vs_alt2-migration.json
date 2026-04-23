@@ -1,0 +1,35 @@
+{
+  "schema_version": "0.1",
+  "comparison_id": "cmp_2026-04-23_10_main_vs_alt2-migration",
+  "artifact_type": "daily_comparison",
+  "root_id": "root_2026_04_14",
+  "branch_a": "branch_root_2026_04_14_main",
+  "branch_b": "branch_root_2026_04_14_alt2-migration",
+  "story_day": 10,
+  "snapshot_date": "2026-04-23",
+  "snapshot_ids": ["snap_2026-04-23_branch_root_2026_04_14_main", "snap_2026-04-23_branch_root_2026_04_14_alt2-migration"],
+  "package_ref": {
+    "package_id": "yysworld-pipeline-v0.1",
+    "package_created_at": "2026-04-23T12:00:00Z",
+    "package_hash": "sha256:claude-code-subscription"
+  },
+  "model_refs": [{"provider": "anthropic", "model_id": "claude-code-subscription", "role": "comparator", "runtime_class": "interactive"}],
+  "content": {
+    "divergence_summary": "main addressed the page in words; alt2-migration played the honeycomb fragment like an instrument and didn't go east — both stopped moving, but main foraged after while alt2 stayed at the clearing edge until the playing was done",
+    "branch_a_path": "main has recovered from the flood and established the east trade channel; food improving; addressed the page as a record of what had been resolved — a consolidation day",
+    "branch_b_path": "alt2-migration is declining (food 0.29, health 0.60) and close to the bee colony goal; the honeycomb crossed from food into instrument; didn't push east today and paid a small cost for it",
+    "key_differences": [
+      "main addressed the page in thought; alt2 addressed its inventory through sound — the medium of the soliloquy diverges",
+      "main's food improving through trade; alt2's food still declining and now at 0.29",
+      "main foraged after the page encounter; alt2 did not forage at all today",
+      "main is stable and consolidating; alt2 is depleted but holding a goal that is close"
+    ],
+    "shared_elements": [
+      "found a page of printed text that stopped forward motion",
+      "neither branch pushed into new territory",
+      "expressive trait activated differently per branch",
+      "both returned with inventory unchanged"
+    ]
+  },
+  "created_at": "2026-04-23T12:00:00Z"
+}

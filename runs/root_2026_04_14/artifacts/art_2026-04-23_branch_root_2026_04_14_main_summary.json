@@ -1,0 +1,30 @@
+{
+  "schema_version": "0.1",
+  "artifact_id": "art_2026-04-23_branch_root_2026_04_14_main_summary",
+  "artifact_type": "daily_summary",
+  "snapshot_id": "snap_2026-04-23_branch_root_2026_04_14_main",
+  "root_id": "root_2026_04_14",
+  "branch_id": "branch_root_2026_04_14_main",
+  "package_ref": {
+    "package_id": "yysworld-pipeline-v0.1",
+    "package_created_at": "2026-04-23T12:00:00Z",
+    "package_hash": "sha256:claude-code-subscription"
+  },
+  "model_refs": [{"provider": "anthropic", "model_id": "claude-code-subscription", "role": "summarizer", "runtime_class": "interactive"}],
+  "comparison_contract_version": "0.1",
+  "content": {
+    "title": "Address to a Page",
+    "tone": "unexpectedly formal, meditative",
+    "narrative": "The page was caught in the branch fork above the root cross — high up, wedged between two stems where the wind had blown it and it had stayed. The edges were wrinkled. The lower corner turned slowly in the air.\n\nYY sat at the base of the trunk and looked up at it.\n\nHe'd been moving toward the east boundary when it caught his eye. Something in the morning made him stop — not urgency, not curiosity exactly. The attention that usually pulled him forward pulled sideways instead.\n\nHe thought about the flood. The west site, chest-deep in brown water for three days, yield near zero, sheltering at the root cross. He thought about the grey-brown squirrel's first visit — the wrong posture, the offer that closed without resolving. He thought about sitting with that for days afterward, the weight of it from the shade line looking east. He thought about the pine cone and the bark marker returned, and eating at the root cross on the way home with a stomach full enough to feel different.\n\nThe page didn't require anything of him. It wasn't asking.\n\nHe climbed up to look at it more closely. The marks were even — each row the same distance from the last, thin and precise. He studied one row for a long time and found nothing, and then a second, and then the light changed and he stopped.\n\nHe foraged on the way east. Methodically, through the long grass near the boundary, checking the cache marker's coordinates from memory. He ate a little and cached the rest. The page was still turning in the air when he left.",
+    "state_note": "food at 0.46 — small forage after the page encounter; attention recovering toward 0.79; east channel steady; secondary goal updated to tend_east_channel",
+    "summary": "YY found a page of dense markings caught above the root cross and spent the morning addressing it — the flood, the wait, the trade — then foraged east, slowly.",
+    "state_delta": {
+      "food": "0.42 → 0.46",
+      "health": "0.80 → 0.81",
+      "attention": "0.71 → 0.79"
+    },
+    "branch_created": false,
+    "world_anchor": "World Book Day / Talk Like Shakespeare Day (April 23) — UNESCO literacy observance; Shakespeare's 462nd birthday"
+  },
+  "created_at": "2026-04-23T12:00:00Z"
+}

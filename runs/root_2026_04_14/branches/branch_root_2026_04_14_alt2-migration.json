@@ -7,11 +7,11 @@
   "created_at": "2026-04-20T09:00:00Z",
   "status": "active",
   "state": {
-    "story_day": 9,
+    "story_day": 10,
     "condition": {
-      "health": 0.63,
-      "food": 0.32,
-      "attention": 0.97
+      "health": 0.60,
+      "food": 0.29,
+      "attention": 0.95
     },
     "inventory": [
       {
@@ -19,7 +19,7 @@
         "label": "fragment of wild honeycomb (east sun-trap clearing)",
         "acquired_day": 7,
         "tradeable": true,
-        "notes": "found cached on a low branch east of the mapped boundary; implies a bee colony somewhere further east; pale gold at the break, darker at the edges — not recent"
+        "notes": "found cached on a low branch east of the mapped boundary; implies a bee colony somewhere further east; pale gold at the break, darker at the edges — not recent; cells dry; used as instrument today, returned unchanged"
       }
     ],
     "active_burdens": [],
@@ -46,9 +46,10 @@
       "rain flooded the east clearing — the low branch now above water; a stream runs along the clearing's east edge, previously hidden; traced it 20 meters upstream before rain drove back; the colony is further east along that stream",
       "seedlings at the clearing edge: flowering species — the kind that go wide-leafed in summer and pull insects from far away; confirms pollinator activity east of the boundary",
       "stream traced to fifty meters and one northeast curve; higher, older ground past the rise; the colony is there",
-      "health declining from repeated east pushes; food thin — the goal is close enough to hold the risk"
+      "health declining from repeated east pushes; food thin — the goal is close enough to hold the risk",
+      "drew air through the honeycomb fragment — dry cells, thin sound; didn't go east; stayed at the clearing edge playing it until the playing was done"
     ]
   },
   "drift_flags": [],
-  "last_updated_at": "2026-04-22T12:00:00Z"
+  "last_updated_at": "2026-04-23T12:00:00Z"
 }

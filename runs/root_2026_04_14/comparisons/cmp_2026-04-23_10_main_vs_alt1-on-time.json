@@ -1,0 +1,35 @@
+{
+  "schema_version": "0.1",
+  "comparison_id": "cmp_2026-04-23_10_main_vs_alt1-on-time",
+  "artifact_type": "daily_comparison",
+  "root_id": "root_2026_04_14",
+  "branch_a": "branch_root_2026_04_14_main",
+  "branch_b": "branch_root_2026_04_14_alt1-on-time",
+  "story_day": 10,
+  "snapshot_date": "2026-04-23",
+  "snapshot_ids": ["snap_2026-04-23_branch_root_2026_04_14_main", "snap_2026-04-23_branch_root_2026_04_14_alt1-on-time"],
+  "package_ref": {
+    "package_id": "yysworld-pipeline-v0.1",
+    "package_created_at": "2026-04-23T12:00:00Z",
+    "package_hash": "sha256:claude-code-subscription"
+  },
+  "model_refs": [{"provider": "anthropic", "model_id": "claude-code-subscription", "role": "comparator", "runtime_class": "interactive"}],
+  "content": {
+    "divergence_summary": "main addressed the page empty-handed, reconstructing the arc of waiting and trade; alt1-on-time addressed its hazelnut fragment as a witness to the grey squirrel's implied range — same theatrical day, different objects of attention",
+    "branch_a_path": "main has no inventory; the soliloquy turned outward toward the page, touching the flood, the failed offer, and the trade finally executed — a review, not a discovery",
+    "branch_b_path": "alt1-on-time held the hazelnut fragment in corridor light and addressed it directly — what the shell implies about range, what was eaten, what remains as evidence rather than supply",
+    "key_differences": [
+      "main holds nothing; alt1-on-time holds a hazelnut fragment with specific territory implications — the object shapes what gets said",
+      "main's attention was lower (0.71) and recovered through the encounter; alt1's was already near-peak (0.94) and rose further to 0.97",
+      "main's secondary goal updates from map_west_recovery to tend_east_channel; alt1's goals remain unchanged",
+      "main foraged east afterward; alt1 didn't forage much — the morning went entirely to language"
+    ],
+    "shared_elements": [
+      "found a page of printed text caught in the canopy",
+      "spent the morning on language rather than supply",
+      "randomly_eloquent trait activated by the page encounter",
+      "neither branch pushed into new territory"
+    ]
+  },
+  "created_at": "2026-04-23T12:00:00Z"
+}

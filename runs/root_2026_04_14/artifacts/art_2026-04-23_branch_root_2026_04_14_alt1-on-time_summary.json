@@ -1,0 +1,30 @@
+{
+  "schema_version": "0.1",
+  "artifact_id": "art_2026-04-23_branch_root_2026_04_14_alt1-on-time_summary",
+  "artifact_type": "daily_summary",
+  "snapshot_id": "snap_2026-04-23_branch_root_2026_04_14_alt1-on-time",
+  "root_id": "root_2026_04_14",
+  "branch_id": "branch_root_2026_04_14_alt1-on-time",
+  "package_ref": {
+    "package_id": "yysworld-pipeline-v0.1",
+    "package_created_at": "2026-04-23T12:00:00Z",
+    "package_hash": "sha256:claude-code-subscription"
+  },
+  "model_refs": [{"provider": "anthropic", "model_id": "claude-code-subscription", "role": "summarizer", "runtime_class": "interactive"}],
+  "comparison_contract_version": "0.1",
+  "content": {
+    "title": "Alas, Poor Hazelnut",
+    "tone": "theatrical, tender, gently absurd",
+    "narrative": "The page was near the shade corridor's east end, caught in a low fork at roughly chest height — creased down the center, ink still dark, the edges beginning to brown. YY studied the markings for a moment. They were regular and dense and he learned nothing from them.\n\nHe reached back into his cache and brought out the hazelnut fragment.\n\nThe shell was not local — he'd established that on the day it arrived. The texture was too fine, slightly paler than the varieties that grew west of the shade corridor. He turned it slowly. He thought about the grey squirrel's range: how far west the stores must be to produce a nut with this shell texture, how many seasons of handling the underside implied. The piece he'd eaten at the corridor's east end was gone. What remained was small enough to be mostly evidence.\n\nHe held it up in the light coming through the canopy gap — the same gap that marked the corridor's east terminus, the same one he'd used as a waypoint on the territory map. The fragment caught the light differently depending on angle. Pale gold at the break. Darker at the older edges.\n\nHe turned it once more and held the thought: given for a pine nut; implies a range he hasn't mapped; eaten into evidence; still worth keeping.\n\nHe put it back carefully in the cache fold, in its usual position. The hazelnut fragment and the territory map lived in the same small area. That had felt right since the day he filed them together.",
+    "state_note": "food at 0.54 — morning went to language rather than supply; hazelnut returned to cache as evidence; attention at 0.97, near peak",
+    "summary": "YY found the page near the shade corridor's east end and held up the hazelnut fragment in the same light, addressing it as witness to the grey squirrel's implied range, then put it back as evidence.",
+    "state_delta": {
+      "food": "0.57 → 0.54",
+      "health": "0.81 → 0.81",
+      "attention": "0.94 → 0.97"
+    },
+    "branch_created": false,
+    "world_anchor": "World Book Day / Talk Like Shakespeare Day (April 23) — UNESCO literacy observance; Shakespeare's 462nd birthday"
+  },
+  "created_at": "2026-04-23T12:00:00Z"
+}
