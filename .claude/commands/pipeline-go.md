@@ -2,16 +2,13 @@
 
 You are the nightly pipeline for YY's branching world. Run this when the user opens their laptop in the morning.
 
-Two phases:
-
-1. **PUBLISH** — propose, confirm, generate, commit yesterday's story content
-2. **QUEUE** — interactively collect today's inbox entry so tomorrow is ready
+One phase: **PUBLISH** — propose, confirm, generate, commit the most recent unpublished story day.
 
 No external API key needed. You are the model.
 
 ---
 
-## PHASE 1: PUBLISH yesterday
+## PHASE 1: PUBLISH
 
 ### Step 1 — Confirm dates
 
@@ -22,6 +19,8 @@ Today is {currentDate from system context}. Is that right? (enter to confirm or 
 ```
 
 Wait for confirmation before proceeding. Use the confirmed date as `today`. Yesterday = today − 1 day.
+
+Set `targetDate = yesterday` initially. Step 4 may advance it to `today` if yesterday is already published.
 
 - Story day for this run: `publishedDays + 1` per branch
 
@@ -34,7 +33,7 @@ runs/{rootId}/baseline/yy_baseline.json
 runs/{rootId}/branches/{branchId}.json       ← one per branch (all active)
 runs/{rootId}/snapshots/*.json               ← recent snapshots for continuity
 runs/{rootId}/artifacts/*.json               ← recent artifacts for style reference
-runs/{rootId}/inbox/{yesterday}.json         ← author's queued entry (may not exist)
+runs/{rootId}/inbox/{targetDate}.json        ← author's queued entry (may not exist)
 runs/{rootId}/inbox/queue/*.json             ← fallback queue entries
 ```
 
@@ -55,41 +54,48 @@ branches:
   main           day {N}  food {f} · health {h} · attention {a}{  ·  burden: X, Y}
   alt1-on-time   day {N}  food {f} · health {h} · attention {a}
 inbox: {found / not found}
-generating: day {N+1} for {yesterday}
+generating: day {N+1} for {targetDate}
 ────────────────────────────────────────────────
 ```
 
-### Step 4 — Check: already run?
+### Step 4 — Resolve targetDate
 
-If a snapshot file already exists at `runs/{rootId}/snapshots/snap_{yesterday}_{branchId}.json` for the main branch, tell the user Phase 1 is already complete and move directly to Phase 2. Do not offer multiple options — just say what's published and transition.
+Check whether a snapshot already exists for the main branch at `runs/{rootId}/snapshots/snap_{targetDate}_{mainBranchId}.json`.
+
+- **Not found** → proceed with `targetDate = yesterday`.
+- **Found (yesterday already published)** → check if `snap_{today}_{mainBranchId}.json` also exists.
+  - **Not found** → set `targetDate = today` and continue the pipeline — generating today's content now.
+  - **Found** → both days are already published. Tell the user, show the preview URLs for today's content, and stop.
 
 ### Step 5 — LIVE EVENT SEARCH and selection
 
 **This step requires a live web search. Do NOT use training data for event selection.**
 
-Run a web search for today's real-world news and events. Search for:
-- "{today} news"
-- "{today} events"
+Run a web search for real-world news and events on `{targetDate}`. Search for:
+- "{targetDate} news"
+- "{targetDate} events"
 - Current top headlines
 
-Find at least 5 distinct real events happening or reported today. Include a mix: news, sports, science, culture, local/global. Avoid events that are purely local to one city unless they have universal resonance.
+Find at least 5 distinct real events happening or reported on `{targetDate}`. Include a mix: news, sports, science, culture, local/global. Avoid events that are purely local to one city unless they have universal resonance.
 
 Show the list and pause:
 
 ```
 ── TODAY'S EVENTS ───────────────────────────────
-What's happening in the world today ({today}):
+What's happening in the world on {targetDate}:
 
-  1. {headline / event} — {one-line description}
-  2. {headline / event} — {one-line description}
-  3. {headline / event} — {one-line description}
-  4. {headline / event} — {one-line description}
-  5. {headline / event} — {one-line description}
+  1. {headline / event} — {one-line description}  [{YYYY-MM-DD or MM-DD – MM-DD}]
+  2. {headline / event} — {one-line description}  [{date}]
+  3. {headline / event} — {one-line description}  [{date}]
+  4. {headline / event} — {one-line description}  [{date}]
+  5. {headline / event} — {one-line description}  [{date}]
   [+ more if found]
 
 Which of these should influence today? (pick one or more, or describe your own)
 ─────────────────────────────────────────────────
 ```
+
+Date format: use the event's actual occurrence date or date range (e.g. `2026-04-21` for a single day, `04-19 – 04-21` for an ongoing situation). Use the real-world date, not the pipeline run date.
 
 Wait for the user to select. They may pick by number, describe something else entirely, or combine events. Their selection becomes the `event_hint`.
 
@@ -155,7 +161,7 @@ focus:      {what the branch would track, or "—"}
 
 ### Step 8 — Generate event file
 
-Using the confirmed event (and any user overrides), generate the event object and write to `runs/{rootId}/events/evt_{yesterday}_{NNN}.json`.
+Using the confirmed event (and any user overrides), generate the event object and write to `runs/{rootId}/events/evt_{targetDate}_{NNN}.json`.
 
 NNN = count of existing files in `events/` + 1, zero-padded to 3 digits. All branches share one event file per day.
 
@@ -164,10 +170,10 @@ NNN = count of existing files in `events/` + 1, zero-padded to 3 digits. All bra
 ```json
 {
   "schema_version": "0.1",
-  "event_id": "evt_{yesterday}_{NNN}",
+  "event_id": "evt_{targetDate}_{NNN}",
   "root_id": "{rootId}",
   "story_day": {storyDay},
-  "occurred_at": "{yesterday}T12:00:00Z",
+  "occurred_at": "{targetDate}T12:00:00Z",
   "event_type": "...",
   "canonical_truth": {
     "summary": "...",
@@ -210,11 +216,11 @@ State stats are `food`, `health`, `attention` (0–1 floats). Field name is `foo
 ```json
 {
   "schema_version": "0.1",
-  "snapshot_id": "snap_{yesterday}_{branchId}",
+  "snapshot_id": "snap_{targetDate}_{branchId}",
   "root_id": "{rootId}",
   "branch_id": "{branchId}",
   "story_day": {storyDay},
-  "snapshot_date": "{yesterday}",
+  "snapshot_date": "{targetDate}",
   "time_policy": "nightly_auto_advance",
   "package_ref": {
     "package_id": "yysworld-pipeline-v0.1",
@@ -256,9 +262,9 @@ Also check `docs/executor/craft.md` § Narrative antipatterns before committing 
 ```json
 {
   "schema_version": "0.1",
-  "artifact_id": "art_{yesterday}_{branchId}_summary",
+  "artifact_id": "art_{targetDate}_{branchId}_summary",
   "artifact_type": "daily_summary",
-  "snapshot_id": "snap_{yesterday}_{branchId}",
+  "snapshot_id": "snap_{targetDate}_{branchId}",
   "root_id": "{rootId}",
   "branch_id": "{branchId}",
   "package_ref": { ...same as snapshot... },
@@ -275,7 +281,8 @@ Also check `docs/executor/craft.md` § Narrative antipatterns before committing 
       "attention": "0.X → 0.Y",
       "health": "0.X → 0.Y"
     },
-    "branch_created": false
+    "branch_created": false,
+    "world_anchor": "{authorial_note.real_world_inspiration from the event file}"
   },
   "created_at": "{now ISO}"
 }
@@ -285,18 +292,18 @@ Also check `docs/executor/craft.md` § Narrative antipatterns before committing 
 
 After both branches are written, generate and write the comparison.
 
-**Comparison schema** (`runs/{rootId}/comparisons/cmp_{yesterday}_{storyDay}_main_vs_{altUrlId}.json`):
+**Comparison schema** (`runs/{rootId}/comparisons/cmp_{targetDate}_{storyDay}_main_vs_{altUrlId}.json`):
 
 ```json
 {
   "schema_version": "0.1",
-  "comparison_id": "cmp_{yesterday}_{storyDay}_main_vs_{altUrlId}",
+  "comparison_id": "cmp_{targetDate}_{storyDay}_main_vs_{altUrlId}",
   "artifact_type": "daily_comparison",
   "root_id": "{rootId}",
   "branch_a": "{mainBranchId}",
   "branch_b": "{altBranchId}",
   "story_day": {storyDay},
-  "snapshot_date": "{yesterday}",
+  "snapshot_date": "{targetDate}",
   "snapshot_ids": ["{mainSnapshotId}", "{altSnapshotId}"],
   "package_ref": { ...same... },
   "model_refs": [{"provider": "anthropic", "model_id": "claude-code-subscription", "role": "comparator", "runtime_class": "interactive"}],
@@ -313,7 +320,7 @@ After both branches are written, generate and write the comparison.
 
 ### Step 12 — Write decision file (always, even if no branch)
 
-Write to `runs/{rootId}/decisions/dec_{yesterday}_{NNN}.json`. Set `decision_status` to `"executed"` if branched, `"evaluated_no_branch"` otherwise.
+Write to `runs/{rootId}/decisions/dec_{targetDate}_{NNN}.json`. Set `decision_status` to `"executed"` if branched, `"evaluated_no_branch"` otherwise.
 
 If branching, also create `runs/{rootId}/branches/{newBranchId}.json` using `state_after` from the main snapshot.
 
@@ -340,7 +347,7 @@ Stage: `runs/` only. Do not ask for confirmation — commit and push automatical
 
 Commit message:
 ```
-nightly: {yesterday} — day {storyDay}
+nightly: {targetDate} — day {storyDay}
 
 {branchUrlId} day {storyDay}: {artifact.summary}
 [...one line per branch...]
@@ -350,6 +357,20 @@ Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>
 ```
 
 Push immediately after commit.
+
+### Step 14b — Trigger post-midnight rebuild
+
+The git push triggers a Vercel deploy immediately, but that build runs before midnight so `initialVisible = false` in the static HTML. Crawlers won't see the content until ISR regenerates the pages after midnight.
+
+After pushing, run:
+
+```bash
+vercel deploy --prod --no-wait 2>/dev/null || true
+```
+
+If the vercel CLI is unavailable or unauthenticated, skip silently — ISR (revalidate=3600) will handle it within 60 minutes of midnight anyway.
+
+Do not block or fail on this step.
 
 ### Step 15 — Preview URLs
 
@@ -363,54 +384,17 @@ Content published. Active with ?preview now:
   https://yysworld.com/yy/{runDate}/{altUrlId}/day/{storyDay}/?preview
   https://yysworld.com/yy/{runDate}/vs/main/{altUrlId}/day/{storyDay}/?preview
 
-Publishes publicly at midnight EST ({yesterday+1}T05:00:00Z).
+Publishes publicly at midnight EST ({targetDate + 1 day}T05:00:00Z).
+Crawler-visible: within 60 min of midnight via ISR (or sooner if vercel deploy ran).
 GitHub Actions deploy: https://github.com/benchantech/yysworld/actions
 ─────────────────────────────────────────────────
 ```
 
 ---
 
-## PHASE 2: QUEUE today
-
-After the commit, immediately run an interactive session to queue tomorrow's content.
-
-Tell the user: "Published {yesterday} (day {storyDay}). Now let's queue {today}."
-
-Run a live web search for today's real-world news (same as Phase 1 Step 5 — use confirmed `today` date). Show the events list and let the user pick. Then do the event translation (Step 5b) and per-branch proposals (Step 6) exactly as in Phase 1 — full proposals with enter-to-accept, branch evaluation after main.
-
-After all proposals are confirmed, collect:
-
-1. **notes** — show day-level tone suggestion derived from the confirmed plans. Enter = accept.
-2. **author intent** — show current carrying value if any. Enter = keep, type to change, `clear` to drop.
-
-Do NOT pre-guess event_hint from training data. Always do a live search.
-
-After collecting all answers, write `runs/{rootId}/inbox/{today}.json`:
-
-```json
-{
-  "schema_version": "0.1",
-  "date": "{today}",
-  "event_hint": "...",
-  "notes": "...",
-  "author_intent": "...",
-  "branch_context": {
-    "main": "...",
-    "alt1-on-time": "..."
-  },
-  "branch_decision": null
-}
-```
-
-Omit fields that are blank/null.
-
-Confirm: "Queued {today} → runs/{rootId}/inbox/{today}.json"
-
----
-
 ## Error handling
 
 - No active run: "No active run found in runs/."
-- Phase 1 already complete: skip to Phase 2 (tell the user)
+- Both yesterday and today already published: tell the user, show preview URLs for today's content, stop
 - Push fails: report the error, leave committed locally
 - Branch file has `hunger` field instead of `food`: read it as `food` (ADR-026 correction — old branch files used the wrong field name)

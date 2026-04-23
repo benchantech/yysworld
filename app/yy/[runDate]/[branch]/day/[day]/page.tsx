@@ -219,6 +219,18 @@ export default async function DayArtifactPage({
           </div>
         )}
 
+        {/* World anchor — real-world inspiration, collapsed (ADR-036) */}
+        {artifact?.worldAnchor && (
+          <details className="border border-rule rounded-sm font-mono text-xs">
+            <summary className="cursor-pointer px-4 py-2 text-ink-4 hover:text-ink-2 transition-colors select-none">
+              world anchor
+            </summary>
+            <p className="px-4 pb-3 pt-1 text-ink-3 leading-relaxed">
+              {artifact.worldAnchor}
+            </p>
+          </details>
+        )}
+
         {/* Compare across branches */}
         {altBranches.length > 0 && (
           <nav

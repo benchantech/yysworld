@@ -10,7 +10,14 @@
     "package_created_at": "2026-04-21T09:00:00Z",
     "package_hash": "sha256:claude-code-subscription"
   },
-  "model_refs": [{"provider": "anthropic", "model_id": "claude-code-subscription", "role": "summarizer", "runtime_class": "interactive"}],
+  "model_refs": [
+    {
+      "provider": "anthropic",
+      "model_id": "claude-code-subscription",
+      "role": "summarizer",
+      "runtime_class": "interactive"
+    }
+  ],
   "comparison_contract_version": "0.1",
   "content": {
     "title": "Where the water goes",
@@ -23,7 +30,8 @@
       "health": "0.83 → 0.81",
       "attention": "0.82 → 0.89"
     },
-    "branch_created": false
+    "branch_created": false,
+    "world_anchor": "Japan 7.4 magnitude earthquake triggers tsunami warning off northeast coast; government warns of elevated megaquake risk for the next week"
   },
   "created_at": "2026-04-21T09:00:00Z"
 }

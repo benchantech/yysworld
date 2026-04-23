@@ -29,6 +29,7 @@ interface ArtifactFile {
     state_note?: string
     summary?: string
     tone?: string
+    world_anchor?: string
   }
 }
 
@@ -95,6 +96,7 @@ export interface DayArtifact {
   summary: string
   statsBefore: Condition
   statsAfter: Condition
+  worldAnchor: string   // real-world inspiration; empty string if not set (ADR-036)
 }
 
 export interface BranchSummary {
@@ -113,14 +115,23 @@ export interface RunSummary {
 /**
  * Returns the latest story day whose releaseAt has already passed.
  * Prevents gated future days from surfacing on summary pages.
- * Falls back to 1 if no days are released yet.
+ *
+ * Empty string '' means the branch did not yet exist on that day (pre-fork).
+ * Those slots are skipped entirely — they are not treated as "released".
+ * undefined/missing means no release date recorded (old-style branch) → treated as released.
+ *
+ * Falls back to firstContentDay when all content is still gated,
+ * or 1 if the branch has no content at all.
  */
 export function getActiveDay(branch: BranchSummary, now = Date.now()): number {
+  let firstContentDay: number | null = null
   for (let i = branch.publishedDays - 1; i >= 0; i--) {
     const ra = branch.dayReleaseAts[i]
-    if (!ra || new Date(ra).getTime() <= now) return i + 1
+    if (ra === '') continue                                     // pre-fork: no content on this day
+    firstContentDay = i + 1                                    // lowest seen so far (loop is descending)
+    if (!ra || new Date(ra).getTime() <= now) return i + 1    // released (or legacy no-date branch)
   }
-  return 1
+  return firstContentDay ?? 1
 }
 
 // midnight EST (UTC-5) of the day after snapshot_date
@@ -479,6 +490,7 @@ export function getDayArtifact(
           narrative: c.narrative ?? '',
           stateNote: c.state_note ?? '',
           summary: c.summary ?? '',
+          worldAnchor: c.world_anchor ?? '',
           statsBefore: {
             health: sb.health ?? zeroCondition.health,
             food: sb.food ?? zeroCondition.food,
