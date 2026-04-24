@@ -1,0 +1,30 @@
+{
+  "schema_version": "0.1",
+  "artifact_id": "art_2026-04-24_branch_root_2026_04_14_alt1-on-time_summary",
+  "artifact_type": "daily_summary",
+  "snapshot_id": "snap_2026-04-24_branch_root_2026_04_14_alt1-on-time",
+  "root_id": "root_2026_04_14",
+  "branch_id": "branch_root_2026_04_14_alt1-on-time",
+  "package_ref": {
+    "package_id": "yysworld-pipeline-v0.1",
+    "package_created_at": "2026-04-24T12:00:00Z",
+    "package_hash": "sha256:claude-code-subscription"
+  },
+  "model_refs": [{"provider": "anthropic", "model_id": "claude-code-subscription", "role": "summarizer", "runtime_class": "interactive"}],
+  "comparison_contract_version": "0.1",
+  "content": {
+    "title": "Measured Ground",
+    "tone": "precise, curious, productive",
+    "narrative": "YY was mid-run through the west section when the woodpecker started — ahead and left, working something resonant. The interval was even. Exact. YY kept pace with it.\n\nThree body-lengths of ground per strike: that was how it worked out, once noticed. Not deliberate — just the way the spacing fell when the run speed and the interval happened to match. Two sections measured themselves that way without the usual approximation problem. Both went on the map.\n\nThe hazelnut was still in the corridor midpoint fork where it had been left. YY passed it without stopping. The run had produced measurements the hazelnut couldn't have managed by sitting there.\n\nBy afternoon the woodpecker had stopped and the west boundary had two sharper points on it. The method wouldn't work again — the woodpecker would be elsewhere, the spacing different. But the measurements were already recorded.",
+    "state_note": "food down from sustained exertion; health dipped slightly from the run; attention eased after productive application",
+    "summary": "YY turned a woodpecker's metronomic intervals into a pacing tool mid-run through the west section, gaining two new precise measurements for the territory map.",
+    "state_delta": {
+      "food": "0.54 → 0.49",
+      "health": "0.81 → 0.79",
+      "attention": "0.97 → 0.94"
+    },
+    "branch_created": false,
+    "world_anchor": "AI robot 'Ace' beats elite table tennis players — autonomous 8-joint robot learns human movement patterns and wins 3 of 5 matches with machine precision"
+  },
+  "created_at": "2026-04-24T12:00:00Z"
+}

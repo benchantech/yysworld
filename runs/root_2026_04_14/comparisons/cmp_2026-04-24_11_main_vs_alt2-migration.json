@@ -1,0 +1,38 @@
+{
+  "schema_version": "0.1",
+  "comparison_id": "cmp_2026-04-24_11_main_vs_alt2-migration",
+  "artifact_type": "daily_comparison",
+  "root_id": "root_2026_04_14",
+  "branch_a": "branch_root_2026_04_14_main",
+  "branch_b": "branch_root_2026_04_14_alt2-migration",
+  "story_day": 11,
+  "snapshot_date": "2026-04-24",
+  "snapshot_ids": [
+    "snap_2026-04-24_branch_root_2026_04_14_main",
+    "snap_2026-04-24_branch_root_2026_04_14_alt2-migration"
+  ],
+  "package_ref": {
+    "package_id": "yysworld-pipeline-v0.1",
+    "package_created_at": "2026-04-24T12:00:00Z",
+    "package_hash": "sha256:claude-code-subscription"
+  },
+  "model_refs": [{"provider": "anthropic", "model_id": "claude-code-subscription", "role": "comparator", "runtime_class": "interactive"}],
+  "content": {
+    "divergence_summary": "Both branches encounter mechanical precision in a woodpecker, but the stakes and setting are entirely different. In main, the woodpecker is an abstract puzzle above a familiar site; missing the foraging window is costly but recoverable. In alt2-migration, the woodpecker is at the stream edge — physically adjacent to the goal — and YY's body simply cannot follow. The same unresolvable sound lands as frustration in one branch and near-proximity in the other.",
+    "branch_a_path": "YY loses a foraging window to fascination with the woodpecker's intervals at the root cross; recovers through an east channel trade by afternoon",
+    "branch_b_path": "YY holds at the clearing edge while the woodpecker works the stream-edge tree — physically closest yet to the bee colony goal, body too depleted to close the distance",
+    "key_differences": [
+      "main's woodpecker is elsewhere and incidental; alt2's woodpecker is at the precise location of the unresolved goal",
+      "main recovers food in the afternoon (0.46→0.42, partial recovery via trade); alt2 has no recovery mechanism (0.29→0.25, declining)",
+      "alt2 health at 0.56 is approaching a threshold where east pushes become genuinely risky; main health is stable at 0.80",
+      "alt2 attention rises to 0.97 from the intensity of watching; main attention rises to 0.86 from frustrated fixation — both sharpen through not-resolving"
+    ],
+    "shared_elements": [
+      "same woodpecker event — exact metronomic intervals that feel non-organic",
+      "both branches experience the rhythm as something that raises a question without answering it",
+      "both end the day with higher attention than they started",
+      "neither branch crosses the boundary the woodpecker implies"
+    ]
+  },
+  "created_at": "2026-04-24T12:00:00Z"
+}

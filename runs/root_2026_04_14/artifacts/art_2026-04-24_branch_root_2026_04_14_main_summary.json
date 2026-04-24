@@ -1,0 +1,30 @@
+{
+  "schema_version": "0.1",
+  "artifact_id": "art_2026-04-24_branch_root_2026_04_14_main_summary",
+  "artifact_type": "daily_summary",
+  "snapshot_id": "snap_2026-04-24_branch_root_2026_04_14_main",
+  "root_id": "root_2026_04_14",
+  "branch_id": "branch_root_2026_04_14_main",
+  "package_ref": {
+    "package_id": "yysworld-pipeline-v0.1",
+    "package_created_at": "2026-04-24T12:00:00Z",
+    "package_hash": "sha256:claude-code-subscription"
+  },
+  "model_refs": [{"provider": "anthropic", "model_id": "claude-code-subscription", "role": "summarizer", "runtime_class": "interactive"}],
+  "comparison_contract_version": "0.1",
+  "content": {
+    "title": "Same Interval",
+    "tone": "still, slightly unnerved",
+    "narrative": "The woodpecker was already working when YY reached the root cross — a dead branch overhead, same strike, same pause, same strike. The interval was exact. Not approximately exact. Exact.\n\nYY stopped on the path to the east channel. The count started automatically: one interval, two, three. The spacing didn't vary. That was the wrong part — nothing with feathers and intention kept that kind of time.\n\nThe foraging window moved through while the count was still running. By the time YY noticed, the woodpecker had stopped. The branch was quiet. The page of markings was still wedged in the fork above — another thing that didn't open — and the woodpecker's intervals had sat in the same space without explaining themselves.\n\nThe east channel produced in the afternoon. A small exchange; enough to move. Food thinner than the morning had planned for, but the attention had come back sharp from whatever it had been doing with the count.",
+    "state_note": "food down from a missed foraging window; health steady; attention higher than it went in — the fixation resolved into clarity by late afternoon",
+    "summary": "YY missed the morning foraging window counting a woodpecker's exact intervals above the root cross, then recovered through the east channel in the afternoon.",
+    "state_delta": {
+      "food": "0.46 → 0.42",
+      "health": "0.81 → 0.80",
+      "attention": "0.79 → 0.86"
+    },
+    "branch_created": false,
+    "world_anchor": "AI robot 'Ace' beats elite table tennis players — autonomous 8-joint robot learns human movement patterns and wins 3 of 5 matches with machine precision"
+  },
+  "created_at": "2026-04-24T12:00:00Z"
+}

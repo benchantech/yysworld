@@ -1,0 +1,30 @@
+{
+  "schema_version": "0.1",
+  "artifact_id": "art_2026-04-24_branch_root_2026_04_14_alt2-migration_summary",
+  "artifact_type": "daily_summary",
+  "snapshot_id": "snap_2026-04-24_branch_root_2026_04_14_alt2-migration",
+  "root_id": "root_2026_04_14",
+  "branch_id": "branch_root_2026_04_14_alt2-migration",
+  "package_ref": {
+    "package_id": "yysworld-pipeline-v0.1",
+    "package_created_at": "2026-04-24T12:00:00Z",
+    "package_hash": "sha256:claude-code-subscription"
+  },
+  "model_refs": [{"provider": "anthropic", "model_id": "claude-code-subscription", "role": "summarizer", "runtime_class": "interactive"}],
+  "comparison_contract_version": "0.1",
+  "content": {
+    "title": "The Interval Holds",
+    "tone": "taut, restrained, watchful",
+    "narrative": "The woodpecker was at the stream edge — the dead tree near where the trace had stopped at fifty meters. The rhythm came through clearly: same interval, same weight, each strike landing in the same worn spot.\n\nYY's body said east wasn't today. Food too low; the pushes already had a running cost that hadn't been paid back. The clearing edge was as far as it went. YY settled there and listened. The woodpecker's interval didn't change for the listening.\n\nThe honeycomb fragment was in the low-branch pocket where it had been stashed. The woodpecker was already closer to the colony than the fragment — closer than YY had managed in two days of trying. The rhythm continued. There was no way to know if the bird had been this close all along and YY had simply been louder than the sound.\n\nLate afternoon light filled the clearing. The woodpecker stopped. The tree had been worked through; the bird had moved on. Somewhere past the rise, probably. The silence after was the same kind of silence as before the woodpecker started, except now it held a direction.",
+    "state_note": "food and health continuing to decline; attention near peak; the day spent in watchful restraint at the clearing edge",
+    "summary": "YY held at the clearing edge while a woodpecker worked the stream-edge dead tree with mechanical precision — too depleted to push east, listening to a sound that was closer to the colony than any day yet.",
+    "state_delta": {
+      "food": "0.29 → 0.25",
+      "health": "0.60 → 0.56",
+      "attention": "0.95 → 0.97"
+    },
+    "branch_created": false,
+    "world_anchor": "AI robot 'Ace' beats elite table tennis players — autonomous 8-joint robot learns human movement patterns and wins 3 of 5 matches with machine precision"
+  },
+  "created_at": "2026-04-24T12:00:00Z"
+}

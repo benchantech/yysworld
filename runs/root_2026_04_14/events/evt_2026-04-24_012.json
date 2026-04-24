@@ -1,0 +1,25 @@
+{
+  "schema_version": "0.1",
+  "event_id": "evt_2026-04-24_012",
+  "root_id": "root_2026_04_14",
+  "story_day": 11,
+  "occurred_at": "2026-04-24T12:00:00Z",
+  "event_type": "encounter_precision_behavior",
+  "canonical_truth": {
+    "summary": "A woodpecker works a dead branch with metronomic exactness — same interval, same angle, no wasted motion; nothing organic moves like that.",
+    "entities": ["woodpecker", "dead branch"],
+    "location": "forest canopy near root cross",
+    "concrete_outcome": "YY encounters a creature behaving with non-organic consistency; the rhythm raises a question that doesn't resolve before the woodpecker stops"
+  },
+  "perception_prompt": {
+    "noticeable_surface": "a woodpecker working a dead branch with metronomic exactness — same interval, same angle, no wasted motion; nothing organic moves like that",
+    "ambiguity_level": 0.3
+  },
+  "tags": ["sound", "rhythm", "precision", "repetition", "encounter"],
+  "created_at": "2026-04-24T12:00:00Z",
+  "authorial_note": {
+    "real_world_inspiration": "AI robot 'Ace' beats elite table tennis players — autonomous 8-joint robot learns human movement patterns and wins 3 of 5 matches with machine precision",
+    "translation_logic": "the robot's uncanny mechanical regularity translates to a creature exhibiting non-organic consistency; YY can encounter the rhythm physically and feel the wrongness of its perfection",
+    "restraint_reason": "the event enters as sensory encounter, not announcement; no mention of technology or abstraction — only what YY can hear and see"
+  }
+}
