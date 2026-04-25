@@ -1,0 +1,30 @@
+{
+  "schema_version": "0.1",
+  "artifact_id": "art_2026-04-25_branch_root_2026_04_14_alt2-migration_summary",
+  "artifact_type": "daily_summary",
+  "snapshot_id": "snap_2026-04-25_branch_root_2026_04_14_alt2-migration",
+  "root_id": "root_2026_04_14",
+  "branch_id": "branch_root_2026_04_14_alt2-migration",
+  "package_ref": {
+    "package_id": "yysworld-pipeline-v0.1",
+    "package_created_at": "2026-04-25T12:00:00Z",
+    "package_hash": "sha256:claude-code-subscription"
+  },
+  "model_refs": [{"provider": "anthropic", "model_id": "claude-code-subscription", "role": "summarizer", "runtime_class": "interactive"}],
+  "comparison_contract_version": "0.1",
+  "content": {
+    "title": "The Clearing Holds",
+    "tone": "strained, alert, briefly relieved",
+    "narrative": "The pressure dropped fast at the clearing's edge — faster than anything YY had felt in open ground before. There was no choosing where to shelter; the low branch was the only cover and the storm was already close.\n\nYY tucked under it and waited. The clearing became a bowl of moving air and water. The stream to the east was audible through the storm — louder than before, running hard. Somewhere past the rise the colony was doing whatever colonies do when the weather goes bad.\n\nThe debris at the clearing's edge had loosened seeds from the bank. YY ate what the storm had laid out. It wasn't enough to close the gap but it moved the line.\n\nThe storm passed. The health cost was already in the body — a tightness that comes from held stillness in cold air, not from exertion. The colony was still past the rise. It had been there before the storm and it was still there now.",
+    "state_note": "food up from storm-loosened seeds at clearing edge; health declining from cold stillness — approaching a threshold; attention eased slightly from the long forced wait",
+    "summary": "A severe storm forced YY to shelter under the clearing's low branch; storm debris provided seeds to eat, but health continued to decline and the colony remained unreachable past the rise.",
+    "state_delta": {
+      "food": "0.25 → 0.31",
+      "health": "0.56 → 0.52",
+      "attention": "0.97 → 0.91"
+    },
+    "branch_created": false,
+    "world_anchor": "severe storm system sweeps multiple US states; tornado strikes Enid, Oklahoma with injuries; wide-area weather disruption forces shelter"
+  },
+  "created_at": "2026-04-25T12:00:00Z"
+}

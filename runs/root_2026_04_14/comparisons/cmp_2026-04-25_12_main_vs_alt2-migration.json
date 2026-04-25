@@ -1,0 +1,38 @@
+{
+  "schema_version": "0.1",
+  "comparison_id": "cmp_2026-04-25_12_main_vs_alt2-migration",
+  "artifact_type": "daily_comparison",
+  "root_id": "root_2026_04_14",
+  "branch_a": "branch_root_2026_04_14_main",
+  "branch_b": "branch_root_2026_04_14_alt2-migration",
+  "story_day": 12,
+  "snapshot_date": "2026-04-25",
+  "snapshot_ids": [
+    "snap_2026-04-25_branch_root_2026_04_14_main",
+    "snap_2026-04-25_branch_root_2026_04_14_alt2-migration"
+  ],
+  "package_ref": {
+    "package_id": "yysworld-pipeline-v0.1",
+    "package_created_at": "2026-04-25T12:00:00Z",
+    "package_hash": "sha256:claude-code-subscription"
+  },
+  "model_refs": [{"provider": "anthropic", "model_id": "claude-code-subscription", "role": "comparator", "runtime_class": "interactive"}],
+  "content": {
+    "divergence_summary": "The same storm hits both branches, but the stakes are entirely different. In main, forced shelter is an inconvenience — the root cross holds, food improves, the day shrinks. In alt2-migration, forced shelter at 0.52 health and a goal just past the rise is something closer to a crisis deferred. The food gain is more meaningful and the health loss is more dangerous.",
+    "branch_a_path": "YY shelters at the root cross, eats from a lull-forage run, health dips but remains stable; day is smaller but recoverable",
+    "branch_b_path": "YY shelters under the clearing's low branch; storm loosens seeds that provide food; health slides to 0.52 — the goal is one storm away from being out of reach",
+    "key_differences": [
+      "main health at 0.76 is stable; alt2-migration health at 0.52 is approaching a threshold where east pushes become genuinely risky",
+      "alt2-migration food gain (0.25→0.31) is proportionally larger and more urgent than main (0.42→0.47)",
+      "alt2-migration shelters at the threshold of its goal — the colony is audible through the storm as the stream runs louder; main shelters away from its goal entirely",
+      "alt2-migration has no fallback supply route; main has the east channel to return to tomorrow"
+    ],
+    "shared_elements": [
+      "same storm event — pressure drop, horizontal rain, forced full-day shelter",
+      "both branches eat during the wait",
+      "both lose health and attention from cold stillness",
+      "neither branch reaches its goal today"
+    ]
+  },
+  "created_at": "2026-04-25T12:00:00Z"
+}

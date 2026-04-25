@@ -1,0 +1,19 @@
+{
+  "schema_version": "0.1",
+  "decision_id": "dec_2026-04-25_011",
+  "root_id": "root_2026_04_14",
+  "story_day": 12,
+  "decision_date": "2026-04-25",
+  "decision_status": "evaluated_no_branch",
+  "branch_signal": false,
+  "signal_confidence": 0.15,
+  "reason": "a storm is a shared interruption, not a divergence point — all branches experience the same pause; no decision or windfall warrants a new fork",
+  "focus": null,
+  "evaluated_branches": [
+    "branch_root_2026_04_14_main",
+    "branch_root_2026_04_14_alt1-on-time",
+    "branch_root_2026_04_14_alt2-migration"
+  ],
+  "event_refs": ["evt_2026-04-25_013"],
+  "created_at": "2026-04-25T12:00:00Z"
+}

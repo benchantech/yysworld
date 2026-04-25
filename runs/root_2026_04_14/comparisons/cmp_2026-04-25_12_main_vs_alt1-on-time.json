@@ -1,0 +1,39 @@
+{
+  "schema_version": "0.1",
+  "comparison_id": "cmp_2026-04-25_12_main_vs_alt1-on-time",
+  "artifact_type": "daily_comparison",
+  "root_id": "root_2026_04_14",
+  "branch_a": "branch_root_2026_04_14_main",
+  "branch_b": "branch_root_2026_04_14_alt1-on-time",
+  "story_day": 12,
+  "snapshot_date": "2026-04-25",
+  "snapshot_ids": [
+    "snap_2026-04-25_branch_root_2026_04_14_main",
+    "snap_2026-04-25_branch_root_2026_04_14_alt1-on-time"
+  ],
+  "package_ref": {
+    "package_id": "yysworld-pipeline-v0.1",
+    "package_created_at": "2026-04-25T12:00:00Z",
+    "package_hash": "sha256:claude-code-subscription"
+  },
+  "model_refs": [{"provider": "anthropic", "model_id": "claude-code-subscription", "role": "comparator", "runtime_class": "interactive"}],
+  "content": {
+    "divergence_summary": "Both branches shelter through the same storm, but the quality of the shelter differs sharply. Main retreats to a reactive bolt-hole at the root cross; alt1-on-time happens to be caught mid-run in infrastructure it built over eleven days. The storm tests both locations and only one was prepared for it.",
+    "branch_a_path": "YY makes a fast forage run in the pressure-drop lull, then shelters at the root cross through the full storm; food improves, but east channel lost and health cost paid",
+    "branch_b_path": "YY is caught mid-run in the shade corridor; corridor channels wind and provides cached seeds; hazelnut stays untouched; storm confirms corridor as functional shelter infrastructure",
+    "key_differences": [
+      "main shelters reactively at the root cross; alt1-on-time shelters in purpose-built mapped infrastructure",
+      "main food gain requires a pre-storm run (risk); alt1-on-time food comes from corridor cache already in place",
+      "alt1-on-time corridor proved as shelter for the first time — adds a new layer to its mapped value",
+      "both lose health and attention from cold stillness, but alt1-on-time's infrastructure investment visibly pays off today"
+    ],
+    "shared_elements": [
+      "same storm event — wide-area forced shelter",
+      "both branches eat during the wait and improve food",
+      "both pay health and attention cost from cold stillness",
+      "neither branch loses inventory",
+      "no activity possible after the storm breaks"
+    ]
+  },
+  "created_at": "2026-04-25T12:00:00Z"
+}
