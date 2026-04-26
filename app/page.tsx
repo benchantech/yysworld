@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { JsonLd } from '@/components/JsonLd'
 import { homeBreadcrumbs } from '@/lib/nav'
-import { schemaBreadcrumbList, schemaWebSite } from '@/lib/jsonld'
+import { schemaBreadcrumbList, schemaWebSite, schemaAuthorPerson } from '@/lib/jsonld'
 import { getStaticRuns, getDayArtifact, getActiveDay } from '@/lib/runs'
 import { PageHeader, EventAnchor, SplitPanel, PathStateRow, BranchTree, PageShell } from '@/components/canon/Layout'
 import { MonoLabel, Pill, SectionRule, LinkButton } from '@/components/canon/Primitives'
@@ -40,7 +40,7 @@ export default function HomePage() {
 
   return (
     <PageShell wide>
-      <JsonLd schema={[schemaWebSite(), schemaBreadcrumbList(breadcrumbs)]} />
+      <JsonLd schema={[schemaWebSite(), schemaAuthorPerson(), schemaBreadcrumbList(breadcrumbs)]} />
 
       <PageHeader
         eyebrow="one being, multiple paths"

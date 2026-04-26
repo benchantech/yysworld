@@ -45,6 +45,28 @@ export function schemaWebSite(): object {
   }
 }
 
+// ─── Person (author) ─────────────────────────────────────────────────────────
+// Real author entity — canonical anchor matches benchantech.com/#person
+
+export function schemaAuthorPerson(): object {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    '@id': 'https://benchantech.com/#person',
+    name: 'Ben Chan',
+    url: 'https://benchantech.com',
+    sameAs: [
+      'https://benchantech.com',
+      'https://yymethod.com',
+      'https://home.yymethod.com',
+      'https://yyand.me',
+      'https://yysworld.com',
+      'https://www.youtube.com/@benchanviolin',
+      'https://benchanviolin.substack.com',
+    ],
+  }
+}
+
 // ─── Person (fictional) ───────────────────────────────────────────────────────
 // ADR-021: character pages — noted as fictional
 
