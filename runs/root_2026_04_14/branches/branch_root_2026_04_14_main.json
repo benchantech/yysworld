@@ -7,11 +7,11 @@
   "created_at": "2026-04-14T00:00:00Z",
   "status": "active",
   "state": {
-    "story_day": 12,
+    "story_day": 13,
     "condition": {
-      "health": 0.76,
-      "food": 0.47,
-      "attention": 0.80
+      "health": 0.78,
+      "food": 0.58,
+      "attention": 0.74
     },
     "inventory": [],
     "active_burdens": [],
@@ -38,9 +38,10 @@
       "food improved through trade, not forage — a different kind of supply",
       "a page of dense markings caught in the branch fork above the root cross; looked at it longer than it required — the markings didn't open, but the looking held something the day needed",
       "a woodpecker above the root cross kept exact intervals — nothing organic moves like that; the foraging window passed during the count",
-      "severe storm forced shelter at the root cross all day; grabbed forage in the pressure-drop lull before the wind hit; ate during the wait; east channel inaccessible"
+      "severe storm forced shelter at the root cross all day; grabbed forage in the pressure-drop lull before the wind hit; ate during the wait; east channel inaccessible",
+      "beetles and grubs on the root cross bark all morning — post-storm emergence; ate in the branches without ranging; east channel clear and producing again"
     ]
   },
   "drift_flags": [],
-  "last_updated_at": "2026-04-25T12:00:00Z"
+  "last_updated_at": "2026-04-26T12:00:00Z"
 }

@@ -1,0 +1,25 @@
+{
+  "schema_version": "0.1",
+  "event_id": "evt_2026-04-26_014",
+  "root_id": "root_2026_04_14",
+  "story_day": 13,
+  "occurred_at": "2026-04-26T12:00:00Z",
+  "event_type": "post_storm_food_emergence",
+  "canonical_truth": {
+    "summary": "Post-storm invertebrate emergence covers bark and dead wood surfaces across the territory — beetles, grubs, and centipedes surfaced by yesterday's rain in unusual numbers.",
+    "entities": ["beetles", "grubs", "centipedes", "dead wood", "bark"],
+    "location": "forest-wide; root cross, shade corridor, east clearing",
+    "concrete_outcome": "abundant accessible food on branch surfaces without a ranging run; multiple animals feeding; YY eats well in the branches"
+  },
+  "perception_prompt": {
+    "noticeable_surface": "beetles, grubs, and pale centipedes moving on wet bark and exposed wood — more than the branches usually hold, all of them surfaced by yesterday's rain",
+    "ambiguity_level": 0.1
+  },
+  "tags": ["food", "emergence", "post-storm", "bark", "abundance"],
+  "created_at": "2026-04-26T12:00:00Z",
+  "authorial_note": {
+    "real_world_inspiration": "London Marathon 2026 — tens of thousands of runners moving through the city in a mass-participation surge",
+    "translation_logic": "marathon's mass movement translates to post-storm invertebrate emergence — wet ground pushes creatures to bark and branch surfaces in unusual numbers, visible and accessible without a foraging run",
+    "restraint_reason": "event enters through physical observation of bark surfaces, not through announcement; the food source is concrete and sensory; no mention of the real-world event needed in the prose"
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "schema_version": "0.1",
+  "snapshot_id": "snap_2026-04-26_branch_root_2026_04_14_main",
+  "root_id": "root_2026_04_14",
+  "branch_id": "branch_root_2026_04_14_main",
+  "story_day": 13,
+  "snapshot_date": "2026-04-26",
+  "time_policy": "nightly_auto_advance",
+  "package_ref": {
+    "package_id": "yysworld-pipeline-v0.1",
+    "package_created_at": "2026-04-26T12:00:00Z",
+    "package_hash": "sha256:claude-code-subscription"
+  },
+  "model_refs": [{"provider": "anthropic", "model_id": "claude-code-subscription", "role": "generator", "runtime_class": "interactive"}],
+  "event_refs": ["evt_2026-04-26_014"],
+  "decision_refs": [],
+  "state_before": {
+    "condition": {"health": 0.76, "food": 0.47, "attention": 0.80},
+    "inventory": [],
+    "active_burdens": [],
+    "goals": {"primary": "find_reliable_supply", "secondary": "tend_east_channel"},
+    "reaction_overrides": {},
+    "trait_deviations": {"curious": 0.05, "pragmatic": 0.08},
+    "identity_notes": [
+      "the grey-brown squirrel returned with different posture — carrying something, not confrontational",
+      "the read started and didn't complete; attention too low to commit to exchange",
+      "the offer closed without trade; the east boundary sits differently for it",
+      "west spot produced again; the line held; no inventory gained",
+      "heat cut the west run yield; came back thinner than the trip justified",
+      "the offer not taken has a shape now — visible from the shade line looking east",
+      "the column moved west to east — the same direction as the unresolved offer; attention followed it longer than the forage could afford",
+      "rain flooded the west spot — yield near zero; sheltered under the root cross again; east offer is the only route that isn't blocked",
+      "seedlings at the flooded west site: translucent, clustered, a week from anything useful — but the ground remembered",
+      "trade executed at the east boundary: pine cone for cache marker; the east channel is now confirmed two-way",
+      "food improved through trade, not forage — a different kind of supply",
+      "a page of dense markings caught in the branch fork above the root cross; looked at it longer than it required — the markings didn't open, but the looking held something the day needed",
+      "a woodpecker above the root cross kept exact intervals — nothing organic moves like that; the foraging window passed during the count",
+      "severe storm forced shelter at the root cross all day; grabbed forage in the pressure-drop lull before the wind hit; ate during the wait; east channel inaccessible"
+    ]
+  },
+  "state_after": {
+    "condition": {"health": 0.78, "food": 0.58, "attention": 0.74},
+    "inventory": [],
+    "active_burdens": [],
+    "goals": {"primary": "find_reliable_supply", "secondary": "tend_east_channel"},
+    "reaction_overrides": {},
+    "trait_deviations": {"curious": 0.05, "pragmatic": 0.08},
+    "identity_notes": [
+      "the grey-brown squirrel returned with different posture — carrying something, not confrontational",
+      "the read started and didn't complete; attention too low to commit to exchange",
+      "the offer closed without trade; the east boundary sits differently for it",
+      "west spot produced again; the line held; no inventory gained",
+      "heat cut the west run yield; came back thinner than the trip justified",
+      "the offer not taken has a shape now — visible from the shade line looking east",
+      "the column moved west to east — the same direction as the unresolved offer; attention followed it longer than the forage could afford",
+      "rain flooded the west spot — yield near zero; sheltered under the root cross again; east offer is the only route that isn't blocked",
+      "seedlings at the flooded west site: translucent, clustered, a week from anything useful — but the ground remembered",
+      "trade executed at the east boundary: pine cone for cache marker; the east channel is now confirmed two-way",
+      "food improved through trade, not forage — a different kind of supply",
+      "a page of dense markings caught in the branch fork above the root cross; looked at it longer than it required — the markings didn't open, but the looking held something the day needed",
+      "a woodpecker above the root cross kept exact intervals — nothing organic moves like that; the foraging window passed during the count",
+      "severe storm forced shelter at the root cross all day; grabbed forage in the pressure-drop lull before the wind hit; ate during the wait; east channel inaccessible",
+      "beetles and grubs on the root cross bark all morning — post-storm emergence; ate in the branches without ranging; east channel clear and producing again"
+    ]
+  },
+  "change_summary": {
+    "notable_shift": "post-storm invertebrate emergence on root cross bark; food up significantly without a ranging run; health recovering; attention settled after a well-fed day",
+    "branch_created": false
+  },
+  "created_at": "2026-04-26T12:00:00Z"
+}

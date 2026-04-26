@@ -1,0 +1,38 @@
+{
+  "schema_version": "0.1",
+  "comparison_id": "cmp_2026-04-26_13_main_vs_alt1-on-time",
+  "artifact_type": "daily_comparison",
+  "root_id": "root_2026_04_14",
+  "branch_a": "branch_root_2026_04_14_main",
+  "branch_b": "branch_root_2026_04_14_alt1-on-time",
+  "story_day": 13,
+  "snapshot_date": "2026-04-26",
+  "snapshot_ids": [
+    "snap_2026-04-26_branch_root_2026_04_14_main",
+    "snap_2026-04-26_branch_root_2026_04_14_alt1-on-time"
+  ],
+  "package_ref": {
+    "package_id": "yysworld-pipeline-v0.1",
+    "package_created_at": "2026-04-26T12:00:00Z",
+    "package_hash": "sha256:claude-code-subscription"
+  },
+  "model_refs": [{"provider": "anthropic", "model_id": "claude-code-subscription", "role": "comparator", "runtime_class": "interactive"}],
+  "content": {
+    "divergence_summary": "Both branches eat well from post-storm emergence, but the shape of the day differs. Main stops at the root cross and eats — efficient, passive, the place does the work. Alt1-on-time eats while moving, finishing a job the storm interrupted — food and map progress happen simultaneously in the infrastructure already built.",
+    "branch_a_path": "YY eats from root cross bark emergence without ranging; east channel cleared in the afternoon; day quiet and productive",
+    "branch_b_path": "YY eats from corridor dead wood while completing the interrupted mapping run; western boundary now fully measured; hazelnut untouched; corridor delivers food and cartography on the same morning",
+    "key_differences": [
+      "main food gain (0.47→0.58) comes from staying still; alt1-on-time food gain (0.54→0.65) comes from moving through productive infrastructure",
+      "alt1-on-time completes the western boundary map today — a milestone main has no equivalent of",
+      "alt1-on-time hazelnut remains inventory for the ninth consecutive day — its status as evidence rather than supply continues to hold",
+      "both recover health slightly; both attention softens from a well-fed day"
+    ],
+    "shared_elements": [
+      "same post-storm emergence event provides the food",
+      "both eat from bark and dead wood surfaces without long ranging runs",
+      "both recover health slightly from the previous storm day",
+      "neither branch loses inventory"
+    ]
+  },
+  "created_at": "2026-04-26T12:00:00Z"
+}

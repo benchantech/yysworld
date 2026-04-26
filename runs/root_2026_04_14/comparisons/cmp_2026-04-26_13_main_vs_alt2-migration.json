@@ -1,0 +1,38 @@
+{
+  "schema_version": "0.1",
+  "comparison_id": "cmp_2026-04-26_13_main_vs_alt2-migration",
+  "artifact_type": "daily_comparison",
+  "root_id": "root_2026_04_14",
+  "branch_a": "branch_root_2026_04_14_main",
+  "branch_b": "branch_root_2026_04_14_alt2-migration",
+  "story_day": 13,
+  "snapshot_date": "2026-04-26",
+  "snapshot_ids": [
+    "snap_2026-04-26_branch_root_2026_04_14_main",
+    "snap_2026-04-26_branch_root_2026_04_14_alt2-migration"
+  ],
+  "package_ref": {
+    "package_id": "yysworld-pipeline-v0.1",
+    "package_created_at": "2026-04-26T12:00:00Z",
+    "package_hash": "sha256:claude-code-subscription"
+  },
+  "model_refs": [{"provider": "anthropic", "model_id": "claude-code-subscription", "role": "comparator", "runtime_class": "interactive"}],
+  "content": {
+    "divergence_summary": "The same emergence event lands very differently depending on where you started the day. Main eats from a position of moderate stability — food improves from adequate to good. Alt2-migration eats from a position of genuine need — the clearing that has been a limit for days becomes a larder, and health begins to recover from its lowest point in the run.",
+    "branch_a_path": "YY eats steadily from root cross bark; food improves from adequate to good; east channel cleared; a quiet, productive recovery day",
+    "branch_b_path": "YY eats the largest single-day food gain of the run from clearing bark and stream-edge dead wood; health recovering from 0.52; the clearing shifts from obstacle to resource for the first time",
+    "key_differences": [
+      "alt2-migration food gain (0.31→0.47) is proportionally far larger and more urgent than main (0.47→0.58)",
+      "alt2-migration health recovering from a near-threshold position (0.52→0.57); main recovering from comfortable stability (0.76→0.78)",
+      "alt2-migration eats at the site of its primary goal — the same clearing where the colony is just past the rise",
+      "main has the east channel as a secondary supply route; alt2-migration has only the clearing and what it produces"
+    ],
+    "shared_elements": [
+      "same post-storm emergence event",
+      "both eat from bark and dead wood without long ranging runs",
+      "both recover health and improve food on the same day",
+      "both attention values soften from a well-fed, lower-activity day"
+    ]
+  },
+  "created_at": "2026-04-26T12:00:00Z"
+}
