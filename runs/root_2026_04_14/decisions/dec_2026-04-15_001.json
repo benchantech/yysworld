@@ -5,10 +5,12 @@
   "story_day": 3,
   "decision_date": "2026-04-15",
   "decision_status": "evaluated_no_branch",
-  "signal": "no",
-  "confidence": 0.2,
-  "reason": "both branches diverge in texture not trajectory — urgency vs. curiosity over the same territory; no fork event, no identity split worth tracking separately",
-  "focus": null,
+  "branch_signal": {
+    "should_branch": false,
+    "confidence": 0.2,
+    "reason": "both branches diverge in texture not trajectory — urgency vs. curiosity over the same territory; no fork event, no identity split worth tracking separately",
+    "focus": null
+  },
   "event_refs": ["evt_2026-04-15_003"],
   "snapshot_refs": [
     "snap_2026-04-16_branch_root_2026_04_14_main",

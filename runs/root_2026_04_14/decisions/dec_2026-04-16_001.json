@@ -5,10 +5,12 @@
   "story_day": 4,
   "decision_date": "2026-04-16",
   "decision_status": "evaluated_no_branch",
-  "signal": "no",
-  "confidence": 0.3,
-  "reason": "the gap between branches is widening — main is running on thin reserves while alt1 is accumulating clarity — but no fork event today; this is drift, not a split",
-  "focus": "worth watching: if main food drops below 0.35 or a new burden arrives, that is a branch signal",
+  "branch_signal": {
+    "should_branch": false,
+    "confidence": 0.3,
+    "reason": "the gap between branches is widening — main is running on thin reserves while alt1 is accumulating clarity — but no fork event today; this is drift, not a split",
+    "focus": "worth watching: if main food drops below 0.35 or a new burden arrives, that is a branch signal"
+  },
   "event_refs": ["evt_2026-04-16_001"],
   "snapshot_refs": [
     "snap_2026-04-17_branch_root_2026_04_14_main",

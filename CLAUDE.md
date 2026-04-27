@@ -4,8 +4,10 @@ This file tells AI executors how to work on the YY Branching World project witho
 
 **Reference docs** (read when task-relevant):
 - `docs/system-map-v1.0.md` — system architecture: every layer, what exists vs. what is planned
-- `docs/executor/procedures.md` — change taxonomy, diff policy, nightly pipeline, naming conventions
-- `docs/executor/craft.md` — YY Method lens, antipatterns, quality bar, future hooks, discoverability
+- `docs/executor/procedures.md` — executor responsibilities, change taxonomy, nightly pipeline, naming conventions
+- `docs/executor/craft.md` — YY Method lens, narrative antipatterns, quality bar, discoverability
+- `docs/pipeline/schemas.md` — canonical JSON schemas for all pipeline file types
+- `docs/adrs/` — every schema and pipeline decision with its reasoning; read before writing new pipeline files
 
 ---
 
@@ -43,22 +45,7 @@ Every serious change must preserve all eight.
 
 ---
 
-## 4. AI executor responsibilities
-
-1. Read canon and manifests first.
-2. Determine whether the task changes truth, projection, or presentation.
-3. Never overwrite source truth in place.
-4. When uncertain, create a proposal artifact rather than mutating canon.
-5. Preserve timestamps and provenance metadata.
-6. Prefer structured outputs over long prose unless prose is explicitly required.
-7. Track which YY version, root, branch, and event any generated artifact belongs to.
-8. Mark stale outputs clearly when dependencies change.
-9. Avoid widening scope casually.
-10. Leave a scar record when reversing a previous assumption.
-
----
-
-## 5. Final operator principle
+## 4. Final operator principle
 
 > The project should feel gentle on the surface and exacting underneath.
 
