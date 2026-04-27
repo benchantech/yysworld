@@ -1,0 +1,38 @@
+{
+  "schema_version": "0.1",
+  "comparison_id": "cmp_2026-04-27_14_main_vs_alt1-on-time",
+  "artifact_type": "daily_comparison",
+  "root_id": "root_2026_04_14",
+  "branch_a": "branch_root_2026_04_14_main",
+  "branch_b": "branch_root_2026_04_14_alt1-on-time",
+  "story_day": 14,
+  "snapshot_date": "2026-04-27",
+  "snapshot_ids": [
+    "snap_2026-04-27_branch_root_2026_04_14_main",
+    "snap_2026-04-27_branch_root_2026_04_14_alt1-on-time"
+  ],
+  "package_ref": {
+    "package_id": "yysworld-pipeline-v0.1",
+    "package_created_at": "2026-04-27T12:00:00Z",
+    "package_hash": "sha256:claude-code-subscription"
+  },
+  "model_refs": [{"provider": "anthropic", "model_id": "claude-code-subscription", "role": "comparator", "runtime_class": "interactive"}],
+  "content": {
+    "divergence_summary": "Both branches reached the stag visitor and obtained an object, but through different means: main was already at the east channel when the stag passed through; alt1 read the migration line and repositioned to intercept at a known waypoint. The objects carry different implications — main's fur points to cold, distant origin; alt1's seeds point to a feeding range beyond any current map.",
+    "branch_a_path": "Stayed near the east channel; the stag's path brought it to YY. Fur tuft in inventory. Attention up, food slightly down. First inventory item.",
+    "branch_b_path": "Ranging west when calls started; used map knowledge to get ahead of the stag. Seeds in inventory alongside hazelnut. Attention at run high. Second inventory item.",
+    "key_differences": [
+      "Main acquired the object by staying in place; alt1 acquired it by moving to the right place first",
+      "Main's fur records origin (cold-country); alt1's seeds record an unmapped feeding range",
+      "Alt1's attention is notably higher (0.91 vs 0.82) — the close intercept sharpened it further than observation from cover",
+      "Alt1 now holds two inventory items with cartographic implications; main holds one"
+    ],
+    "shared_elements": [
+      "Both heard the same bird-call sequence and responded immediately",
+      "Both observed the stag directly and obtained a physical trace it left behind",
+      "Both ended the day with food slightly below the morning — the encounter took priority over foraging",
+      "Both branches register the stag as a visitor from outside the known map"
+    ]
+  },
+  "created_at": "2026-04-27T12:00:00Z"
+}

@@ -7,13 +7,21 @@
   "created_at": "2026-04-14T00:00:00Z",
   "status": "active",
   "state": {
-    "story_day": 13,
+    "story_day": 14,
     "condition": {
-      "health": 0.78,
-      "food": 0.58,
-      "attention": 0.74
+      "health": 0.77,
+      "food": 0.54,
+      "attention": 0.82
     },
-    "inventory": [],
+    "inventory": [
+      {
+        "id": "stag_fur_east_path",
+        "label": "pale fur tuft (east path channel edge bark)",
+        "acquired_day": 14,
+        "tradeable": true,
+        "notes": "winter coat, shedding; coloring paler than anything in current territory or mapped west range; cold-country texture; implies the visitor came from colder, older ground further than YY has ranged"
+      }
+    ],
     "active_burdens": [],
     "goals": {
       "primary": "find_reliable_supply",
@@ -39,9 +47,10 @@
       "a page of dense markings caught in the branch fork above the root cross; looked at it longer than it required — the markings didn't open, but the looking held something the day needed",
       "a woodpecker above the root cross kept exact intervals — nothing organic moves like that; the foraging window passed during the count",
       "severe storm forced shelter at the root cross all day; grabbed forage in the pressure-drop lull before the wind hit; ate during the wait; east channel inaccessible",
-      "beetles and grubs on the root cross bark all morning — post-storm emergence; ate in the branches without ranging; east channel clear and producing again"
+      "beetles and grubs on the root cross bark all morning — post-storm emergence; ate in the branches without ranging; east channel clear and producing again",
+      "bird-call sequence moved along the east path — not alarm; reached the channel edge in time; a large stag paused there and moved on; took the pale fur it left on the bark"
     ]
   },
   "drift_flags": [],
-  "last_updated_at": "2026-04-26T12:00:00Z"
+  "last_updated_at": "2026-04-27T12:00:00Z"
 }

@@ -7,11 +7,11 @@
   "created_at": "2026-04-14T20:40:00Z",
   "status": "active",
   "state": {
-    "story_day": 13,
+    "story_day": 14,
     "condition": {
-      "health": 0.77,
-      "food": 0.65,
-      "attention": 0.82
+      "health": 0.76,
+      "food": 0.61,
+      "attention": 0.91
     },
     "inventory": [
       {
@@ -20,6 +20,13 @@
         "acquired_day": 5,
         "tradeable": true,
         "notes": "shell texture not local; implies grey squirrel ranges west of current mapped territory; small piece eaten at corridor east end — remainder intact; now serving as evidence of grey squirrel range rather than supply"
+      },
+      {
+        "id": "seeds_stag_browse",
+        "label": "seeds from stag browsing (shade corridor midpoint)",
+        "acquired_day": 14,
+        "tradeable": true,
+        "notes": "fell from branch browsed by stag at the corridor midpoint waypoint; narrow leaf-scar, unfamiliar species — not in west territory, not in any mapped range; implies the stag's feeding ground lies outside the current map in an unknown direction"
       }
     ],
     "active_burdens": [],
@@ -47,9 +54,10 @@
       "held the hazelnut fragment in corridor light and addressed it directly — the shell carries more information than the nut did; put it back as evidence, not supply",
       "a woodpecker's even intervals served as a pace counter mid-run — three body-lengths per strike; two west sections measured precisely without approximation",
       "storm caught mid-run; corridor provided shelter and cached seeds at the midpoint — the hazelnut stayed; the corridor proved its value as infrastructure under pressure",
-      "post-storm emergence on corridor dead wood — ate while completing the interrupted mapping run; western boundary now complete; hazelnut untouched; corridor delivered food and map on the same morning"
+      "post-storm emergence on corridor dead wood — ate while completing the interrupted mapping run; western boundary now complete; hazelnut untouched; corridor delivered food and map on the same morning",
+      "stag arrived at the corridor midpoint waypoint and browsed — the waypoint had been marked for drainage and migration; a visitor from outside the map paused there for the same reason"
     ]
   },
   "drift_flags": [],
-  "last_updated_at": "2026-04-26T12:00:00Z"
+  "last_updated_at": "2026-04-27T12:00:00Z"
 }

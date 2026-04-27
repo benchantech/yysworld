@@ -1,0 +1,93 @@
+{
+  "schema_version": "0.1",
+  "snapshot_id": "snap_2026-04-27_branch_root_2026_04_14_alt2-migration",
+  "root_id": "root_2026_04_14",
+  "branch_id": "branch_root_2026_04_14_alt2-migration",
+  "story_day": 14,
+  "snapshot_date": "2026-04-27",
+  "time_policy": "nightly_auto_advance",
+  "package_ref": {
+    "package_id": "yysworld-pipeline-v0.1",
+    "package_created_at": "2026-04-27T12:00:00Z",
+    "package_hash": "sha256:claude-code-subscription"
+  },
+  "model_refs": [{"provider": "anthropic", "model_id": "claude-code-subscription", "role": "generator", "runtime_class": "interactive"}],
+  "event_refs": ["evt_2026-04-27_015"],
+  "decision_refs": [],
+  "state_before": {
+    "condition": {"health": 0.57, "food": 0.47, "attention": 0.83},
+    "inventory": [
+      {
+        "id": "honeycomb_fragment_east_clearing",
+        "label": "fragment of wild honeycomb (east sun-trap clearing)",
+        "acquired_day": 7,
+        "tradeable": true,
+        "notes": "found cached on a low branch east of the mapped boundary; implies a bee colony somewhere further east; pale gold at the break, darker at the edges — not recent; cells dry; used as instrument today, returned unchanged"
+      }
+    ],
+    "active_burdens": [],
+    "goals": {"primary": "locate_bee_colony", "secondary": "map_east_territory"},
+    "reaction_overrides": {},
+    "trait_deviations": {"curious": 0.18, "pragmatic": 0.02, "restless": 0.15},
+    "identity_notes": [
+      "the grey-brown squirrel returned with different posture — carrying something, not confrontational",
+      "the read started and didn't complete; attention too low to commit to exchange",
+      "the offer closed without trade; the east boundary sits differently for it",
+      "west spot produced again; the line held; no inventory gained",
+      "heat cut the west run yield; came back thinner than the trip justified",
+      "the offer not taken has a shape now — visible from the shade line looking east",
+      "followed the column east at full sprint — crossed the boundary alone, at speed, for the first time",
+      "found a sun-trap clearing east of all known ground; the column had used it as a waypoint",
+      "honeycomb fragment on a low branch — something keeps bees further east; the clearing has been used before",
+      "rain flooded the east clearing — the low branch now above water; a stream runs along the clearing's east edge, previously hidden; traced it 20 meters upstream before rain drove back; the colony is further east along that stream",
+      "seedlings at the clearing edge: flowering species — the kind that go wide-leafed in summer and pull insects from far away; confirms pollinator activity east of the boundary",
+      "stream traced to fifty meters and one northeast curve; higher, older ground past the rise; the colony is there",
+      "health declining from repeated east pushes; food thin — the goal is close enough to hold the risk",
+      "drew air through the honeycomb fragment — dry cells, thin sound; didn't go east; stayed at the clearing edge playing it until the playing was done",
+      "a woodpecker worked the stream-edge dead tree with machine exactness — closer to the colony than YY has reached; the body held at the clearing edge and listened until the sound stopped",
+      "storm forced shelter under the low branch at the clearing; storm debris loosened seeds from the bank — ate what the weather laid out; health cost from cold stillness; colony still past the rise",
+      "post-storm beetles and grubs covered the clearing's low branch and stream-edge dead tree — more food than the previous two days combined; ate without ranging east; health recovering; the clearing became a larder"
+    ]
+  },
+  "state_after": {
+    "condition": {"health": 0.54, "food": 0.50, "attention": 0.72},
+    "inventory": [
+      {
+        "id": "honeycomb_fragment_east_clearing",
+        "label": "fragment of wild honeycomb (east sun-trap clearing)",
+        "acquired_day": 7,
+        "tradeable": true,
+        "notes": "found cached on a low branch east of the mapped boundary; implies a bee colony somewhere further east; pale gold at the break, darker at the edges — not recent; cells dry; used as instrument today, returned unchanged"
+      }
+    ],
+    "active_burdens": [],
+    "goals": {"primary": "locate_bee_colony", "secondary": "map_east_territory"},
+    "reaction_overrides": {},
+    "trait_deviations": {"curious": 0.18, "pragmatic": 0.02, "restless": 0.15},
+    "identity_notes": [
+      "the grey-brown squirrel returned with different posture — carrying something, not confrontational",
+      "the read started and didn't complete; attention too low to commit to exchange",
+      "the offer closed without trade; the east boundary sits differently for it",
+      "west spot produced again; the line held; no inventory gained",
+      "heat cut the west run yield; came back thinner than the trip justified",
+      "the offer not taken has a shape now — visible from the shade line looking east",
+      "followed the column east at full sprint — crossed the boundary alone, at speed, for the first time",
+      "found a sun-trap clearing east of all known ground; the column had used it as a waypoint",
+      "honeycomb fragment on a low branch — something keeps bees further east; the clearing has been used before",
+      "rain flooded the east clearing — the low branch now above water; a stream runs along the clearing's east edge, previously hidden; traced it 20 meters upstream before rain drove back; the colony is further east along that stream",
+      "seedlings at the clearing edge: flowering species — the kind that go wide-leafed in summer and pull insects from far away; confirms pollinator activity east of the boundary",
+      "stream traced to fifty meters and one northeast curve; higher, older ground past the rise; the colony is there",
+      "health declining from repeated east pushes; food thin — the goal is close enough to hold the risk",
+      "drew air through the honeycomb fragment — dry cells, thin sound; didn't go east; stayed at the clearing edge playing it until the playing was done",
+      "a woodpecker worked the stream-edge dead tree with machine exactness — closer to the colony than YY has reached; the body held at the clearing edge and listened until the sound stopped",
+      "storm forced shelter under the low branch at the clearing; storm debris loosened seeds from the bank — ate what the weather laid out; health cost from cold stillness; colony still past the rise",
+      "post-storm beetles and grubs covered the clearing's low branch and stream-edge dead tree — more food than the previous two days combined; ate without ranging east; health recovering; the clearing became a larder",
+      "bird-call sequence reached the clearing faint and late — ran west fast, ate on the move; arrived at the east path to find impressions in the ground and unsettled birds; the stag had already passed; the clearing was too far east"
+    ]
+  },
+  "change_summary": {
+    "notable_shift": "failed to reach the stag visitor — too far east; long run during recovery set health back; food slightly recovered from eating on the move; attention deflated after a failed pursuit",
+    "branch_created": false
+  },
+  "created_at": "2026-04-27T12:00:00Z"
+}

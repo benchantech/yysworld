@@ -1,0 +1,25 @@
+{
+  "schema_version": "0.1",
+  "event_id": "evt_2026-04-27_015",
+  "root_id": "root_2026_04_14",
+  "story_day": 14,
+  "occurred_at": "2026-04-27T12:00:00Z",
+  "event_type": "visitor_arrival",
+  "canonical_truth": {
+    "summary": "A large stag from outside the mapped territory passed through the east path corridor, pausing briefly at the channel edge before continuing east. Other creatures went quiet as it moved through.",
+    "entities": ["stag_visitor", "east_path", "east_channel"],
+    "location": "east_path_corridor",
+    "concrete_outcome": "Stag passed through and continued; left a tuft of pale fur at the channel edge bark and browsed seeds at the shade corridor midpoint."
+  },
+  "perception_prompt": {
+    "noticeable_surface": "small birds going still in sequence along the east path — then calling down from high branches; something large is moving through, unhurried",
+    "ambiguity_level": 0.2
+  },
+  "tags": ["visitor", "distinction", "social_adjustment", "proximity", "curiosity"],
+  "created_at": "2026-04-27T12:00:00Z",
+  "authorial_note": {
+    "real_world_inspiration": "King Charles and Queen Camilla arrive in the US for a 4-day state visit — first British royal state visit in decades",
+    "translation_logic": "Formal arrival from distant territory maps to a large unfamiliar creature crossing known ground with deliberate bearing; the social adjustment of other creatures (quieting then calling) is the physical surface YY encounters first",
+    "restraint_reason": "The visitor does not interact with YY directly; it passes through and leaves only traces — consistent with a dignitary who does not acknowledge individual locals"
+  }
+}

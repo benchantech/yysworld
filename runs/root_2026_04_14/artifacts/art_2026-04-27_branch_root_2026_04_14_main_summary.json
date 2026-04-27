@@ -1,0 +1,30 @@
+{
+  "schema_version": "0.1",
+  "artifact_id": "art_2026-04-27_branch_root_2026_04_14_main_summary",
+  "artifact_type": "daily_summary",
+  "snapshot_id": "snap_2026-04-27_branch_root_2026_04_14_main",
+  "root_id": "root_2026_04_14",
+  "branch_id": "branch_root_2026_04_14_main",
+  "package_ref": {
+    "package_id": "yysworld-pipeline-v0.1",
+    "package_created_at": "2026-04-27T12:00:00Z",
+    "package_hash": "sha256:claude-code-subscription"
+  },
+  "model_refs": [{"provider": "anthropic", "model_id": "claude-code-subscription", "role": "summarizer", "runtime_class": "interactive"}],
+  "comparison_contract_version": "0.1",
+  "content": {
+    "title": "The East Path, Held",
+    "tone": "attentive, incomplete, quietly struck",
+    "narrative": "The east channel had already produced by the time the bird calls changed. Not alarm — something else, moving along the path from west to east, each bird going quiet a moment before the next.\n\nYY tracked the sequence and moved before deciding to.\n\nAt the channel edge a stag stood at the path's margin. Large. Late-season coat, still dense. It paused at the bark of a low branch and did not look in YY's direction. Then it moved on, unhurried, down the east path.\n\nWhere it had stood, a tuft of pale fur was caught in the bark. Winter coat, shedding. The coloring was paler than anything in this territory — paler than the range west, paler than anything found at the east boundary. Cold-country texture. Not near here.\n\nYY took it. The channel was already done for the day. The fur was something else — not supply, not map. A record of an elsewhere that had paused here briefly and continued.",
+    "state_note": "Forage run shortened by the encounter; food down slightly. Health steady. Attention sharpened by the first close sighting of a non-local visitor. First inventory item acquired.",
+    "summary": "YY reached the east channel edge in time to watch a large stag pass through, and kept the pale fur tuft it left behind on the bark.",
+    "state_delta": {
+      "food": "0.58 → 0.54",
+      "attention": "0.74 → 0.82",
+      "health": "0.78 → 0.77"
+    },
+    "branch_created": false,
+    "world_anchor": "King Charles and Queen Camilla arrive in the US for a 4-day state visit — first British royal state visit in decades"
+  },
+  "created_at": "2026-04-27T12:00:00Z"
+}

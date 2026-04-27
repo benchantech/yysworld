@@ -1,0 +1,37 @@
+{
+  "schema_version": "0.1",
+  "comparison_id": "cmp_2026-04-27_14_main_vs_alt2-migration",
+  "artifact_type": "daily_comparison",
+  "root_id": "root_2026_04_14",
+  "branch_a": "branch_root_2026_04_14_main",
+  "branch_b": "branch_root_2026_04_14_alt2-migration",
+  "story_day": 14,
+  "snapshot_date": "2026-04-27",
+  "snapshot_ids": [
+    "snap_2026-04-27_branch_root_2026_04_14_main",
+    "snap_2026-04-27_branch_root_2026_04_14_alt2-migration"
+  ],
+  "package_ref": {
+    "package_id": "yysworld-pipeline-v0.1",
+    "package_created_at": "2026-04-27T12:00:00Z",
+    "package_hash": "sha256:claude-code-subscription"
+  },
+  "model_refs": [{"provider": "anthropic", "model_id": "claude-code-subscription", "role": "comparator", "runtime_class": "interactive"}],
+  "content": {
+    "divergence_summary": "Same event, opposite outcomes: main was at the east channel and the stag's path brought it there — object obtained, attention sharpened. Alt2 was too far east pursuing the colony; the signal arrived late, the run cost health, and the stag was gone by arrival. The east push that defines alt2's arc is the direct cause of the miss.",
+    "branch_a_path": "Positioned at east channel; witnessed the stag; acquired pale fur tuft. Food slightly down, attention up. First inventory item.",
+    "branch_b_path": "At the east clearing when the signal arrived; ran west fast; arrived too late. Impressions in the ground only. Health set back by exertion during recovery. No object.",
+    "key_differences": [
+      "Main obtained a physical trace from the visitor; alt2 obtained only the trace of the trace — impressions in ground, unsettled birds",
+      "Alt2's health dropped (0.57 → 0.54) from the run; main's held near-steady (0.78 → 0.77)",
+      "Alt2's attention fell sharply (0.83 → 0.72) after a failed pursuit; main's rose (0.74 → 0.82) after a successful one",
+      "The colony goal continues to pull alt2 east, which is the structural reason it missed today's event"
+    ],
+    "shared_elements": [
+      "Both heard the same bird-call sequence",
+      "Both moved toward the east path in response",
+      "Both ended with the stag having passed and continued — neither branch had any interaction with the visitor directly"
+    ]
+  },
+  "created_at": "2026-04-27T12:00:00Z"
+}
