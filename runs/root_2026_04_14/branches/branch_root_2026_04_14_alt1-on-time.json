@@ -7,11 +7,11 @@
   "created_at": "2026-04-14T20:40:00Z",
   "status": "active",
   "state": {
-    "story_day": 14,
+    "story_day": 15,
     "condition": {
-      "health": 0.76,
-      "food": 0.61,
-      "attention": 0.91
+      "health": 0.74,
+      "food": 0.58,
+      "attention": 0.87
     },
     "inventory": [
       {
@@ -55,9 +55,10 @@
       "a woodpecker's even intervals served as a pace counter mid-run — three body-lengths per strike; two west sections measured precisely without approximation",
       "storm caught mid-run; corridor provided shelter and cached seeds at the midpoint — the hazelnut stayed; the corridor proved its value as infrastructure under pressure",
       "post-storm emergence on corridor dead wood — ate while completing the interrupted mapping run; western boundary now complete; hazelnut untouched; corridor delivered food and map on the same morning",
-      "stag arrived at the corridor midpoint waypoint and browsed — the waypoint had been marked for drainage and migration; a visitor from outside the map paused there for the same reason"
+      "stag arrived at the corridor midpoint waypoint and browsed — the waypoint had been marked for drainage and migration; a visitor from outside the map paused there for the same reason",
+      "foot sank at the corridor midpoint waypoint — drainage and stag-weight had softened the ground beneath the surface compaction; pulled free; waypoint notation updated; the run was shortened to the west section only"
     ]
   },
   "drift_flags": [],
-  "last_updated_at": "2026-04-27T12:00:00Z"
+  "last_updated_at": "2026-04-28T12:00:00Z"
 }

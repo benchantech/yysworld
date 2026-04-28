@@ -1,0 +1,25 @@
+{
+  "schema_version": "0.1",
+  "event_id": "evt_2026-04-28_016",
+  "root_id": "root_2026_04_14",
+  "story_day": 15,
+  "occurred_at": "2026-04-28T12:00:00Z",
+  "event_type": "near_miss_physical_hazard",
+  "canonical_truth": {
+    "summary": "Familiar terrain gives way during routine work; the close call comes from ground made known through repeated use, not from venturing into the unknown.",
+    "entities": ["YY", "east_channel_bark_shelf", "shade_corridor_waypoint", "stream_northeast_bank"],
+    "location": "branch-specific: east channel edge / shade corridor midpoint / stream northeast curve",
+    "concrete_outcome": "Each branch recovers without serious injury; each near-miss is caused by terrain altered by the stag's passage the day before or by accumulated drainage pressure."
+  },
+  "perception_prompt": {
+    "noticeable_surface": "the ground that has held every previous time does not hold; the familiar route has become unsafe at a specific point",
+    "ambiguity_level": 0.1
+  },
+  "tags": ["near_miss", "hazard", "physical_cost", "familiar_terrain", "stag_aftermath", "drainage", "attention"],
+  "created_at": "2026-04-28T12:00:00Z",
+  "authorial_note": {
+    "real_world_inspiration": "World Day for Safety and Health at Work (April 28) — the physical cost that daily labor extracts, invisible until the moment it nearly isn't",
+    "translation_logic": "Workers' Memorial Day marks harm that comes from ordinary work in ordinary places; each branch's hazard is native to the route it built through repeated use, not from straying into danger",
+    "restraint_reason": "The event enters through terrain failure, not announcement; the world-day theme is embodied in the hazard's cause and location, not named"
+  }
+}

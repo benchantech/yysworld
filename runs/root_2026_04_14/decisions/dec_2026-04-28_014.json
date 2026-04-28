@@ -1,0 +1,16 @@
+{
+  "schema_version": "0.1",
+  "decision_id": "dec_2026-04-28_014",
+  "root_id": "root_2026_04_14",
+  "story_day": 15,
+  "decision_date": "2026-04-28",
+  "decision_status": "evaluated_no_branch",
+  "signal": {
+    "should_branch": false,
+    "confidence": 0.87,
+    "reason": "near-miss events compress trajectories rather than open them; all three branches absorbed the hazard and held their existing directions — main continues tending east, alt1-on-time continues mapping, alt2-migration continues pushing; no fork in circumstance emerged"
+  },
+  "new_branch_id": null,
+  "evaluated_at": "2026-04-28T12:00:00Z",
+  "created_at": "2026-04-28T12:00:00Z"
+}

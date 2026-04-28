@@ -1,0 +1,30 @@
+{
+  "schema_version": "0.1",
+  "artifact_id": "art_2026-04-28_branch_root_2026_04_14_main_summary",
+  "artifact_type": "daily_summary",
+  "snapshot_id": "snap_2026-04-28_branch_root_2026_04_14_main",
+  "root_id": "root_2026_04_14",
+  "branch_id": "branch_root_2026_04_14_main",
+  "package_ref": {
+    "package_id": "yysworld-pipeline-v0.1",
+    "package_created_at": "2026-04-28T12:00:00Z",
+    "package_hash": "sha256:claude-code-subscription"
+  },
+  "model_refs": [{"provider": "anthropic", "model_id": "claude-code-subscription", "role": "summarizer", "runtime_class": "interactive"}],
+  "comparison_contract_version": "0.1",
+  "content": {
+    "title": "The Shelf Gave",
+    "tone": "alert, shaken, steady",
+    "narrative": "The bark shelf at the east channel edge held long enough.\n\nOne step onto it, weight transferred, and the wood gave in a single quiet collapse — no crack, just the sudden absence of surface. YY's leg went through the gap. The other foot found nothing. One hand caught a fork in the branch above and held.\n\nBelow: the channel. Still producing. Seeds along the waterline, loose and accessible.\n\nYY worked it from the fork position — careful, one-handed — until the forage was done. The shelf's remains were still visible at the base of the branch, bark-side up, settled into the soft ground where the stag had stood.\n\nThe east path has a new gap in it now. The fur tuft in the cache is from the animal that made it.",
+    "state_note": "Near-fall at the east channel edge when stag-stressed bark shelf gave; caught a fork above and recovered; foraged from that position; food up slightly from channel yield, health down from the catch, attention sharpened.",
+    "summary": "YY returned to the east channel edge and the bark shelf gave underfoot — caught a fork, recovered, and foraged from that position while the shelf settled below.",
+    "state_delta": {
+      "food": "0.54 → 0.57",
+      "attention": "0.82 → 0.88",
+      "health": "0.77 → 0.74"
+    },
+    "branch_created": false,
+    "world_anchor": "World Day for Safety and Health at Work (April 28) — the physical cost that daily labor extracts, invisible until the moment it nearly isn't"
+  },
+  "created_at": "2026-04-28T12:00:00Z"
+}

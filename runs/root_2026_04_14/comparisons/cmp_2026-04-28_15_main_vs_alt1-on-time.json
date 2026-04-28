@@ -1,0 +1,40 @@
+{
+  "schema_version": "0.1",
+  "comparison_id": "cmp_2026-04-28_15_main_vs_alt1-on-time",
+  "artifact_type": "daily_comparison",
+  "root_id": "root_2026_04_14",
+  "branch_a": "branch_root_2026_04_14_main",
+  "branch_b": "branch_root_2026_04_14_alt1-on-time",
+  "story_day": 15,
+  "snapshot_date": "2026-04-28",
+  "snapshot_ids": [
+    "snap_2026-04-28_branch_root_2026_04_14_main",
+    "snap_2026-04-28_branch_root_2026_04_14_alt1-on-time"
+  ],
+  "package_ref": {
+    "package_id": "yysworld-pipeline-v0.1",
+    "package_created_at": "2026-04-28T12:00:00Z",
+    "package_hash": "sha256:claude-code-subscription"
+  },
+  "model_refs": [{"provider": "anthropic", "model_id": "claude-code-subscription", "role": "comparator", "runtime_class": "interactive"}],
+  "content": {
+    "divergence_summary": "Both branches had a near-miss caused by the stag's visit the day before — but the hazard's location tells the story: main's failure was at a boundary it tends, alt1-on-time's was at infrastructure it built. Main gained food through the close call; alt1-on-time lost it.",
+    "branch_a_path": "YY returned to the east channel edge to tend it; the bark shelf where the stag had stood gave underfoot; caught a fork above and foraged from that position; food up, health down, attention sharpened; the east path is changed.",
+    "branch_b_path": "YY was mid-run on the corridor mapping pass when foot sank into stag-softened ground at the waypoint; pulled free; updated the notation; completed only the west section; food down from the shortened run, health and attention slightly reduced.",
+    "key_differences": [
+      "hazard location: main at a boundary site, alt1-on-time at its own infrastructure",
+      "food direction: main up slightly from channel yield, alt1-on-time down from shortened run",
+      "attention: main higher (sharpened by survival catch), alt1-on-time slightly lower (recalibration after reliability failure)",
+      "what the hazard revealed: main has a new gap in a familiar path; alt1-on-time has a qualified waypoint on a trusted map",
+      "posture after: main working from a recovered position in the same site; alt1-on-time adjusting the notation and continuing on known ground"
+    ],
+    "shared_elements": [
+      "near-miss physical hazard caused by stag's passage the previous day",
+      "both recovered without serious injury",
+      "both continued the day's work after the close call",
+      "both have unchanged inventory and goals",
+      "health cost in both branches"
+    ]
+  },
+  "created_at": "2026-04-28T12:00:00Z"
+}

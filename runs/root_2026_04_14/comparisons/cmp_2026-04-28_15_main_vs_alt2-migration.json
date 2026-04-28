@@ -1,0 +1,41 @@
+{
+  "schema_version": "0.1",
+  "comparison_id": "cmp_2026-04-28_15_main_vs_alt2-migration",
+  "artifact_type": "daily_comparison",
+  "root_id": "root_2026_04_14",
+  "branch_a": "branch_root_2026_04_14_main",
+  "branch_b": "branch_root_2026_04_14_alt2-migration",
+  "story_day": 15,
+  "snapshot_date": "2026-04-28",
+  "snapshot_ids": [
+    "snap_2026-04-28_branch_root_2026_04_14_main",
+    "snap_2026-04-28_branch_root_2026_04_14_alt2-migration"
+  ],
+  "package_ref": {
+    "package_id": "yysworld-pipeline-v0.1",
+    "package_created_at": "2026-04-28T12:00:00Z",
+    "package_hash": "sha256:claude-code-subscription"
+  },
+  "model_refs": [{"provider": "anthropic", "model_id": "claude-code-subscription", "role": "comparator", "runtime_class": "interactive"}],
+  "content": {
+    "divergence_summary": "Main's near-miss was at an established site being tended; alt2-migration's was at the forward edge of its range during an active push. Main recovered food from the same spot that nearly dropped it. Alt2-migration took a real health cost but the fall paid something back: the colony ground is now in view.",
+    "branch_a_path": "YY returned to the east channel to tend it; bark shelf gave underfoot; caught a fork; foraged from that position; food up slightly, health minor dip, attention high; east path now has a gap where the shelf was.",
+    "branch_b_path": "YY pushed northeast along the stream toward the rise; bank gave at the curve; scrambled back; cold water, real health cost; from the recovery position the colony ground is visible past the rise for the first time — closer than any deliberate approach had reached.",
+    "key_differences": [
+      "risk profile: main tending established territory, alt2-migration advancing at its physical limit",
+      "health cost: main minor dip (0.77→0.74), alt2-migration significant drop (0.54→0.48)",
+      "what the hazard gave back: main kept its channel, alt2-migration gained a sightline to the colony",
+      "food: main up slightly, alt2-migration unchanged",
+      "attention: both up, but for different reasons — main from survival reflex, alt2-migration from new directional information",
+      "forward momentum: main consolidating, alt2-migration now has visual confirmation of the goal"
+    ],
+    "shared_elements": [
+      "near-miss physical hazard during routine work",
+      "recovered without serious injury",
+      "continued the day after the close call",
+      "health cost in both branches",
+      "unchanged inventory and goals"
+    ]
+  },
+  "created_at": "2026-04-28T12:00:00Z"
+}

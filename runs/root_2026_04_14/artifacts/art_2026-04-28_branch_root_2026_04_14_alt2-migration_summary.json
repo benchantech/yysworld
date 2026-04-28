@@ -1,0 +1,30 @@
+{
+  "schema_version": "0.1",
+  "artifact_id": "art_2026-04-28_branch_root_2026_04_14_alt2-migration_summary",
+  "artifact_type": "daily_summary",
+  "snapshot_id": "snap_2026-04-28_branch_root_2026_04_14_alt2-migration",
+  "root_id": "root_2026_04_14",
+  "branch_id": "branch_root_2026_04_14_alt2-migration",
+  "package_ref": {
+    "package_id": "yysworld-pipeline-v0.1",
+    "package_created_at": "2026-04-28T12:00:00Z",
+    "package_hash": "sha256:claude-code-subscription"
+  },
+  "model_refs": [{"provider": "anthropic", "model_id": "claude-code-subscription", "role": "summarizer", "runtime_class": "interactive"}],
+  "comparison_contract_version": "0.1",
+  "content": {
+    "title": "The Bank Gave First",
+    "tone": "winded, undefeated, closer than before",
+    "narrative": "The bank gave at the curve, not on the approach.\n\nYY was three-quarters of the way to the rise when the northeast bank edge released — a wedge of undermined soil, silent, dropping into the stream. One foot had just committed to it. The scramble back was loud, ungainly, both hands in the root-mat, cold water at the ankle.\n\nOn stable ground, the body ran its check. Everything present. The bank edge was two feet away.\n\nPast it, through the gap the collapse had opened: the rise. And past the rise, at the right angle for the first time from any ground YY had stood on, the sound of the colony — faint, directional, unmistakable.\n\nThe fall had not reached it. The fall had faced it.",
+    "state_note": "Stream bank collapsed at the northeast curve during the east push; scrambled back to stable ground; health cost from cold water exposure and effort; from the recovery position, colony ground is visible past the rise for the first time; food unchanged.",
+    "summary": "YY pushed northeast along the stream and the bank gave underfoot at the curve; scrambled back and from the recovery position heard the colony clearly for the first time — closer than any deliberate approach had reached.",
+    "state_delta": {
+      "food": "0.50 → 0.50",
+      "attention": "0.72 → 0.79",
+      "health": "0.54 → 0.48"
+    },
+    "branch_created": false,
+    "world_anchor": "World Day for Safety and Health at Work (April 28) — the physical cost that daily labor extracts, invisible until the moment it nearly isn't"
+  },
+  "created_at": "2026-04-28T12:00:00Z"
+}
