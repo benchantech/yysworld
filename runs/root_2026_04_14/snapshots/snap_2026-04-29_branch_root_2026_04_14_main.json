@@ -1,0 +1,93 @@
+{
+  "schema_version": "0.1",
+  "snapshot_id": "snap_2026-04-29_branch_root_2026_04_14_main",
+  "root_id": "root_2026_04_14",
+  "branch_id": "branch_root_2026_04_14_main",
+  "story_day": 16,
+  "snapshot_date": "2026-04-29",
+  "time_policy": "nightly_auto_advance",
+  "package_ref": {
+    "package_id": "yysworld-pipeline-v0.1",
+    "package_created_at": "2026-04-29T12:00:00Z",
+    "package_hash": "sha256:claude-code-subscription"
+  },
+  "model_refs": [{"provider": "anthropic", "model_id": "claude-code-subscription", "role": "generator", "runtime_class": "interactive"}],
+  "event_refs": ["evt_2026-04-29_017"],
+  "decision_refs": [],
+  "state_before": {
+    "condition": {"health": 0.74, "food": 0.57, "attention": 0.88},
+    "inventory": [
+      {
+        "id": "stag_fur_east_path",
+        "label": "pale fur tuft (east path channel edge bark)",
+        "acquired_day": 14,
+        "tradeable": true,
+        "notes": "winter coat, shedding; coloring paler than anything in current territory or mapped west range; cold-country texture; implies the visitor came from colder, older ground further than YY has ranged"
+      }
+    ],
+    "active_burdens": [],
+    "goals": {"primary": "find_reliable_supply", "secondary": "tend_east_channel"},
+    "reaction_overrides": {},
+    "trait_deviations": {"curious": 0.05, "pragmatic": 0.08},
+    "identity_notes": [
+      "the grey-brown squirrel returned with different posture — carrying something, not confrontational",
+      "the read started and didn't complete; attention too low to commit to exchange",
+      "the offer closed without trade; the east boundary sits differently for it",
+      "west spot produced again; the line held; no inventory gained",
+      "heat cut the west run yield; came back thinner than the trip justified",
+      "the offer not taken has a shape now — visible from the shade line looking east",
+      "the column moved west to east — the same direction as the unresolved offer; attention followed it longer than the forage could afford",
+      "rain flooded the west spot — yield near zero; sheltered under the root cross again; east offer is the only route that isn't blocked",
+      "seedlings at the flooded west site: translucent, clustered, a week from anything useful — but the ground remembered",
+      "trade executed at the east boundary: pine cone for cache marker; the east channel is now confirmed two-way",
+      "food improved through trade, not forage — a different kind of supply",
+      "a page of dense markings caught in the branch fork above the root cross; looked at it longer than it required — the markings didn't open, but the looking held something the day needed",
+      "a woodpecker above the root cross kept exact intervals — nothing organic moves like that; the foraging window passed during the count",
+      "severe storm forced shelter at the root cross all day; grabbed forage in the pressure-drop lull before the wind hit; ate during the wait; east channel inaccessible",
+      "beetles and grubs on the root cross bark all morning — post-storm emergence; ate in the branches without ranging; east channel clear and producing again",
+      "bird-call sequence moved along the east path — not alarm; reached the channel edge in time; a large stag paused there and moved on; took the pale fur it left on the bark",
+      "the bark shelf at the east channel edge gave underfoot — stag-weight had stressed it; caught a fork above; foraging continued from that position; the east path has a new gap where familiar ground used to be"
+    ]
+  },
+  "state_after": {
+    "condition": {"health": 0.68, "food": 0.52, "attention": 0.92},
+    "inventory": [
+      {
+        "id": "stag_fur_east_path",
+        "label": "pale fur tuft (east path channel edge bark)",
+        "acquired_day": 14,
+        "tradeable": true,
+        "notes": "winter coat, shedding; coloring paler than anything in current territory or mapped west range; cold-country texture; implies the visitor came from colder, older ground further than YY has ranged"
+      }
+    ],
+    "active_burdens": [],
+    "goals": {"primary": "find_reliable_supply", "secondary": "tend_east_channel"},
+    "reaction_overrides": {},
+    "trait_deviations": {"curious": 0.05, "pragmatic": 0.08},
+    "identity_notes": [
+      "the grey-brown squirrel returned with different posture — carrying something, not confrontational",
+      "the read started and didn't complete; attention too low to commit to exchange",
+      "the offer closed without trade; the east boundary sits differently for it",
+      "west spot produced again; the line held; no inventory gained",
+      "heat cut the west run yield; came back thinner than the trip justified",
+      "the offer not taken has a shape now — visible from the shade line looking east",
+      "the column moved west to east — the same direction as the unresolved offer; attention followed it longer than the forage could afford",
+      "rain flooded the west spot — yield near zero; sheltered under the root cross again; east offer is the only route that isn't blocked",
+      "seedlings at the flooded west site: translucent, clustered, a week from anything useful — but the ground remembered",
+      "trade executed at the east boundary: pine cone for cache marker; the east channel is now confirmed two-way",
+      "food improved through trade, not forage — a different kind of supply",
+      "a page of dense markings caught in the branch fork above the root cross; looked at it longer than it required — the markings didn't open, but the looking held something the day needed",
+      "a woodpecker above the root cross kept exact intervals — nothing organic moves like that; the foraging window passed during the count",
+      "severe storm forced shelter at the root cross all day; grabbed forage in the pressure-drop lull before the wind hit; ate during the wait; east channel inaccessible",
+      "beetles and grubs on the root cross bark all morning — post-storm emergence; ate in the branches without ranging; east channel clear and producing again",
+      "bird-call sequence moved along the east path — not alarm; reached the channel edge in time; a large stag paused there and moved on; took the pale fur it left on the bark",
+      "the bark shelf at the east channel edge gave underfoot — stag-weight had stressed it; caught a fork above; foraging continued from that position; the east path has a new gap where familiar ground used to be",
+      "the chorus saturated familiar ground all day — root cross and east channel both unworkable; climbed higher than the morning route into the upper canopy where sound thinned with altitude; forage there was almost nothing; cold and wind cut through; came down late and thinner"
+    ]
+  },
+  "change_summary": {
+    "notable_shift": "saturating day-long chorus made familiar working ground unusable; climbed to the upper canopy to find quiet; spent the day at altitude in cold wind with meager forage; food down, health down from exposure, attention sharpened by the filtering",
+    "branch_created": false
+  },
+  "created_at": "2026-04-29T12:00:00Z"
+}

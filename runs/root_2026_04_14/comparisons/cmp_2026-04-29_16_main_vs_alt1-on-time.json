@@ -1,0 +1,40 @@
+{
+  "schema_version": "0.1",
+  "comparison_id": "cmp_2026-04-29_16_main_vs_alt1-on-time",
+  "artifact_type": "daily_comparison",
+  "root_id": "root_2026_04_14",
+  "branch_a": "branch_root_2026_04_14_main",
+  "branch_b": "branch_root_2026_04_14_alt1-on-time",
+  "story_day": 16,
+  "snapshot_date": "2026-04-29",
+  "snapshot_ids": [
+    "snap_2026-04-29_branch_root_2026_04_14_main",
+    "snap_2026-04-29_branch_root_2026_04_14_alt1-on-time"
+  ],
+  "package_ref": {
+    "package_id": "yysworld-pipeline-v0.1",
+    "package_created_at": "2026-04-29T12:00:00Z",
+    "package_hash": "sha256:claude-code-subscription"
+  },
+  "model_refs": [{"provider": "anthropic", "model_id": "claude-code-subscription", "role": "comparator", "runtime_class": "interactive"}],
+  "content": {
+    "divergence_summary": "Both branches faced the same saturating chorus and bought silence with the body, but the geometry of the purchase differed: main bought distance vertically by climbing into thin canopy where wind replaced sound; alt1-on-time bought it horizontally and downward by mapping the corridor's drainage depression and lying in cold wet leaf-litter. Both posted the same health drop; their costs lived in different parts of the body.",
+    "branch_a_path": "Found root cross and east channel both unworkable in the chorus; climbed higher than any morning route into the upper canopy where sound thinned with altitude; spent the day at altitude with almost no forage and cold wind through the fur; food down, health down, attention sharpened.",
+    "branch_b_path": "Traced the shade corridor through the chorus noting where sound thinned; found the drainage depression was the day's only acoustic shelter; camped in cold wet leaf-litter through the loudest hours; completed the west section after the chorus eased; corridor map gained a third notation; food slightly down, health down from cold, attention up.",
+    "key_differences": [
+      "axis of escape: main went vertical (altitude), alt1-on-time went horizontal-and-low (drainage depression)",
+      "what masked the sound: main relied on distance and wind; alt1-on-time relied on terrain geometry and running water",
+      "form of the cost: main paid in wind-cold and meager forage at height; alt1-on-time paid in damp ground-cold from lying in leaf-litter",
+      "what was learned: main learned the upper canopy works as auditory shelter at the price of forage; alt1-on-time added a third documented use to the corridor map (drainage, migration, sound)",
+      "body posture: main spent the day mobile and gripping high branches; alt1-on-time spent it lying low and still"
+    ],
+    "shared_elements": [
+      "saturating day-long chorus made familiar working ground unusable",
+      "both spent the body to find a single quiet pocket",
+      "both had food drop and health drop from cold exposure",
+      "both had attention sharpened by the filtering work",
+      "both inventories and goals unchanged"
+    ]
+  },
+  "created_at": "2026-04-29T12:00:00Z"
+}

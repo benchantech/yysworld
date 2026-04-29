@@ -1,0 +1,30 @@
+{
+  "schema_version": "0.1",
+  "artifact_id": "art_2026-04-29_branch_root_2026_04_14_alt1-on-time_summary",
+  "artifact_type": "daily_summary",
+  "snapshot_id": "snap_2026-04-29_branch_root_2026_04_14_alt1-on-time",
+  "root_id": "root_2026_04_14",
+  "branch_id": "branch_root_2026_04_14_alt1-on-time",
+  "package_ref": {
+    "package_id": "yysworld-pipeline-v0.1",
+    "package_created_at": "2026-04-29T12:00:00Z",
+    "package_hash": "sha256:claude-code-subscription"
+  },
+  "model_refs": [{"provider": "anthropic", "model_id": "claude-code-subscription", "role": "summarizer", "runtime_class": "interactive"}],
+  "comparison_contract_version": "0.1",
+  "content": {
+    "title": "The Hush in the Drain",
+    "tone": "methodical, attentive, cold",
+    "narrative": "The corridor opened into the chorus. Every tree along the western run carried at least two voices — alarm above frog above insect, layered down to ground level.\n\nYY moved through it noting where the sound thinned. At the midpoint waypoint — yesterday's soft spot — the noise was the same as anywhere else. Past it, where the corridor sank into the drainage line, it changed.\n\nThe depression carried running water from the storm; the cool air sat low; the depression's own walls broke up the chorus from above. Standing in it, the sound was halved. Lying in it, halved again.\n\nYY camped in the drainage all afternoon, body in damp leaf-litter, water moving past at the side. The cold seeped in from below faster than the fur could hold against it. The map gained a third notation: drainage line, migration line, acoustic shelter.\n\nBy the time the chorus eased and YY climbed out, the cold had moved through the fur into the chest. The corridor had a third use. The price for it sat in the body for the whole walk back.",
+    "state_note": "Mapped the corridor's drainage depression as the day's only acoustic shelter; sound halved at depression-edge, halved again lying low; camped in cold wet through the chorus duration; west section completed late; cold settled deep; food slightly down, health down from cold exposure, attention up.",
+    "summary": "YY traced the shade corridor through a saturating chorus and found the drainage line was the only stretch where the sound did not carry, camped in the cold wet there, and added a third use to the corridor map at the body's expense.",
+    "state_delta": {
+      "food": "0.58 → 0.54",
+      "attention": "0.87 → 0.90",
+      "health": "0.74 → 0.68"
+    },
+    "branch_created": false,
+    "world_anchor": "International Noise Awareness Day (April 29) — a day for noticing what sound costs and what silence asks for"
+  },
+  "created_at": "2026-04-29T12:00:00Z"
+}

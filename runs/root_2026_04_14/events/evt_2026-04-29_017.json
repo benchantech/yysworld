@@ -1,0 +1,25 @@
+{
+  "schema_version": "0.1",
+  "event_id": "evt_2026-04-29_017",
+  "root_id": "root_2026_04_14",
+  "story_day": 16,
+  "occurred_at": "2026-04-29T12:00:00Z",
+  "event_type": "ambient_sensory_overload",
+  "canonical_truth": {
+    "summary": "An unbroken layered chorus rises before dawn and holds through the day — frogs, insects, alarm calls, woodpeckers — saturating familiar working ground; nowhere on routine territory stays quiet long enough to think in.",
+    "entities": ["YY", "the_canopy_chorus", "root_cross", "shade_corridor", "stream_bank_recovery_position"],
+    "location": "branch-specific: upper canopy above root cross / shade corridor drainage line / recovery position at the northeast curve",
+    "concrete_outcome": "Each branch finds a single quiet pocket and pays for it in body — altitude and wind, cold drainage water, or stillness without food."
+  },
+  "perception_prompt": {
+    "noticeable_surface": "the sound is loud enough that ordinary working surfaces stop being usable for thinking; every branch must spend something to find one place quiet enough to function in",
+    "ambiguity_level": 0.15
+  },
+  "tags": ["sound", "silence", "retreat", "physical_cost", "attention", "auditory", "ambient_pressure"],
+  "created_at": "2026-04-29T12:00:00Z",
+  "authorial_note": {
+    "real_world_inspiration": "International Noise Awareness Day (April 29) — a day for noticing what sound costs and what silence asks for",
+    "translation_logic": "Noise Awareness becomes literal: the island's auditory field saturates and the cost of silence shows up on the body of whoever wants it; each branch's strategy for finding quiet is the strategy that branch already trusts",
+    "restraint_reason": "The day enters as direct sensation, not concept; YY does not narrate the chorus or its meaning, only encounters it and the cost of stepping outside it"
+  }
+}

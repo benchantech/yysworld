@@ -1,0 +1,30 @@
+{
+  "schema_version": "0.1",
+  "artifact_id": "art_2026-04-29_branch_root_2026_04_14_alt2-migration_summary",
+  "artifact_type": "daily_summary",
+  "snapshot_id": "snap_2026-04-29_branch_root_2026_04_14_alt2-migration",
+  "root_id": "root_2026_04_14",
+  "branch_id": "branch_root_2026_04_14_alt2-migration",
+  "package_ref": {
+    "package_id": "yysworld-pipeline-v0.1",
+    "package_created_at": "2026-04-29T12:00:00Z",
+    "package_hash": "sha256:claude-code-subscription"
+  },
+  "model_refs": [{"provider": "anthropic", "model_id": "claude-code-subscription", "role": "summarizer", "runtime_class": "interactive"}],
+  "comparison_contract_version": "0.1",
+  "content": {
+    "title": "The Listening Hour",
+    "tone": "still, patient, near-empty",
+    "narrative": "Before dawn, from the recovery position past the unstable bank edge, YY could already not hear the colony. The chorus had taken the air everywhere at once.\n\nYY did not leave the crouch. The bearing past the rise had been earned the day before by the bank giving way; losing it to a day's foraging would mean another day to find again.\n\nThe chorus did not slacken through morning. Insects in the bank grass; tree frogs in the standing water from the storm; alarm calls passing east-to-west three times. YY held still. The body cooled. The food in the system from the last meal ran down without replacement.\n\nOnce, mid-afternoon, the chorus thinned to a single woodpecker working the dead tree closer to the colony than any sound YY had ever isolated. The hum was not under it yet. The chorus came back.\n\nLate afternoon, for maybe fifty heartbeats, the chorus broke. The colony's hum returned — same direction, same distance, unmoved. YY logged the bearing and did not stand up.\n\nCold had reached the spine by then. The bearing held. YY had not eaten.",
+    "state_note": "Held the recovery position through a saturating day-long chorus to keep the colony's bearing — refused to move or forage; brief late window confirmed colony unmoved at same direction and distance; food and health down from stillness and cold; attention sharpened by the long listening.",
+    "summary": "YY held the recovery position through a day-long chorus that drowned the colony's hum, refused to move or forage to keep the bearing, and in a brief late window confirmed the colony was unmoved past the rise.",
+    "state_delta": {
+      "food": "0.50 → 0.45",
+      "attention": "0.79 → 0.84",
+      "health": "0.48 → 0.42"
+    },
+    "branch_created": false,
+    "world_anchor": "International Noise Awareness Day (April 29) — a day for noticing what sound costs and what silence asks for"
+  },
+  "created_at": "2026-04-29T12:00:00Z"
+}
