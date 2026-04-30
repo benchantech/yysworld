@@ -7,11 +7,11 @@
   "created_at": "2026-04-20T09:00:00Z",
   "status": "active",
   "state": {
-    "story_day": 16,
+    "story_day": 17,
     "condition": {
-      "health": 0.42,
-      "food": 0.45,
-      "attention": 0.84
+      "health": 0.46,
+      "food": 0.54,
+      "attention": 0.94
     },
     "inventory": [
       {
@@ -29,9 +29,9 @@
     },
     "reaction_overrides": {},
     "trait_deviations": {
-      "curious": 0.18,
+      "curious": 0.20,
       "pragmatic": 0.02,
-      "restless": 0.15
+      "restless": 0.10
     },
     "identity_notes": [
       "the grey-brown squirrel returned with different posture — carrying something, not confrontational",
@@ -53,9 +53,11 @@
       "post-storm beetles and grubs covered the clearing's low branch and stream-edge dead tree — more food than the previous two days combined; ate without ranging east; health recovering; the clearing became a larder",
       "bird-call sequence reached the clearing faint and late — ran west fast, ate on the move; arrived at the east path to find impressions in the ground and unsettled birds; the stag had already passed; the clearing was too far east",
       "stream bank gave at the northeast curve — scrambled back to stable ground; cold water at the ankle; from the recovery position, past the unstable edge, the colony ground is visible past the rise for the first time from anywhere YY has stood",
-      "held the recovery position from yesterday's bank collapse through a saturating chorus — refused to move, did not eat; brief late window confirmed colony unmoved past the rise at the same direction and distance; cold reached the spine; the bearing held"
+      "held the recovery position from yesterday's bank collapse through a saturating chorus — refused to move, did not eat; brief late window confirmed colony unmoved past the rise at the same direction and distance; cold reached the spine; the bearing held",
+      "moved west to the clearing larder at first light to break the fast — beetles and grubs still working the low branch and the stream-edge dead tree; ate the first real meal in over a day; came back east before dusk to keep the bearing past the rise",
+      "long after dark, from the recovery position, the sky over the rise toward the colony moved in slow vertical pale-green light — same direction as the buried hum, same direction as the bearing; held the position; the light went on for a long time and then did not; whether the sky had a relationship to the colony was left where it was"
     ]
   },
   "drift_flags": [],
-  "last_updated_at": "2026-04-29T12:00:00Z"
+  "last_updated_at": "2026-04-30T12:00:00Z"
 }

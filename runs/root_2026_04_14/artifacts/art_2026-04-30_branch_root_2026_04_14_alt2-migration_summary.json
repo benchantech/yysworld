@@ -1,0 +1,30 @@
+{
+  "schema_version": "0.1",
+  "artifact_id": "art_2026-04-30_branch_root_2026_04_14_alt2-migration_summary",
+  "artifact_type": "daily_summary",
+  "snapshot_id": "snap_2026-04-30_branch_root_2026_04_14_alt2-migration",
+  "root_id": "root_2026_04_14",
+  "branch_id": "branch_root_2026_04_14_alt2-migration",
+  "package_ref": {
+    "package_id": "yysworld-pipeline-v0.1",
+    "package_created_at": "2026-04-30T12:00:00Z",
+    "package_hash": "sha256:claude-code-subscription"
+  },
+  "model_refs": [{"provider": "anthropic", "model_id": "claude-code-subscription", "role": "summarizer", "runtime_class": "interactive"}],
+  "comparison_contract_version": "0.1",
+  "content": {
+    "title": "Light Over The Rise",
+    "tone": "cold, lifted, direct",
+    "narrative": "The recovery position had to be left.\n\nFirst light, YY stood up out of the crouch slow and stiff. The cold from yesterday had not gone. The fast had stretched into something the body would not carry further.\n\nWest, then. To the clearing larder, fast as the joints would move. The beetles and grubs were still working the low branch and the stream-edge dead tree. YY ate without ranging. The first real meal in over a day. The body found a register it had been missing.\n\nThe ground east called before YY was full. The bearing had been earned by yesterday's bank collapse and held through yesterday's chorus. It would not hold itself.\n\nYY came back east before the sun reached the canopy edge. The recovery position was where it had been left. The unstable bank below was where it had been left. YY settled in.\n\nFull dark came down. The hum past the rise was buried under the night insects.\n\nAnd then the sky changed.\n\nIt was not weather. The light moved up from above the rise — pale green, slow, vertical — the same direction the bearing pointed, the same direction the colony lived. A fainter red rode behind the green. There was no thunder. No cloud. No wind to carry the colour.\n\nYY did not move.\n\nThe sky was now a thing over the colony. Whether the colony knew the sky, or the sky knew the colony, was not for YY to say. The bands continued their slow rise. The bearing held inside them.\n\nThe light went on for a long time and then did not. The sky was again the sky. The cold had not left the spine. The bearing had not left the body.",
+    "state_note": "Broke the fast at the clearing larder at first light and returned east before dark to keep the bearing past the rise; long after dark, slow vertical light moved in the sky over the rise toward the colony — same direction as the bearing; held the position through it; food up, health slightly up, attention pulled by the alignment.",
+    "summary": "YY broke a day-and-a-half fast at the clearing larder and returned east before dark to hold the colony's bearing; long after dark, slow vertical light moved in the sky over the rise — the same direction as the bearing — and YY held the position through it.",
+    "state_delta": {
+      "food": "0.45 → 0.54",
+      "attention": "0.84 → 0.94",
+      "health": "0.42 → 0.46"
+    },
+    "branch_created": false,
+    "world_anchor": "April 30 2026 — geomagnetic storm onset (Kp 3–5, G1) from a coronal-hole high-speed solar wind stream brought aurora-band light into lower latitudes than usual"
+  },
+  "created_at": "2026-04-30T12:00:00Z"
+}

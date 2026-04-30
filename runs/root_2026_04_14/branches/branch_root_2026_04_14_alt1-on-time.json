@@ -7,11 +7,11 @@
   "created_at": "2026-04-14T20:40:00Z",
   "status": "active",
   "state": {
-    "story_day": 16,
+    "story_day": 17,
     "condition": {
-      "health": 0.68,
-      "food": 0.54,
-      "attention": 0.90
+      "health": 0.74,
+      "food": 0.60,
+      "attention": 0.94
     },
     "inventory": [
       {
@@ -36,7 +36,7 @@
     },
     "reaction_overrides": {},
     "trait_deviations": {
-      "curious": 0.12,
+      "curious": 0.15,
       "restless": -0.05
     },
     "identity_notes": [
@@ -57,9 +57,11 @@
       "post-storm emergence on corridor dead wood — ate while completing the interrupted mapping run; western boundary now complete; hazelnut untouched; corridor delivered food and map on the same morning",
       "stag arrived at the corridor midpoint waypoint and browsed — the waypoint had been marked for drainage and migration; a visitor from outside the map paused there for the same reason",
       "foot sank at the corridor midpoint waypoint — drainage and stag-weight had softened the ground beneath the surface compaction; pulled free; waypoint notation updated; the run was shortened to the west section only",
-      "the corridor's drainage line proved an acoustic shelter on the loud day — the depression and running water broke the chorus from above; camped in cold wet through the loudest hours; corridor map gained a third notation: drainage, migration, sound; cold stayed deep in the body"
+      "the corridor's drainage line proved an acoustic shelter on the loud day — the depression and running water broke the chorus from above; camped in cold wet through the loudest hours; corridor map gained a third notation: drainage, migration, sound; cold stayed deep in the body",
+      "post-chorus emergence delivered a second wave of beetles and grubs along the corridor's dead wood — ate while finishing the west-section notation; added a small spur where the drainage line forks below the midpoint; cold from yesterday lifted off the body",
+      "long after dark, looking up through the canopy gap that runs the corridor's drainage, the north sky moved in slow vertical pale-green and faint-red light — no weather, no sound; the corridor's map gained a fourth notation: sky window; the same depression that broke the chorus from above also opens the sky from below"
     ]
   },
   "drift_flags": [],
-  "last_updated_at": "2026-04-29T12:00:00Z"
+  "last_updated_at": "2026-04-30T12:00:00Z"
 }

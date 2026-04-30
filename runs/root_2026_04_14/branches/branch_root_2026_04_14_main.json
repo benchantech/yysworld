@@ -7,11 +7,11 @@
   "created_at": "2026-04-14T00:00:00Z",
   "status": "active",
   "state": {
-    "story_day": 16,
+    "story_day": 17,
     "condition": {
-      "health": 0.68,
-      "food": 0.52,
-      "attention": 0.92
+      "health": 0.72,
+      "food": 0.58,
+      "attention": 0.95
     },
     "inventory": [
       {
@@ -29,8 +29,8 @@
     },
     "reaction_overrides": {},
     "trait_deviations": {
-      "curious": 0.05,
-      "pragmatic": 0.08
+      "curious": 0.08,
+      "pragmatic": 0.05
     },
     "identity_notes": [
       "the grey-brown squirrel returned with different posture — carrying something, not confrontational",
@@ -50,9 +50,11 @@
       "beetles and grubs on the root cross bark all morning — post-storm emergence; ate in the branches without ranging; east channel clear and producing again",
       "bird-call sequence moved along the east path — not alarm; reached the channel edge in time; a large stag paused there and moved on; took the pale fur it left on the bark",
       "the bark shelf at the east channel edge gave underfoot — stag-weight had stressed it; caught a fork above; foraging continued from that position; the east path has a new gap where familiar ground used to be",
-      "the chorus saturated familiar ground all day — root cross and east channel both unworkable; climbed higher than the morning route into the upper canopy where sound thinned with altitude; forage there was almost nothing; cold and wind cut through; came down late and thinner"
+      "the chorus saturated familiar ground all day — root cross and east channel both unworkable; climbed higher than the morning route into the upper canopy where sound thinned with altitude; forage there was almost nothing; cold and wind cut through; came down late and thinner",
+      "came down at first light to a delayed beetle emergence on the root cross bark — the chorus had held the insects under cover yesterday; ate well; warmed through the day on familiar ground",
+      "long after dark, the northern sky over the bare upper branches turned a colour that did not belong to night — slow vertical bands moving without weather or sound; held the position past midnight; the light continued without explaining itself; the sky has a register YY had no category for"
     ]
   },
   "drift_flags": [],
-  "last_updated_at": "2026-04-29T12:00:00Z"
+  "last_updated_at": "2026-04-30T12:00:00Z"
 }

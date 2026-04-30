@@ -1,0 +1,25 @@
+{
+  "schema_version": "0.1",
+  "event_id": "evt_2026-04-30_018",
+  "root_id": "root_2026_04_14",
+  "story_day": 17,
+  "occurred_at": "2026-04-30T12:00:00Z",
+  "event_type": "sky_anomaly_nocturnal",
+  "canonical_truth": {
+    "summary": "A G1-level geomagnetic storm driven by a coronal-hole high-speed solar wind stream pushed auroral light into the temperate latitudes well below its usual range; visible long after sunset as slow vertical bands of pale green and faint red in the northern sky, without weather, sound, or apparent source.",
+    "entities": ["coronal_hole", "solar_wind_stream", "geomagnetic_field", "aurora", "north_sky"],
+    "location": "northern sky, observable from temperate forest latitudes",
+    "concrete_outcome": "the night sky over YY's territory carried a colour and motion the night does not normally have; the light moved for hours and then faded into ordinary dark"
+  },
+  "perception_prompt": {
+    "noticeable_surface": "long after sunset, the northern sky was not the colour it should be — slow vertical bands of pale green and faint red moving without weather, no thunder, no cloud — light that did not arrive from anywhere YY could name",
+    "ambiguity_level": 0.85
+  },
+  "tags": ["sky_anomaly", "beauty", "night", "north", "irregular_light", "attention_pull"],
+  "created_at": "2026-04-30T12:00:00Z",
+  "authorial_note": {
+    "real_world_inspiration": "April 30 2026 — geomagnetic storm onset (Kp 3–5, G1) from a coronal-hole high-speed solar wind stream brought aurora-band light into lower latitudes than usual",
+    "translation_logic": "Aurora is the rare physical event that arrives without weather and without sound — exactly the kind of perceptual anomaly YY's frame has no category for. Each branch sees the same sky from a different vantage: main from open canopy as pure anomaly, alt1 through the corridor's drainage gap as a fourth use of mapped ground, alt2 from the recovery position with the light over the colony's bearing.",
+    "restraint_reason": "The event is a sensory encounter, not a concept. YY does not name it 'aurora' or attribute it to the sun — the prose stays at the level of what the sky does, never what causes it. The beauty-reaction is compress per the calibrated default (scenario 8): minimal precise language, no exclamation."
+  }
+}

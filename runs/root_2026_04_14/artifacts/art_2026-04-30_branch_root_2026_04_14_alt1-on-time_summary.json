@@ -1,0 +1,30 @@
+{
+  "schema_version": "0.1",
+  "artifact_id": "art_2026-04-30_branch_root_2026_04_14_alt1-on-time_summary",
+  "artifact_type": "daily_summary",
+  "snapshot_id": "snap_2026-04-30_branch_root_2026_04_14_alt1-on-time",
+  "root_id": "root_2026_04_14",
+  "branch_id": "branch_root_2026_04_14_alt1-on-time",
+  "package_ref": {
+    "package_id": "yysworld-pipeline-v0.1",
+    "package_created_at": "2026-04-30T12:00:00Z",
+    "package_hash": "sha256:claude-code-subscription"
+  },
+  "model_refs": [{"provider": "anthropic", "model_id": "claude-code-subscription", "role": "summarizer", "runtime_class": "interactive"}],
+  "comparison_contract_version": "0.1",
+  "content": {
+    "title": "Fourth Notation",
+    "tone": "methodical, then arrested",
+    "narrative": "Morning began with the body still cold and the corridor still wet. YY moved slow along the dead wood, taking what the chorus had kept hidden — beetles, grubs, a second emergence riding behind the first.\n\nThe west section needed cleaning up. Yesterday's mapping had been done sound-first; today it could be done eye-first. YY worked it through midday, marking the spur where the drainage line forked below the midpoint. Two paces wide. A shorter shelter under bigger pressure than the main line. Worth knowing.\n\nThe sun cleared the depression by mid-afternoon. The leaves dried. The cold lifted off in pieces.\n\nYY stayed late. There was no reason to leave. The work was honest and the body was warm enough now to want to finish.\n\nFull dark came down through the corridor's canopy gap as it always did — the same line of open sky that ran the drainage. YY was lying along the depression edge, addressing the new spur, when the gap stopped being dark.\n\nIt did not turn light. It turned a colour that did not belong to night. Pale green, slow, vertical. A fainter red behind it. The bands moved up the canopy gap in their own time.\n\nThere was no weather. No sound that fit the change.\n\nYY held the position. The same depression that had broken the chorus from above was now opening the sky from below. The corridor had a fourth notation. Drainage, migration, sound — and now this.\n\nThe light went on. YY watched until the cold moved back into the chest, and then climbed home along the route the body knew without thinking.",
+    "state_note": "Warmed back through corridor forage on a second emergence wave and added a drainage-fork spur to the west-section notation; long after dark the canopy gap above the drainage carried slow vertical light without weather — corridor map gained a fourth notation: sky window; food up, health up, attention up.",
+    "summary": "YY took a second wave of post-chorus emergence along the corridor's dead wood and added a drainage-fork spur to the west map; long after dark, the canopy gap above the depression carried slow vertical light without weather, and the corridor's map gained a fourth notation.",
+    "state_delta": {
+      "food": "0.54 → 0.60",
+      "attention": "0.90 → 0.94",
+      "health": "0.68 → 0.74"
+    },
+    "branch_created": false,
+    "world_anchor": "April 30 2026 — geomagnetic storm onset (Kp 3–5, G1) from a coronal-hole high-speed solar wind stream brought aurora-band light into lower latitudes than usual"
+  },
+  "created_at": "2026-04-30T12:00:00Z"
+}

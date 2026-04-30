@@ -1,0 +1,39 @@
+{
+  "schema_version": "0.1",
+  "comparison_id": "cmp_2026-04-30_17_main_vs_alt2-migration",
+  "artifact_type": "daily_comparison",
+  "root_id": "root_2026_04_14",
+  "branch_a": "branch_root_2026_04_14_main",
+  "branch_b": "branch_root_2026_04_14_alt2-migration",
+  "story_day": 17,
+  "snapshot_date": "2026-04-30",
+  "snapshot_ids": [
+    "snap_2026-04-30_branch_root_2026_04_14_main",
+    "snap_2026-04-30_branch_root_2026_04_14_alt2-migration"
+  ],
+  "package_ref": {
+    "package_id": "yysworld-pipeline-v0.1",
+    "package_created_at": "2026-04-30T12:00:00Z",
+    "package_hash": "sha256:claude-code-subscription"
+  },
+  "model_refs": [{"provider": "anthropic", "model_id": "claude-code-subscription", "role": "comparator", "runtime_class": "interactive"}],
+  "content": {
+    "divergence_summary": "Both branches saw the same northern-sky light long after dark, but their bodies and locations gave the watching a different weight. Main saw it from recovered, well-fed familiar ground as pure anomaly; alt2 saw it from the recovery position past an unstable bank, in a body still cold and barely fed, with the light moving over the same direction as the colony's bearing.",
+    "branch_a_path": "Came down from yesterday's high retreat, ate well on a delayed beetle emergence at the root cross, recovered through the day, and held still through an unfamiliar light in the open northern sky.",
+    "branch_b_path": "Broke a day-and-a-half fast at the clearing larder at first light and returned east before dark to keep the colony bearing past the rise; long after dark, slow vertical light moved in the sky over the rise — the same direction as the bearing — and YY held the position through it.",
+    "key_differences": [
+      "main's body was warm, fed, and on familiar safe ground when the light arrived; alt2's body was cold to the spine, barely refed, and held in the recovery position above an unstable bank",
+      "for main, the light had no direction-of-meaning — it was just there in the open sky; for alt2, the light moved over the same bearing as the colony, giving the sky a relationship to the work the body has been holding",
+      "main's day was a quiet recovery on home ground; alt2's day was a forced west run for food and a forced east return to keep a bearing the body had earned through risk",
+      "main's attention rose to 0.95 from sky-anomaly without context; alt2's attention rose to 0.94 from the alignment of light and bearing — different routes to nearly the same place",
+      "main holds 0.72 health and 0.58 food; alt2 holds 0.46 health and 0.54 food — alt2 paid more and is still paying"
+    ],
+    "shared_elements": [
+      "both witnessed the same slow vertical pale-green light moving in the night sky without weather or sound",
+      "both held position through the watching — neither moved, neither closed the moment with action",
+      "both refused to name or explain the light",
+      "for both, the day before had cost the body and the day's recovery was incomplete"
+    ]
+  },
+  "created_at": "2026-04-30T12:00:00Z"
+}
