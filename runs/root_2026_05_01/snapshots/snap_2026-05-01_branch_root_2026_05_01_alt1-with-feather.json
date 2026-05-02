@@ -1,0 +1,75 @@
+{
+  "schema_version": "0.1",
+  "snapshot_id": "snap_2026-05-01_branch_root_2026_05_01_alt1-with-feather",
+  "root_id": "root_2026_05_01",
+  "branch_id": "branch_root_2026_05_01_alt1-with-feather",
+  "story_day": 1,
+  "snapshot_date": "2026-05-01",
+  "time_policy": "nightly_auto_advance",
+  "package_ref": {
+    "package_id": "yysworld-pipeline-v0.1",
+    "package_created_at": "2026-05-01T20:30:00Z",
+    "package_hash": "sha256:claude-code-subscription"
+  },
+  "model_refs": [
+    {
+      "provider": "anthropic",
+      "model_id": "claude-code-subscription",
+      "role": "generator",
+      "runtime_class": "interactive"
+    }
+  ],
+  "event_refs": ["evt_2026-05-01_001"],
+  "decision_refs": ["dec_2026-05-01_001"],
+  "state_before": {
+    "story_day": 0,
+    "condition": { "health": 0.85, "food": 0.30, "attention": 0.70 },
+    "inventory": [
+      {
+        "id": "heron_feather",
+        "label": "the heron feather",
+        "acquired_day": 0,
+        "tradeable": true,
+        "notes": "A long blue-grey heron flight feather, carried from some unseen prior moment before this root began. Recognizable as exotic — herons pass through but rarely shed where they can be seen. Catalog reference: world-seed.json → inventory_catalog.heron_feather. Mira will read it as status; Tock will recognize and circle for it; Bramble will admire it loudly."
+      }
+    ],
+    "active_burdens": ["winter_thinning"],
+    "goals": { "primary": "find_food", "secondary": "learn_the_neighbors" },
+    "reaction_overrides": {},
+    "trait_deviations": {},
+    "identity_notes": [
+      "Late winter waking — YY emerges from the counting tree hungry and alert.",
+      "Holding the heron feather from some unseen prior moment — a single exotic status item whose social weight YY has not yet tested.",
+      "First root in the new world (v2.0). Neighbors and economy are felt for the first time. No accumulated debts or grudges yet.",
+      "Branch hypothesis (alt1): does one inherited status object reshape 30 days of social positioning?"
+    ]
+  },
+  "state_after": {
+    "condition": { "health": 0.82, "food": 0.27, "attention": 0.60 },
+    "inventory": [
+      {
+        "id": "heron_feather",
+        "label": "the heron feather",
+        "acquired_day": 0,
+        "tradeable": true,
+        "notes": "Carried along YY's back through the morning. Tock saw it before he saw YY and recalibrated. The feather is now a known thing in the social field — Tock has registered it."
+      }
+    ],
+    "active_burdens": ["winter_thinning"],
+    "goals": { "primary": "find_food", "secondary": "decide_what_to_do_with_being_seen" },
+    "reaction_overrides": {},
+    "trait_deviations": {},
+    "identity_notes": [
+      "Late winter waking — YY emerged from the counting tree hungry and alert.",
+      "First root in the new world (v2.0). Neighbors and economy felt for the first time.",
+      "Met Tock on the stone wall. Tock saw the heron feather before he saw YY; the conversation pivoted on the feather, not on YY.",
+      "Now aware of being read — for the first time, YY notices that he is socially visible. He has not done anything about it.",
+      "Branch hypothesis (alt1): does one inherited status object reshape 30 days of social positioning? Day 1 evidence: yes, immediately, through Tock."
+    ]
+  },
+  "change_summary": {
+    "notable_shift": "First named-neighbor encounter, recalibrated by the heron feather. YY learned the same news as main, but also learned that he is now socially visible — Tock told him 'first' because of the feather, and that fact is now part of the day.",
+    "branch_created": false
+  },
+  "created_at": "2026-05-01T20:30:00Z"
+}

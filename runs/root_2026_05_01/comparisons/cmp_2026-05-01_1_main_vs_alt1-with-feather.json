@@ -1,0 +1,45 @@
+{
+  "schema_version": "0.1",
+  "comparison_id": "cmp_2026-05-01_1_main_vs_alt1-with-feather",
+  "artifact_type": "daily_comparison",
+  "root_id": "root_2026_05_01",
+  "branch_a": "branch_root_2026_05_01_main",
+  "branch_b": "branch_root_2026_05_01_alt1-with-feather",
+  "story_day": 1,
+  "snapshot_date": "2026-05-01",
+  "snapshot_ids": [
+    "snap_2026-05-01_branch_root_2026_05_01_main",
+    "snap_2026-05-01_branch_root_2026_05_01_alt1-with-feather"
+  ],
+  "package_ref": {
+    "package_id": "yysworld-pipeline-v0.1",
+    "package_created_at": "2026-05-01T20:30:00Z",
+    "package_hash": "sha256:claude-code-subscription"
+  },
+  "model_refs": [
+    {
+      "provider": "anthropic",
+      "model_id": "claude-code-subscription",
+      "role": "comparator",
+      "runtime_class": "interactive"
+    }
+  ],
+  "content": {
+    "divergence_summary": "Same hungry late-winter morning, same climb to the stone wall, same Tock waiting. Without the heron feather, Tock's gossip is generous-but-distant — he tells YY about the brewing fair-trade conversation as a courtesy, the way he tells everyone. With the feather, Tock recalibrates the moment he sees it: his volume drops, he hops closer, and he reveals that he is telling YY first because of what YY is carrying. In main, YY leaves with news he cannot enter. In alt1, YY leaves with the same news plus the awareness that he is now visible to the social field. The day's physical cost is similar; the day's social cost is not.",
+    "branch_a_path": "YY met Tock at the stone wall, listened to the news kindly and distantly, said he had nothing to bring, and continued on to the brook with the news quiet in his head.",
+    "branch_b_path": "YY met Tock at the stone wall while carrying the heron feather, watched Tock recalibrate around it, asked whether he was being brokered, and continued on with the news plus the new awareness that he is being read.",
+    "key_differences": [
+      "Tock's volume and approach: distant-chatty in main, close-quiet in alt1",
+      "What YY learns about himself: in main he learns the social field exists; in alt1 he learns he is already in it",
+      "Attention cost: -0.05 in main (light listening), -0.10 in alt1 (Tock pulled harder, the conversation cost more)",
+      "Forward question: main asks 'what would I bring?'; alt1 asks 'what does it mean to be seen?'"
+    ],
+    "shared_elements": [
+      "the cold counting tree, the stone wall route, the brook drink",
+      "the same news (Mira, Bramble, someone from further out, brewing conversation about fair trades)",
+      "YY's hunger and the wry-whine register the food stat is producing",
+      "neither YY has acted yet — both leave with news, neither commits"
+    ]
+  },
+  "created_at": "2026-05-01T20:30:00Z"
+}

@@ -7,25 +7,26 @@
   "created_at": "2026-05-01T00:00:00Z",
   "status": "active",
   "state": {
-    "story_day": 0,
+    "story_day": 1,
     "condition": {
-      "health": 0.85,
-      "food": 0.30,
-      "attention": 0.70
+      "health": 0.83,
+      "food": 0.27,
+      "attention": 0.65
     },
     "inventory": [],
     "active_burdens": ["winter_thinning"],
     "goals": {
       "primary": "find_food",
-      "secondary": "learn_the_neighbors"
+      "secondary": "consider_the_conversation"
     },
     "reaction_overrides": {},
     "trait_deviations": {},
     "identity_notes": [
-      "Late winter waking — YY emerges from the counting tree hungry and alert.",
-      "First root in the new world (v2.0). Neighbors and economy are felt for the first time. No accumulated debts or grudges yet."
+      "Late winter waking — YY emerged from the counting tree hungry and alert.",
+      "First root in the new world (v2.0). Neighbors and economy felt for the first time.",
+      "Met Tock on the stone wall. Heard about a brewing fair-trade conversation among the neighbors. Has nothing to bring yet."
     ]
   },
   "drift_flags": [],
-  "last_updated_at": "2026-05-01T00:00:00Z"
+  "last_updated_at": "2026-05-01T20:30:00Z"
 }

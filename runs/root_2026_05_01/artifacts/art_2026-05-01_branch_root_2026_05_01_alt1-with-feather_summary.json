@@ -1,0 +1,37 @@
+{
+  "schema_version": "0.1",
+  "artifact_id": "art_2026-05-01_branch_root_2026_05_01_alt1-with-feather_summary",
+  "artifact_type": "daily_summary",
+  "snapshot_id": "snap_2026-05-01_branch_root_2026_05_01_alt1-with-feather",
+  "root_id": "root_2026_05_01",
+  "branch_id": "branch_root_2026_05_01_alt1-with-feather",
+  "package_ref": {
+    "package_id": "yysworld-pipeline-v0.1",
+    "package_created_at": "2026-05-01T20:30:00Z",
+    "package_hash": "sha256:claude-code-subscription"
+  },
+  "model_refs": [
+    {
+      "provider": "anthropic",
+      "model_id": "claude-code-subscription",
+      "role": "summarizer",
+      "runtime_class": "interactive"
+    }
+  ],
+  "comparison_contract_version": "0.1",
+  "content": {
+    "title": "What Tock Saw First",
+    "tone": "wry_and_watched",
+    "narrative": "The counting tree had not warmed overnight.\n\nYY pulled himself out of the hollow with the heron feather tucked along his back, where he had carried it through winter without often thinking about it. He thought about it now. It was cold against his fur, the way only feathers can be cold — not heavy, but committed.\n\n\"Late,\" he told the tree.\n\nThe tree did not respond. The tree had also not warmed overnight.\n\nHe went down the trunk in short hops. The brook would still be running. Water first, food second. *Snack-y* second, he corrected, since the only acorn he could think of was theoretical.\n\nThe stone wall ran north of the counting tree and YY took it because the air there moved differently — wind broken by stone, warmer in the lee. The fieldstone was moss-furred and old. It did not care who walked it.\n\nTock cared.\n\n\"YY,\" said Tock, three stones up, but not at the volume YY expected. The bird had gone quieter, which on Tock was a tell. \"Where did you — when did you get *that*.\"\n\nYY did not have to ask what. He could feel the feather along his back. He could also feel the small turn in the air that happens when something becomes interesting that wasn't a moment ago.\n\n\"Had it,\" he said.\n\n\"Had it for how long?\"\n\n\"Long enough.\"\n\n\"YY.\" Tock hopped two stones closer. He did not normally do this. \"There is a *conversation*. Mira, Bramble, someone from further out. About fair trades, about the winter, about — well. About expectations. And I am telling you because I am going to tell you, but I am telling you *first*, which is different from how I was going to tell you, do you understand?\"\n\nYY thought about this.\n\nHe was hungry. He was slow. The feather was cold along his back. Tock had moved closer because of it, and the moving-closer had not happened because of anything YY had said.\n\n\"Tock,\" he said. \"Are you trying to broker me?\"\n\nTock made a sound that was not a yes and not a no. \"I am trying to make sure you *know*.\"\n\nYY looked at him. Then he looked at the wall, and the wind, and the brook visible at the bottom of the slope.\n\n\"Thanks,\" he said, finally. \"I'll keep that in mind.\"\n\nHe went on. He could hear Tock behind him, not gossiping for once, watching.\n\nThe brook had not iced over. YY drank, slowly. Late winter felt bigger than him — indifferent, awake — but the feather along his back had become an additional thing in the day, an additional thing between him and the water.\n\nHe had not done anything about it.\n\nBut he had noticed.",
+    "state_note": "The day cost YY a little more attention than the version of him without the feather — Tock pulled harder, and harder costs more. What it gave him was a different kind of news: not just the brewing conversation, but the awareness that he is now legible to the social field. He has been read. He has not yet decided what that means.",
+    "summary": "YY met Tock on the stone wall while carrying the heron feather; Tock saw the feather before he saw YY, and the conversation pivoted on it — YY left with the same news as main and an additional thing to think about: that he is being seen.",
+    "state_delta": {
+      "food": "0.30 → 0.27",
+      "attention": "0.70 → 0.60",
+      "health": "0.85 → 0.82"
+    },
+    "branch_created": false,
+    "world_anchor": "International Workers' Day rallies worldwide on 2026-05-01, with the global theme 'Ensuring Safety and Health at Work in a Changing Climate' — workers gathering to negotiate fairness as conditions shift."
+  },
+  "created_at": "2026-05-01T20:30:00Z"
+}

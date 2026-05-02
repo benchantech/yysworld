@@ -1,0 +1,37 @@
+{
+  "schema_version": "0.1",
+  "artifact_id": "art_2026-05-01_branch_root_2026_05_01_main_summary",
+  "artifact_type": "daily_summary",
+  "snapshot_id": "snap_2026-05-01_branch_root_2026_05_01_main",
+  "root_id": "root_2026_05_01",
+  "branch_id": "branch_root_2026_05_01_main",
+  "package_ref": {
+    "package_id": "yysworld-pipeline-v0.1",
+    "package_created_at": "2026-05-01T20:30:00Z",
+    "package_hash": "sha256:claude-code-subscription"
+  },
+  "model_refs": [
+    {
+      "provider": "anthropic",
+      "model_id": "claude-code-subscription",
+      "role": "summarizer",
+      "runtime_class": "interactive"
+    }
+  ],
+  "comparison_contract_version": "0.1",
+  "content": {
+    "title": "What Tock Knew",
+    "tone": "wry_and_listening",
+    "narrative": "The counting tree had not warmed overnight.\n\nYY pulled himself out of the hollow and immediately wished he hadn't. The bark was still cold from a wind that had blown all night and was apparently planning more of the same. His paws found a softer patch on the south side, where last week's sun had thawed the wood enough to remember being warm.\n\n\"Late,\" he told the tree.\n\nThe tree, like most trees, declined to take this personally.\n\nHe went down the trunk in short hops, ears working, looking for the things a hungry squirrel looks for — tracks, acorns, anything not buried. The brook would still be running if it hadn't crusted over last night. Water first, food second. *Snack-y* second, he amended. He was not thinking warmly about his options.\n\nThe stone wall ran north of the counting tree, fieldstone half-tumbled and moss-furred and warmer than it had any right to be in this cold. He took the wall route to the brook because it was longer but quieter, and because today the world had wind in it and YY was not yet ready to hear what the wind had to say.\n\nThree stones up, a small grey shape was already there.\n\n\"YY!\" said Tock, fluffed up to twice his normal size. \"Good. GOOD. I have been waiting.\"\n\nYY paused mid-step. \"You haven't.\"\n\n\"I have,\" Tock said, ignoring this. \"Listen — there is a *conversation* starting. A real one. Mira and Bramble both, and someone from further out. They are saying that the trades this winter were not — you know. Not. The cold has been hard on everyone, and someone got the short end of a hazelnut deal and now there is talk of a meeting, and possibly a list of expectations, and it is going to be *interesting*, YY, you have no idea.\"\n\nYY listened. He was good at listening when he was hungry, because hungry slowed everything down and made the words land harder.\n\n\"What do they want from you?\" he said.\n\n\"Nothing yet.\" Tock fluffed harder. \"But everyone is checking in. Everyone.\"\n\n\"I have nothing to check in with.\"\n\n\"I know,\" said Tock. He said it kindly, in his way. \"I am telling you anyway.\"\n\nYY thought about this. He thought about it carefully because he was hungry and slow, and because a thing told to you when you have nothing is a different thing than a thing told to you when you have something.\n\n\"Thanks, Tock,\" he said, eventually.\n\nHe went on toward the brook. The wind pushed against the back of his ears and the stone wall stayed warm under his paws for a few more steps and then was just stone again.\n\nHe could hear Tock above him, rattling away to himself the way Tock did when he had no audience but still had words.\n\nThe brook had not iced over. YY drank, slowly, paying attention to the water on his teeth and to the way late winter felt — bigger than him, indifferent, waking up.\n\nHe carried the news home anyway.",
+    "state_note": "The day cost YY a little food and a little attention but did not cost him much. What it gave him was the first edge of the social field — a brewing conversation he is now aware of but cannot yet enter. The news sits in him as a question he has not been asked.",
+    "summary": "YY met Tock for the first time on the stone wall and learned that the neighbors were starting a fair-trade conversation; he listened, said he had nothing to bring, and went on to the brook with the news.",
+    "state_delta": {
+      "food": "0.30 → 0.27",
+      "attention": "0.70 → 0.65",
+      "health": "0.85 → 0.83"
+    },
+    "branch_created": false,
+    "world_anchor": "International Workers' Day rallies worldwide on 2026-05-01, with the global theme 'Ensuring Safety and Health at Work in a Changing Climate' — workers gathering to negotiate fairness as conditions shift."
+  },
+  "created_at": "2026-05-01T20:30:00Z"
+}

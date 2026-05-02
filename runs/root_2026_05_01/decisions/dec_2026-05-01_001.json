@@ -1,0 +1,22 @@
+{
+  "schema_version": "0.1",
+  "decision_id": "dec_2026-05-01_001",
+  "root_id": "root_2026_05_01",
+  "source_event_id": "evt_2026-05-01_001",
+  "signaled_by": { "actor_id": "pipeline", "actor_role": "evaluator" },
+  "signaled_at": "2026-05-01T20:30:00Z",
+  "decision_type": "create_branch",
+  "reason": {
+    "core_statement": "Day 1 establishes the world and exercises the existing branch divergence (the heron feather). No new shock or unexpected choice surfaced; the alt1 hypothesis is the divergence already being tracked.",
+    "branching_focus": "",
+    "confidence": 0.92
+  },
+  "proposed_mutation": {
+    "mutation_id": "mut_2026-05-01_001",
+    "mutation_type": "branch_divergence",
+    "branch_id": "",
+    "summary": "No new branch — Day 1 sits within existing branches."
+  },
+  "decision_status": "evaluated_no_branch",
+  "created_at": "2026-05-01T20:30:00Z"
+}
