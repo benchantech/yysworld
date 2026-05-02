@@ -458,6 +458,91 @@ export function getLatestBaseline(): BaselineRecord | null {
   return readBaseline(rootIdFromRunDate(runs[0].runDate))
 }
 
+// ─── Substrate readers (used by the /yy/data/ machine layer per ADR-040) ────
+
+/** Read the world-seed for a run, or null if missing. */
+export function readWorldSeed(rootId: string): unknown | null {
+  const p = join(process.cwd(), 'runs', rootId, 'world-seed.json')
+  if (!existsSync(p)) return null
+  try {
+    return JSON.parse(readFileSync(p, 'utf-8'))
+  } catch {
+    return null
+  }
+}
+
+function listJsonFiles(rootId: string, dir: string): string[] {
+  const p = join(process.cwd(), 'runs', rootId, dir)
+  if (!existsSync(p)) return []
+  return readdirSync(p).filter(f => f.endsWith('.json')).sort()
+}
+
+function readJsonFile(rootId: string, dir: string, filename: string): unknown | null {
+  const p = join(process.cwd(), 'runs', rootId, dir, filename)
+  if (!existsSync(p)) return null
+  try {
+    return JSON.parse(readFileSync(p, 'utf-8'))
+  } catch {
+    return null
+  }
+}
+
+export function listEventFiles(rootId: string): string[] {
+  return listJsonFiles(rootId, 'events')
+}
+
+export function listDecisionFiles(rootId: string): string[] {
+  return listJsonFiles(rootId, 'decisions')
+}
+
+export function listComparisonFiles(rootId: string): string[] {
+  return listJsonFiles(rootId, 'comparisons')
+}
+
+/** Validate filename matches expected prefix before reading (defense-in-depth). */
+export function readEventFile(rootId: string, filename: string): unknown | null {
+  if (!/^evt_[\w.-]+\.json$/.test(filename)) return null
+  return readJsonFile(rootId, 'events', filename)
+}
+
+export function readDecisionFile(rootId: string, filename: string): unknown | null {
+  if (!/^dec_[\w.-]+\.json$/.test(filename)) return null
+  return readJsonFile(rootId, 'decisions', filename)
+}
+
+/** Find a snapshot for (branch, day) by scanning the snapshots dir. */
+export function getSnapshotByDay(rootId: string, branch: string, day: string): unknown | null {
+  const dir = join(process.cwd(), 'runs', rootId, 'snapshots')
+  if (!existsSync(dir)) return null
+  const branchTag = `branch_${rootId}_${branch}`
+  const targetDay = parseInt(day, 10)
+  for (const file of readdirSync(dir).filter(f => f.includes(branchTag) && f.endsWith('.json'))) {
+    try {
+      const snap: SnapshotFile = JSON.parse(readFileSync(join(dir, file), 'utf-8'))
+      if (snap.story_day === targetDay) return snap
+    } catch { continue }
+  }
+  return null
+}
+
+/**
+ * Concatenated event ledger for a run, ordered by occurred_at.
+ * Returns the parsed events; the caller serializes as ND-JSON.
+ */
+export function getLedger(rootId: string): unknown[] {
+  const events: unknown[] = []
+  for (const f of listEventFiles(rootId)) {
+    const e = readEventFile(rootId, f)
+    if (e) events.push(e)
+  }
+  events.sort((a, b) => {
+    const aT = (a as { occurred_at?: string })?.occurred_at ?? ''
+    const bT = (b as { occurred_at?: string })?.occurred_at ?? ''
+    return aT.localeCompare(bT)
+  })
+  return events
+}
+
 /**
  * Like getDayArtifact but resolves runDate from a month string.
  * Used by the /yy/data/ JSON API routes.

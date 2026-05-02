@@ -5,27 +5,11 @@
  * actual ADR list, published days, artifact titles, or comparison summaries.
  */
 
-import { readdirSync, existsSync } from 'fs'
-import { join } from 'path'
-import { getActiveAdrs } from '@/lib/adrs'
+import { getActiveAdrs, getMuseumCount } from '@/lib/adrs'
 import { getStaticRuns, getDayArtifact, getComparisonArtifact, getVsParams } from '@/lib/runs'
 import { formatBranch } from '@/lib/nav'
 
 export const dynamic = 'force-static'
-
-function museumCount(): number {
-  const dir = join(process.cwd(), 'docs/adrs/museum')
-  if (!existsSync(dir)) return 0
-  let count = 0
-  for (const entry of readdirSync(dir, { withFileTypes: true })) {
-    if (!entry.isDirectory()) continue
-    const sub = join(dir, entry.name)
-    count += readdirSync(sub).filter(
-      (f) => f.endsWith('.md') && f !== 'README.md',
-    ).length
-  }
-  return count
-}
 
 export async function GET() {
   const adrs = getActiveAdrs()
@@ -74,7 +58,7 @@ export async function GET() {
 ${currentRunLines.length > 0 ? currentRunLines.join('\n') : '_No published days yet._'}`
     : `## Current run\n\n_No active run._`
 
-  const museumN = museumCount()
+  const museumN = getMuseumCount()
 
   const text = `# yysworld
 
@@ -136,11 +120,24 @@ Key state variables per branch: food (0–1), health (0–1), attention (0–1),
 
 ### Machine-facing data
 
-  /yy/data/{YYYY-MM}/{branch}/day/{N}.json              → day artifact JSON
-  /yy/data/{YYYY-MM}/vs/{a}/{b}/day/{N}.json            → comparison artifact JSON
+  /yy/data/index.json                                    → discovery manifest (entry point — start here)
+  /yy/data/{YYYY-MM}/manifest.json                       → per-run manifest (branches, days, comparisons, events, decisions)
+  /yy/data/{YYYY-MM}/{branch}/index.json                 → per-branch series (all days, in order)
+  /yy/data/{YYYY-MM}/{branch}/day/{N}.json               → day artifact JSON
+  /yy/data/{YYYY-MM}/{branch}/snapshots/{N}.json         → per-day snapshot (state before/after)
+  /yy/data/{YYYY-MM}/vs/{a}/{b}/day/{N}.json             → comparison artifact JSON
+  /yy/data/{YYYY-MM}/world-seed.json                     → world rules for the run
+  /yy/data/{YYYY-MM}/baseline.json                       → per-run character baseline
+  /yy/data/{YYYY-MM}/events/{file}.json                  → individual event
+  /yy/data/{YYYY-MM}/decisions/{file}.json               → individual decision
+  /yy/data/{YYYY-MM}/ledger.jsonl                        → ND-JSON event stream, ordered by occurred_at
   /yy/baseline.json                                      → character baseline (traits, values)
   /feed.xml                                              → RSS feed (latest artifacts)
-  /llms.txt                                              → this file
+  /llms.txt                                              → this file (prose entry point)
+
+Every JSON response above carries a top-level "$schema" URL and a "_links"
+object with self/parent/sibling pointers, so an agent landing on index.json
+can crawl the entire system without out-of-band knowledge (ADR-040).
 
 ### URL notes
 
