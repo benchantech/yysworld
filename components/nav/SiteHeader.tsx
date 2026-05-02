@@ -8,7 +8,7 @@ const NAV = [
   { href: '/compare', label: 'compare', exact: false },
   { href: '/yy/about/', label: 'meet yy', exact: false },
   { href: '/archive', label: 'archive', exact: false },
-  { href: '/lab', label: 'lab', exact: false },
+  { href: '/lab', label: 'AI', exact: false },
 ]
 
 export function SiteHeader() {
