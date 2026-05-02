@@ -94,7 +94,7 @@ function SiteFooter() {
             className="font-hand text-xl"
             style={{ color: 'var(--color-accent)' }}
           >
-            — Ben, writing for his kids.
+            — Human sets boundaries. AI explores.
           </p>
           <p className="font-mono text-xs text-ink-4">
             <a

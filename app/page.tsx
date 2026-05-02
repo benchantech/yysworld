@@ -44,7 +44,7 @@ export default function HomePage() {
 
       <PageHeader
         eyebrow="one being, multiple paths"
-        title="The same world reaches YY every day. It never lands the same way twice."
+        title="Same daily event across branching YYs, written by AI. What could go wrong?"
         lede="YY's World is a branching life observatory: one squirrel, one shared world, many lived outcomes."
         note="story first, method intact"
       />

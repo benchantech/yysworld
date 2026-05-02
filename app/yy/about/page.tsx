@@ -46,6 +46,7 @@ const CALIBRATION_NOTES: { trait: string; note: string }[] = [
   { trait: 'scarcity reaction', note: 'revised from hoard to trade_or_assess — scenario 15 showed transactional fairness over hoarding' },
   { trait: 'stream of consciousness', note: 'lowered from 0.8 — thoughts are associative but compressed, not rambling' },
   { trait: 'randomly eloquent', note: 'raised from 0.4 — "simply beamed" and "tasty, tradeable treat" are genuine compression events' },
+  { trait: 'beauty reaction', note: 'added compress — YY responds to beauty with minimal, precise language' },
 ]
 
 export default function YYAboutPage() {
@@ -89,7 +90,7 @@ export default function YYAboutPage() {
             <div>
               <p className="font-sans text-5xl font-medium text-ink tracking-tight leading-none">YY</p>
               <p className="font-mono text-xs text-ink-3 uppercase tracking-widest mt-1">
-                v1.0 · squirrel · calibrated apr 14, 2026
+                voice v2 · squirrel · calibrated apr 14, 2026
               </p>
             </div>
             <p className="font-sans text-base text-ink leading-relaxed">
