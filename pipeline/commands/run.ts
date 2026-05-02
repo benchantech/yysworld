@@ -89,7 +89,7 @@ export async function runCommand(args: string[]): Promise<void> {
     // Evaluate branching (only on main branch)
     let decisionId: string | null = null
     if (branch.urlId === 'main') {
-      const evaluation = await evaluateBranch(snapshot, ctx, inbox, ctx.branches.length)
+      const evaluation = await evaluateBranch(snapshot, ctx, inbox, ctx.branches.length, storyDay)
       decisionId = writeDecision(ctx, targetDate, evaluation, `evt_${targetDate}_001`)
 
       if (evaluation.should_branch) {

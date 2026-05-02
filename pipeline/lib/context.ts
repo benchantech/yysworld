@@ -1,6 +1,6 @@
 import { readFileSync, readdirSync, existsSync } from 'fs'
 import { join } from 'path'
-import type { RunContext, BranchMeta, BranchState, DayRecord, Baseline, InboxEntry } from './types'
+import type { RunContext, BranchMeta, BranchState, DayRecord, Baseline, InboxEntry, WorldSeed } from './types'
 
 function readJson<T>(path: string): T {
   return JSON.parse(readFileSync(path, 'utf-8')) as T
@@ -165,6 +165,25 @@ export function findRecentAuthorIntent(rootDir: string, beforeDate: string): str
   return null
 }
 
+// ─── World seed (ADR-038) ────────────────────────────────────────────────────
+
+// v1.0 was authored retroactively (ADR-029) and is not a pipeline input. Skip it.
+function loadWorldSeed(rootDir: string): WorldSeed | null {
+  const seed = safeReadJson<WorldSeed>(join(rootDir, 'world-seed.json'))
+  if (!seed) return null
+  if (seed.world_version === '1.0') return null
+  return seed
+}
+
+// ─── Voice file (ADR-034 / ADR-039) ───────────────────────────────────────────
+
+function loadVoiceText(repoRoot: string, voiceVersion: string | undefined): string | null {
+  if (!voiceVersion) return null
+  const voicePath = join(repoRoot, 'docs', 'voice', `${voiceVersion}.md`)
+  if (!existsSync(voicePath)) return null
+  return readFileSync(voicePath, 'utf-8')
+}
+
 // ─── Load full context ────────────────────────────────────────────────────────
 
 export function loadContext(repoRoot: string, targetDate: string): RunContext | null {
@@ -178,9 +197,11 @@ export function loadContext(repoRoot: string, targetDate: string): RunContext | 
   const baseline = safeReadJson<Baseline>(baselinePath)
   if (!baseline) throw new Error(`Baseline not found at ${baselinePath}`)
 
+  const worldSeed = loadWorldSeed(rootDir)
+  const voiceText = loadVoiceText(repoRoot, baseline.voice_version)
   const branches = loadBranches(rootDir, rootId)
   const recentDays = loadRecentDays(rootDir, rootId)
   const recentAuthorIntent = findRecentAuthorIntent(rootDir, targetDate)
 
-  return { rootId, runDate, runsDir, rootDir, baseline, branches, recentDays, recentAuthorIntent }
+  return { rootId, runDate, runsDir, rootDir, baseline, worldSeed, voiceText, branches, recentDays, recentAuthorIntent }
 }

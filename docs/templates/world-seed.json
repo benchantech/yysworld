@@ -1,94 +1,153 @@
 {
-  "_template": "world-seed v1.1 — fill this in before initializing a new root. See ADR-029.",
+  "_template": "world-seed v2.0 — fill this in before initializing a new root. See ADR-038.",
   "_usage": "Copy to runs/{rootId}/world-seed.json when creating a new root. Remove all _guide and _template fields before committing the live version.",
-  "_supersedes": "world v1.0 (runs/root_2026_04_14/world-seed.json) — v1.0 was declared retroactively after the April 2026 root ran without a formal seed. v1.1 is the first version authored before a root begins.",
+  "_supersedes": "world v1.0 (runs/root_2026_04_14/world-seed.json — retroactive declaration, kept as historical record per ADR-029) and v1.1 (template-only, never used by a live root). v2.0 introduces anthropomorphic society, NE-US regional anchor, time-compressed seasonal arc, and unique-item inventory.",
 
-  "schema_version": "0.1",
-  "world_version": "1.1",
+  "schema_version": "0.2",
+  "world_version": "2.0",
   "seed_id": "world_{YYYY}_{MM}",
   "root_id": null,
   "period": "YYYY-MM",
   "authored_at": null,
 
+  "world_kind": {
+    "_guide": "World-level register and invariants. The pipeline reads these as constraints on every artifact.",
+    "register": "anthropomorphic_fantasy",
+    "tone_anchor": "_guide: Reference for the social register. Default: 'Daniel Tiger with animal tendencies — neighbors talk, reason, barter, hold grudges, but retain instincts (alertness, food drives, territory). Non-violent.'",
+    "violence_rule": "_guide: Default: 'Physical contact is emotional display, not harm. No one gets hurt. Conflict resolves through words, trade, or retreat.'",
+    "speech_rule": "_guide: Default: 'All named animals can speak and reason. Instinct colors voice — a hungry squirrel speaks tersely; a startled bird speaks too fast — but does not block speech.'"
+  },
+
   "geography": {
-    "_guide": "Name the places that will persist across all days of this root. Be specific but small — 4-6 named places is enough. Places that appear unnamed in stories become harder to reference consistently. Each place accumulates meaning over the month; start only with what you know will actually appear.",
+    "_guide": "Persistent named places + the regional anchor. The anchor constrains weather and biome; place names accumulate meaning over the month. Future extrapolations of geography should remain within the anchor region.",
+    "region_anchor": "_guide: Real-world region whose patterns the world borrows. Default: 'Northeast US — temperate deciduous, mixed hardwood forest, four-season, fieldstone walls, ferny understory.'",
     "home_base": {
       "id": "home",
       "label": "",
       "description": "",
-      "_guide": "Where YY starts and ends each day. The sleep location, the morning departure point."
+      "_guide": "YY's start/end point each day. May carry forward from a prior root."
     },
     "named_places": [
       {
-        "_guide": "One entry per named place. Copy this object for each additional place.",
+        "_guide": "One entry per named place. 4-6 places at root start.",
         "id": "",
         "label": "",
-        "type": "_guide: cache_site | path | boundary | social_node | shelter | unknown",
+        "type": "_guide: cache_site | path | boundary | social_node | shelter | water | meadow | unknown",
         "description": "",
         "status": "_guide: secure | contested | unknown | lost",
         "notes": ""
       }
     ],
-    "territory_notes": "_guide: Rough description of YY's range this month. What's familiar, what's at the edge, what's outside."
+    "territory_notes": ""
   },
 
-  "seasonal_physics": {
-    "_guide": "What does this month mean physically for a squirrel? These aren't plot elements — they're the background physics that every day operates against. The pipeline reads these to understand what 'normal' looks like before any event occurs.",
-    "month_character": "_guide: One phrase. E.g. 'late spring recovery', 'peak summer heat', 'pre-winter cache-building'.",
-    "food_pressure": {
-      "level": null,
-      "_guide": "Float 0-1. 0 = scarcity/crisis, 0.5 = neutral, 1 = abundance. This is the ambient food availability before YY does anything. Spring post-winter is typically 0.4-0.6 (recovering). Fall pre-winter is 0.7-0.9 (building).",
-      "notes": ""
-    },
-    "territorial_pressure": "_guide: How contested is space this month? Spring has more transient animals moving through. Summer has established territories. Describe the social density.",
-    "daylight": "_guide: What's the light like? Length of day, quality. Long spring days vs. short winter ones change YY's available window.",
-    "conditions": "_guide: Weather texture for the month — not specific forecasts, the general physical feel. Warmth, rain patterns, wind.",
-    "morning_cache_window": "_guide: When is it open, how reliable is it, what affects it this month? This is the highest-stakes recurring event in a squirrel's day."
-  },
-
-  "social_field": {
-    "_guide": "Who or what is in the territory? Named presences don't need backstory — they need enough description to recur consistently. 'The grey squirrel from the east boundary' is enough to be recognizable when it shows up again. Keep it small: 2-3 named presences maximum at root start. They can acquire more identity over the month.",
-    "density": "_guide: Low | medium | high. How many other animals are actively present in YY's range right now?",
-    "known_presences": [
+  "society": {
+    "_guide": "Capability rules + named neighbors. Replaces v1's social_field — neighbors are first-class.",
+    "capability": "_guide: Default: 'Neighbors speak, reason, hold relationships and slow grudges. Trades are remembered. Animal instincts persist but do not block social behavior.'",
+    "customs": [
+      "_guide: Norms that shape interactions. E.g. 'Fair trades are expected; uneven trades are remembered.'"
+    ],
+    "neighbors": [
       {
-        "_guide": "Copy for each recurring presence. These are not characters — they are consistent environmental elements with agency.",
+        "_guide": "One entry per recurring named neighbor. 2-4 at root start.",
         "id": "",
-        "description": "",
-        "territory_relationship": "_guide: adjacent | overlapping | passing_through | unknown",
-        "disposition": "_guide: competitive | neutral | avoidant | curious",
+        "name": "",
+        "species": "",
+        "role": "_guide: forager | trader | builder | info_broker | host | guard | etc.",
+        "disposition": "_guide: warm | cautious | chatty | reserved | opportunistic | enthusiastic",
+        "territory_relationship": "_guide: adjacent | overlapping | passing_through | resident",
         "notes": ""
       }
+    ]
+  },
+
+  "economy": {
+    "_guide": "How wealth and exchange work. Loose — described qualitatively, not stat-tracked. Bulk currency is narrated; unique items are tracked via inventory_catalog.",
+    "currencies": [
+      {
+        "type": "food",
+        "examples": ["_guide: acorns, pinecones, berries, hazelnuts — bulk and perishable"],
+        "use": "_guide: common, perishable, abundance varies seasonally"
+      },
+      {
+        "type": "gathered_materials",
+        "examples": ["_guide: bark strips, pine resin, moss bundles, shed feathers, smooth stones — rarer, store-of-value"],
+        "use": "_guide: tradeable, durable, signal of patience"
+      }
     ],
-    "active_tensions": [
-      "_guide: Anything already in play at root start. A contested cache site. A boundary dispute. An unknown animal that appeared last month. These carry into the first days automatically."
+    "exchange_norms": "_guide: Default: 'Barter-based. Fair trades are the norm; uneven trades are remembered. Prices drift with season and scarcity.'",
+    "advancement": "_guide: Default: 'Foraging and exploring improve standing. Finding rare materials or productive locations creates wealth. Hoarding without trade is socially flat.'"
+  },
+
+  "mobility": {
+    "_guide": "Movement constraints — affects geography (distances matter) and economy (travel costs).",
+    "method": "_guide: Default: 'Physical exertion only. Paws, claws, tails. No vehicles, no machinery.'",
+    "constraints": "_guide: Default: 'Travel cost is real — long trips spend food and attention. Distances are felt.'"
+  },
+
+  "seasonal_arc": {
+    "_guide": "30 run-days = 1 in-world calendar year. Seasons shift visibly. The pipeline reads the schedule to know which season each day falls in.",
+    "compression": "_guide: Default: '30 run-days ≈ Jan→Dec, weighted toward shoulder seasons (spring/summer/autumn = 22 days; winter framing = 8 days).'",
+    "weather_register": "_guide: Default for NE anchor: 'Northeast US temperate — mud season, late frosts, leaf-out, summer thunderstorms, fall foliage, first snow.'",
+    "schedule": [
+      {
+        "_guide": "One entry per season-segment. Day ranges are inclusive. Adjust to taste but cover days 1-30.",
+        "days": "1-3",
+        "season": "late winter",
+        "weather": "",
+        "food_pressure": null,
+        "daylight": ""
+      }
+    ]
+  },
+
+  "inventory_catalog": {
+    "_guide": "World v2.0 introduces unique items. Each is a singular object; holding it changes social interactions. Items appear through events (found, given, traded). Catalog seeds the world's vocabulary; additional items may emerge over the month.",
+    "items": [
+      {
+        "_guide": "One entry per unique item. id is referenced in branch starting_inventory and in event payloads.",
+        "id": "",
+        "label": "",
+        "description": "",
+        "rarity": "_guide: common | uncommon | rare | exotic",
+        "found_at": "_guide: place id, or 'wandering', or 'gifted'",
+        "interaction_unlocks": [
+          "_guide: Specific options this item enables. E.g. 'trade with Mira for gathered_materials'."
+        ]
+      }
     ]
   },
 
   "starting_conditions": {
-    "_guide": "YY's physical state at the beginning of this root. These become state_before for Day 1's snapshot. They should reflect seasonal_physics honestly — a squirrel starting a root in March post-winter has lower food than one starting in October.",
+    "_guide": "YY's Day 1 state. food/health/attention reflect seasonal_arc honestly — late-winter starts are leaner than autumn ones.",
     "food": null,
     "health": null,
     "attention": null,
-    "active_burdens": [],
+    "active_burdens": [
+      "_guide: Soft burdens carried into Day 1. E.g. 'winter_thinning' resolves when food crosses 0.5."
+    ],
+    "starting_inventory": {
+      "_guide": "Per-branch starting inventory using item ids from inventory_catalog. Lists may differ between branches — this is one mechanism for branch divergence.",
+      "main": [],
+      "alt1": []
+    },
     "identity_notes": [
-      "_guide: 1-2 notes about where YY is psychologically at root start. What's carried forward from the previous root, if anything. What the clean-slate version of YY looks like."
+      "_guide: 1-2 notes about where YY is psychologically at root start."
     ]
   },
 
   "atmosphere": {
-    "_guide": "The texture of this month as a narrative resource. Not what will happen — what's available. What recurring elements will show up. What this month costs and what it offers. The pipeline uses this to find appropriate event translations — a month with 'heat and slowing down' translates world events differently than one with 'urgency and preparation'.",
-    "one_line": "_guide: A single phrase that captures the feel of this month in YY's world. E.g. 'the long work before abundance', 'the quiet that comes after', 'everything moving too fast'.",
-    "recurring_elements": [
-      "_guide: Environmental things that will keep showing up. Sounds, light qualities, seasonal activity patterns. E.g. 'longer evenings', 'other animals competing for the same routes', 'rain that arrives without warning'."
-    ],
-    "what_this_month_costs": "_guide: What pressure does YY operate under? What does the month take?",
-    "what_this_month_offers": "_guide: What's available that other months don't have? What can YY find or experience that's specific to this period?"
+    "_guide": "Texture as narrative resource. Used for event translation choices.",
+    "one_line": "",
+    "recurring_elements": [],
+    "what_this_month_costs": "",
+    "what_this_month_offers": ""
   },
 
   "authorial_intent": {
-    "_guide": "What do you, the author, want to track across this month? Not plot — direction. E.g. 'I want to see what happens when the cache_deficit resolves or compounds over 30 days.' Or: 'I want to explore what curiosity looks like under sustained resource pressure.' Optional but useful for multi-week arcs.",
+    "_guide": "What you want to track. Direction, not plot.",
     "arc_direction": "",
     "questions_to_track": [],
-    "branch_hypothesis": "_guide: If you already know what divergence you want to explore, name it here. E.g. 'what happens if one branch encounters a cooperative presence vs. a competitive one.'"
+    "branch_hypothesis": "_guide: Name the divergence the alt branch is exploring. E.g. 'alt1 starts holding a status object — does a single inherited item reshape 30 days of social positioning?'"
   }
 }

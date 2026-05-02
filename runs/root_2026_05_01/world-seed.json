@@ -1,0 +1,297 @@
+{
+  "schema_version": "0.2",
+  "world_version": "2.0",
+  "seed_id": "world_2026_05",
+  "root_id": "root_2026_05_01",
+  "period": "2026-05",
+  "authored_at": "2026-05-01T00:00:00Z",
+
+  "world_kind": {
+    "register": "anthropomorphic_fantasy",
+    "tone_anchor": "Daniel Tiger with animal tendencies — neighbors talk, reason, barter, hold grudges, but retain instincts (alertness, food drives, territory). Non-violent.",
+    "violence_rule": "Physical contact is emotional display, not harm. No one gets hurt. Conflict resolves through words, trade, or retreat.",
+    "speech_rule": "All named animals can speak and reason. Instinct colors voice — a hungry squirrel speaks tersely; a startled bird speaks too fast — but does not block speech."
+  },
+
+  "geography": {
+    "region_anchor": "Northeast US — temperate deciduous, mixed hardwood forest, four-season, fieldstone walls, ferny understory.",
+    "home_base": {
+      "id": "the_counting_tree",
+      "label": "the counting tree",
+      "description": "An old red oak with a hollow YY sleeps in. Carries forward from root_2026_04_14 as the persistent home node. Bark notched on the south side from a winter that left a mark.",
+      "source": "carried forward from runs/root_2026_04_14 (geography.home_base derivative — same role, sharper definition under v2.0)"
+    },
+    "named_places": [
+      {
+        "id": "the_brook_crossing",
+        "label": "the brook crossing",
+        "type": "water",
+        "description": "A shallow rocky brook running west-east, fordable except in spring runoff. Cold, clear, lined with skunk cabbage in early spring.",
+        "status": "secure",
+        "notes": "Common watering point — neighbors meet here without it being a meeting."
+      },
+      {
+        "id": "the_fallen_oak",
+        "label": "the fallen oak",
+        "type": "social_node",
+        "description": "A downed hardwood half-buried in leaf litter, with several cache hollows along its length. Communal-ish — caches here are tolerated, not defended.",
+        "status": "secure",
+        "notes": "First-come-first-served. Reputation accrues to those who refill."
+      },
+      {
+        "id": "the_south_meadow",
+        "label": "the south meadow",
+        "type": "meadow",
+        "description": "Open grassland sloping south. Wild blueberries in summer. Exposed sightlines — hawks visible from a long way off.",
+        "status": "contested",
+        "notes": "High-risk, high-reward. Mira forages here in late summer."
+      },
+      {
+        "id": "the_stone_wall",
+        "label": "the stone wall",
+        "type": "boundary",
+        "description": "Old fieldstone wall along the northern range. Half-tumbled, moss-furred. Used as a path more than a barrier.",
+        "status": "neutral",
+        "notes": "Tock perches on the higher stones to gossip."
+      },
+      {
+        "id": "the_resin_pines",
+        "label": "the resin pines",
+        "type": "cache_site",
+        "description": "A small stand of white pines on the western slope. Resin pools form on bark wounds — gather-able but takes patience.",
+        "status": "unknown",
+        "notes": "Source of resin_strip items. Worth the trip on slow days."
+      }
+    ],
+    "territory_notes": "YY's range centers on the counting tree, with the brook crossing and fallen oak as the most-traveled neighbors. The stone wall is the northern soft-edge; the south meadow is the southern reach. The resin pines are westward and only worth the trip when the day is slow."
+  },
+
+  "society": {
+    "capability": "Neighbors speak, reason, hold relationships and slow grudges. Trades are remembered. Animal instincts persist (a startled rabbit still bolts) but do not block social behavior.",
+    "customs": [
+      "Fair trades are expected. Uneven trades are remembered.",
+      "Greeting at first crossing of the day is polite — silence is not rude but it is noticed.",
+      "Helping a neighbor through a hard week creates a quiet debt; it is repaid without being named."
+    ],
+    "neighbors": [
+      {
+        "id": "bramble",
+        "name": "Bramble",
+        "species": "young black bear",
+        "role": "forager and host",
+        "disposition": "enthusiastic, warm, unreliable",
+        "territory_relationship": "overlapping, mostly southern",
+        "notes": "Recently emerged from torpor — hungry, friendly, overpromises in trades. Means well. Will give YY food if YY listens patiently to a story first."
+      },
+      {
+        "id": "mira",
+        "name": "Mira",
+        "species": "white-tailed doe",
+        "role": "trader and weather-reader",
+        "disposition": "cautious, fair, slow to forgive",
+        "territory_relationship": "adjacent, eastern range",
+        "notes": "Sharp on trades. Reads weather before others do. Holds slow grudges — a bad trade is remembered for weeks. Recognizes status items immediately."
+      },
+      {
+        "id": "tock",
+        "name": "Tock",
+        "species": "downy woodpecker",
+        "role": "info broker",
+        "disposition": "chatty, neutral, opportunistic",
+        "territory_relationship": "passing_through, omnipresent",
+        "notes": "Knows where everyone is and who saw what. Gossip is currency. Will trade information for food, but the information's accuracy varies with the trade's generosity."
+      }
+    ]
+  },
+
+  "economy": {
+    "currencies": [
+      {
+        "type": "food",
+        "examples": ["acorns", "pinecones", "berries", "hazelnuts", "early greens"],
+        "use": "Common, perishable, abundance varies seasonally. Used for everyday trades and small favors."
+      },
+      {
+        "type": "gathered_materials",
+        "examples": ["bark strips", "resin lumps", "moss bundles", "shed feathers", "smooth stones"],
+        "use": "Rarer, durable, store-of-value. Trades for these are slower and more deliberate."
+      }
+    ],
+    "exchange_norms": "Barter-based. Fair trades are the norm; uneven trades are remembered. Prices drift with season and scarcity. Tock will accept gossip as currency in either direction.",
+    "advancement": "Foraging and exploring improve standing. Finding rare materials or productive locations creates wealth. Hoarding without trade is socially flat — wealth that doesn't move doesn't grow."
+  },
+
+  "mobility": {
+    "method": "Physical exertion only. Paws, claws, tails. No vehicles, no machinery.",
+    "constraints": "Travel cost is real — long trips spend food and attention. The brook crossing is a half-day from home; the south meadow is most of a day. The resin pines are a full day's commitment."
+  },
+
+  "seasonal_arc": {
+    "compression": "30 run-days ≈ Jan → Dec, weighted toward shoulder seasons. Winter framing at both ends; spring/summer/autumn carry the narrative weight.",
+    "weather_register": "Northeast US temperate — mud season, late frosts, leaf-out, summer thunderstorms, fall foliage, first snow.",
+    "schedule": [
+      {
+        "days": "1-3",
+        "season": "late winter",
+        "weather": "Hard ground, last patches of snow in shaded hollows, sharp wind. Sun rises but does not warm.",
+        "food_pressure": 0.30,
+        "daylight": "Shortest, growing — about 10 hours."
+      },
+      {
+        "days": "4-8",
+        "season": "early to mid spring",
+        "weather": "Mud season — softening ground, late frosts at night, first buds, skunk cabbage at the brook. Days lengthen visibly.",
+        "food_pressure": 0.50,
+        "daylight": "Growing fast — 12 to 13 hours."
+      },
+      {
+        "days": "9-13",
+        "season": "late spring to early summer",
+        "weather": "Warming, leaf-out completes, occasional thunderstorms in the afternoon. Air thickens.",
+        "food_pressure": 0.72,
+        "daylight": "Long — 14 hours."
+      },
+      {
+        "days": "14-18",
+        "season": "high summer",
+        "weather": "Humid, hot afternoons, thunderstorms most days, blueberries in the south meadow.",
+        "food_pressure": 0.85,
+        "daylight": "Longest — 15 hours."
+      },
+      {
+        "days": "19-22",
+        "season": "early autumn",
+        "weather": "First cool nights, foliage starting in the maples, hard light, dry air. The harvest window.",
+        "food_pressure": 0.90,
+        "daylight": "Shortening — 12 to 13 hours."
+      },
+      {
+        "days": "23-26",
+        "season": "late autumn",
+        "weather": "Hard frosts, leaves down, cold winds, the south meadow goes brown. Cache-building urgency.",
+        "food_pressure": 0.65,
+        "daylight": "Short — 10 to 11 hours."
+      },
+      {
+        "days": "27-30",
+        "season": "early winter",
+        "weather": "First real snow, hardening ground, breath visible. The world quiets.",
+        "food_pressure": 0.35,
+        "daylight": "Shortest — about 9 hours."
+      }
+    ]
+  },
+
+  "inventory_catalog": {
+    "_note": "Initial vocabulary of unique items. Additional items may emerge through events.",
+    "items": [
+      {
+        "id": "heron_feather",
+        "label": "the heron feather",
+        "description": "A long blue-grey flight feather, found near water. Recognizable as exotic — herons pass through but rarely shed where they can be seen.",
+        "rarity": "exotic",
+        "found_at": "the_brook_crossing",
+        "interaction_unlocks": [
+          "Tock recognizes it on sight and will trade extra gossip to hold it briefly.",
+          "Mira evaluates it as status, not utility — affects how she reads YY's social standing.",
+          "Bramble admires it loudly and asks to see it whenever they cross."
+        ]
+      },
+      {
+        "id": "green_streaked_stone",
+        "label": "the green-streaked stone",
+        "description": "A river-smoothed pebble with a vein of green. Pretty in the right light.",
+        "rarity": "uncommon",
+        "found_at": "the_brook_crossing",
+        "interaction_unlocks": [
+          "Mira will trade gathered_materials for it if her mood is fair.",
+          "Useful as a small gift to soften a bad trade."
+        ]
+      },
+      {
+        "id": "resin_strip",
+        "label": "a resin-sealed bark strip",
+        "description": "Bark with a hardened pool of pine resin still attached. Glue, currency, or fire-starter.",
+        "rarity": "uncommon",
+        "found_at": "the_resin_pines",
+        "interaction_unlocks": [
+          "Trades evenly with Mira for hazelnuts in late winter.",
+          "Bramble wants these and overpays in food."
+        ]
+      },
+      {
+        "id": "perfect_pinecone",
+        "label": "a perfect pinecone",
+        "description": "Unusually intact, scales open but seeds still inside. Trade-grade.",
+        "rarity": "rare",
+        "found_at": "wandering",
+        "interaction_unlocks": [
+          "High trade value with any neighbor.",
+          "Bragging rights with Tock."
+        ]
+      },
+      {
+        "id": "stoneware_shard",
+        "label": "a stoneware shard",
+        "description": "An edge of broken pottery, glazed blue on one side. Human-made — uncertain value, definite curiosity.",
+        "rarity": "rare",
+        "found_at": "the_stone_wall",
+        "interaction_unlocks": [
+          "Tock has theories and will share them in exchange for one.",
+          "Mira distrusts human-made things and will not trade for it."
+        ]
+      },
+      {
+        "id": "winter_hazelnut",
+        "label": "a winter-survived hazelnut",
+        "description": "A hazelnut from last fall that survived the winter intact. Edible. Slightly stale but precious in late winter.",
+        "rarity": "uncommon",
+        "found_at": "the_fallen_oak",
+        "interaction_unlocks": [
+          "Bramble lights up at the sight of one and trades generously.",
+          "Counts as a gift in the late-winter customary register."
+        ]
+      }
+    ]
+  },
+
+  "starting_conditions": {
+    "_note": "Late winter — Day 1 lands at days 1-3 of the seasonal_arc. Food is honestly low, attention is high (emergence-alert), health is winter-thinned but intact.",
+    "food": 0.30,
+    "health": 0.85,
+    "attention": 0.70,
+    "active_burdens": ["winter_thinning"],
+    "starting_inventory": {
+      "main": [],
+      "alt1": ["heron_feather"]
+    },
+    "identity_notes": [
+      "Late winter waking — YY emerges from the counting tree hungry and alert.",
+      "First root in the new world (v2.0). Neighbors and economy are felt for the first time. No accumulated debts or grudges yet."
+    ]
+  },
+
+  "atmosphere": {
+    "one_line": "A whole year compressed into a month — emergence, abundance, harvest, shutdown — through the eyes of one squirrel and three neighbors.",
+    "recurring_elements": [
+      "the brook running through every season",
+      "Tock's gossip as a low constant",
+      "the stone wall as the persistent navigational marker",
+      "the slow change in food availability shaping every trade",
+      "weather a NE-US reader can name without being told"
+    ],
+    "what_this_month_costs": "Late-winter scarcity at the open and early-winter scarcity at the close. Travel cost is real. Trades that go bad with Mira compound for weeks.",
+    "what_this_month_offers": "An entire seasonal arc in one root. The chance to watch YY learn the social field from scratch. Every neighbor has different incentives; every season changes which trades make sense."
+  },
+
+  "authorial_intent": {
+    "arc_direction": "Track YY through one compressed year in a populated, anthropomorphic, NE-anchored world. Watch how social standing accumulates, how the seasonal arc reshapes trade, and how a single inherited status item changes 30 days of interactions.",
+    "questions_to_track": [
+      "Does Mira's first impression of YY become a stable read or a revisable one?",
+      "What does Bramble's enthusiasm cost YY when it goes wrong?",
+      "Does Tock's gossip economy reward generosity or stinginess?",
+      "How does the food_pressure curve interact with trade decisions — does YY save or trade in surplus?"
+    ],
+    "branch_hypothesis": "alt1 starts Day 1 holding the heron_feather — a single exotic status item from some unseen prior moment. Main starts with nothing. Hypothesis: a single inherited status object reshapes 30 days of social positioning. Mira reads alt1 as higher status from Day 1; Bramble approaches with more deference and bigger asks; Tock circles harder, trying to broker its temporary loan. Main has to earn each interaction from a flat start. The divergence is small at root start (one item) and we want to see whether it converges, compounds, or surprises us by being orthogonal to wealth."
+  }
+}

@@ -9,6 +9,8 @@ import type {
   GeneratedComparison,
   BranchEvaluation,
   InitSuggestions,
+  WorldSeed,
+  WorldSeedScheduleEntry,
 } from './types'
 
 const client = new Anthropic()
@@ -16,11 +18,100 @@ const MODEL = 'claude-sonnet-4-6'
 
 // ─── Shared system prompt ─────────────────────────────────────────────────────
 
-function systemPrompt(ctx: RunContext): string {
-  const { baseline } = ctx
+function currentSeason(worldSeed: WorldSeed, storyDay: number): WorldSeedScheduleEntry | null {
+  for (const seg of worldSeed.seasonal_arc.schedule) {
+    const parts = seg.days.split('-').map(s => parseInt(s.trim(), 10))
+    const lo = parts[0]
+    const hi = parts[1] ?? lo
+    if (storyDay >= lo && storyDay <= hi) return seg
+  }
+  return null
+}
+
+function worldSection(worldSeed: WorldSeed, storyDay: number): string {
+  const season = currentSeason(worldSeed, storyDay)
+  const places = worldSeed.geography.named_places
+    .map(p => `  - ${p.label} (${p.type}, ${p.status}): ${p.description}`)
+    .join('\n')
+  const neighbors = worldSeed.society.neighbors
+    .map(n => `  - ${n.name} — ${n.species}, ${n.role}; ${n.disposition}; ${n.notes}`)
+    .join('\n')
+  const customs = worldSeed.society.customs.map(c => `    - ${c}`).join('\n')
+  const items = worldSeed.inventory_catalog.items
+    .map(i => `  - ${i.label} (id: ${i.id}, ${i.rarity}, ${i.found_at}): ${i.description}\n      unlocks: ${i.interaction_unlocks.join('; ')}`)
+    .join('\n')
+
+  return `
+
+WORLD CONTEXT (v${worldSeed.world_version}):
+
+REGISTER: ${worldSeed.world_kind.register} — ${worldSeed.world_kind.tone_anchor}
+VIOLENCE RULE: ${worldSeed.world_kind.violence_rule}
+SPEECH RULE: ${worldSeed.world_kind.speech_rule}
+
+REGION ANCHOR: ${worldSeed.geography.region_anchor}
+
+CURRENT SEASON (story day ${storyDay}, segment ${season?.days ?? '?'}):
+${season ? `  ${season.season} — ${season.weather}\n  food_pressure: ${season.food_pressure} | daylight: ${season.daylight}` : '  (out of schedule — improvise consistent with seasonal_arc)'}
+
+HOME BASE: ${worldSeed.geography.home_base.label} — ${worldSeed.geography.home_base.description}
+
+NAMED PLACES:
+${places}
+
+TERRITORY NOTES: ${worldSeed.geography.territory_notes}
+
+NEIGHBORS (named, recurring; able to talk and reason):
+${neighbors}
+
+SOCIETY:
+  Capability: ${worldSeed.society.capability}
+  Customs:
+${customs}
+
+ECONOMY:
+  Currencies: ${worldSeed.economy.currencies.map(c => `${c.type} (${c.examples.slice(0, 3).join(', ')})`).join('; ')}
+  Norms: ${worldSeed.economy.exchange_norms}
+  Advancement: ${worldSeed.economy.advancement}
+
+MOBILITY: ${worldSeed.mobility.method} ${worldSeed.mobility.constraints}
+
+INVENTORY CATALOG (unique items in the world):
+${items}
+
+INVENTORY RULES:
+  - YY's currently held items appear in BRANCH STARTING STATE under "inventory".
+  - Items are unique objects with social weight. Holding one changes how neighbors interact.
+  - When YY gains an item, append it to state_after.inventory as { id, label, acquired_day, tradeable, notes }. Use catalog id when applicable; for novel finds, invent a stable id.
+  - When YY loses an item (gifted, traded, dropped), omit it from state_after.inventory.
+  - Reference items by their label in narrative; reference by id in canonical_truth.entities.
+
+ATMOSPHERE: ${worldSeed.atmosphere.one_line}`
+}
+
+function defaultNarrativeStyle(): string {
+  return `
+
+NARRATIVE STYLE:
+- Short paragraphs. Direct sentences.
+- Third person — "YY", not "I".
+- Concrete sensory details. What YY sees, hears, feels, notices.
+- Emotional honesty without melodrama.
+- When YY speaks, keep it brief and in character.
+- Restraint is a feature. Don't over-explain.
+- Match the compression style of prior days.`
+}
+
+function systemPrompt(ctx: RunContext, storyDay?: number): string {
+  const { baseline, worldSeed, voiceText } = ctx
   const traits = Object.entries(baseline.core_traits)
     .map(([k, v]) => `  ${k}: ${v}`)
     .join('\n')
+
+  const world = worldSeed ? worldSection(worldSeed, storyDay ?? 1) : ''
+  const voice = voiceText
+    ? `\n\nVOICE RULES (authoritative — docs/voice/${baseline.voice_version}.md):\n${voiceText}`
+    : defaultNarrativeStyle()
 
   return `You are the nightly pipeline for YY's branching world story.
 
@@ -39,16 +130,7 @@ ${Object.entries(baseline.default_reactions).map(([k, v]) => `  ${k} → ${v}`).
 
 IDENTITY RULES:
 - ${baseline.identity_rules.conservation_rule}
-- ${baseline.identity_rules.out_of_character_rule}
-
-NARRATIVE STYLE:
-- Short paragraphs. Direct sentences.
-- Third person — "YY", not "I".
-- Concrete sensory details. What YY sees, hears, feels, notices.
-- Emotional honesty without melodrama.
-- When YY speaks, keep it brief and in character.
-- Restraint is a feature. Don't over-explain.
-- Match the compression style of prior days.`.trim()
+- ${baseline.identity_rules.out_of_character_rule}${world}${voice}`.trim()
 }
 
 function recentHistoryBlock(ctx: RunContext): string {
@@ -69,6 +151,7 @@ function branchStateBlock(branch: BranchMeta): string {
     attention: s.condition.attention,
     health: s.condition.health,
     active_burdens: s.active_burdens,
+    inventory: s.inventory,
     trait_deviations: s.trait_deviations,
     identity_notes: s.identity_notes,
   }, null, 2)
@@ -130,7 +213,21 @@ const snapshotTool: Anthropic.Tool = {
               attention: { type: 'number' as const },
             },
           },
-          inventory: { type: 'array' as const, items: { type: 'string' as const } },
+          inventory: {
+            type: 'array' as const,
+            description: 'Unique items YY currently holds. Each item is { id, label, acquired_day?, tradeable?, notes? }. Use catalog ids when applicable.',
+            items: {
+              type: 'object' as const,
+              required: ['id', 'label'],
+              properties: {
+                id: { type: 'string' as const },
+                label: { type: 'string' as const },
+                acquired_day: { type: 'number' as const },
+                tradeable: { type: 'boolean' as const },
+                notes: { type: 'string' as const },
+              },
+            },
+          },
           active_burdens: { type: 'array' as const, items: { type: 'string' as const } },
           goals: {
             type: 'object' as const,
@@ -198,7 +295,7 @@ Follow author guidance closely. Respect all failure boundaries.`,
   const response = await client.messages.create({
     model: MODEL,
     max_tokens: 2000,
-    system: systemPrompt(ctx),
+    system: systemPrompt(ctx, storyDay),
     tools: [snapshotTool],
     tool_choice: { type: 'any' },
     messages,
@@ -252,6 +349,12 @@ export async function generateArtifact(
     .filter(([b]) => b === branch.urlId || b === 'main')
     .at(-1)?.[1] ?? ''
 
+  // Inventory delta — what YY gained or lost today
+  const beforeIds = new Set(snapshot.state_before.inventory.map(i => i.id))
+  const afterIds = new Set(snapshot.state_after.inventory.map(i => i.id))
+  const gained = snapshot.state_after.inventory.filter(i => !beforeIds.has(i.id)).map(i => i.label)
+  const lost = snapshot.state_before.inventory.filter(i => !afterIds.has(i.id)).map(i => i.label)
+
   const messages: Anthropic.MessageParam[] = [{
     role: 'user',
     content: `Write the Day ${storyDay} narrative artifact for the **${branch.urlId}** branch.
@@ -265,6 +368,8 @@ STATE CHANGE:
   food: ${snapshot.state_before.condition.food} → ${snapshot.state_after.condition.food}
   attention: ${snapshot.state_before.condition.attention} → ${snapshot.state_after.condition.attention}
   new burdens: ${snapshot.state_after.active_burdens.join(', ') || 'none'}
+  inventory gained: ${gained.join(', ') || 'none'}
+  inventory lost: ${lost.join(', ') || 'none'}
   identity: ${snapshot.state_after.identity_notes.join('; ')}
 
 NOTABLE SHIFT: ${snapshot.change_summary.notable_shift}
@@ -280,7 +385,7 @@ The narrative should open in scene, not with the title.`,
   const response = await client.messages.create({
     model: MODEL,
     max_tokens: 2000,
-    system: systemPrompt(ctx),
+    system: systemPrompt(ctx, storyDay),
     tools: [artifactTool],
     tool_choice: { type: 'any' },
     messages,
@@ -330,6 +435,7 @@ export async function evaluateBranch(
   ctx: RunContext,
   inbox: InboxEntry,
   existingBranchCount: number,
+  storyDay: number,
 ): Promise<BranchEvaluation> {
   // Author override takes priority
   if (inbox.branch_decision === 'deny') {
@@ -359,7 +465,7 @@ If branching: next ordinal is alt${nextAltN}. Suggest a short descriptor (1–2 
   const response = await client.messages.create({
     model: MODEL,
     max_tokens: 500,
-    system: systemPrompt(ctx),
+    system: systemPrompt(ctx, storyDay),
     tools: [branchTool],
     tool_choice: { type: 'any' },
     messages,
@@ -420,10 +526,11 @@ Suggest:
 Keep all suggestions short — they're prompts for the author to accept or override.`,
   }]
 
+  const nextStoryDay = Math.max(0, ...ctx.branches.map(b => b.publishedDays)) + 1
   const response = await client.messages.create({
     model: MODEL,
     max_tokens: 800,
-    system: systemPrompt(ctx),
+    system: systemPrompt(ctx, nextStoryDay),
     tools: [initTool],
     tool_choice: { type: 'any' },
     messages,
@@ -494,7 +601,7 @@ Write a concise comparison. Focus on what the fork reveals about YY — not just
   const response = await client.messages.create({
     model: MODEL,
     max_tokens: 800,
-    system: systemPrompt(ctx),
+    system: systemPrompt(ctx, storyDay),
     tools: [comparisonTool],
     tool_choice: { type: 'any' },
     messages,

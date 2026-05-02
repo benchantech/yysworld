@@ -1,0 +1,41 @@
+{
+  "schema_version": "0.1",
+  "branch_id": "branch_root_2026_05_01_alt1-with-feather",
+  "root_id": "root_2026_05_01",
+  "parent_branch_id": null,
+  "character_id": "yy",
+  "created_at": "2026-05-01T00:00:00Z",
+  "status": "active",
+  "state": {
+    "story_day": 0,
+    "condition": {
+      "health": 0.85,
+      "food": 0.30,
+      "attention": 0.70
+    },
+    "inventory": [
+      {
+        "id": "heron_feather",
+        "label": "the heron feather",
+        "acquired_day": 0,
+        "tradeable": true,
+        "notes": "A long blue-grey heron flight feather, carried from some unseen prior moment before this root began. Recognizable as exotic — herons pass through but rarely shed where they can be seen. Catalog reference: world-seed.json → inventory_catalog.heron_feather. Mira will read it as status; Tock will recognize and circle for it; Bramble will admire it loudly."
+      }
+    ],
+    "active_burdens": ["winter_thinning"],
+    "goals": {
+      "primary": "find_food",
+      "secondary": "learn_the_neighbors"
+    },
+    "reaction_overrides": {},
+    "trait_deviations": {},
+    "identity_notes": [
+      "Late winter waking — YY emerges from the counting tree hungry and alert.",
+      "Holding the heron feather from some unseen prior moment — a single exotic status item whose social weight YY has not yet tested.",
+      "First root in the new world (v2.0). Neighbors and economy are felt for the first time. No accumulated debts or grudges yet.",
+      "Branch hypothesis (alt1): does one inherited status object reshape 30 days of social positioning?"
+    ]
+  },
+  "drift_flags": [],
+  "last_updated_at": "2026-05-01T00:00:00Z"
+}
