@@ -1,0 +1,46 @@
+{
+  "schema_version": "0.1",
+  "comparison_id": "cmp_2026-05-02_2_main_vs_alt1-with-feather",
+  "artifact_type": "daily_comparison",
+  "root_id": "root_2026_05_01",
+  "branch_a": "branch_root_2026_05_01_main",
+  "branch_b": "branch_root_2026_05_01_alt1-with-feather",
+  "story_day": 2,
+  "snapshot_date": "2026-05-02",
+  "snapshot_ids": [
+    "snap_2026-05-02_branch_root_2026_05_01_main",
+    "snap_2026-05-02_branch_root_2026_05_01_alt1-with-feather"
+  ],
+  "package_ref": {
+    "package_id": "yysworld-pipeline-v0.1",
+    "package_created_at": "2026-05-02T20:30:00Z",
+    "package_hash": "sha256:claude-code-subscription"
+  },
+  "model_refs": [
+    {
+      "provider": "anthropic",
+      "model_id": "claude-code-subscription",
+      "role": "comparator",
+      "runtime_class": "interactive"
+    }
+  ],
+  "content": {
+    "divergence_summary": "Same stone wall, same hungry climb, same pounding rhythm of Mira and two younger deer running for the sheer life of it across the south slope. In main, YY watches the run as pure spectacle and walks away with a felt fact: the world is still alive, even now. In alt1, the run plays the same — until Mira slows at the south edge and her gaze comes back, landing on the heron feather. The second look is brief, ungifted, and does not interrupt the run. But Mira reads slowly, and a look in her ledger carries forward. Both YYs go to the brook. One walks home with the run. The other walks home with the run plus a mark.",
+    "branch_a_path": "YY climbed to the stone wall, watched Mira's run for two breaths, made a small pun about fast food to nobody, and walked toward the brook a little faster than he had been walking before.",
+    "branch_b_path": "YY climbed to the stone wall with the heron feather, watched the run, and as Mira slowed her gaze caught the feather on a second look — YY carried both the run and the slow-read mark to the brook.",
+    "key_differences": [
+      "In main, Mira does not register YY at all; in alt1, she registers him through the feather on a slowed second glance",
+      "Attention cost: -0.07 in main (the run absorbed attention); -0.10 in alt1 (the run plus being read by Mira)",
+      "Forward question: main asks 'what does motion mean?'; alt1 asks 'what does it mean to be in Mira's ledger?'",
+      "Two of three named neighbors have now read alt1's YY through the feather (Tock, Mira); main's YY is still socially un-pinned"
+    ],
+    "shared_elements": [
+      "the stone wall, the high stone, Tock's absence today",
+      "the same run by Mira and two younger deer, the same two-breath duration",
+      "the same pun ('fast food') and the same observation that YY's stomach is rarely an audience",
+      "the same conclusion: the world has announced itself; the day was not warmer; YY is not less hungry; YY walks toward the brook slightly faster than he was walking",
+      "neither YY has acted yet; both leave with the run carried home"
+    ]
+  },
+  "created_at": "2026-05-02T20:30:00Z"
+}

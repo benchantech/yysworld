@@ -1,0 +1,37 @@
+{
+  "schema_version": "0.1",
+  "artifact_id": "art_2026-05-02_branch_root_2026_05_01_alt1-with-feather_summary",
+  "artifact_type": "daily_summary",
+  "snapshot_id": "snap_2026-05-02_branch_root_2026_05_01_alt1-with-feather",
+  "root_id": "root_2026_05_01",
+  "branch_id": "branch_root_2026_05_01_alt1-with-feather",
+  "package_ref": {
+    "package_id": "yysworld-pipeline-v0.1",
+    "package_created_at": "2026-05-02T20:30:00Z",
+    "package_hash": "sha256:claude-code-subscription"
+  },
+  "model_refs": [
+    {
+      "provider": "anthropic",
+      "model_id": "claude-code-subscription",
+      "role": "summarizer",
+      "runtime_class": "interactive"
+    }
+  ],
+  "comparison_contract_version": "0.1",
+  "content": {
+    "title": "Seen Twice",
+    "tone": "hungry_and_caught",
+    "narrative": "YY heard the pounding before he understood the pounding.\n\nHe had climbed back up to the stone wall, the heron feather still tucked along his back, the way he had been carrying it through every cold morning that mattered. Tock was not on the wall today. Either Tock had moved on for the moment, or Tock was elsewhere doing exactly the work he had been doing yesterday, and YY did not know which. He sat on the highest stone with his paws tucked and waited for the day to tell him what it was.\n\nThe sound came up the slope. Not wind. Not branches. Something *lower*, something with rhythm.\n\nYY went very still.\n\nThree white tails came through the trees below, fast.\n\nIt was Mira. He knew her by the size of her, by the way she held her head when she was not reading weather. Two younger deer ran at her flanks, smaller, their legs working twice as hard. The three of them tore across the south slope without aiming at anything, just moving — the kind of run a thing does when it is alive and the cold has been long.\n\nYY had not known a deer could move like that.\n\nThe pounding came up the rise like a small drum and YY watched, hungry and unmoving.\n\nMira slowed at the south edge.\n\nShe had to — the trees thickened, the younger deer broke off into a different line, and her stride wound down into a half-trot. Her head came up, ears scanning. She looked up the slope.\n\nHer gaze passed YY once, the way a runner's gaze passes anything that isn't in her way.\n\nThen it came back.\n\nThe second look did not land on YY. It landed on the feather.\n\nMira held the look for a single breath. She did not stop. She did not nod. She started moving again, picking up speed, and was gone into the trees with the younger deer.\n\nYY sat on his stone.\n\n\"Well,\" he said, to nobody. \"That was *fast food.*\"\n\nHe felt only a little better. The pun was YY's, which usually counted, but the look had been Mira's, and Mira's looks had weight.\n\nHe could feel something had shifted inside him without permission, the way a story does when it lands well. The day was not warmer for the run, and he was not less hungry. But Mira had read him, and Mira read slowly, and a slow read carries forward.\n\n*Still alive,* he thought. *Even her. Even me, somehow. Even now.*\n\n*Now noted,* he added, after a moment. *By Mira.*\n\nHe went down toward the water. He walked a little faster than he had been walking the moment before — but the speed felt different than it would have felt to a YY without something on his back. The feather was an additional small weight, not heavy, but committed.\n\nHe carried that home, too.",
+    "state_note": "The day cost YY more attention than the version of him without the feather. Mira's second look did real work — the feather is now in her ledger, and Mira's ledgers move slowly. What the day gave YY is the awareness that two of three named neighbors have now read him through what he is carrying; the social field is no longer a possibility but a state.",
+    "summary": "YY climbed to the stone wall with the heron feather and watched Mira and two younger deer run across the south slope; as Mira slowed at the south edge her gaze passed YY and came back, landing on the feather, and YY left the stone with the same news as the rest of the world plus a slow-read mark in Mira's ledger.",
+    "state_delta": {
+      "food": "0.27 → 0.24",
+      "attention": "0.60 → 0.50",
+      "health": "0.82 → 0.80"
+    },
+    "branch_created": false,
+    "world_anchor": "The 152nd Kentucky Derby at Churchill Downs on 2026-05-02 — 'the most exciting two minutes in sports', a tradition of joy and motion at the start of spring, red roses and mint juleps and bodies in motion."
+  },
+  "created_at": "2026-05-02T20:30:00Z"
+}

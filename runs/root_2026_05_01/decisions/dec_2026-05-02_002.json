@@ -1,0 +1,22 @@
+{
+  "schema_version": "0.1",
+  "decision_id": "dec_2026-05-02_002",
+  "root_id": "root_2026_05_01",
+  "source_event_id": "evt_2026-05-02_002",
+  "signaled_by": { "actor_id": "pipeline", "actor_role": "evaluator" },
+  "signaled_at": "2026-05-02T20:30:00Z",
+  "decision_type": "create_branch",
+  "reason": {
+    "core_statement": "Day 2 builds the social field through Mira's run and exercises the heron-feather divergence with a second-look beat. No new shock — the divergence we're already tracking is doing the work.",
+    "branching_focus": "",
+    "confidence": 0.90
+  },
+  "proposed_mutation": {
+    "mutation_id": "mut_2026-05-02_002",
+    "mutation_type": "branch_divergence",
+    "branch_id": "",
+    "summary": "No new branch — Day 2 sits within existing branches."
+  },
+  "decision_status": "evaluated_no_branch",
+  "created_at": "2026-05-02T20:30:00Z"
+}

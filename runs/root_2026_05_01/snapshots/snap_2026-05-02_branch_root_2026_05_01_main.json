@@ -1,0 +1,56 @@
+{
+  "schema_version": "0.1",
+  "snapshot_id": "snap_2026-05-02_branch_root_2026_05_01_main",
+  "root_id": "root_2026_05_01",
+  "branch_id": "branch_root_2026_05_01_main",
+  "story_day": 2,
+  "snapshot_date": "2026-05-02",
+  "time_policy": "nightly_auto_advance",
+  "package_ref": {
+    "package_id": "yysworld-pipeline-v0.1",
+    "package_created_at": "2026-05-02T20:30:00Z",
+    "package_hash": "sha256:claude-code-subscription"
+  },
+  "model_refs": [
+    {
+      "provider": "anthropic",
+      "model_id": "claude-code-subscription",
+      "role": "generator",
+      "runtime_class": "interactive"
+    }
+  ],
+  "event_refs": ["evt_2026-05-02_002"],
+  "decision_refs": ["dec_2026-05-02_002"],
+  "state_before": {
+    "story_day": 1,
+    "condition": { "health": 0.83, "food": 0.27, "attention": 0.65 },
+    "inventory": [],
+    "active_burdens": ["winter_thinning"],
+    "goals": { "primary": "find_food", "secondary": "consider_the_conversation" },
+    "reaction_overrides": {},
+    "trait_deviations": {},
+    "identity_notes": [
+      "Late winter waking — YY emerged from the counting tree hungry and alert.",
+      "First root in the new world (v2.0). Neighbors and economy felt for the first time.",
+      "Met Tock on the stone wall. Heard about a brewing fair-trade conversation among the neighbors. Has nothing to bring yet."
+    ]
+  },
+  "state_after": {
+    "condition": { "health": 0.81, "food": 0.24, "attention": 0.58 },
+    "inventory": [],
+    "active_burdens": ["winter_thinning"],
+    "goals": { "primary": "find_food", "secondary": "carry_the_run_forward" },
+    "reaction_overrides": {},
+    "trait_deviations": {},
+    "identity_notes": [
+      "Late winter — YY is hungry and slow but moving.",
+      "Yesterday: met Tock, heard about the brewing fair-trade conversation, has nothing to bring.",
+      "Today: witnessed Mira's run across the south slope — three deer running for the sheer life of it, two breaths long. The world announced itself. YY has not acted on it; he sat and watched and walked a little faster afterward."
+    ]
+  },
+  "change_summary": {
+    "notable_shift": "YY witnessed a brief, purposeless gallop by Mira and two younger deer — the world reasserting itself through motion against the late-winter hush. The run lodged in YY without changing his immediate situation; he is hungry, the brook is still cold, but the day was not the same after.",
+    "branch_created": false
+  },
+  "created_at": "2026-05-02T20:30:00Z"
+}

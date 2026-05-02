@@ -1,0 +1,75 @@
+{
+  "schema_version": "0.1",
+  "snapshot_id": "snap_2026-05-02_branch_root_2026_05_01_alt1-with-feather",
+  "root_id": "root_2026_05_01",
+  "branch_id": "branch_root_2026_05_01_alt1-with-feather",
+  "story_day": 2,
+  "snapshot_date": "2026-05-02",
+  "time_policy": "nightly_auto_advance",
+  "package_ref": {
+    "package_id": "yysworld-pipeline-v0.1",
+    "package_created_at": "2026-05-02T20:30:00Z",
+    "package_hash": "sha256:claude-code-subscription"
+  },
+  "model_refs": [
+    {
+      "provider": "anthropic",
+      "model_id": "claude-code-subscription",
+      "role": "generator",
+      "runtime_class": "interactive"
+    }
+  ],
+  "event_refs": ["evt_2026-05-02_002"],
+  "decision_refs": ["dec_2026-05-02_002"],
+  "state_before": {
+    "story_day": 1,
+    "condition": { "health": 0.82, "food": 0.27, "attention": 0.60 },
+    "inventory": [
+      {
+        "id": "heron_feather",
+        "label": "the heron feather",
+        "acquired_day": 0,
+        "tradeable": true,
+        "notes": "Carried along YY's back through the morning. Tock saw it before he saw YY and recalibrated. The feather is now a known thing in the social field — Tock has registered it."
+      }
+    ],
+    "active_burdens": ["winter_thinning"],
+    "goals": { "primary": "find_food", "secondary": "decide_what_to_do_with_being_seen" },
+    "reaction_overrides": {},
+    "trait_deviations": {},
+    "identity_notes": [
+      "Late winter waking — YY emerged from the counting tree hungry and alert.",
+      "First root in the new world (v2.0). Neighbors and economy felt for the first time.",
+      "Met Tock on the stone wall. Tock saw the heron feather before he saw YY; the conversation pivoted on the feather, not on YY.",
+      "Now aware of being read — for the first time, YY notices that he is socially visible. He has not done anything about it.",
+      "Branch hypothesis (alt1): does one inherited status object reshape 30 days of social positioning? Day 1 evidence: yes, immediately, through Tock."
+    ]
+  },
+  "state_after": {
+    "condition": { "health": 0.80, "food": 0.24, "attention": 0.50 },
+    "inventory": [
+      {
+        "id": "heron_feather",
+        "label": "the heron feather",
+        "acquired_day": 0,
+        "tradeable": true,
+        "notes": "Tock has seen it (Day 1). Mira has seen it (Day 2) — her second look on the run-down landed there. Two of three named neighbors have now registered the feather; only Bramble is unaccounted for."
+      }
+    ],
+    "active_burdens": ["winter_thinning"],
+    "goals": { "primary": "find_food", "secondary": "live_with_being_read_twice" },
+    "reaction_overrides": {},
+    "trait_deviations": {},
+    "identity_notes": [
+      "Late winter — YY is hungry and slow but moving.",
+      "Yesterday: met Tock, heard about the brewing fair-trade conversation, the feather pivoted his approach.",
+      "Today: witnessed Mira's run across the south slope — and Mira's gaze caught the feather on her second look as she slowed. She did not stop. She did not nod. She kept running. But she read.",
+      "Now read by Tock and Mira. Mira reads slowly; her looks carry forward. The branch hypothesis is producing concrete evidence — being seen is now a social fact, not a possibility."
+    ]
+  },
+  "change_summary": {
+    "notable_shift": "YY witnessed Mira's run and was read on the way down. The two-look beat lands the heron feather as a known object in Mira's slow-trade ledger. YY now carries not just the feather but the awareness that two of three named neighbors have registered him through it.",
+    "branch_created": false
+  },
+  "created_at": "2026-05-02T20:30:00Z"
+}

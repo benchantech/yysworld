@@ -7,11 +7,11 @@
   "created_at": "2026-05-01T00:00:00Z",
   "status": "active",
   "state": {
-    "story_day": 1,
+    "story_day": 2,
     "condition": {
-      "health": 0.82,
-      "food": 0.27,
-      "attention": 0.60
+      "health": 0.80,
+      "food": 0.24,
+      "attention": 0.50
     },
     "inventory": [
       {
@@ -19,24 +19,23 @@
         "label": "the heron feather",
         "acquired_day": 0,
         "tradeable": true,
-        "notes": "Carried along YY's back through the morning. Tock saw it before he saw YY and recalibrated. The feather is now a known thing in the social field — Tock has registered it."
+        "notes": "Tock has seen it (Day 1). Mira has seen it (Day 2) — her second look on the run-down landed there. Two of three named neighbors have now registered the feather; only Bramble is unaccounted for."
       }
     ],
     "active_burdens": ["winter_thinning"],
     "goals": {
       "primary": "find_food",
-      "secondary": "decide_what_to_do_with_being_seen"
+      "secondary": "live_with_being_read_twice"
     },
     "reaction_overrides": {},
     "trait_deviations": {},
     "identity_notes": [
-      "Late winter waking — YY emerged from the counting tree hungry and alert.",
-      "First root in the new world (v2.0). Neighbors and economy felt for the first time.",
-      "Met Tock on the stone wall. Tock saw the heron feather before he saw YY; the conversation pivoted on the feather, not on YY.",
-      "Now aware of being read — for the first time, YY notices that he is socially visible. He has not done anything about it.",
-      "Branch hypothesis (alt1): does one inherited status object reshape 30 days of social positioning? Day 1 evidence: yes, immediately, through Tock."
+      "Late winter — YY is hungry and slow but moving.",
+      "Yesterday: met Tock, heard about the brewing fair-trade conversation, the feather pivoted his approach.",
+      "Today: witnessed Mira's run across the south slope — and Mira's gaze caught the feather on her second look as she slowed. She did not stop. She did not nod. She kept running. But she read.",
+      "Now read by Tock and Mira. Mira reads slowly; her looks carry forward. The branch hypothesis is producing concrete evidence — being seen is now a social fact, not a possibility."
     ]
   },
   "drift_flags": [],
-  "last_updated_at": "2026-05-01T20:30:00Z"
+  "last_updated_at": "2026-05-02T20:30:00Z"
 }

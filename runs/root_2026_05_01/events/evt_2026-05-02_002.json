@@ -1,0 +1,25 @@
+{
+  "schema_version": "0.1",
+  "event_id": "evt_2026-05-02_002",
+  "root_id": "root_2026_05_01",
+  "story_day": 2,
+  "occurred_at": "2026-05-02T12:00:00Z",
+  "event_type": "collective_motion",
+  "canonical_truth": {
+    "summary": "YY witnesses Mira and two younger deer running across the south slope below the stone wall — a brief, purposeless gallop that breaks the late-winter quiet for two breaths and is gone.",
+    "entities": ["yy", "mira", "the_stone_wall", "the_south_meadow", "younger_deer"],
+    "location": "the_stone_wall (overlook above the south slope)",
+    "concrete_outcome": "YY watches Mira's run from a high stone, registers it as the world announcing itself, and continues toward the brook a little faster than he was walking before."
+  },
+  "perception_prompt": {
+    "noticeable_surface": "A pounding rhythm through the trees, then white tails — Mira and two younger deer running for the sheer life of it across the south slope, a brief glorious chaos against the late-winter hush.",
+    "ambiguity_level": 0.2
+  },
+  "tags": ["late_winter", "collective_motion", "tradition", "joy", "mira_seen", "south_meadow_edge"],
+  "created_at": "2026-05-02T20:30:00Z",
+  "authorial_note": {
+    "real_world_inspiration": "The 152nd Kentucky Derby at Churchill Downs on 2026-05-02 — 'the most exciting two minutes in sports', a tradition of joy and motion at the start of spring, red roses and mint juleps and bodies in motion.",
+    "translation_logic": "The Derby's two minutes of joyful, traditional motion → a brief late-winter run by Mira and two younger deer. The world says 'still alive' before it says 'still hungry.' One sensory encounter that works for both branches: in main, YY watches from a distance; in alt1, Mira's gaze catches the heron feather on her second look as she slows.",
+    "restraint_reason": "Day 2 stays in the witnessing mode. The fair-trade conversation from Day 1 stays in the background; today is about the world reasserting itself through motion."
+  }
+}
