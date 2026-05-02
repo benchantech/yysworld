@@ -1,29 +1,27 @@
 import type { Metadata } from 'next'
 import { Breadcrumbs } from '@/components/nav/Breadcrumbs'
 import { JsonLd } from '@/components/JsonLd'
-import { BASE_URL } from '@/lib/nav'
-import { getMuseumReadme } from '@/lib/adrs'
+import { BASE_URL, museumBreadcrumbs } from '@/lib/nav'
+import { getMuseumCount, getMuseumReadme } from '@/lib/adrs'
 import { schemaBreadcrumbList } from '@/lib/jsonld'
 import { renderAdrMarkdown } from '@/lib/mdrender'
+
+const MUSEUM_COUNT = getMuseumCount()
 
 export const metadata: Metadata = {
   title: 'ADR Museum',
   description:
-    '57 superseded ADRs preserved as scar records: Case-002 YY\'s World (24), Pre-Manifest (19), Starter Kit v0.1 (14). Full reasoning lineage for yysworld.',
+    `${MUSEUM_COUNT} superseded ADRs preserved as scar records: Case-002 YY's World (24), Pre-Manifest (19), Starter Kit v0.1 (14). Full reasoning lineage for yysworld.`,
   openGraph: {
     title: 'ADR Museum — yysworld',
     description:
-      'The complete lineage of thinking that led to the current active ADR set. 57 superseded decisions preserved per the YY Method: corrections are new events, not silent rewrites.',
+      `The complete lineage of thinking that led to the current active ADR set. ${MUSEUM_COUNT} superseded decisions preserved per the YY Method: corrections are new events, not silent rewrites.`,
     type: 'article',
     url: `${BASE_URL}/adrs/museum/`,
   },
 }
 
-const breadcrumbs = [
-  { label: 'yysworld', href: '/' as const },
-  { label: 'adrs', href: '/adrs/' as const },
-  { label: 'museum' },
-]
+const breadcrumbs = museumBreadcrumbs()
 
 export default function MuseumPage() {
   const readme = getMuseumReadme()
@@ -32,7 +30,7 @@ export default function MuseumPage() {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
     name: 'yysworld ADR Museum',
-    description: '57 superseded ADRs. Full reasoning lineage preserved as scar records.',
+    description: `${MUSEUM_COUNT} superseded ADRs. Full reasoning lineage preserved as scar records.`,
     url: `${BASE_URL}/adrs/museum/`,
     isPartOf: {
       '@type': 'CollectionPage',
@@ -51,7 +49,7 @@ export default function MuseumPage() {
           <p className="font-mono text-xs text-ink-3 uppercase tracking-widest">museum</p>
           <h1 className="font-sans text-2xl font-medium text-ink tracking-tight">ADR Museum</h1>
           <p className="font-sans text-sm text-ink-2 leading-relaxed max-w-prose">
-            57 superseded ADRs preserved as scar records. Old decisions are not deleted —
+            {MUSEUM_COUNT} superseded ADRs preserved as scar records. Old decisions are not deleted —
             they are inspectable history. Read them in order to understand how the system evolved.
           </p>
         </header>

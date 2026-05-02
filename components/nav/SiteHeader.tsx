@@ -2,20 +2,12 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-
-const NAV = [
-  { href: '/today', label: 'today', exact: false },
-  { href: '/compare', label: 'compare', exact: false },
-  { href: '/yy/about/', label: 'meet yy', exact: false },
-  { href: '/archive', label: 'archive', exact: false },
-  { href: '/lab', label: 'AI', exact: false },
-]
+import { PRIMARY_NAV } from '@/lib/nav'
 
 export function SiteHeader() {
   const pathname = usePathname()
 
-  function isActive(href: string, exact: boolean) {
-    if (exact) return pathname === href || pathname === href.replace(/\/$/, '')
+  function isActive(href: string) {
     return pathname.startsWith(href)
   }
 
@@ -38,8 +30,8 @@ export function SiteHeader() {
         </Link>
 
         <nav aria-label="site" className="flex items-center gap-3 sm:gap-5 ml-auto overflow-x-auto scrollbar-none min-w-0 flex-nowrap">
-          {NAV.map(({ href, label, exact }) => {
-            const active = isActive(href, exact)
+          {PRIMARY_NAV.map(({ href, label }) => {
+            const active = isActive(href)
             return (
               <Link
                 key={href}

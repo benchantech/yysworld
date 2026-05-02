@@ -61,10 +61,18 @@ export default async function AdrPage({ params }: { params: Promise<Params> }) {
   const prevAdr = currentIndex > 0 ? allAdrs[currentIndex - 1] : null
   const nextAdr = currentIndex < allAdrs.length - 1 ? allAdrs[currentIndex + 1] : null
 
-  // Build id→slug map so dependsOn citations resolve to specific ADR pages
-  const adrSlugMap: Record<string, string> = Object.fromEntries(
-    allAdrs.map(a => [a.id, a.slug]),
-  )
+  // Build id→slug map so dependsOn citations resolve to specific ADR pages.
+  // Old ADRs use "YYBW-NNN" identity; new ADRs use "ADR-NNN". Alias both
+  // forms to the same slug so cross-format references always resolve.
+  const adrSlugMap: Record<string, string> = {}
+  for (const a of allAdrs) {
+    if (a.id) adrSlugMap[a.id] = a.slug
+    if (a.num) {
+      const padded = String(a.num).padStart(3, '0')
+      adrSlugMap[`ADR-${padded}`] = a.slug
+      adrSlugMap[`YYBW-${padded}`] = a.slug
+    }
+  }
 
   const techArticleSchema = {
     '@context': 'https://schema.org',

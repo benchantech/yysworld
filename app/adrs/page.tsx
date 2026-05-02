@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
 import { Breadcrumbs } from '@/components/nav/Breadcrumbs'
 import { JsonLd } from '@/components/JsonLd'
-import { BASE_URL } from '@/lib/nav'
-import { getActiveAdrs } from '@/lib/adrs'
+import { BASE_URL, adrsBreadcrumbs } from '@/lib/nav'
+import { getActiveAdrs, getMuseumCount } from '@/lib/adrs'
 import { schemaBreadcrumbList } from '@/lib/jsonld'
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -22,13 +22,11 @@ export async function generateMetadata(): Promise<Metadata> {
   }
 }
 
-const breadcrumbs = [
-  { label: 'yysworld', href: '/' as const },
-  { label: 'adrs' },
-]
+const breadcrumbs = adrsBreadcrumbs()
 
 export default function AdrsIndexPage() {
   const adrs = getActiveAdrs()
+  const museumCount = getMuseumCount()
 
   const collectionSchema = {
     '@context': 'https://schema.org',
@@ -65,7 +63,7 @@ export default function AdrsIndexPage() {
             </a>
             {' · '}
             <a href="/adrs/museum/" className="hover:text-ink transition-colors border-b border-rule hover:border-ink">
-              museum (57 superseded)
+              museum ({museumCount} superseded)
             </a>
           </p>
         </header>
@@ -108,7 +106,7 @@ export default function AdrsIndexPage() {
         <section className="pt-2 border-t border-rule space-y-2">
           <h2 className="font-mono text-xs text-ink-3 uppercase tracking-widest">Museum</h2>
           <p className="font-sans text-sm text-ink-3 leading-relaxed">
-            57 superseded ADRs preserved as scar records in the{' '}
+            {museumCount} superseded ADRs preserved as scar records in the{' '}
             <a href="/adrs/museum/" className="text-ink-2 hover:text-ink transition-colors border-b border-rule hover:border-ink">
               museum
             </a>

@@ -56,23 +56,39 @@ function extractSummary(content: string): string {
 export function parseAdrMeta(content: string, slug: string, filename: string): AdrMeta {
   const lines = content.split('\n')
 
-  // Title: first # line, strip "ADR NNN — " prefix
-  const titleLine = lines.find(l => /^# ADR \d+/.test(l)) ?? ''
+  // Title: first heading like "# ADR-040 — ..." or "# ADR 022 — ..."
+  const titleLine = lines.find(l => /^# ADR[-\s]\d+/.test(l)) ?? ''
   const title = titleLine
-    .replace(/^# ADR \d+\s*[—–-]+\s*/, '')
+    .replace(/^# ADR[-\s]\d+\s*[—–-]+\s*/, '')
     .trim()
 
   const numMatch = slug.match(/^(\d+)/)
   const num = numMatch ? parseInt(numMatch[1], 10) : 0
 
-  const id = extractField(lines, 'ID')
+  // Newer ADRs (037+) drop the "**ID:** YYBW-NNN" line and rely on the heading
+  // for identity. Fall back to ADR-NNN derived from the filename so the index
+  // and individual page render an ID badge in either format.
+  const padded = String(num).padStart(3, '0')
+  const id = extractField(lines, 'ID') || `ADR-${padded}`
+
   const status = extractField(lines, 'Status')
   const date = extractField(lines, 'Date')
 
+  // Older ADRs use "Depends on:" with comma-separated YYBW-NNN ids.
+  // Newer ADRs use "Refs:" with ADR-NNN codes embedded in prose like
+  // "ADR-013 (manifests as control surfaces), ADR-022 (URL design)".
+  // Extract the codes either way.
   const depStr = extractField(lines, 'Depends on')
-  const dependsOn = depStr && depStr.toLowerCase() !== 'none'
-    ? depStr.split(',').map(s => s.trim()).filter(Boolean)
-    : []
+  let dependsOn: string[] = []
+  if (depStr && depStr.toLowerCase() !== 'none') {
+    dependsOn = depStr.split(',').map(s => s.trim()).filter(Boolean)
+  } else {
+    const refsStr = extractField(lines, 'Refs')
+    if (refsStr) {
+      const codes = refsStr.match(/\b(?:ADR|YYBW)[-\s]?\d+/gi) ?? []
+      dependsOn = codes.map(c => c.replace(/\s/g, '-').toUpperCase())
+    }
+  }
 
   const summary = extractSummary(content)
 
@@ -118,4 +134,25 @@ export function getAdrSlugs(): string[] {
 export function getMuseumReadme(): string {
   const p = join(ADRS_DIR, 'museum', 'README.md')
   return existsSync(p) ? readFileSync(p, 'utf-8') : ''
+}
+
+/**
+ * Count of superseded ADRs in the museum (excluding READMEs).
+ * Walks one level into era subdirectories (case-002, pre-manifest, etc.).
+ */
+export function getMuseumCount(): number {
+  const museumRoot = join(ADRS_DIR, 'museum')
+  if (!existsSync(museumRoot)) return 0
+  let count = 0
+  for (const entry of readdirSync(museumRoot, { withFileTypes: true })) {
+    if (entry.isFile() && entry.name.endsWith('.md') && entry.name !== 'README.md') {
+      count++
+    } else if (entry.isDirectory()) {
+      const subdir = join(museumRoot, entry.name)
+      for (const file of readdirSync(subdir)) {
+        if (file.endsWith('.md') && file !== 'README.md') count++
+      }
+    }
+  }
+  return count
 }

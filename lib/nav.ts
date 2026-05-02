@@ -11,6 +11,21 @@ export interface BreadcrumbItem {
 export const BASE_URL = 'https://yysworld.com'
 export const BASELINE_URL = '/yy/baseline.json'
 
+// ─── Primary nav (shared by SiteHeader and the footer) ──────────────────────
+
+export interface NavItem {
+  href: string
+  label: string
+}
+
+export const PRIMARY_NAV: NavItem[] = [
+  { href: '/today', label: 'today' },
+  { href: '/compare', label: 'compare' },
+  { href: '/yy/about/', label: 'meet yy' },
+  { href: '/archive', label: 'archive' },
+  { href: '/lab', label: 'AI' },
+]
+
 // ─── URL builders ────────────────────────────────────────────────────────────
 
 /** /yy, /zz, … */
@@ -98,6 +113,17 @@ export function formatBranch(branch: string): string {
 
 export function homeBreadcrumbs(): BreadcrumbItem[] {
   return [{ label: 'yysworld' }]
+}
+
+/** Single "yysworld" parent crumb with href — for nested non-character pages. */
+export const SITE_PARENT_CRUMB: BreadcrumbItem = { label: 'yysworld', href: '/' }
+
+export function adrsBreadcrumbs(): BreadcrumbItem[] {
+  return [SITE_PARENT_CRUMB, { label: 'adrs' }]
+}
+
+export function museumBreadcrumbs(): BreadcrumbItem[] {
+  return [SITE_PARENT_CRUMB, { label: 'adrs', href: '/adrs/' }, { label: 'museum' }]
 }
 
 export function charBreadcrumbs(char: string): BreadcrumbItem[] {

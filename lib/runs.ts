@@ -403,6 +403,61 @@ export function getRunDateByMonth(month: string): string | null {
   return run?.runDate ?? null
 }
 
+/** Convert a runDate ("2026-05-01") to its on-disk rootId ("root_2026_05_01"). */
+export function rootIdFromRunDate(runDate: string): string {
+  return `root_${runDate.replace(/-/g, '_')}`
+}
+
+/** Find the rootId whose first branch was created in the given month, or null. */
+export function getRootIdByMonth(month: string): string | null {
+  const runDate = getRunDateByMonth(month)
+  return runDate ? rootIdFromRunDate(runDate) : null
+}
+
+export interface BaselineRecord {
+  schema_version: string
+  character_id: string
+  name: string
+  voice_version: string
+  species: string
+  baseline_created_at: string
+  baseline_calibrated_at: string
+  calibration_method: string
+  calibration_inherited_from?: string
+  core_traits: Record<string, number>
+  values: string[]
+  default_reactions?: Record<string, string>
+  failure_boundaries?: string[]
+  identity_rules?: Record<string, string>
+  calibration_notes?: Record<string, string>
+  voice_notes?: Record<string, string>
+}
+
+/**
+ * Read the baseline JSON for a specific run.
+ * Returns the parsed object verbatim — no field renaming.
+ */
+export function readBaseline(rootId: string): BaselineRecord | null {
+  const p = join(process.cwd(), 'runs', rootId, 'baseline', 'yy_baseline.json')
+  if (!existsSync(p)) return null
+  try {
+    return JSON.parse(readFileSync(p, 'utf-8'))
+  } catch {
+    return null
+  }
+}
+
+/**
+ * Read the latest available baseline (latest run by runDate desc).
+ * Used by the human-facing "Meet YY" page so canonical traits, values,
+ * voice version, and calibration metadata are never hand-typed.
+ */
+export function getLatestBaseline(): BaselineRecord | null {
+  const runs = getStaticRuns(true)
+  if (runs.length === 0) return null
+  return readBaseline(rootIdFromRunDate(runs[0].runDate))
+}
+
 /**
  * Like getDayArtifact but resolves runDate from a month string.
  * Used by the /yy/data/ JSON API routes.

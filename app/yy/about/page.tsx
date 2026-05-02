@@ -3,6 +3,92 @@ import { Breadcrumbs } from '@/components/nav/Breadcrumbs'
 import { JsonLd } from '@/components/JsonLd'
 import { aboutBreadcrumbs, BASELINE_URL } from '@/lib/nav'
 import { schemaBreadcrumbList, schemaCharacterPerson } from '@/lib/jsonld'
+import { getLatestBaseline } from '@/lib/runs'
+
+function loadBaselineOrThrow() {
+  const b = getLatestBaseline()
+  if (!b) throw new Error('Meet YY page requires a baseline from the latest run; none found.')
+  return b
+}
+
+const baseline = loadBaselineOrThrow()
+
+// "bedtime_stories" → "bedtime stories"; "easily_surprised" → "easily surprised"
+const humanize = (s: string) => s.replace(/_/g, ' ')
+
+// "2026-04-14T00:00:00Z" → "apr 14, 2026"
+function formatBaselineDate(iso: string): string {
+  const d = new Date(iso)
+  return d
+    .toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' })
+    .toLowerCase()
+}
+
+// "22_scenario_interview" → 22
+function parseScenarioCount(method: string): number | null {
+  const m = method.match(/^(\d+)_scenario/)
+  return m ? parseInt(m[1], 10) : null
+}
+
+const CORE_TRAITS = Object.entries(baseline.core_traits)
+  .map(([key, score]) => ({
+    name: humanize(key),
+    score,
+    low: score < 0.3,
+  }))
+  .sort((a, b) => b.score - a.score)
+
+const VALUES = baseline.values.map(humanize)
+
+const CALIBRATION_NOTES = Object.entries(baseline.calibration_notes ?? {}).map(([trait, note]) => ({
+  trait: humanize(trait),
+  note,
+}))
+
+const SCENARIO_COUNT = parseScenarioCount(baseline.calibration_method)
+const CALIBRATION_LABEL = SCENARIO_COUNT
+  ? `${SCENARIO_COUNT}-scenario calibration interview`
+  : `${baseline.calibration_method} calibration`
+
+const IDENTITY_BADGE = [
+  `voice ${baseline.voice_version}`,
+  baseline.species,
+  `calibrated ${formatBaselineDate(baseline.baseline_calibrated_at)}`,
+].join(' · ')
+
+// Top 3 traits, formatted as "name (score)" for the JSON-LD description.
+const TOP_TRAITS_PHRASE = CORE_TRAITS.slice(0, 3)
+  .map((t) => `${t.name} (${t.score.toFixed(2).replace(/\.?0+$/, '')})`)
+  .join(', ')
+
+const VALUES_PHRASE = (() => {
+  if (VALUES.length === 0) return ''
+  if (VALUES.length === 1) return VALUES[0]
+  return `${VALUES.slice(0, -1).join(', ')}, and ${VALUES[VALUES.length - 1]}`
+})()
+
+const JSONLD_DESCRIPTION = `Fictional character — ${TOP_TRAITS_PHRASE}. Values ${VALUES_PHRASE}. Calibrated via ${SCENARIO_COUNT ?? 'multi'}-scenario interview.`
+
+// Curated subset of traits surfaced as identity tags on the card. Strict subset
+// of the baseline's core_traits — if a key here doesn't exist there, the build
+// flags it. The selection is editorial (positive-framing identity), not a
+// straight top-N.
+const IDENTITY_TAG_KEYS = ['curious', 'expressive', 'easily_surprised', 'stubborn', 'prosocial', 'pragmatic', 'restless']
+const baselineKeys = new Set(Object.keys(baseline.core_traits))
+for (const k of IDENTITY_TAG_KEYS) {
+  if (!baselineKeys.has(k)) {
+    throw new Error(`Identity tag "${k}" is not in the latest baseline core_traits.`)
+  }
+}
+const IDENTITY_TAGS = IDENTITY_TAG_KEYS.map(humanize)
+
+// In-his-own-words is hand-authored Q&A — kept here, not in the baseline.
+const INTERVIEW: { q: string; a: string }[] = [
+  { q: 'What do you do when you find something beautiful?', a: 'I get quiet. Then I tell someone later.' },
+  { q: 'What about when a bigger squirrel wants what you have?', a: "I trade. I don't hoard." },
+  { q: "What do you do when you're behind?", a: 'I take three steps, then I check my hands. Then I decide whether to run.' },
+  { q: 'What do you do at night?', a: 'I listen for stories. If nobody is telling one, I tell one.' },
+]
 
 export const metadata: Metadata = {
   title: 'YY — profile',
@@ -17,38 +103,6 @@ export const metadata: Metadata = {
   },
 }
 
-const CORE_TRAITS: { name: string; score: number; low?: boolean }[] = [
-  { name: 'curious', score: 1.0 },
-  { name: 'expressive', score: 0.9 },
-  { name: 'easily surprised', score: 0.85 },
-  { name: 'distractible', score: 0.85 },
-  { name: 'stubborn', score: 0.75 },
-  { name: 'prosocial', score: 0.75 },
-  { name: 'pragmatic', score: 0.7 },
-  { name: 'restless', score: 0.7 },
-  { name: 'randomly eloquent', score: 0.65 },
-  { name: 'stream of consciousness', score: 0.45 },
-  { name: 'disciplined', score: 0.2, low: true },
-]
-
-const VALUES = ['friendship', 'food', 'music', 'language', 'technology', 'bedtime stories', 'fair trade']
-
-const INTERVIEW: { q: string; a: string }[] = [
-  { q: 'What do you do when you find something beautiful?', a: 'I get quiet. Then I tell someone later.' },
-  { q: 'What about when a bigger squirrel wants what you have?', a: 'I trade. I don\'t hoard.' },
-  { q: 'What do you do when you\'re behind?', a: 'I take three steps, then I check my hands. Then I decide whether to run.' },
-  { q: 'What do you do at night?', a: 'I listen for stories. If nobody is telling one, I tell one.' },
-]
-
-const CALIBRATION_NOTES: { trait: string; note: string }[] = [
-  { trait: 'naive', note: 'removed — responses showed social awareness (trade, pushback on attention-seekers)' },
-  { trait: 'trash as treasure', note: 'removed from values — scenario 13 showed YY leaves broken things, does not hoard' },
-  { trait: 'scarcity reaction', note: 'revised from hoard to trade_or_assess — scenario 15 showed transactional fairness over hoarding' },
-  { trait: 'stream of consciousness', note: 'lowered from 0.8 — thoughts are associative but compressed, not rambling' },
-  { trait: 'randomly eloquent', note: 'raised from 0.4 — "simply beamed" and "tasty, tradeable treat" are genuine compression events' },
-  { trait: 'beauty reaction', note: 'added compress — YY responds to beauty with minimal, precise language' },
-]
-
 export default function YYAboutPage() {
   const breadcrumbs = aboutBreadcrumbs('yy')
 
@@ -56,11 +110,7 @@ export default function YYAboutPage() {
     <>
       <JsonLd
         schema={[
-          schemaCharacterPerson(
-            'YY',
-            '/yy/about',
-            'Fictional character — curious (1.0), expressive (0.9), easily surprised (0.85). Values friendship, food, music, language, technology, bedtime stories, and fair trade. Calibrated via 22-scenario interview.',
-          ),
+          schemaCharacterPerson('YY', '/yy/about', JSONLD_DESCRIPTION),
           schemaBreadcrumbList(breadcrumbs),
         ]}
       />
@@ -73,8 +123,9 @@ export default function YYAboutPage() {
           <p className="font-mono text-xs text-ink-3 uppercase tracking-widest">the character</p>
           <h1 className="font-sans text-4xl font-medium text-ink tracking-tight">Meet YY.</h1>
           <p className="font-sans text-lg text-ink-2 leading-relaxed max-w-prose mt-3">
-            A squirrel. The center of this whole thing. He was calibrated over 22 scenarios before
-            day one of any run — so when he reacts to a morning, it&apos;s him, not a guess.
+            A {baseline.species}. The center of this whole thing. He was calibrated over{' '}
+            {SCENARIO_COUNT ?? 'many'} scenarios before day one of any run — so when he reacts to
+            a morning, it&apos;s him, not a guess.
           </p>
         </div>
 
@@ -90,7 +141,7 @@ export default function YYAboutPage() {
             <div>
               <p className="font-sans text-5xl font-medium text-ink tracking-tight leading-none">YY</p>
               <p className="font-mono text-xs text-ink-3 uppercase tracking-widest mt-1">
-                voice v2 · squirrel · calibrated apr 14, 2026
+                {IDENTITY_BADGE}
               </p>
             </div>
             <p className="font-sans text-base text-ink leading-relaxed">
@@ -99,7 +150,7 @@ export default function YYAboutPage() {
               goes quiet around beauty.
             </p>
             <div className="flex flex-wrap gap-2">
-              {['curious', 'expressive', 'easily surprised', 'stubborn', 'prosocial', 'pragmatic', 'restless'].map((tag) => (
+              {IDENTITY_TAGS.map((tag) => (
                 <span
                   key={tag}
                   className="font-mono text-xs px-2.5 py-1 border border-rule text-ink-2"
@@ -112,7 +163,7 @@ export default function YYAboutPage() {
               className="font-hand text-lg leading-relaxed"
               style={{ color: 'var(--color-accent)' }}
             >
-              Loves: friendship · food · music · language · bedtime stories · fair trade
+              Loves: {VALUES.join(' · ')}
             </p>
           </div>
 
@@ -164,7 +215,7 @@ export default function YYAboutPage() {
             <h2 className="font-sans text-2xl font-medium text-ink tracking-tight">
               In his own words.
             </h2>
-            <p className="font-mono text-xs text-ink-3 mt-1">from the 22-scenario calibration interview</p>
+            <p className="font-mono text-xs text-ink-3 mt-1">from the {CALIBRATION_LABEL}</p>
             <div className="mt-4 h-px bg-ink w-16" />
           </div>
 
@@ -187,18 +238,20 @@ export default function YYAboutPage() {
         </section>
 
         {/* Calibration notes */}
-        <section className="space-y-3 border-t border-rule pt-8">
-          <h2 className="font-mono text-xs text-ink-3 uppercase tracking-widest">Calibration notes</h2>
-          <ul className="space-y-3">
-            {CALIBRATION_NOTES.map((n) => (
-              <li key={n.trait} className="flex gap-3 text-sm">
-                <span className="font-mono text-ink-2 shrink-0">{n.trait}</span>
-                <span className="text-ink-4">—</span>
-                <span className="font-sans text-ink-3 leading-relaxed">{n.note}</span>
-              </li>
-            ))}
-          </ul>
-        </section>
+        {CALIBRATION_NOTES.length > 0 && (
+          <section className="space-y-3 border-t border-rule pt-8">
+            <h2 className="font-mono text-xs text-ink-3 uppercase tracking-widest">Calibration notes</h2>
+            <ul className="space-y-3">
+              {CALIBRATION_NOTES.map((n) => (
+                <li key={n.trait} className="flex gap-3 text-sm">
+                  <span className="font-mono text-ink-2 shrink-0">{n.trait}</span>
+                  <span className="text-ink-4">—</span>
+                  <span className="font-sans text-ink-3 leading-relaxed">{n.note}</span>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
 
       </div>
     </>
