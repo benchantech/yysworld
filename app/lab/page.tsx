@@ -1,10 +1,10 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { PageHeader, PageShell } from '@/components/canon/Layout'
-import { MonoLabel, NotebookCard, SectionRule } from '@/components/canon/Primitives'
+import { SectionRule } from '@/components/canon/Primitives'
 
 export const metadata: Metadata = {
-  title: 'Lab — yysworld',
+  title: 'AI — yysworld',
   description: 'ADRs, schemas, ledgers, APIs, and system maps for builders and curious readers.',
 }
 
@@ -43,18 +43,25 @@ export default function LabPage() {
   return (
     <PageShell wide>
       <PageHeader
-        eyebrow="lab"
+        eyebrow="AI"
         title="The builder layer stays. It just stops being the front door."
         lede="ADRs, schemas, ledgers, APIs, and system maps remain available for builders and curious readers."
       />
 
-      <section className="yy-labGrid" style={{ marginTop: '2rem' }}>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-8">
         {ARTIFACTS.map(({ key, title, copy, href, external }) => (
-          <NotebookCard key={key}>
-            <MonoLabel>builder artifact</MonoLabel>
-            <h3>{title}</h3>
-            <p>{copy}</p>
-            <div style={{ marginTop: '1rem' }}>
+          <div
+            key={key}
+            className="border border-ink bg-paper-2 px-6 py-5 flex flex-col gap-3 relative"
+          >
+            <div
+              className="absolute inset-1 border border-rule pointer-events-none"
+              aria-hidden="true"
+            />
+            <p className="font-mono text-xs text-ink-3 uppercase tracking-widest">builder artifact</p>
+            <h3 className="font-sans text-lg font-medium text-ink tracking-tight">{title}</h3>
+            <p className="font-mono text-xs text-ink-3 leading-relaxed flex-1">{copy}</p>
+            <div>
               {external ? (
                 <a className="yy-button yy-button--ghost" href={href}>
                   open →
@@ -65,9 +72,9 @@ export default function LabPage() {
                 </Link>
               )}
             </div>
-          </NotebookCard>
+          </div>
         ))}
-      </section>
+      </div>
 
       <SectionRule />
 

@@ -86,7 +86,7 @@ function SiteFooter() {
             <Link href="/compare" className="hover:text-ink transition-colors border-b-0">compare</Link>
             <Link href="/yy/about/" className="hover:text-ink transition-colors border-b-0">meet yy</Link>
             <Link href="/archive" className="hover:text-ink transition-colors border-b-0">archive</Link>
-            <Link href="/lab" className="hover:text-ink transition-colors border-b-0">lab</Link>
+            <Link href="/lab" className="hover:text-ink transition-colors border-b-0">AI</Link>
           </nav>
         </div>
         <div className="space-y-1 text-right">
