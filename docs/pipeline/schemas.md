@@ -54,7 +54,7 @@ Key constraints:
   "story_day": 1,
   "snapshot_date": "{date}",
   "time_policy": "nightly_auto_advance",
-  "package_ref": { "package_id": "yysworld-pipeline-v0.1", "package_created_at": "...", "package_hash": "sha256:claude-code-subscription" },
+  "package_ref": { "package_id": "yysworld-pipeline-v0.2", "package_created_at": "...", "package_hash": "sha256:claude-code-subscription" },
   "model_refs": [{ "provider": "anthropic", "model_id": "claude-code-subscription", "role": "generator", "runtime_class": "interactive" }],
   "event_refs": ["{eventId}"],
   "decision_refs": [],

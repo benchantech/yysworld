@@ -1,10 +1,25 @@
 # /pipeline-go
 
+**Pipeline version: v0.2** (token-budget tightened — see ADR-041)
+
 You are the nightly pipeline for YY's branching world. Run this when the user opens their laptop in the morning.
 
 One phase: **PUBLISH** — propose, confirm, generate, commit the most recent unpublished story day.
 
 No external API key needed. You are the model.
+
+---
+
+## Context budget — read this first
+
+Token burn grows with run length only if each day re-reads the entire run. It must not. The pipeline is built on a self-contained-day principle:
+
+- **The branch file is the source of truth for current state.** It already carries `state` (condition, inventory, burdens, goals) and `identity_notes` written by yesterday's run. That is the carryover. You do not need a snapshot to reconstruct it.
+- **One day's artifact is enough voice/narrative continuity for the next day.** Read yesterday's artifact per branch — not the whole `artifacts/` directory.
+- **Older snapshots, older artifacts, older events, older comparisons, older decisions are not loaded** unless the user explicitly asks ("look back at day 4", "what was the last branching event"). Past content has already been distilled into the branch file's `identity_notes`. Re-reading it relitigates settled history.
+- **When you write today's snapshot and artifact, write them so tomorrow's run only needs to read this branch file + this artifact.** That means `identity_notes` should encode 2–4 lines of "what someone reading fresh tomorrow needs to know" — yesterday's tail beat + today's beat + any standing thread (e.g. a hidden patch, an unresolved promise) — and the artifact's narrative should be the only piece of prose tomorrow needs as a voice anchor.
+
+Look-back hard cap: **1 day** by default. Never load more than 2 prior days without explicit user direction.
 
 ---
 
@@ -24,20 +39,43 @@ Set `targetDate = yesterday` initially. Step 4 may advance it to `today` if yest
 
 - Story day for this run: `publishedDays + 1` per branch
 
-### Step 2 — Load context
+### Step 2 — Load context (minimal, capped)
 
-Read these files:
+Find rootId first: list `runs/` directory. Use the most recent `root_YYYY_MM_DD` directory with active branches.
+
+Then read **only** these files. Do not glob `snapshots/`, `artifacts/`, `events/`, `comparisons/`, or `decisions/`. Do not read prior-day files beyond the cap below.
+
+**Always read (constraint + current state — small, fixed-size):**
 
 ```
-runs/{rootId}/baseline/yy_baseline.json
-runs/{rootId}/branches/{branchId}.json       ← one per branch (all active)
-runs/{rootId}/snapshots/*.json               ← recent snapshots for continuity
-runs/{rootId}/artifacts/*.json               ← recent artifacts for style reference
-runs/{rootId}/inbox/{targetDate}.json        ← author's queued entry (may not exist)
-runs/{rootId}/inbox/queue/*.json             ← fallback queue entries
+runs/{rootId}/baseline/yy_baseline.json     ← character constraint, voice_version
+runs/{rootId}/branches/{branchId}.json      ← one per active branch — current state + identity_notes carryover
 ```
 
-To find rootId: list `runs/` directory. Use the most recent `root_YYYY_MM_DD` directory with active branches.
+**Read once per branch (yesterday's voice anchor — capped at 1 prior day):**
+
+Compute `priorDate = targetDate − 1 day` (note: `targetDate` is set in Step 4; for Step 2's first pass use `yesterday`, then if Step 4 advances `targetDate` to `today`, re-read with `priorDate = yesterday`).
+
+```
+runs/{rootId}/artifacts/art_{priorDate}_{branchId}_summary.json   ← yesterday's prose, per branch
+```
+
+If the file does not exist (e.g. day 1 of a run), skip silently — the baseline + branch file are sufficient.
+
+**Read only if it exists for today:**
+
+```
+runs/{rootId}/inbox/{targetDate}.json       ← author's queued entry (rare)
+```
+
+Do **not** read `inbox/queue/*` as a glob. If the targeted inbox file is missing, proceed without one — the live event search in Step 5 supplies the day's hook.
+
+**Do not read on a normal run** (load only on explicit user request):
+- `runs/{rootId}/snapshots/*.json` — branch file already has `state`; snapshots are an audit trail, not a context input
+- older artifacts (anything before `priorDate`) — already distilled into `identity_notes`
+- `runs/{rootId}/events/*.json` — yesterday's anchor is in yesterday's artifact's `world_anchor`; older events are settled
+- `runs/{rootId}/comparisons/*.json` — divergence is re-derived per day from current branch states
+- `runs/{rootId}/decisions/*.json` — branch existence is already reflected in the active branches list
 
 Branches: main first, then alts alphabetically. Strip `branch_{rootId}_` prefix for urlId.
 
@@ -199,6 +237,13 @@ NNN = count of existing files in `events/` + 1, zero-padded to 3 digits. All bra
 
 For each branch (main first), generate snapshot and narrative artifact using confirmed plans and user overrides.
 
+**Carry-forward discipline (v0.2 — token budget).** Tomorrow's run will only read this branch file + this artifact. Write them so that is enough:
+
+- `state_after.identity_notes` must be 2–4 lines: the minimum someone reading fresh tomorrow needs to act in character — yesterday's tail beat (one line), today's beat (one line), and any standing thread that outlives today (a hidden patch, an unkept promise, an unresolved acquisition). Do not summarize the whole run; the run is encoded in the prose history, not here.
+- `state_after.inventory` and `active_burdens` must reflect anything that persists past today. If it persists, it goes here; if not, it lives only in the artifact's narrative.
+- The artifact's `narrative` is the only prose tomorrow's run will see. Voice cues that should propagate (a habit phrase, a tic, a current cadence) must appear in this day's narrative — they cannot be inferred from the branch file alone.
+- The artifact's `summary` is one past-tense sentence; the artifact's `state_note` is the one place to record texture that did not become inventory or identity_notes (mood color, a sensory residue, a soft thread). Keep it short — it is shown on hover in product surfaces.
+
 **Character name — hard constraint:** The character's name in all narrative prose, summaries, state_notes, and identity_notes must match `baseline.name` from `yy_baseline.json`. The current branch being generated (e.g. "alt1-on-time") is a path identifier, not a character label. If you notice yourself writing a branch label (e.g. "alt1", "Alt1") as a substitute for the character's name, stop and replace it with the value from `baseline.name`.
 
 **YY character rules:**
@@ -223,7 +268,7 @@ State stats are `food`, `health`, `attention` (0–1 floats). Field name is `foo
   "snapshot_date": "{targetDate}",
   "time_policy": "nightly_auto_advance",
   "package_ref": {
-    "package_id": "yysworld-pipeline-v0.1",
+    "package_id": "yysworld-pipeline-v0.2",
     "package_created_at": "{now ISO}",
     "package_hash": "sha256:claude-code-subscription"
   },

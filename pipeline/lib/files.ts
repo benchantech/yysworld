@@ -12,9 +12,9 @@ import type {
 } from './types'
 
 const SCHEMA_VERSION = '0.1'
-const PACKAGE_ID = 'yysworld-pipeline-v0.1'
+const PACKAGE_ID = 'yysworld-pipeline-v0.2'
 const MODEL_ID = 'claude-sonnet-4-6'
-const PIPELINE_VERSION = '0.1'
+const PIPELINE_VERSION = '0.2'
 
 function ensureDir(path: string): void {
   if (!existsSync(path)) mkdirSync(path, { recursive: true })
