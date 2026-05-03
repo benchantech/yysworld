@@ -1,0 +1,74 @@
+{
+  "schema_version": "0.1",
+  "snapshot_id": "snap_2026-05-03_branch_root_2026_05_01_alt1-with-feather",
+  "root_id": "root_2026_05_01",
+  "branch_id": "branch_root_2026_05_01_alt1-with-feather",
+  "story_day": 3,
+  "snapshot_date": "2026-05-03",
+  "time_policy": "nightly_auto_advance",
+  "package_ref": {
+    "package_id": "yysworld-pipeline-v0.1",
+    "package_created_at": "2026-05-03T20:30:00Z",
+    "package_hash": "sha256:claude-code-subscription"
+  },
+  "model_refs": [
+    {
+      "provider": "anthropic",
+      "model_id": "claude-code-subscription",
+      "role": "generator",
+      "runtime_class": "interactive"
+    }
+  ],
+  "event_refs": ["evt_2026-05-03_003"],
+  "decision_refs": ["dec_2026-05-03_003"],
+  "state_before": {
+    "story_day": 2,
+    "condition": { "health": 0.80, "food": 0.24, "attention": 0.50 },
+    "inventory": [
+      {
+        "id": "heron_feather",
+        "label": "the heron feather",
+        "acquired_day": 0,
+        "tradeable": true,
+        "notes": "Tock has seen it (Day 1). Mira has seen it (Day 2) — her second look on the run-down landed there. Two of three named neighbors have now registered the feather; only Bramble is unaccounted for."
+      }
+    ],
+    "active_burdens": ["winter_thinning"],
+    "goals": { "primary": "find_food", "secondary": "live_with_being_read_twice" },
+    "reaction_overrides": {},
+    "trait_deviations": {},
+    "identity_notes": [
+      "Late winter — YY is hungry and slow but moving.",
+      "Yesterday: met Tock, heard about the brewing fair-trade conversation, the feather pivoted his approach.",
+      "Today: witnessed Mira's run across the south slope — and Mira's gaze caught the feather on her second look as she slowed. She did not stop. She did not nod. She kept running. But she read.",
+      "Now read by Tock and Mira. Mira reads slowly; her looks carry forward. The branch hypothesis is producing concrete evidence — being seen is now a social fact, not a possibility."
+    ]
+  },
+  "state_after": {
+    "condition": { "health": 0.78, "food": 0.22, "attention": 0.45 },
+    "inventory": [
+      {
+        "id": "heron_feather",
+        "label": "the heron feather",
+        "acquired_day": 0,
+        "tradeable": true,
+        "notes": "Tock and Mira have seen it. On Day 3 the feather actively cost YY the year's first ramp shoot — its presence on his back made the head-down dig posturally unsafe (a flat back is required to keep it riding), and he chose not to commit. The feather has crossed from social signal to behavioral constraint."
+      }
+    ],
+    "active_burdens": ["winter_thinning"],
+    "goals": { "primary": "find_food", "secondary": "stay_legible_in_posture" },
+    "reaction_overrides": {},
+    "trait_deviations": {},
+    "identity_notes": [
+      "Late winter — YY is hungry and slower today; the day cost him real food without giving real food back.",
+      "Yesterday: Mira read the feather on her second look during the run.",
+      "Today: found the same warm-earth patch the main timeline did, identified the year's first ramp shoot, but the feather along his back made the head-down dig feel exposed. He covered the patch back over and walked away with no green to carry. Drank brook water on the way back; that was the day's only intake.",
+      "First measured cost of the feather: a missed forage. The branch hypothesis has produced evidence that being read changes not just who notices YY, but what YY allows himself to do unwatched."
+    ]
+  },
+  "change_summary": {
+    "notable_shift": "The feather crossed from social signal to behavioral constraint. YY recognized the year's first ramp shoot in the warm-earth patch but declined the head-down dig because the feather rides on a flat back; he covered the patch and walked away with the smell only. The branch's first measurable cost.",
+    "branch_created": false
+  },
+  "created_at": "2026-05-03T20:30:00Z"
+}

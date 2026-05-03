@@ -1,0 +1,37 @@
+{
+  "schema_version": "0.1",
+  "artifact_id": "art_2026-05-03_branch_root_2026_05_01_main_summary",
+  "artifact_type": "daily_summary",
+  "snapshot_id": "snap_2026-05-03_branch_root_2026_05_01_main",
+  "root_id": "root_2026_05_01",
+  "branch_id": "branch_root_2026_05_01_main",
+  "package_ref": {
+    "package_id": "yysworld-pipeline-v0.1",
+    "package_created_at": "2026-05-03T20:30:00Z",
+    "package_hash": "sha256:claude-code-subscription"
+  },
+  "model_refs": [
+    {
+      "provider": "anthropic",
+      "model_id": "claude-code-subscription",
+      "role": "summarizer",
+      "runtime_class": "interactive"
+    }
+  ],
+  "comparison_contract_version": "0.1",
+  "content": {
+    "title": "The Green Spear",
+    "tone": "hungry_and_finding",
+    "narrative": "YY had his nose pointed at the brook and his belly pointed at *anything*, when the smell stopped him.\n\nHe went still. Nose up. Nose down. Nose along the ground.\n\nNot mud. Mud he knew — gray and patient, smelling of rocks. This was warmer. Faintly ripe, the way the under-shelf in the treehouse used to smell when he had stored a thing too long and the thing had begun to remember it was alive.\n\nYY squinted at the patch.\n\nIt was a small bare patch the size of three of his paws, where the snow had pulled back days ago. The air above it was *busy* in a way the air above the rest of the ground was not. The patch was awake.\n\nYY put one paw down.\n\nWARM.\n\nHe pulled the paw back, examined it suspiciously, put it back down.\n\nStill warm — not snake-warm, not fur-warm. Something else. Like the south side of the counting tree the morning after the freeze broke, when the bark gave back a little of the day before's sun.\n\nThe earth was giving something back.\n\n\"Well,\" YY said, to the patch. \"*Hello.*\"\n\nHe started digging.\n\nHe was bad at digging — squirrels are bad at digging on principle; the ground is for nuts you buried last fall, not for new business — but hunger had made him generous with his rules. Soft topsoil came away in paw-fulls. He sneezed once at the smell, which up close was yeast and old roots and something he did not have a word for.\n\nA finger of green appeared.\n\nYY froze.\n\nA single shoot, narrow as a thread, pushing up out of the warm dark.\n\nA ramp.\n\nThe first one.\n\n\"Oh,\" YY said, very quietly. \"Oh *come on.*\"\n\nHe had not seen a ramp since last spring, and last spring they had been a plural situation — whole hillsides, an embarrassment of green. This one shoot, alone in the dark, was *his*.\n\nHe bit half of it off.\n\nThe taste was so sharp his eyes watered. Onion and grass and something hot underneath. He chewed too fast, made the small chittering sound he made when he was eating something he had not expected to be eating, and when he stopped chewing he realized he had been making the sound out loud.\n\n\"Apologies,\" he told the patch. \"Excitement.\"\n\nHe looked at the other half, still in his paw. He could eat it — he was hungry enough to eat the woods, if the woods would hold still. But the other half was a *carryable* situation. A green-shaped piece of tomorrow.\n\n\"Half now,\" he said. \"Half *to go.*\"\n\nHe tucked it into his cheek.\n\nHe covered the patch over with a careful paw, smoothing the soil flat. Three paws across. South of the brook. Six steps from the leaning birch. Today's secret. Tomorrow's possible.\n\nOn the way up the slope, the half-shoot pressed cool against the inside of his cheek, and YY made a small list of the people who did not know. Tock did not know. Mira did not know. Bramble did not know. The ground had told *him* first — because he had been hungry enough to listen, and small enough to fit one paw inside a steam.\n\nHe took the long way back.\n\n*When in doubt, get myself out.* Especially with one cheek out.",
+    "state_note": "The day cost YY some attention and a little health — digging is unsquirrel work and he spent himself on the commitment — but it gave back the year's first food, plus a private foraging point only he knows. He carries the half-shoot in his cheek and the smell of warm soil in his nose, and the patch keeps growing in the dark behind him.",
+    "summary": "YY caught a strange warm ferment-smell rising from a bare-earth patch near the brook, dug through the topsoil, uncovered the year's first ramp shoot, ate half on the spot and tucked the other half into his cheek; he covered the patch flat, kept the location secret, and took the long way home with one cheek full.",
+    "state_delta": {
+      "food": "0.24 → 0.34",
+      "attention": "0.58 → 0.52",
+      "health": "0.81 → 0.80"
+    },
+    "branch_created": false,
+    "world_anchor": "Scientists develop a fuel cell powered by microbes in ordinary soil that produces electricity to run underground sensors entirely from within — the discovery, reported on 2026-05-03, that living soil generates usable energy without batteries or sun."
+  },
+  "created_at": "2026-05-03T20:30:00Z"
+}

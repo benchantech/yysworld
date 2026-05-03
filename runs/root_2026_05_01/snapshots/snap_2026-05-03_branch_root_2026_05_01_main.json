@@ -1,0 +1,65 @@
+{
+  "schema_version": "0.1",
+  "snapshot_id": "snap_2026-05-03_branch_root_2026_05_01_main",
+  "root_id": "root_2026_05_01",
+  "branch_id": "branch_root_2026_05_01_main",
+  "story_day": 3,
+  "snapshot_date": "2026-05-03",
+  "time_policy": "nightly_auto_advance",
+  "package_ref": {
+    "package_id": "yysworld-pipeline-v0.1",
+    "package_created_at": "2026-05-03T20:30:00Z",
+    "package_hash": "sha256:claude-code-subscription"
+  },
+  "model_refs": [
+    {
+      "provider": "anthropic",
+      "model_id": "claude-code-subscription",
+      "role": "generator",
+      "runtime_class": "interactive"
+    }
+  ],
+  "event_refs": ["evt_2026-05-03_003"],
+  "decision_refs": ["dec_2026-05-03_003"],
+  "state_before": {
+    "story_day": 2,
+    "condition": { "health": 0.81, "food": 0.24, "attention": 0.58 },
+    "inventory": [],
+    "active_burdens": ["winter_thinning"],
+    "goals": { "primary": "find_food", "secondary": "carry_the_run_forward" },
+    "reaction_overrides": {},
+    "trait_deviations": {},
+    "identity_notes": [
+      "Late winter — YY is hungry and slow but moving.",
+      "Yesterday: met Tock, heard about the brewing fair-trade conversation, has nothing to bring.",
+      "Today: witnessed Mira's run across the south slope — three deer running for the sheer life of it, two breaths long. The world announced itself. YY has not acted on it; he sat and watched and walked a little faster afterward."
+    ]
+  },
+  "state_after": {
+    "condition": { "health": 0.80, "food": 0.34, "attention": 0.52 },
+    "inventory": [
+      {
+        "id": "first_ramp_shoot",
+        "label": "the half-ramp shoot (first of the year)",
+        "acquired_day": 3,
+        "tradeable": true,
+        "notes": "Year's first green, foraged from a warm-soil patch six steps south of the leaning birch by the brook. YY ate half on the spot, tucked the other half into his cheek to carry. The patch was smoothed flat and is known only to YY."
+      }
+    ],
+    "active_burdens": ["winter_thinning"],
+    "goals": { "primary": "find_food", "secondary": "keep_the_warm_patch" },
+    "reaction_overrides": {},
+    "trait_deviations": {},
+    "identity_notes": [
+      "Late winter — YY is hungry but has eaten the year's first food and carries the second half.",
+      "Yesterday: witnessed Mira's run across the south slope.",
+      "Today: found a patch of warm earth south of the brook, dug, uncovered the year's first ramp shoot. Ate half on the spot, tucked the other half into his cheek to carry home. Smoothed the soil back over and took the long way home to keep the patch unseen.",
+      "First inventory acquisition in the main timeline — a small green object tied to a hidden warm-patch foraging point only YY knows."
+    ]
+  },
+  "change_summary": {
+    "notable_shift": "YY committed to a head-down dig in a warm-earth patch and uncovered the first ramp shoot of the year — the underground ferment surfacing as both food and seasonal signal. He gained a small surplus and a private foraging point; the warm patch is now a secret in the woods, kept by one squirrel with one cheek full.",
+    "branch_created": false
+  },
+  "created_at": "2026-05-03T20:30:00Z"
+}

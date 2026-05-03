@@ -1,0 +1,25 @@
+{
+  "schema_version": "0.1",
+  "event_id": "evt_2026-05-03_003",
+  "root_id": "root_2026_05_01",
+  "story_day": 3,
+  "occurred_at": "2026-05-03T12:00:00Z",
+  "event_type": "natural_phenomenon",
+  "canonical_truth": {
+    "summary": "A patch of bare earth near the brook is venting warmth from below — soil microbes have crossed the late-winter threshold and the ground is beginning to ferment ahead of the canopy. The first ramp shoot of the year has broken the surface in the warm patch.",
+    "entities": ["bare_earth_patch", "first_ramp_shoot", "warm_soil"],
+    "location": "south of the brook crossing, the bare-earth patch where the snow lifted first",
+    "concrete_outcome": "Underground warmth surfaces as a smell and a single green spear; the patch becomes a foragable point one sense ahead of the rest of the woods."
+  },
+  "perception_prompt": {
+    "noticeable_surface": "A patch of bare earth near the brook smells different — not cold mud, but something warmer, a faint ferment rising from below, the way stored food smells when it is just crossing into ripe.",
+    "ambiguity_level": 0.25
+  },
+  "tags": ["soil", "warmth", "underground", "late-winter-break", "food-adjacent", "seasonal-signal"],
+  "created_at": "2026-05-03T20:30:00Z",
+  "authorial_note": {
+    "real_world_inspiration": "Scientists develop a fuel cell powered by microbes in ordinary soil that produces electricity to run underground sensors entirely from within — the discovery, reported on 2026-05-03, that living soil generates usable energy without batteries or sun.",
+    "translation_logic": "Energy generated from within the soil translates to YY noticing the ground itself waking — warmth and ferment-smell rising from below, surfacing as the first green of the year. The discovery's underground-and-self-sustaining quality becomes a sensory turn YY can step into.",
+    "restraint_reason": "The science arrives as a smell and a shoot, never as a concept. YY does not understand microbes or batteries; he understands warmth-from-below, and the green spear that confirms it."
+  }
+}

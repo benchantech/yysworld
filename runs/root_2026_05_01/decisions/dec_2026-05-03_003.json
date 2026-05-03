@@ -1,0 +1,22 @@
+{
+  "schema_version": "0.1",
+  "decision_id": "dec_2026-05-03_003",
+  "root_id": "root_2026_05_01",
+  "source_event_id": "evt_2026-05-03_003",
+  "signaled_by": { "actor_id": "pipeline", "actor_role": "evaluator" },
+  "signaled_at": "2026-05-03T20:30:00Z",
+  "decision_type": "no_branch",
+  "reason": {
+    "core_statement": "Day 3 produced its divergence inside the running hypothesis: the feather actively cost alt YY the year's first ramp shoot, while main YY took the dig and gained the green. The existing alt1-with-feather branch is doing exactly the work it was created to do — adding a new branch on day 3 would dilute the running comparison without testing a new variable.",
+    "branching_focus": "",
+    "confidence": 0.85
+  },
+  "proposed_mutation": {
+    "mutation_id": "mut_2026-05-03_003",
+    "mutation_type": "branch_divergence",
+    "branch_id": "",
+    "summary": "No new branch — Day 3 strengthens the existing branch contrast by producing the first measured behavioral cost of the feather."
+  },
+  "decision_status": "evaluated_no_branch",
+  "created_at": "2026-05-03T20:30:00Z"
+}

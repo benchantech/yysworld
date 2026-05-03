@@ -1,0 +1,48 @@
+{
+  "schema_version": "0.1",
+  "comparison_id": "cmp_2026-05-03_3_main_vs_alt1-with-feather",
+  "artifact_type": "daily_comparison",
+  "root_id": "root_2026_05_01",
+  "branch_a": "branch_root_2026_05_01_main",
+  "branch_b": "branch_root_2026_05_01_alt1-with-feather",
+  "story_day": 3,
+  "snapshot_date": "2026-05-03",
+  "snapshot_ids": [
+    "snap_2026-05-03_branch_root_2026_05_01_main",
+    "snap_2026-05-03_branch_root_2026_05_01_alt1-with-feather"
+  ],
+  "package_ref": {
+    "package_id": "yysworld-pipeline-v0.1",
+    "package_created_at": "2026-05-03T20:30:00Z",
+    "package_hash": "sha256:claude-code-subscription"
+  },
+  "model_refs": [
+    {
+      "provider": "anthropic",
+      "model_id": "claude-code-subscription",
+      "role": "comparator",
+      "runtime_class": "interactive"
+    }
+  ],
+  "content": {
+    "divergence_summary": "Day 3 was the day the feather started costing meals. Both YYs caught the same warm ferment-smell rising from the same bare-earth patch near the brook, identified the year's first ramp shoot, and stood at the same threshold. Main YY committed to the head-down dig, ate half the shoot, and tucked the other half in his cheek to carry. Alt-YY recognized that crouching to dig would tilt the feather off his flat back and turn his foraging into a sight-line; he covered the patch and walked away with the smell only. The branches now hold a measurable food gap and a behavioral asymmetry — main can act unwatched; alt operates inside a posture that other animals can read.",
+    "branch_a_path": "Hunger generous with the rules — main YY dug, ate, kept half for tomorrow, smoothed the patch back over, and walked the long way home with one cheek full and a private foraging point only he knows about.",
+    "branch_b_path": "Posture before stomach — alt YY recognized the food, recognized that digging would unsettle the feather and expose him in the wrong shape, covered the patch, drank brook water, and climbed home with the smell of warm soil and a new piece of self-knowledge: the feather has weight, and the weight is paid in meals.",
+    "key_differences": [
+      "main gained food (0.24 → 0.34); alt lost food (0.24 → 0.22)",
+      "main acquired a new inventory item (half-ramp shoot, year's first green); alt's inventory is unchanged",
+      "main now holds private knowledge of the warm-patch foraging point; alt knows the same point but cannot use it without addressing the feather",
+      "main's secondary goal shifted to keep_the_warm_patch (protect the secret); alt's shifted to stay_legible_in_posture (manage how being read constrains action)",
+      "the feather crossed in alt from social signal to behavioral constraint — the first day it cost YY a real meal, not just attention",
+      "tone of close: main ends on a wry self-checking quip with cheek-out; alt ends on a long reckoning with what was passed up and why"
+    ],
+    "shared_elements": [
+      "the warm-earth patch, the smell of yeast and old roots, the recognition of the year's first ramp",
+      "both YYs identify the food but only one harvests it — recognition is shared, action is not",
+      "the underground warmth is read in both branches as a seasonal signal, not just a personal find",
+      "both YYs cover the patch back over before leaving — the secret of the warm point survives in both timelines",
+      "winter_thinning continues to apply in both branches; neither has crossed out of the late-winter food regime"
+    ]
+  },
+  "created_at": "2026-05-03T20:30:00Z"
+}
