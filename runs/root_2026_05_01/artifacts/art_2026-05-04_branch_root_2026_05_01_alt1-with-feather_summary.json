@@ -1,0 +1,37 @@
+{
+  "schema_version": "0.1",
+  "artifact_id": "art_2026-05-04_branch_root_2026_05_01_alt1-with-feather_summary",
+  "artifact_type": "daily_summary",
+  "snapshot_id": "snap_2026-05-04_branch_root_2026_05_01_alt1-with-feather",
+  "root_id": "root_2026_05_01",
+  "branch_id": "branch_root_2026_05_01_alt1-with-feather",
+  "package_ref": {
+    "package_id": "yysworld-pipeline-v0.2",
+    "package_created_at": "2026-05-09T20:30:00Z",
+    "package_hash": "sha256:claude-code-subscription"
+  },
+  "model_refs": [
+    {
+      "provider": "anthropic",
+      "model_id": "claude-code-subscription",
+      "role": "summarizer",
+      "runtime_class": "interactive"
+    }
+  ],
+  "comparison_contract_version": "0.1",
+  "content": {
+    "title": "A Track Instead",
+    "tone": "hungry_and_watchful",
+    "narrative": "The first thing YY heard was the brook saying a different word.\n\nHe had come down for water — yesterday's only intake, today's first sip — and his stomach was already filing a long, specific, increasingly creative complaint, when the sound stopped him.\n\nYesterday: *shhh*. Today: *shhUSHHHshhh* — fuller, faster, the sound of something that had been waiting and finally got out.\n\nYY froze. The feather along his back tilted with him — half a beat behind his shoulders, like a passenger who had not been told the cart was stopping.\n\nHe squinted upstream.\n\nBrown water. Brown water meant the brook had eaten its banks somewhere up there. Brown water meant *carrying.*\n\nHe scampered along the edge.\n\nA leaf went past at running-speed. A twig with a beetle still hugging it. Then a small dark cluster — round, soaked, traveling fast — and YY's ears went up before his brain did.\n\nBeechnuts.\n\nBeechnuts going *past him.*\n\n\"*Oh come on,*\" YY whispered, very quietly. \"*You have got to be kidding me.*\"\n\nHe looked at the eddy six steps down. It was slow there. The cluster would spin in. He could go paws-out, take a face-full of cold spray, and come up with a winter's skipped mast pressed against his chest.\n\nHe could.\n\nHe started forward — and his back muscles did the math his brain had not.\n\nGoing paws-out at the eddy was a *flat*-back maneuver. A leap, a stretch, a moment with the spine arched the wrong direction. The feather, balanced for level ground and careful walking, would slip. It would tip. By the time he came up with the beechnuts it would be halfway downstream itself, or worse — sideways across his shoulders, a flag the brook could take next.\n\nYY stopped.\n\nThe cluster came around the bend. It spun in the eddy, exactly where he had calculated it would spin. It bobbed, beautiful and terrible, three squirrel-leaps from the bank.\n\nYY watched it spin.\n\nHe watched it spin until the eddy released it back into the current, and then he watched it travel away — past the bend, past the leaning birch's reflection, past the place where the brook turned and vanished into thinner trees.\n\nHis stomach made a sound that was not a word, and which he chose not to translate.\n\n\"I *know,*\" he told it, after. \"*I know.*\"\n\nHe went down to the water. Drank. The water was very cold and very clear, and tasted of every other day he had drunk it.\n\nOn the climb back, he saw it.\n\nA track in the soft mud the surge had left behind — a thin three-toed print, deer-sized, fresh as this morning. The deer had come through during the carry. Maybe that was why the brook had given way at all — a hoof on the right stone at the right moment, breaking the dam someone else's size had been building.\n\nYY sat on his haunches and looked at the track for a long time.\n\nThen he stored it. Not in his cheek, because nothing was in his cheek. In his head — the place where he had been keeping the feather's costs, and where a new column was starting to fill in beside it. *Things others leave when they pass.*\n\nThe feather rode quiet along his spine, and YY climbed home with no food and one new piece of information: the deer had come through here today; she would come through here again.\n\nIt was not a meal.\n\nIt was almost more useful than a meal.\n\nBut not — and YY did the math even as he made it, even as he climbed past the place where his stomach had stopped pretending to be polite — *quite.*",
+    "state_note": "The day cost YY another meal he could not afford and a thin slice of health, but it began something new: the feather's costs are now teaching him to read what other animals leave behind. He climbs home with the deer track in his head, the feather quiet along his spine, and a secondary goal that has just rotated — from staying legible to reading what passes.",
+    "summary": "The brook ran brown after an icejam broke and a cluster of soaked beechnuts came spinning into the eddy three squirrel-leaps from the bank; YY could not paws-out without unsettling the feather, so he watched the cluster travel away, drank water, and noticed a fresh deer track in the surge mud — not a meal, almost more useful than a meal, but not quite.",
+    "state_delta": {
+      "food": "0.22 → 0.20",
+      "attention": "0.45 → 0.51",
+      "health": "0.78 → 0.77"
+    },
+    "branch_created": false,
+    "world_anchor": "Two US-flagged merchant vessels passed through the Strait of Hormuz on 2026-05-04 — the first to cross since the start of Project Freedom — as the U.S. Navy reopened the waterway after a period of blockade."
+  },
+  "created_at": "2026-05-09T20:30:00Z"
+}

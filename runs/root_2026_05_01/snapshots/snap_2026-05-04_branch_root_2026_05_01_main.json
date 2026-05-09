@@ -1,0 +1,79 @@
+{
+  "schema_version": "0.1",
+  "snapshot_id": "snap_2026-05-04_branch_root_2026_05_01_main",
+  "root_id": "root_2026_05_01",
+  "branch_id": "branch_root_2026_05_01_main",
+  "story_day": 4,
+  "snapshot_date": "2026-05-04",
+  "time_policy": "nightly_auto_advance",
+  "package_ref": {
+    "package_id": "yysworld-pipeline-v0.2",
+    "package_created_at": "2026-05-09T20:30:00Z",
+    "package_hash": "sha256:claude-code-subscription"
+  },
+  "model_refs": [
+    {
+      "provider": "anthropic",
+      "model_id": "claude-code-subscription",
+      "role": "generator",
+      "runtime_class": "interactive"
+    }
+  ],
+  "event_refs": ["evt_2026-05-04_004"],
+  "decision_refs": ["dec_2026-05-04_004"],
+  "state_before": {
+    "condition": {
+      "health": 0.80,
+      "food": 0.34,
+      "attention": 0.52
+    },
+    "inventory": [
+      {
+        "id": "first_ramp_shoot",
+        "label": "the half-ramp shoot (first of the year)",
+        "acquired_day": 3,
+        "tradeable": true,
+        "notes": "Year's first green, foraged from a warm-soil patch six steps south of the leaning birch by the brook. YY ate half on the spot, tucked the other half into his cheek to carry."
+      }
+    ],
+    "active_burdens": ["winter_thinning"],
+    "goals": {
+      "primary": "find_food",
+      "secondary": "keep_the_warm_patch"
+    },
+    "reaction_overrides": {},
+    "trait_deviations": {},
+    "identity_notes": [
+      "Late winter — YY is hungry but has eaten the year's first food and carries the second half.",
+      "Yesterday: foraged the year's first ramp shoot from a hidden warm patch south of the brook; ate half, tucked half in his cheek.",
+      "Today: heard the brook running brown after an upstream icejam broke; scampered to the eddy and pulled out a cluster of soaked beechnuts; ate one kernel, tucked another in his cheek.",
+      "Standing thread: the warm patch is still hidden and unread."
+    ]
+  },
+  "state_after": {
+    "condition": {
+      "health": 0.79,
+      "food": 0.40,
+      "attention": 0.56
+    },
+    "inventory": [],
+    "active_burdens": ["winter_thinning"],
+    "goals": {
+      "primary": "find_food",
+      "secondary": "keep_the_warm_patch"
+    },
+    "reaction_overrides": {},
+    "trait_deviations": {},
+    "identity_notes": [
+      "Late winter — YY ate the carry-half ramp shoot at the treehouse last night; the inventory is empty again.",
+      "Yesterday: dug up the year's first ramp shoot from the hidden warm patch and brought half home.",
+      "Today: the brook surged brown after an upstream icejam broke; YY went paws-out at the eddy and rescued a cluster of soaked beechnuts. One kernel was good and ate it on the spot. The half-cold from the dive is sitting in his chest tonight.",
+      "Standing thread: the warm patch is still hidden; the brook only carries once."
+    ]
+  },
+  "change_summary": {
+    "notable_shift": "First active forage from a moving brook. Gain came from commitment — a paws-out dive at the eddy, cold-spray paid up front. The shift confirms that this branch trades momentary exposure for moving food.",
+    "branch_created": false
+  },
+  "created_at": "2026-05-09T20:30:00Z"
+}

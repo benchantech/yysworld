@@ -1,0 +1,87 @@
+{
+  "schema_version": "0.1",
+  "snapshot_id": "snap_2026-05-04_branch_root_2026_05_01_alt1-with-feather",
+  "root_id": "root_2026_05_01",
+  "branch_id": "branch_root_2026_05_01_alt1-with-feather",
+  "story_day": 4,
+  "snapshot_date": "2026-05-04",
+  "time_policy": "nightly_auto_advance",
+  "package_ref": {
+    "package_id": "yysworld-pipeline-v0.2",
+    "package_created_at": "2026-05-09T20:30:00Z",
+    "package_hash": "sha256:claude-code-subscription"
+  },
+  "model_refs": [
+    {
+      "provider": "anthropic",
+      "model_id": "claude-code-subscription",
+      "role": "generator",
+      "runtime_class": "interactive"
+    }
+  ],
+  "event_refs": ["evt_2026-05-04_004"],
+  "decision_refs": ["dec_2026-05-04_004"],
+  "state_before": {
+    "condition": {
+      "health": 0.78,
+      "food": 0.22,
+      "attention": 0.45
+    },
+    "inventory": [
+      {
+        "id": "heron_feather",
+        "label": "the heron feather",
+        "acquired_day": 0,
+        "tradeable": true,
+        "notes": "Tock and Mira have seen it. On Day 3 the feather actively cost YY the year's first ramp shoot — its presence on his back made the head-down dig posturally unsafe (a flat back is required to keep it riding), and he chose not to commit."
+      }
+    ],
+    "active_burdens": ["winter_thinning"],
+    "goals": {
+      "primary": "find_food",
+      "secondary": "stay_legible_in_posture"
+    },
+    "reaction_overrides": {},
+    "trait_deviations": {},
+    "identity_notes": [
+      "Late winter — YY is hungry and slower today; the day cost him real food without giving real food back.",
+      "Yesterday: refused the warm-patch dig because the feather along his back required a flat spine to ride; covered the patch and walked away with no green.",
+      "Today: the brook surged brown after an upstream icejam broke; YY could not paws-out at the eddy without losing the feather, so he watched a cluster of beechnuts pass. Drank water. Noticed a fresh deer track in the new mud.",
+      "Standing thread: the feather has now cost two meals. Trade so far: one piece of information about the deer's route."
+    ]
+  },
+  "state_after": {
+    "condition": {
+      "health": 0.77,
+      "food": 0.20,
+      "attention": 0.51
+    },
+    "inventory": [
+      {
+        "id": "heron_feather",
+        "label": "the heron feather",
+        "acquired_day": 0,
+        "tradeable": true,
+        "notes": "Day 4 cost the second meal: a paws-out dive at the brook's eddy would have unsettled the feather's ride, so YY watched a cluster of beechnuts pass instead. The feather's pattern is becoming clear — it costs YY actions whose posture would tip it. In partial trade, YY has begun reading the surge-mud for tracks; today's haul was a fresh deer print at the bend."
+      }
+    ],
+    "active_burdens": ["winter_thinning"],
+    "goals": {
+      "primary": "find_food",
+      "secondary": "read_what_others_leave"
+    },
+    "reaction_overrides": {},
+    "trait_deviations": {},
+    "identity_notes": [
+      "Late winter — YY is hungrier today than yesterday; the brook gave a one-time carry he could not take.",
+      "Yesterday: covered the warm patch back over and walked away from the year's first ramp shoot.",
+      "Today: the brook ran brown after an icejam broke; a cluster of soaked beechnuts spun in the eddy three squirrel-leaps from the bank and YY watched it travel away rather than tip the feather. He noticed a deer's three-toed track in the surge mud — fresh, this morning's, the size that probably broke the dam.",
+      "Standing thread: the feather is shaping his goals — secondary has shifted from posture-legibility toward reading what others leave behind."
+    ]
+  },
+  "change_summary": {
+    "notable_shift": "Branch goal shifts from staying-legible toward reading-tracks. The feather's cost is no longer just visibility — it is now narrowing what postures, and so what foraging, are available. YY is starting to substitute information for food.",
+    "branch_created": false
+  },
+  "created_at": "2026-05-09T20:30:00Z"
+}

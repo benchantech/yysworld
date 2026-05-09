@@ -1,0 +1,37 @@
+{
+  "schema_version": "0.1",
+  "artifact_id": "art_2026-05-04_branch_root_2026_05_01_main_summary",
+  "artifact_type": "daily_summary",
+  "snapshot_id": "snap_2026-05-04_branch_root_2026_05_01_main",
+  "root_id": "root_2026_05_01",
+  "branch_id": "branch_root_2026_05_01_main",
+  "package_ref": {
+    "package_id": "yysworld-pipeline-v0.2",
+    "package_created_at": "2026-05-09T20:30:00Z",
+    "package_hash": "sha256:claude-code-subscription"
+  },
+  "model_refs": [
+    {
+      "provider": "anthropic",
+      "model_id": "claude-code-subscription",
+      "role": "summarizer",
+      "runtime_class": "interactive"
+    }
+  ],
+  "comparison_contract_version": "0.1",
+  "content": {
+    "title": "What Floated",
+    "tone": "alert_and_opportunistic",
+    "narrative": "The first thing YY heard was the brook saying a different word.\n\nHe had come down for water — yesterday's carry-half eaten at first light, his cheek empty again, his stomach already filing a long, detailed complaint with management.\n\nYesterday the brook had said *shhh*. Today it said *shhUSHHHshhh* — fuller, faster, the sound of something that had been waiting for permission and just got it.\n\nYY froze on the bank and squinted upstream.\n\nBrown water. Not gray. Brown water meant the brook had eaten its banks somewhere up there, and brown water meant *carrying.*\n\nHe scampered along the edge.\n\nA leaf went past at running-speed. A twig with a beetle still hugging it. Then a small dark cluster — round, soaked, traveling fast — and YY's ears went up before his brain did.\n\nBeechnuts.\n\nBeechnuts going *past him.*\n\n\"NO,\" YY informed the brook. \"*Not on my watch.*\"\n\nHe went six steps further down to where the bank shelved out and the eddy slowed everything. He waited. The cluster of beechnut shells came spinning around the bend, tumbling slow in the brown water — a fistful, soft from a winter under leaves, the kind that made you sneeze and then thank the sneeze.\n\nYY committed.\n\nHe went paws-out at the eddy, took a face-full of cold spray, and came up with the cluster pressed against his chest like a small wet creature he had just rescued. His ribs were cold. His tail was a flag of disagreement. His paws steamed in the air of the slope.\n\nHe carried the cluster three lopes from the water and laid it down in the leaf litter.\n\n\"Hello *to you,*\" he said, and started picking.\n\nMost of the kernels had gone to mush — winter-soft, past saving. But two were still themselves: pale, dense, the smell of fall still locked inside. YY ate one on the spot. It tasted like sleep and wood and the back of last October. He chewed slowly, on principle. The second kernel, half-shell still attached, he tucked into his cheek.\n\nHe sat back on his haunches and looked at the brook.\n\nIt was already returning to its usual word. *shhUSHHHshhh* settling back to *shhh*. Whatever had given way upstream had only given way once.\n\nA single carry. A single chance.\n\nYY made a small list of who had not been at the brook this morning. Tock had not been there. Mira had not been there. Bramble had not been there. The brook had told *him* first — because his belly had brought him to the water at exactly the right minute, and his ears had heard the new word.\n\nHe climbed home with one cheek full and his fur drying in patches.\n\nThe half-cold from the dive sat in his chest, but it was the kind of cold a squirrel could carry. The kernel pressed cool against his tongue, pale and waiting, and the brook kept on saying *shhh* behind him — quieter now, with one fewer secret.",
+    "state_note": "The day cost YY a face-full of cold water and a small drop in health, but it gave back two real kernels — one for tonight and one for tomorrow — plus the new fact that the brook can *carry*. He goes home wet, fed, and slightly more alert: the word the brook said this morning has been added to the things he will listen for.",
+    "summary": "YY heard the brook running brown after an upstream icejam broke, scampered to the eddy and dove paws-out into the cold spray to rescue a spinning cluster of soaked beechnut shells; he ate one good kernel on the bank, tucked another in his cheek, and climbed home wet and quietly fed.",
+    "state_delta": {
+      "food": "0.34 → 0.40",
+      "attention": "0.52 → 0.56",
+      "health": "0.80 → 0.79"
+    },
+    "branch_created": false,
+    "world_anchor": "Two US-flagged merchant vessels passed through the Strait of Hormuz on 2026-05-04 — the first to cross since the start of Project Freedom — as the U.S. Navy reopened the waterway after a period of blockade."
+  },
+  "created_at": "2026-05-09T20:30:00Z"
+}

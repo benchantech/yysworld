@@ -7,11 +7,11 @@
   "created_at": "2026-05-01T00:00:00Z",
   "status": "active",
   "state": {
-    "story_day": 3,
+    "story_day": 4,
     "condition": {
-      "health": 0.78,
-      "food": 0.22,
-      "attention": 0.45
+      "health": 0.77,
+      "food": 0.20,
+      "attention": 0.51
     },
     "inventory": [
       {
@@ -19,23 +19,23 @@
         "label": "the heron feather",
         "acquired_day": 0,
         "tradeable": true,
-        "notes": "Tock and Mira have seen it. On Day 3 the feather actively cost YY the year's first ramp shoot — its presence on his back made the head-down dig posturally unsafe (a flat back is required to keep it riding), and he chose not to commit. The feather has crossed from social signal to behavioral constraint."
+        "notes": "Day 4 cost the second meal: a paws-out dive at the brook's eddy would have unsettled the feather's ride, so YY watched a cluster of beechnuts pass instead. The feather's pattern is becoming clear — it costs YY actions whose posture would tip it. In partial trade, YY has begun reading the surge-mud for tracks; today's haul was a fresh deer print at the bend."
       }
     ],
     "active_burdens": ["winter_thinning"],
     "goals": {
       "primary": "find_food",
-      "secondary": "stay_legible_in_posture"
+      "secondary": "read_what_others_leave"
     },
     "reaction_overrides": {},
     "trait_deviations": {},
     "identity_notes": [
-      "Late winter — YY is hungry and slower today; the day cost him real food without giving real food back.",
-      "Yesterday: Mira read the feather on her second look during the run.",
-      "Today: found the same warm-earth patch the main timeline did, identified the year's first ramp shoot, but the feather along his back made the head-down dig feel exposed. He covered the patch back over and walked away with no green to carry. Drank brook water on the way back; that was the day's only intake.",
-      "First measured cost of the feather: a missed forage. The branch hypothesis has produced evidence that being read changes not just who notices YY, but what YY allows himself to do unwatched."
+      "Late winter — YY is hungrier today than yesterday; the brook gave a one-time carry he could not take.",
+      "Yesterday: covered the warm patch back over and walked away from the year's first ramp shoot.",
+      "Today: the brook ran brown after an icejam broke; a cluster of soaked beechnuts spun in the eddy three squirrel-leaps from the bank and YY watched it travel away rather than tip the feather. He noticed a deer's three-toed track in the surge mud — fresh, this morning's, the size that probably broke the dam.",
+      "Standing thread: the feather is shaping his goals — secondary has shifted from posture-legibility toward reading what others leave behind."
     ]
   },
   "drift_flags": [],
-  "last_updated_at": "2026-05-03T20:30:00Z"
+  "last_updated_at": "2026-05-09T20:30:00Z"
 }

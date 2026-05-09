@@ -1,0 +1,45 @@
+{
+  "schema_version": "0.1",
+  "comparison_id": "cmp_2026-05-04_4_main_vs_alt1-with-feather",
+  "artifact_type": "daily_comparison",
+  "root_id": "root_2026_05_01",
+  "branch_a": "branch_root_2026_05_01_main",
+  "branch_b": "branch_root_2026_05_01_alt1-with-feather",
+  "story_day": 4,
+  "snapshot_date": "2026-05-04",
+  "snapshot_ids": [
+    "snap_2026-05-04_branch_root_2026_05_01_main",
+    "snap_2026-05-04_branch_root_2026_05_01_alt1-with-feather"
+  ],
+  "package_ref": {
+    "package_id": "yysworld-pipeline-v0.2",
+    "package_created_at": "2026-05-09T20:30:00Z",
+    "package_hash": "sha256:claude-code-subscription"
+  },
+  "model_refs": [
+    {
+      "provider": "anthropic",
+      "model_id": "claude-code-subscription",
+      "role": "comparator",
+      "runtime_class": "interactive"
+    }
+  ],
+  "content": {
+    "divergence_summary": "Same brook, same surge, same cluster of beechnuts spinning into the same eddy. Main YY went paws-out and came up with kernels; alt YY's feather required a flat back the dive would not allow, and he watched the cluster travel away. The day continues the pattern set on Day 3: main timeline trades exposure for food, alt timeline trades food for legibility — but with a new wrinkle on the alt side, which has begun substituting information for meals.",
+    "branch_a_path": "Main YY hears the brook's new word, scampers to the eddy, commits paws-out into cold spray, and rescues a cluster of soaked beechnut shells from the current. One kernel goes down on the bank; one goes into the cheek. He climbs home wet, fed, and slightly more alert — the brook can carry, and now he knows the sound it makes when it does.",
+    "branch_b_path": "Alt YY hears the same word, runs the same calculation, and stops mid-step when his back muscles remind him what a paws-out dive would do to the feather. He watches the cluster spin in the eddy and travel away. On the climb back he reads a fresh deer track in the surge mud — not food, but the first piece of a new kind of foraging. His secondary goal rotates from posture-legibility to reading what others leave.",
+    "key_differences": [
+      "Main commits to action; alt declines because the posture would tip the feather.",
+      "Main's gain is concrete (two kernels); alt's gain is informational (one fresh deer track).",
+      "Alt's secondary goal shifts from stay_legible_in_posture to read_what_others_leave — a structural reorientation, not just a missed meal.",
+      "Alt's food gap is widening: 0.20 to main's 0.40 (a 0.20-point spread, up from 0.12 yesterday)."
+    ],
+    "shared_elements": [
+      "Both YYs heard the brook's changed word at the same moment and recognized brown water as carrying.",
+      "Both saw the same cluster of beechnuts come around the same bend and arrive in the same eddy.",
+      "Both climbed home with the brook saying shhh again behind them; the carry had only happened once.",
+      "Both timelines deepen Day 3's question — what does the feather cost, and what does it teach — without requiring a new branch."
+    ]
+  },
+  "created_at": "2026-05-09T20:30:00Z"
+}

@@ -1,0 +1,28 @@
+{
+  "schema_version": "0.1",
+  "decision_id": "dec_2026-05-04_004",
+  "root_id": "root_2026_05_01",
+  "story_day": 4,
+  "decision_date": "2026-05-04",
+  "decision_status": "evaluated_no_branch",
+  "package_ref": {
+    "package_id": "yysworld-pipeline-v0.2",
+    "package_created_at": "2026-05-09T20:30:00Z",
+    "package_hash": "sha256:claude-code-subscription"
+  },
+  "model_refs": [
+    {
+      "provider": "anthropic",
+      "model_id": "claude-code-subscription",
+      "role": "evaluator",
+      "runtime_class": "interactive"
+    }
+  ],
+  "evaluation": {
+    "should_branch": false,
+    "confidence": 0.85,
+    "reason": "The brook surge is a shared physical encounter that deepens the existing main-vs-alt divergence rather than creating a new fork. Main commits, alt holds back — same shape as Day 3's warm patch. A new branch would split the alt timeline along an axis that has not yet emerged. Today's beat reinforces the existing branch hypothesis (the feather narrows action) and adds a substitution mechanic (information for food). That work belongs inside alt, not in a third branch.",
+    "focus_if_branched": null
+  },
+  "created_at": "2026-05-09T20:30:00Z"
+}
