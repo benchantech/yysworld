@@ -1,0 +1,94 @@
+{
+  "schema_version": "0.1",
+  "snapshot_id": "snap_2026-05-06_branch_root_2026_05_01_main",
+  "root_id": "root_2026_05_01",
+  "branch_id": "branch_root_2026_05_01_main",
+  "story_day": 6,
+  "snapshot_date": "2026-05-06",
+  "time_policy": "nightly_auto_advance",
+  "package_ref": {
+    "package_id": "yysworld-pipeline-v0.2",
+    "package_created_at": "2026-05-09T20:40:00Z",
+    "package_hash": "sha256:claude-code-subscription"
+  },
+  "model_refs": [
+    {
+      "provider": "anthropic",
+      "model_id": "claude-code-subscription",
+      "role": "generator",
+      "runtime_class": "interactive"
+    }
+  ],
+  "event_refs": ["evt_2026-05-06_006"],
+  "decision_refs": ["dec_2026-05-06_006"],
+  "state_before": {
+    "condition": {
+      "health": 0.79,
+      "food": 0.46,
+      "attention": 0.60
+    },
+    "inventory": [
+      {
+        "id": "hickory_kernel_carry",
+        "label": "the second hickory kernel",
+        "acquired_day": 5,
+        "tradeable": true,
+        "notes": "On the back of the pantry shelf at the treehouse. The first deliberate save of the season."
+      }
+    ],
+    "active_burdens": ["winter_thinning"],
+    "goals": {
+      "primary": "find_food",
+      "secondary": "map_the_new_ground"
+    },
+    "reaction_overrides": {},
+    "trait_deviations": {},
+    "identity_notes": [
+      "Late winter — YY has the season's first save (one hickory kernel) on the pantry shelf.",
+      "Yesterday: crossed onto the rocky shoulder for the first time and pried two hickory kernels from a crevice.",
+      "Today: ran into Tock at the bend below the counting tree and traded a partial direction (the rocky shoulder is open, the scratch-pine line is gone) for a square of last fall's dried persimmon. Did not mention the warm patch or the brook eddy.",
+      "Standing thread: the rocky shoulder is now socially known to one squirrel; the warm patch is still YY's alone."
+    ]
+  },
+  "state_after": {
+    "condition": {
+      "health": 0.79,
+      "food": 0.49,
+      "attention": 0.58
+    },
+    "inventory": [
+      {
+        "id": "hickory_kernel_carry",
+        "label": "the second hickory kernel",
+        "acquired_day": 5,
+        "tradeable": true,
+        "notes": "Still on the back of the pantry shelf. YY did not eat it tonight — Tock's persimmon square covered the day."
+      },
+      {
+        "id": "persimmon_square",
+        "label": "half a square of dried persimmon",
+        "acquired_day": 6,
+        "tradeable": true,
+        "notes": "Tock had two squares from a back-cache he opened yesterday and traded one for partial directions to the rocky shoulder. YY ate half on the path; the other half is wrapped in a strip of bark on the kitchen ledge."
+      }
+    ],
+    "active_burdens": ["winter_thinning"],
+    "goals": {
+      "primary": "find_food",
+      "secondary": "manage_what_others_know"
+    },
+    "reaction_overrides": {},
+    "trait_deviations": {},
+    "identity_notes": [
+      "Late winter — YY now has two saves on different shelves (a kernel, half a persimmon square); food is starting to feel like something that exists in *places*, not just in the next bite.",
+      "Yesterday: pried two hickory kernels from a crevice on the rocky shoulder.",
+      "Today: traded partial directions to the shoulder for half a persimmon square with Tock; kept the warm patch and the brook eddy out of the trade. The conversation was easy. The withholding was deliberate.",
+      "Standing thread: secondary goal has rotated again — now consciously managing what other squirrels know about which forage zones."
+    ]
+  },
+  "change_summary": {
+    "notable_shift": "First social trade of the season and first deliberate withholding. Goal vector moves from mapping to managing — YY is starting to handle his own information as a kind of inventory.",
+    "branch_created": false
+  },
+  "created_at": "2026-05-09T20:40:00Z"
+}

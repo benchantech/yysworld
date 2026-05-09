@@ -1,0 +1,28 @@
+{
+  "schema_version": "0.1",
+  "decision_id": "dec_2026-05-06_006",
+  "root_id": "root_2026_05_01",
+  "story_day": 6,
+  "decision_date": "2026-05-06",
+  "decision_status": "evaluated_no_branch",
+  "package_ref": {
+    "package_id": "yysworld-pipeline-v0.2",
+    "package_created_at": "2026-05-09T20:40:00Z",
+    "package_hash": "sha256:claude-code-subscription"
+  },
+  "model_refs": [
+    {
+      "provider": "anthropic",
+      "model_id": "claude-code-subscription",
+      "role": "evaluator",
+      "runtime_class": "interactive"
+    }
+  ],
+  "evaluation": {
+    "should_branch": false,
+    "confidence": 0.9,
+    "reason": "A trade day deepens the existing branch shapes without forking them. Main's withholding-with-Tock is the same posture (commit, but keep the warm patch private) the main timeline has held since Day 3. Alt's witnessing-by-Mira is the same posture (be visible, be read) the alt timeline has held since Day 0. Each branch's secondary goal updated organically — manage_what_others_know on main, role-as-reader on alt — and those are the moves the existing branches were already trending toward.",
+    "focus_if_branched": null
+  },
+  "created_at": "2026-05-09T20:40:00Z"
+}

@@ -7,11 +7,11 @@
   "created_at": "2026-05-01T00:00:00Z",
   "status": "active",
   "state": {
-    "story_day": 5,
+    "story_day": 6,
     "condition": {
       "health": 0.79,
-      "food": 0.46,
-      "attention": 0.60
+      "food": 0.49,
+      "attention": 0.58
     },
     "inventory": [
       {
@@ -19,23 +19,30 @@
         "label": "the second hickory kernel",
         "acquired_day": 5,
         "tradeable": true,
-        "notes": "Pried out of a frost-cracked crevice on the rocky shoulder above the north bank, in territory the fox kept off-limits until this morning. YY ate the first kernel on the spot, tucked the second into the back of the pantry shelf at the treehouse — the first deliberate save of the season."
+        "notes": "Still on the back of the pantry shelf. YY did not eat it tonight — Tock's persimmon square covered the day."
+      },
+      {
+        "id": "persimmon_square",
+        "label": "half a square of dried persimmon",
+        "acquired_day": 6,
+        "tradeable": true,
+        "notes": "Tock had two squares from a back-cache he opened yesterday and traded one for partial directions to the rocky shoulder. YY ate half on the path; the other half is wrapped in a strip of bark on the kitchen ledge."
       }
     ],
     "active_burdens": ["winter_thinning"],
     "goals": {
       "primary": "find_food",
-      "secondary": "map_the_new_ground"
+      "secondary": "manage_what_others_know"
     },
     "reaction_overrides": {},
     "trait_deviations": {},
     "identity_notes": [
-      "Late winter — YY has now made the season's first deliberate food save: a second hickory kernel set aside at home.",
-      "Yesterday: dove paws-out at the brook's eddy for soaked beechnuts.",
-      "Today: noticed the fox-smell was missing at the scratch-pine; crossed the line, climbed the rocky shoulder, and found two whole hickory kernels in a frost-cracked crevice. Ate one. Stored one.",
-      "Standing thread: the rocky shoulder is new ground; the warm patch and the brook's surge stretch are still his alone."
+      "Late winter — YY now has two saves on different shelves (a kernel, half a persimmon square); food is starting to feel like something that exists in *places*, not just in the next bite.",
+      "Yesterday: pried two hickory kernels from a crevice on the rocky shoulder.",
+      "Today: traded partial directions to the shoulder for half a persimmon square with Tock; kept the warm patch and the brook eddy out of the trade. The conversation was easy. The withholding was deliberate.",
+      "Standing thread: secondary goal has rotated again — now consciously managing what other squirrels know about which forage zones."
     ]
   },
   "drift_flags": [],
-  "last_updated_at": "2026-05-09T20:35:00Z"
+  "last_updated_at": "2026-05-09T20:40:00Z"
 }

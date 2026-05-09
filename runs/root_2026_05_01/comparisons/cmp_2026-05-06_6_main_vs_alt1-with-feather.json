@@ -1,0 +1,45 @@
+{
+  "schema_version": "0.1",
+  "comparison_id": "cmp_2026-05-06_6_main_vs_alt1-with-feather",
+  "artifact_type": "daily_comparison",
+  "root_id": "root_2026_05_01",
+  "branch_a": "branch_root_2026_05_01_main",
+  "branch_b": "branch_root_2026_05_01_alt1-with-feather",
+  "story_day": 6,
+  "snapshot_date": "2026-05-06",
+  "snapshot_ids": [
+    "snap_2026-05-06_branch_root_2026_05_01_main",
+    "snap_2026-05-06_branch_root_2026_05_01_alt1-with-feather"
+  ],
+  "package_ref": {
+    "package_id": "yysworld-pipeline-v0.2",
+    "package_created_at": "2026-05-09T20:40:00Z",
+    "package_hash": "sha256:claude-code-subscription"
+  },
+  "model_refs": [
+    {
+      "provider": "anthropic",
+      "model_id": "claude-code-subscription",
+      "role": "comparator",
+      "runtime_class": "interactive"
+    }
+  ],
+  "content": {
+    "divergence_summary": "Both branches got a quiet trade day at the same bend — the bend below the counting tree where everyone's morning routes cross. Main YY met Tock and bargained: half a persimmon square for one direction. Alt YY met Mira and bargained: three readings for an apple-strip and a new line in the ledger. Same bend, same hour, two different visitors — and two different shapes of recognition.",
+    "branch_a_path": "Main YY met Tock, who had two persimmon squares from a back-cache the mice had emptied; Tock asked what was happening at the scratch-pine. YY traded one direction (fox gone, shoulder open, kernel found) for half a square, holding back the warm patch and the brook eddy entirely. The trade was warm; the withholding was deliberate. Food began living in *places* in YY's head, not just in the next bite.",
+    "branch_b_path": "Alt YY met Mira on the flat rock with her ledger open; she asked what he had been reading. He told her about the deer at the surge, the fox at the scratch-pine, the kit-tuft at the den. She wrote *the squirrel who reads* in his column — under five lines of *heron feather* — and gave him an apple-strip as the entry fee. The feather's public meaning shifted today: from object to role. The line under *the squirrel who reads* is open, waiting for tomorrow.",
+    "key_differences": [
+      "Main bargains with a peer (Tock) over forage information; alt is recorded by an elder (Mira) into a ledger.",
+      "Main's exchange is concrete — a persimmon square for a direction. Alt's is structural — a name change.",
+      "Main's secondary goal becomes manage_what_others_know (information as inventory). Alt's stays read_what_others_leave but is now socially recognized as a role.",
+      "The feather's meaning has shifted on Mira's record from heron-token to reader-mark. No equivalent symbolic shift happens in the main timeline."
+    ],
+    "shared_elements": [
+      "Both YYs met someone at the same bend at the same hour — the route home where morning foragers cross.",
+      "Both came home with food they did not earn from the ground (Tock's persimmon, Mira's apple).",
+      "Both made a partial save: half the day's exchange goes onto a ledge or shelf for tomorrow.",
+      "Both have just had their position in the social fabric of the woods updated for the first time since Day 3."
+    ]
+  },
+  "created_at": "2026-05-09T20:40:00Z"
+}

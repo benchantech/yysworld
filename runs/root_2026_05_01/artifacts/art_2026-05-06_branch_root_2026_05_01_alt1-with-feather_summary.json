@@ -1,0 +1,37 @@
+{
+  "schema_version": "0.1",
+  "artifact_id": "art_2026-05-06_branch_root_2026_05_01_alt1-with-feather_summary",
+  "artifact_type": "daily_summary",
+  "snapshot_id": "snap_2026-05-06_branch_root_2026_05_01_alt1-with-feather",
+  "root_id": "root_2026_05_01",
+  "branch_id": "branch_root_2026_05_01_alt1-with-feather",
+  "package_ref": {
+    "package_id": "yysworld-pipeline-v0.2",
+    "package_created_at": "2026-05-09T20:40:00Z",
+    "package_hash": "sha256:claude-code-subscription"
+  },
+  "model_refs": [
+    {
+      "provider": "anthropic",
+      "model_id": "claude-code-subscription",
+      "role": "summarizer",
+      "runtime_class": "interactive"
+    }
+  ],
+  "comparison_contract_version": "0.1",
+  "content": {
+    "title": "What Mira Wrote",
+    "tone": "hungry_and_witnessed",
+    "narrative": "Mira was sitting on the flat rock at the bend below the counting tree, with her ledger open across her knees and her eyes already on YY before he came around the corner.\n\nMira was old. Mira had been old since YY had first known the word. She wrote things down with a piece of charcoal she kept in a hollow nut, and the things she wrote down went into a ledger that almost no one had read, and almost everyone had heard of.\n\nYY did the slow walk up to the rock. The feather rode flat. The feather rode flat by reflex now.\n\n\"YY,\" Mira said.\n\n\"Mira.\"\n\nShe waited.\n\n\"You've been *reading,*\" Mira said. It was not a question.\n\n\"A little,\" YY said.\n\n\"Show me.\"\n\nYY hesitated, on principle, the way you hesitate before you give someone something you are not sure you can get back. Then he sat down across from her and started talking.\n\nHe told her about the brook surging brown two days ago, the cluster of beechnuts spinning into the eddy three squirrel-leaps from the bank, the dive he had not taken — and the deer track he had read in the new mud after the surge, three-toed and fresh, the size of the hoof that had probably broken the dam.\n\nMira's charcoal moved.\n\nHe told her about the scratch-pine yesterday morning, the smell that had not been there, the slow walk across the rocky shoulder, the fox's exit trail — four pads and a drag, then two pads and a drag, the carry-walk of a fox moving young — and the den under the flat stone with the kit-tuft caught on the lip.\n\n\"Show me the tuft,\" Mira said.\n\nYY had not brought it. He had only brought the feather, which she had been writing about for a week.\n\n\"It's on the kitchen ledge,\" he said.\n\nMira nodded. \"Tomorrow, then. Show me tomorrow.\"\n\nThen she did the thing he did not expect.\n\nShe turned the ledger so he could see it.\n\nHer column for him was not very long — six entries, the way she kept everyone's. The first three said *heron feather (day 0), heron feather still (day 1), heron feather (day 2 — Tock confirms).* The fourth said *food underground / patch (day 3) — declines.* The fifth said *brook surge / single carry (day 4) — declines, reads deer.*\n\nThe sixth was the new one. The charcoal-mark was still wet.\n\n*the squirrel who reads.*\n\nNot *YY with the heron feather.*\n\nNot even *YY.*\n\n*The squirrel who reads.*\n\nYY looked at it for a long time.\n\n\"Mira,\" he said, finally.\n\n\"Mm.\"\n\n\"That's a *role.*\"\n\n\"Yes.\"\n\n\"Not just a thing.\"\n\n\"No.\"\n\nShe closed the ledger. From a fold of bark at her elbow she took out a strip of dried apple — fall apple, real apple, the kind YY had not seen since the snow came — and put it on the rock between them.\n\n\"Entry fee,\" she said. \"You told me three readings. The fee is one strip.\"\n\nYY took it like it was the only apple in the woods.\n\nHe ate half on the rock, sitting across from Mira, the feather riding flat along his back. The apple was sweet and a little leathery and tasted like a tree he had not climbed. The other half he wound into a coil and tucked carefully against his chest.\n\n\"Mira,\" he said, when he was about to get up.\n\n\"Mm.\"\n\n\"What did the line under *the squirrel who reads* say?\"\n\n\"Nothing yet,\" Mira said. \"That's the next reading.\"\n\nThen she opened the ledger and waited, with the charcoal hovering, for the rest of his life to give her something to write.\n\nYY did the slow walk home.\n\nThe apple-coil sat against his chest, the kit-tuft sat on the kitchen ledge waiting for tomorrow, and the feather rode quiet along his spine — quieter than it had ridden since Day 0, because for the first time it was not the thing the woods were calling him.\n\nThe woods were calling him *the squirrel who reads.*\n\nThe feather was just how he had learned the gait.",
+    "state_note": "The day cost YY almost nothing in body — a small recovery, even, from being seen and accurately recorded — and gave back something he had not known to want: a name on the woods' ledger that was not the feather's name. He goes home with half an apple-strip rolled tight against his chest, a kit-tuft to show tomorrow, and the new fact that the feather has a role around it now, not the other way around.",
+    "summary": "Mira was on the bend with her ledger open and asked what YY had been reading; he told her about the deer at the surge, the fox at the scratch-pine, the kit-tuft at the den, and she wrote *the squirrel who reads* in her column for him — under five lines of *heron feather* — and gave him a dried apple-strip as the entry fee.",
+    "state_delta": {
+      "food": "0.24 → 0.28",
+      "attention": "0.56 → 0.54",
+      "health": "0.77 → 0.78"
+    },
+    "branch_created": false,
+    "world_anchor": "The U.S. and Iran exchanged new proposals to end the Strait of Hormuz war on 2026-05-06; President Trump paused Project Freedom and said there was 'great progress' toward a 'complete and final agreement.'"
+  },
+  "created_at": "2026-05-09T20:40:00Z"
+}

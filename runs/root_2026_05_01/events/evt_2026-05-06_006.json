@@ -1,0 +1,25 @@
+{
+  "schema_version": "0.1",
+  "event_id": "evt_2026-05-06_006",
+  "root_id": "root_2026_05_01",
+  "story_day": 6,
+  "occurred_at": "2026-05-06T12:00:00Z",
+  "event_type": "social_encounter",
+  "canonical_truth": {
+    "summary": "After three days of small territorial finds — warm patch, brook surge, rocky shoulder — a settling. The woods themselves do not change today; the social ledger does. A neighbor crosses YY's route at the right hour and an exchange happens. Both branches see the encounter, but the visitor and the trade differ by branch.",
+    "entities": ["tock_the_squirrel", "mira_the_elder", "the_treehouse_route"],
+    "location": "the route home, where the morning's foragers cross paths",
+    "concrete_outcome": "Each timeline registers a small trade: information for food, news for news, presence for presence. Neither YY ends the day with a much-changed body; both end with a slightly changed standing in the social fabric of the woods."
+  },
+  "perception_prompt": {
+    "noticeable_surface": "Someone is on the route home today who is not always on the route home. The someone is making no particular effort to be unseen.",
+    "ambiguity_level": 0.15
+  },
+  "tags": ["social", "trade", "pause", "neighbor", "ledger", "calm-day"],
+  "created_at": "2026-05-09T20:40:00Z",
+  "authorial_note": {
+    "real_world_inspiration": "The U.S. and Iran exchanged new proposals to end the Strait of Hormuz war on 2026-05-06; President Trump paused Project Freedom and said there was 'great progress' toward a 'complete and final agreement.'",
+    "translation_logic": "An active confrontation pauses while parties trade proposals. For YY this becomes a calm day — no new ground to win, no surge to dive into — but a small face-to-face exchange on the path home, where information and presence are the things being passed across the line.",
+    "restraint_reason": "The world enters as a neighbor on the path. YY does not understand peace plans; he understands that someone is here who was not here yesterday, and that something will be exchanged."
+  }
+}

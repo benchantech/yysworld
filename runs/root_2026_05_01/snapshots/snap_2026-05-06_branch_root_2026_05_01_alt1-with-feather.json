@@ -1,0 +1,108 @@
+{
+  "schema_version": "0.1",
+  "snapshot_id": "snap_2026-05-06_branch_root_2026_05_01_alt1-with-feather",
+  "root_id": "root_2026_05_01",
+  "branch_id": "branch_root_2026_05_01_alt1-with-feather",
+  "story_day": 6,
+  "snapshot_date": "2026-05-06",
+  "time_policy": "nightly_auto_advance",
+  "package_ref": {
+    "package_id": "yysworld-pipeline-v0.2",
+    "package_created_at": "2026-05-09T20:40:00Z",
+    "package_hash": "sha256:claude-code-subscription"
+  },
+  "model_refs": [
+    {
+      "provider": "anthropic",
+      "model_id": "claude-code-subscription",
+      "role": "generator",
+      "runtime_class": "interactive"
+    }
+  ],
+  "event_refs": ["evt_2026-05-06_006"],
+  "decision_refs": ["dec_2026-05-06_006"],
+  "state_before": {
+    "condition": {
+      "health": 0.77,
+      "food": 0.24,
+      "attention": 0.56
+    },
+    "inventory": [
+      {
+        "id": "heron_feather",
+        "label": "the heron feather",
+        "acquired_day": 0,
+        "tradeable": true,
+        "notes": "Has begun paying back: the slow head-up walk it requires is the gait for tracking."
+      },
+      {
+        "id": "fox_kit_tuft",
+        "label": "a single rust-colored kit-tuft",
+        "acquired_day": 5,
+        "tradeable": false,
+        "notes": "Caught on the lip of the fox's old den. Tells YY the fox left with kits and is not coming back to this slope this season."
+      }
+    ],
+    "active_burdens": ["winter_thinning"],
+    "goals": {
+      "primary": "find_food",
+      "secondary": "read_what_others_leave"
+    },
+    "reaction_overrides": {},
+    "trait_deviations": {},
+    "identity_notes": [
+      "Late winter — YY ate the kernel yesterday on the spot; still hungry but no longer falling.",
+      "Yesterday: read the fox's exit trail; recovered one whole hickory kernel from a low crevice.",
+      "Today: Mira intercepted him at the bend below the counting tree and asked what he had been reading. He told her about the deer track, the fox exit, and the kit-tuft. She wrote it down. She gave him a strip of dried apple as the entry fee.",
+      "Standing thread: alt YY now has a recognized role in the woods' ledger — not as the squirrel with the feather, but as the squirrel who reads."
+    ]
+  },
+  "state_after": {
+    "condition": {
+      "health": 0.78,
+      "food": 0.28,
+      "attention": 0.54
+    },
+    "inventory": [
+      {
+        "id": "heron_feather",
+        "label": "the heron feather",
+        "acquired_day": 0,
+        "tradeable": true,
+        "notes": "Mira saw the feather today and did not write *heron feather* in her ledger again. She wrote *the squirrel who reads.* The feather is still on his back; its meaning has shifted on the public record."
+      },
+      {
+        "id": "fox_kit_tuft",
+        "label": "a single rust-colored kit-tuft",
+        "acquired_day": 5,
+        "tradeable": false,
+        "notes": "Still on the kitchen ledge. Mira asked to see it; YY showed her; she did not ask for it. He kept it."
+      },
+      {
+        "id": "apple_strip",
+        "label": "a strip of dried apple",
+        "acquired_day": 6,
+        "tradeable": true,
+        "notes": "Mira's ledger entry-fee. Half eaten on the path; half rolled into a coil and tucked into a knot in the kitchen wall."
+      }
+    ],
+    "active_burdens": ["winter_thinning"],
+    "goals": {
+      "primary": "find_food",
+      "secondary": "read_what_others_leave"
+    },
+    "reaction_overrides": {},
+    "trait_deviations": {},
+    "identity_notes": [
+      "Late winter — YY ate half the apple-strip on the path; the other half is in the kitchen-knot. Food coming up off the floor.",
+      "Yesterday: read the fox's exit trail and found one hickory kernel.",
+      "Today: Mira asked what he had been reading; he told her — the deer at the surge, the fox at the scratch-pine, the kit-tuft at the den. She wrote *the squirrel who reads* in her ledger and gave him a dried apple-strip in trade.",
+      "Standing thread: the feather's public meaning has shifted from heron-token to reader-mark. The feather no longer travels alone on the ledger; it travels as part of YY's role."
+    ]
+  },
+  "change_summary": {
+    "notable_shift": "The feather's social meaning is renegotiated for the first time since Day 0. It has moved on Mira's ledger from object to role — from heron feather to the squirrel who reads. This is the first day the feather gives back socially in a way that is not just about visibility.",
+    "branch_created": false
+  },
+  "created_at": "2026-05-09T20:40:00Z"
+}
