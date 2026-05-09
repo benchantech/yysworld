@@ -1,0 +1,25 @@
+{
+  "schema_version": "0.1",
+  "event_id": "evt_2026-05-08_008",
+  "root_id": "root_2026_05_01",
+  "story_day": 8,
+  "occurred_at": "2026-05-08T12:00:00Z",
+  "event_type": "gathering",
+  "canonical_truth": {
+    "summary": "The woods convene at the dead pine on the upper ridge to mark Korv's death. Mira sits at the base with her ledger open. Three crows from over the ridge arrive for the body and the offered primary feather. Tock, Bramble (just woken from his last winter sleep), a vole, two finches, and YY are there. Mira reads names from her ledger. The crows acknowledge. The gathering is short, low-toned, ceremonial without being performative — the new shape of the morning, found by being attempted.",
+    "entities": ["mira_the_elder", "korv_body", "three_crows", "tock_the_squirrel", "bramble_the_bear", "vole", "two_finches", "primary_feather"],
+    "location": "the bare patch under the dead pine on the upper ridge",
+    "concrete_outcome": "The body is carried away by the three crows. The feather is taken with them. The new morning's first-call has not been determined; this gathering is the placeholder."
+  },
+  "perception_prompt": {
+    "noticeable_surface": "The upper ridge is busier than it has been in a year and quieter at the same time. There are more bodies on it than usual, and fewer voices — most are listening, a few are speaking carefully, and the dead pine looks a little less alone for the morning that it is being attended.",
+    "ambiguity_level": 0.10
+  },
+  "tags": ["gathering", "ceremony", "elder", "long-witness", "post-loss", "mira", "bramble", "crows"],
+  "created_at": "2026-05-09T20:50:00Z",
+  "authorial_note": {
+    "real_world_inspiration": "Sir David Attenborough turned 100 on 2026-05-08 — a long-witness celebrated; Russia held a scaled-back Victory Day parade due to fear of Ukrainian drone attacks. Two parallel events about ceremonies of marking, one celebrating endurance and one diminished by anxiety.",
+    "translation_logic": "A community comes together to mark a long life and to keep the marking-ritual itself going, even at smaller scale. For YY this becomes the gathering at the dead pine — a quiet ceremony that finds the woods' new morning shape simply by being attempted. The Attenborough register supplies the warmth; the scaled-back register supplies the quietness.",
+    "restraint_reason": "The world enters as bodies on the ridge — one a dead body, the rest small living ones. YY does not understand century birthdays or downsized parades; he understands a gathering that has more attention in it than voice."
+  }
+}

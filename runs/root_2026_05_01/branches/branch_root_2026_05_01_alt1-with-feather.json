@@ -7,11 +7,11 @@
   "created_at": "2026-05-01T00:00:00Z",
   "status": "active",
   "state": {
-    "story_day": 7,
+    "story_day": 8,
     "condition": {
-      "health": 0.77,
-      "food": 0.26,
-      "attention": 0.62
+      "health": 0.79,
+      "food": 0.32,
+      "attention": 0.60
     },
     "inventory": [
       {
@@ -19,7 +19,7 @@
         "label": "the heron feather",
         "acquired_day": 0,
         "tradeable": true,
-        "notes": "Carried into Mira's accounting of Korv's death today; the feather has now been part of two ledger entries."
+        "notes": "Acknowledged today across species: a heron's feather worn by a reader of woods, in the company of crows accepting a reading. Its meaning is now the most stable it has been since acquisition."
       },
       {
         "id": "fox_kit_tuft",
@@ -29,14 +29,14 @@
         "notes": "Still on the kitchen ledge."
       },
       {
-        "id": "apple_strip",
-        "label": "a strip of dried apple",
-        "acquired_day": 6,
+        "id": "syrup_drop_carry",
+        "label": "a single drop of maple syrup, captured on a folded leaf",
+        "acquired_day": 8,
         "tradeable": true,
-        "notes": "Mira gave the second half back today; YY has not eaten it yet. The day did not feel like an apple day."
+        "notes": "Bramble's gift on the way down from the gathering. On the kitchen ledge next to the kit-tuft. The first sweet thing of the year."
       }
     ],
-    "active_burdens": ["winter_thinning", "korv_silence"],
+    "active_burdens": ["winter_thinning"],
     "goals": {
       "primary": "find_food",
       "secondary": "read_what_others_leave"
@@ -44,12 +44,12 @@
     "reaction_overrides": {},
     "trait_deviations": {},
     "identity_notes": [
-      "Late winter — YY did not eat much today; the apple Mira returned is still in the kitchen.",
-      "Yesterday: Mira added *the squirrel who reads* to her ledger.",
-      "Today: read Korv's death — old age, foot let go, no struggle. Did not take the offered primary feather. Brought the reading to Mira; she added it to the column. The morning will need a new clock; that is now part of his job.",
-      "Standing thread: the feather's role-meaning is the thing being tested. He chose not to add a second feather. The choice was not hard."
+      "Late winter — YY ate the apple after the gathering and carries home a syrup-drop on a leaf.",
+      "Yesterday: read Korv's body and refused the offered feather.",
+      "Today: delivered the reading aloud to the gathering at the dead pine; the lead crow nodded; Mira closed the ledger; Bramble gave him a drop of syrup on the way down. Korv_silence is held together now, not alone.",
+      "Standing thread: the reading-role has voice now. The feather has been seen across species and accepted. Whatever tomorrow's morning looks like, YY is part of how it gets shaped."
     ]
   },
   "drift_flags": [],
-  "last_updated_at": "2026-05-09T20:45:00Z"
+  "last_updated_at": "2026-05-09T20:50:00Z"
 }

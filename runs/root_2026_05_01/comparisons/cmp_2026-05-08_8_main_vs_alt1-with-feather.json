@@ -1,0 +1,45 @@
+{
+  "schema_version": "0.1",
+  "comparison_id": "cmp_2026-05-08_8_main_vs_alt1-with-feather",
+  "artifact_type": "daily_comparison",
+  "root_id": "root_2026_05_01",
+  "branch_a": "branch_root_2026_05_01_main",
+  "branch_b": "branch_root_2026_05_01_alt1-with-feather",
+  "story_day": 8,
+  "snapshot_date": "2026-05-08",
+  "snapshot_ids": [
+    "snap_2026-05-08_branch_root_2026_05_01_main",
+    "snap_2026-05-08_branch_root_2026_05_01_alt1-with-feather"
+  ],
+  "package_ref": {
+    "package_id": "yysworld-pipeline-v0.2",
+    "package_created_at": "2026-05-09T20:50:00Z",
+    "package_hash": "sha256:claude-code-subscription"
+  },
+  "model_refs": [
+    {
+      "provider": "anthropic",
+      "model_id": "claude-code-subscription",
+      "role": "comparator",
+      "runtime_class": "interactive"
+    }
+  ],
+  "content": {
+    "divergence_summary": "Both timelines went up the slope at the same hour and found the same gathering — Mira at the base of the dead pine with her ledger open, three crows on top, Tock and a vole and two finches in attendance, Bramble arriving late with a comb of stored maple syrup. The shared gifts were identical: a syrup-drop on a folded leaf, the burden of korv_silence resolved through community attendance. The role differed. Main YY stood at the back. Alt YY stood beside Mira and read the body aloud to the lead crow, whose nod was the cross-species acknowledgement the alt branch's whole hypothesis has been building toward.",
+    "branch_a_path": "Main YY came up the slope at his usual hour, took a position at the back behind Tock, watched Mira read names and the three crows take Korv and the primary feather over the ridge, then received a syrup-drop on a sourwood leaf from Bramble on the way down with the words *for tomorrow, in case the new first-call needs help arriving.* He came home, did a small late-morning forage of warm patch and brook eddy and rocky shoulder, ate a dandelion crown standing at the kitchen ledge, and watched the upper ridge go quiet again as the day finished.",
+    "branch_b_path": "Alt YY did the slow walk to Mira's elbow at the base of the dead pine; she nudged the ledger toward him and asked him to read aloud. He delivered the reading he had given her yesterday — foot-curl, no struggle, no predator, primary still on the lowest branch — and the lead crow nodded once before taking the feather and the body over the ridge. Bramble's syrup-drop went into the same kind of folded leaf afterward. Mira closed the ledger with the word *delivered* on the line under today's date. Alt YY came home with the feather settled on his back for the first time since Day 0.",
+    "key_differences": [
+      "Main attends; alt delivers. Same gathering, role-different participation.",
+      "Alt's reading is acknowledged by the lead crow — the first cross-species recognition the alt branch has produced. Main has no analog.",
+      "Mira's ledger gains the word *delivered* under alt's column today; main has no ledger entry.",
+      "The feather is now the most settled it has been since Day 0 in alt — recognized and returned, not asked for. In main, the feather does not exist as an object."
+    ],
+    "shared_elements": [
+      "Both YYs came up the same slope to the same gathering at the same hour.",
+      "Both received a syrup-drop on a folded sourwood leaf from Bramble — the first sweet thing of the year — and set it on the kitchen ledge for whenever tomorrow's first-call needs help arriving.",
+      "Both shed the active burden korv_silence through community attendance: the loss is held now, not alone.",
+      "Both ended the day with food, with a small late-morning forage that came easier than yesterday's silence had, and with the sense that the new morning shape — whatever it turns out to be — is being attempted."
+    ]
+  },
+  "created_at": "2026-05-09T20:50:00Z"
+}

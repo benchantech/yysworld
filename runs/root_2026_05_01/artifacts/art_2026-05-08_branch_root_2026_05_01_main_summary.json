@@ -1,0 +1,37 @@
+{
+  "schema_version": "0.1",
+  "artifact_id": "art_2026-05-08_branch_root_2026_05_01_main_summary",
+  "artifact_type": "daily_summary",
+  "snapshot_id": "snap_2026-05-08_branch_root_2026_05_01_main",
+  "root_id": "root_2026_05_01",
+  "branch_id": "branch_root_2026_05_01_main",
+  "package_ref": {
+    "package_id": "yysworld-pipeline-v0.2",
+    "package_created_at": "2026-05-09T20:50:00Z",
+    "package_hash": "sha256:claude-code-subscription"
+  },
+  "model_refs": [
+    {
+      "provider": "anthropic",
+      "model_id": "claude-code-subscription",
+      "role": "summarizer",
+      "runtime_class": "interactive"
+    }
+  ],
+  "comparison_contract_version": "0.1",
+  "content": {
+    "title": "The Drop on the Leaf",
+    "tone": "gentle_and_held",
+    "narrative": "YY climbed the slope at his usual hour and found the slope was not his alone today.\n\nTock was up ahead. A vole was further along, picking her way carefully between rocks. Two finches went over in a paired arc, the way finches go when they have somewhere to be. Up at the dead pine, Mira was already sitting at the base with her ledger open, and at the top of the dead pine three crows had landed — three actual crows, large, the kind YY had only ever seen at distance — looking down without speaking.\n\nYY went up slow. He took a position at the back, behind Tock.\n\nNobody said anything for a long time.\n\nKorv was where Korv had been yesterday. The primary feather was where it had been yesterday. The morning was where the morning had been every morning of YY's life — except for the missing first-call, which today was a *known* missing thing instead of a wrong-shaped surprise, and that was a different kind of missing.\n\nMira's charcoal moved on the ledger. She read names — quietly, just loud enough for the crows to hear. The crows nodded once when she finished. Then the lead crow came down off the top of the pine to the lowest branch, took the primary feather in his beak, and went back up. The other two came down to the body. They lifted Korv between them, slowly, the way you lift something you have been related to.\n\nThey took him over the ridge.\n\nThe air on the upper ridge changed when they were gone.\n\nYY sat for a moment, looking at the bare patch under the dead pine. There was no Korv there now. There was just the patch, and the feather-shaped emptiness on the lowest branch, and a small dark something pressed into the bare earth where his foot had been — a single broken twig, nothing important, the kind of thing the woods would smooth over within the week.\n\n\"Well,\" said a voice behind YY, slow and warm. \"*That* was something.\"\n\nYY turned around.\n\nBramble was halfway up the slope, holding a comb of last fall's stored maple syrup in his enormous and gentle paws, and looking at the gathering with the slightly off-kilter expression of a bear who has just woken up and was not quite expecting *people.*\n\n\"You missed most of it,\" Tock told Bramble.\n\n\"I,\" said Bramble, with great dignity, \"have been *asleep.*\"\n\n\"For how long?\"\n\nBramble considered the question. \"A *while.*\"\n\nTock looked at YY. YY looked at Tock. They did not laugh. The day was not a laughing day. But there is a kind of warmth that is not a laugh, and the slope had a little of it for a moment.\n\nBramble came up to the gathering at his slow bear-pace and stopped at the base of the dead pine. He did not say anything to Mira. He just looked at the bare patch where Korv had been, the way bears look at things — long and uncomplicated.\n\nThen he turned to the small group still standing on the slope and held up the comb.\n\n\"I have been *saving* this,\" he said. \"I think this is the right day for it.\"\n\nThe vole came up first. Bramble tipped a drop onto a flat sun-warmed stone. The vole drank, said *thank you, Bramble* in the small mouse-voice of a vole, and went back down to her route.\n\nTock got the next one. Bramble tipped a drop onto a curl of birch bark. Tock did the slow lick of a squirrel who had not had a sweet thing in months and intended to remember it.\n\nBramble looked at YY.\n\nYY had a folded sourwood leaf in his paw, the way a squirrel has a leaf when a leaf is going to be useful. He held it out.\n\nBramble tipped a drop into the cup of the leaf. The drop sat there, golden, perfectly held.\n\n\"For tomorrow,\" Bramble told YY.\n\nYY looked up at him.\n\n\"In case the new first-call,\" Bramble said carefully, \"needs *help arriving.*\"\n\n\"Bramble,\" said YY.\n\n\"Mm.\"\n\n\"That is *kind* of you.\"\n\n\"Well,\" said Bramble. \"It is the right day for it.\"\n\nHe lumbered back down the slope, talking quietly to a pine on the way past. The pine did not appear to mind.\n\nYY came down the ridge with the leaf cupped careful between his paws. He climbed his trunk one-pawed and set the leaf on the kitchen ledge — the back of it, where the air was steadier — and looked at the drop for a long moment in the slanting late-morning light.\n\nThe drop was small.\n\nThe drop was *gold.*\n\nThe drop would still be there tomorrow at first light, when the woods would try, by whatever shape they tried, to start the day.\n\nYY went down the trunk and went to the warm patch and the brook eddy and the rocky shoulder, in that order, and brought home a single early dandelion crown and four soft acorn-bits the squirrels had passed over in the fall. None of it was much. All of it was something.\n\nHe ate the dandelion crown standing up at the kitchen ledge, looking out the door at the upper ridge.\n\nThe ridge looked the same.\n\nIt was not the same.\n\nBut it was a ridge that had been *attended to,* now, and there was a gold drop on a leaf next to him for whenever tomorrow needed it.",
+    "state_note": "The day's grief was held together rather than alone, and both YY's hunger and his attention came back into more usable shapes. He goes to bed with a syrup-drop on a folded leaf, a small forage of dandelion-and-acorn-scraps in his belly, and the new fact that even the worst week of late winter can produce, by accident, the first sweet thing of the year.",
+    "summary": "The woods convened at the dead pine; three crows came for Korv's body and the primary feather and took them over the ridge; Bramble (just up from his last winter sleep) arrived with a comb of stored maple syrup and tipped a single drop onto a folded sourwood leaf for YY — the first sweet thing of the year, set on the kitchen ledge for whenever tomorrow's first-call needs help arriving.",
+    "state_delta": {
+      "food": "0.46 → 0.50",
+      "attention": "0.62 → 0.59",
+      "health": "0.78 → 0.79"
+    },
+    "branch_created": false,
+    "world_anchor": "Sir David Attenborough turned 100 on 2026-05-08 — a long-witness celebrated; Russia held a scaled-back Victory Day parade due to fear of Ukrainian drone attacks. Two parallel events about ceremonies of marking, one celebrating endurance and one diminished by anxiety."
+  },
+  "created_at": "2026-05-09T20:50:00Z"
+}

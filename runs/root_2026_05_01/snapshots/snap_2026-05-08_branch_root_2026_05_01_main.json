@@ -1,0 +1,79 @@
+{
+  "schema_version": "0.1",
+  "snapshot_id": "snap_2026-05-08_branch_root_2026_05_01_main",
+  "root_id": "root_2026_05_01",
+  "branch_id": "branch_root_2026_05_01_main",
+  "story_day": 8,
+  "snapshot_date": "2026-05-08",
+  "time_policy": "nightly_auto_advance",
+  "package_ref": {
+    "package_id": "yysworld-pipeline-v0.2",
+    "package_created_at": "2026-05-09T20:50:00Z",
+    "package_hash": "sha256:claude-code-subscription"
+  },
+  "model_refs": [
+    {
+      "provider": "anthropic",
+      "model_id": "claude-code-subscription",
+      "role": "generator",
+      "runtime_class": "interactive"
+    }
+  ],
+  "event_refs": ["evt_2026-05-08_008"],
+  "decision_refs": ["dec_2026-05-08_008"],
+  "state_before": {
+    "condition": {
+      "health": 0.78,
+      "food": 0.46,
+      "attention": 0.62
+    },
+    "inventory": [],
+    "active_burdens": ["winter_thinning", "korv_silence"],
+    "goals": {
+      "primary": "find_food",
+      "secondary": "manage_what_others_know"
+    },
+    "reaction_overrides": {},
+    "trait_deviations": {},
+    "identity_notes": [
+      "Late winter — the kernel-save and persimmon are gone, eaten last night in ceremony.",
+      "Yesterday: found Korv at the base of the dead pine; came home and ate the saves slowly.",
+      "Today: went to the gathering at the dead pine; stood at the back. Bramble was there, just up from his last sleep, and tipped a single drop of stored maple syrup into YY's paw on the way down the ridge.",
+      "Standing thread: korv_silence is partially metabolized through being attended; the new morning shape has not yet been named, but it has been attempted."
+    ]
+  },
+  "state_after": {
+    "condition": {
+      "health": 0.79,
+      "food": 0.50,
+      "attention": 0.59
+    },
+    "inventory": [
+      {
+        "id": "syrup_drop_carry",
+        "label": "a single drop of maple syrup, captured on a folded leaf",
+        "acquired_day": 8,
+        "tradeable": true,
+        "notes": "Bramble passed through the gathering with a comb of his last fall's syrup and offered a drop to anyone who needed one. YY took the drop on a folded sourwood leaf and carried it home. The leaf is on the kitchen ledge. The drop is for tomorrow's morning, in case the new first-call needs help arriving."
+      }
+    ],
+    "active_burdens": ["winter_thinning"],
+    "goals": {
+      "primary": "find_food",
+      "secondary": "map_the_new_ground"
+    },
+    "reaction_overrides": {},
+    "trait_deviations": {},
+    "identity_notes": [
+      "Late winter — YY has the first sweet thing of the year on his kitchen ledge: one syrup drop on a leaf.",
+      "Yesterday: ate his saves in ceremony after finding Korv.",
+      "Today: stood at the back of the gathering at the dead pine; the three crows took Korv and the primary feather over the ridge; Bramble gave YY a single syrup-drop on a sourwood leaf on the way down. Came home with food and with the day's quiet held intact.",
+      "Standing thread: korv_silence is no longer an active burden — the gathering carried it. Goals rotate back toward map_the_new_ground."
+    ]
+  },
+  "change_summary": {
+    "notable_shift": "Active burden korv_silence is resolved through ceremony — not because the loss is fixed, but because the woods attempted the new morning shape together. Goals rotate back toward foraging. First sweet thing of the season acquired by accident, given by Bramble on his first day awake.",
+    "branch_created": false
+  },
+  "created_at": "2026-05-09T20:50:00Z"
+}

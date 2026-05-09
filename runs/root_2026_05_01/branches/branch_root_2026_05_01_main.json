@@ -7,27 +7,35 @@
   "created_at": "2026-05-01T00:00:00Z",
   "status": "active",
   "state": {
-    "story_day": 7,
+    "story_day": 8,
     "condition": {
-      "health": 0.78,
-      "food": 0.46,
-      "attention": 0.62
+      "health": 0.79,
+      "food": 0.50,
+      "attention": 0.59
     },
-    "inventory": [],
-    "active_burdens": ["winter_thinning", "korv_silence"],
+    "inventory": [
+      {
+        "id": "syrup_drop_carry",
+        "label": "a single drop of maple syrup, captured on a folded leaf",
+        "acquired_day": 8,
+        "tradeable": true,
+        "notes": "Bramble passed through the gathering with a comb of his last fall's syrup and offered a drop to anyone who needed one. YY took the drop on a folded sourwood leaf and carried it home. The leaf is on the kitchen ledge. The drop is for tomorrow's morning, in case the new first-call needs help arriving."
+      }
+    ],
+    "active_burdens": ["winter_thinning"],
     "goals": {
       "primary": "find_food",
-      "secondary": "manage_what_others_know"
+      "secondary": "map_the_new_ground"
     },
     "reaction_overrides": {},
     "trait_deviations": {},
     "identity_notes": [
-      "Late winter — the kernel-save is gone; YY ate it tonight, the way you eat a small thing on the day a large thing has been taken away.",
-      "Yesterday: traded one direction to Tock for half a persimmon.",
-      "Today: the morning was missing Korv's first-call; YY tracked the absence to the dead-pine roost and sat with the body. He did not take the feather. He came down the ridge slow and quiet and did not forage.",
-      "Standing thread: a new active burden — *korv_silence*. The morning has lost its clock. YY will need to find a different way to know when the day has started."
+      "Late winter — YY has the first sweet thing of the year on his kitchen ledge: one syrup drop on a leaf.",
+      "Yesterday: ate his saves in ceremony after finding Korv.",
+      "Today: stood at the back of the gathering at the dead pine; the three crows took Korv and the primary feather over the ridge; Bramble gave YY a single syrup-drop on a sourwood leaf on the way down. Came home with food and with the day's quiet held intact.",
+      "Standing thread: korv_silence is no longer an active burden — the gathering carried it. Goals rotate back toward map_the_new_ground."
     ]
   },
   "drift_flags": [],
-  "last_updated_at": "2026-05-09T20:45:00Z"
+  "last_updated_at": "2026-05-09T20:50:00Z"
 }
