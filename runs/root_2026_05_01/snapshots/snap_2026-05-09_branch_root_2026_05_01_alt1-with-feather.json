@@ -1,0 +1,115 @@
+{
+  "schema_version": "0.1",
+  "snapshot_id": "snap_2026-05-09_branch_root_2026_05_01_alt1-with-feather",
+  "root_id": "root_2026_05_01",
+  "branch_id": "branch_root_2026_05_01_alt1-with-feather",
+  "story_day": 9,
+  "snapshot_date": "2026-05-09",
+  "time_policy": "nightly_auto_advance",
+  "package_ref": {
+    "package_id": "yysworld-pipeline-v0.2",
+    "package_created_at": "2026-05-09T20:55:00Z",
+    "package_hash": "sha256:claude-code-subscription"
+  },
+  "model_refs": [
+    {
+      "provider": "anthropic",
+      "model_id": "claude-code-subscription",
+      "role": "generator",
+      "runtime_class": "interactive"
+    }
+  ],
+  "event_refs": ["evt_2026-05-09_009"],
+  "decision_refs": ["dec_2026-05-09_009"],
+  "state_before": {
+    "condition": {
+      "health": 0.79,
+      "food": 0.32,
+      "attention": 0.60
+    },
+    "inventory": [
+      {
+        "id": "heron_feather",
+        "label": "the heron feather",
+        "acquired_day": 0,
+        "tradeable": true,
+        "notes": "Acknowledged across species at yesterday's gathering. Most stable it has been since acquisition."
+      },
+      {
+        "id": "fox_kit_tuft",
+        "label": "a single rust-colored kit-tuft",
+        "acquired_day": 5,
+        "tradeable": false,
+        "notes": "On the kitchen ledge."
+      },
+      {
+        "id": "syrup_drop_carry",
+        "label": "a single drop of maple syrup, captured on a folded leaf",
+        "acquired_day": 8,
+        "tradeable": true,
+        "notes": "Bramble's gift. On the kitchen ledge."
+      }
+    ],
+    "active_burdens": ["winter_thinning"],
+    "goals": {
+      "primary": "find_food",
+      "secondary": "read_what_others_leave"
+    },
+    "reaction_overrides": {},
+    "trait_deviations": {},
+    "identity_notes": [
+      "Late winter — apple is gone; syrup-drop is on the kitchen ledge.",
+      "Yesterday: delivered Korv's reading aloud at the gathering; the lead crow nodded; Mira closed the ledger with the word *delivered*.",
+      "Today: woke into a quiet morning, heard a slow wing-beat at first light, climbed onto the upper branch of the treehouse and watched a flight of eight herons cross north over the upper ridge — the lead heron banked once at the dead pine, looked down, and continued. Brought the syrup-drop to Mira at the bend; she added a new column-heading to the ledger.",
+      "Standing thread: the heron's look acknowledged the feather and did not ask for it back. The reading-role now has a sky-marker as part of its anchoring."
+    ]
+  },
+  "state_after": {
+    "condition": {
+      "health": 0.81,
+      "food": 0.40,
+      "attention": 0.62
+    },
+    "inventory": [
+      {
+        "id": "heron_feather",
+        "label": "the heron feather",
+        "acquired_day": 0,
+        "tradeable": true,
+        "notes": "Acknowledged today by the lead heron of the season's first northbound flight: one bank, one look, no request. The feather's meaning closes nine days after it began. It is still on YY's back; it is no longer a question."
+      },
+      {
+        "id": "fox_kit_tuft",
+        "label": "a single rust-colored kit-tuft",
+        "acquired_day": 5,
+        "tradeable": false,
+        "notes": "Still on the kitchen ledge."
+      },
+      {
+        "id": "ledger_seat",
+        "label": "Mira's reading-seat (informal)",
+        "acquired_day": 9,
+        "tradeable": false,
+        "notes": "After today's reading of the heron flight, Mira opened a new column in her ledger headed *morning readings — YY*. The seat at the bend on the flat rock is now standing-room for him by an arrangement that has not been spoken aloud and does not need to be."
+      }
+    ],
+    "active_burdens": ["winter_thinning"],
+    "goals": {
+      "primary": "find_food",
+      "secondary": "read_what_others_leave"
+    },
+    "reaction_overrides": {},
+    "trait_deviations": {},
+    "identity_notes": [
+      "Late winter — YY has the syrup-drop's emptiness on the kitchen ledge (delivered to Mira) and a new column with his name on it.",
+      "Yesterday: delivered the reading aloud; the lead crow nodded; Mira wrote *delivered.*",
+      "Today: heard the new first-call as eight herons crossing the ridge in a vee at first light. The lead heron banked once over the dead pine and looked down; the look found YY (and the feather along his back). Brought the syrup-drop to Mira; she opened a *morning readings — YY* column and gave him a small handful of last fall's hickory kernels.",
+      "Standing thread: the feather's nine-day arc closes. The role's nine-day arc opens."
+    ]
+  },
+  "change_summary": {
+    "notable_shift": "The feather's arc closes — acknowledged across species by the bird whose feather it is, returned to YY by absence-of-request. Mira opens a new ledger column for ongoing morning readings, formalizing the role she has been writing toward all week. The branch's central question (does the feather narrow YY or shape him?) has resolved to *shape*.",
+    "branch_created": false
+  },
+  "created_at": "2026-05-09T20:55:00Z"
+}

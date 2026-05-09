@@ -7,19 +7,19 @@
   "created_at": "2026-05-01T00:00:00Z",
   "status": "active",
   "state": {
-    "story_day": 8,
+    "story_day": 9,
     "condition": {
-      "health": 0.79,
-      "food": 0.50,
-      "attention": 0.59
+      "health": 0.81,
+      "food": 0.55,
+      "attention": 0.62
     },
     "inventory": [
       {
-        "id": "syrup_drop_carry",
-        "label": "a single drop of maple syrup, captured on a folded leaf",
-        "acquired_day": 8,
+        "id": "acorn_bits_carry",
+        "label": "three good acorn-bits from the rocky shoulder",
+        "acquired_day": 9,
         "tradeable": true,
-        "notes": "Bramble passed through the gathering with a comb of his last fall's syrup and offered a drop to anyone who needed one. YY took the drop on a folded sourwood leaf and carried it home. The leaf is on the kitchen ledge. The drop is for tomorrow's morning, in case the new first-call needs help arriving."
+        "notes": "Pried from the same crevice-line that produced the hickory kernels four days ago. Two on the back shelf at the treehouse, one in the cheek for the morning climb."
       }
     ],
     "active_burdens": ["winter_thinning"],
@@ -30,12 +30,12 @@
     "reaction_overrides": {},
     "trait_deviations": {},
     "identity_notes": [
-      "Late winter — YY has the first sweet thing of the year on his kitchen ledge: one syrup drop on a leaf.",
-      "Yesterday: ate his saves in ceremony after finding Korv.",
-      "Today: stood at the back of the gathering at the dead pine; the three crows took Korv and the primary feather over the ridge; Bramble gave YY a single syrup-drop on a sourwood leaf on the way down. Came home with food and with the day's quiet held intact.",
-      "Standing thread: korv_silence is no longer an active burden — the gathering carried it. Goals rotate back toward map_the_new_ground."
+      "Late winter — YY has saves on two shelves again (two acorn-bits) and one in the cheek for tomorrow.",
+      "Yesterday: received a syrup-drop from Bramble at Korv's gathering.",
+      "Today: heard the new first-call at dawn — a flight of herons crossing north over the upper ridge — and met Tock at the bend to share the syrup-drop on a slip of bark. Foraged the rocky shoulder; brought home three acorn-bits from the crevice-line.",
+      "Standing thread: morning has been re-oriented around a sky-marker. The week of late winter is closing on rising food and a settled attention."
     ]
   },
   "drift_flags": [],
-  "last_updated_at": "2026-05-09T20:50:00Z"
+  "last_updated_at": "2026-05-09T20:55:00Z"
 }

@@ -1,0 +1,45 @@
+{
+  "schema_version": "0.1",
+  "comparison_id": "cmp_2026-05-09_9_main_vs_alt1-with-feather",
+  "artifact_type": "daily_comparison",
+  "root_id": "root_2026_05_01",
+  "branch_a": "branch_root_2026_05_01_main",
+  "branch_b": "branch_root_2026_05_01_alt1-with-feather",
+  "story_day": 9,
+  "snapshot_date": "2026-05-09",
+  "snapshot_ids": [
+    "snap_2026-05-09_branch_root_2026_05_01_main",
+    "snap_2026-05-09_branch_root_2026_05_01_alt1-with-feather"
+  ],
+  "package_ref": {
+    "package_id": "yysworld-pipeline-v0.2",
+    "package_created_at": "2026-05-09T20:55:00Z",
+    "package_hash": "sha256:claude-code-subscription"
+  },
+  "model_refs": [
+    {
+      "provider": "anthropic",
+      "model_id": "claude-code-subscription",
+      "role": "comparator",
+      "runtime_class": "interactive"
+    }
+  ],
+  "content": {
+    "divergence_summary": "Both timelines woke into the same first light, heard the same slow wing-beat begin at the edge of audible, and climbed up to watch the same flight of eight herons cross the dead-pine ridge in the same long shallow vee. The new dawn-marker arrived for both. The divergence is in what the morning produced *for them.* Main YY shared his syrup-drop with Tock at the bend and brought home three acorn-bits from the rocky shoulder. Alt YY watched the lead heron bank once over the dead pine and look down — directly at him, at the feather along his back — and then carried the syrup-drop to Mira, who opened a new ledger column in his name. The same flight, two different mornings.",
+    "branch_a_path": "Main YY heard the new wing-beat at first light, climbed to the high branch and watched eight herons cross the ridge in a vee. He came down, took the syrup-drop on its sourwood leaf to Tock at the bend, halved it on slips of bark, ate his half slowly, and went up to the rocky shoulder for three acorn-bits — two for the back shelf, one in the cheek. He went to sleep with his food saves in deliberate places and an ear half-up, listening for *thump-thump.*",
+    "branch_b_path": "Alt YY heard the wing-beat from his nest, climbed to the highest twig that would hold him, and watched the lead heron bank one wingtip over the dead pine and look down at him, the feather along his back, and the bare patch where Korv had been — all at once, for one beat. The look was old like a pattern. The lead heron did not slow. The feather had been seen and not asked for. He carried the syrup-drop the slow walk to Mira's bend; she opened a *morning readings — YY* column in her ledger and offered him a handful of hickory kernels as the role's weekly fee. He took half. The rate is now fair.",
+    "key_differences": [
+      "The lead heron's bank-and-look happens only in alt — visible to alt YY because the feather along his back is what makes him visible to the bird. Main has no analog.",
+      "Main shares the syrup-drop with a peer (Tock); alt brings it to an elder (Mira) as today's reading.",
+      "Mira's ledger gains a new ongoing column — *morning readings — YY* — only in the alt timeline. Main's social position remains informal.",
+      "Alt's hickory kernels arrive as a negotiated weekly role-fee. Main's acorn-bits arrive as solo forage from the same crevice-line."
+    ],
+    "shared_elements": [
+      "Both YYs heard the wing-beat at first light, climbed up to watch, and saw the flight of eight herons cross the dead-pine ridge in a long shallow vee.",
+      "Both registered the new shape of morning by being arrived into rather than designating it.",
+      "Both used the syrup-drop on a folded sourwood leaf today — half each with a friend, or as a delivered offering to Mira's ledger.",
+      "Both ended the week with food saves in deliberate places, attention back on the foreseeable, and an ear listening for *thump-thump.*"
+    ]
+  },
+  "created_at": "2026-05-09T20:55:00Z"
+}

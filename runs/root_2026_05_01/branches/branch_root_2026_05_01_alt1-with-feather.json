@@ -7,11 +7,11 @@
   "created_at": "2026-05-01T00:00:00Z",
   "status": "active",
   "state": {
-    "story_day": 8,
+    "story_day": 9,
     "condition": {
-      "health": 0.79,
-      "food": 0.32,
-      "attention": 0.60
+      "health": 0.81,
+      "food": 0.40,
+      "attention": 0.62
     },
     "inventory": [
       {
@@ -19,7 +19,7 @@
         "label": "the heron feather",
         "acquired_day": 0,
         "tradeable": true,
-        "notes": "Acknowledged today across species: a heron's feather worn by a reader of woods, in the company of crows accepting a reading. Its meaning is now the most stable it has been since acquisition."
+        "notes": "Acknowledged today by the lead heron of the season's first northbound flight: one bank, one look, no request. The feather's meaning closes nine days after it began. It is still on YY's back; it is no longer a question."
       },
       {
         "id": "fox_kit_tuft",
@@ -29,11 +29,18 @@
         "notes": "Still on the kitchen ledge."
       },
       {
-        "id": "syrup_drop_carry",
-        "label": "a single drop of maple syrup, captured on a folded leaf",
-        "acquired_day": 8,
+        "id": "ledger_seat",
+        "label": "Mira's reading-seat (informal)",
+        "acquired_day": 9,
+        "tradeable": false,
+        "notes": "After today's reading of the heron flight, Mira opened a new column in her ledger headed *morning readings — YY*. The seat at the bend on the flat rock is now standing-room for him by an arrangement that has not been spoken aloud and does not need to be."
+      },
+      {
+        "id": "hickory_kernels_role_fee",
+        "label": "three hickory kernels (week 1 of the morning-readings rate)",
+        "acquired_day": 9,
         "tradeable": true,
-        "notes": "Bramble's gift on the way down from the gathering. On the kitchen ledge next to the kit-tuft. The first sweet thing of the year."
+        "notes": "Half the handful Mira offered today; YY left the other half with her by negotiation, to set a fair weekly rate rather than a generous one. All three are on the back shelf of the treehouse pantry."
       }
     ],
     "active_burdens": ["winter_thinning"],
@@ -44,12 +51,12 @@
     "reaction_overrides": {},
     "trait_deviations": {},
     "identity_notes": [
-      "Late winter — YY ate the apple after the gathering and carries home a syrup-drop on a leaf.",
-      "Yesterday: read Korv's body and refused the offered feather.",
-      "Today: delivered the reading aloud to the gathering at the dead pine; the lead crow nodded; Mira closed the ledger; Bramble gave him a drop of syrup on the way down. Korv_silence is held together now, not alone.",
-      "Standing thread: the reading-role has voice now. The feather has been seen across species and accepted. Whatever tomorrow's morning looks like, YY is part of how it gets shaped."
+      "Late winter — YY has the syrup-drop's emptiness on the kitchen ledge (delivered to Mira) and a new column with his name on it.",
+      "Yesterday: delivered the reading aloud; the lead crow nodded; Mira wrote *delivered.*",
+      "Today: heard the new first-call as eight herons crossing the ridge in a vee at first light. The lead heron banked once over the dead pine and looked down; the look found YY (and the feather along his back). Brought the syrup-drop to Mira; she opened a *morning readings — YY* column and gave him a small handful of last fall's hickory kernels.",
+      "Standing thread: the feather's nine-day arc closes. The role's nine-day arc opens."
     ]
   },
   "drift_flags": [],
-  "last_updated_at": "2026-05-09T20:50:00Z"
+  "last_updated_at": "2026-05-09T20:55:00Z"
 }

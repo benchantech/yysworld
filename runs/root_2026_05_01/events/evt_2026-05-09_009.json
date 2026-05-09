@@ -1,0 +1,25 @@
+{
+  "schema_version": "0.1",
+  "event_id": "evt_2026-05-09_009",
+  "root_id": "root_2026_05_01",
+  "story_day": 9,
+  "occurred_at": "2026-05-09T12:00:00Z",
+  "event_type": "natural_phenomenon",
+  "canonical_truth": {
+    "summary": "First light brings the new shape of morning. A flight of herons — eight birds, broad-winged, slow — passes north over the upper ridge in a long shallow vee. The flight is the year's first northbound migration over this stretch of woods. The wing-beat is audible before the silhouette is visible. The flight passes once, low enough to see clearly against the early sky, and is gone over the next ridge inside three minutes. The woods register it as the new first-call: a sound that arrives every spring at this date but had never, until this year, been the first sound of the day.",
+    "entities": ["heron_flight", "lead_heron", "upper_ridge", "first_light"],
+    "location": "the upper sky above the dead-pine ridge, traveling north",
+    "concrete_outcome": "The new dawn-marker is found — not designated, but recognized — and the woods begin a season with the herons' wing-beat as the morning's first sound. The lead heron passes near enough to be seen with detail."
+  },
+  "perception_prompt": {
+    "noticeable_surface": "First light is quiet at first — the regular finch and brook sounds, no first-call. Then, low and steady, a wing-beat that sounds like a slow heart at distance. The sky takes shape around the sound: a flight of herons, slow, broad-winged, traveling north in a long shallow vee just above the trees.",
+    "ambiguity_level": 0.10
+  },
+  "tags": ["sky", "migration", "heron", "new-dawn-marker", "first-light", "spring-arrival", "wing-beat"],
+  "created_at": "2026-05-09T20:55:00Z",
+  "authorial_note": {
+    "real_world_inspiration": "On 2026-05-09, Russia held a scaled-back Victory Day military parade in Moscow under fear of Ukrainian drone attacks; Zelenskyy and Putin's adviser confirmed a three-day ceasefire and prisoner exchange; and Trump declassified 162 UFO files for public judgment of the evidence. Three parallel events about things in the sky becoming visible — military formations, peace exchanged, and unexplained aerial phenomena released to be seen.",
+    "translation_logic": "Things in the sky become clearly visible today. For YY this becomes the year's first heron migration crossing low and slow over the dead-pine ridge — a sky-event arriving just when the woods need a new dawn-marker, the first northbound flight of the season visible against early light. The cease-fire's hold-still register supplies the slow steady wing-beat; the UFO declassification's see-it-clearly register supplies the low pass.",
+    "restraint_reason": "The world enters as a wing-beat heard before the birds are seen, then as the silhouette of eight herons against the early sky. YY does not understand parades or peace deals or declassified files; he understands the sound of large birds crossing over before the sun is fully up."
+  }
+}
