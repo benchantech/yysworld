@@ -7,29 +7,14 @@
   "created_at": "2026-05-01T00:00:00Z",
   "status": "active",
   "state": {
-    "story_day": 6,
+    "story_day": 7,
     "condition": {
-      "health": 0.79,
-      "food": 0.49,
-      "attention": 0.58
+      "health": 0.78,
+      "food": 0.46,
+      "attention": 0.62
     },
-    "inventory": [
-      {
-        "id": "hickory_kernel_carry",
-        "label": "the second hickory kernel",
-        "acquired_day": 5,
-        "tradeable": true,
-        "notes": "Still on the back of the pantry shelf. YY did not eat it tonight — Tock's persimmon square covered the day."
-      },
-      {
-        "id": "persimmon_square",
-        "label": "half a square of dried persimmon",
-        "acquired_day": 6,
-        "tradeable": true,
-        "notes": "Tock had two squares from a back-cache he opened yesterday and traded one for partial directions to the rocky shoulder. YY ate half on the path; the other half is wrapped in a strip of bark on the kitchen ledge."
-      }
-    ],
-    "active_burdens": ["winter_thinning"],
+    "inventory": [],
+    "active_burdens": ["winter_thinning", "korv_silence"],
     "goals": {
       "primary": "find_food",
       "secondary": "manage_what_others_know"
@@ -37,12 +22,12 @@
     "reaction_overrides": {},
     "trait_deviations": {},
     "identity_notes": [
-      "Late winter — YY now has two saves on different shelves (a kernel, half a persimmon square); food is starting to feel like something that exists in *places*, not just in the next bite.",
-      "Yesterday: pried two hickory kernels from a crevice on the rocky shoulder.",
-      "Today: traded partial directions to the shoulder for half a persimmon square with Tock; kept the warm patch and the brook eddy out of the trade. The conversation was easy. The withholding was deliberate.",
-      "Standing thread: secondary goal has rotated again — now consciously managing what other squirrels know about which forage zones."
+      "Late winter — the kernel-save is gone; YY ate it tonight, the way you eat a small thing on the day a large thing has been taken away.",
+      "Yesterday: traded one direction to Tock for half a persimmon.",
+      "Today: the morning was missing Korv's first-call; YY tracked the absence to the dead-pine roost and sat with the body. He did not take the feather. He came down the ridge slow and quiet and did not forage.",
+      "Standing thread: a new active burden — *korv_silence*. The morning has lost its clock. YY will need to find a different way to know when the day has started."
     ]
   },
   "drift_flags": [],
-  "last_updated_at": "2026-05-09T20:40:00Z"
+  "last_updated_at": "2026-05-09T20:45:00Z"
 }

@@ -1,0 +1,45 @@
+{
+  "schema_version": "0.1",
+  "comparison_id": "cmp_2026-05-07_7_main_vs_alt1-with-feather",
+  "artifact_type": "daily_comparison",
+  "root_id": "root_2026_05_01",
+  "branch_a": "branch_root_2026_05_01_main",
+  "branch_b": "branch_root_2026_05_01_alt1-with-feather",
+  "story_day": 7,
+  "snapshot_date": "2026-05-07",
+  "snapshot_ids": [
+    "snap_2026-05-07_branch_root_2026_05_01_main",
+    "snap_2026-05-07_branch_root_2026_05_01_alt1-with-feather"
+  ],
+  "package_ref": {
+    "package_id": "yysworld-pipeline-v0.2",
+    "package_created_at": "2026-05-09T20:45:00Z",
+    "package_hash": "sha256:claude-code-subscription"
+  },
+  "model_refs": [
+    {
+      "provider": "anthropic",
+      "model_id": "claude-code-subscription",
+      "role": "comparator",
+      "runtime_class": "interactive"
+    }
+  ],
+  "content": {
+    "divergence_summary": "Both timelines woke into the same wrong-shaped morning, climbed the same slope, found the same body under the same dead pine, saw the same primary feather caught on the same low branch. Both refused to take it. The divergence is in what each YY did *next.* Main came home and ate his saves slowly without going to anyone. Alt walked the reading down to Mira, who recorded it — and recorded that he had not taken the feather, then closed the ledger and gave him back the apple he had paid her with yesterday. The same loss, marked privately on one side of the ledger and structurally on the other.",
+    "branch_a_path": "Main YY woke into a morning without Korv's first-call, climbed the upper ridge for the first time at that hour, and found Korv on the bare patch under the dead pine — old age, no fight, foot still curled. He sat at a respectful distance, did not climb up to the offered primary feather, came down the slope slow, and did not forage. At home he ate both of his shelf-saves (the persimmon and the kernel) slowly, ceremonially, without enjoying or not enjoying them. He sat on the windowsill until dark.",
+    "branch_b_path": "Alt YY woke into the same morning and walked the slow walk up the slope, the gait the feather has trained into him. He read the body methodically — foot-curl intact, no struggle, no predator-smell — and read the offered primary on the lowest branch and did not climb up to take it. He brought the reading down to Mira at the bend, gave her four short answers and one offered detail, and watched her write *YY did not take it* in the line under his entry. She handed him back yesterday's apple-strip and said today's reading was on the house. He carried the apple home and did not eat it.",
+    "key_differences": [
+      "Main keeps the loss private; alt delivers it as a reading.",
+      "Main eats both shelf-saves in ceremony; alt does not eat the apple at all.",
+      "Mira's ledger now contains a structural recognition (*YY did not take it*) that exists in alt's record but not in main's.",
+      "Both timelines acquire a new shared active burden — korv_silence — but only alt has been told, by implication, that re-finding the morning's clock is now part of his role."
+    ],
+    "shared_elements": [
+      "Both YYs woke into the same missing first-call and recognized the morning as wrong-shaped before opening their eyes.",
+      "Both climbed the upper ridge, found the body in the same posture, and refused the offered primary feather.",
+      "Both came home with their day broken and their hunger somewhere underneath the larger thing.",
+      "Both watched the upper ridge through their windowsill at dusk and registered that tomorrow's morning would start a different way."
+    ]
+  },
+  "created_at": "2026-05-09T20:45:00Z"
+}

@@ -7,11 +7,11 @@
   "created_at": "2026-05-01T00:00:00Z",
   "status": "active",
   "state": {
-    "story_day": 6,
+    "story_day": 7,
     "condition": {
-      "health": 0.78,
-      "food": 0.28,
-      "attention": 0.54
+      "health": 0.77,
+      "food": 0.26,
+      "attention": 0.62
     },
     "inventory": [
       {
@@ -19,24 +19,24 @@
         "label": "the heron feather",
         "acquired_day": 0,
         "tradeable": true,
-        "notes": "Mira saw the feather today and did not write *heron feather* in her ledger again. She wrote *the squirrel who reads.* The feather is still on his back; its meaning has shifted on the public record."
+        "notes": "Carried into Mira's accounting of Korv's death today; the feather has now been part of two ledger entries."
       },
       {
         "id": "fox_kit_tuft",
         "label": "a single rust-colored kit-tuft",
         "acquired_day": 5,
         "tradeable": false,
-        "notes": "Still on the kitchen ledge. Mira asked to see it; YY showed her; she did not ask for it. He kept it."
+        "notes": "Still on the kitchen ledge."
       },
       {
         "id": "apple_strip",
         "label": "a strip of dried apple",
         "acquired_day": 6,
         "tradeable": true,
-        "notes": "Mira's ledger entry-fee. Half eaten on the path; half rolled into a coil and tucked into a knot in the kitchen wall."
+        "notes": "Mira gave the second half back today; YY has not eaten it yet. The day did not feel like an apple day."
       }
     ],
-    "active_burdens": ["winter_thinning"],
+    "active_burdens": ["winter_thinning", "korv_silence"],
     "goals": {
       "primary": "find_food",
       "secondary": "read_what_others_leave"
@@ -44,12 +44,12 @@
     "reaction_overrides": {},
     "trait_deviations": {},
     "identity_notes": [
-      "Late winter — YY ate half the apple-strip on the path; the other half is in the kitchen-knot. Food coming up off the floor.",
-      "Yesterday: read the fox's exit trail and found one hickory kernel.",
-      "Today: Mira asked what he had been reading; he told her — the deer at the surge, the fox at the scratch-pine, the kit-tuft at the den. She wrote *the squirrel who reads* in her ledger and gave him a dried apple-strip in trade.",
-      "Standing thread: the feather's public meaning has shifted from heron-token to reader-mark. The feather no longer travels alone on the ledger; it travels as part of YY's role."
+      "Late winter — YY did not eat much today; the apple Mira returned is still in the kitchen.",
+      "Yesterday: Mira added *the squirrel who reads* to her ledger.",
+      "Today: read Korv's death — old age, foot let go, no struggle. Did not take the offered primary feather. Brought the reading to Mira; she added it to the column. The morning will need a new clock; that is now part of his job.",
+      "Standing thread: the feather's role-meaning is the thing being tested. He chose not to add a second feather. The choice was not hard."
     ]
   },
   "drift_flags": [],
-  "last_updated_at": "2026-05-09T20:40:00Z"
+  "last_updated_at": "2026-05-09T20:45:00Z"
 }

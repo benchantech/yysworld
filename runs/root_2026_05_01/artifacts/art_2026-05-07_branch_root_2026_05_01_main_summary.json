@@ -1,0 +1,37 @@
+{
+  "schema_version": "0.1",
+  "artifact_id": "art_2026-05-07_branch_root_2026_05_01_main_summary",
+  "artifact_type": "daily_summary",
+  "snapshot_id": "snap_2026-05-07_branch_root_2026_05_01_main",
+  "root_id": "root_2026_05_01",
+  "branch_id": "branch_root_2026_05_01_main",
+  "package_ref": {
+    "package_id": "yysworld-pipeline-v0.2",
+    "package_created_at": "2026-05-09T20:45:00Z",
+    "package_hash": "sha256:claude-code-subscription"
+  },
+  "model_refs": [
+    {
+      "provider": "anthropic",
+      "model_id": "claude-code-subscription",
+      "role": "summarizer",
+      "runtime_class": "interactive"
+    }
+  ],
+  "comparison_contract_version": "0.1",
+  "content": {
+    "title": "The Morning Without Korv",
+    "tone": "quiet_and_attentive",
+    "narrative": "YY woke up early, the way you wake up early when something is wrong but you don't yet know what.\n\nHe lay in his nest with his eyes closed. He listened.\n\nThe woods were not silent. A finch was making the small busy noise a finch makes when it is sorting itself out for the day. Something further off was moving through leaf litter. The brook was still saying *shhh.*\n\nAll of those sounds were normal.\n\nThe sound that was missing was the one *over* them.\n\nKorv's first-call.\n\nFor as long as YY had been a squirrel — and longer, longer than anyone he had asked could remember — Korv's first-call had come down off the upper ridge like a small dark anchor dropped over the morning. *Korv-korv.* Then a longer one. Then the day started.\n\nThe day was happening anyway. The first-call was not.\n\nYY opened his eyes.\n\nHe sat up. He listened a long time. He kept thinking it was just *late.* He kept thinking, any second now, *korv-korv.* Then a longer one.\n\nNothing.\n\n\"Huh,\" YY said, very quietly, to the inside of his treehouse.\n\nHe came down the trunk slow.\n\nHe did not go to the warm patch. He did not go to the brook eddy. He did not go to the rocky shoulder. He went up the slope.\n\nHe had never gone up the slope this early in the morning. The slope was steeper than it looked from below. The dead pine on the upper ridge stood the way it always stood, gray-white and limbless except at the very top, where the roost was a dense nest of dark sticks and dark feathers.\n\nThe roost was empty.\n\nYY's eyes followed the only line they could follow — *down* — and there at the base of the dead pine, on the bare patch under the lowest branch, was Korv.\n\nKorv was on his side. His foot was still curled the way a crow's foot curls when it has been holding a branch.\n\nYY went still.\n\nHe did the thing a small animal does when it finds a large animal that has stopped being a large animal: he sniffed once, carefully, from a distance. There was no fox-smell. No marten-smell. No fight-smell. Just feathers and morning and a quietness coming up off the body that was not the quietness of sleep.\n\nKorv had been *old.* Older than the trees in the lower stretch, by some accounts.\n\nThe old crow had let go of the branch.\n\nYY sat down on his haunches. He did not approach. He did not say anything. He had not known Korv well — no squirrel did, not the way other crows did — but he had oriented his morning by Korv's voice every dawn of his life, and the orientation was a kind of knowing.\n\nOn the lowest branch, swung gently in the breeze, was a single black primary feather.\n\nIt had caught when Korv had let go. It hung there now, the only thing on the dead pine that was still moving.\n\nYY looked at it for a long time.\n\nHe did not climb up. He did not take it down. The feather was something Korv's people would come for, not something a squirrel should carry. There was a *shape* to whose grief got which thing, and YY had read enough of the woods to know he was not at the top of that list.\n\nHe came down the slope slow.\n\nHe did not forage on the way down. He did not go to the warm patch or the brook eddy or the rocky shoulder. He went home. He climbed his trunk. He stood for a moment at the kitchen ledge looking at the half-square of persimmon, and at the back shelf where the hickory kernel was still waiting.\n\nHe ate the persimmon on the ledge.\n\nThen, after a while, he climbed up to the back shelf and ate the kernel.\n\nHe ate them slowly. He did not enjoy them. He did not *not* enjoy them. He ate them the way you eat the things you have on a day a thing has gone out of the world.\n\nWhen he was done, he sat on the windowsill and looked up at the upper ridge, where the dead pine was just visible through the gap in the trees.\n\nThe sky over the dead pine had the same blue it always had.\n\nThe morning, tomorrow, was going to need a new shape.\n\nYY did not know what shape yet.\n\nThat would be tomorrow's problem.",
+    "state_note": "The day cost YY both of his shelf-saves — the persimmon and the kernel — eaten not for hunger but for ceremony, the way a squirrel eats his small things when a large thing has gone. He gained a quiet kind of attention and a new active burden the woods will share for days: korv_silence. He goes to bed early, with no carry, looking out at the upper ridge and waiting to see what tomorrow's morning sounds like.",
+    "summary": "YY woke early to a morning that was missing Korv's first-call, climbed the upper ridge for the first time at that hour, and found the old crow on the bare patch under the dead-pine roost — old age, foot still curled where the branch had let go, a single primary feather caught on the lowest branch above him. He did not take it. He came home, ate his two saves slowly without enjoying or not enjoying them, and sat on the windowsill until dark.",
+    "state_delta": {
+      "food": "0.49 → 0.46",
+      "attention": "0.58 → 0.62",
+      "health": "0.79 → 0.78"
+    },
+    "branch_created": false,
+    "world_anchor": "Ted Turner, 87, founder of CNN — the world's first 24-hour news network — died on 2026-05-07. An originator of the modern news pattern is gone."
+  },
+  "created_at": "2026-05-09T20:45:00Z"
+}

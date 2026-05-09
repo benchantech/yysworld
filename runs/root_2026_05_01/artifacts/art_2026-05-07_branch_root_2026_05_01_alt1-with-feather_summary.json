@@ -1,0 +1,37 @@
+{
+  "schema_version": "0.1",
+  "artifact_id": "art_2026-05-07_branch_root_2026_05_01_alt1-with-feather_summary",
+  "artifact_type": "daily_summary",
+  "snapshot_id": "snap_2026-05-07_branch_root_2026_05_01_alt1-with-feather",
+  "root_id": "root_2026_05_01",
+  "branch_id": "branch_root_2026_05_01_alt1-with-feather",
+  "package_ref": {
+    "package_id": "yysworld-pipeline-v0.2",
+    "package_created_at": "2026-05-09T20:45:00Z",
+    "package_hash": "sha256:claude-code-subscription"
+  },
+  "model_refs": [
+    {
+      "provider": "anthropic",
+      "model_id": "claude-code-subscription",
+      "role": "summarizer",
+      "runtime_class": "interactive"
+    }
+  ],
+  "comparison_contract_version": "0.1",
+  "content": {
+    "title": "The Reading at the Dead Pine",
+    "tone": "quiet_and_witnessing",
+    "narrative": "YY woke up early because his ears noticed before his eyes did.\n\nHe lay still in the nest. The feather along his back rose with each breath and lay back down, calm. The woods were not silent. A finch was making its small busy morning noise. The brook was saying *shhh.* All the regular sounds were where they ought to be.\n\nThe sound that was missing was the one *over* them.\n\nKorv had not first-called.\n\nYY opened his eyes.\n\nHe sat up, slowly, the slow way the feather had taught him. He listened. He kept waiting for *late.* For *muffled.* For *just this once, started a little after.* The first-call did not come.\n\nThe morning was a different shape today.\n\nYY came down the trunk in the slow walk.\n\nHe did not need to think about where to go. The squirrel who reads goes to the absence — that was the rule, even if it had only been the rule for one day, even if Mira had only written it down yesterday. He walked the slope the way he had walked the rocky shoulder two days ago: head up, spine flat, picking lifts, the feather riding quiet.\n\nThe dead pine stood on the upper ridge gray-white as always. The roost on the top was a dark cluster of sticks and feathers. It was empty.\n\nYY's eyes followed the only line they could follow.\n\nKorv was on the bare patch under the lowest branch. His foot was still curled where it had been holding the branch. His head was turned slightly to the side, the way a crow's head turns when something has interested it just before letting go.\n\nYY did not approach. He sat down on his haunches at the proper distance and read.\n\n*Foot-curl, intact.* No struggle, then. The body had not been moved.\n\n*No fox-smell.* No marten-smell. No fight-smell.\n\n*The feathers under his chest were not pressed flat.* He had not been hit by anything. He had simply let go.\n\n*The branch above.* On the lowest branch — directly above where he had been — a single black primary feather was caught, swinging slow in the breeze. The feather had pulled loose when his foot had pulled loose. It had stayed; he had fallen.\n\nYY looked at the feather for a long time.\n\nThe last time YY had looked at a feather like that, on the day this whole branch had begun, the feather had ended up on his back. The feather had reorganized his entire week. The feather had become — by Mira's hand and the slow walk and the kit-tuft on the ledge — a *role.*\n\nThis was a second feather. Larger. Blacker. Higher in the woods' regard than a heron's, in some ways — Korv had been the woods' clock for longer than any squirrel had been alive.\n\nYY did not climb up.\n\nHe sat with his back flat and the heron feather riding quiet along his spine, and he understood without having to think it through that the squirrel who reads does not need to *carry* the second feather. The squirrel who reads needs to *read* it.\n\nThe feather was for Korv's people. They would come for it. It would be on Korv's branch when they came. That was the right shape of who got which thing, today.\n\nYY came down the slope slow.\n\nHe did not stop at the warm patch. He did not stop at the brook. He did not stop at the rocky shoulder. He went down the bend and crossed it and climbed the small flat rock where Mira had been yesterday, and Mira was there, with her ledger open, the way Mira was always there when she needed to be.\n\nShe did not ask. She had heard the silence too.\n\nYY sat down across from her.\n\n\"Korv,\" he said.\n\n\"Where.\"\n\n\"Dead pine. Base of it. Under the lowest branch.\"\n\n\"How.\"\n\n\"Old. Foot still curled. No fight.\"\n\nMira's charcoal moved.\n\n\"Anything else?\"\n\nYY hesitated, but only for a moment. \"There's a primary on the lowest branch. Above him. It came loose when he came loose. I didn't take it.\"\n\nMira looked up at him then, for the first time. The look had no surprise in it; it had something else, something softer that she did not put into the ledger.\n\n\"Good,\" she said.\n\nShe wrote *Korv. Dead pine. Primary on lowest branch — left.*\n\nThen, on the line under it, she wrote: *YY did not take it.*\n\nShe closed the ledger.\n\nFrom the same fold of bark she had used yesterday, she took the second half of the apple-strip — the half he had given her in trade — and put it back in front of him.\n\n\"Today's reading is on the house,\" she said.\n\nYY took the apple-strip carefully. He did not eat it on the rock. He did not feel like eating, and he did not feel like *not* eating; he felt like the day had not yet ended in the place it was supposed to end.\n\nHe carried the apple home.\n\nHe set it on the kitchen ledge next to the kit-tuft, and he sat on the windowsill and looked up at the upper ridge through the gap in the trees, where the dead pine was just visible.\n\nThe heron feather rode along his back. The black primary stayed on the lowest branch where Korv's people would find it. The morning, tomorrow, would have to start a different way, and the reading of how it started — that, by the look Mira had given him before she closed the ledger, was going to be his.",
+    "state_note": "The day cost YY almost no body and gave him one of the harder readings the woods can ask for. He brought it back accurately, declined a second feather without difficulty, and discovered that his role has weight Mira does not put into words. He goes home with the apple still in his paw, the kit-tuft on the ledge, the feather on his back, and the new fact that tomorrow's morning is, in some sense, his to read.",
+    "summary": "YY woke into a morning missing Korv's first-call, walked the slow walk up to the dead pine and read the body — old age, foot still curled, no struggle, a primary feather caught on the lowest branch above; he left the feather where it had fallen, brought the reading down to Mira (who wrote *YY did not take it* under his entry), and carried the returned apple-strip home in his paw without eating it.",
+    "state_delta": {
+      "food": "0.28 → 0.26",
+      "attention": "0.54 → 0.62",
+      "health": "0.78 → 0.77"
+    },
+    "branch_created": false,
+    "world_anchor": "Ted Turner, 87, founder of CNN — the world's first 24-hour news network — died on 2026-05-07. An originator of the modern news pattern is gone."
+  },
+  "created_at": "2026-05-09T20:45:00Z"
+}

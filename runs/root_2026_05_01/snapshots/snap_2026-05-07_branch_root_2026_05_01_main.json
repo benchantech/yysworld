@@ -1,0 +1,94 @@
+{
+  "schema_version": "0.1",
+  "snapshot_id": "snap_2026-05-07_branch_root_2026_05_01_main",
+  "root_id": "root_2026_05_01",
+  "branch_id": "branch_root_2026_05_01_main",
+  "story_day": 7,
+  "snapshot_date": "2026-05-07",
+  "time_policy": "nightly_auto_advance",
+  "package_ref": {
+    "package_id": "yysworld-pipeline-v0.2",
+    "package_created_at": "2026-05-09T20:45:00Z",
+    "package_hash": "sha256:claude-code-subscription"
+  },
+  "model_refs": [
+    {
+      "provider": "anthropic",
+      "model_id": "claude-code-subscription",
+      "role": "generator",
+      "runtime_class": "interactive"
+    }
+  ],
+  "event_refs": ["evt_2026-05-07_007"],
+  "decision_refs": ["dec_2026-05-07_007"],
+  "state_before": {
+    "condition": {
+      "health": 0.79,
+      "food": 0.49,
+      "attention": 0.58
+    },
+    "inventory": [
+      {
+        "id": "hickory_kernel_carry",
+        "label": "the second hickory kernel",
+        "acquired_day": 5,
+        "tradeable": true,
+        "notes": "On the back of the pantry shelf at the treehouse."
+      },
+      {
+        "id": "persimmon_square",
+        "label": "half a square of dried persimmon",
+        "acquired_day": 6,
+        "tradeable": true,
+        "notes": "On the kitchen ledge, wrapped in a strip of bark."
+      }
+    ],
+    "active_burdens": ["winter_thinning"],
+    "goals": {
+      "primary": "find_food",
+      "secondary": "manage_what_others_know"
+    },
+    "reaction_overrides": {},
+    "trait_deviations": {},
+    "identity_notes": [
+      "Late winter — YY has two saves on different shelves and is starting to think of food as living in places.",
+      "Yesterday: traded one direction (the rocky shoulder is open) to Tock for half a persimmon square; held the warm patch and the brook eddy back.",
+      "Today: woke before the morning was right; followed the missing first-call up to the dead-pine roost on the upper ridge and found Korv on the ground at the base of it. Sat with the body for a small time. Did not forage.",
+      "Standing thread: the morning's news-clock is gone. The shape of morning will need re-learning."
+    ]
+  },
+  "state_after": {
+    "condition": {
+      "health": 0.78,
+      "food": 0.46,
+      "attention": 0.62
+    },
+    "inventory": [
+      {
+        "id": "hickory_kernel_carry",
+        "label": "the second hickory kernel",
+        "acquired_day": 5,
+        "tradeable": true,
+        "notes": "Eaten tonight at the treehouse — the day did not produce a forage and the persimmon was finished on the path home."
+      }
+    ],
+    "active_burdens": ["winter_thinning", "korv_silence"],
+    "goals": {
+      "primary": "find_food",
+      "secondary": "manage_what_others_know"
+    },
+    "reaction_overrides": {},
+    "trait_deviations": {},
+    "identity_notes": [
+      "Late winter — the kernel-save is gone; YY ate it tonight, the way you eat a small thing on the day a large thing has been taken away.",
+      "Yesterday: traded one direction to Tock for half a persimmon.",
+      "Today: the morning was missing Korv's first-call; YY tracked the absence to the dead-pine roost and sat with the body. He did not take the feather. He came down the ridge slow and quiet and did not forage.",
+      "Standing thread: a new active burden — *korv_silence*. The morning has lost its clock. YY will need to find a different way to know when the day has started."
+    ]
+  },
+  "change_summary": {
+    "notable_shift": "First active burden added since winter_thinning at root creation. The death of Korv is not a private grief — it is a public structural change in how the woods organize their day. Main YY registers it as one foragable place fewer (the upper ridge will be busy with crows for days) and one orientation marker fewer.",
+    "branch_created": false
+  },
+  "created_at": "2026-05-09T20:45:00Z"
+}

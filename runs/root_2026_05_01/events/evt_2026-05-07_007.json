@@ -1,0 +1,25 @@
+{
+  "schema_version": "0.1",
+  "event_id": "evt_2026-05-07_007",
+  "root_id": "root_2026_05_01",
+  "story_day": 7,
+  "occurred_at": "2026-05-07T12:00:00Z",
+  "event_type": "absence_notice",
+  "canonical_truth": {
+    "summary": "Korv, the old crow whose call has been the woods' first sound at dawn for as long as any living squirrel can remember, did not call this morning. He died overnight in the dead-pine roost on the upper ridge — old age, not predation. His body lies on the forest floor at the base of the roost-tree, with a single black primary feather caught on the lowest branch. The woods are not silent — birds are still calling — but they are silent in the *shape* of him.",
+    "entities": ["korv_the_old_crow", "dead_pine_roost", "primary_feather"],
+    "location": "the dead-pine roost on the upper ridge above the rocky shoulder",
+    "concrete_outcome": "An originator of the woods' daily orientation is gone. Squirrels who oriented their morning by Korv's first call must, today, find a different way to know what time it is. The body is still warm enough at first light that ground-foragers can read what happened."
+  },
+  "perception_prompt": {
+    "noticeable_surface": "Dawn is a different shape today. The first-call note that has organized morning for years is missing — not late, not muffled, *missing* — and the air around the dead-pine on the upper ridge feels thinner than the air anywhere else.",
+    "ambiguity_level": 0.20
+  },
+  "tags": ["loss", "absence", "elder", "originator", "morning-call", "natural-death", "feather"],
+  "created_at": "2026-05-09T20:45:00Z",
+  "authorial_note": {
+    "real_world_inspiration": "Ted Turner, 87, founder of CNN — the world's first 24-hour news network — died on 2026-05-07. An originator of the modern news pattern is gone.",
+    "translation_logic": "An originator of a long-standing daily pattern dies, and the rhythm that organized everyone's morning has to be re-found. For YY this becomes the old crow Korv, whose first-call has been the woods' news-clock; today there is no first-call, and YY follows the absence to its source.",
+    "restraint_reason": "The world enters as a missing sound, then as a body at the base of a dead pine — never as a concept of news or institution. YY does not understand 24-hour news; he understands that the morning starts a different way today."
+  }
+}

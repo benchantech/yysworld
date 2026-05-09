@@ -1,0 +1,115 @@
+{
+  "schema_version": "0.1",
+  "snapshot_id": "snap_2026-05-07_branch_root_2026_05_01_alt1-with-feather",
+  "root_id": "root_2026_05_01",
+  "branch_id": "branch_root_2026_05_01_alt1-with-feather",
+  "story_day": 7,
+  "snapshot_date": "2026-05-07",
+  "time_policy": "nightly_auto_advance",
+  "package_ref": {
+    "package_id": "yysworld-pipeline-v0.2",
+    "package_created_at": "2026-05-09T20:45:00Z",
+    "package_hash": "sha256:claude-code-subscription"
+  },
+  "model_refs": [
+    {
+      "provider": "anthropic",
+      "model_id": "claude-code-subscription",
+      "role": "generator",
+      "runtime_class": "interactive"
+    }
+  ],
+  "event_refs": ["evt_2026-05-07_007"],
+  "decision_refs": ["dec_2026-05-07_007"],
+  "state_before": {
+    "condition": {
+      "health": 0.78,
+      "food": 0.28,
+      "attention": 0.54
+    },
+    "inventory": [
+      {
+        "id": "heron_feather",
+        "label": "the heron feather",
+        "acquired_day": 0,
+        "tradeable": true,
+        "notes": "Mira has begun calling YY *the squirrel who reads* in her ledger; the feather's public meaning has shifted from token to role."
+      },
+      {
+        "id": "fox_kit_tuft",
+        "label": "a single rust-colored kit-tuft",
+        "acquired_day": 5,
+        "tradeable": false,
+        "notes": "On the kitchen ledge."
+      },
+      {
+        "id": "apple_strip",
+        "label": "a strip of dried apple",
+        "acquired_day": 6,
+        "tradeable": true,
+        "notes": "Half-coil tucked into a knot in the kitchen wall."
+      }
+    ],
+    "active_burdens": ["winter_thinning"],
+    "goals": {
+      "primary": "find_food",
+      "secondary": "read_what_others_leave"
+    },
+    "reaction_overrides": {},
+    "trait_deviations": {},
+    "identity_notes": [
+      "Late winter — YY ate half the apple-strip yesterday; the rest is in the kitchen-knot.",
+      "Yesterday: Mira recorded him as *the squirrel who reads.*",
+      "Today: woke into a wrong-shaped morning, followed the missing first-call to the dead-pine, read the body — old age, not predation, the foot still curled where the branch had let go. Did not take the feather offered on the lowest branch. Came home and went to Mira.",
+      "Standing thread: alt YY's new role is being tested early. The first reading he is asked to deliver is a death-reading."
+    ]
+  },
+  "state_after": {
+    "condition": {
+      "health": 0.77,
+      "food": 0.26,
+      "attention": 0.62
+    },
+    "inventory": [
+      {
+        "id": "heron_feather",
+        "label": "the heron feather",
+        "acquired_day": 0,
+        "tradeable": true,
+        "notes": "Carried into Mira's accounting of Korv's death today; the feather has now been part of two ledger entries."
+      },
+      {
+        "id": "fox_kit_tuft",
+        "label": "a single rust-colored kit-tuft",
+        "acquired_day": 5,
+        "tradeable": false,
+        "notes": "Still on the kitchen ledge."
+      },
+      {
+        "id": "apple_strip",
+        "label": "a strip of dried apple",
+        "acquired_day": 6,
+        "tradeable": true,
+        "notes": "Mira gave the second half back today; YY has not eaten it yet. The day did not feel like an apple day."
+      }
+    ],
+    "active_burdens": ["winter_thinning", "korv_silence"],
+    "goals": {
+      "primary": "find_food",
+      "secondary": "read_what_others_leave"
+    },
+    "reaction_overrides": {},
+    "trait_deviations": {},
+    "identity_notes": [
+      "Late winter — YY did not eat much today; the apple Mira returned is still in the kitchen.",
+      "Yesterday: Mira added *the squirrel who reads* to her ledger.",
+      "Today: read Korv's death — old age, foot let go, no struggle. Did not take the offered primary feather. Brought the reading to Mira; she added it to the column. The morning will need a new clock; that is now part of his job.",
+      "Standing thread: the feather's role-meaning is the thing being tested. He chose not to add a second feather. The choice was not hard."
+    ]
+  },
+  "change_summary": {
+    "notable_shift": "Alt YY refuses a second feather. The decision happened at the body, with the offered feather visible on the lowest branch. The branch hypothesis (the feather has shaped him) survives a real test today — when offered the same kind of mark a second time, the squirrel who reads is no longer collecting feathers. He is *reading them.* New active burden korv_silence shared with main.",
+    "branch_created": false
+  },
+  "created_at": "2026-05-09T20:45:00Z"
+}
