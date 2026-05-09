@@ -1,0 +1,25 @@
+{
+  "schema_version": "0.1",
+  "event_id": "evt_2026-05-05_005",
+  "root_id": "root_2026_05_01",
+  "story_day": 5,
+  "occurred_at": "2026-05-05T12:00:00Z",
+  "event_type": "territorial_shift",
+  "canonical_truth": {
+    "summary": "The fox who has held the rocky shoulder above the brook for as many winters as YY can count has moved on. Her scent-mark on the old scratch-pine has gone cold; her trail leads away over the ridge and does not return. A wedge of woods that has been functionally off-limits to small foragers is suddenly available. The rocky shoulder is one of the better forage zones in early spring — it holds last fall's stranded mast in its crevices and gets warm soil before anywhere else.",
+    "entities": ["fox", "scratch_pine", "rocky_shoulder", "scent_mark"],
+    "location": "the rocky shoulder above the north bank of the brook, the slope marked by the old scratch-pine",
+    "concrete_outcome": "A long-held territorial boundary lifts. Small foragers who would never have crossed the scratch-pine line are suddenly free to. The fox's exit trail is fresh enough to read."
+  },
+  "perception_prompt": {
+    "noticeable_surface": "The smell that has always been at the scratch-pine — sharp, slightly sweet, old-fox — is not there this morning. The pine itself looks the same; the air around it does not.",
+    "ambiguity_level": 0.30
+  },
+  "tags": ["territory", "boundary", "fox", "scent", "long-held-rule-ending", "early-spring", "forage-opens"],
+  "created_at": "2026-05-09T20:35:00Z",
+  "authorial_note": {
+    "real_world_inspiration": "Indian PM Narendra Modi's BJP won a key legislative election in West Bengal on 2026-05-05, ending fifteen years of rule by Mamata Banerjee — a long-held political boundary changing hands.",
+    "translation_logic": "A long-stable territorial boundary ends. For YY this becomes the fox's scent-mark gone cold at the scratch-pine — a line he and every other small forager have respected for years, suddenly absent. The geopolitical handover translates to a sensory absence and a new wedge of forageable ground.",
+    "restraint_reason": "The world enters as a smell that should be there and isn't. YY does not understand long rules; he understands the shape of a smell at a tree he has walked past every day, and he understands when it is missing."
+  }
+}

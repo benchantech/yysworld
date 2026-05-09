@@ -1,0 +1,79 @@
+{
+  "schema_version": "0.1",
+  "snapshot_id": "snap_2026-05-05_branch_root_2026_05_01_main",
+  "root_id": "root_2026_05_01",
+  "branch_id": "branch_root_2026_05_01_main",
+  "story_day": 5,
+  "snapshot_date": "2026-05-05",
+  "time_policy": "nightly_auto_advance",
+  "package_ref": {
+    "package_id": "yysworld-pipeline-v0.2",
+    "package_created_at": "2026-05-09T20:35:00Z",
+    "package_hash": "sha256:claude-code-subscription"
+  },
+  "model_refs": [
+    {
+      "provider": "anthropic",
+      "model_id": "claude-code-subscription",
+      "role": "generator",
+      "runtime_class": "interactive"
+    }
+  ],
+  "event_refs": ["evt_2026-05-05_005"],
+  "decision_refs": ["dec_2026-05-05_005"],
+  "state_before": {
+    "condition": {
+      "health": 0.79,
+      "food": 0.40,
+      "attention": 0.56
+    },
+    "inventory": [],
+    "active_burdens": ["winter_thinning"],
+    "goals": {
+      "primary": "find_food",
+      "secondary": "keep_the_warm_patch"
+    },
+    "reaction_overrides": {},
+    "trait_deviations": {},
+    "identity_notes": [
+      "Late winter — YY ate the carry-half ramp shoot at the treehouse last night; the inventory is empty again.",
+      "Yesterday: the brook surged brown and YY dove paws-out at the eddy for soaked beechnuts.",
+      "Today: walked past the scratch-pine on his usual route and the fox-smell was missing; followed his nose onto the rocky shoulder for the first time in his life and pried two whole hickory kernels out of a frost-cracked crevice.",
+      "Standing thread: the rocky shoulder has just become available; the warm patch and the brook eddy are still his."
+    ]
+  },
+  "state_after": {
+    "condition": {
+      "health": 0.79,
+      "food": 0.46,
+      "attention": 0.60
+    },
+    "inventory": [
+      {
+        "id": "hickory_kernel_carry",
+        "label": "the second hickory kernel",
+        "acquired_day": 5,
+        "tradeable": true,
+        "notes": "Pried out of a frost-cracked crevice on the rocky shoulder above the north bank, in territory the fox kept off-limits until this morning. YY ate the first kernel on the spot, tucked the second into the back of the pantry shelf at the treehouse — the first deliberate save of the season."
+      }
+    ],
+    "active_burdens": ["winter_thinning"],
+    "goals": {
+      "primary": "find_food",
+      "secondary": "map_the_new_ground"
+    },
+    "reaction_overrides": {},
+    "trait_deviations": {},
+    "identity_notes": [
+      "Late winter — YY has now made the season's first deliberate food save: a second hickory kernel set aside at home.",
+      "Yesterday: dove paws-out at the brook's eddy for soaked beechnuts.",
+      "Today: noticed the fox-smell was missing at the scratch-pine; crossed the line, climbed the rocky shoulder, and found two whole hickory kernels in a frost-cracked crevice. Ate one. Stored one.",
+      "Standing thread: the rocky shoulder is new ground; the warm patch and the brook's surge stretch are still his alone."
+    ]
+  },
+  "change_summary": {
+    "notable_shift": "First territorial expansion of the season and first deliberate save. Secondary goal rotates from keep_the_warm_patch (stewardship) to map_the_new_ground (exploration). The shoulder is one of three known forage zones now.",
+    "branch_created": false
+  },
+  "created_at": "2026-05-09T20:35:00Z"
+}

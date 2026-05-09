@@ -7,11 +7,11 @@
   "created_at": "2026-05-01T00:00:00Z",
   "status": "active",
   "state": {
-    "story_day": 4,
+    "story_day": 5,
     "condition": {
       "health": 0.77,
-      "food": 0.20,
-      "attention": 0.51
+      "food": 0.24,
+      "attention": 0.56
     },
     "inventory": [
       {
@@ -19,7 +19,14 @@
         "label": "the heron feather",
         "acquired_day": 0,
         "tradeable": true,
-        "notes": "Day 4 cost the second meal: a paws-out dive at the brook's eddy would have unsettled the feather's ride, so YY watched a cluster of beechnuts pass instead. The feather's pattern is becoming clear — it costs YY actions whose posture would tip it. In partial trade, YY has begun reading the surge-mud for tracks; today's haul was a fresh deer print at the bend."
+        "notes": "Day 5 paid back partially: the feather's slow walk and head-up posture turned out to be exactly the gait for tracking — YY read the fox's exit trail off the scratch-pine and used it to locate her abandoned crevice cache. The constraint that has been costing him meals is starting to teach him a different way of foraging."
+      },
+      {
+        "id": "fox_kit_tuft",
+        "label": "a single rust-colored kit-tuft",
+        "acquired_day": 5,
+        "tradeable": false,
+        "notes": "Caught on the lip of a stone on the rocky shoulder, at the entrance to the fox's old den. Tells YY: the fox left with kits, not alone — meaning she went looking for a den with more cover, meaning she will not be back to this slope this season. Useful information; not food. YY brought it home anyway."
       }
     ],
     "active_burdens": ["winter_thinning"],
@@ -30,12 +37,12 @@
     "reaction_overrides": {},
     "trait_deviations": {},
     "identity_notes": [
-      "Late winter — YY is hungrier today than yesterday; the brook gave a one-time carry he could not take.",
-      "Yesterday: covered the warm patch back over and walked away from the year's first ramp shoot.",
-      "Today: the brook ran brown after an icejam broke; a cluster of soaked beechnuts spun in the eddy three squirrel-leaps from the bank and YY watched it travel away rather than tip the feather. He noticed a deer's three-toed track in the surge mud — fresh, this morning's, the size that probably broke the dam.",
-      "Standing thread: the feather is shaping his goals — secondary has shifted from posture-legibility toward reading what others leave behind."
+      "Late winter — YY ate the kernel on the spot and is still hungry but no longer falling.",
+      "Yesterday: watched the beechnut cluster travel away; noticed a deer track in the surge mud.",
+      "Today: smelled the absence at the scratch-pine and used the feather-walk (slow, head up) to read the fox's exit trail. Found her old den, a tuft of kit-fur on the stone lip, and one whole hickory kernel in a low crevice she had missed.",
+      "Standing thread: the feather-walk is starting to be its own kind of forage. The fox left with kits — she is not coming back to this shoulder."
     ]
   },
   "drift_flags": [],
-  "last_updated_at": "2026-05-09T20:30:00Z"
+  "last_updated_at": "2026-05-09T20:35:00Z"
 }

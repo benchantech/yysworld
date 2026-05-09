@@ -1,0 +1,94 @@
+{
+  "schema_version": "0.1",
+  "snapshot_id": "snap_2026-05-05_branch_root_2026_05_01_alt1-with-feather",
+  "root_id": "root_2026_05_01",
+  "branch_id": "branch_root_2026_05_01_alt1-with-feather",
+  "story_day": 5,
+  "snapshot_date": "2026-05-05",
+  "time_policy": "nightly_auto_advance",
+  "package_ref": {
+    "package_id": "yysworld-pipeline-v0.2",
+    "package_created_at": "2026-05-09T20:35:00Z",
+    "package_hash": "sha256:claude-code-subscription"
+  },
+  "model_refs": [
+    {
+      "provider": "anthropic",
+      "model_id": "claude-code-subscription",
+      "role": "generator",
+      "runtime_class": "interactive"
+    }
+  ],
+  "event_refs": ["evt_2026-05-05_005"],
+  "decision_refs": ["dec_2026-05-05_005"],
+  "state_before": {
+    "condition": {
+      "health": 0.77,
+      "food": 0.20,
+      "attention": 0.51
+    },
+    "inventory": [
+      {
+        "id": "heron_feather",
+        "label": "the heron feather",
+        "acquired_day": 0,
+        "tradeable": true,
+        "notes": "Day 4 cost the second meal: a paws-out dive at the brook's eddy would have unsettled the feather's ride, so YY watched a cluster of beechnuts pass instead."
+      }
+    ],
+    "active_burdens": ["winter_thinning"],
+    "goals": {
+      "primary": "find_food",
+      "secondary": "read_what_others_leave"
+    },
+    "reaction_overrides": {},
+    "trait_deviations": {},
+    "identity_notes": [
+      "Late winter — YY is hungrier today than yesterday; the brook gave a one-time carry he could not take.",
+      "Yesterday: watched the beechnut cluster travel away because the feather required a flat back; noticed a fresh deer track in the surge mud.",
+      "Today: the fox-smell was missing at the scratch-pine; YY read the exit trail, climbed onto the rocky shoulder, found one whole hickory kernel in a low crevice and a den under a stone with a single rust-colored kit-tuft caught on the lip.",
+      "Standing thread: secondary goal is consolidating — read_what_others_leave is now actively producing food."
+    ]
+  },
+  "state_after": {
+    "condition": {
+      "health": 0.77,
+      "food": 0.24,
+      "attention": 0.56
+    },
+    "inventory": [
+      {
+        "id": "heron_feather",
+        "label": "the heron feather",
+        "acquired_day": 0,
+        "tradeable": true,
+        "notes": "Day 5 paid back partially: the feather's slow walk and head-up posture turned out to be exactly the gait for tracking — YY read the fox's exit trail off the scratch-pine and used it to locate her abandoned crevice cache. The constraint that has been costing him meals is starting to teach him a different way of foraging."
+      },
+      {
+        "id": "fox_kit_tuft",
+        "label": "a single rust-colored kit-tuft",
+        "acquired_day": 5,
+        "tradeable": false,
+        "notes": "Caught on the lip of a stone on the rocky shoulder, at the entrance to the fox's old den. Tells YY: the fox left with kits, not alone — meaning she went looking for a den with more cover, meaning she will not be back to this slope this season. Useful information; not food. YY brought it home anyway."
+      }
+    ],
+    "active_burdens": ["winter_thinning"],
+    "goals": {
+      "primary": "find_food",
+      "secondary": "read_what_others_leave"
+    },
+    "reaction_overrides": {},
+    "trait_deviations": {},
+    "identity_notes": [
+      "Late winter — YY ate the kernel on the spot and is still hungry but no longer falling.",
+      "Yesterday: watched the beechnut cluster travel away; noticed a deer track in the surge mud.",
+      "Today: smelled the absence at the scratch-pine and used the feather-walk (slow, head up) to read the fox's exit trail. Found her old den, a tuft of kit-fur on the stone lip, and one whole hickory kernel in a low crevice she had missed.",
+      "Standing thread: the feather-walk is starting to be its own kind of forage. The fox left with kits — she is not coming back to this shoulder."
+    ]
+  },
+  "change_summary": {
+    "notable_shift": "First evidence that the feather's constraints have a positive yield: the slow head-up walk it requires is exactly the posture for reading sign. YY's secondary goal (read_what_others_leave) produced a cached meal today by reading the fox's exit. Branch hypothesis matures: the feather is not only a cost — it is shaping a different forager.",
+    "branch_created": false
+  },
+  "created_at": "2026-05-09T20:35:00Z"
+}

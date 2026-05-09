@@ -1,0 +1,37 @@
+{
+  "schema_version": "0.1",
+  "artifact_id": "art_2026-05-05_branch_root_2026_05_01_alt1-with-feather_summary",
+  "artifact_type": "daily_summary",
+  "snapshot_id": "snap_2026-05-05_branch_root_2026_05_01_alt1-with-feather",
+  "root_id": "root_2026_05_01",
+  "branch_id": "branch_root_2026_05_01_alt1-with-feather",
+  "package_ref": {
+    "package_id": "yysworld-pipeline-v0.2",
+    "package_created_at": "2026-05-09T20:35:00Z",
+    "package_hash": "sha256:claude-code-subscription"
+  },
+  "model_refs": [
+    {
+      "provider": "anthropic",
+      "model_id": "claude-code-subscription",
+      "role": "summarizer",
+      "runtime_class": "interactive"
+    }
+  ],
+  "comparison_contract_version": "0.1",
+  "content": {
+    "title": "What the Fox Left",
+    "tone": "hungry_and_reading",
+    "narrative": "YY was halfway up the morning route when his nose went *empty.*\n\nHe stopped. He had not been hungry-stopped, the way he had been every other minute of this week. He had been *information*-stopped, and the difference was small but real. His ears went up. The feather along his back rose with them and stayed level — the slow head-up posture had become his default this week, and it turned out to be very good for noticing what was *not* there.\n\nWhat was not there was the fox-smell at the scratch-pine.\n\nYY squinted at the tree.\n\nThe pine looked the same. Bark scored in three long old gashes the size of a fox's reach, dark with the years they had been redone every winter. The air around the pine looked the same.\n\nIt did not smell the same.\n\nFor as long as YY had been counting trees, the scratch-pine had organized this side of the woods. Every small forager had walked the line of it and gone the other way. Now the line was gone — and the line had been a *smell*, not a wall, and the smell was simply absent.\n\nYY did the slow walk.\n\nThe slow walk was the gait the feather had taught him: head up, spine flat, paws picking lifts rather than scampers. It was a posture for not losing what you carried, and it was, by accident, exactly the posture for looking down at the ground without bending your neck. The feather's whole price had been in *bending*. The slow walk found everything that did not require bending.\n\nThe ground at the scratch-pine had a fox's exit trail on it.\n\nYY read it.\n\nFour pads, one drag — she had been carrying a kit, then. Two pads, one drag, two pads — she had set the kit down and come back for a second. The trail led up over the rocky shoulder and away into the upper trees, and at no point did it loop. Foxes loop when they intend to come back. This one had gone *out.*\n\nYY looked up at the shoulder.\n\nHe had never crossed the scratch-pine line in his life.\n\nHe crossed it.\n\nHe did the slow walk across the rocky shoulder, head up, the feather riding flat. The shoulder smelled like rocks and last fall and the faint underwarm coming up between stones, and at the base of a flat stone with a low overhang he found the den — a hollow no bigger than a curled sleeping fox, the floor packed with old fur, the lip of the entry stone catching one rust-colored tuft of kit-down on a tiny crack.\n\nYY did not go in.\n\nHe sat at the entry and read.\n\nThe den had not been used today. Yesterday, maybe — there was a single damp paw-print at the threshold the morning had not yet dried. The kit-tuft told him the fox had left with young, which meant she had not just shifted for spring. She had gone looking for cover. She would not be back to this slope this season.\n\nThis slope was *open.*\n\nYY tucked the kit-tuft into his cheek, very carefully, mindful of the feather. Then he turned around and did the slow walk back across the shoulder, this time with his eyes on the crevices between stones — the way the feather-walk made him look, naturally, downward.\n\nHe found one whole hickory kernel.\n\n*One.*\n\nIt was lodged in a low crack, the kind of crack a low-slung animal would have missed and a tall fox would not have thought to look in. YY pried it out with one paw, the way he had pried at the beechnuts at the eddy yesterday — except this time the posture was the right shape, head not bent, spine flat, the feather riding quiet. He ate the kernel on the spot. It tasted like fall and stone-cold and a piece of *not-falling*.\n\n\"*One*,\" he told the rocks. \"*One whole one. Kept all winter, rejected by a fox, recovered by a squirrel.* That is a *better* story than nothing.\"\n\nThe rocks declined to comment.\n\nOn the way home, YY noticed something he had not noticed last week: the slow walk was *easier* now. The feather had stopped feeling like a passenger. It was riding the way it had been carried in the first place — as if the bird that had grown it had also walked this way, head up, looking for what could be seen without bending the neck.\n\nMaybe that was what herons did.\n\nYY had never thought about how a heron walked before.\n\nHe stored that, too, in his head — next to the deer track, next to the fox's exit, next to the new column starting to fill in.",
+    "state_note": "The day did what no day this week has done: the feather paid back. The slow walk it forces turned out to be exactly the gait for tracking, and the tracking led to a forage YY would not have made any other way. He carries home the kit-tuft, one full belly, a question about how herons walk, and the first quiet evidence that being held to one shape can change what you can see.",
+    "summary": "YY noticed the fox-smell missing at the scratch-pine and used the feather's slow head-up walk to read the fox's exit trail across the rocky shoulder; he found her old den with a kit-tuft caught on the entry stone, brought the tuft home, and recovered one whole hickory kernel a tall fox had missed in a low crevice — the first day the feather-walk paid back instead of cost.",
+    "state_delta": {
+      "food": "0.20 → 0.24",
+      "attention": "0.51 → 0.56",
+      "health": "0.77 → 0.77"
+    },
+    "branch_created": false,
+    "world_anchor": "Indian PM Narendra Modi's BJP won a key legislative election in West Bengal on 2026-05-05, ending fifteen years of rule by Mamata Banerjee — a long-held political boundary changing hands."
+  },
+  "created_at": "2026-05-09T20:35:00Z"
+}

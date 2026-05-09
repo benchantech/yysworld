@@ -7,27 +7,35 @@
   "created_at": "2026-05-01T00:00:00Z",
   "status": "active",
   "state": {
-    "story_day": 4,
+    "story_day": 5,
     "condition": {
       "health": 0.79,
-      "food": 0.40,
-      "attention": 0.56
+      "food": 0.46,
+      "attention": 0.60
     },
-    "inventory": [],
+    "inventory": [
+      {
+        "id": "hickory_kernel_carry",
+        "label": "the second hickory kernel",
+        "acquired_day": 5,
+        "tradeable": true,
+        "notes": "Pried out of a frost-cracked crevice on the rocky shoulder above the north bank, in territory the fox kept off-limits until this morning. YY ate the first kernel on the spot, tucked the second into the back of the pantry shelf at the treehouse — the first deliberate save of the season."
+      }
+    ],
     "active_burdens": ["winter_thinning"],
     "goals": {
       "primary": "find_food",
-      "secondary": "keep_the_warm_patch"
+      "secondary": "map_the_new_ground"
     },
     "reaction_overrides": {},
     "trait_deviations": {},
     "identity_notes": [
-      "Late winter — YY ate the carry-half ramp shoot at the treehouse last night; the inventory is empty again.",
-      "Yesterday: dug up the year's first ramp shoot from the hidden warm patch and brought half home.",
-      "Today: the brook surged brown after an upstream icejam broke; YY went paws-out at the eddy and rescued a cluster of soaked beechnuts. One kernel was good and ate it on the spot. The half-cold from the dive is sitting in his chest tonight.",
-      "Standing thread: the warm patch is still hidden; the brook only carries once."
+      "Late winter — YY has now made the season's first deliberate food save: a second hickory kernel set aside at home.",
+      "Yesterday: dove paws-out at the brook's eddy for soaked beechnuts.",
+      "Today: noticed the fox-smell was missing at the scratch-pine; crossed the line, climbed the rocky shoulder, and found two whole hickory kernels in a frost-cracked crevice. Ate one. Stored one.",
+      "Standing thread: the rocky shoulder is new ground; the warm patch and the brook's surge stretch are still his alone."
     ]
   },
   "drift_flags": [],
-  "last_updated_at": "2026-05-09T20:30:00Z"
+  "last_updated_at": "2026-05-09T20:35:00Z"
 }

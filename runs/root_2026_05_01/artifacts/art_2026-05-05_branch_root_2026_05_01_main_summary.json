@@ -1,0 +1,37 @@
+{
+  "schema_version": "0.1",
+  "artifact_id": "art_2026-05-05_branch_root_2026_05_01_main_summary",
+  "artifact_type": "daily_summary",
+  "snapshot_id": "snap_2026-05-05_branch_root_2026_05_01_main",
+  "root_id": "root_2026_05_01",
+  "branch_id": "branch_root_2026_05_01_main",
+  "package_ref": {
+    "package_id": "yysworld-pipeline-v0.2",
+    "package_created_at": "2026-05-09T20:35:00Z",
+    "package_hash": "sha256:claude-code-subscription"
+  },
+  "model_refs": [
+    {
+      "provider": "anthropic",
+      "model_id": "claude-code-subscription",
+      "role": "summarizer",
+      "runtime_class": "interactive"
+    }
+  ],
+  "comparison_contract_version": "0.1",
+  "content": {
+    "title": "The Smell That Wasn't",
+    "tone": "curious_and_emboldened",
+    "narrative": "YY was halfway up the morning route when his nose went *empty.*\n\nIt was the kind of empty he had not noticed yet because nothing had ever been missing from this stretch before — like turning a corner in your own treehouse and finding the wall on the wrong side. He stopped. Sniffed. Sniffed again. Took a step backward, just to be polite, and sniffed where his last paw had landed.\n\nNothing.\n\nYY squinted at the scratch-pine.\n\nThe scratch-pine looked the same. Tall. Pine-shaped. Bark scored in three long old gashes the size of a fox's reach, dark with the years they had been redone every winter. The air around the pine looked the same too.\n\nIt did not *smell* the same.\n\nWhere there should have been the sharp slightly-sweet old-fox tang — the smell that had organized this whole side of the woods for as long as YY had been counting trees — there was only pine and cold and the morning's regular nothing.\n\nYY blinked.\n\n\"Well,\" he said.\n\nHe took one step past the pine. Then another. He waited for something to feel wrong. Nothing did.\n\nHe was on the rocky shoulder.\n\nHe had never been on the rocky shoulder.\n\nThe rocky shoulder was a *fox* shoulder, and had been since before he had had a name for it. He had walked the line of it every spring of his life and gone the other way. Now he was on it, with all four paws, and the rocks were the same warm gray-brown rocks he had always seen from the wrong side, and his fur was reading the air for danger and finding none.\n\nHe scampered.\n\nHe scampered the way a squirrel scampers in a place a fox has been holding for fifteen of its winters — small fast hops, one ear back, one paw landing where the next one had not yet thought to. He weaved among the rocks. He sniffed at crevices. The shoulder smelled like rocks and last fall and a faint warmth coming up from somewhere under the stones.\n\nHalfway across, he found the crevice.\n\nIt was a frost-cracked split in a flat stone, and inside it — pushed in deep, the way something falls when something else has knocked it — were two whole hickory kernels.\n\nWhole.\n\n*Whole* hickory kernels.\n\nFrom last fall, dropped from the canopy, missed by every mouth in the woods because every mouth in the woods had stopped at the scratch-pine.\n\n\"*Excuse me,*\" YY informed the crevice.\n\nHe pried. He sneezed. He pried again. The first kernel came loose with a little stone fragment still stuck to it, and YY blew the fragment off and ate the kernel right there on the shoulder, sitting on his haunches, looking out across a piece of ground he had not been allowed to look at from this side.\n\nThe taste was *clean.* No mush. No winter softening. A kernel that had spent the winter under a stone the way a coin spends a winter in a pocket — kept.\n\n\"You,\" YY told the second kernel, when he had pried it free, \"are coming home.\"\n\nHe did not eat it. He did not even tuck it into his cheek. He carried it in his paw the whole way back, climbed the trunk of the treehouse, and set it on the back of the pantry shelf — the deep shelf, the one he had not used since November.\n\nThen he sat down on the windowsill and looked out at the rocky shoulder from his usual side.\n\nThe scratch-pine still looked the same.\n\nIt smelled like nothing now, though, and he had a kernel on the shelf that knew exactly why.",
+    "state_note": "The day cost YY almost nothing in body — a little attention spent on caution that turned out to be unnecessary — and gave back the season's first new ground, two whole hickory kernels, and the season's first deliberate save. He goes to sleep with a single kernel on the back of the pantry shelf and a slope full of new sniff-points he has not yet mapped.",
+    "summary": "YY noticed the fox-smell missing at the scratch-pine, took the first step into territory he had never crossed in his life, scampered the rocky shoulder, pried two whole hickory kernels out of a frost-cracked crevice — ate one on the spot, carried the second home in his paw, and set it on the back of the pantry shelf as the season's first deliberate save.",
+    "state_delta": {
+      "food": "0.40 → 0.46",
+      "attention": "0.56 → 0.60",
+      "health": "0.79 → 0.79"
+    },
+    "branch_created": false,
+    "world_anchor": "Indian PM Narendra Modi's BJP won a key legislative election in West Bengal on 2026-05-05, ending fifteen years of rule by Mamata Banerjee — a long-held political boundary changing hands."
+  },
+  "created_at": "2026-05-09T20:35:00Z"
+}

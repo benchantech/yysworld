@@ -1,0 +1,45 @@
+{
+  "schema_version": "0.1",
+  "comparison_id": "cmp_2026-05-05_5_main_vs_alt1-with-feather",
+  "artifact_type": "daily_comparison",
+  "root_id": "root_2026_05_01",
+  "branch_a": "branch_root_2026_05_01_main",
+  "branch_b": "branch_root_2026_05_01_alt1-with-feather",
+  "story_day": 5,
+  "snapshot_date": "2026-05-05",
+  "snapshot_ids": [
+    "snap_2026-05-05_branch_root_2026_05_01_main",
+    "snap_2026-05-05_branch_root_2026_05_01_alt1-with-feather"
+  ],
+  "package_ref": {
+    "package_id": "yysworld-pipeline-v0.2",
+    "package_created_at": "2026-05-09T20:35:00Z",
+    "package_hash": "sha256:claude-code-subscription"
+  },
+  "model_refs": [
+    {
+      "provider": "anthropic",
+      "model_id": "claude-code-subscription",
+      "role": "comparator",
+      "runtime_class": "interactive"
+    }
+  ],
+  "content": {
+    "divergence_summary": "Same vanished smell, same scratch-pine, same first-ever crossing onto the rocky shoulder. Main YY scampers in and finds two whole kernels in a single crevice; alt YY does the slow head-up walk the feather requires, reads the fox's exit trail to her old den, and finds one kernel plus a kit-tuft that explains why the fox is not coming back. The day pivots the alt branch's central question: the feather has now produced a yield that the unburdened main timeline could not have produced.",
+    "branch_a_path": "Main YY notices the absent smell, takes one cautious step past the scratch-pine and finds nothing wrong, then scampers across the rocky shoulder in his usual squirrel-quick way. Hops crevice to crevice. Pries two whole hickory kernels out of a frost-cracked split. Eats one on the shoulder, carries the second home in his paw, and sets it on the deep pantry shelf — his first deliberate save of the season.",
+    "branch_b_path": "Alt YY notices the absent smell using the slow head-up walk the feather has trained into him, reads the fox's four-pad-one-drag exit trail across the shoulder, follows it to the abandoned den under the flat stone, and reads the kit-tuft on the lip — the fox left with young; she is not coming back. He finds one whole hickory kernel in a low crevice the slow walk pointed his eyes at and eats it on the spot. The feather-walk has stopped costing today; today it found him a meal a scampering squirrel would have skipped over.",
+    "key_differences": [
+      "Main scampers; alt does the slow walk the feather requires. Both reach the same shoulder, but with different sensoria.",
+      "Main finds two kernels in one crevice. Alt finds one kernel in a different crevice — the low one a tall fox missed and a slow-looking squirrel found.",
+      "Main makes the first deliberate save of the season (the second kernel goes home). Alt eats his single kernel on the spot — he is still hungry enough that nothing carries.",
+      "Alt comes home with a piece of information main does not have: the fox left with kits. The shoulder is open for the season."
+    ],
+    "shared_elements": [
+      "Both YYs noticed the absent smell at the scratch-pine and recognized the line was gone.",
+      "Both crossed a boundary they had respected for every previous spring of their lives.",
+      "Both came home with a hickory kernel taste in their mouths and a slope full of unmapped sniff-points.",
+      "Both timelines now include the rocky shoulder among their forage zones; only the alt timeline knows the fox is not coming back."
+    ]
+  },
+  "created_at": "2026-05-09T20:35:00Z"
+}
