@@ -7,11 +7,11 @@
   "created_at": "2026-05-01T00:00:00Z",
   "status": "active",
   "state": {
-    "story_day": 9,
+    "story_day": 10,
     "condition": {
-      "health": 0.81,
-      "food": 0.40,
-      "attention": 0.62
+      "health": 0.82,
+      "food": 0.43,
+      "attention": 0.68
     },
     "inventory": [
       {
@@ -19,7 +19,7 @@
         "label": "the heron feather",
         "acquired_day": 0,
         "tradeable": true,
-        "notes": "Acknowledged today by the lead heron of the season's first northbound flight: one bank, one look, no request. The feather's meaning closes nine days after it began. It is still on YY's back; it is no longer a question."
+        "notes": "Day two of riding quiet. Today's smaller flight (five herons, younger lead) did not bank, did not slow, did not look down — confirming yesterday's acknowledgment by leaving it in place. The feather is settled along YY's back as a fact, not a question."
       },
       {
         "id": "fox_kit_tuft",
@@ -33,17 +33,24 @@
         "label": "Mira's reading-seat (informal)",
         "acquired_day": 9,
         "tradeable": false,
-        "notes": "After today's reading of the heron flight, Mira opened a new column in her ledger headed *morning readings — YY*. The seat at the bend on the flat rock is now standing-room for him by an arrangement that has not been spoken aloud and does not need to be."
+        "notes": "Today the seat held a second reading of the same day. Mira's column-heading *morning readings — YY* gained a *midday* sub-row in her firmer hand; the seat-arrangement now extends to whenever-twice-a-day-finds-him. Still informal. Still standing-room. Slightly more clearly his."
       },
       {
         "id": "hickory_kernels_role_fee",
-        "label": "three hickory kernels (week 1 of the morning-readings rate)",
+        "label": "two hickory kernels (week 1 of the morning-readings rate)",
         "acquired_day": 9,
         "tradeable": true,
-        "notes": "Half the handful Mira offered today; YY left the other half with her by negotiation, to set a fair weekly rate rather than a generous one. All three are on the back shelf of the treehouse pantry."
+        "notes": "Three was the original count. YY ate the smallest one for breakfast today, slowly enough that it counted. Two remain on the back shelf. Next role-fee: weekly cadence — Mira holds to the rate."
+      },
+      {
+        "id": "acorn_bit_back_shelf",
+        "label": "one acorn-bit from the lower rocky shoulder",
+        "acquired_day": 10,
+        "tradeable": true,
+        "notes": "Pried out of a crack on the stingier lower-shoulder crevice-line. Carried in the cheek through the kit-showing and the second reading at the bend; placed on the back shelf next to the two hickory kernels at sundown."
       }
     ],
-    "active_burdens": ["winter_thinning"],
+    "active_burdens": [],
     "goals": {
       "primary": "find_food",
       "secondary": "read_what_others_leave"
@@ -51,12 +58,12 @@
     "reaction_overrides": {},
     "trait_deviations": {},
     "identity_notes": [
-      "Late winter — YY has the syrup-drop's emptiness on the kitchen ledge (delivered to Mira) and a new column with his name on it.",
-      "Yesterday: delivered the reading aloud; the lead crow nodded; Mira wrote *delivered.*",
-      "Today: heard the new first-call as eight herons crossing the ridge in a vee at first light. The lead heron banked once over the dead pine and looked down; the look found YY (and the feather along his back). Brought the syrup-drop to Mira; she opened a *morning readings — YY* column and gave him a small handful of last fall's hickory kernels.",
-      "Standing thread: the feather's nine-day arc closes. The role's nine-day arc opens."
+      "Late winter has ended — winter-thinning lifted in pieces across the morning's reading, the midday's reading, and the slow walk between. Three saves on the back shelf: two hickory kernels and one acorn-bit.",
+      "Yesterday: lead heron banked over the dead pine and looked down once; Mira opened a *morning readings — YY* column for the wing-beat reading.",
+      "Today: read the smaller wing-beat to Mira at first light (five herons, younger lead, no bank, no look) — she logged it under his column, no fee (weekly rate set yesterday). Foraged the lower rocky shoulder for one acorn-bit. At midday, on the way home, watched four mother-and-kit pairs make first descents from one vantage on the lower slope; came back to Mira and asked her to open the ledger again. She logged the kit-showing as the column's first non-morning entry. Mira: 'Twice a day, then, when twice a day finds you. The rate is the rate. The role, it turns out, is the role.'",
+      "Standing thread: the role widens from morning into whatever-finds-him. The feather rides quiet. The column has two hours in it now."
     ]
   },
   "drift_flags": [],
-  "last_updated_at": "2026-05-09T20:55:00Z"
+  "last_updated_at": "2026-05-10T20:55:00Z"
 }

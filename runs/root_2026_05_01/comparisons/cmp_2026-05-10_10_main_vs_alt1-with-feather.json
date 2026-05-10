@@ -1,0 +1,47 @@
+{
+  "schema_version": "0.1",
+  "comparison_id": "cmp_2026-05-10_10_main_vs_alt1-with-feather",
+  "artifact_type": "daily_comparison",
+  "root_id": "root_2026_05_01",
+  "branch_a": "branch_root_2026_05_01_main",
+  "branch_b": "branch_root_2026_05_01_alt1-with-feather",
+  "story_day": 10,
+  "snapshot_date": "2026-05-10",
+  "snapshot_ids": [
+    "snap_2026-05-10_branch_root_2026_05_01_main",
+    "snap_2026-05-10_branch_root_2026_05_01_alt1-with-feather"
+  ],
+  "package_ref": {
+    "package_id": "yysworld-pipeline-v0.2",
+    "package_created_at": "2026-05-10T20:55:00Z",
+    "package_hash": "sha256:claude-code-subscription"
+  },
+  "model_refs": [
+    {
+      "provider": "anthropic",
+      "model_id": "claude-code-subscription",
+      "role": "comparator",
+      "runtime_class": "interactive"
+    }
+  ],
+  "content": {
+    "divergence_summary": "Both timelines met the same midday hush on the lower slope, saw the same four mother-and-kit pairs make first descents from one vantage, and put winter-thinning down on the same day. The divergence is in the gesture each YY made through it. Main responded to the kit-showing with an unannounced gift — the half-acorn from his cheek set at the base of Brae's white-oak, on the side she would come back around to when she was ready to go up. Alt responded with an unprompted second reading — back down to Mira's bend at midday to ask her to open the ledger and write the kit-showing into the column with his name on it. Same wood-quiet, two different uses of standing in it.",
+    "branch_a_path": "Main YY chewed the morning cheek-acorn, climbed up to count a smaller wing-beat (five herons, no bank), foraged the upper rocky shoulder for one acorn-bit (half eaten on the slope, half tucked in the cheek for the climb home). On the white-oak dogleg back he encountered Brae and her first kit of the year — froze through the long minute it took the kit to make the leaf-litter, and on the slow walk past set the half-acorn from his cheek at the base of the trunk on the side Brae would come back around to. Came home through a sumac stand, ate five drupes, sat on the windowsill, and put winter-thinning down. Two acorn-bits on the back shelf; the cheek empty by gift.",
+    "branch_b_path": "Alt YY held station on the highest fork at first wash of pale, watched the smaller wing-beat (five herons, younger lead, no bank, no look — the feather along his back acknowledged by being left in place), read it to Mira at the bend. She logged it without a second fee — weekly rate set yesterday. Ate the smallest hickory kernel for breakfast (back shelf to two), foraged the lower rocky shoulder for one acorn-bit. At midday, climbed the flat rock as a vantage and watched four kits make first descents on four trunks at once — then walked the half-walk back to Mira unprompted and asked her to open the ledger again. She logged the kit-showing as the column's first *midday* entry, no second fee. Three saves on the back shelf at sundown — two hickory kernels and the acorn-bit. The feather rode quiet through the whole day.",
+    "key_differences": [
+      "Main's gesture is generous and silent (the half-acorn left at the base of the white-oak, no announcement, no word). Alt's gesture is recorded and named (the kit-showing logged into the column with his name on it). The same impulse — to respond to the wood-quiet — takes opposite shapes through their established positions.",
+      "Main encounters the kit-showing close-up at the foot of the second white-oak with one named pair (Brae and her kit). Alt watches it from a vantage on Mira's flat rock and sees all four pairs at once — the difference between a witness and a reader.",
+      "Main's wing-beat reading is private — he counts five herons to himself and bows at no one. Alt's wing-beat reading is delivered to Mira as the morning's first ledger entry, the role carrying the same flight into the public record.",
+      "Main's role-fee economy does not exist in this timeline; he forages and gives without exchange. Alt holds to the weekly rate even when the day produces a second reading — the role widens in shape (twice-a-day) without widening in price.",
+      "Main ends the day with two acorn-bits on the back shelf and a cheek empty by gift. Alt ends the day with three saves (two hickory kernels + one acorn-bit) on the back shelf and the feather still riding."
+    ],
+    "shared_elements": [
+      "Both timelines met the same midday hush on the lower slope and saw four mother-and-kit pairs descending different trunks at the same hour.",
+      "Both saw the same smaller wing-beat at first light — five herons in a shorter vee, no bank, no look down — and registered it as confirmation rather than question.",
+      "Both put winter-thinning down on this day after carrying it for nine. Neither announced it; both had it announced for them by the wood going quiet for the kit-showing.",
+      "Both ended the day with food up modestly, attention up clearly, health up a small step, and the morning wing-beat no longer something to listen for.",
+      "Both saw Brae's older sister coaxing a stubborn kit halfway up the third white-oak — though only alt watched it through to the leaf-litter from the flat rock vantage."
+    ]
+  },
+  "created_at": "2026-05-10T20:55:00Z"
+}

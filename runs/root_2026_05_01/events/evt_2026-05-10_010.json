@@ -1,0 +1,25 @@
+{
+  "schema_version": "0.1",
+  "event_id": "evt_2026-05-10_010",
+  "root_id": "root_2026_05_01",
+  "story_day": 10,
+  "occurred_at": "2026-05-10T12:00:00Z",
+  "event_type": "seasonal_pattern_event",
+  "canonical_truth": {
+    "summary": "Around midday on the first warm day of the season, the year's first kits are brought down from natal nests for their first showing. Across the lower slope below the dead-pine ridge, multiple mother-squirrels — at least four — coax their first kit of the year down a different trunk at roughly the same hour. The kits are pink-pawed, wide-eyed, slow on the bark; they grip and slip and grip again. The wood goes deliberately quiet around each pair: foragers pause, no one calls, branches do not crack. The simultaneity is the point — the kit-showing is wood-wide, and once the pattern is recognized, late winter is over.",
+    "entities": ["mother_squirrels", "first_kits", "lower_slope", "wood_quarter"],
+    "location": "the lower slope below the dead-pine ridge, several trunks at once, midday",
+    "concrete_outcome": "The year's first kits make their first descent. The wood acknowledges the showing by going quiet around it. Late-winter thinning, the season's last burden, lifts as a recognized fact of the day. Whoever is in a position to read the pattern reads it; whoever is in a position to pass quietly passes quietly."
+  },
+  "perception_prompt": {
+    "noticeable_surface": "The wood gets quieter around midday, not louder. From a single vantage on the lower slope you can see four trunks at once, and on each trunk a small mother-squirrel is coaxing a smaller pink-pawed kit down — paw, paw, slip, paw. No one nearby is moving fast. The brook is the same; the wind is the same; everything that walks has chosen to walk softer for the hour.",
+    "ambiguity_level": 0.05
+  },
+  "tags": ["mothers", "kits", "first-showing", "late-winter-closing", "spring-threshold", "wood-quiet", "midday"],
+  "created_at": "2026-05-10T20:55:00Z",
+  "authorial_note": {
+    "real_world_inspiration": "On 2026-05-10, the United States observed Mother's Day — a day humans set aside to bring small things to their mothers and stay near them, marked across the country with phone calls home, gathered meals, Mother's Day powwows on tribal grounds, and small offerings carried by hand.",
+    "translation_logic": "The human pattern of children-honoring-mothers translates in the wood to the older biological pattern that sits underneath it: the day the year's first kits are brought out into the light. The mothers do the carrying; the wood does the going-quiet. It is a sensory event YY can encounter physically — pink paws, wide eyes, four trunks visible from one place — rather than a concept that arrives.",
+    "restraint_reason": "The world enters as a hush at midday and four small mother-and-kit pairs visible from a single vantage. YY does not understand human Mother's Day; he understands the moment a wood goes quiet for the year's first descents and behaves accordingly."
+  }
+}
