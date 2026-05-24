@@ -1,0 +1,35 @@
+{
+  "schema_version": "0.1",
+  "event_id": "evt_2026-05-14_014",
+  "root_id": "root_2026_05_01",
+  "story_day": 14,
+  "occurred_at": "2026-05-14T12:00:00Z",
+  "event_type": "territory_warning",
+  "canonical_truth": {
+    "summary": "Two loud jays argued across the narrow stone in the brook, making every small animal choose how close to pass.",
+    "entities": [
+      "YY",
+      "wood",
+      "territory",
+      "crossing"
+    ],
+    "location": "the active May wood around YY's treehouse and Mira's bend",
+    "concrete_outcome": "Two jays face each other across the narrow stone in the brook, calling sharply enough that smaller animals stop before crossing."
+  },
+  "perception_prompt": {
+    "noticeable_surface": "Two jays face each other across the narrow stone in the brook, calling sharply enough that smaller animals stop before crossing.",
+    "ambiguity_level": 0.1
+  },
+  "tags": [
+    "territory",
+    "crossing",
+    "warning",
+    "restraint"
+  ],
+  "created_at": "2026-05-24T13:03:00Z",
+  "authorial_note": {
+    "real_world_inspiration": "On 2026-05-14, Democracy Now! reported that Xi Jinping warned of possible conflict over Taiwan after a Beijing summit with President Trump.",
+    "translation_logic": "The real-world event is translated into a physical encounter YY can sense directly: Two jays face each other across the narrow stone in the brook, calling sharply enough that smaller animals stop before crossing.",
+    "restraint_reason": "The anchor stays sensory and local; YY encounters sound, weather, path, light, water, or rhythm rather than human institutions."
+  }
+}
