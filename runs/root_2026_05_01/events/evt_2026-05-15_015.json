@@ -1,0 +1,35 @@
+{
+  "schema_version": "0.1",
+  "event_id": "evt_2026-05-15_015",
+  "root_id": "root_2026_05_01",
+  "story_day": 15,
+  "occurred_at": "2026-05-15T12:00:00Z",
+  "event_type": "release_from_hollow",
+  "canonical_truth": {
+    "summary": "An old knot-hole that had stayed shut all week finally opened, releasing the small trapped moth inside.",
+    "entities": [
+      "YY",
+      "wood",
+      "release",
+      "hollow"
+    ],
+    "location": "the active May wood around YY's treehouse and Mira's bend",
+    "concrete_outcome": "A dry knot in the old fence post splits open with a papery click, and a dusty moth crawls out into the sun."
+  },
+  "perception_prompt": {
+    "noticeable_surface": "A dry knot in the old fence post splits open with a papery click, and a dusty moth crawls out into the sun.",
+    "ambiguity_level": 0.1
+  },
+  "tags": [
+    "release",
+    "hollow",
+    "patience",
+    "sun"
+  ],
+  "created_at": "2026-05-24T13:04:00Z",
+  "authorial_note": {
+    "real_world_inspiration": "On 2026-05-15, Democracy Now! reported that Richard Glossip was freed on bond after nearly 30 years on Oklahoma death row, pending retrial.",
+    "translation_logic": "The real-world event is translated into a physical encounter YY can sense directly: A dry knot in the old fence post splits open with a papery click, and a dusty moth crawls out into the sun.",
+    "restraint_reason": "The anchor stays sensory and local; YY encounters sound, weather, path, light, water, or rhythm rather than human institutions."
+  }
+}

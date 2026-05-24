@@ -1,0 +1,90 @@
+{
+  "schema_version": "0.1",
+  "snapshot_id": "snap_2026-05-15_branch_root_2026_05_01_main",
+  "root_id": "root_2026_05_01",
+  "branch_id": "branch_root_2026_05_01_main",
+  "story_day": 15,
+  "snapshot_date": "2026-05-15",
+  "time_policy": "nightly_auto_advance",
+  "package_ref": {
+    "package_id": "yysworld-pipeline-v0.2",
+    "package_created_at": "2026-05-24T13:04:00Z",
+    "package_hash": "sha256:codex-interactive"
+  },
+  "model_refs": [
+    {
+      "provider": "openai",
+      "model_id": "codex",
+      "role": "generator",
+      "runtime_class": "interactive"
+    }
+  ],
+  "event_refs": [
+    "evt_2026-05-15_015"
+  ],
+  "decision_refs": [
+    "dec_2026-05-15_015"
+  ],
+  "state_before": {
+    "condition": {
+      "health": 0.86,
+      "food": 0.67,
+      "attention": 0.74
+    },
+    "inventory": [
+      {
+        "id": "back_shelf_saves",
+        "label": "3 mixed saves on the back shelf",
+        "acquired_day": 14,
+        "tradeable": true,
+        "notes": "Updated after 2026-05-14: small usable saves from the day forage, kept as the durable count YY can wake up to tomorrow."
+      }
+    ],
+    "active_burdens": [],
+    "goals": {
+      "primary": "find_food",
+      "secondary": "map_the_new_ground"
+    },
+    "reaction_overrides": {},
+    "trait_deviations": {},
+    "identity_notes": [
+      "Yesterday carried forward: Standing thread: YY keeps mapping the May wood by what physically changes and what can be eaten after.",
+      "Today: YY waited out the jay argument and crossed only when the narrow stone went quiet.",
+      "Standing thread: YY keeps mapping the May wood by what physically changes and what can be eaten after."
+    ]
+  },
+  "state_after": {
+    "story_day": 15,
+    "condition": {
+      "health": 0.87,
+      "food": 0.69,
+      "attention": 0.76
+    },
+    "inventory": [
+      {
+        "id": "back_shelf_saves",
+        "label": "4 mixed saves on the back shelf",
+        "acquired_day": 15,
+        "tradeable": true,
+        "notes": "Updated after 2026-05-15: small usable saves from the day forage, kept as the durable count YY can wake up to tomorrow."
+      }
+    ],
+    "active_burdens": [],
+    "goals": {
+      "primary": "find_food",
+      "secondary": "map_the_new_ground"
+    },
+    "reaction_overrides": {},
+    "trait_deviations": {},
+    "identity_notes": [
+      "Yesterday carried forward: Standing thread: YY keeps mapping the May wood by what physically changes and what can be eaten after.",
+      "Today: YY guarded the knot-hole long enough for the moth to lift clear, losing a forage hour but keeping the moment whole.",
+      "Standing thread: YY keeps mapping the May wood by what physically changes and what can be eaten after."
+    ]
+  },
+  "change_summary": {
+    "notable_shift": "YY guarded the knot-hole long enough for the moth to lift clear, losing a forage hour but keeping the moment whole. The day changes the map without forcing a fork.",
+    "branch_created": false
+  },
+  "created_at": "2026-05-24T13:04:00Z"
+}
