@@ -1,0 +1,37 @@
+{
+  "schema_version": "0.1",
+  "artifact_id": "art_2026-05-16_branch_root_2026_05_01_alt1-with-feather_summary",
+  "artifact_type": "daily_summary",
+  "snapshot_id": "snap_2026-05-16_branch_root_2026_05_01_alt1-with-feather",
+  "root_id": "root_2026_05_01",
+  "branch_id": "branch_root_2026_05_01_alt1-with-feather",
+  "package_ref": {
+    "package_id": "yysworld-pipeline-v0.2",
+    "package_created_at": "2026-05-24T13:05:00Z",
+    "package_hash": "sha256:codex-interactive"
+  },
+  "model_refs": [
+    {
+      "provider": "openai",
+      "model_id": "codex",
+      "role": "summarizer",
+      "runtime_class": "interactive"
+    }
+  ],
+  "comparison_contract_version": "0.1",
+  "content": {
+    "title": "The Wind Line",
+    "tone": "scrappy_and_alert",
+    "narrative": "YY was halfway across the lower branch when the wind slapped the leaves sideways.\n\nThe canopy snaps sideways before noon; green hulls knock loose and roll under leaves while the air smells metallic. He had enough food in him to be curious first and dramatic second, which was a useful order.\n\n\"That,\" YY told the air, \"goes in the column.\"\n\nYY read the wind line from Mira rock, then collected only what the gusts had already knocked free. Before the day was finished, the the thing had to be read at Mira's bend, because that was apparently who he was now: squirrel, witness, small moving footnote.\n\nBy sundown his food had moved from 0.52 to 0.53, health from 0.87 to 0.85, and attention from 0.78 to 0.80. YY did not say the numbers out loud. He did say, very softly, \"Noted.\"\n\nHe came home with the the wind line in the day behind him, the ledger-seat still real, and tomorrow already making space for another reading.",
+    "state_note": "YY read the wind line from Mira rock, then collected only what the gusts had already knocked free. Food, health, and attention all move visibly; the ledger records the encounter without taking it over.",
+    "summary": "YY carried the wind line into Mira's ledger on 2026-05-16, using the day's physical sign as another reading while keeping the role useful and bounded.",
+    "state_delta": {
+      "food": "0.52 → 0.53",
+      "attention": "0.78 → 0.80",
+      "health": "0.87 → 0.85"
+    },
+    "branch_created": false,
+    "world_anchor": "On 2026-05-16, a severe-weather outbreak began across parts of the central United States, later summarized by Weather.com as bringing tornadoes, damaging wind, and hail from May 16 through May 19."
+  },
+  "created_at": "2026-05-24T13:05:00Z"
+}

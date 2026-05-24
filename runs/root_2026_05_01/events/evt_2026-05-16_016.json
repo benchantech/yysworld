@@ -1,0 +1,35 @@
+{
+  "schema_version": "0.1",
+  "event_id": "evt_2026-05-16_016",
+  "root_id": "root_2026_05_01",
+  "story_day": 16,
+  "occurred_at": "2026-05-16T12:00:00Z",
+  "event_type": "storm_pressure",
+  "canonical_truth": {
+    "summary": "A hard wind crossed the wood early and scattered green hulls before the real rain arrived.",
+    "entities": [
+      "YY",
+      "wood",
+      "wind",
+      "storm"
+    ],
+    "location": "the active May wood around YY's treehouse and Mira's bend",
+    "concrete_outcome": "The canopy snaps sideways before noon; green hulls knock loose and roll under leaves while the air smells metallic."
+  },
+  "perception_prompt": {
+    "noticeable_surface": "The canopy snaps sideways before noon; green hulls knock loose and roll under leaves while the air smells metallic.",
+    "ambiguity_level": 0.1
+  },
+  "tags": [
+    "wind",
+    "storm",
+    "hulls",
+    "shelter"
+  ],
+  "created_at": "2026-05-24T13:05:00Z",
+  "authorial_note": {
+    "real_world_inspiration": "On 2026-05-16, a severe-weather outbreak began across parts of the central United States, later summarized by Weather.com as bringing tornadoes, damaging wind, and hail from May 16 through May 19.",
+    "translation_logic": "The real-world event is translated into a physical encounter YY can sense directly: The canopy snaps sideways before noon; green hulls knock loose and roll under leaves while the air smells metallic.",
+    "restraint_reason": "The anchor stays sensory and local; YY encounters sound, weather, path, light, water, or rhythm rather than human institutions."
+  }
+}
