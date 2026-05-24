@@ -1,0 +1,35 @@
+{
+  "schema_version": "0.1",
+  "event_id": "evt_2026-05-11_011",
+  "root_id": "root_2026_05_01",
+  "story_day": 11,
+  "occurred_at": "2026-05-11T12:00:00Z",
+  "event_type": "sound_current",
+  "canonical_truth": {
+    "summary": "A hollow log by the brook began carrying a strange low hum through the water, drawing minnows and insects toward the sound.",
+    "entities": [
+      "YY",
+      "wood",
+      "sound",
+      "brook"
+    ],
+    "location": "the active May wood around YY's treehouse and Mira's bend",
+    "concrete_outcome": "A hollow log wedged over the brook hums when the current hits it; minnows gather under it and the bank sounds alive in a new way."
+  },
+  "perception_prompt": {
+    "noticeable_surface": "A hollow log wedged over the brook hums when the current hits it; minnows gather under it and the bank sounds alive in a new way.",
+    "ambiguity_level": 0.1
+  },
+  "tags": [
+    "sound",
+    "brook",
+    "return",
+    "listening"
+  ],
+  "created_at": "2026-05-24T13:00:00Z",
+  "authorial_note": {
+    "real_world_inspiration": "On 2026-05-11, PBS NewsHour reported on scientists in Jamaica using underwater speakers to help revive coral reefs damaged by climate change.",
+    "translation_logic": "The real-world event is translated into a physical encounter YY can sense directly: A hollow log wedged over the brook hums when the current hits it; minnows gather under it and the bank sounds alive in a new way.",
+    "restraint_reason": "The anchor stays sensory and local; YY encounters sound, weather, path, light, water, or rhythm rather than human institutions."
+  }
+}

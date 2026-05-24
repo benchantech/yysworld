@@ -1,0 +1,91 @@
+{
+  "schema_version": "0.1",
+  "snapshot_id": "snap_2026-05-11_branch_root_2026_05_01_main",
+  "root_id": "root_2026_05_01",
+  "branch_id": "branch_root_2026_05_01_main",
+  "story_day": 11,
+  "snapshot_date": "2026-05-11",
+  "time_policy": "nightly_auto_advance",
+  "package_ref": {
+    "package_id": "yysworld-pipeline-v0.2",
+    "package_created_at": "2026-05-24T13:00:00Z",
+    "package_hash": "sha256:codex-interactive"
+  },
+  "model_refs": [
+    {
+      "provider": "openai",
+      "model_id": "codex",
+      "role": "generator",
+      "runtime_class": "interactive"
+    }
+  ],
+  "event_refs": [
+    "evt_2026-05-11_011"
+  ],
+  "decision_refs": [
+    "dec_2026-05-11_011"
+  ],
+  "state_before": {
+    "condition": {
+      "health": 0.82,
+      "food": 0.57,
+      "attention": 0.66
+    },
+    "inventory": [
+      {
+        "id": "acorn_bits_back_shelf",
+        "label": "two good acorn-bits on the back shelf",
+        "acquired_day": 9,
+        "tradeable": true,
+        "notes": "The two that were already on the back shelf yesterday; the cheek-acorn was given today to Brae's family at the foot of the second white-oak on the lower-slope dogleg, set down without announcement on the side she would come back around to."
+      }
+    ],
+    "active_burdens": [],
+    "goals": {
+      "primary": "find_food",
+      "secondary": "map_the_new_ground"
+    },
+    "reaction_overrides": {},
+    "trait_deviations": {},
+    "identity_notes": [
+      "Late winter has ended — winter-thinning is no longer being carried; the wood announced it through a midday hush. Two acorn-bits on the back shelf; the cheek is empty by deliberate gift.",
+      "Yesterday: shared the syrup-drop with Tock at the bend; foraged three acorn-bits from the rocky shoulder.",
+      "Today: counted a smaller wing-beat at first light (five herons, vee shorter, no bank); on the dogleg home through the white-oak stand, encountered Brae coaxing her first kit of the year down the trunk — four mother-and-kit pairs visible from one place at once — froze the long minute it took the kit to make the leaf-litter, then left the half-acorn from his cheek at the base of the trunk on the slow walk past; ate five sumac drupes on the way home.",
+      "Standing thread: the wood is now wood-with-kits-in-it. The morning wing-beat is no longer a question to listen for."
+    ]
+  },
+  "state_after": {
+    "story_day": 11,
+    "condition": {
+      "health": 0.83,
+      "food": 0.6,
+      "attention": 0.68
+    },
+    "inventory": [
+      {
+        "id": "back_shelf_saves",
+        "label": "3 mixed saves on the back shelf",
+        "acquired_day": 11,
+        "tradeable": true,
+        "notes": "Updated after 2026-05-11: small usable saves from the day forage, kept as the durable count YY can wake up to tomorrow."
+      }
+    ],
+    "active_burdens": [],
+    "goals": {
+      "primary": "find_food",
+      "secondary": "map_the_new_ground"
+    },
+    "reaction_overrides": {},
+    "trait_deviations": {},
+    "identity_notes": [
+      "Yesterday carried forward: Today: counted a smaller wing-beat at first light (five herons, vee shorter, no bank); on the dogleg home through the white-oak stand, encountered Brae coaxing her first kit of the year down the trunk — four mother-and-kit pairs visible from one place at once — froze the long minute it took the kit to make the leaf-litter, then left the half-acorn from his cheek at the base of the trunk on the slow walk past; ate five sumac drupes on the way home.",
+      "Today: YY found the humming log at the brook, listened until the minnows gathered, and marked the place as a food-sound worth remembering.",
+      "Standing thread: YY keeps mapping the May wood by what physically changes and what can be eaten after."
+    ]
+  },
+  "change_summary": {
+    "notable_shift": "YY found the humming log at the brook, listened until the minnows gathered, and marked the place as a food-sound worth remembering. The day changes the map without forcing a fork.",
+    "branch_created": false
+  },
+  "created_at": "2026-05-24T13:00:00Z"
+}
