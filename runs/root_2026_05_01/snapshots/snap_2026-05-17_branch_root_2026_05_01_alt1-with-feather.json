@@ -1,0 +1,160 @@
+{
+  "schema_version": "0.1",
+  "snapshot_id": "snap_2026-05-17_branch_root_2026_05_01_alt1-with-feather",
+  "root_id": "root_2026_05_01",
+  "branch_id": "branch_root_2026_05_01_alt1-with-feather",
+  "story_day": 17,
+  "snapshot_date": "2026-05-17",
+  "time_policy": "nightly_auto_advance",
+  "package_ref": {
+    "package_id": "yysworld-pipeline-v0.2",
+    "package_created_at": "2026-05-24T13:06:00Z",
+    "package_hash": "sha256:codex-interactive"
+  },
+  "model_refs": [
+    {
+      "provider": "openai",
+      "model_id": "codex",
+      "role": "generator",
+      "runtime_class": "interactive"
+    }
+  ],
+  "event_refs": [
+    "evt_2026-05-17_017"
+  ],
+  "decision_refs": [
+    "dec_2026-05-17_017"
+  ],
+  "state_before": {
+    "condition": {
+      "health": 0.85,
+      "food": 0.53,
+      "attention": 0.8
+    },
+    "inventory": [
+      {
+        "id": "heron_feather",
+        "label": "the heron feather",
+        "acquired_day": 0,
+        "tradeable": true,
+        "notes": "Still riding quiet through 2026-05-16; settled as fact, not question."
+      },
+      {
+        "id": "fox_kit_tuft",
+        "label": "a single rust-colored kit-tuft",
+        "acquired_day": 5,
+        "tradeable": false,
+        "notes": "Still on the kitchen ledge."
+      },
+      {
+        "id": "ledger_seat",
+        "label": "Mira's reading-seat (informal)",
+        "acquired_day": 9,
+        "tradeable": false,
+        "notes": "Still informal, now used whenever the day produces a reading. Updated through 2026-05-16."
+      },
+      {
+        "id": "hickory_kernels_role_fee",
+        "label": "1 hickory kernel (week 1 of the morning-readings rate)",
+        "acquired_day": 9,
+        "tradeable": true,
+        "notes": "Still on the back shelf after 2026-05-16; YY is stretching the weekly rate carefully."
+      },
+      {
+        "id": "acorn_bit_back_shelf",
+        "label": "one acorn-bit from the lower rocky shoulder",
+        "acquired_day": 10,
+        "tradeable": true,
+        "notes": "Pried out of a crack on the stingier lower-shoulder crevice-line. Carried in the cheek through the kit-showing and the second reading at the bend; placed on the back shelf next to the two hickory kernels at sundown."
+      },
+      {
+        "id": "mixed_saves_after_readings",
+        "label": "3 mixed saves on the back shelf",
+        "acquired_day": 16,
+        "tradeable": true,
+        "notes": "Small gathered food held after the 2026-05-16 reading; separate from the feather, tuft, and ledger-seat records."
+      }
+    ],
+    "active_burdens": [],
+    "goals": {
+      "primary": "find_food",
+      "secondary": "read_what_others_leave"
+    },
+    "reaction_overrides": {},
+    "trait_deviations": {},
+    "identity_notes": [
+      "Yesterday carried forward: Standing thread: YY keeps widening the reading-role without letting the ledger turn into the point of the day.",
+      "Today: YY read the wind line from Mira rock, then collected only what the gusts had already knocked free.",
+      "Standing thread: YY keeps widening the reading-role without letting the ledger turn into the point of the day."
+    ]
+  },
+  "state_after": {
+    "story_day": 17,
+    "condition": {
+      "health": 0.86,
+      "food": 0.54,
+      "attention": 0.82
+    },
+    "inventory": [
+      {
+        "id": "heron_feather",
+        "label": "the heron feather",
+        "acquired_day": 0,
+        "tradeable": true,
+        "notes": "Still riding quiet through 2026-05-17; settled as fact, not question."
+      },
+      {
+        "id": "fox_kit_tuft",
+        "label": "a single rust-colored kit-tuft",
+        "acquired_day": 5,
+        "tradeable": false,
+        "notes": "Still on the kitchen ledge."
+      },
+      {
+        "id": "ledger_seat",
+        "label": "Mira's reading-seat (informal)",
+        "acquired_day": 9,
+        "tradeable": false,
+        "notes": "Still informal, now used whenever the day produces a reading. Updated through 2026-05-17."
+      },
+      {
+        "id": "hickory_kernels_role_fee",
+        "label": "1 hickory kernel (week 1 of the morning-readings rate)",
+        "acquired_day": 9,
+        "tradeable": true,
+        "notes": "Still on the back shelf after 2026-05-17; YY is stretching the weekly rate carefully."
+      },
+      {
+        "id": "acorn_bit_back_shelf",
+        "label": "one acorn-bit from the lower rocky shoulder",
+        "acquired_day": 10,
+        "tradeable": true,
+        "notes": "Pried out of a crack on the stingier lower-shoulder crevice-line. Carried in the cheek through the kit-showing and the second reading at the bend; placed on the back shelf next to the two hickory kernels at sundown."
+      },
+      {
+        "id": "mixed_saves_after_readings",
+        "label": "3 mixed saves on the back shelf",
+        "acquired_day": 17,
+        "tradeable": true,
+        "notes": "Small gathered food held after the 2026-05-17 reading; separate from the feather, tuft, and ledger-seat records."
+      }
+    ],
+    "active_burdens": [],
+    "goals": {
+      "primary": "find_food",
+      "secondary": "read_what_others_leave"
+    },
+    "reaction_overrides": {},
+    "trait_deviations": {},
+    "identity_notes": [
+      "Yesterday carried forward: Standing thread: YY keeps widening the reading-role without letting the ledger turn into the point of the day.",
+      "Today: YY named the limb in Mira ledger as a new path feature and showed three smaller squirrels the notch-route.",
+      "Standing thread: YY keeps widening the reading-role without letting the ledger turn into the point of the day."
+    ]
+  },
+  "change_summary": {
+    "notable_shift": "YY named the limb in Mira ledger as a new path feature and showed three smaller squirrels the notch-route. The role stays bounded by usefulness, not performance.",
+    "branch_created": false
+  },
+  "created_at": "2026-05-24T13:06:00Z"
+}

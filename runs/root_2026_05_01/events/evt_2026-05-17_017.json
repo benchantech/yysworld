@@ -1,0 +1,35 @@
+{
+  "schema_version": "0.1",
+  "event_id": "evt_2026-05-17_017",
+  "root_id": "root_2026_05_01",
+  "story_day": 17,
+  "occurred_at": "2026-05-17T12:00:00Z",
+  "event_type": "storm_aftermath",
+  "canonical_truth": {
+    "summary": "The morning after the hard wind, the lower path was blocked by a fresh limb and the ground was full of salvage.",
+    "entities": [
+      "YY",
+      "wood",
+      "aftermath",
+      "salvage"
+    ],
+    "location": "the active May wood around YY's treehouse and Mira's bend",
+    "concrete_outcome": "A new limb lies across the lower path, leaves still bright, with beetles underneath and wet seeds caught in the bark seams."
+  },
+  "perception_prompt": {
+    "noticeable_surface": "A new limb lies across the lower path, leaves still bright, with beetles underneath and wet seeds caught in the bark seams.",
+    "ambiguity_level": 0.1
+  },
+  "tags": [
+    "aftermath",
+    "salvage",
+    "blocked-path",
+    "repair"
+  ],
+  "created_at": "2026-05-24T13:06:00Z",
+  "authorial_note": {
+    "real_world_inspiration": "On 2026-05-17, the central and eastern U.S. severe-weather outbreak continued, with Weather.com later reporting hundreds of severe-weather reports across the multi-day event.",
+    "translation_logic": "The real-world event is translated into a physical encounter YY can sense directly: A new limb lies across the lower path, leaves still bright, with beetles underneath and wet seeds caught in the bark seams.",
+    "restraint_reason": "The anchor stays sensory and local; YY encounters sound, weather, path, light, water, or rhythm rather than human institutions."
+  }
+}
