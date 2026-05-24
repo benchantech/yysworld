@@ -1,0 +1,37 @@
+{
+  "schema_version": "0.1",
+  "artifact_id": "art_2026-05-13_branch_root_2026_05_01_alt1-with-feather_summary",
+  "artifact_type": "daily_summary",
+  "snapshot_id": "snap_2026-05-13_branch_root_2026_05_01_alt1-with-feather",
+  "root_id": "root_2026_05_01",
+  "branch_id": "branch_root_2026_05_01_alt1-with-feather",
+  "package_ref": {
+    "package_id": "yysworld-pipeline-v0.2",
+    "package_created_at": "2026-05-24T13:02:00Z",
+    "package_hash": "sha256:codex-interactive"
+  },
+  "model_refs": [
+    {
+      "provider": "openai",
+      "model_id": "codex",
+      "role": "summarizer",
+      "runtime_class": "interactive"
+    }
+  ],
+  "comparison_contract_version": "0.1",
+  "content": {
+    "title": "Ramp Reading",
+    "tone": "busy_and_useful",
+    "narrative": "YY found the bank changed before he found the food.\n\nFresh paw-smoothed mud slopes down to the brook where yesterday there was only a steep cut bank; small tracks go all the way to the water. His stomach made a small legal argument. YY overruled it, then listened to it anyway.\n\n\"That,\" YY told the air, \"goes in the column.\"\n\nYY measured the ramp by paw-lengths for Mira, then admitted the mud had measured him back. Before the day was finished, the the thing had to be read at Mira's bend, because that was apparently who he was now: squirrel, witness, small moving footnote.\n\nBy sundown his food had moved from 0.47 to 0.48, health from 0.84 to 0.85, and attention from 0.72 to 0.74. YY did not say the numbers out loud. He did say, very softly, \"Noted.\"\n\nHe came home with the ramp reading in the day behind him, the ledger-seat still real, and tomorrow already making space for another reading.",
+    "state_note": "YY measured the ramp by paw-lengths for Mira, then admitted the mud had measured him back. Food, health, and attention all move visibly; the ledger records the encounter without taking it over.",
+    "summary": "YY carried ramp reading into Mira's ledger on 2026-05-13, using the day's physical sign as another reading while keeping the role useful and bounded.",
+    "state_delta": {
+      "food": "0.47 → 0.48",
+      "attention": "0.72 → 0.74",
+      "health": "0.84 → 0.85"
+    },
+    "branch_created": false,
+    "world_anchor": "On 2026-05-13, WTAP reported that Vienna, West Virginia, was nearing a new river access point with a path and kayak launch meant to bring residents closer to the Ohio River."
+  },
+  "created_at": "2026-05-24T13:02:00Z"
+}

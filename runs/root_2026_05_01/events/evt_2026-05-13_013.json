@@ -1,0 +1,35 @@
+{
+  "schema_version": "0.1",
+  "event_id": "evt_2026-05-13_013",
+  "root_id": "root_2026_05_01",
+  "story_day": 13,
+  "occurred_at": "2026-05-13T12:00:00Z",
+  "event_type": "river_access",
+  "canonical_truth": {
+    "summary": "A sloped strip of packed mud opened a new way down to the brook, changing who could reach the water.",
+    "entities": [
+      "YY",
+      "wood",
+      "access",
+      "water"
+    ],
+    "location": "the active May wood around YY's treehouse and Mira's bend",
+    "concrete_outcome": "Fresh paw-smoothed mud slopes down to the brook where yesterday there was only a steep cut bank; small tracks go all the way to the water."
+  },
+  "perception_prompt": {
+    "noticeable_surface": "Fresh paw-smoothed mud slopes down to the brook where yesterday there was only a steep cut bank; small tracks go all the way to the water.",
+    "ambiguity_level": 0.1
+  },
+  "tags": [
+    "access",
+    "water",
+    "mud",
+    "route"
+  ],
+  "created_at": "2026-05-24T13:02:00Z",
+  "authorial_note": {
+    "real_world_inspiration": "On 2026-05-13, WTAP reported that Vienna, West Virginia, was nearing a new river access point with a path and kayak launch meant to bring residents closer to the Ohio River.",
+    "translation_logic": "The real-world event is translated into a physical encounter YY can sense directly: Fresh paw-smoothed mud slopes down to the brook where yesterday there was only a steep cut bank; small tracks go all the way to the water.",
+    "restraint_reason": "The anchor stays sensory and local; YY encounters sound, weather, path, light, water, or rhythm rather than human institutions."
+  }
+}

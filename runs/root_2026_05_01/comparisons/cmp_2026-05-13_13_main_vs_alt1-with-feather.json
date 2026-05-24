@@ -1,0 +1,43 @@
+{
+  "schema_version": "0.1",
+  "comparison_id": "cmp_2026-05-13_13_main_vs_alt1-with-feather",
+  "artifact_type": "daily_comparison",
+  "root_id": "root_2026_05_01",
+  "branch_a": "branch_root_2026_05_01_main",
+  "branch_b": "branch_root_2026_05_01_alt1-with-feather",
+  "story_day": 13,
+  "snapshot_date": "2026-05-13",
+  "snapshot_ids": [
+    "snap_2026-05-13_branch_root_2026_05_01_main",
+    "snap_2026-05-13_branch_root_2026_05_01_alt1-with-feather"
+  ],
+  "package_ref": {
+    "package_id": "yysworld-pipeline-v0.2",
+    "package_created_at": "2026-05-24T13:02:00Z",
+    "package_hash": "sha256:codex-interactive"
+  },
+  "model_refs": [
+    {
+      "provider": "openai",
+      "model_id": "codex",
+      "role": "comparator",
+      "runtime_class": "interactive"
+    }
+  ],
+  "content": {
+    "divergence_summary": "Both branches encountered the same anchor on 2026-05-13: Fresh paw-smoothed mud slopes down to the brook where yesterday there was only a steep cut bank; small tracks go all the way to the water. Main YY answered through immediate practical movement; feather-branch YY also carried the sign to Mira ledger.",
+    "branch_a_path": "YY tested the new mud ramp, slipped once, then used it to reach sweet grass at the waterline.",
+    "branch_b_path": "YY measured the ramp by paw-lengths for Mira, then admitted the mud had measured him back.",
+    "key_differences": [
+      "Main keeps the encounter mostly private and body-first.",
+      "The feather branch makes the encounter legible through Mira without making it a performance.",
+      "Food stores and attention rise at different rates because the ledger route costs time."
+    ],
+    "shared_elements": [
+      "Fresh paw-smoothed mud slopes down to the brook where yesterday there was only a steep cut bank; small tracks go all the way to the water.",
+      "Both branches keep the event physical and local.",
+      "Neither branch creates a new fork; the day deepens existing patterns."
+    ]
+  },
+  "created_at": "2026-05-24T13:02:00Z"
+}
