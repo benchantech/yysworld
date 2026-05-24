@@ -7,11 +7,11 @@
   "created_at": "2026-05-01T00:00:00Z",
   "status": "active",
   "state": {
-    "story_day": 11,
+    "story_day": 12,
     "condition": {
-      "health": 0.83,
-      "food": 0.46,
-      "attention": 0.7
+      "health": 0.84,
+      "food": 0.47,
+      "attention": 0.72
     },
     "inventory": [
       {
@@ -19,7 +19,7 @@
         "label": "the heron feather",
         "acquired_day": 0,
         "tradeable": true,
-        "notes": "Still riding quiet through 2026-05-11; settled as fact, not question."
+        "notes": "Still riding quiet through 2026-05-12; settled as fact, not question."
       },
       {
         "id": "fox_kit_tuft",
@@ -33,14 +33,14 @@
         "label": "Mira's reading-seat (informal)",
         "acquired_day": 9,
         "tradeable": false,
-        "notes": "Still informal, now used whenever the day produces a reading. Updated through 2026-05-11."
+        "notes": "Still informal, now used whenever the day produces a reading. Updated through 2026-05-12."
       },
       {
         "id": "hickory_kernels_role_fee",
         "label": "2 hickory kernels (week 1 of the morning-readings rate)",
         "acquired_day": 9,
         "tradeable": true,
-        "notes": "Still on the back shelf after 2026-05-11; YY is stretching the weekly rate carefully."
+        "notes": "Still on the back shelf after 2026-05-12; YY is stretching the weekly rate carefully."
       },
       {
         "id": "acorn_bit_back_shelf",
@@ -52,9 +52,9 @@
       {
         "id": "mixed_saves_after_readings",
         "label": "3 mixed saves on the back shelf",
-        "acquired_day": 11,
+        "acquired_day": 12,
         "tradeable": true,
-        "notes": "Small gathered food held after the 2026-05-11 reading; separate from the feather, tuft, and ledger-seat records."
+        "notes": "Small gathered food held after the 2026-05-12 reading; separate from the feather, tuft, and ledger-seat records."
       }
     ],
     "active_burdens": [],
@@ -65,11 +65,11 @@
     "reaction_overrides": {},
     "trait_deviations": {},
     "identity_notes": [
-      "Yesterday carried forward: Today: read the smaller wing-beat to Mira at first light (five herons, younger lead, no bank, no look) — she logged it under his column, no fee (weekly rate set yesterday). Foraged the lower rocky shoulder for one acorn-bit. At midday, on the way home, watched four mother-and-kit pairs make first descents from one vantage on the lower slope; came back to Mira and asked her to open the ledger again. She logged the kit-showing as the column's first non-morning entry. Mira: 'Twice a day, then, when twice a day finds you. The rate is the rate. The role, it turns out, is the role.'",
-      "Today: YY read the hum to Mira as a water-sound that gathered small life and earned the first non-sky entry in the ledger.",
+      "Yesterday carried forward: Standing thread: YY keeps widening the reading-role without letting the ledger turn into the point of the day.",
+      "Today: YY carried the path-count to Mira, then took the left path only after the ledger had the count in it.",
       "Standing thread: YY keeps widening the reading-role without letting the ledger turn into the point of the day."
     ]
   },
   "drift_flags": [],
-  "last_updated_at": "2026-05-24T13:00:00Z"
+  "last_updated_at": "2026-05-24T13:01:00Z"
 }
