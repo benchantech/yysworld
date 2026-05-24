@@ -1,0 +1,35 @@
+{
+  "schema_version": "0.1",
+  "event_id": "evt_2026-05-19_019",
+  "root_id": "root_2026_05_01",
+  "story_day": 19,
+  "occurred_at": "2026-05-19T12:00:00Z",
+  "event_type": "signal_puzzle",
+  "canonical_truth": {
+    "summary": "Sunlight flashed from a discarded silver wrapper in patterns that pulled every watcher into solving it.",
+    "entities": [
+      "YY",
+      "wood",
+      "signal",
+      "technology"
+    ],
+    "location": "the active May wood around YY's treehouse and Mira's bend",
+    "concrete_outcome": "A silver wrapper caught in the grass flashes hard white shapes whenever the wind flips one corner."
+  },
+  "perception_prompt": {
+    "noticeable_surface": "A silver wrapper caught in the grass flashes hard white shapes whenever the wind flips one corner.",
+    "ambiguity_level": 0.1
+  },
+  "tags": [
+    "signal",
+    "technology",
+    "puzzle",
+    "reflection"
+  ],
+  "created_at": "2026-05-24T13:08:00Z",
+  "authorial_note": {
+    "real_world_inspiration": "On 2026-05-19, Google I/O 2026 opened at Shoreline Amphitheatre, with coverage previewing AI, Android 17, Chrome, and adaptive-device announcements.",
+    "translation_logic": "The real-world event is translated into a physical encounter YY can sense directly: A silver wrapper caught in the grass flashes hard white shapes whenever the wind flips one corner.",
+    "restraint_reason": "The anchor stays sensory and local; YY encounters sound, weather, path, light, water, or rhythm rather than human institutions."
+  }
+}
