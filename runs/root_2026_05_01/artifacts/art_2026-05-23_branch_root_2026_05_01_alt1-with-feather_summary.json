@@ -1,0 +1,37 @@
+{
+  "schema_version": "0.1",
+  "artifact_id": "art_2026-05-23_branch_root_2026_05_01_alt1-with-feather_summary",
+  "artifact_type": "daily_summary",
+  "snapshot_id": "snap_2026-05-23_branch_root_2026_05_01_alt1-with-feather",
+  "root_id": "root_2026_05_01",
+  "branch_id": "branch_root_2026_05_01_alt1-with-feather",
+  "package_ref": {
+    "package_id": "yysworld-pipeline-v0.2",
+    "package_created_at": "2026-05-24T13:12:00Z",
+    "package_hash": "sha256:codex-interactive"
+  },
+  "model_refs": [
+    {
+      "provider": "openai",
+      "model_id": "codex",
+      "role": "summarizer",
+      "runtime_class": "interactive"
+    }
+  ],
+  "comparison_contract_version": "0.1",
+  "content": {
+    "title": "The Patience Machine",
+    "tone": "quiet_and_forward",
+    "narrative": "YY found the pale-stone seep by following the cold smell under the ferns.\n\nWater seeps through pale stone one drop at a time; the first drops taste bitter, then the drip runs clean and cold. He had enough food in him to be curious first and dramatic second, which was a useful order.\n\n\"That,\" YY told the air, \"goes in the column.\"\n\nYY showed Mira the pale-stone seep as a patience machine: first bitter, then clean, if you did not rush it. Before the day was finished, the the thing had to be read at Mira's bend, because that was apparently who he was now: squirrel, witness, small moving footnote.\n\nBy sundown his food had moved from 0.61 to 0.64, health from 0.83 to 0.84, and attention from 0.95 to 0.97. YY did not say the numbers out loud. He did say, very softly, \"Noted.\"\n\nHe came home with the the patience machine in the day behind him, the ledger-seat still real, and tomorrow already making space for another reading.",
+    "state_note": "YY showed Mira the pale-stone seep as a patience machine: first bitter, then clean, if you did not rush it. Food, health, and attention all move visibly; the ledger records the encounter without taking it over.",
+    "summary": "YY carried the patience machine into Mira's ledger on 2026-05-23, using the day's physical sign as another reading while keeping the role useful and bounded.",
+    "state_delta": {
+      "food": "0.61 → 0.64",
+      "attention": "0.95 → 0.97",
+      "health": "0.83 → 0.84"
+    },
+    "branch_created": false,
+    "world_anchor": "On 2026-05-23, ScienceDaily reported a Columbia Engineering breakthrough in faster, cleaner lithium extraction for electric-vehicle batteries."
+  },
+  "created_at": "2026-05-24T13:12:00Z"
+}

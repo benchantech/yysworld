@@ -1,0 +1,35 @@
+{
+  "schema_version": "0.1",
+  "event_id": "evt_2026-05-23_023",
+  "root_id": "root_2026_05_01",
+  "story_day": 23,
+  "occurred_at": "2026-05-23T12:00:00Z",
+  "event_type": "mineral_water",
+  "canonical_truth": {
+    "summary": "A bitter seep through pale stone cleared after a long drip, leaving water that tasted sharp but clean.",
+    "entities": [
+      "YY",
+      "wood",
+      "stone",
+      "water"
+    ],
+    "location": "the active May wood around YY's treehouse and Mira's bend",
+    "concrete_outcome": "Water seeps through pale stone one drop at a time; the first drops taste bitter, then the drip runs clean and cold."
+  },
+  "perception_prompt": {
+    "noticeable_surface": "Water seeps through pale stone one drop at a time; the first drops taste bitter, then the drip runs clean and cold.",
+    "ambiguity_level": 0.1
+  },
+  "tags": [
+    "stone",
+    "water",
+    "cleaner",
+    "patience"
+  ],
+  "created_at": "2026-05-24T13:12:00Z",
+  "authorial_note": {
+    "real_world_inspiration": "On 2026-05-23, ScienceDaily reported a Columbia Engineering breakthrough in faster, cleaner lithium extraction for electric-vehicle batteries.",
+    "translation_logic": "The real-world event is translated into a physical encounter YY can sense directly: Water seeps through pale stone one drop at a time; the first drops taste bitter, then the drip runs clean and cold.",
+    "restraint_reason": "The anchor stays sensory and local; YY encounters sound, weather, path, light, water, or rhythm rather than human institutions."
+  }
+}

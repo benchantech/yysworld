@@ -7,11 +7,11 @@
   "created_at": "2026-05-01T00:00:00Z",
   "status": "active",
   "state": {
-    "story_day": 22,
+    "story_day": 23,
     "condition": {
-      "health": 0.83,
-      "food": 0.61,
-      "attention": 0.95
+      "health": 0.84,
+      "food": 0.64,
+      "attention": 0.97
     },
     "inventory": [
       {
@@ -19,7 +19,7 @@
         "label": "the heron feather",
         "acquired_day": 0,
         "tradeable": true,
-        "notes": "Still riding quiet through 2026-05-22; settled as fact, not question."
+        "notes": "Still riding quiet through 2026-05-23; settled as fact, not question."
       },
       {
         "id": "fox_kit_tuft",
@@ -33,14 +33,14 @@
         "label": "Mira's reading-seat (informal)",
         "acquired_day": 9,
         "tradeable": false,
-        "notes": "Still informal, now used whenever the day produces a reading. Updated through 2026-05-22."
+        "notes": "Still informal, now used whenever the day produces a reading. Updated through 2026-05-23."
       },
       {
         "id": "hickory_kernels_role_fee",
         "label": "0 hickory kernels (week 1 of the morning-readings rate)",
         "acquired_day": 9,
         "tradeable": true,
-        "notes": "Finished by 2026-05-22; the weekly rate has become memory and precedent."
+        "notes": "Finished by 2026-05-23; the weekly rate has become memory and precedent."
       },
       {
         "id": "acorn_bit_back_shelf",
@@ -52,9 +52,9 @@
       {
         "id": "mixed_saves_after_readings",
         "label": "3 mixed saves on the back shelf",
-        "acquired_day": 22,
+        "acquired_day": 23,
         "tradeable": true,
-        "notes": "Small gathered food held after the 2026-05-22 reading; separate from the feather, tuft, and ledger-seat records."
+        "notes": "Small gathered food held after the 2026-05-23 reading; separate from the feather, tuft, and ledger-seat records."
       }
     ],
     "active_burdens": [],
@@ -66,10 +66,10 @@
     "trait_deviations": {},
     "identity_notes": [
       "Yesterday carried forward: Standing thread: YY keeps widening the reading-role without letting the ledger turn into the point of the day.",
-      "Today: YY read the rhythm count to Mira before joining the meadow edge, where the feather shook with each thump.",
+      "Today: YY showed Mira the pale-stone seep as a patience machine: first bitter, then clean, if you did not rush it.",
       "Standing thread: YY keeps widening the reading-role without letting the ledger turn into the point of the day."
     ]
   },
   "drift_flags": [],
-  "last_updated_at": "2026-05-24T13:11:00Z"
+  "last_updated_at": "2026-05-24T13:12:00Z"
 }
