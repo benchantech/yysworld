@@ -1,0 +1,35 @@
+{
+  "schema_version": "0.1",
+  "event_id": "evt_2026-05-22_022",
+  "root_id": "root_2026_05_01",
+  "story_day": 22,
+  "occurred_at": "2026-05-22T12:00:00Z",
+  "event_type": "music_gathering",
+  "canonical_truth": {
+    "summary": "A far-off rhythm thumped through the ground near evening, pulling animals toward the open meadow.",
+    "entities": [
+      "YY",
+      "wood",
+      "music",
+      "gathering"
+    ],
+    "location": "the active May wood around YY's treehouse and Mira's bend",
+    "concrete_outcome": "Near evening the ground carries a soft repeated thump from beyond the meadow, and birds keep landing, listening, and taking off again."
+  },
+  "perception_prompt": {
+    "noticeable_surface": "Near evening the ground carries a soft repeated thump from beyond the meadow, and birds keep landing, listening, and taking off again.",
+    "ambiguity_level": 0.1
+  },
+  "tags": [
+    "music",
+    "gathering",
+    "meadow",
+    "rhythm"
+  ],
+  "created_at": "2026-05-24T13:11:00Z",
+  "authorial_note": {
+    "real_world_inspiration": "On 2026-05-22, BBC Radio 1 Big Weekend was scheduled to begin in Sunderland, bringing a large music festival to Herrington Country Park.",
+    "translation_logic": "The real-world event is translated into a physical encounter YY can sense directly: Near evening the ground carries a soft repeated thump from beyond the meadow, and birds keep landing, listening, and taking off again.",
+    "restraint_reason": "The anchor stays sensory and local; YY encounters sound, weather, path, light, water, or rhythm rather than human institutions."
+  }
+}
