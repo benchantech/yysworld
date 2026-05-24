@@ -1,0 +1,37 @@
+{
+  "schema_version": "0.1",
+  "artifact_id": "art_2026-05-18_branch_root_2026_05_01_alt1-with-feather_summary",
+  "artifact_type": "daily_summary",
+  "snapshot_id": "snap_2026-05-18_branch_root_2026_05_01_alt1-with-feather",
+  "root_id": "root_2026_05_01",
+  "branch_id": "branch_root_2026_05_01_alt1-with-feather",
+  "package_ref": {
+    "package_id": "yysworld-pipeline-v0.2",
+    "package_created_at": "2026-05-24T13:07:00Z",
+    "package_hash": "sha256:codex-interactive"
+  },
+  "model_refs": [
+    {
+      "provider": "openai",
+      "model_id": "codex",
+      "role": "summarizer",
+      "runtime_class": "interactive"
+    }
+  ],
+  "comparison_contract_version": "0.1",
+  "content": {
+    "title": "The Shaded Row",
+    "tone": "hungry_and_wry",
+    "narrative": "YY stepped onto the sunny bark shelf and stepped right back off.\n\nThe sunny shelf of bark is hot by midmorning, and the shade under the fern line smells cooler and damp. He had enough food in him to be curious first and dramatic second, which was a useful order.\n\n\"That,\" YY told the air, \"goes in the column.\"\n\nYY moved Mira reading to the shaded root without calling it surrender, then found the same fern-line seeds. Before the day was finished, the the thing had to be read at Mira's bend, because that was apparently who he was now: squirrel, witness, small moving footnote.\n\nBy sundown his food had moved from 0.54 to 0.55, health from 0.86 to 0.84, and attention from 0.82 to 0.84. YY did not say the numbers out loud. He did say, very softly, \"Noted.\"\n\nHe came home with the the shaded row in the day behind him, the ledger-seat still real, and tomorrow already making space for another reading.",
+    "state_note": "YY moved Mira reading to the shaded root without calling it surrender, then found the same fern-line seeds. Food, health, and attention all move visibly; the ledger records the encounter without taking it over.",
+    "summary": "YY carried the shaded row into Mira's ledger on 2026-05-18, using the day's physical sign as another reading while keeping the role useful and bounded.",
+    "state_delta": {
+      "food": "0.54 → 0.55",
+      "attention": "0.82 → 0.84",
+      "health": "0.86 → 0.84"
+    },
+    "branch_created": false,
+    "world_anchor": "On 2026-05-18, WTAP forecast low-90s heat building across the Mid-Ohio Valley before midweek storms cooled the region down."
+  },
+  "created_at": "2026-05-24T13:07:00Z"
+}

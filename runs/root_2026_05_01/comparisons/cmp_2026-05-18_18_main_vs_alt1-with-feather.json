@@ -1,0 +1,43 @@
+{
+  "schema_version": "0.1",
+  "comparison_id": "cmp_2026-05-18_18_main_vs_alt1-with-feather",
+  "artifact_type": "daily_comparison",
+  "root_id": "root_2026_05_01",
+  "branch_a": "branch_root_2026_05_01_main",
+  "branch_b": "branch_root_2026_05_01_alt1-with-feather",
+  "story_day": 18,
+  "snapshot_date": "2026-05-18",
+  "snapshot_ids": [
+    "snap_2026-05-18_branch_root_2026_05_01_main",
+    "snap_2026-05-18_branch_root_2026_05_01_alt1-with-feather"
+  ],
+  "package_ref": {
+    "package_id": "yysworld-pipeline-v0.2",
+    "package_created_at": "2026-05-24T13:07:00Z",
+    "package_hash": "sha256:codex-interactive"
+  },
+  "model_refs": [
+    {
+      "provider": "openai",
+      "model_id": "codex",
+      "role": "comparator",
+      "runtime_class": "interactive"
+    }
+  ],
+  "content": {
+    "divergence_summary": "Both branches encountered the same anchor on 2026-05-18: The sunny shelf of bark is hot by midmorning, and the shade under the fern line smells cooler and damp. Main YY answered through immediate practical movement; feather-branch YY also carried the sign to Mira ledger.",
+    "branch_a_path": "YY abandoned the hot shelf with great personal dignity and found fern-line seeds in the shade.",
+    "branch_b_path": "YY moved Mira reading to the shaded root without calling it surrender, then found the same fern-line seeds.",
+    "key_differences": [
+      "Main keeps the encounter mostly private and body-first.",
+      "The feather branch makes the encounter legible through Mira without making it a performance.",
+      "Food stores and attention rise at different rates because the ledger route costs time."
+    ],
+    "shared_elements": [
+      "The sunny shelf of bark is hot by midmorning, and the shade under the fern line smells cooler and damp.",
+      "Both branches keep the event physical and local.",
+      "Neither branch creates a new fork; the day deepens existing patterns."
+    ]
+  },
+  "created_at": "2026-05-24T13:07:00Z"
+}

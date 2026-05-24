@@ -1,0 +1,35 @@
+{
+  "schema_version": "0.1",
+  "event_id": "evt_2026-05-18_018",
+  "root_id": "root_2026_05_01",
+  "story_day": 18,
+  "occurred_at": "2026-05-18T12:00:00Z",
+  "event_type": "heat_building",
+  "canonical_truth": {
+    "summary": "Heat built into the wood until the sunny shelf became too hot to sit on and food had to be found in shade.",
+    "entities": [
+      "YY",
+      "wood",
+      "heat",
+      "shade"
+    ],
+    "location": "the active May wood around YY's treehouse and Mira's bend",
+    "concrete_outcome": "The sunny shelf of bark is hot by midmorning, and the shade under the fern line smells cooler and damp."
+  },
+  "perception_prompt": {
+    "noticeable_surface": "The sunny shelf of bark is hot by midmorning, and the shade under the fern line smells cooler and damp.",
+    "ambiguity_level": 0.1
+  },
+  "tags": [
+    "heat",
+    "shade",
+    "forage",
+    "body"
+  ],
+  "created_at": "2026-05-24T13:07:00Z",
+  "authorial_note": {
+    "real_world_inspiration": "On 2026-05-18, WTAP forecast low-90s heat building across the Mid-Ohio Valley before midweek storms cooled the region down.",
+    "translation_logic": "The real-world event is translated into a physical encounter YY can sense directly: The sunny shelf of bark is hot by midmorning, and the shade under the fern line smells cooler and damp.",
+    "restraint_reason": "The anchor stays sensory and local; YY encounters sound, weather, path, light, water, or rhythm rather than human institutions."
+  }
+}
