@@ -1,0 +1,35 @@
+{
+  "schema_version": "0.1",
+  "decision_id": "dec_2026-05-21_021",
+  "root_id": "root_2026_05_01",
+  "story_day": 21,
+  "decision_date": "2026-05-21",
+  "decision_status": "evaluated_no_branch",
+  "package_ref": {
+    "package_id": "yysworld-pipeline-v0.2",
+    "package_created_at": "2026-05-24T13:10:00Z",
+    "package_hash": "sha256:codex-interactive"
+  },
+  "model_refs": [
+    {
+      "provider": "openai",
+      "model_id": "codex",
+      "role": "evaluator",
+      "runtime_class": "interactive"
+    }
+  ],
+  "evaluation": {
+    "should_branch": false,
+    "confidence": 0.82,
+    "reason": "The 2026-05-21 event produces different expressions of already-established branch identity but no new irreversible choice.",
+    "focus_if_branched": null
+  },
+  "event_refs": [
+    "evt_2026-05-21_021"
+  ],
+  "snapshot_refs": [
+    "snap_2026-05-21_branch_root_2026_05_01_main",
+    "snap_2026-05-21_branch_root_2026_05_01_alt1-with-feather"
+  ],
+  "created_at": "2026-05-24T13:10:00Z"
+}

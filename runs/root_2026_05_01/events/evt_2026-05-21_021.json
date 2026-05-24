@@ -1,0 +1,35 @@
+{
+  "schema_version": "0.1",
+  "event_id": "evt_2026-05-21_021",
+  "root_id": "root_2026_05_01",
+  "story_day": 21,
+  "occurred_at": "2026-05-21T12:00:00Z",
+  "event_type": "red_sky_event",
+  "canonical_truth": {
+    "summary": "After dusk, a faint red band appeared above the pines and made the whole ridge hold its breath.",
+    "entities": [
+      "YY",
+      "wood",
+      "sky",
+      "red"
+    ],
+    "location": "the active May wood around YY's treehouse and Mira's bend",
+    "concrete_outcome": "A red smear hangs above the pine tops after dusk, too high for fireflies and too still for sunset."
+  },
+  "perception_prompt": {
+    "noticeable_surface": "A red smear hangs above the pine tops after dusk, too high for fireflies and too still for sunset.",
+    "ambiguity_level": 0.1
+  },
+  "tags": [
+    "sky",
+    "red",
+    "aurora",
+    "night"
+  ],
+  "created_at": "2026-05-24T13:10:00Z",
+  "authorial_note": {
+    "real_world_inspiration": "On 2026-05-21, ScienceDaily reported research on towering red auroras above Japan, suggesting hidden solar activity even during milder space storms.",
+    "translation_logic": "The real-world event is translated into a physical encounter YY can sense directly: A red smear hangs above the pine tops after dusk, too high for fireflies and too still for sunset.",
+    "restraint_reason": "The anchor stays sensory and local; YY encounters sound, weather, path, light, water, or rhythm rather than human institutions."
+  }
+}

@@ -7,11 +7,11 @@
   "created_at": "2026-05-01T00:00:00Z",
   "status": "active",
   "state": {
-    "story_day": 20,
+    "story_day": 21,
     "condition": {
-      "health": 0.83,
-      "food": 0.59,
-      "attention": 0.88
+      "health": 0.82,
+      "food": 0.6,
+      "attention": 0.93
     },
     "inventory": [
       {
@@ -19,7 +19,7 @@
         "label": "the heron feather",
         "acquired_day": 0,
         "tradeable": true,
-        "notes": "Still riding quiet through 2026-05-20; settled as fact, not question."
+        "notes": "Still riding quiet through 2026-05-21; settled as fact, not question."
       },
       {
         "id": "fox_kit_tuft",
@@ -33,14 +33,14 @@
         "label": "Mira's reading-seat (informal)",
         "acquired_day": 9,
         "tradeable": false,
-        "notes": "Still informal, now used whenever the day produces a reading. Updated through 2026-05-20."
+        "notes": "Still informal, now used whenever the day produces a reading. Updated through 2026-05-21."
       },
       {
         "id": "hickory_kernels_role_fee",
         "label": "0 hickory kernels (week 1 of the morning-readings rate)",
         "acquired_day": 9,
         "tradeable": true,
-        "notes": "Finished by 2026-05-20; the weekly rate has become memory and precedent."
+        "notes": "Finished by 2026-05-21; the weekly rate has become memory and precedent."
       },
       {
         "id": "acorn_bit_back_shelf",
@@ -52,9 +52,9 @@
       {
         "id": "mixed_saves_after_readings",
         "label": "3 mixed saves on the back shelf",
-        "acquired_day": 20,
+        "acquired_day": 21,
         "tradeable": true,
-        "notes": "Small gathered food held after the 2026-05-20 reading; separate from the feather, tuft, and ledger-seat records."
+        "notes": "Small gathered food held after the 2026-05-21 reading; separate from the feather, tuft, and ledger-seat records."
       }
     ],
     "active_burdens": [],
@@ -66,10 +66,10 @@
     "trait_deviations": {},
     "identity_notes": [
       "Yesterday carried forward: Standing thread: YY keeps widening the reading-role without letting the ledger turn into the point of the day.",
-      "Today: YY and Mira watched the seed-wing spin until the ledger had a new sign for steady wind.",
+      "Today: YY woke Mira for the red band, and the ledger received its first night entry under his name.",
       "Standing thread: YY keeps widening the reading-role without letting the ledger turn into the point of the day."
     ]
   },
   "drift_flags": [],
-  "last_updated_at": "2026-05-24T13:09:00Z"
+  "last_updated_at": "2026-05-24T13:10:00Z"
 }
