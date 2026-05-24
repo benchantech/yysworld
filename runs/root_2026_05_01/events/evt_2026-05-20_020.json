@@ -1,0 +1,35 @@
+{
+  "schema_version": "0.1",
+  "event_id": "evt_2026-05-20_020",
+  "root_id": "root_2026_05_01",
+  "story_day": 20,
+  "occurred_at": "2026-05-20T12:00:00Z",
+  "event_type": "wind_power",
+  "canonical_truth": {
+    "summary": "A seed-wing stuck on a twig spun steadily in the wind, showing YY where the air stayed useful.",
+    "entities": [
+      "YY",
+      "wood",
+      "wind",
+      "energy"
+    ],
+    "location": "the active May wood around YY's treehouse and Mira's bend",
+    "concrete_outcome": "A maple seed-wing is pinned on a twig and spins in one steady direction while loose leaves twitch around it."
+  },
+  "perception_prompt": {
+    "noticeable_surface": "A maple seed-wing is pinned on a twig and spins in one steady direction while loose leaves twitch around it.",
+    "ambiguity_level": 0.1
+  },
+  "tags": [
+    "wind",
+    "energy",
+    "spin",
+    "shelter"
+  ],
+  "created_at": "2026-05-24T13:09:00Z",
+  "authorial_note": {
+    "real_world_inspiration": "On 2026-05-20, PBS NewsHour featured Denmark wind and solar investments and how they shielded the country from global energy turmoil.",
+    "translation_logic": "The real-world event is translated into a physical encounter YY can sense directly: A maple seed-wing is pinned on a twig and spins in one steady direction while loose leaves twitch around it.",
+    "restraint_reason": "The anchor stays sensory and local; YY encounters sound, weather, path, light, water, or rhythm rather than human institutions."
+  }
+}
