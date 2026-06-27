@@ -49,7 +49,7 @@ Adult-facing + family-shareable + 14+ floor achieves everything the Case-002 con
 
 **Monetization:** In scope from Phase 2. Email paid tier, premium arcs (Phase 4), YouTube Shorts channel monetization (separate from site — no conflict). "Immediate monetization" is no longer a non-goal — it is a scheduled goal with a phase assignment.
 
-**sameAs identity:** yysworld is explicitly a Ben Chan property. Schema.org markup on the landing page links back to the canonical Person entity and the sameAs array (yymethod.com, yyand.me, benchantech.com, home.yymethod.com). This is detailed in a companion ADR.
+**sameAs identity:** yysworld is explicitly a Ben Chan property. Schema.org markup on the landing page links back to the canonical Person entity and the sameAs array (yymethod.com, yyandme.benchantech.com, benchantech.com, home.yymethod.com). This is detailed in a companion ADR.
 
 **Case-002 in yymethod-home:** Status updated to Superseded. C2-024 filed as scar record. The case study is preserved in its entirety — the method applies to itself.
 

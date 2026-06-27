@@ -9,7 +9,7 @@
 
 ## Capture
 
-The site is named YY's World. "YY's World." The possessive is intentional — this is not a site about YY, it is YY's space. YY the stuffed squirrel, established character across yyand.me and yymethod.com, extends into a world built for kids.
+The site is named YY's World. "YY's World." The possessive is intentional — this is not a site about YY, it is YY's space. YY the stuffed squirrel, established character across yyandme.benchantech.com and yymethod.com, extends into a world built for kids.
 
 The domain continues an existing universe rather than creating a new one. YY already has provenance: 7 podcast episodes, a documented creative partnership, a known preference for acorns, and a paper trail of disagreements with the operator.
 
@@ -21,7 +21,7 @@ A new character with no history would require the site to establish credibility 
 
 The possessive "YY's World" does more work than "YY Method for Kids" or "Learn with YY." It does not describe a method. It does not announce a lesson. It claims a space. Kids who visit are entering somewhere — not being enrolled in something.
 
-The domain continuity with yymethod.com and yyand.me also signals to adults — parents, educators, curious readers — that this exists within a coherent universe with an operator who has a documented identity and methodology. Provenance extends in both directions.
+The domain continuity with yymethod.com and yyandme.benchantech.com also signals to adults — parents, educators, curious readers — that this exists within a coherent universe with an operator who has a documented identity and methodology. Provenance extends in both directions.
 
 ---
 

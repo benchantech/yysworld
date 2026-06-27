@@ -379,7 +379,14 @@ AUTHOR GUIDANCE: ${branchGuidance || inbox.notes || '(none)'}
 ${priorSnippet ? `STYLE REFERENCE (prior day, for tone matching):\n"${priorSnippet}..."` : ''}
 
 The title should be evocative but NOT repeated as the first line of the narrative.
-The narrative should open in scene, not with the title.`,
+The narrative should open in scene, not with the title.
+
+PROSE QUALITY GATES:
+- Do not copy paragraph scaffolds or closing shapes from the prior day.
+- Do not use formula bridge sentences like "Before the day was finished..." or "No one had asked him to name it."
+- Do not write a title-slot sentence like "He came home with the ${branch.urlId === 'main' ? '[title]' : '[title] in the day'} behind him."
+- Do not narrate the stat delta as the emotional center. The stat delta belongs in state_delta; the story should land physically.
+- If two adjacent paragraphs could be reused tomorrow with only nouns swapped, rewrite them.`
   }]
 
   const response = await client.messages.create({

@@ -20,7 +20,7 @@ The product is positioned primarily for adults/peers, with selective family shar
 
 This:
 - respects COPPA realities
-- fits the actual voice of yyand.me and Case 002
+- fits the actual voice of yyandme.benchantech.com and Case 002
 - preserves creative freedom
 - avoids unnecessary liability and compliance burden
 

@@ -9,7 +9,7 @@
 
 ## Capture
 
-YY the stuffed squirrel is the protagonist of YY's World. YY is not a mascot. YY is a co-author with opinions, objections, and a documented paper trail. YY has existed since the yyand.me podcast arc — 7 episodes, established voice, known preference for acorns, history of disagreeing with the operator. The site extends that character into the kids' domain.
+YY the stuffed squirrel is the protagonist of YY's World. YY is not a mascot. YY is a co-author with opinions, objections, and a documented paper trail. YY has existed since the yyandme.benchantech.com podcast arc — 7 episodes, established voice, known preference for acorns, history of disagreeing with the operator. The site extends that character into the kids' domain.
 
 YY occupies three simultaneous roles:
 
@@ -38,7 +38,7 @@ No provenance, no continuity, no authentication value. A generic mascot is a bra
 Too relatable in the wrong way — a human child protagonist creates identification that can become parasocial rather than aspirational. YY as a stuffed squirrel occupies a strange-adult-friend register that is more interesting to kids: YY is not them, YY is something they discovered that has its own perspective. Also, a human child protagonist would need to be inclusive (age, background, appearance) in ways that create design constraints. YY has no such constraints.
 
 **Why not multiple characters?**
-YY is singular. Multiple characters create ensemble dynamics that require characterization overhead. YY alone is simpler and more consistent with the existing yyand.me universe where YY is a solo presence.
+YY is singular. Multiple characters create ensemble dynamics that require characterization overhead. YY alone is simpler and more consistent with the existing yyandme.benchantech.com universe where YY is a solo presence.
 
 **Why not make YY's role purely decorative (cute illustration, no opinion)?**
 Destroys the anti-smoothing value. A decorative squirrel is a brand element. An opinionated squirrel with a paper trail is an authentication mechanism. The opinions are the point.
@@ -47,13 +47,13 @@ Destroys the anti-smoothing value. A decorative squirrel is a brand element. An 
 
 ## Breaks If
 
-YY's preferences and objections are invented to fill the YY'S TAKE field rather than genuinely arising from the session. YY becomes consistent and pleasant rather than specific and occasionally difficult. YY's history (acorn preference, metronome protests, established character from yyand.me) is decoupled from the site's content. Entries begin using YY as a cute frame for advice rather than as a genuine co-author with disagreements.
+YY's preferences and objections are invented to fill the YY'S TAKE field rather than genuinely arising from the session. YY becomes consistent and pleasant rather than specific and occasionally difficult. YY's history (acorn preference, metronome protests, established character from yyandme.benchantech.com) is decoupled from the site's content. Entries begin using YY as a cute frame for advice rather than as a genuine co-author with disagreements.
 
 ---
 
 ## Tribal Context
 
-**Operator supplied:** YY's existing history, the acorn-preference detail, the metronome-hiding incident, and the character continuity from yyand.me.
+**Operator supplied:** YY's existing history, the acorn-preference detail, the metronome-hiding incident, and the character continuity from yyandme.benchantech.com.
 
 **Session supplied:** The three-role framing (protagonist / co-author / authentication) and the observation that the squirrel's specificity is the anti-smoothing mechanism.
 

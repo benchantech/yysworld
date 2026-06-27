@@ -10,9 +10,9 @@
 
 ## Capture
 
-YY plays the same role in YY's World as in yyand.me — but unfettered from the operator. Full range of human emotion. His own being. Not Ben's sidekick.
+YY plays the same role in YY's World as in yyandme.benchantech.com — but unfettered from the operator. Full range of human emotion. His own being. Not Ben's sidekick.
 
-In yyand.me: YY was tethered — a creative partner defined in relation to Ben's narrative. In YY's World: YY is free. He can do as he pleases. He can be impatient, joyful, bored, sad, confused, enthusiastic, reluctant — whatever the entry calls out of him.
+In yyandme.benchantech.com: YY was tethered — a creative partner defined in relation to Ben's narrative. In YY's World: YY is free. He can do as he pleases. He can be impatient, joyful, bored, sad, confused, enthusiastic, reluctant — whatever the entry calls out of him.
 
 YY is a reddish-brown stuffed squirrel with a Y-shaped nose, approximately 40 years old, who has been with Ben since childhood. His documented character: impatient, direct, calls out over-explanation with "Booooooring!!", gets tired of practicing, asks questions when things feel off. He vocalized everything Ben felt internally — the unfiltered voice that couldn't be polished.
 
@@ -33,7 +33,7 @@ This also means kids who find YY's World meet a YY who is genuinely himself — 
 **Why not YY as a designed mascot?**
 A mascot exists to make the site look friendly. YY exists as a 40-year-old being with documented history. The difference is structural, not cosmetic. A mascot can be smoothed. YY cannot.
 
-**Why not constrain YY to his yyand.me foil role?**
+**Why not constrain YY to his yyandme.benchantech.com foil role?**
 Limiting YY to reactive interjections ("Booooooring!!") misses the liberation. In YY's World he can initiate, lead an entry, disagree substantively, or say nothing. The full range requires releasing the constraint.
 
 **Why not a new character invented for the kids' site?**
@@ -43,7 +43,7 @@ No provenance. No history. No 40 years. No kids who already made him their own. 
 
 ## Commit
 
-**Decision:** YY is free. Full range of human emotion. Unfettered. His own being. The same YY as yyand.me, now without the tether.
+**Decision:** YY is free. Full range of human emotion. Unfettered. His own being. The same YY as yyandme.benchantech.com, now without the tether.
 
 **YY'S TAKE:** Finally.
 
