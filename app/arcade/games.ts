@@ -2,12 +2,12 @@ export const games = [
   {
     slug: 'acorn-quest',
     title: 'Acorn Quest',
-    src: '/arcade-games/acorn-quest/index.html',
+    src: '/arcade-games/acorn-quest/',
   },
   {
     slug: 'tag-quest',
     title: 'Tag Quest',
-    src: '/arcade-games/tag-quest/index.html',
+    src: '/arcade-games/tag-quest/',
   },
 ]
 
