@@ -2,10 +2,10 @@ const homepageHtml =
   '<main class="page">\n' +
   '    <div class="top-left-image" aria-label="YY portrait"><img src="/images/yy-portrait.png" alt="YY portrait"></div>\n' +
   '\n' +
-  '    <div class="brand">YY’s World</div>\n' +
+  '    <div class="title-container"><div class="brand">YY’s World</div></div>\n' +
   '\n' +
-  '    <div class="tagline">\n' +
-  '      A small, stuffed animal, with a big purpose. Take a look at what he’s inspired.\n' +
+  '    <div class="description-container">\n' +
+  '      <p class="tagline">A small stuffed animal, with a big purpose. Take a look at what he’s inspired.</p>\n' +
   '    </div>\n' +
   '\n' +
   '    <section class="cards" aria-label="Website sections">\n' +
@@ -31,7 +31,7 @@ const homepageHtml =
   '        </div>\n' +
   '      </article>\n' +
   '\n' +
-  '      <article class="card">\n' +
+  '      <article class="card yy-meaning">\n' +
   '        <h2>What’s YOUR YY?</h2>\n' +
   '        <p>Find out the symbolic meaning of YY and take a look inside, here, to find out what it is.</p>\n' +
   '      </article>\n' +
