@@ -1,165 +1,61 @@
-import type { Metadata } from 'next'
-import Link from 'next/link'
-import { JsonLd } from '@/components/JsonLd'
-import { homeBreadcrumbs } from '@/lib/nav'
-import { schemaBreadcrumbList, schemaWebSite, schemaAuthorPerson } from '@/lib/jsonld'
-import { getStaticRuns, getDayArtifact, getActiveDay } from '@/lib/runs'
-import { PageHeader, EventAnchor, SplitPanel, PathStateRow, BranchTree, PageShell } from '@/components/canon/Layout'
-import { MonoLabel, Pill, SectionRule, LinkButton } from '@/components/canon/Primitives'
-import { AltBranchTabs } from '@/components/AltBranchTabs'
-
-export const metadata: Metadata = {
-  title: 'yysworld',
-  description:
-    'One character. Multiple timelines. YY (a squirrel) lives through the same real-world events across branching paths — diverging based on circumstance, burden, and accumulated state.',
-  openGraph: {
-    title: 'yysworld — branching life observatory',
-    description:
-      'One character. Multiple timelines. Watch how the same being drifts differently across paths shaped by circumstance. Every divergence is traceable.',
-    type: 'website',
-    url: 'https://yysworld.com/',
-  },
-}
+const homepageHtml =
+  '<main class="page">\n' +
+  '    <div class="top-left-image" aria-label="YY portrait"><img src="/images/yy-portrait.png" alt="YY portrait"></div>\n' +
+  '\n' +
+  '    <div class="brand">YY’s World</div>\n' +
+  '\n' +
+  '    <div class="tagline">\n' +
+  '      A small, stuffed animal, with a big purpose. Take a look at what he’s inspired.\n' +
+  '    </div>\n' +
+  '\n' +
+  '    <section class="cards" aria-label="Website sections">\n' +
+  '      <article class="card arcade">\n' +
+  '        <svg class="acorn left" viewBox="0 0 24 30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">\n' +
+  '          <path d="M12 1 L12 5"></path>\n' +
+  '          <path d="M4 10 Q4 5 12 5 Q20 5 20 10 Z"></path>\n' +
+  '          <path d="M5 10 Q5 25 12 28 Q19 25 19 10 Z"></path>\n' +
+  '        </svg>\n' +
+  '        <svg class="acorn right" viewBox="0 0 24 30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">\n' +
+  '          <path d="M12 1 L12 5"></path>\n' +
+  '          <path d="M4 10 Q4 5 12 5 Q20 5 20 10 Z"></path>\n' +
+  '          <path d="M5 10 Q5 25 12 28 Q19 25 19 10 Z"></path>\n' +
+  '        </svg>\n' +
+  '        <h2>Arcade Room</h2>\n' +
+  '        <p>Enjoy games themed with none other than YY!</p>\n' +
+  '      </article>\n' +
+  '\n' +
+  '      <article class="card history">\n' +
+  '        <div class="history-inner">\n' +
+  '          <h2>History</h2>\n' +
+  '          <p>Ever curious about how YY came to be? If so, here’s your happy spot.</p>\n' +
+  '        </div>\n' +
+  '      </article>\n' +
+  '\n' +
+  '      <article class="card">\n' +
+  '        <h2>What’s YOUR YY?</h2>\n' +
+  '        <p>Find out the symbolic meaning of YY and take a look inside, here, to find out what it is.</p>\n' +
+  '      </article>\n' +
+  '\n' +
+  '      <article class="card webcomic">\n' +
+  '        <h2>WebComic</h2>\n' +
+  '        <p>Look to this place to see YY in his daily trouble! This will make you laugh!</p>\n' +
+  '      </article>\n' +
+  '    </section>\n' +
+  '\n' +
+  '    <section class="circle" aria-label="The YY Method">\n' +
+  '      <div class="circle-content">\n' +
+  '        <div class="circle-title">The<br>YY METHOD</div>\n' +
+  '        <svg class="y-symbol" viewBox="0 0 120 110" role="img" aria-label="Y-shaped YY Method symbol">\n' +
+  '          <path d="M60 92 L60 55 M60 55 L25 20 M60 55 L95 20" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"></path>\n' +
+  '          <circle cx="60" cy="92" r="5" fill="var(--paper)" stroke="currentColor" stroke-width="3"></circle>\n' +
+  '          <circle cx="25" cy="20" r="5" fill="var(--paper)" stroke="currentColor" stroke-width="3"></circle>\n' +
+  '          <circle cx="95" cy="20" r="5" fill="var(--paper)" stroke="currentColor" stroke-width="3"></circle>\n' +
+  '        </svg>\n' +
+  '        <p>A decision model,<br>inspired by… you<br>know who. (stop<br>gloating, YY!)</p>\n' +
+  '      </div>\n' +
+  '    </section>\n' +
+  '  </main>'
 
 export default function HomePage() {
-  const breadcrumbs = homeBreadcrumbs()
-  const runs = getStaticRuns()
-  const latestRun = runs[0] ?? null
-
-  const mainBranch = latestRun?.branches.find((b) => b.id === 'main') ?? latestRun?.branches[0]
-  const altBranches = latestRun?.branches.filter((b) => b.id !== 'main') ?? []
-  const activeDay = mainBranch ? getActiveDay(mainBranch) : null
-  const activeDayStr = activeDay ? String(activeDay) : null
-
-  const mainArtifact = latestRun && mainBranch && activeDayStr
-    ? getDayArtifact(latestRun.runDate, mainBranch.id, activeDayStr)
-    : null
-  const altArtifacts = latestRun && activeDayStr
-    ? Object.fromEntries(altBranches.map((b) => [b.id, getDayArtifact(latestRun.runDate, b.id, activeDayStr)]))
-    : {}
-
-  return (
-    <PageShell wide>
-      <JsonLd schema={[schemaWebSite(), schemaAuthorPerson(), schemaBreadcrumbList(breadcrumbs)]} />
-
-      <PageHeader
-        eyebrow="one being, multiple paths"
-        title="Same daily event across branching YYs, written by AI. What could go wrong?"
-        lede="YY's World is a branching life observatory: one squirrel, one shared world, many lived outcomes."
-        note="story first, method intact"
-      />
-
-      {mainArtifact && (
-        <EventAnchor
-          date={mainArtifact.snapshotDate}
-          title={mainArtifact.title}
-          description={mainArtifact.summary}
-        />
-      )}
-
-      {mainArtifact && altBranches.length > 0 && (
-        <SplitPanel
-          left={
-            <article className="yy-storyPanel">
-              <div className="yy-storyPanel__head">
-                <MonoLabel>path · main</MonoLabel>
-                <Pill>main path</Pill>
-              </div>
-              <h3>Main</h3>
-              <div className="yy-storyCopy">
-                {mainArtifact.narrative.split('\n\n').filter(Boolean).slice(0, 2).map((p, i) => (
-                  <p key={i}>{p}</p>
-                ))}
-              </div>
-              <PathStateRow items={[
-                { label: 'health', value: Math.round(mainArtifact.statsAfter.health * 100), tone: mainArtifact.statsAfter.health >= 0.6 ? 'up' : 'down' },
-                { label: 'food', value: Math.round(mainArtifact.statsAfter.food * 100), tone: mainArtifact.statsAfter.food >= 0.6 ? 'up' : 'down' },
-                { label: 'attention', value: Math.round(mainArtifact.statsAfter.attention * 100), tone: mainArtifact.statsAfter.attention >= 0.6 ? 'down' : 'neutral' },
-              ]} />
-            </article>
-          }
-          right={
-            <AltBranchTabs
-              tabs={altBranches.map((b) => {
-                const art = altArtifacts[b.id]
-                return {
-                  branchId: b.id,
-                  label: b.id,
-                  sub: 'alt path',
-                  children: art ? (
-                    <article className="yy-storyPanel">
-                      <div className="yy-storyPanel__head">
-                        <MonoLabel>path · {b.id}</MonoLabel>
-                        <Pill>alt path</Pill>
-                      </div>
-                      <h3>Alt · {b.id}</h3>
-                      <div className="yy-storyCopy">
-                        {art.narrative.split('\n\n').filter(Boolean).slice(0, 2).map((p, i) => (
-                          <p key={i}>{p}</p>
-                        ))}
-                      </div>
-                      <PathStateRow items={[
-                        { label: 'health', value: Math.round(art.statsAfter.health * 100), tone: art.statsAfter.health >= 0.6 ? 'up' : 'down' },
-                        { label: 'food', value: Math.round(art.statsAfter.food * 100), tone: art.statsAfter.food >= 0.6 ? 'up' : 'down' },
-                        { label: 'attention', value: Math.round(art.statsAfter.attention * 100), tone: art.statsAfter.attention >= 0.6 ? 'down' : 'neutral' },
-                      ]} />
-                    </article>
-                  ) : <p style={{ color: 'var(--ink-3)', fontSize: '13px' }}>No content yet.</p>,
-                }
-              })}
-            />
-          }
-        />
-      )}
-
-      <SectionRule />
-
-      <section className="yy-stepsGrid">
-        {[
-          ['1', 'One world event', 'A real-world condition arrives and becomes the shared seed of the day.'],
-          ['2', 'Multiple paths', 'YY meets the same day with different reserves, timing, and burdens.'],
-          ['3', 'Visible divergence', 'You read the gap between paths as the story, not just the output.'],
-          ['4', 'Method below the surface', 'The builder layer still exists, but it no longer blocks entry.'],
-        ].map(([n, title, copy]) => (
-          <div key={n}>
-            <MonoLabel>{n}</MonoLabel>
-            <h3>{title}</h3>
-            <p>{copy}</p>
-          </div>
-        ))}
-      </section>
-
-      <SectionRule />
-
-      {latestRun && (
-        <BranchTree
-          root={`Run ${latestRun.runDate}`}
-          branches={latestRun.branches.map((b, i) => ({
-            label: b.id === 'main' ? 'Main' : `Alt · ${b.id}`,
-            note: `${b.publishedDays} day${b.publishedDays !== 1 ? 's' : ''} published`,
-            active: i === 0,
-          }))}
-        />
-      )}
-
-      <section className="pt-4 border-t border-rule" style={{ marginTop: '3rem' }}>
-        <p className="font-mono text-xs text-ink-4">
-          The reasoning behind every decision lives in the{' '}
-          <Link
-            href="/adrs/"
-            className="text-ink-3 hover:text-ink transition-colors border-b border-ink-4 hover:border-ink"
-          >
-            architecture decisions (ADRs)
-          </Link>
-          {' · '}
-          <a
-            href="/llms.txt"
-            className="text-ink-3 hover:text-ink transition-colors font-mono border-b border-ink-4 hover:border-ink"
-          >
-            /llms.txt
-          </a>
-        </p>
-      </section>
-    </PageShell>
-  )
+  return <div dangerouslySetInnerHTML={{ __html: homepageHtml }} />
 }

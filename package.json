@@ -6,12 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
     "pipeline:init": "tsx pipeline/index.ts init",
     "pipeline:run": "tsx pipeline/index.ts run",
-    "pipeline:go": "tsx pipeline/index.ts go",
-    "test": "vitest run",
-    "test:watch": "vitest"
+    "pipeline:go": "tsx pipeline/index.ts go"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.39.0",
@@ -27,7 +24,6 @@
     "postcss": "^8.5.0",
     "tailwindcss": "^4.1.0",
     "tsx": "^4.19.0",
-    "typescript": "^5.8.0",
-    "vitest": "^4.1.4"
+    "typescript": "^5.8.0"
   }
 }
