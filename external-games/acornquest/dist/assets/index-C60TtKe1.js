@@ -213,11 +213,12 @@
     position: absolute;
     right: 8px;
     bottom: 8px;
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: flex-end;
     gap: 8px;
     z-index: 4;
+    pointer-events: none;
   }
 
 .editor-status {
