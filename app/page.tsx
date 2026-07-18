@@ -9,7 +9,7 @@ const homepageHtml =
   '    </div>\n' +
   '\n' +
   '    <section class="cards" aria-label="Website sections">\n' +
-  '      <article class="card arcade">\n' +
+  '      <a class="card arcade" href="/arcade/">\n' +
   '        <svg class="acorn left" viewBox="0 0 24 30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">\n' +
   '          <path d="M12 1 L12 5"></path>\n' +
   '          <path d="M4 10 Q4 5 12 5 Q20 5 20 10 Z"></path>\n' +
@@ -22,7 +22,7 @@ const homepageHtml =
   '        </svg>\n' +
   '        <h2>Arcade Room</h2>\n' +
   '        <p>Enjoy games themed with none other than YY!</p>\n' +
-  '      </article>\n' +
+  '      </a>\n' +
   '\n' +
   '      <article class="card history">\n' +
   '        <div class="history-inner">\n' +

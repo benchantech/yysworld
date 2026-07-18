@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stuffed Animal Control Room</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg-0: #110f0b;
+        --bg-1: #24180f;
+        --panel: rgba(255, 248, 240, 0.1);
+        --panel-border: rgba(255, 235, 214, 0.22);
+        --text: #fff5e8;
+        --muted: rgba(255, 245, 232, 0.72);
+        --accent: #ffb77c;
+        --accent-strong: #ffd7b0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        min-height: 100%;
+      }
+
+      body {
+        font-family:
+          ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          sans-serif;
+        color: var(--text);
+        background:
+          radial-gradient(circle at top, rgba(255, 180, 120, 0.18), transparent 34%),
+          radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.08), transparent 20%),
+          linear-gradient(180deg, var(--bg-1), var(--bg-0));
+      }
+
+      .app {
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        padding: 24px;
+      }
+
+      .shell {
+        width: min(1100px, 100%);
+        display: grid;
+        gap: 18px;
+      }
+
+      .header {
+        display: flex;
+        justify-content: space-between;
+        gap: 18px;
+        align-items: end;
+        padding: 4px 2px;
+      }
+
+      .eyebrow {
+        margin: 0 0 6px;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        color: var(--accent-strong);
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(1.8rem, 4vw, 3.6rem);
+        line-height: 0.95;
+        letter-spacing: -0.04em;
+      }
+
+      .copy {
+        max-width: 38rem;
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.5;
+        text-align: right;
+      }
+
+      .panel {
+        position: relative;
+        padding: 18px;
+        border-radius: 28px;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.11), rgba(255, 255, 255, 0.06));
+        border: 1px solid var(--panel-border);
+        box-shadow:
+          0 32px 90px rgba(0, 0, 0, 0.34),
+          inset 0 1px 0 rgba(255, 255, 255, 0.08);
+        overflow: hidden;
+      }
+
+      .panel::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(circle at 50% 14%, rgba(255, 216, 180, 0.16), transparent 30%),
+          radial-gradient(circle at 50% 100%, rgba(0, 0, 0, 0.24), transparent 55%);
+        pointer-events: none;
+      }
+
+      canvas {
+        display: block;
+        width: 100%;
+        height: auto;
+        border-radius: 20px;
+        background: transparent;
+      }
+
+      .footer {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px 16px;
+        justify-content: space-between;
+        color: var(--muted);
+        font-size: 0.95rem;
+        line-height: 1.45;
+      }
+
+      .chip {
+        padding: 8px 12px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      @media (max-width: 700px) {
+        .header {
+          flex-direction: column;
+          align-items: start;
+        }
+
+        .copy {
+          text-align: left;
+          max-width: none;
+        }
+
+        .panel {
+          padding: 12px;
+        }
+      }
+    </style>
+    <script type="module" crossorigin src="/assets/index-C60TtKe1.js"></script>
+  </head>
+  <body>
+    <div id="app"></div>
+  </body>
+</html>
